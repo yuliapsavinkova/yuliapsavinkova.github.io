@@ -1,0 +1,41 @@
+:root {
+    --hero-size: 100vh;
+    --header-size: 6rem;
+    --logo-size: 4rem;
+    --padding-sides: 8vw;
+    --border-radius-actions: 0.35rem;
+}
+
+.header {
+    height: var(--header-size);
+    padding: 0 var(--padding-sides);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-image {
+    width: var(--logo-size);
+    border-radius: var(--border-radius-actions);
+}
+
+.logo-image:hover {
+    filter: brightness(110%);
+}
+
+section {
+    padding: 3rem var(--padding-sides);
+}
+
+.hero {
+    height: calc(var(--hero-size) - var(--header-size));
+    background-image: url("../images/hero-background.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center; 
+}
