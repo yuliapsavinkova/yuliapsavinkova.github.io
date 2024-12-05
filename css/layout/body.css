@@ -1,0 +1,15 @@
+body {
+    padding-top: var(--header-size);
+}
+
+.hero {
+    height: calc(100vh - var(--header-size));
+}
+
+section {
+    padding: 3rem; 
+}
+
+.footer {
+    height: 10rem;
+}

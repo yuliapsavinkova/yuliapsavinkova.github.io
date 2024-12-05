@@ -1,0 +1,50 @@
+.services {
+    background: linear-gradient(to bottom, var(--gra-white), var(--neutral-color-light));
+}
+
+.services-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .services-image {
+        width: 5rem;
+    }
+
+    .work-image {
+        width: 50%;
+    }
+
+    .work-image:hover {
+        filter: brightness(150%);
+    }
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1.4rem 1rem 1rem 1rem;
+    background-color: var(--gra-white);
+    width: clamp(20rem, 25%, 30rem); /* Minimum: 200px, Preferred: 50% viewport width, Maximum: 800px */
+    overflow: hidden;
+
+    border-radius: var(--border-radius-arts);
+    
+    filter: drop-shadow(1px 1px 2px var(--shadow-color));
+
+    p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .service-card {
+        width: clamp(20rem, 90%, 95rem);
+    }
+}

@@ -1,0 +1,32 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 2rem;
+    /* height: calc(100vh - 100px); */
+    background-image: url("../../images/hero-background.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center; 
+
+    img {
+        max-width: 100%;  /* Prevents the image from exceeding the container's width */
+        max-height: 100%; /* Prevents the image from exceeding the container's height */
+        object-fit: contain; /* Ensures the image scales while maintaining aspect ratio */
+        flex-shrink: 0; /* Prevents the image from shrinking if the container gets smaller */
+    }
+
+    p {
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero {   
+        background-image: url("../../images/hero-background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9));
+        background-blend-mode: lighten;
+        padding-top: 100px;
+        align-items: center;
+    }
+}
