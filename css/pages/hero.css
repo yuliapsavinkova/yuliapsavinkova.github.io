@@ -5,7 +5,7 @@
     align-items: left;
     gap: 2rem;
     /* height: calc(100vh - 100px); */
-    background-image: url("../../images/hero-background.svg");
+    background-image: url("../../assets/images/hero-background.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right center; 
