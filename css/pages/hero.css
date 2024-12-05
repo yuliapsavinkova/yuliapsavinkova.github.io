@@ -24,7 +24,7 @@
 
 @media (max-width: 768px) {
     .hero {   
-        background-image: url("../../assetsimages/hero-background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9));
+        background-image: url("../../assets/images/hero-background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9));
         background-blend-mode: lighten;
         padding-top: 100px;
         align-items: center;
