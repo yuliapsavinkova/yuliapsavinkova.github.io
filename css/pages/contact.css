@@ -12,7 +12,7 @@
     background-color: var(--gra-white);
     border-radius: var(--border-radius-arts);
     box-shadow: 2px 2px 2px var(--primary-color-light);
-    border: 1px solid var(--neutral-color-dark);
+    border: 1px solid var(--primary-color-light);
 
     button {
       align-self: center;
