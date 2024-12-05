@@ -1,0 +1,52 @@
+:root {
+    --primary-color-dark: #002d5b;
+    --primary-color-light: #A6B2B5;
+    --neutral-color-dark: #fadbd1;
+    --neutral-color-light: #fefafa;
+    --accent-color-dark: #8a150f;
+    --accent-color-med: #cf2017;
+    --accent-color-light: #eb5047; 
+    --text-color: #464646;
+    --shadow-color: #fadbd1;
+    --gra-white: #ffffff;
+    --gra-black: black;
+    --gra-grey: #f5f6f7;
+}
+
+h1, h2, h3, h4, h5, h6, a, i, label {
+    color: var(--primary-color-dark);
+}
+
+p {
+    color: var(--text-color);
+}
+
+.button {
+    color: var(--neutral-color-light);
+    background-color: var(--accent-color-light);
+}
+
+.button:hover {
+    color: var(--neutral-color-light);
+    background-color: var(--accent-color-med);
+}
+
+.button:active {
+    background-color: var(--accent-color-dark);
+}
+
+i:hover, a:hover, .footer i:hover {
+    color: var(--accent-color-light);
+}
+
+.gra-separator {
+    border-top-color: var(--accent-color-light);
+}
+
+.footer {
+    background-color: var(--primary-color-dark);
+}
+
+.footer *, .working-process * {
+    color: var(--gra-white)
+}

@@ -1,0 +1,16 @@
+.working-process {
+    background: linear-gradient(
+                rgba(0, 0, 0, 0.5), 
+                rgba(0, 0, 0, 0.5)
+            ), 
+            url('../../images/working-girl.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    background-clip: padding-box;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 500px;
+
+    .gra-separator {
+        margin: 0;
+    }
+}

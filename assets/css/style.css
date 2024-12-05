@@ -1,41 +1,22 @@
-:root {
-    --hero-size: 100vh;
-    --header-size: 6rem;
-    --logo-size: 4rem;
-    --padding-sides: 8vw;
-    --border-radius-actions: 0.35rem;
-}
+@import "base/_buttons.css";
+@import "base/_colors.css";
+@import "base/_fonts.css";
+@import "base/_icons.css";
+@import "base/_images.css";
+@import "base/_reset.css";
+@import "base/_selection.css";
+@import "base/_typography.css";
+@import "base/_variables.css";
 
-.header {
-    height: var(--header-size);
-    padding: 0 var(--padding-sides);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
+@import "layout/_body.css";
+@import "layout/_footer.css";
+@import "layout/_header.css";
+@import "layout/_logo.css";
+@import "layout/_section.css";
+@import "layout/_separator.css";
 
-.logo-image {
-    width: var(--logo-size);
-    border-radius: var(--border-radius-actions);
-}
-
-.logo-image:hover {
-    filter: brightness(110%);
-}
-
-section {
-    padding: 3rem var(--padding-sides);
-}
-
-.hero {
-    height: calc(var(--hero-size) - var(--header-size));
-    background-image: url("../images/hero-background.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right center; 
-}
+@import "pages/_about.css";
+@import "pages/_contact.css";
+@import "pages/_hero.css";
+@import "pages/_services.css";
+@import "pages/_working-process.css";
