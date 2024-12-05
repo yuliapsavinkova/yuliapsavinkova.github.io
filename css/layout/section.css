@@ -8,7 +8,7 @@
 }
 
 .grey-background {
-    background-image: url("../../images/grey-waves.jpeg");
+    background-image: url("../../assets/images/grey-waves.jpeg");
     background-size: cover;
     filter: brightness(1.1);
 }
