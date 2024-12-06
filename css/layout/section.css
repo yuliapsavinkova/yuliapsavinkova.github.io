@@ -14,13 +14,14 @@
     background-image: url("../../assets/images/background.jpeg");
     background-size: cover;
     background-position: bottom right;
-    background-attachment: fixed;
 }
 
-/* .grey-background {
+.section.services {
     background-image: url("../../assets/images/grey-waves.jpeg");
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    filter: brightness(1.1);
-} */
+}
+
+@media (max-width: 768px) {
+    .section { 
+        background-image: url("../../assets/images/grey-waves.jpeg");
+    }
+}
