@@ -17,16 +17,20 @@
         flex-shrink: 0; /* Prevents the image from shrinking if the container gets smaller */
     }
 
-    p {
+    h5 {
         max-width: 550px;
+        text-align: left;
     }
 }
 
 @media (max-width: 768px) {
     .hero {   
         background-image: none;
-        /* background-image: url("../../assets/images/hero-background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)); */
-        /* background-blend-mode: lighten; */
+        background-image: url("../../assets/images/hero-background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9));
+        background-blend-mode: lighten;
         align-items: center;
+    }
+    h5 {
+        text-align: center;
     }
 }

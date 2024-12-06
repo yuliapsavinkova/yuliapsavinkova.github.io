@@ -7,10 +7,10 @@ class HeroComponent extends HTMLElement {
                 <h1>Yulia P. Savinkova</h1>
                 <h1>Software Engineer</h1>
             </div>
-            <p>
+            <h5>
                 A deep understanding of programming languages, frameworks, and system designs enables me to bring ideas to life
                 by blending creativity and technical expertise.
-            </p>
+            </h5>
             <div><a href="#about-me" class="button">Learn More</a></div>
             </section>
         `;

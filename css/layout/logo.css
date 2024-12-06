@@ -3,6 +3,7 @@
     height: var(--logo-size);
     overflow: hidden; /* Prevent overflow if the image is larger */
     font-size: 0; /* Without this when logo is inside image, image few pixels taller than the logo  */
+    height: var(--logo-size);
 }
 
 .logo-image {
@@ -14,10 +15,4 @@
 .logo:hover {
     transform: scale(1.1);
     filter: brightness(150%);
-}
-
-@media (max-width: 768px) {
-    .logo-image {
-        transform: scale(0.7);
-    }
 }

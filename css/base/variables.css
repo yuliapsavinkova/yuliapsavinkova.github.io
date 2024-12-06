@@ -6,12 +6,10 @@
     --hero-size: 100vh;
 
     /* header size */
-    --header-size: 6rem;
-    --header-size-sticky: 70px;
+    --header-size: 5rem;
 
     /* logo size */
-    --logo-size: 70px;  /* REM does not work */
-    --logo-size-sticky: 68px;  /* REM does not work */
+    --logo-size: 4rem;
 
     /* padding */
     --padding-sides: 8vw;

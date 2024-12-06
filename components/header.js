@@ -25,8 +25,8 @@ const smallScreenTemplate = `
         <li><a href="#stay-in-touch">Contact</a></li>
     </ul>
     <div id="hamburger" class="hamburger">
-        <i class="fa-solid fa-bars fa-3x hamburger-bars"></i>
-        <i class="fa-solid fa-xmark fa-3x hamburger-x"></i>
+        <i class="fa-solid fa-bars fa-2x hamburger-bars"></i>
+        <i class="fa-solid fa-xmark fa-2x hamburger-x"></i>
     </div>
 `;
 

@@ -3,7 +3,7 @@ class ContactComponent extends HTMLElement {
         this.innerHTML = `
             <section id="stay-in-touch" class="section stay-in-touch grey-background">
                 <h2>Stay In Touch</h2>
-                <p>Let's build something amazing together.</p>
+                <h5>Let's build something amazing together.</h5>
                 <div class="gra-separator"></div>
                 <div id="contact-form" class="contact-form">
                     <h3>Contact Me</h3>

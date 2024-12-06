@@ -27,15 +27,8 @@
 
 .header.sticky {
     z-index: 1000;
-    height: var(--header-size-sticky);
-
     position: fixed;
-
     background-color: var(--gra-white);
-
-    .link-image, .logo-image {
-        height: var(--logo-size-sticky);
-    }
 }
 
 /* State for closed mobile header. */
