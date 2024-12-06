@@ -1,5 +1,7 @@
 .working-process {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/working-girl.jpeg');
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/working-girl.jpeg');
+
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
@@ -16,12 +18,9 @@
 /* Mobile & Tablet Devices */
 @media screen and (max-width: 768px) {
     .working-process {
-        h2, h5, div {
+        /* h2, h5, div {
             display: none;;
-        }
-        background-image: url('../../assets/images/working-girl.jpeg');
+        } */
         background-attachment: scroll;
-        background-size: cover;
-        background-position: center center;
     }
 }

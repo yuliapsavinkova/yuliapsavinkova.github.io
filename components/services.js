@@ -18,7 +18,7 @@ class ServicesComponent extends HTMLElement {
                         <p>Building responsive and visually appealing layouts that work across all devices (desktop, tablet, mobile).</p>
                         <a href="#services" class="link-icon"><i class="fa-regular fa-circle-right fa-2xl"></i></a>
                     </div>
-                    <div class="service-card card-4">
+                    <div class="service-card">
                         <h3>Maintenance</h3>
                         <img src="assets/images/maintenance-pro.svg" class="work-image" alt="maintenance-image" />
                         <p>Provide ongoing maintenance, monitor performance and ensure smooth functioning of all features.</p>

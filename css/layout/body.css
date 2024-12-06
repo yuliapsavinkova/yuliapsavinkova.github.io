@@ -6,10 +6,16 @@ body {
     height: calc(100vh - var(--header-size));
 }
 
-section {
+.section {
     padding: 3rem; 
 }
 
 .footer {
     height: 10rem;
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        padding: 1rem; 
+    }
 }
