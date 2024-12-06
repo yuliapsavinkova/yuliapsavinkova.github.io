@@ -1,5 +1,5 @@
 .services {
-    background: linear-gradient(to bottom, var(--gra-white), var(--neutral-color-light));
+    background-color: var(--neutral-color-light);
 }
 
 .services-cards-container {
@@ -30,13 +30,13 @@
     gap: 1rem;
     margin: 1rem;
     padding: 1.4rem 1rem 1rem 1rem;
-    background-color: var(--gra-white);
-    width: clamp(20rem, 25%, 30rem); /* Minimum: 200px, Preferred: 50% viewport width, Maximum: 800px */
+    width: clamp(25rem, 25%, 30rem); /* Minimum: 200px, Preferred: 50% viewport width, Maximum: 800px */
     overflow: hidden;
-
     border-radius: var(--border-radius-arts);
-    
-    filter: drop-shadow(1px 1px 2px var(--primary-color-light));
+    box-shadow: 2px 2px 2px var(--primary-color-light);
+    border: 1px solid var(--primary-color-light);
+    background-color: var(--gra-white);
+
 
     p {
         text-align: center;
