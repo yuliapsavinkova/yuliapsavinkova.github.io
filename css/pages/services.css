@@ -1,7 +1,3 @@
-.services {
-    background-color: var(--neutral-color-light);
-}
-
 .services-cards-container {
     display: flex;
     flex-direction: row;

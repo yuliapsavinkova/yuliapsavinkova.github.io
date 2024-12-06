@@ -1,4 +1,3 @@
-
 .section {
     display: flex;
     flex-direction: column;
@@ -11,8 +10,17 @@
     }
 }
 
-.grey-background {
+.section {
+    background-image: url("../../assets/images/background.jpeg");
+    background-size: cover;
+    background-position: bottom right;
+    background-attachment: fixed;
+}
+
+/* .grey-background {
     background-image: url("../../assets/images/grey-waves.jpeg");
     background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
     filter: brightness(1.1);
-}
+} */
