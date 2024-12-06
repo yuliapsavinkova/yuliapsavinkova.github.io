@@ -1,7 +1,7 @@
 /* Base typography rules (font-family, line-height, etc.) */
 html {
      /* font-size: 16px; Default is 16px, 1rem=16px. */
-    font-size: clamp(14px, 2vw, 18px); /* Scales between 14px and 18px */
+    font-size: clamp(16px, 2vw, 18px); /* Scales between 14px and 18px */
     line-height: clamp(1.4, 2vw, 1.8); /* 1.4 to 1.6 is a standard range for readability */
 }
 
