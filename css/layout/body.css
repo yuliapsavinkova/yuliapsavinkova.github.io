@@ -6,8 +6,8 @@ body {
     height: calc(100vh - var(--header-size));
 }
 
-.section {
-    padding: 3rem; 
+section {
+    padding: 4rem 2rem; 
 }
 
 .footer {
@@ -15,7 +15,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .section {
-        padding: 1rem; 
+    section {
+        padding: 3rem 1rem; 
     }
 }
