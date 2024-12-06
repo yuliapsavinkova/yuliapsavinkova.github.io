@@ -2,6 +2,6 @@ img:hover {
     filter: brightness(105%);
 }
 
-.logo-image:hover {
-    filter: brightness(110%);
+.logo:hover {
+    filter: brightness(150%);
 }

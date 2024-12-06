@@ -1,7 +1,7 @@
 const header = document.getElementById('dynamicHeader');
 
 const largeScreenTemplate = `
-    <a href="index.html" class="logo link-image">
+    <a href="index.html" class="logo">
         <img src="assets/images/logo-colored.svg" class="logo-image" alt="logo-image"/>
     </a>
     <ul class="nav-links">
@@ -14,7 +14,7 @@ const largeScreenTemplate = `
 `;
 
 const smallScreenTemplate = `
-    <a href="index.html" class="logo link-image">
+    <a href="index.html" class="logo">
         <img src="assets/images/logo-colored.svg" class="logo-image" alt="logo-image"/>
     </a>
     <ul class="nav-links">

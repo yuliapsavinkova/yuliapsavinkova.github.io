@@ -1,18 +1,6 @@
-.link-image {
-    display: inline-block;
-    height: var(--logo-size);
-    overflow: hidden; /* Prevent overflow if the image is larger */
-    font-size: 0; /* Without this when logo is inside image, image few pixels taller than the logo  */
-    height: var(--logo-size);
-}
-
-.logo-image {
-    width: 100%; /* Scale the image to fit the link */
-    height: 100%; /* Stretch to fill the link */
-    object-fit: cover; /* Ensure the image fills the space without distortion */
-}
-
-.logo:hover {
-    transform: scale(1.1);
-    filter: brightness(150%);
+a img {
+    vertical-align: middle;
+    border: none;
+    max-height: var(--logo-size);
+    width: auto;
 }

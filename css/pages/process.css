@@ -16,7 +16,7 @@
 /* Mobile & Tablet Devices */
 @media screen and (max-width: 768px) {
     .working-process {
-        h2, p, div {
+        h2, h5, div {
             display: none;;
         }
         background-image: url('../../assets/images/working-girl.jpeg');
