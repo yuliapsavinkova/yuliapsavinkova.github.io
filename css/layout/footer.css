@@ -1,4 +1,6 @@
 .footer {
+    height: var(--footer-size);
+    
     display: flex;
     flex-direction: column;
     justify-content: center;

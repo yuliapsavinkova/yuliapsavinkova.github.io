@@ -7,7 +7,7 @@
     --logo-size: 4rem;
 
     /* padding */
-    --padding-sides: 8vw;
+    --global-padding: 2rem;
 
     /* logos, buttons, links */
     --border-radius-actions: 0.35rem;
