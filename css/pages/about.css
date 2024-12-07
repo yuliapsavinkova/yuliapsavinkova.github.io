@@ -22,7 +22,7 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .aboutme-container {
         flex-wrap: wrap;
         .aboutme-image {

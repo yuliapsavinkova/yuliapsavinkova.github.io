@@ -1,36 +1,89 @@
-.hero {
+section.hero {
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+    flex-wrap: no-wrap;
+
+    width: 100%;
+    height: calc(100vh - var(--header-size));
+}
+
+.hero-left, .hero-left {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+.hero-left {
+    /* border: 1px solid red; */
+    padding: 2rem;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    gap: 2rem;
-    /* height: calc(100vh - 100px); */
-    background-image: url("../../assets/images/hero-background.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right center; 
 
-    img {
-        max-width: 100%;  /* Prevents the image from exceeding the container's width */
-        max-height: 100%; /* Prevents the image from exceeding the container's height */
-        object-fit: contain; /* Ensures the image scales while maintaining aspect ratio */
-        flex-shrink: 0; /* Prevents the image from shrinking if the container gets smaller */
+    gap: 1.5rem;
+
+    min-width: 400px;
+    max-width: 800px;
+
+    .button {
+        align-self: start;
     }
+}
 
-    h5 {
-        max-width: 550px;
-        text-align: left;
+.hero-right {
+    /* border: 1px solid blue; */
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    min-width: 400px;
+    max-width: 800px;
+
+    .hero-image {
+        /* width: clamp(500px, 50vw, 800px); */
+        height: clamp(500px, 90vh, 800px);
+        object-fit: contain;
     }
 }
 
 @media (max-width: 768px) {
-    .hero { 
-        background-image: none;
-        /* background-image: url("../../assets/images/hero-background.svg"), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)); */
-        /* background-blend-mode: lighten; */
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: var(--header-size);
+        left: 0;
+        width: 100%;
+        height: calc(100% - var(--header-size));
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .hero {
+        background-image: url("../../assets/images/hero-background.svg");
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        background-clip: padding-box;
+        background-repeat: no-repeat;
+    }
+
+    .hero-left {
+        z-index: 1;
         align-items: center;
-        h5 {
-            text-align: center;
+        .button {
+            align-self: center;
         }
+    }
+
+    .hero-right {
+        display: none;
     }
 }

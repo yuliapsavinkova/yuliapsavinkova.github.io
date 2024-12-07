@@ -1,7 +1,7 @@
 const header = document.getElementById('dynamicHeader');
 
 const largeScreenTemplate = `
-    <a href="index.html" class="logo">
+    <a href="#" class="logo">
         <img src="assets/images/logo-colored.svg" class="logo-image" alt="logo-image"/>
     </a>
     <ul class="nav-links">
@@ -14,7 +14,7 @@ const largeScreenTemplate = `
 `;
 
 const smallScreenTemplate = `
-    <a href="index.html" class="logo">
+    <a href="#" class="logo">
         <img src="assets/images/logo-colored.svg" class="logo-image" alt="logo-image"/>
     </a>
     <ul class="nav-links">
@@ -32,11 +32,6 @@ const smallScreenTemplate = `
 
 function handleMediaQueryChange(event) {
     if (event.matches) {
-        // Large screen
-        header.innerHTML = largeScreenTemplate;
-        header.classList.remove('mobile');
-
-    } else {
         // Small screen
         header.innerHTML = smallScreenTemplate;
         header.classList.add('mobile');
@@ -48,11 +43,15 @@ function handleMediaQueryChange(event) {
                 header.classList.toggle('active');
             });
         }
+    } else {
+        // Large screen
+        header.innerHTML = largeScreenTemplate;
+        header.classList.remove('mobile');
     }
 }
 
 // Media query definition
-const mediaQuery = window.matchMedia('(min-width: 768px)');
+const mediaQuery = window.matchMedia('(max-width: 768px)');
 
 // Initial check and listener setup
 handleMediaQueryChange(mediaQuery);

@@ -2,16 +2,17 @@ class HeroComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <section id="hero" class="hero">
-            <icons-component></icons-component>
-            <div class="hero-title">
-                <h1>Yulia P. Savinkova</h1>
-                <h1>Software Engineer</h1>
-            </div>
-            <h5>
-                A deep understanding of programming languages, frameworks, and system designs enables me to bring ideas to life
-                by blending creativity and technical expertise.
-            </h5>
-            <div><a href="#about-me" class="button">Learn More</a></div>
+                <div class="hero-left">
+                    <icons-component></icons-component>
+                    <h1>Yulia P. Savinkova</h1>
+                    <h5>Software Engineer with 10+ years of experience.</h5>
+                    <h5>Specializes in HTML, CSS, JavaScript, React and Node.js.</h5>
+                    <h5>Holds a Master’s degree in Computer Science.</h5>
+                    <a href="#about-me" class="button">Learn More</a>
+                </div>
+                <div class="hero-right">
+                    <img src="../../assets/images/hero-background.svg" class="hero-image" alt="portrait-image"/>
+                </div>
             </section>
         `;
     }
