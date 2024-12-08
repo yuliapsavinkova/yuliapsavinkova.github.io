@@ -1,37 +1,17 @@
 /* Base typography rules (font-family, line-height, etc.) */
 html {
-    font-size: 16px;  /* Default is 16px, 1rem=16px. */
-    /* standard: 14px and 18px */
-    /* font-size: clamp(16px, 2vw, 18px);  */
-    /* standard: 1.4 to 1.6 */
-    /* line-height: clamp(1.4, 2vw, 1.8);  */
-}
-
-body, a, button {
+    font-size: clamp(16px, 2vw, 18px); /* standard between 14px and 18px */
+    font-style: regular;
     font-family: 'Montserrat', Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Newsreader', Arial, sans-serif;
-}
-
-/* h1 { font-size: clamp(2rem, 4vw, 4rem); }
-h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
-h5 { font-size: clamp(1.1rem, 1.5vw, 1.5rem); }
-h6 { font-size: clamp(1rem, 1vw, 1.25rem); }
-a { font-size: clamp(1.1rem, 1vw, 1.3rem); }
-button { font-size: clamp(1rem, 1vw, 1.25rem); }
-p, input::placeholder, textarea::placeholder { font-size: clamp(0.9rem, 1vw, 1.1rem); }
-
 /* Headings */
-h1 { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
-h2 { font-size: 2rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
-h3 { font-size: 1.75rem; font-weight: 600; letter-spacing: 0em; line-height: 1.3; }
-h4 { font-size: 1.5rem; font-weight: 600; letter-spacing: 0em; line-height: 1.35; }
-h5 { font-size: 1.25rem; font-weight: 500; letter-spacing: 0.01em; line-height: 1.4; }
-h6 { font-size: 1rem; font-weight: 500; letter-spacing: 0.02em; line-height: 1.5; }
+h1 { font-size: 2.5rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; font-style: italic}
+h2 { font-size: 2rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; }
+h3 { font-size: 1.75rem; font-weight: 500; letter-spacing: 0em; line-height: 1.3; }
+h4 { font-size: 1.5rem; font-weight: 500; letter-spacing: 0em; line-height: 1.35; }
+h5 { font-size: 1.25rem; font-weight: 400; letter-spacing: 0.01em; line-height: 1.4; }
+h6 { font-size: 1rem; font-weight: 400; letter-spacing: 0.02em; line-height: 1.5; }
 
 /* Paragraphs */
 p { font-size: 1rem; font-weight: 400; letter-spacing: 0em; line-height: 1.6; }
@@ -47,3 +27,5 @@ button, .button-link { font-size: 1rem; font-weight: 400; letter-spacing: 0em; l
 /* Form Elements */
 label { font-size: 1rem; font-weight: 500; letter-spacing: 0.01em; line-height: 1.5; }
 input, textarea { font-size: 1rem; font-weight: 400; letter-spacing: 0em; line-height: 1.2; }
+
+input::placeholder, textarea::placeholder { font-family: inherit; font-size: inherit; }

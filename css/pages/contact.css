@@ -7,45 +7,47 @@
 }
 
 .contact-form {
-    width: 100%;
-    padding: 20px;
-    background-color: var(--gra-white);
-    border-radius: var(--border-radius-arts);
-    box-shadow: 2px 2px 2px var(--primary-color-light);
-    border: 1px solid var(--primary-color-light);
+  width: 100%;
+  padding: 20px;
+  background-color: var(--gra-white);
+  border-radius: var(--border-radius-arts);
+  box-shadow: 2px 2px 2px var(--primary-color-light);
+  border: 1px solid var(--primary-color-light);
 
-    button {
-      align-self: center;
-    }
-  }
-  
-  textarea {
-    resize: none;
-  }
-
-  h3 {
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .button-link {
+  button {
     align-self: center;
   }
-  
-  input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid var(--primary-color-light);
-    border-radius: var(--border-radius-actions);
-  }
-  
-  input:focus, textarea:focus {
-    border-color: var(--accent-color-med);
-    outline: none;
-  }
-  
+}
+
+h3 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-link {
+  align-self: center;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--primary-color-light);
+  border-radius: var(--border-radius-actions);
+}
+
+textarea {
+  resize: none;
+}
+
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color-dark);
+  outline: none;
+}
