@@ -3,7 +3,7 @@ class AboutComponent extends HTMLElement {
         this.innerHTML = `
             <section id="about-me" class="section about-me">
                 <h2>About Me</h2>
-                <h5>Solving complex problems and creating impactful, user-friendly software solutions.</h5>
+                <p class="large">Solving complex problems and creating impactful, user-friendly software solutions.</p>
                 <div class="gra-separator"></div>
                 <div class="aboutme-container">
                     <img src="assets/images/portrait-noback.png" class="aboutme-image"/>

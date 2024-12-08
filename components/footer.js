@@ -2,7 +2,7 @@ class FooterComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <footer id="footer" class="footer">
-                <icons-component></icons-component>
+                <social-icons></social-icons>
                 <div class="footer-copyright">
                     <a href="#" class="logo">
                         <img src="assets/images/logo-white.svg" class="logo-image" alt="logo-image"/>

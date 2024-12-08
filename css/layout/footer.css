@@ -1,6 +1,7 @@
 .footer {
     height: var(--footer-size);
-    
+    padding: var(--global-padding);
+
     display: flex;
     flex-direction: column;
     justify-content: center;

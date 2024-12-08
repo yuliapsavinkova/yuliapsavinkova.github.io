@@ -1,4 +1,4 @@
-class IconsComponent extends HTMLElement {
+class SocialIcons extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <a href="https://github.com/yuliapsavinkova" target="_blank" class="link-icon"><i class="fab fa-github fa-xl"></i></a>
@@ -8,4 +8,4 @@ class IconsComponent extends HTMLElement {
         `;
     }
 }
-customElements.define('icons-component', IconsComponent);
+customElements.define('social-icons', SocialIcons);
