@@ -4,12 +4,7 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-
-    padding: 4rem var(--global-padding);
-
-    h5 {
-        text-align: center;
-    }
+    padding: var(--global-padding-between) var(--global-padding-sides);
 }
 
 .section {

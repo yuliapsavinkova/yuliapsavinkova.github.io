@@ -7,11 +7,18 @@
     --logo-size: 4rem;
 
     /* padding */
-    --global-padding: 2rem;
+    --global-padding-sides: 2rem;
+    --global-padding-between: 4rem;
 
     /* logos, buttons, links */
     --border-radius-actions: 0.35rem;
     
     /* images, backgrounds, cards */
     --border-radius-arts: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --global-padding-sides: 1rem;
+    }
 }

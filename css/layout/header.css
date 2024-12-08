@@ -8,7 +8,7 @@
     left: 0;
     width: 100%;
 
-    padding: var(--global-padding);
+    padding: var(--global-padding-sides);
 
     display: flex;
     flex-direction: row;

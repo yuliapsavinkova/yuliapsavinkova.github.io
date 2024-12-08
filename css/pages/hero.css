@@ -18,7 +18,8 @@
     width: 100%;
     height: 100vh;
 
-    padding-left: var(--global-padding);
+    padding: var(--global-padding-between) 0 var(--global-padding-between) var(--global-padding-sides);
+
     gap: 1.5rem;
 
     .button-link {
@@ -42,9 +43,10 @@
     }
 
     .hero-content {
+        padding: var(--global-padding-between) var(--global-padding-sides);
         align-items: center;
 
-        .large {
+        p.large {
             text-align: center;
         }
 
