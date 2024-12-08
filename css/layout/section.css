@@ -16,6 +16,10 @@
     background-image: url("../../assets/images/background.jpeg");
     background-size: cover;
     background-position: bottom right;
+
+    p.large {
+        text-align: center;
+    }
 }
 
 .section.services {

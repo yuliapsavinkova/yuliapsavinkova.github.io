@@ -21,7 +21,7 @@
     padding-left: var(--global-padding);
     gap: 1.5rem;
 
-    .button {
+    .button-link {
         align-self: start;
     }
 }
@@ -48,7 +48,7 @@
             text-align: center;
         }
 
-        .button {
+        .button-link {
             align-self: center;
         }
     }

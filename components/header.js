@@ -10,7 +10,7 @@ const largeScreenTemplate = `
         <li><a href="#about-me">About</a></li>
         <li><a href="#">Blog</a></li>
     </ul>
-    <a href="#stay-in-touch" class="button nav-btn">Contact Me</a>
+    <a href="#stay-in-touch" class="button-link">Contact Me</a>
 `;
 
 const smallScreenTemplate = `

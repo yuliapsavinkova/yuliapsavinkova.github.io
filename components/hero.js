@@ -11,7 +11,7 @@ class HeroComponent extends HTMLElement {
                         <p class="large">Specializes in HTML, CSS, JavaScript, React and Node.js.</p>
                         <p class="large">Holds a Master’s degree in Computer Science.</p>
                     </div>
-                    <a href="#about-me" class="button">Learn More</a>
+                    <a href="#about-me" class="button-link">Learn More</a>
                 </div>
             </section>
         `;
