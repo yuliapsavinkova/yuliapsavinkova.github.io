@@ -1,12 +1,12 @@
 /* Base typography rules (font-family, line-height, etc.) */
 html {
-    font-size: clamp(16px, 2vw, 18px); /* standard between 14px and 18px */
+    font-size: clamp(14px, 2vw, 18px); /* standard between 14px and 18px */
     font-style: regular;
     font-family: 'Montserrat', Arial, sans-serif;
 }
 
 /* Headings */
-h1 { font-size: 2.5rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; font-style: italic}
+h1 { font-size: 2.5rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
 h2 { font-size: 2rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; }
 h3 { font-size: 1.75rem; font-weight: 500; letter-spacing: 0em; line-height: 1.3; }
 h4 { font-size: 1.5rem; font-weight: 500; letter-spacing: 0em; line-height: 1.35; }
