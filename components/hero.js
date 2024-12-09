@@ -5,11 +5,12 @@ class HeroComponent extends HTMLElement {
                 <div class="overlay"></div>
                 <div class="hero-content">
                     <social-icons></social-icons>
-                    <h1>Yulia Savinkova</h1>
                     <div>
-                        <p class="large">Software Engineer with 10+ years of experience.</p>
-                        <p class="large">Specializes in HTML, CSS, JavaScript, React and Node.</p>
-                        <p class="large">Holds a Master’s degree in Computer Science.</p>
+                        <h1>Yulia Savinkova</h1>
+                        <h2>Software Engineer</h2>
+                        <h3>10+ years of experience</h3>
+                        <h4>MS in Computer Science</h4>
+                        <h5>HTML, CSS, JavaScript, React and Node</h5>
                     </div>
                     <a href="#about-me" class="button-link">Learn More</a>
                 </div>
