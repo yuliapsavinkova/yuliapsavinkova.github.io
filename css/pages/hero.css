@@ -1,9 +1,15 @@
 .hero {
     position: relative;
+}
+
+.content-float {
+    position: absolute;
+    inset: var(--header-size) 0 0 300px; /* TODO */
     background-image: url("../../assets/images/hero-background.svg");
-    background-repeat: no-repeat;
+    background-size: contain;
     background-position: bottom right;
-    background-size: auto 95%;
+    background-repeat: no-repeat;
+    /* border: 1px solid red; */
 }
 
 .hero-content {
@@ -23,11 +29,19 @@
 }
 
 @media (max-width: 768px) {
-    .hero {
-        background-position: bottom center;
+
+    .content-float {
+        display: none;
+        /* border: 2px solid yellow;
+        inset: var(--header-size) 0 0 50%;
+        background-position: bottom center; */
+        /* inset: 0;
+        margin: auto; */
+
+
     }
 
-    .overlay {
+    /* .overlay {
         z-index: 1;
         position: absolute;
         top: 0;
@@ -35,11 +49,15 @@
         width: 100%;
         height: 100%;
         background-color: rgba(255, 255, 255, 0.8);
-    }
+    } */
 
     .hero-content {
         padding: var(--global-padding-between) var(--global-padding-sides);
         align-items: center;
+
+        .hero-heading {
+            text-align: center;
+        }
 
         p.large {
             text-align: center;

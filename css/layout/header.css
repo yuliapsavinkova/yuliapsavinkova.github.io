@@ -8,7 +8,7 @@
     left: 0;
     width: 100%;
 
-    padding: var(--global-padding-sides);
+    padding: 3rem var(--global-padding-sides);
 
     display: flex;
     flex-direction: row;
@@ -70,6 +70,8 @@
     .header {
         display: none;
 
+        padding: var(--global-padding-sides);
+
         /* height: var(--header-size); */
     
         position: absolute;
@@ -81,7 +83,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 2rem;
 
         .nav-links {
             list-style: none;

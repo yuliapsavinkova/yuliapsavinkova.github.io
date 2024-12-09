@@ -33,6 +33,7 @@
 
   input,
   textarea {
+    caret-color: var(--primary-color-dark);
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
