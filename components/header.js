@@ -62,7 +62,7 @@ window.addEventListener("scroll", () => {
 });
 
 // Sticky header appears when scrolled further viewport size
-const viewportHeight = window.innerHeight;
+const viewportHeight = window.innerHeight/2;
 window.onscroll = function() {
     if (window.scrollY > viewportHeight) {
         header.classList.add("sticky");
