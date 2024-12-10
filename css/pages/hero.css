@@ -38,13 +38,15 @@
 @media (max-width: 768px) {
 
     .content-float {
-        inset: var(--header-size) 0 50% 0;
+        /* border: 1px solid green;; */
+        inset: var(--header-size) 0 60% 0;
         background-position: center center;
-        border-radius: 50%;
     }
 
     .hero-content {
-        inset: 50% 0 0 0;
+        /* border: 1px solid red;; */
+        inset: 40% 0 0 0;
         justify-content: flex-start;
+        padding: 1rem 0 0 0;
     }
 }
