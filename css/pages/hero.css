@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    max-width: 1200px;
 }
 
 .content-float {
@@ -15,10 +16,8 @@
 }
 
 .hero-content {
-
     position: absolute;
     inset: var(--header-size) 20rem 0 0;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,13 +29,16 @@
     .hero-heading {
         text-align: center;
     }
+
     .button-link {
         align-self: center;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {}
 
+/* Styles for portrait orientation */
+@media (orientation: portrait) {
     .content-float {
         /* border: 1px solid green;; */
         inset: var(--header-size) 0 60% 0;
@@ -48,5 +50,12 @@
         inset: 40% 0 0 0;
         justify-content: flex-start;
         padding: 1rem 0 0 0;
+    }
+}
+
+/* Styles for landscape orientation */
+@media (orientation: landscape) {
+    body {
+        background-color: lightgreen;
     }
 }

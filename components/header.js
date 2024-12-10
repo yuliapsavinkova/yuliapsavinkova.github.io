@@ -4,6 +4,7 @@ const largeScreenTemplate = `
     <a href="#" class="logo">
         <img src="assets/images/logo-colored.svg" class="logo-image" alt="logo-image"/>
     </a>
+    <div id="screenWidth"></div>
     <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#services">Services</a></li>
@@ -17,6 +18,7 @@ const smallScreenTemplate = `
     <a href="#" class="logo">
         <img src="assets/images/logo-colored.svg" class="logo-image" alt="logo-image"/>
     </a>
+    <div id="screenWidth"></div>
     <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#services">Services</a></li>
