@@ -2,7 +2,6 @@ class HeroComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <section id="hero" class="hero">
-                <div class="overlay"></div>
                 <div class="hero-content">
                     <social-icons></social-icons>
                     <div class="hero-heading">
@@ -14,9 +13,8 @@ class HeroComponent extends HTMLElement {
                     </div>
                     <a href="#about-me" class="button-link">Learn More</a>
                 </div>
-                <div class="content-float"></div>
+                <div class="hero-content-portrait"></div>
             </section>
-            
         `;
     }
 }

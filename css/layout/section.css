@@ -5,12 +5,6 @@
     align-items: center;
     gap: 2rem;
     padding: var(--global-padding-between) var(--global-padding-sides);
-}
-
-.section {
-    /* background-image: url("../../assets/images/background.jpeg"); */
-    background-size: cover;
-    background-position: bottom right;
 
     p.large {
         text-align: center;
@@ -19,10 +13,6 @@
 
 .section.services, .section.contact {
     background-image: url("../../assets/images/grey-waves.jpeg");
-}
-
-@media (max-width: 768px) {
-    .section { 
-        background-image: url("../../assets/images/grey-waves.jpeg");
-    }
+    background-size: cover;
+    background-position: bottom right;
 }
