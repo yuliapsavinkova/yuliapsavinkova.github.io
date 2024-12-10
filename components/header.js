@@ -10,7 +10,7 @@ const largeScreenTemplate = `
         <li><a href="#about-me">About</a></li>
         <li><a href="#">Blog</a></li>
     </ul>
-    <a href="#stay-in-touch" class="button-link">Contact Me</a>
+    <a href="#contact" class="button-link">Contact Me</a>
 `;
 
 const smallScreenTemplate = `
@@ -22,7 +22,7 @@ const smallScreenTemplate = `
         <li><a href="#services">Services</a></li>
         <li><a href="#about-me">About</a></li>
         <li><a href="#">Blog</a></li>
-        <li><a href="#stay-in-touch">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
     <div id="hamburger" class="hamburger">
         <i class="fa-solid fa-bars fa-2x hamburger-bars"></i>
@@ -62,7 +62,7 @@ window.addEventListener("scroll", () => {
 });
 
 // Sticky header appears when scrolled further viewport size
-const viewportHeight = window.innerHeight/2;
+const viewportHeight = window.innerHeight - 100;
 window.onscroll = function() {
     if (window.scrollY > viewportHeight) {
         header.classList.add("sticky");

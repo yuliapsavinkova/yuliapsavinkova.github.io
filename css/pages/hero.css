@@ -5,6 +5,7 @@
 }
 
 .content-float {
+    /* border: 1px solid green;; */
     position: absolute;
     inset: var(--header-size) 0 0 20rem;
     background-image: url("../../assets/images/hero-background.svg");
@@ -14,9 +15,8 @@
 }
 
 .hero-content {
-    position: absolute;
 
-    z-index: 2;
+    position: absolute;
     inset: var(--header-size) 20rem 0 0;
 
     display: flex;
