@@ -4,10 +4,7 @@ class FooterComponent extends HTMLElement {
             <footer id="footer" class="footer">
                 <social-icons></social-icons>
                 <div class="footer-copyright">
-                    <a href="#" class="logo">
-                        <img src="assets/images/logo-white.svg" class="logo-image" alt="logo-image"/>
-                    </a>
-                    <p>Copyright &copy; 2024 Portfolio. All rights reserved.</p>
+                    <p>&copy; 2024 Yulia Savinkova</p>
                 </div>
             </footer>
         `;

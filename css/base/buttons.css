@@ -7,12 +7,12 @@
     outline: none;
     text-align: center;
     text-decoration: none;
-}
 
-.button-link:hover {
-    scale: 1.05;
-}
+    &:hover {
+        scale: 1.05;
+    }
 
-.button-link:active {
-    scale: 0.95;
+    &:active {
+        scale: 0.95;
+    }
 }

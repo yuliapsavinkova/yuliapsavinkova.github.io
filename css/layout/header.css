@@ -8,7 +8,8 @@
     left: 0;
     width: 100%;
 
-    padding: 3rem var(--global-padding-sides);
+    margin: 1rem 0;
+    padding: var(--global-padding-sides);
 
     display: flex;
     flex-direction: row;
@@ -34,6 +35,7 @@
 .header.sticky {
     position: fixed;
     background-color: var(--gra-white);
+    margin: 0;
 }
 
 /* State for closed mobile header. */
@@ -70,8 +72,7 @@
     .header {
         display: none;
 
-        padding: var(--global-padding-sides);
-
+        margin: 0;
         /* height: var(--header-size); */
     
         position: absolute;

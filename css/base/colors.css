@@ -23,18 +23,18 @@ p {
 .button-link {
     color: var(--neutral-color-light);
     background-color: var(--accent-color-light);
+
+    &:hover {
+        color: var(--neutral-color-light);
+        background-color: var(--accent-color-med);
+    }
+
+    &:active {
+        background-color: var(--accent-color-dark);
+    }
 }
 
-.button-link:hover {
-    color: var(--neutral-color-light);
-    background-color: var(--accent-color-med);
-}
-
-.button-link:active {
-    background-color: var(--accent-color-dark);
-}
-
-i:hover, a:hover, .footer i:hover {
+i:hover, a:hover {
     color: var(--accent-color-light);
 }
 
