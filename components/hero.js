@@ -9,11 +9,12 @@ class HeroComponent extends HTMLElement {
                         <h2>Software Engineer</h2>
                         <h3>10+ years of experience</h3>
                         <h4>MS in Computer Science</h4>
-                        <h5>HTML, CSS, JavaScript, React and Node</h5>
                     </div>
                     <a href="#about-me" class="button-link">Learn More</a>
                 </div>
-                <div class="hero-content-portrait"></div>
+                <div class="hero-portrait">
+                    <img src="../assets/images/hero-background.svg" />
+                </div>
             </section>
         `;
     }
