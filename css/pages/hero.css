@@ -49,12 +49,13 @@
 
         .hero-portrait,
         .hero-content {
-            height: 40%;
+            height: 0%;
         }
 
         .hero-portrait {
             order: -1;
             flex-grow: 1;
+            padding-top: var(--header-size);
 
             img {
                 object-fit: contain;
