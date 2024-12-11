@@ -7,12 +7,16 @@
     outline: none;
     text-align: center;
     text-decoration: none;
+    color: var(--neutral-color-light);
+    background-color: var(--accent-color-light);
+}
 
-    &:hover {
-        scale: 1.05;
-    }
-
-    &:active {
-        scale: 0.95;
-    }
+.button-link:hover {
+    scale: 1.05;
+    color: var(--neutral-color-light);
+    background-color: var(--accent-color-med);
+}
+.button-link:active {
+    scale: 0.95;
+    background-color: var(--accent-color-dark);
 }

@@ -1,5 +1,7 @@
 @import "./fonts/fonts-montserrat.css";
 
+@import "../components/header/header.css";
+
 @import "./base/scroll.css";
 @import "./base/buttons.css";
 @import "./base/colors.css";
@@ -10,7 +12,6 @@
 @import "./base/variables.css";
 
 @import "./layout/footer.css";
-@import "./layout/header.css";
 @import "./layout/logo.css";
 @import "./layout/section.css";
 @import "./layout/separator.css";
