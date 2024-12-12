@@ -59,18 +59,16 @@ class HeaderComponent extends HTMLElement {
         const viewportHeight = window.innerHeight - 100;
         // adds sticky to host - maybe need to add to header itself?
         (window.scrollY > viewportHeight) ? this.classList.add("sticky") : this.classList.remove("sticky");
-
         this.classList.remove("open");
     }
 
     _handleMenuClick() {
-        console.log("clicked");
         this.classList.toggle('open');
     }
 
     connectedCallback() {
         window.addEventListener('resize', this._handleResize);
-        window.addEventListener('scroll', this._handleScroll);
+        window.addEventListener('scroll', Utils.throttle(this._handleScroll, 200));
         // this.menuButton.addEventListener('click', this._handleMenuClick);
 
         this._handleResize();
@@ -82,4 +80,5 @@ class HeaderComponent extends HTMLElement {
         // this.menuButton.removeEventListener('click', this._handleMenuClick);
     }
 }
+
 customElements.define('header-component', HeaderComponent);

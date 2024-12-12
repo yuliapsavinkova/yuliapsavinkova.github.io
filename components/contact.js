@@ -9,10 +9,10 @@ class ContactComponent extends HTMLElement {
                     <h3>Contact Me</h3>
                     <form action="https://formspree.io/f/xqakdrpw" method="POST">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <input type="text" autocomplete="on" id="name" name="name" placeholder="Enter your name" required>
 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                    <input type="email" autocomplete="on" id="email" name="email" placeholder="Enter email address" required>
 
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="4" placeholder="Enter your Message" required></textarea>
