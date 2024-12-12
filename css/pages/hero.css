@@ -1,4 +1,5 @@
 .hero {
+
     height: 100vh;
     width: 100%;
 
@@ -33,7 +34,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
     padding-left: var(--global-padding-sides);
 
     .hero-heading {
