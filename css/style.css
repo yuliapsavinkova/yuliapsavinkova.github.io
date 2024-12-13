@@ -1,6 +1,7 @@
 @import "./fonts/fonts-montserrat.css";
 
 @import "../components/header/header.css";
+@import "../components/header/hamburger.css";
 
 @import "./base/scroll.css";
 @import "./base/buttons.css";
