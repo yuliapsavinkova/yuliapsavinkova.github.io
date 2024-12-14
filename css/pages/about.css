@@ -5,11 +5,12 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap: 2rem;
+    gap: 4rem;
+    max-width: 1000px;
 }
 
 .aboutme-image {
-    width: clamp(200px, 40vw, 600px);
+    width: clamp(350px, 30vw, 600px);
     height: auto;
     border-radius: 3rem;
 }

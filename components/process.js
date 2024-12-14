@@ -3,7 +3,7 @@ class WorkingProcessComponent extends HTMLElement {
         this.innerHTML = `
             <section id="working-process" class="section working-process">
                 <h2>Working Process</h2>
-                <p class="large">Streamlined Steps to Deliver Reliable and Scalable Software Solutions</p>
+                <p class="large">I am a U.S.-based remote Software Engineer, with the flexibility to travel on-site as needed.</p>
                 <div class="gra-separator"></div>
             </section>
         `;
