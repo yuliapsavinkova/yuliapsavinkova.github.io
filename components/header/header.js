@@ -15,8 +15,8 @@ class HeaderComponent extends HTMLElement {
                     <img src="assets/images/logo-colored.svg" alt="logo"/>
                 </a>
                 <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
