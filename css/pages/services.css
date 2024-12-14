@@ -1,14 +1,20 @@
+.services {
+    max-width: 1000px;
+    margin: auto;
+}
+
 .services-cards-container {
     display: flex;
     flex-direction: row;
     gap: 1rem;
 
-    .services-image {
+    /* .services-image {
         width: 5rem;
-    }
+    } */
 
     .work-image {
         width: 50%;
+        height: auto;
     }
 
     .work-image:hover {
@@ -19,9 +25,9 @@
 .service-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-
+    gap: 1rem;
     padding: 1rem;
     overflow: hidden;
     

@@ -11,10 +11,7 @@
     --global-padding-between: 4rem;
 
     /* logos, buttons, links */
-    --border-radius-actions: 0.35rem;
-    
-    /* images, backgrounds, cards */
-    --border-radius-arts: 1.25rem;
+    --border-radius-button: 0.35rem;
 }
 
 @media (max-width: 768px) {

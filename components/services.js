@@ -21,7 +21,7 @@ class ServicesComponent extends HTMLElement {
                     <div class="service-card">
                         <h4>Maintenance</h4>
                         <img src="assets/images/maintenance-pro.svg" class="work-image" alt="maintenance-image" />
-                        <p>Provide ongoing maintenance, monitor performance and ensure smooth functioning of all features.</p>
+                        <p>Provide maintenance, monitor performance and ensure smooth functioning of all features.</p>
                         <a href="#services"><i class="fa-regular fa-circle-right fa-xl"></i></a>
                     </div>
                 </div>

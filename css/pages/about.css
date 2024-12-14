@@ -14,7 +14,7 @@
 .aboutme-image {
     width: clamp(350px, 30vw, 600px);
     height: auto;
-    border-radius: 3rem;
+    border-radius: 4px;
 }
 
 .aboutme-content {
