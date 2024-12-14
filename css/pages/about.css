@@ -5,29 +5,33 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .aboutme-image {
-    width: clamp(200px, 50vw, 600px); /* Minimum: 200px, Preferred: 50% viewport width, Maximum: 800px */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 1.25rem;
+    width: clamp(200px, 40vw, 600px);
+    height: auto;
+    border-radius: 3rem;
 }
 
 .aboutme-content {
-    align-self: center;
-
-    p {
-        padding-top: 1rem;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
 @media (max-width: 768px) {
     .aboutme-container {
         flex-wrap: wrap;
         .aboutme-image {
-            width: clamp(200px, 80vw, 600px);
+            width: clamp(200px, 50vw, 600px);
             height: auto;
+        }
+        .aboutme-content {
+            align-items: center;
+            text-align: center;
         }
     }
 }

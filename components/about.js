@@ -3,29 +3,18 @@ class AboutComponent extends HTMLElement {
         this.innerHTML = `
             <section id="about-me" class="section about-me">
                 <h2>About Me</h2>
-                <p class="large">Solving complex problems and creating impactful, user-friendly software solutions.</p>
+                <p class="large">Bringing Web Ideas to Life</p>
                 <div class="gra-separator"></div>
                 <div class="aboutme-container">
                     <img src="assets/images/portrait-noback.png" class="aboutme-image"/>
                     <div class="aboutme-content">
                         <h3>Transforming visions into realities.</h3>
                         <p>
-                            I am a highly skilled and motivated Software Engineer with over 10 years of experience in designing,
-                            developing, and optimizing web applications. My expertise lies in creating seamless user experiences using
-                            modern web technologies, with a strong foundation in HTML, CSS, JavaScript, and frameworks such as React and
-                            Angular.
+                            I am a Software Engineer with 10+ years of experience and a Master's degree in Computer Science.
+                            I specialize in developing complex, feature-rich web applications using HTML, CSS, JavaScript, native Web Components, and frameworks like React and Angular.
+                            My tech stack includes Git, VS Code, and modern build tools, ensuring efficient and scalable development workflows.
                         </p>
-                        <p>
-                            I am proficient in version control systems like Git, build tools like Webpack, and development environments
-                            including VS Code, ensuring efficient and scalable code. With a solid background in SQL and REST APIs, I
-                            excel in integrating and managing back-end services to deliver robust and high-performance solutions.
-                        </p>
-                        <p>
-                            Known for my analytical mindset and passion for problem-solving, I thrive in collaborative and dynamic
-                            environments, contributing to the delivery of innovative software that drives business success.
-                            Outside of work, I enjoy exploring emerging technologies, contributing to open-source projects, and
-                            mentoring the next generation of developers.
-                        </p>
+                        <a href="#" class="button-link">Resume</a>
                     </div>
                 </div>
             </section>
