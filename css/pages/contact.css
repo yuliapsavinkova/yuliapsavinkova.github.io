@@ -4,12 +4,13 @@
 }
 
 .contact-form {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 30px;
   width: 100%;
-  padding: 20px;
-  border-radius: var(--border-radius-arts);
-  /* box-shadow: 1px 1px 1px var(--primary-color-light); */
-  background-color: var(--gra-grey);
-  border: 1px solid var(--primary-color-light);
+  max-width: 600px;
 
   button {
     align-self: center;
@@ -28,23 +29,31 @@
     align-self: center;
   }
 
-  input,
-  textarea {
-    caret-color: var(--primary-color-dark);
-    width: 100%;
-    padding: 10px;
+  input {
     margin-bottom: 15px;
-    border: 1px solid var(--primary-color-light);
-    border-radius: var(--border-radius-actions);
   }
 
   textarea {
     resize: none;
+    margin-bottom: 20px;
+  }
+
+  input,
+  textarea {
+    caret-color: var(--primary-color-dark);
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    margin-bottom: 15px;
   }
 
   input:focus,
   textarea:focus {
     border-color: var(--primary-color-dark);
     outline: none;
+    background-color: #fff;
   }
+
 }
