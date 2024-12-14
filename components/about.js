@@ -1,7 +1,7 @@
 class AboutComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-            <section id="about-me" class="section about-me">
+            <section id="about" class="section about">
                 <h2>About Me</h2>
                 <p class="large">Bringing Web Ideas to Life</p>
                 <div class="gra-separator"></div>

@@ -1,17 +1,14 @@
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+.section.contact {
+  max-width: 1000px;
+  margin: auto;
 }
 
 .contact-form {
   width: 100%;
   padding: 20px;
-  background-color: var(--gra-white);
   border-radius: var(--border-radius-arts);
-  box-shadow: 2px 2px 2px var(--primary-color-light);
+  /* box-shadow: 1px 1px 1px var(--primary-color-light); */
+  background-color: var(--gra-grey);
   border: 1px solid var(--primary-color-light);
 
   button {
@@ -44,7 +41,6 @@
   textarea {
     resize: none;
   }
-
 
   input:focus,
   textarea:focus {
