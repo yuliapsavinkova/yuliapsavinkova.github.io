@@ -1,15 +1,11 @@
 .header {
-
     z-index: 1000;
-    padding: var(--global-padding-between)
-             var(--global-padding-sides)
-             var(--global-padding-sides)
-             var(--global-padding-sides);
 
     position: absolute;
     top: 0;
     left: 0;
     height: var(--header-size);
+    padding: 0 var(--global-padding-sides);
 
     width: 100%;
 
@@ -51,5 +47,5 @@
     background-color: var(--gra-white);
     opacity: 0.9;
     margin: 0;
-    padding: var(--global-padding-sides);
+    height: var(--header-size-small);
 }

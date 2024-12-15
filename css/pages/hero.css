@@ -1,39 +1,34 @@
 .hero {
-    height: 100vh;
+    height: calc(100vh - var(--header-size));
     width: 100%;
+    margin-top: var(--header-size);
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
+    justify-content: space-between;
 }
 
-.hero-portrait {
-    flex-grow: 2;
-    flex-shrink: 1;
+.hero-portrait,
+.hero-content {
+    flex-grow: 1;
+}
 
-    img {
-        object-fit: contain;
-        width: 100%;
-        height: 100%;
-        object-position: bottom right;
-    }
+.hero-portrait img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-position: bottom right;
 }
 
 .hero-content {
-    align-self: center;
-    flex-grow: 1;
-    flex-shrink: 1;
-    min-width: 400px;
+    position: relative;
+    left: 20%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-
-    position: relative;
-    left: 100px;
 
     .hero-heading {
         text-align: center;
@@ -57,8 +52,6 @@
 
         .hero-portrait {
             order: -1;
-            padding-top: var(--header-size);
-
             img {
                 object-position: center center;
             }
