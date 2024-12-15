@@ -2,7 +2,7 @@ class HeaderComponent extends HTMLElement {
     constructor() {
         super();
         this.smallScreenTemplate = `
-            <header class="header">
+            <header class="header compact">
                 <a href="#" class="logo">
                     <img src="assets/images/logo-colored.svg" alt="logo"/>
                 </a>

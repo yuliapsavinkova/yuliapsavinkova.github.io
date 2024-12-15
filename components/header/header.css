@@ -41,6 +41,9 @@
     }
 }
 
+.header.compact {
+    height: var(--header-size-small);
+}
 
 .sticky .header {
     position: fixed;
