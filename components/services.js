@@ -3,7 +3,7 @@ class ServicesComponent extends HTMLElement {
         this.innerHTML = `
             <section id="services" class="section services">
                 <h2>Services</h2>
-                <p class="large">Making digital products visually appealing, functional, and responsive.</p>
+                <p class="large">Making products visually appealing, functional, and responsive.</p>
                 <div class="gra-separator"></div>
                 <div class="services-cards-container">
                     <div class="service-card">

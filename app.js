@@ -9,5 +9,5 @@ import './components/process.js';
 import './components/contact.js';
 import './components/footer.js';
 
-// import './components/dropdown.js';
-// import './components/debug-panel.js';
+// import './components/scroll/scrolling-background.js';
+import './components/debug-panel.js';

@@ -25,7 +25,6 @@ class HamburgerComponent extends HTMLElement {
     }
 
     _handleMenuClick () {
-        console.log("clickeddddd");
         this.classList.toggle('open');
     }
 
@@ -36,12 +35,10 @@ class HamburgerComponent extends HTMLElement {
     }
 
     _handleResize () {
-        console.log("resizeddddd");
         this.classList.remove("open");
     }
 
     _handleScroll () {
-        console.log("scrolleddddd");
         this.classList.remove("open");
     }
     
