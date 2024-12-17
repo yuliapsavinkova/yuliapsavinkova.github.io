@@ -14,12 +14,14 @@ class HeaderComponent extends HTMLElement {
                 <a href="#" class="logo">
                     <img src="assets/images/logo-colored.svg" alt="logo"/>
                 </a>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#working-process">Blog</a></li>
-                </ul>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#working-process">Blog</a></li>
+                    </ul>
+                </nav>
                 <a href="#contact" class="button-link" part="button-link">Contact Me</a>
             </header>
         `;

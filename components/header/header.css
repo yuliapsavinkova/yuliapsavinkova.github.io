@@ -1,19 +1,12 @@
 .header {
     z-index: 1000;
-
-    position: absolute;
-    top: 0;
-    left: 0;
     height: var(--header-size);
-    padding: 0 var(--global-padding-sides);
-
     width: 100%;
-
+    padding: 0 var(--global-padding-sides);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
     background: transparent;
 
     .logo {
@@ -46,7 +39,8 @@
 }
 
 .sticky .header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     background-color: var(--gra-white);
     opacity: 0.9;
     margin: 0;
