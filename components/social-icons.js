@@ -1,6 +1,6 @@
 class SocialIcons extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             <style>
             .social-icons {
                 display: flex;
@@ -15,6 +15,6 @@ class SocialIcons extends HTMLElement {
                 <a href="https://codepen.io/star5/pens/public" target="_blank"><i class="fa-solid fa-blog fa-xl"></i></a>
             </div>
         `;
-    }
+  }
 }
-customElements.define('social-icons', SocialIcons);
+customElements.define("social-icons", SocialIcons);

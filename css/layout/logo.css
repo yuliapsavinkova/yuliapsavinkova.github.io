@@ -1,6 +1,6 @@
 a img {
-    vertical-align: middle;
-    border: none;
-    max-height: var(--logo-size);
-    width: auto;
+  vertical-align: middle;
+  border: none;
+  max-height: var(--logo-size);
+  width: auto;
 }

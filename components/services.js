@@ -1,6 +1,6 @@
 class ServicesComponent extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             <section id="services" class="section services">
                 <h2>Services</h2>
                 <p class="large">Making products visually appealing, functional, and responsive.</p>
@@ -27,6 +27,6 @@ class ServicesComponent extends HTMLElement {
                 </div>
             </section>
         `;
-    }
+  }
 }
-customElements.define('services-component', ServicesComponent);
+customElements.define("services-component", ServicesComponent);

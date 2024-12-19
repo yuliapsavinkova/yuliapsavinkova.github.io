@@ -1,40 +1,40 @@
 .section.about {
-    max-width: 1000px;
-    margin: auto;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .aboutme-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
 }
 
 .aboutme-image {
-    width: clamp(350px, 30vw, 600px);
-    height: auto;
-    border-radius: 4px;
+  width: clamp(350px, 30vw, 600px);
+  height: auto;
+  border-radius: 4px;
 }
 
 .aboutme-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
 @media (max-width: 768px) {
-    .aboutme-container {
-        flex-wrap: wrap;
-        .aboutme-image {
-            width: clamp(200px, 50vw, 600px);
-            height: auto;
-        }
-        .aboutme-content {
-            align-items: center;
-            text-align: center;
-        }
+  .aboutme-container {
+    flex-wrap: wrap;
+    .aboutme-image {
+      width: clamp(200px, 50vw, 600px);
+      height: auto;
     }
+    .aboutme-content {
+      align-items: center;
+      text-align: center;
+    }
+  }
 }

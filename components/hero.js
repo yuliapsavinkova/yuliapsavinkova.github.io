@@ -1,6 +1,6 @@
 class HeroComponent extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             <section id="hero" class="hero">
                 <div class="hero-content">
                     <social-icons></social-icons>
@@ -17,6 +17,6 @@ class HeroComponent extends HTMLElement {
                 </div>
             </section>
         `;
-    }
+  }
 }
-customElements.define('hero-component', HeroComponent);
+customElements.define("hero-component", HeroComponent);

@@ -1,35 +1,37 @@
 .working-process {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/working-girl.jpeg');
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/working-girl.jpeg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/images/working-girl.jpeg");
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/images/working-girl.jpeg");
 
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    background-clip: padding-box;
-    background-repeat: no-repeat;
-    background-position: center center;
-    min-height: 500px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-clip: padding-box;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 500px;
 
-    .gra-separator {
-        margin: 0;
-    }
+  .gra-separator {
+    margin: 0;
+  }
 }
 
 /* Mobile & Tablet Devices */
 @media screen and (max-width: 768px) {
-    .working-process {
-        background-attachment: scroll;
-    }
+  .working-process {
+    background-attachment: scroll;
+  }
 }
 
 @media (aspect-ratio: 4/3) {
-    .working-process {
-        background-attachment: scroll;
-    }
+  .working-process {
+    background-attachment: scroll;
+  }
 }
 
 @supports (-webkit-touch-callout: none) {
-    .working-process {
-        background-attachment: scroll;
-    }
+  .working-process {
+    background-attachment: scroll;
+  }
 }

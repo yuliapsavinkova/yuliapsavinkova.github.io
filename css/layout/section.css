@@ -1,14 +1,15 @@
 .section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: var(--global-padding-between) var(--global-padding-sides);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 
-    p.large {
-        text-align: center;
-    }
+  padding: var(--global-padding-between) var(--global-padding-sides);
+
+  p.large {
+    text-align: center;
+  }
 }
 
 /* .section.services {

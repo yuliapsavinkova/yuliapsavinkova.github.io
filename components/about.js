@@ -1,6 +1,6 @@
 class AboutComponent extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             <section id="about" class="section about">
                 <h2>About Me</h2>
                 <p class="large">Bringing Web Ideas to Life</p>
@@ -19,6 +19,6 @@ class AboutComponent extends HTMLElement {
                 </div>
             </section>
         `;
-    }
+  }
 }
-customElements.define('about-component', AboutComponent);
+customElements.define("about-component", AboutComponent);

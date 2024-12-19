@@ -1,18 +1,18 @@
 .footer {
-    height: var(--footer-size);
-    padding: var(--global-padding-sides);
+  height: var(--footer-size);
+  padding: var(--global-padding-sides);
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .footer-copyright {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
-    .footer-copyright {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        height: var(--logo-size);
-    }
+    height: var(--logo-size);
+  }
 }

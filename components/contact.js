@@ -1,6 +1,6 @@
 class ContactComponent extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             <section id="contact" class="section contact">
                 <h2>Stay In Touch</h2>
                 <p class="large">Let's build something amazing together.</p>
@@ -21,6 +21,6 @@ class ContactComponent extends HTMLElement {
                 </div>
             </section>
         `;
-    }
+  }
 }
-customElements.define('contact-component', ContactComponent);
+customElements.define("contact-component", ContactComponent);

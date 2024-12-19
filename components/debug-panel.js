@@ -1,14 +1,19 @@
 class DebugPanelComponent extends HTMLElement {
+  // Screen width x height
+  _updateWidth() {
+    const width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    const height =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    document.getElementById("debugPanel").innerHTML = width + " x " + height;
+  }
 
-    // Screen width x height
-    _updateWidth() {
-        const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        document.getElementById('debugPanel').innerHTML = width + ' x ' + height;
-    }
-
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
             <style>
                 .debug-panel {
                     z-index: 1000;
@@ -26,15 +31,14 @@ class DebugPanelComponent extends HTMLElement {
             <div id="debugPanel" class="debug-panel"></div>
         `;
 
-        window.addEventListener('resize', Utils.throttle(this._updateWidth, 200));
-        window.addEventListener('scroll', Utils.throttle(this._updateWidth, 300));
-        this._updateWidth();
+    window.addEventListener("resize", Utils.throttle(this._updateWidth, 200));
+    window.addEventListener("scroll", Utils.throttle(this._updateWidth, 300));
+    this._updateWidth();
+  }
 
-    }
-
-    // disconnectedCallback() {
-    //     window.removeEventListener('resize', this._updateWidth);
-    //     window.removeEventListener('scroll', this._updateWidth);
-    // }
+  // disconnectedCallback() {
+  //     window.removeEventListener('resize', this._updateWidth);
+  //     window.removeEventListener('scroll', this._updateWidth);
+  // }
 }
-customElements.define('debug-panel-component', DebugPanelComponent);
+customElements.define("debug-panel-component", DebugPanelComponent);
