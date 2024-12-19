@@ -7,7 +7,7 @@ class HamburgerComponent extends HTMLElement {
                     <i class="fa-solid fa-bars fa-2x hamburger-bars"></i>
                     <i class="fa-solid fa-xmark fa-2x hamburger-x"></i>
                 </div>
-                <ul class="nav-links">
+                <ul class="nav-menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
