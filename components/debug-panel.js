@@ -22,9 +22,9 @@ class DebugPanelComponent extends HTMLElement {
                     left: 0;
                     background-color: var(--gra-grey);
                     opacity: 0.9;
-                    margin: 10px;
-                    padding: 10px;
-                    border-radius: 25px;
+                    margin: 0.7rem;
+                    padding: 0.7rem;
+                    border-radius: 1.4rem;
                     border: 1px solid var(--primary-color-light);
                 }
             </style>
