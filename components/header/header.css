@@ -41,8 +41,9 @@
 .sticky .header {
   position: sticky;
   top: 0;
-  background-color: var(--gra-white);
-  opacity: 0.9;
   margin: 0;
   height: var(--header-size-small);
+
+  background-color: var(--gra-white);
+  opacity: 0.9;
 }
