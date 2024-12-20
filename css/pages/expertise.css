@@ -6,7 +6,7 @@
   );
 }
 
-.services-cards-container {
+.expertise-cards-container {
   max-width: 1000px;
   display: flex;
   flex-direction: row;
@@ -48,7 +48,7 @@
 }
 
 @media (max-width: 1000px) {
-  .services-cards-container {
+  .expertise-cards-container {
     flex-wrap: wrap;
   }
 }
