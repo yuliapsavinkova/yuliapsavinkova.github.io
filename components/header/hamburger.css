@@ -50,7 +50,7 @@
     z-index: 9999;
 
     position: fixed;
-    top: 0;
+    top: calc(var(--header-size-small) + 2px);
     right: 0;
 
     display: flex;
@@ -58,10 +58,11 @@
     text-align: center;
     list-style: none;
 
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.09);
+    background: hsl(var(--accent-color-light) / 0.9);
     backdrop-filter: blur(1rem);
-    background: hsl(var(--gra-white) / 0.9);
-    padding-top: calc(var(--header-size-small) + 2px);
+    -webkit-backdrop-filter: blur(1rem);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
 
     a {
       display: block;

@@ -22,7 +22,7 @@ class HeaderComponent extends HTMLElement {
                         <li><a href="./index.html#working-process">Blog</a></li>
                     </ul>
                 </nav>
-                <a href="#contact" class="button-link" part="button-link">Contact Me</a>
+                <a href="./index.html#contact" class="button-link" part="button-link">Contact Me</a>
             </header>
         `;
     this._handleResize = this._handleResize.bind(this);

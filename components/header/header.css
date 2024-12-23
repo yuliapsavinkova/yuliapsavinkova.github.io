@@ -43,10 +43,7 @@
   top: 0;
   margin: 0;
   height: var(--header-size-small);
-
   background-color: var(--gra-white);
-  opacity: 0.95;
 
-  /* border-bottom: 1px solid var(--gra-grey); */
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
 }
