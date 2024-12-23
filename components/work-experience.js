@@ -6,7 +6,7 @@ class WorkExperienceComponent extends HTMLElement {
                   <div class="gra-separator"></div>
 
                   <div class="work-experience-content">
-                    <div class="work-experience-date">2019 - Present</div>
+                    <h5>2019 - Present</h5>
                     <div class="work-experience-description">
                       <h5>Freelance Software Engineer, Gravity Workflow, Miami, FL</h5>
                       <ul>
@@ -26,7 +26,7 @@ class WorkExperienceComponent extends HTMLElement {
                   </div>
 
                   <div class="work-experience-content">
-                    <div class="work-experience-date">2016 - 2019</div>
+                    <h5>2016 - 2019</h5>
                     <div class="work-experience-description">
                       <h5>Sr. Software Engineer, Bloomberg, New York, NY</h5>
                       <ul>
@@ -46,7 +46,7 @@ class WorkExperienceComponent extends HTMLElement {
                   </div>
 
                   <div class="work-experience-content">
-                    <div class="work-experience-date">2015 - 2016</div>
+                    <h5>2015 - 2016</h5>
                     <div class="work-experience-description">
                       <h5>Sr. UI Developer, Yahoo, San Francisco, CA</h5>
                       <ul>
@@ -67,7 +67,7 @@ class WorkExperienceComponent extends HTMLElement {
                   </div>
 
                   <div class="work-experience-content">
-                    <div class="work-experience-date">2012 - 2015</div>
+                    <h5>2012 - 2015</h5>
                     <div class="work-experience-description">
                       <h5>Sr. JavaScript UI Engineer, MuleSoft, San Francisco, CA</h5>
                       <ul>
@@ -89,16 +89,27 @@ class WorkExperienceComponent extends HTMLElement {
 
                   <h2>Education</h2>
                   <div class="gra-separator"></div>
-
-                  <h5>M.S. / Computer Science,​ Suffolk University, Boston, MA - May, 2011</h5>
+                  <div class="work-experience-content">
+                    <h5>May, 2011</h5>
+                    <div class="work-experience-description">
+                      <h5>M.S. / Computer Science,​ Suffolk University, Boston, MA</h5>
+                    </div>
+                  </div>
 
                   <h2>Other</h2>
                   <div class="gra-separator"></div>
-                  <h5>Passed CFA Level 1, CFA Institute - December, 2017</h5>
-                  <h5>Instructor, Suffolk University; Boston, MA - 2010-2011</h5>
-
-                  
-
+                  <div class="work-experience-content">
+                    <h5>December, 2017</h5>
+                    <div class="work-experience-description">
+                      <h5>Passed CFA Level 1, CFA Institute</h5>
+                    </div>
+                  </div>
+                  <div class="work-experience-content">
+                    <h5>2010 - 2011</h5>
+                    <div class="work-experience-description">
+                      <h5>Instructor, Suffolk University; Boston, MA</h5>
+                    </div>
+                  </div>
               </section>
           `;
   }

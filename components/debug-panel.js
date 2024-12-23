@@ -18,14 +18,17 @@ class DebugPanelComponent extends HTMLElement {
                 .debug-panel {
                     z-index: 1000;
                     position: fixed;
-                    top: 50%;
+                    bottom: 0;
                     left: 0;
-                    background-color: var(--gra-grey);
-                    opacity: 0.9;
                     margin: 0.7rem;
                     padding: 0.7rem;
                     border-radius: 1.4rem;
-                    border: 1px solid var(--primary-color-light);
+
+                    background: hsl(var(--accent-color-light) / 0.9);
+                    backdrop-filter: blur(1rem);
+                    -webkit-backdrop-filter: blur(1rem);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
                 }
             </style>
             <div id="debugPanel" class="debug-panel"></div>
