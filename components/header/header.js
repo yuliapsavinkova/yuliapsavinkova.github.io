@@ -3,7 +3,7 @@ class HeaderComponent extends HTMLElement {
     super();
     this.smallScreenTemplate = `
             <header class="header compact">
-                <a href="#" class="logo">
+                <a href="./index.html" class="logo">
                     <img src="assets/images/logo-colored.svg" alt="logo"/>
                 </a>
                 <hamburger-component></hamburger-component>
@@ -11,15 +11,15 @@ class HeaderComponent extends HTMLElement {
         `;
     this.largeScreenTemplate = `
             <header class="header">
-                <a href="#" class="logo">
+                <a href="./index.html" class="logo">
                     <img src="assets/images/logo-colored.svg" alt="logo"/>
                 </a>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#working-process">Blog</a></li>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./index.html#contact">Contact</a></li>
+                        <li><a href="./index.html#working-process">Blog</a></li>
                     </ul>
                 </nav>
                 <a href="#contact" class="button-link" part="button-link">Contact Me</a>

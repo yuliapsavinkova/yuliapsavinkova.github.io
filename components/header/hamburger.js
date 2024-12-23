@@ -7,12 +7,14 @@ class HamburgerComponent extends HTMLElement {
                     <i class="fa-solid fa-bars fa-2x hamburger-bars"></i>
                     <i class="fa-solid fa-xmark fa-2x hamburger-x"></i>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#working-process">Blog</a></li>
-                </ul>
+                <nav>
+                  <ul class="nav-menu">
+                      <li><a href="./index.html">Home</a></li>
+                      <li><a href="./about.html">About</a></li>
+                      <li><a href="./index.html#contact">Contact</a></li>
+                      <li><a href="./index.html#working-process">Blog</a></li>
+                  </ul>
+                </nav>
             </div>
         `;
 

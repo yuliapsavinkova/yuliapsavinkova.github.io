@@ -14,7 +14,7 @@ class AboutComponent extends HTMLElement {
                             I specialize in developing complex, feature-rich web applications using HTML, CSS, JavaScript, native Web Components, and frameworks like React and Angular.
                             My tech stack includes Git, VS Code, and modern build tools, ensuring efficient and scalable development workflows.
                         </p>
-                        <a href="#" class="button-link">Resume</a>
+                        <a href="../resume.pdf" target="_blank" class="button-link">Resume</a>
                     </div>
                 </div>
             </section>
