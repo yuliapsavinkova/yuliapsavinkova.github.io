@@ -45,8 +45,8 @@
   height: var(--header-size-small);
 
   background-color: var(--gra-white);
-  opacity: 0.9;
+  opacity: 0.95;
 
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  /* border-bottom: 1px solid var(--gra-grey); */
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
 }

@@ -5,6 +5,7 @@
   .work-experience-content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     gap: 2rem;
@@ -12,24 +13,24 @@
 
   .work-experience-date {
     width: 10rem;
+    flex-shrink: 0;
     padding-top: 6px;
   }
 
   .work-experience-description {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 40rem;
 
     ul {
       list-style: square;
 
       li {
         padding-bottom: 0.5rem;
-      }
-
-      li::marker {
-        color: #cf2017;
       }
     }
   }
@@ -41,8 +42,8 @@
 
     span {
       padding: 0.5rem;
-      background-color: #ffffff;
-      border: 1px solid #e0e0e0;
+      background-color: var(--gra-white);
+      border: 1px solid var(--gra-grey);
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }

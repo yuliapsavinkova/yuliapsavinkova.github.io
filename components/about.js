@@ -5,9 +5,9 @@ class AboutComponent extends HTMLElement {
                 <h2>About Me</h2>
                 <p class="large">Bringing Web Ideas to Life</p>
                 <div class="gra-separator"></div>
-                <div class="aboutme-container">
-                    <img src="assets/images/portrait.png" class="aboutme-image"/>
-                    <div class="aboutme-content">
+                <div class="about-me-container">
+                    <img src="assets/images/portrait.png" class="about-me-image"/>
+                    <div class="about-me-content">
                         <h3>Transforming visions into realities.</h3>
                         <p>
                             I am a Software Engineer with 10+ years of experience and a Master's degree in Computer Science.

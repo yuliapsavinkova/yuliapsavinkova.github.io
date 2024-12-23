@@ -52,7 +52,7 @@
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.09);
     backdrop-filter: blur(1rem);
     /* background: hsl(var(--gra-white) / 0.1); */
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--gra-grey);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 
     padding-top: calc(var(--header-size-small) + 2px);
