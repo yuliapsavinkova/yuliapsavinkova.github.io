@@ -27,7 +27,6 @@ hamburger-component {
     height: 0;
     opacity: 0; /* Start as invisible */
     visibility: hidden; /* Hide visually */
-    transition: width 0.5s ease, opacity 0.5s ease;
   }
 }
 
@@ -45,15 +44,16 @@ hamburger-component {
     height: 100vh;
     opacity: 1; /* Fade in */
     visibility: visible; /* Make visible */
+    transition: width 0.5s ease, opacity 0.5s ease;
   }
 
   .nav-menu {
     z-index: 9999;
 
     position: fixed;
-    top: 0;
+    top: calc(var(--header-size-small) + 2px);
     right: 0;
-    padding-top: calc(var(--header-size-small) + 2px);
+    /* padding-top: calc(var(--header-size-small) + 2px); */
 
     display: flex;
     flex-direction: column;
