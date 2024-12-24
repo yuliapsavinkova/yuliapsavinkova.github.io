@@ -98,18 +98,26 @@ class WorkExperienceComponent extends HTMLElement {
 
                   <h2>Other</h2>
                   <div class="gra-separator"></div>
-                  <div class="work-experience-content">
-                    <h5>December, 2017</h5>
-                    <div class="work-experience-description">
-                      <h5>Passed CFA Level 1, CFA Institute</h5>
-                    </div>
-                  </div>
+
                   <div class="work-experience-content">
                     <h5>2010 - 2011</h5>
                     <div class="work-experience-description">
                       <h5>Instructor, Suffolk University; Boston, MA</h5>
+                      <ul>
+                        <li>Teach Pre Calculus course.</li>
+                        <li>Teach Web Development course.</li>
+                      </ul>
+
+                      
                     </div>
                   </div>
+                  <div class="work-experience-content">
+                    <h5>2017</h5>
+                    <div class="work-experience-description">
+                      <h5>Passed CFA Level 1, CFA Institute</h5>
+                    </div>
+                  </div>
+
               </section>
           `;
   }

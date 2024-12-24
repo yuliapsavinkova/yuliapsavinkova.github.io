@@ -6,15 +6,29 @@ class AboutComponent extends HTMLElement {
                 <p class="large">Bringing Web Ideas to Life</p>
                 <div class="gra-separator"></div>
                 <div class="about-me-container">
-                    <img src="assets/images/portrait.png" class="about-me-image"/>
+                    <div>
+                        <img src="assets/images/portrait.png" class="about-me-image"/>
+                    </div>
                     <div class="about-me-content">
                         <h3>Transforming visions into realities.</h3>
                         <p>
                             I am a Software Engineer with 10+ years of experience and a Master's degree in Computer Science.
-                            I specialize in developing complex, feature-rich web applications using HTML, CSS, JavaScript, native Web Components, and frameworks like React and Angular.
-                            My tech stack includes Git, VS Code, and modern build tools, ensuring efficient and scalable development workflows.
+                            I specialize in developing front-end web applications using HTML, CSS, JavaScript, native Web Components, and frameworks like React and Angular.
+                            In my free time I like to read, travel and snowboard.
                         </p>
+                        <div class="work-experience-technologies">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Web Components</span>
+                            <span>Angular</span>
+                            <span>React</span>
+                            <span>Node</span>
+                            <span>Git</span>
+                            <span>Webpack</span>
+                        </div>
                         <a href="../resume.pdf" target="_blank" class="button-link">Resume</a>
+
                     </div>
                 </div>
             </section>
