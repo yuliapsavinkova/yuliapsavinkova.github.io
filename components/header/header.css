@@ -9,10 +9,6 @@
   align-items: center;
   background: transparent;
 
-  -webkit-box-shadow: 0 2px 10px -10px #eb5047;
-  -moz-box-shadow: 0 2px 10px -10px #eb5047;
-  box-shadow: 0 2px 10px -10px #eb5047;
-
   .logo {
     line-height: 0;
 
