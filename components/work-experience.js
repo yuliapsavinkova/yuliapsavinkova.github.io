@@ -6,13 +6,12 @@ class WorkExperienceComponent extends HTMLElement {
                   <div class="gra-separator"></div>
 
                   <div class="work-experience-content">
-                      <h5>Freelance Software Engineer, Gravity Workflow, Miami, FL 2019 - Present</h5>
+                      <h5>Lead Software Engineer, Gravity Workflow, Miami, FL 2019 - Present</h5>
                       <ul>
-                        <li>Develop web applications and implement new features.</li>
-                        <li>Build responsive layouts that support all screen sizes.</li>
+                        <li>Design and develop web applications and websites from scratch.</li>
                         <li>Create custom HTML web components and reusable shared libraries.</li>
-                        <li>Design and develop professional business websites.</li>
-                        <li>Modernize existing applications by rebuilding them with new technologies.</li>
+                        <li>Build responsive layouts that work across all screen sizes.</li>
+                        <li>Modernize existing applications by rebuilding them with modern technologies.</li>
                       </ul>
                       <div class="work-experience-technologies">
                         <span>HTML</span>
@@ -79,11 +78,9 @@ class WorkExperienceComponent extends HTMLElement {
                   <h2>Education</h2>
                   <div class="gra-separator"></div>
                   <div class="work-experience-content">
-                      <h5>
-                        Master of Science in Computer Science, 
-                        Suffolk University, Boston, MA
-                        May, 2011
-                      </h5>
+                      <div class="work-experience-header">
+                        Master of Science in Computer Science, Suffolk University, Boston, MA May, 2011
+                      </div>
                   </div>
 
                   <!--<h2>Other</h2>
