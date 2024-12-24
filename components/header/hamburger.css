@@ -1,14 +1,12 @@
-.hamburger {
-  position: relative;
+hamburger-component {
+  display: contents;
+}
 
-  .nav-btn {
-    z-index: 10000;
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-    text-align: center;
-  }
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .hamburger-bars {
     display: block;
@@ -20,12 +18,15 @@
     cursor: pointer;
   }
 
+  .nav-btn {
+    z-index: 10000;
+  }
+
   .nav-menu {
-    /* display: none; */
     width: 0;
+    height: 0;
     opacity: 0; /* Start as invisible */
     visibility: hidden; /* Hide visually */
-
     transition: width 0.5s ease, opacity 0.5s ease;
   }
 }
@@ -50,8 +51,9 @@
     z-index: 9999;
 
     position: fixed;
-    top: calc(var(--header-size-small) + 2px);
+    top: 0;
     right: 0;
+    padding-top: calc(var(--header-size-small) + 2px);
 
     display: flex;
     flex-direction: column;

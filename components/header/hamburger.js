@@ -2,20 +2,20 @@ class HamburgerComponent extends HTMLElement {
   constructor() {
     super();
     this.innerHTML = `
-            <div id="hamburger" class="hamburger">
-                <div id="nav-btn" class="nav-btn">
-                    <i class="fa-solid fa-bars fa-2x hamburger-bars"></i>
-                    <i class="fa-solid fa-xmark fa-2x hamburger-x"></i>
-                </div>
-                <nav>
-                  <ul class="nav-menu">
-                      <li><a href="./index.html">Home</a></li>
-                      <li><a href="./about.html">About</a></li>
-                      <li><a href="./index.html#contact">Contact</a></li>
-                      <li><a href="./index.html#working-process">Blog</a></li>
-                  </ul>
-                </nav>
-            </div>
+          <div id="hamburger" class="hamburger">
+              <div id="nav-btn" class="nav-btn">
+                  <i class="fa-solid fa-bars fa-2x hamburger-bars"></i>
+                  <i class="fa-solid fa-xmark fa-2x hamburger-x"></i>
+              </div>
+              <nav>
+                <ul class="nav-menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./index.html#contact">Contact</a></li>
+                    <li><a href="./index.html#working-process">Blog</a></li>
+                </ul>
+              </nav>
+          </div>
         `;
 
     this.menuButton = document.getElementById("nav-btn");
