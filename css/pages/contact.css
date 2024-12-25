@@ -38,7 +38,7 @@
     padding: 0.6rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #f5f5f5;
+    background-color: var(--primary-color-light);
     margin-bottom: 1rem;
     resize: none;
   }
