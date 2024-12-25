@@ -18,11 +18,11 @@ class HeaderComponent extends HTMLElement {
                     <ul class="nav-links">
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
-                        <li><a href="./index.html#expertise">Work</a></li>
+                        <li><a href="./work.html">Work</a></li>
                         <li><a href="./index.html#working-process">Blog</a></li>
                     </ul>
                 </nav>
-                <a href="./index.html#contact" class="button-link" part="button-link">Contact Me</a>
+                <a href="./contact.html" class="button-link" part="button-link">Contact Me</a>
             </header>
         `;
     this._handleResize = this._handleResize.bind(this);

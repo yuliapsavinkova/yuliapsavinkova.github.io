@@ -25,6 +25,7 @@ class ExpertiseComponent extends HTMLElement {
                         <a href="#expertise"><i class="fa-regular fa-circle-right fa-xl"></i></a>
                     </div>
                 </div>
+                <a href="./work.html" class="button-link">Learn More</a>
             </section>
         `;
   }
