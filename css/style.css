@@ -23,3 +23,5 @@
 @import "./pages/hero.css";
 @import "./pages/expertise.css";
 @import "./pages/process.css";
+
+@import "./base/debug.css";
