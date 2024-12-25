@@ -30,9 +30,9 @@
   span {
     padding: 0.5rem;
     background-color: var(--gra-white);
-    border: 1px solid var(--gra-grey);
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    color: var(--primary-color-dark);
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px rgba(0, 45, 91, 0.1);
 
     font-size: 0.85rem;
     line-height: 1.5;
