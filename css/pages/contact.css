@@ -1,18 +1,10 @@
-.section.contact {
-  max-width: 1000px;
-  margin: auto;
-}
-
 .contact-form {
   background-color: var(--gra-white);
-  /* border: 1px solid var(--gra-grey); */
-  /* border-radius: 8px; */
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); */
   box-shadow: 0 -2px 20px rgba(0, 45, 91, 0.1);
 
-  padding: 2rem;
-  width: 100%;
-  max-width: 1000px;
+  padding: 2rem 4rem;
+
+  width: min(100%, 1000px);
 
   button {
     align-self: center;

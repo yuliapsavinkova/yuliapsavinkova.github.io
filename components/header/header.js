@@ -18,7 +18,7 @@ class HeaderComponent extends HTMLElement {
                     <ul class="nav-links">
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
-                        <li><a href="./index.html#contact">Contact</a></li>
+                        <li><a href="./index.html#expertise">Work</a></li>
                         <li><a href="./index.html#working-process">Blog</a></li>
                     </ul>
                 </nav>

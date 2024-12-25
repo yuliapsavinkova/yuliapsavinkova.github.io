@@ -1,7 +1,7 @@
 class WorkExperienceComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-              <section id="work-experience" class="section work-experience">
+              <section id="work-experience" class="section page work-experience">
                   <h2>Professional Experience</h2>
                   <div class="gra-separator"></div>
 
@@ -75,13 +75,13 @@ class WorkExperienceComponent extends HTMLElement {
                       </div>
                   </div>
 
-                  <h2>Education</h2>
+                  <!--<h2>Education</h2>
                   <div class="gra-separator"></div>
                   <div class="work-experience-content">
                       <div class="work-experience-header">
                         Master of Science in Computer Science, Suffolk University, Boston, MA May, 2011
                       </div>
-                  </div>
+                  </div>-->
 
                   <!--<h2>Other</h2>
                   <div class="gra-separator"></div>

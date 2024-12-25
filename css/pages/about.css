@@ -1,9 +1,5 @@
-.section.about {
-  max-width: 1000px;
-  margin: auto;
-}
-
 .about-me-container {
+  max-width: 1000px;
   display: flex;
   flex-direction: row;
   justify-content: center;

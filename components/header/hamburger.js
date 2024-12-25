@@ -11,7 +11,7 @@ class HamburgerComponent extends HTMLElement {
                 <ul class="nav-menu">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./about.html">About</a></li>
-                    <li><a href="./index.html#contact">Contact</a></li>
+                    <li><a href="./index.html#expertise">Work</a></li>
                     <li><a href="./index.html#working-process">Blog</a></li>
                 </ul>
               </nav>

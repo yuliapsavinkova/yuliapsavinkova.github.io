@@ -1,16 +1,12 @@
-.section.work-experience {
-  max-width: 1000px;
-  margin: auto;
-}
-
 .work-experience-content {
   position: relative;
   width: 100%;
 
+  padding: 0 4rem;
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
 
   ul {
     list-style: square;
