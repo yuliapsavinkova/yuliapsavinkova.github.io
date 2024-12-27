@@ -8,8 +8,7 @@
   justify-content: space-between;
   align-items: center;
   background: transparent;
-
-  box-shadow: 0 4px 100px -4px rgba(0, 45, 91, 0.1);
+  box-shadow: 0 4px 10px -4px rgba(0, 45, 91, 0.1);
 
   .logo {
     line-height: 0;
