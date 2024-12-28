@@ -1,3 +1,8 @@
+hamburger-component,
+.hamburger {
+  display: contents;
+}
+
 .menu-checkbox {
   display: none;
 }
@@ -8,12 +13,11 @@
   cursor: pointer;
   user-select: none;
 
-  position: absolute;
-  top: 0;
-  right: 1rem;
   font-size: 3rem;
+  height: var(--header-size);
 
   color: var(--primary-color-dark);
+  transition: color 1s ease;
 }
 
 .menu-icon:hover {
@@ -33,7 +37,7 @@
   padding-top: 4rem;
   text-align: center;
 
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
 }
 
@@ -44,18 +48,22 @@
 }
 
 .menu-list ul li {
-  border-bottom: 1px solid #464646;
-}
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
-.menu-list ul li a {
-  color: var(--gra-white);
-  text-decoration: none;
-  display: block;
-  padding: 1rem;
-}
+  a {
+    color: var(--gra-white);
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+  }
 
-.menu-list ul li a:hover {
-  background-color: var(--accent-color-light);
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: var(--accent-color-light);
+  }
 }
 
 /* Open the menu when checked */
