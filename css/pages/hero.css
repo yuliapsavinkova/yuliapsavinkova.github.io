@@ -43,16 +43,17 @@
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
 
-    .hero-portrait,
-    .hero-content {
-      height: 30vh;
+    .hero-portrait {
+      height: 50%;
       overflow: hidden;
     }
 
     .hero-portrait {
-      margin-top: 1rem;
+      /* margin-top: 1rem; */
       order: -1;
       img {
         object-position: center center;
@@ -62,6 +63,11 @@
     .hero-content {
       left: 0;
       justify-content: flex-start;
+    }
+
+    h3,
+    h4 {
+      display: none;
     }
   }
 }

@@ -39,6 +39,9 @@
   h5 {
     text-align: center;
   }
+  .work-experience-content {
+    padding: 0;
+  }
   .work-experience-technologies {
     justify-content: center;
   }
