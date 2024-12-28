@@ -2,7 +2,7 @@ class HeaderComponent extends HTMLElement {
   constructor() {
     super();
     this.smallScreenTemplate = `
-            <header class="header compact">
+            <header class="header">
                 <a href="./index.html" class="logo">
                     <img src="assets/images/logo-colored.svg" alt="logo"/>
                 </a>
@@ -26,7 +26,6 @@ class HeaderComponent extends HTMLElement {
             </header>
         `;
     this._handleResize = this._handleResize.bind(this);
-    this._handleScroll = this._handleScroll.bind(this);
   }
 
   _handleResize() {
@@ -38,23 +37,13 @@ class HeaderComponent extends HTMLElement {
     }
   }
 
-  _handleScroll() {
-    const viewportHeight = window.innerHeight - 100;
-    // adds sticky to host - maybe need to add to header itself?
-    window.scrollY > viewportHeight
-      ? this.classList.add("sticky")
-      : this.classList.remove("sticky");
-  }
-
   connectedCallback() {
     window.addEventListener("resize", this._handleResize);
-    window.addEventListener("scroll", Utils.throttle(this._handleScroll, 200));
     this._handleResize();
   }
 
   disconnectedCallback() {
     window.removeEventListener("resize", this._handleResize);
-    window.removeEventListener("scroll", this._handleScroll);
   }
 }
 

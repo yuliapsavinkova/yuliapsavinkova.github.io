@@ -2,8 +2,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); */
 :root {
   /* sizes */
-  --header-size: 5rem;
-  --header-size-small: 4rem;
+  --header-size: 4rem;
   --footer-size: 10rem;
   --logo-size: 2.8rem;
 
