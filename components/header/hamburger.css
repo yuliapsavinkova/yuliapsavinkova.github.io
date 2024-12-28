@@ -1,18 +1,10 @@
 .hamburger {
-  /* .nav-btn {
-    z-index: 10000;
-  } */
-
   .hamburger-bars,
   .hamburger-x {
     cursor: pointer;
   }
 
   .hamburger-x {
-    display: none;
-  }
-
-  .nav-menu {
     display: none;
   }
 }
@@ -28,12 +20,6 @@
 
   .nav-menu {
     z-index: 9999;
-
-    position: fixed;
-    top: var(--header-size-small);
-    right: 0;
-    width: min(20rem, 90vw);
-    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -57,22 +43,21 @@
 
 /* Animation specific */
 .animate-menu {
-  /* width: 0;
+  position: fixed;
+  top: var(--header-size-small);
+  right: 0;
+
+  width: 0;
   height: 0;
-  opacity: 0;
   visibility: hidden;
-  transition: transform 0.5s ease-in-out; */
+
+  transition: width 0.5s ease-in-out;
 }
 
 .open {
   .animate-menu {
-    /* backdrop-filter: blur(1rem);
-    -webkit-backdrop-filter: blur(1rem);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2); */
-
-    /* opacity: 1;
+    width: min(20rem, 90vw);
+    height: 100vh;
     visibility: visible;
-    transition: width 0.5s ease, opacity 0.5s ease; */
   }
 }

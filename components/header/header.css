@@ -1,14 +1,15 @@
 .header {
-  padding: 0 var(--global-padding-sides);
   z-index: 1000;
+
   height: var(--header-size);
   width: 100%;
+
+  padding: 0 var(--global-padding-sides);
+
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background: transparent;
-  box-shadow: 0 4px 10px -4px rgba(0, 45, 91, 0.1);
 
   .logo {
     line-height: 0;
@@ -24,13 +25,11 @@
 
   a {
     text-decoration: none;
-    font-size: 1.125rem;
   }
 
   .nav-links {
     display: flex;
     list-style: none;
-    padding: 0;
     gap: 2rem;
   }
 }
