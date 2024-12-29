@@ -7,7 +7,7 @@ class AboutComponent extends HTMLElement {
                 <div class="gra-separator"></div>
                 <div class="about-me-container">
                     <div>
-                        <img src="assets/images/portrait.png" class="about-me-image"/>
+                        <img src="../assets/images/portrait.png" class="about-me-image"/>
                     </div>
                     <div class="about-me-content">
                         <h3>Transforming visions into realities.</h3>
@@ -27,7 +27,7 @@ class AboutComponent extends HTMLElement {
                             <span>Git</span>
                             <span>Webpack</span>
                         </div>
-                        <a href="../resume.pdf" target="_blank" class="button-link">Resume</a>
+                        <a href="./portfolio/resume.pdf" target="_blank" class="button-link">Resume</a>
 
                     </div>
                 </div>

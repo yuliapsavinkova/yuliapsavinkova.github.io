@@ -1,0 +1,32 @@
+:root {
+  /* colors */
+  --primary-color-dark: #002d5b;
+  --primary-color-light: #f9fafb;
+  --neutral-color-dark: #fadbd1;
+  --neutral-color-light: #fefafa;
+  --accent-color-dark: #8a150f;
+  --accent-color-med: #cf2017;
+  --accent-color-light: #eb5047;
+  --text-color: #464646;
+  --gra-white: #ffffff;
+  --gra-black: black;
+  --gra-grey: #e0e0e0;
+
+  /* sizes */
+  --header-size: 4rem;
+  --footer-size: 10rem;
+  --logo-size: 2.8rem;
+
+  /* padding */
+  --global-padding-sides: 2rem;
+  --global-padding-between: 3rem;
+
+  /* logos, buttons, links */
+  --border-radius-button: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --global-padding-sides: 1rem;
+  }
+}

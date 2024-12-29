@@ -1,3 +1,4 @@
+import { Utils } from "../../../_shared/js/utils.js";
 // TODO: handle of toggle open case.
 class HamburgerComponent extends HTMLElement {
   constructor() {
@@ -11,8 +12,9 @@ class HamburgerComponent extends HTMLElement {
                   <li><a href="./index.html">Home</a></li>
                   <li><a href="./about.html">About</a></li>
                   <li><a href="./work.html">Work</a></li>
-                  <li><a href="./index.html#working-process">Blog</a></li>
+                  <li><a href="../blog/index.html" target="_blank">Blog</a></li>
                   <li><a href="./contact.html">Contact</a></li>
+                  <li><a href="./portfolio/resume.pdf" target="_blank">Resume</a></li>
                 </ul>
               </nav>
           </div>

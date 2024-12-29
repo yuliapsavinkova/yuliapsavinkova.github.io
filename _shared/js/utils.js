@@ -1,4 +1,4 @@
-const Utils = {
+export const Utils = {
   throttle: function (func, delay) {
     let lastCall = 0;
     return function (...args) {

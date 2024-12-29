@@ -1,4 +1,5 @@
-import "./utils/utils.js";
+import "../_shared/js/utils.js";
+
 import "./components/social-icons.js";
 import "./components/header/header.js";
 import "./components/header/hamburger.js";
