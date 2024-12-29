@@ -31,10 +31,6 @@ a:hover {
   color: var(--accent-color-light);
 }
 
-.gra-separator {
-  border-top-color: var(--accent-color-light);
-}
-
 .footer {
   background-color: var(--primary-color-dark);
 }

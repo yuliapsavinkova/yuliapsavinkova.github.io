@@ -2,7 +2,7 @@ class ExpertiseComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
             <section id="expertise" class="section expertise">
-                <h2>My Expertise</h2>
+                <h1>My Expertise</h1>
                 <p class="large">Making products visually appealing, functional, and responsive.</p>
                 <div class="gra-separator"></div>
                 <div class="expertise-cards-container">

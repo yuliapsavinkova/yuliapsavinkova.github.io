@@ -2,7 +2,7 @@ class ContactComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
             <section id="contact" class="section contact">
-                <h2>Stay In Touch</h2>
+                <h1>Stay In Touch</h1>
                 <p class="large">I am based in Miami with the flexibility to travel on-site as needed.</p>
                 <div class="gra-separator"></div>
                 <div id="contact-form" class="contact-form">
