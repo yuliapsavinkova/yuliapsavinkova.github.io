@@ -8,14 +8,12 @@ class HamburgerComponent extends HTMLElement {
               <input type="checkbox" id="menu-toggle" class="menu-checkbox">
               <label for="menu-toggle" class="menu-icon">☰</label>
               <nav class="menu-list menu-animate">
-                <ul>
-                  <li><a href="./index.html">Home</a></li>
-                  <li><a href="./about.html">About</a></li>
-                  <li><a href="./work.html">Work</a></li>
-                  <li><a href="../blog/index.html" target="_blank">Blog</a></li>
-                  <li><a href="./contact.html">Contact</a></li>
-                  <li><a href="./portfolio/resume.pdf" target="_blank">Resume</a></li>
-                </ul>
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./work.html">Work</a>
+                <a href="../blog/index.html" target="_blank">Blog</a>
+                <a href="./portfolio/resume.pdf" target="_blank">Resume</a>
+                <a href="./contact.html" class="button-link" part="button-link">Contact Me</a>
               </nav>
           </div>
         `;

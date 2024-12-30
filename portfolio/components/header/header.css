@@ -34,8 +34,11 @@
   }
 
   .nav-links {
+    flex-grow: 1;
+
     display: flex;
-    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
     gap: 2rem;
   }
 }

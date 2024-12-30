@@ -41,28 +41,19 @@ hamburger-component,
   transform: translateX(100%);
 }
 
-.menu-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-list ul li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-
+.menu-list {
   a {
     color: var(--gra-white);
-    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: block;
     padding: 1rem;
-  }
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  &:hover {
-    background-color: var(--accent-color-light);
+    &:hover {
+      background-color: var(--accent-color-light);
+    }
+    &:last-child {
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
   }
 }
 
