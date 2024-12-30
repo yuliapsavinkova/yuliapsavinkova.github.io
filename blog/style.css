@@ -1,14 +1,14 @@
 /* Shared */
-@import "../_shared/css/fonts-montserrat.css";
-@import "../_shared/css/reset.css";
-@import "../_shared/css/debug.css";
-@import "../_shared/css/variables.css";
-@import "../_shared/css/colors.css";
-@import "../_shared/css/scroll.css";
-@import "../_shared/css/buttons.css";
-@import "../_shared/css/images.css";
-@import "../_shared/css/selection.css";
-@import "../_shared/css/typography.css";
+@import "../shared/css/fonts-montserrat.css";
+@import "../shared/css/reset.css";
+@import "../shared/css/debug.css";
+@import "../shared/css/variables.css";
+@import "../shared/css/colors.css";
+@import "../shared/css/scroll.css";
+@import "../shared/css/buttons.css";
+@import "../shared/css/images.css";
+@import "../shared/css/selection.css";
+@import "../shared/css/typography.css";
 
 @import "./components/header/header.css";
 

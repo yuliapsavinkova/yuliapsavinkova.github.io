@@ -1,4 +1,4 @@
-import { Utils } from "../../../_shared/js/utils.js";
+import { Utils } from "../../../shared/js/utils.js";
 // TODO: handle of toggle open case.
 class HamburgerComponent extends HTMLElement {
   constructor() {
