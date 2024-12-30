@@ -81,7 +81,8 @@
       gap: 0;
 
       position: fixed;
-      right: 0;
+      top: 0;
+      right: -16rem;
       width: 16rem;
       height: 100%;
       background-color: var(--primary-color-dark);
@@ -90,7 +91,6 @@
       text-align: center;
 
       transition: transform 0.3s ease-in-out;
-      transform: translateX(100%);
 
       a {
         color: var(--gra-white);
@@ -110,7 +110,7 @@
 
     /* Open the menu when checked */
     .menu-checkbox:checked ~ .nav-menu {
-      transform: translateX(0);
+      transform: translateX(-100%);
     }
 
     input[type="checkbox"]:checked + label {

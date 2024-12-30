@@ -1,5 +1,5 @@
 import { Utils } from "../../../shared/js/utils.js";
-// TODO: handle of toggle open case.
+
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
