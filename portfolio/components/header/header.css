@@ -33,12 +33,88 @@
     text-decoration: none;
   }
 
-  .nav-links {
-    flex-grow: 1;
+  .gra-nav {
+    display: contents;
+  }
 
+  .nav-menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 2rem;
+  }
+
+  .menu-checkbox,
+  label {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+
+    label {
+      z-index: 10;
+      display: block;
+      cursor: pointer;
+      user-select: none;
+      font-size: 3rem;
+      height: 5rem;
+      color: var(--primary-color-dark);
+      transition: color 1s ease;
+    }
+
+    label:hover {
+      color: var(--accent-color-light);
+    }
+
+    .gra-nav {
+      display: flex;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 0;
+
+      position: fixed;
+      right: 0;
+      width: 16rem;
+      height: 100%;
+      background-color: var(--primary-color-dark);
+      color: var(--gra-white);
+      padding-top: 4rem;
+      text-align: center;
+
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(100%);
+
+      a {
+        color: var(--gra-white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: block;
+        padding: 1rem;
+        &:hover {
+          background-color: var(--accent-color-light);
+        }
+        &:last-child {
+          display: inline-block;
+          margin-top: 1.5rem;
+          align-self: center;
+        }
+      }
+    }
+
+    /* Open the menu when checked */
+    .menu-checkbox:checked ~ .nav-menu {
+      transform: translateX(0);
+    }
+
+    input[type="checkbox"]:checked + label {
+      color: var(--accent-color-light);
+    }
   }
 }

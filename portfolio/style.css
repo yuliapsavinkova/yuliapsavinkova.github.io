@@ -11,7 +11,6 @@
 @import "../shared/css/typography.css";
 
 @import "./components/header/header.css";
-@import "./components/header/hamburger.css";
 
 @import "./css/layout/footer.css";
 @import "./css/layout/logo.css";
