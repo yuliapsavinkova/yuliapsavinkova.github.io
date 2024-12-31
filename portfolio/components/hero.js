@@ -13,7 +13,7 @@ class HeroComponent extends HTMLElement {
                     <a href="#about" class="button-link">Learn More</a>
                 </div>
                 <div class="hero-portrait">
-                    <img src="../assets/images/hero-background.svg" />
+                    <img src="../assets/images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
                 </div>
             </section>
         `;

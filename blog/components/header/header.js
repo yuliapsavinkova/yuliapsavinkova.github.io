@@ -3,7 +3,7 @@ class BlogHeaderComponent extends HTMLElement {
     this.innerHTML = `
         <header class="blog-header">
             <a href="./" class="logo">
-                <img src="../assets/images/logo-colored.svg" alt="logo"/>
+                <img src="../assets/images/logo-colored.svg" alt="Logo - personal portfolio."/>
             </a>
             <nav>
                 <ul class="nav-links">

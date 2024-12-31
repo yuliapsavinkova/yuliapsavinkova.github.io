@@ -7,7 +7,7 @@ class AboutComponent extends HTMLElement {
                 <div class="gra-separator"></div>
                 <div class="about-me-container">
                     <div>
-                        <img src="../assets/images/portrait.png" class="about-me-image"/>
+                        <img src="../assets/images/portrait.png" alt="Portrait - photo of Yulia Savinkova." class="about-me-image"/>
                     </div>
                     <div class="about-me-content">
                         <h3>Transforming visions into realities.</h3>

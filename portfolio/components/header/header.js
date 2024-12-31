@@ -5,8 +5,8 @@ class HeaderComponent extends HTMLElement {
     super();
     this.innerHTML = `
       <header class="header">
-          <a href="./" class="logo">
-              <img src="assets/images/logo-colored.svg" alt="logo"/>
+          <a href="./index.html" class="logo">
+              <img src="assets/images/logo-colored.svg" alt="Logo - personal portfolio."/>
           </a>
           <nav class="gra-nav">
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
