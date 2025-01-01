@@ -38,10 +38,19 @@
   }
 
   .nav-menu {
+    flex: 1;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     gap: 2rem;
+
+    .nav-links {
+      flex: 1;
+      text-align: center;
+
+      a {
+        margin: 0 1rem;
+      }
+    }
   }
 
   .menu-checkbox,
@@ -92,19 +101,24 @@
 
       transition: transform 0.3s ease-in-out;
 
-      a {
-        color: var(--gra-white);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        display: block;
-        padding: 1rem;
-        &:hover {
-          background-color: var(--accent-color-light);
+      .nav-links {
+        flex: 0;
+        a {
+          color: var(--gra-white);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          display: block;
+          margin: 0;
+          padding: 1rem;
+          &:hover {
+            background-color: var(--accent-color-light);
+          }
         }
-        &:last-child {
-          display: inline-block;
-          margin-top: 1.5rem;
-          align-self: center;
-        }
+      }
+
+      .nav-action {
+        display: inline-block;
+        margin-top: 1.5rem;
+        align-self: center;
       }
     }
 

@@ -12,12 +12,16 @@ class HeaderComponent extends HTMLElement {
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
             <div class="nav-menu">
-                <a href="./index.html">Home</a>
-                <a href="./about.html">About</a>
-                <a href="./work.html">Work</a>
-                <a href="../blog/index.html" target="_blank">Blog</a>
-                <a href="./portfolio/resume.pdf" target="_blank">Resume</a>
-                <a href="./contact.html" class="button-link" part="button-link">Contact Me</a>
+                <div class="nav-links">
+                  <a href="./index.html">Home</a>
+                  <a href="./about.html">About</a>
+                  <a href="./work.html">Work</a>
+                  <a href="../blog/index.html" target="_blank">Blog</a>
+                  <a href="./portfolio/resume.pdf" target="_blank">Resume</a>
+                </div>
+                <div class="nav-action">
+                  <a href="./contact.html" class="button-link" part="button-link">Contact Me</a>
+                </div>
             </div>
           </nav>
       </header>
