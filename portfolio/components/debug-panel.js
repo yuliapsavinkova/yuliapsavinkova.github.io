@@ -1,14 +1,9 @@
+import { Utils } from "../../shared/js/utils.js";
 class DebugPanelComponent extends HTMLElement {
   // Screen width x height
   _updateWidth() {
-    const width =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-    const height =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight;
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     document.getElementById("debugPanel").innerHTML = width + " x " + height;
   }
 
