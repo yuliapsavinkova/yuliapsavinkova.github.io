@@ -9,8 +9,7 @@
 @import "../shared/css/images.css";
 @import "../shared/css/selection.css";
 @import "../shared/css/typography.css";
-
-@import "./components/header/header.css";
+@import "../shared/components/header/header.css";
 
 @import "./css/layout/footer.css";
 @import "./css/layout/logo.css";

@@ -1,14 +1,14 @@
-import { Utils } from "../../../shared/js/utils.js";
+import { Utils } from "../../js/utils.js";
 
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
 
     // TODO: move logo placeholder to shared folder with header
-    const logoSrc = this.getAttribute("logo-src") || "assets/images/logo-colored.svg";
+    const logoSrc = this.getAttribute("logo-src") || "../shared/components/header/defaultHeaderLogo.svg";
     const links = JSON.parse(this.getAttribute("links") || "[]");
     const buttonLink = JSON.parse(this.getAttribute("button-link") || "{}");
-
+    console.log(logoSrc);
     this.innerHTML =
       `
       <header class="header">

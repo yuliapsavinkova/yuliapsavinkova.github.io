@@ -1,3 +1,2 @@
 import "../shared/js/utils.js";
-
-import "./components/header/header.js";
+import "../shared/components/header/header.js";
