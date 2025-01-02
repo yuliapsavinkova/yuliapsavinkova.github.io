@@ -28,8 +28,17 @@
   </head>
 
   <body>
-    <header-component></header-component>
-
+    <header-component
+      logo-src="assets/images/logo-colored.svg"
+      links='[
+        {"href": "./index.html", "text": "Home"},
+        {"href": "./about.html", "text": "About"},
+        {"href": "./work.html", "text": "Work"},
+        {"href": "../blog/index.html", "text": "Blog", "target": "_blank"},
+        {"href": "./portfolio/resume.pdf", "text": "Resume", "target": "_blank"}
+      ]'
+      button-link='{"href": "contact.html", "text": "Contact"}'
+    >
     <contact-component></contact-component>
 
     <footer-component></footer-component>

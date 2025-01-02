@@ -3,29 +3,33 @@ import { Utils } from "../../../shared/js/utils.js";
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
-    this.innerHTML = `
+
+    // TODO: move logo placeholder to shared folder with header
+    const logoSrc = this.getAttribute("logo-src") || "assets/images/logo-colored.svg";
+    const links = JSON.parse(this.getAttribute("links") || "[]");
+    const buttonLink = JSON.parse(this.getAttribute("button-link") || "{}");
+
+    this.innerHTML =
+      `
       <header class="header">
           <a href="./index.html" class="logo">
-              <img src="assets/images/logo-colored.svg" alt="Logo - personal portfolio."/>
+              <img src="${logoSrc}" alt="Logo - personal portfolio."/>
           </a>
           <nav class="gra-nav">
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
             <div class="nav-menu">
-                <div class="nav-links">
-                  <a href="./index.html">Home</a>
-                  <a href="./about.html">About</a>
-                  <a href="./work.html">Work</a>
-                  <a href="../blog/index.html" target="_blank">Blog</a>
-                  <a href="./portfolio/resume.pdf" target="_blank">Resume</a>
+                <div class="nav-links">${links
+                  .map((link) => `<a href="${link.href}" target="${link.target || "_self"}">${link.text}</a>`)
+                  .join("")}
                 </div>
                 <div class="nav-action">
-                  <a href="./contact.html" class="button-link" part="button-link">Contact Me</a>
+                  <a href="${buttonLink.href}" class="button-link">${buttonLink.text}</a>
                 </div>
             </div>
           </nav>
       </header>
-    `;
+    ` + this.innerHTML; // Append existing content;
 
     this.checkbox = document.getElementById("menu-toggle");
     this._handleResize = this._handleResize.bind(this);
