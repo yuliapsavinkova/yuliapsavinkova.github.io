@@ -4,14 +4,14 @@ class HeaderComponent extends HTMLElement {
   constructor() {
     super();
 
-    // TODO: move logo placeholder to shared folder with header
+    const logoLink = this.getAttribute("logo-link") || "./index.html";
     const logoSrc = this.getAttribute("logo-src") || "../shared/components/header/defaultHeaderLogo.svg";
     const links = JSON.parse(this.getAttribute("links") || "[]");
     const buttonLink = JSON.parse(this.getAttribute("button-link") || "{}");
     this.innerHTML =
       `
       <header class="header">
-          <a href="./index.html" class="logo">
+          <a href="${logoLink}" class="logo">
               <img src="${logoSrc}" alt="Logo - personal portfolio."/>
           </a>
           <nav class="gra-nav">

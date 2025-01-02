@@ -7,9 +7,9 @@
     <meta name="description" content="Portfolio" />
     <meta name="keywords" content="Portfolio, HTML, CSS, JavaScript" />
     <meta name="author" content="Yulia Savinkova" />
-    <title>Work</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo-white.svg" />
-    <link rel="stylesheet" href="./portfolio/style.css" />
+    <title>About</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo-white.svg" />
+    <link rel="stylesheet" href="./style.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
@@ -28,23 +28,24 @@
   </head>
 
   <body>
-
     <header-component
-      logo-src="assets/images/logo-colored.svg"
+      logo-link="../index.html",
+      logo-src="../assets/images/logo-colored.svg"
       links='[
-        {"href": "./index.html", "text": "Home"},
+        {"href": "../index.html", "text": "Home"},
         {"href": "./about.html", "text": "About"},
         {"href": "./work.html", "text": "Work"},
         {"href": "../blog/index.html", "text": "Blog", "target": "_blank"},
-        {"href": "./portfolio/resume.pdf", "text": "Resume", "target": "_blank"}
+        {"href": "./resume.pdf", "text": "Resume", "target": "_blank"}
       ]'
       button-link='{"href": "contact.html", "text": "Contact"}'
     >
-    <expertise-component></expertise-component>
+    <about-component></about-component>
+    <work-experience-component></work-experience-component>
     <contact-component></contact-component>
 
     <footer-component copyright-name="Yulia Savinkova"></footer-component>
 
-    <script src="./portfolio/app.js" type="module"></script>
+    <script src="./app.js" type="module"></script>
   </body>
 </html>
