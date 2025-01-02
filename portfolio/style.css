@@ -10,8 +10,8 @@
 @import "../shared/css/selection.css";
 @import "../shared/css/typography.css";
 @import "../shared/components/header/header.css";
+@import "../shared/components/footer/footer.css";
 
-@import "./css/layout/footer.css";
 @import "./css/layout/logo.css";
 @import "./css/layout/section.css";
 @import "./css/layout/separator.css";
