@@ -15,6 +15,7 @@
   /* sizes */
   --header-size: 4rem;
   --footer-size: 10rem;
+  --content-min-height: calc(100vh - var(--header-size) - var(--footer-size));
   --logo-size: 2.8rem;
 
   /* padding */
@@ -23,6 +24,10 @@
 
   /* logos, buttons, links */
   --border-radius-button: 0.35rem;
+}
+
+main {
+  min-height: var(--content-min-height);
 }
 
 @media (max-width: 768px) {
