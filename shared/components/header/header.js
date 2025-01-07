@@ -6,6 +6,7 @@ class HeaderComponent extends HTMLElement {
 
     const logoLink = this.getAttribute("logo-link") || "./index.html";
     const logoSrc = this.getAttribute("logo-src") || "../shared/components/header/defaultHeaderLogo.svg";
+    const logoName = this.getAttribute("logo-name") || "";
     const links = JSON.parse(this.getAttribute("links") || "[]");
     const buttonLink = JSON.parse(this.getAttribute("button-link") || "{}");
     this.innerHTML =
@@ -14,6 +15,7 @@ class HeaderComponent extends HTMLElement {
           <a href="${logoLink}" class="logo">
               <img src="${logoSrc}" alt="Logo - personal portfolio."/>
           </a>
+          <div class="logo-name">${logoName}</div>
           <nav class="gra-nav">
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
