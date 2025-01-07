@@ -14,8 +14,8 @@ class HeaderComponent extends HTMLElement {
       <header class="header">
           <a href="${logoLink}" class="logo">
               <img src="${logoSrc}" alt="Logo - personal portfolio."/>
+              <span class="logo-name">${logoName}</span>
           </a>
-          <div class="logo-name">${logoName}</div>
           <nav class="gra-nav">
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
