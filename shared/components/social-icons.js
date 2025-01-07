@@ -8,7 +8,7 @@ class SocialIcons extends HTMLElement {
         { href: "https://github.com/yuliapsavinkova", target: "_blank", display: "fab fa-github fa-xl" },
         { href: "https://www.linkedin.com/in/juliia", target: "_blank", display: "fab fa-linkedin fa-xl" },
         { href: "https://codepen.io/star5/pens/public", target: "_blank", display: "fab fa-codepen fa-xl" },
-        { href: "https://codepen.io/star5/pens/public", target: "_blank", display: "fa-solid fa-blog fa-xl" },
+        { href: "../../blog/index.html", target: "_blank", display: "fa-solid fa-blog fa-xl" },
       ];
     }
     this.innerHTML = `
