@@ -21,7 +21,7 @@ class ExpertiseComponent extends HTMLElement {
                     <div class="service-card">
                         <h4>3D Development</h4>
                         <img src="../../assets/images/design-pro.svg" class="work-image" alt="design-image" />
-                        <p>Build custom components for the web using 3D rendering library Three.js</p>
+                        <p>Build 3D experiences for the web using 3D rendering library Three.js</p>
                         <!--<a href="#expertise"><i class="fa-regular fa-circle-right fa-xl"></i></a>-->
                     </div>
                 </div>
