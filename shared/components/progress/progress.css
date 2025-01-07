@@ -1,0 +1,51 @@
+.progress-container {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.progress-container.visible {
+  display: block;
+  opacity: 1; /* Fade in when visible */
+}
+
+.progress-ring {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--primary-color-dark) 0%,
+    var(--primary-color-dark) var(--scroll-progress, 0%),
+    var(--gra-grey) var(--scroll-progress, 0%),
+    var(--gra-grey) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--gra-white);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover i {
+    color: var(--accent-color-light);
+  }
+}
