@@ -12,7 +12,6 @@ class ScrollProgressRing extends HTMLElement {
 
     this.progressContainer = document.querySelector("#progress-container");
     this.progressRing = document.querySelector("#progress-ring");
-    this.percentageDisplay = document.querySelector("#percentage");
 
     this.updateProgress = this.updateProgress.bind(this);
     this.scrollToTop = this.scrollToTop.bind(this);
@@ -46,9 +45,6 @@ class ScrollProgressRing extends HTMLElement {
 
     // Update CSS variable for the conic-gradient
     this.progressRing.style.setProperty("--scroll-progress", `${scrollPercent}%`);
-
-    // Update percentage text
-    this.percentageDisplay.textContent = `${Math.round(scrollPercent)}%`;
   }
 
   scrollToTop() {

@@ -10,6 +10,8 @@
 @import "../shared/css/selection.css";
 @import "../shared/css/typography.css";
 @import "../shared/components/header/header.css";
+@import "../shared/components/progress/progress.css";
+
 @import "../shared/components/footer/footer.css";
 
 main {

@@ -23,7 +23,9 @@ class HeaderComponent extends HTMLElement {
                   .join("")}
                 </div>
                 <div class="nav-action">
-                  <a href="${buttonLink.href}" class="button-link">${buttonLink.text}</a>
+                  <a href="${buttonLink.href}" target="${buttonLink.target || "_self"}" class="button-link">${
+        buttonLink.text
+      }</a>
                 </div>
             </div>
           </nav>
