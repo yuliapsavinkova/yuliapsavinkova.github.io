@@ -46,6 +46,7 @@
   align-items: center;
 
   &:hover i {
-    color: var(--accent-color-light);
+    color: var(--primary-color-dark);
+    margin-bottom: 2px;
   }
 }

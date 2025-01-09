@@ -12,9 +12,9 @@
 }
 
 .button-link:hover {
-  scale: 1.05;
+  scale: 1.02;
   color: var(--neutral-color-light);
-  background-color: var(--accent-color-med);
+  filter: brightness(105%);
 }
 .button-link:active {
   scale: 0.95;
