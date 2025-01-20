@@ -34,7 +34,7 @@
     cursor: pointer;
   }
 
-  .logo:hover {
+  .logo img:hover {
     filter: brightness(150%);
   }
 
