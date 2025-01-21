@@ -9,6 +9,7 @@ class WorkExperienceComponent extends HTMLElement {
                       <h5>Lead Software Engineer, Gravity Workflow, Miami, FL 2019 - Present</h5>
                       <ul>
                         <li>Design and develop web applications and websites from scratch.</li>
+                        <li>Design and develop 3D interactive web experiences.</li>
                         <li>Create custom HTML web components and reusable shared libraries.</li>
                         <li>Build responsive layouts that work across all screen sizes.</li>
                         <li>Modernize existing applications by rebuilding them with modern technologies.</li>
@@ -18,6 +19,8 @@ class WorkExperienceComponent extends HTMLElement {
                         <span>CSS</span>
                         <span>JavaScript</span>
                         <span>Web Components</span>
+                        <span>React</span>
+                        <span>Three.js</span>
                       </div>
                   </div>
 
