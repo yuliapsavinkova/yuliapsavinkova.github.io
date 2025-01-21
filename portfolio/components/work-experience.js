@@ -15,12 +15,13 @@ class WorkExperienceComponent extends HTMLElement {
                         <li>Modernize existing applications by rebuilding them with modern technologies.</li>
                       </ul>
                       <div class="work-experience-technologies">
-                        <span>HTML</span>
-                        <span>CSS</span>
                         <span>JavaScript</span>
                         <span>Web Components</span>
                         <span>React</span>
                         <span>Three.js</span>
+                        <span>Node.js</span>
+                        <span>CSS</span>
+                        <span>HTML</span>
                       </div>
                   </div>
 
@@ -51,8 +52,8 @@ class WorkExperienceComponent extends HTMLElement {
                       <div class="work-experience-technologies">
                         <span>JavaScript</span>
                         <span>Angular</span>
-                        <span>D3</span>
-                        <span>Node</span>
+                        <span>D3.js</span>
+                        <span>Node.js</span>
                         <span>Gulp</span>
                         <span>Git</span>
                         <span>SASS</span>
@@ -70,7 +71,7 @@ class WorkExperienceComponent extends HTMLElement {
                         <span>JavaScript</span>
                         <span>Angular</span>
                         <span>Backbone</span>
-                        <span>Node</span>
+                        <span>Node.js</span>
                         <span>Grunt</span>
                         <span>Git</span>
                         <span>LESS</span>
