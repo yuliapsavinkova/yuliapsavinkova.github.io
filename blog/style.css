@@ -11,11 +11,12 @@
 @import "../shared/css/typography.css";
 @import "../shared/components/header/header.css";
 @import "../shared/components/progress/progress.css";
-
 @import "../shared/components/footer/footer.css";
+@import "../shared/css/cards.css";
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

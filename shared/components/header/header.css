@@ -5,10 +5,9 @@
   top: 0;
   margin: 0;
 
-  box-shadow: 0 1px 10px rgba(0, 45, 91, 0.2), 0 1px 10px rgba(0, 45, 91, 0.15);
-  background-color: var(--gra-white);
+  box-shadow: 0 8px 6px -6px rgba(0, 45, 91, 0.2);
 
-  width: 100%;
+  background-color: var(--gra-white);
   height: var(--header-size);
 
   padding: 0 var(--global-padding-sides);
