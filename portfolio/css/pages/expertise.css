@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 2rem 0;
 
   .button-link {
     width: fit-content;
@@ -28,9 +29,12 @@
 
 @media (max-width: 768px) {
   .expertize-row {
+    max-width: 90%;
     justify-content: center;
     flex-wrap: wrap;
+
     img {
+      max-width: 90%;
       order: -1;
     }
   }
