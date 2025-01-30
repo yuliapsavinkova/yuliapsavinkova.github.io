@@ -1,13 +1,6 @@
-.section.page {
-  max-width: 1000px;
-  margin: 2rem auto;
-
-  -webkit-box-shadow: 0 -2px 20px rgba(0, 45, 91, 0.1);
-  -moz-box-shadow: 0 -2px 20px rgba(0, 45, 91, 0.1);
-  box-shadow: 0 -2px 20px rgba(0, 45, 91, 0.1);
-}
-
 .section {
+  box-shadow: inset 0 -2px 20px rgba(0, 45, 91, 0.1);
+
   position: relative;
   display: flex;
   flex-direction: column;

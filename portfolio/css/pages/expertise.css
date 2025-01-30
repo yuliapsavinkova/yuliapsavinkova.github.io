@@ -1,5 +1,6 @@
 .expertise {
-  box-shadow: inset 0 -2px 20px rgba(0, 45, 91, 0.1);
+  background: radial-gradient(circle, #464646 2%, transparent 3%);
+  background-size: 1rem 1rem;
 }
 
 .expertize-row {

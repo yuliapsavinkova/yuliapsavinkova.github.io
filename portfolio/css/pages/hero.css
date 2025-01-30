@@ -1,13 +1,9 @@
 .hero {
   width: 100%;
   height: calc(100vh - var(--header-size));
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  background: radial-gradient(circle, #464646 2%, transparent 3%);
-  background-size: 1rem 1rem;
 }
 
 .hero-portrait,
