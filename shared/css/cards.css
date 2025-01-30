@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   padding: 1rem;
 
   .card-image {
@@ -21,6 +21,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 1rem;
 
   background-color: var(--gra-white);
