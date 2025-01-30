@@ -1,0 +1,18 @@
+.section-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  p.large {
+    text-align: center;
+  }
+
+  .gra-separator {
+    border-top-width: 2px;
+    border-top-style: solid;
+    width: 6rem;
+    border-top-color: var(--accent-color-light);
+  }
+}

@@ -1,3 +1,45 @@
 .expertise {
   box-shadow: inset 0 -2px 20px rgba(0, 45, 91, 0.1);
 }
+
+.expertize-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.expertize-description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .button-link {
+    width: fit-content;
+  }
+
+  p {
+    width: clamp(20rem, 50vw, 30rem);
+  }
+
+  img {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .expertize-row {
+    justify-content: center;
+    flex-wrap: wrap;
+    img {
+      order: -1;
+    }
+  }
+  .expertize-description {
+    align-items: center;
+    padding: 0 1rem;
+
+    p {
+      width: 100%;
+    }
+  }
+}

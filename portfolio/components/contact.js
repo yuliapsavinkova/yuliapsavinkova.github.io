@@ -2,9 +2,10 @@ class ContactComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
             <section id="contact" class="section contact">
-                <h1>Stay In Touch</h1>
-                <p class="large">I am based in Miami with the flexibility to travel on-site as needed.</p>
-                <div class="gra-separator"></div>
+                <section-header 
+                    title="Stay In Touch"
+                    sub-title="Available for On-Site Travel">
+                </section-header>
                 <div id="contact-form" class="contact-form">
                     <h3>Contact Me</h3>
                     <form action="https://formspree.io/f/xqakdrpw" method="POST">

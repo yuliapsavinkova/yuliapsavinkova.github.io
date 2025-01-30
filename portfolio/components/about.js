@@ -2,9 +2,10 @@ class AboutComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
             <section id="about" class="section about">
-                <h1>About Me</h1>
-                <p class="large">Bringing Web Ideas to Life</p>
-                <div class="gra-separator"></div>
+                <section-header 
+                    title="About Me"
+                    sub-title="Bringing Web Ideas to Life">
+                </section-header>
                 <div class="about-me-container">
                     <div>
                         <img src="../assets/images/portrait.png" alt="Portrait - photo of Yulia Savinkova." class="about-me-image"/>

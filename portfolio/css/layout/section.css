@@ -14,16 +14,10 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-
   /* max-width: 100%;
   margin: auto;
   box-shadow: none; */
-
   padding: var(--global-padding-between) var(--global-padding-sides);
-
-  p.large {
-    text-align: center;
-  }
 }
 
 .textured-back {

@@ -2,9 +2,10 @@ class WorkingProcessComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
             <section id="working-process" class="section working-process">
-                <h1>Working Process</h1>
-                <p class="large">I collaborate, design, code, and optimize for responsive, high-quality web experiences.</p>
-                <div class="gra-separator"></div>
+                <section-header 
+                    title="Working Process"
+                    sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
+                </section-header>
             </section>
         `;
   }
