@@ -21,7 +21,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   padding: 1rem;
 
   background-color: var(--gra-white);
@@ -29,5 +28,10 @@
 
   p {
     text-align: center;
+  }
+
+  img,
+  a {
+    margin: 1rem;
   }
 }
