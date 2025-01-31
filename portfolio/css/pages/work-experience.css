@@ -1,8 +1,10 @@
-.work-experience-content {
-  position: relative;
-  width: 100%;
+.work-experience-container {
+  display: flex;
+  flex-direction: column;
+}
 
-  padding: 0 4rem;
+.work-experience-content {
+  margin: 2rem 0;
 
   display: flex;
   flex-direction: column;
@@ -21,7 +23,7 @@
 .work-experience-technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
 
   span {
     padding: 0.5rem;

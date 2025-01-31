@@ -12,11 +12,12 @@
 .expertize-description {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   margin: 2rem 0;
+  gap: 1rem;
 
   .button-link {
     width: fit-content;
+    margin-top: 1rem;
   }
 
   p {
