@@ -1,7 +1,4 @@
 html {
   scroll-behavior: smooth;
-}
-
-.section {
-  scroll-margin-top: var(--header-size);
+  scroll-padding-top: var(--header-size);
 }
