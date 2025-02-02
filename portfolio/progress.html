@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Progress Web Component</title>
+    <style>
+      body {
+        height: 300vh; /* Allow scrolling */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Happy Scrolling!</h1>
+
+    <scroll-progress></scroll-progress>
+
+    <h2>Click component to return to top.</h2>
+
+    <script>
+      class ScrollProgress extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: "open" });
+
+          // Initial HTML structure inside the shadow DOM
+          this.shadowRoot.innerHTML = `
+          <style>
+            :host {
+              --size: 4rem;
+              --thickness: 0.75;
+            }
+            .progress {
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              cursor: pointer;
+              border: 1px solid white;
+              width: var(--size);
+              height: var(--size);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .progress-inner {
+              width: calc(var(--size) * var(--thickness));
+              height: calc(var(--size) * var(--thickness));
+              background-color: white;
+              border-radius: 50%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              position: relative;
+            }
+            .progress::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              background: conic-gradient(#034670 0%, #034670 0%, #c3d1e5 0%, #c3d1e5 100%);
+              z-index: -1;
+            }
+            .arrow {
+              width: 0;
+              height: 0;
+              border-left: 0.5rem solid transparent;
+              border-right: 0.5rem solid transparent;
+              border-bottom: 0.8rem solid #034670;
+            }
+            .percentage {
+              color: #034670;
+              font-size: 0.8rem;
+              font-weight: bold;
+              margin-top: 5px;
+            }
+          </style>
+          <div class="progress">
+            <div class="progress-inner">
+              <div class="arrow"></div>
+              <div class="percentage">0%</div>
+            </div>
+          </div>
+        `;
+
+          this.progress = this.shadowRoot.querySelector(".progress");
+          this.percentage = this.shadowRoot.querySelector(".percentage");
+        }
+
+        connectedCallback() {
+          window.addEventListener("scroll", this.updateProgress.bind(this));
+          this.progress.addEventListener("click", this.scrollToTop.bind(this));
+          this.updateProgress();
+        }
+
+        updateProgress() {
+          const scrollTop = window.scrollY;
+          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = Math.min((scrollTop / scrollHeight) * 100, 100);
+
+          // Update progress circle fill dynamically
+          this.progress.style.setProperty("--scroll-progress", `${scrollPercent}%`);
+
+          // Update conic-gradient inside shadow DOM
+          this.progress.style.background = `conic-gradient(#034670 0%, #034670 ${scrollPercent}%, #c3d1e5 ${scrollPercent}%, #c3d1e5 100%)`;
+
+          // Update percentage text
+          this.percentage.textContent = `${Math.round(scrollPercent)}%`;
+        }
+
+        scrollToTop() {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      customElements.define("scroll-progress", ScrollProgress);
+    </script>
+  </body>
+</html>
