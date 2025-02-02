@@ -7,20 +7,11 @@
     <style>
       body {
         height: 300vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-family: Arial, sans-serif;
       }
     </style>
   </head>
   <body>
-    <h1>Happy Scrolling!</h1>
-
     <scroll-progress></scroll-progress>
-
-    <h2>Click component to return to top.</h2>
 
     <script>
       class ScrollProgress extends HTMLElement {
@@ -50,6 +41,7 @@
               background: conic-gradient(#034670 0%, #034670 var(--scroll-progress), #c3d1e5 var(--scroll-progress), #c3d1e5 100%);
               transition: background 0.2s ease-in-out;
             }
+ 
             .progress-inner {
               width: calc(var(--size) * var(--thickness));
               height: calc(var(--size) * var(--thickness));
@@ -76,7 +68,7 @@
               margin-top: 5px;
             }
           </style>
-          <div class="progress">
+          <div class="progress" role="button" tabindex="0" aria-label="Scroll to top">
             <div class="progress-inner">
               <div class="arrow"></div>
               <div class="percentage">0%</div>
@@ -85,25 +77,43 @@
         `;
           this.progress = this.shadowRoot.querySelector(".progress");
           this.percentage = this.shadowRoot.querySelector(".percentage");
+          this.scrollListener = this.updateProgress.bind(this);
+          this.clickListener = this.scrollToTop.bind(this);
+          this.keyListener = this.handleKeyPress.bind(this);
         }
 
         connectedCallback() {
-          window.addEventListener("scroll", this.updateProgress.bind(this));
-          this.progress.addEventListener("click", this.scrollToTop.bind(this));
+          window.addEventListener("scroll", this.scrollListener);
+          this.progress.addEventListener("click", this.clickListener);
+          this.progress.addEventListener("keydown", this.keyListener);
           this.updateProgress();
         }
 
-        updateProgress() {
-          const scrollTop = window.scrollY;
-          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const scrollPercent = Math.min((scrollTop / scrollHeight) * 100, 100);
+        disconnectedCallback() {
+          window.removeEventListener("scroll", this.scrollListener);
+          this.progress.removeEventListener("click", this.clickListener);
+          this.progress.removeEventListener("keydown", this.keyListener);
+        }
 
-          this.progress.style.setProperty("--scroll-progress", `${scrollPercent}%`);
-          this.percentage.textContent = `${Math.round(scrollPercent)}%`;
+        updateProgress() {
+          // smoother animations
+          requestAnimationFrame(() => {
+            const scrollTop = window.scrollY;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = Math.min((scrollTop / scrollHeight) * 100, 100);
+            this.progress.style.setProperty("--scroll-progress", `${scrollPercent}%`);
+            this.percentage.textContent = `${Math.round(scrollPercent)}%`;
+          });
         }
 
         scrollToTop() {
           window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        handleKeyPress(event) {
+          if (event.key === "Enter" || event.key === " ") {
+            this.scrollToTop();
+          }
         }
       }
 
