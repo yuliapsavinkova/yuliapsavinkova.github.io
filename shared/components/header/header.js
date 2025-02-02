@@ -21,7 +21,12 @@ class HeaderComponent extends HTMLElement {
             <label for="menu-toggle">☰</label>
             <div class="nav-menu">
                 <div class="nav-links">${links
-                  .map((link) => `<a href="${link.href}" target="${link.target || "_self"}">${link.text}</a>`)
+                  .map(
+                    (link) =>
+                      `<a href="${link.href}" target="${link.target || "_self"}">${
+                        link.image ? `<img src="${link.image}" />` : ""
+                      }${link.text}</a>`
+                  )
                   .join("")}
                 </div>
                 <div class="nav-action">
