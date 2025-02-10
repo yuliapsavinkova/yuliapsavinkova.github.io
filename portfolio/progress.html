@@ -24,6 +24,8 @@
               --size: 4rem;
               --thickness: 0.75;
               --scroll-progress: 0%;
+              --color: #034670;
+              --color-inner: #fff;
             }
             .progress {
               position: fixed;
@@ -38,14 +40,19 @@
               align-items: center;
               justify-content: center;
               box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-              background: conic-gradient(#034670 0%, #034670 var(--scroll-progress), #c3d1e5 var(--scroll-progress), #c3d1e5 100%);
+              background: conic-gradient(VAR(--color) 0%, VAR(--color) var(--scroll-progress), #c3d1e5 var(--scroll-progress), #c3d1e5 100%);
               transition: background 0.2s ease-in-out;
             }
- 
+            .progress[role="button"]:focus {
+              outline: 0.5px solid #034670;
+            }
+            .progress-inner:focus {
+              border: 0.5px solid #034670;
+            }
             .progress-inner {
               width: calc(var(--size) * var(--thickness));
               height: calc(var(--size) * var(--thickness));
-              background-color: white;
+              background-color: var(--color-inner);
               border-radius: 50%;
               display: flex;
               flex-direction: column;
@@ -59,13 +66,13 @@
               height: 0;
               border-left: 0.5rem solid transparent;
               border-right: 0.5rem solid transparent;
-              border-bottom: 0.8rem solid #034670;
+              border-bottom: 0.8rem solid VAR(--color);
             }
             .percentage {
-              color: #034670;
+              color: VAR(--color);
               font-size: 0.8rem;
               font-weight: bold;
-              margin-top: 5px;
+              margin-top: 2px;
             }
           </style>
           <div class="progress" role="button" tabindex="0" aria-label="Scroll to top">
