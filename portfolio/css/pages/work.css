@@ -1,51 +1,51 @@
-.expertise {
+.work {
   background: radial-gradient(circle, #464646 2%, transparent 3%);
   background-size: 1rem 1rem;
 }
 
-.expertize-row {
+.work-row {
+  margin: 1rem 0;
   display: flex;
   flex-direction: row;
   gap: 2rem;
+
+  .work-description,
+  .work-image {
+    width: 50%;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+  }
 }
 
-.expertize-description {
+.work-description {
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  justify-content: center;
   gap: 1rem;
 
   .button-link {
     width: fit-content;
     margin-top: 1rem;
   }
-
-  p {
-    width: clamp(20rem, 50vw, 30rem);
-  }
-
-  img {
-    width: 20rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .expertize-row {
+  .work-row {
     max-width: 90%;
     justify-content: center;
     flex-wrap: wrap;
 
-    img {
-      max-width: 90%;
-      order: -1;
+    .work-description,
+    .work-image {
+      width: 90%;
+      align-items: center;
     }
-  }
-  .expertize-description {
-    align-items: center;
-    padding: 0 1rem;
 
-    p {
-      width: 100%;
+    img {
+      order: -1;
     }
   }
 }

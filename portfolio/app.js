@@ -6,7 +6,7 @@ import "../shared/components/progress/progress.js";
 
 import "./components/hero.js";
 import "./components/expertise.js";
-import "./components/expertise-expanded.js";
+import "./components/work.js";
 import "./components/about.js";
 import "./components/work-experience.js";
 import "./components/process.js";
