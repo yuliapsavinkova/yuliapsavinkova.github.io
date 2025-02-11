@@ -1,15 +1,18 @@
 :root {
   /* colors */
-  --primary-color-dark: #002d5b;
+  --primary-color-dark: #333a6e;
   --primary-color-light: #f9fafb;
+
   --neutral-color-dark: #fadbd1;
   --neutral-color-light: #fefafa;
+
   --accent-color-dark: #8a150f;
   --accent-color-light: #e04a50;
+
   --text-color: #464646;
-  --gra-white: #ffffff;
-  --gra-black: black;
-  --gra-grey: #e0e0e0;
+  --white-color: #ffffff;
+  --grey-color: #e0e0e0;
+  --black-color: black;
 
   /* sizes */
   --header-size: 4rem;
