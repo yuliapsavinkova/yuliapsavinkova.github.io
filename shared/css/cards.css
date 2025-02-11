@@ -9,6 +9,11 @@
   .card-image {
     width: 90%;
   }
+
+  a {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
 .card {
