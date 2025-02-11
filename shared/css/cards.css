@@ -10,10 +10,6 @@
     height: 10rem;
     width: auto;
   }
-
-  .card-image:hover {
-    filter: brightness(150%);
-  }
 }
 
 .card {

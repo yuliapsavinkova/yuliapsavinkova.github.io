@@ -17,6 +17,6 @@
   filter: brightness(105%);
 }
 .button-link:active {
-  scale: 0.95;
+  scale: 0.98;
   background-color: var(--accent-color-dark);
 }

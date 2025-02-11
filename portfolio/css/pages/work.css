@@ -7,10 +7,11 @@
   margin: 1rem 0;
   display: flex;
   flex-direction: row;
+  /* justify-content: space-around; */
   gap: 2rem;
 
-  .work-description,
-  .work-image {
+  .work-image,
+  .work-description {
     width: 50%;
   }
 

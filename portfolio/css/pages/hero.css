@@ -39,12 +39,12 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .hero {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 
     .hero-portrait {
       height: 40%;
@@ -54,6 +54,7 @@
     .hero-portrait {
       order: -1;
       img {
+        width: 100%;
         object-position: center center;
       }
     }

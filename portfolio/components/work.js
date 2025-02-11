@@ -13,7 +13,7 @@ class WorkComponent extends HTMLElement {
                     <p>Need a sleek, high-performing website to showcase your brand? I specialize in building modern, responsive websites that look great on any device and deliver a seamless user experience. Whether you need a portfolio, business site, or landing page, I provide custom solutions tailored to your needs. With a focus on speed, SEO, and user-friendly design, I’ll help create a site that not only looks amazing but also drives results. Let's work together to make your online presence shine!</p>
                     <a href="../portfolio/work.html#contact" class="button-link">Get a Quote</a>
                 </div>
-                <img src="../../assets/images/web-dev.png" class="work-image" alt="maintenance-image" />
+                <img src="../../assets/images/web-dev.png" class="work-image vertical" alt="maintenance-image" />
             </div>
 
             <div id="work-row-app" class="work-row">
