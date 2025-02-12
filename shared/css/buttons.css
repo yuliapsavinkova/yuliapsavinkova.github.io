@@ -6,7 +6,6 @@
   --outline-color: rgba(45, 74, 119, 0.5); /* Default outline color */
 }
 
-/* 🔹 Base Button (Common Styles) */
 .button {
   display: inline-flex;
   align-items: center;
@@ -23,7 +22,6 @@
   border: 1px solid transparent;
 }
 
-/* 🔵 Primary Button (Solid) */
 .button-primary {
   color: var(--white-color);
   background-color: var(--primary-dark-color);
@@ -31,20 +29,18 @@
 }
 
 .button-primary:hover {
-  background-color: var(--white-color);
-  color: var(--primary-dark-color);
-  border-color: var(--primary-dark-color);
+  filter: brightness(1.2);
+  color: var(--white-color);
 }
 
 .button-primary:active {
-  background-color: var(--primary-dark-color);
+  filter: brightness(0.8);
 }
 
 .button-primary:focus-visible {
   outline: 2px solid var(--outline-color);
 }
 
-/* ⚪ Secondary Button (Ghost) */
 .button-secondary {
   color: var(--primary-dark-color);
   background-color: transparent;
@@ -65,7 +61,6 @@
   outline: 2px solid var(--outline-color);
 }
 
-/* ✅ Actionable Button (Pop Effect) */
 .button-action {
   color: var(--white-color);
   background-color: var(--accent-light-color);
@@ -77,15 +72,11 @@
 
 .button-action:hover {
   color: var(--white-color);
-  /* background-color: var(--accent-dark-color); */
-  /* border-color: var(--accent-dark-color); */
-  /* transform: scale(1.05); */
   filter: brightness(1.1);
 }
 
 .button-action:active {
   background-color: var(--accent-light-color);
-  /* transform: scale(0.97); */
   filter: brightness(0.9);
 }
 
@@ -93,7 +84,6 @@
   outline: 3px solid var(--outline-color);
 }
 
-/* ⚫ Tertiary Button (Minimal) */
 .button-tertiary {
   color: var(--text-color);
   background-color: transparent;
@@ -114,7 +104,6 @@
   outline: 2px solid var(--outline-color);
 }
 
-/* 🔗 Button Link (Styled Like a Link) */
 .button-link {
   color: var(--primary-dark-color);
   background-color: transparent;

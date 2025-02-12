@@ -1,9 +1,6 @@
 .contact-form {
-  background-color: var(--white-color);
   box-shadow: 0 -2px 20px rgba(0, 45, 91, 0.1);
-
   padding: 2rem 4rem;
-
   width: min(100%, 1000px);
 
   button {
@@ -35,6 +32,6 @@
   textarea:focus {
     border-color: var(--primary-dark-color);
     outline: none;
-    background-color: #fff;
+    background-color: var(--white-color);
   }
 }
