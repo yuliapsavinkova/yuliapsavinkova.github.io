@@ -63,22 +63,15 @@ span.small {
   line-height: 1.5;
 }
 
-/* Links */
-a {
-  font-size: 1.125rem;
-  font-weight: 400;
-  letter-spacing: 0em;
-  line-height: 1.6;
-}
-
-/* Buttons */
-/* button,
+/* Buttons, Links */
+a,
+button,
 .button {
   font-size: 1.1rem;
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 1.6;
-} */
+}
 
 /* Form Elements */
 label {

@@ -28,7 +28,7 @@ class AboutComponent extends HTMLElement {
                             <span>Git</span>
                             <span>Webpack</span>
                         </div>
-                        <a href="./portfolio/resume.pdf" target="_blank" class="button button-primary">Resume</a>
+                        <a href="./portfolio/resume.pdf" target="_blank" class="button button-action">Resume</a>
 
                     </div>
                 </div>

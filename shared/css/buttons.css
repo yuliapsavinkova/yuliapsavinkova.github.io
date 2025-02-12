@@ -1,26 +1,7 @@
 :root {
-  --button-font-size: 1rem;
-  --button-font-weight: 500;
-  --button-line-height: 1.6;
-
   --button-transition: all 0.15s ease-in-out;
   --border-radius-button: 8px;
   --button-padding: 0.5rem 1rem;
-
-  /* Colors */
-  /* --primary-dark-color: #2d4a77;
-  --primary-light-color: #f9fafb;
-
-  --neutral-dark-color: #fadbd1;
-  --neutral-light-color: #fefafa;
-
-  --accent-dark-color: #8a150f;
-  --accent-light-color: #e04a50;
-
-  --text-color: #464646;
-  --white-color: #ffffff;
-  --grey-color: #e0e0e0;
-  --black-color: black; */
 
   --outline-color: rgba(45, 74, 119, 0.5); /* Default outline color */
 }
@@ -32,10 +13,6 @@
   justify-content: center;
   padding: var(--button-padding);
 
-  font-size: var(--button-font-size);
-  font-weight: var(--button-font-weight);
-  line-height: var(--button-line-height);
-
   text-align: center;
   text-decoration: none;
   border-radius: var(--border-radius-button);
@@ -43,7 +20,7 @@
   outline: none;
   transition: var(--button-transition);
   user-select: none;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 /* 🔵 Primary Button (Solid) */
@@ -54,7 +31,7 @@
 }
 
 .button-primary:hover {
-  background-color: var(--primary-light-color);
+  background-color: var(--white-color);
   color: var(--primary-dark-color);
   border-color: var(--primary-dark-color);
 }
@@ -85,7 +62,7 @@
 }
 
 .button-secondary:focus-visible {
-  outline: 3px solid var(--outline-color);
+  outline: 2px solid var(--outline-color);
 }
 
 /* ✅ Actionable Button (Pop Effect) */
@@ -102,12 +79,14 @@
   color: var(--white-color);
   /* background-color: var(--accent-dark-color); */
   /* border-color: var(--accent-dark-color); */
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+  filter: brightness(1.1);
 }
 
 .button-action:active {
   background-color: var(--accent-light-color);
-  transform: scale(0.97);
+  /* transform: scale(0.97); */
+  filter: brightness(0.9);
 }
 
 .button-action:focus-visible {
@@ -132,7 +111,7 @@
 }
 
 .button-tertiary:focus-visible {
-  outline: 3px solid var(--outline-color);
+  outline: 2px solid var(--outline-color);
 }
 
 /* 🔗 Button Link (Styled Like a Link) */
@@ -150,5 +129,5 @@
 }
 
 .button-link:focus-visible {
-  outline: 3px solid var(--outline-color);
+  outline: 2px solid var(--outline-color);
 }
