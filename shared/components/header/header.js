@@ -8,7 +8,7 @@ class HeaderComponent extends HTMLElement {
     const logoSrc = this.getAttribute("logo-src") || "../shared/components/header/defaultHeaderLogo.svg";
     const logoName = this.getAttribute("logo-name") || "";
     const links = JSON.parse(this.getAttribute("links") || "[]");
-    const buttonLink = JSON.parse(this.getAttribute("button-link") || "{}");
+    const buttonLink = JSON.parse(this.getAttribute("button") || "{}");
     this.innerHTML =
       `
       <header class="header">
@@ -30,7 +30,7 @@ class HeaderComponent extends HTMLElement {
                   .join("")}
                 </div>
                 <div class="nav-action">
-                  <a href="${buttonLink.href}" target="${buttonLink.target || "_self"}" class="button-link">${
+                  <a href="${buttonLink.href}" target="${buttonLink.target || "_self"}" class="button button-action">${
         buttonLink.text
       }</a>
                 </div>

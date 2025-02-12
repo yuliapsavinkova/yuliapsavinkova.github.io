@@ -39,7 +39,7 @@ class ExpertiseComponent extends HTMLElement {
                     </a>
                 </div>
             </div>
-            <a href="../portfolio/work.html" class="button-link">Learn More</a>
+            <a href="../portfolio/work.html" class="button button-secondary">Learn More</a>
         </section>
     `;
   }

@@ -17,7 +17,7 @@ class ContactComponent extends HTMLElement {
 
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="4" placeholder="Enter your Message" required></textarea>
-                    <button type="submit" class="button-link">Send Message</button>
+                    <button type="submit" class="button button-primary">Send Message</button>
                     </form>
                 </div>
             </section>

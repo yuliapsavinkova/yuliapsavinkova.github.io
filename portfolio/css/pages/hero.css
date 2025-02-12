@@ -33,10 +33,6 @@
   .hero-heading {
     text-align: center;
   }
-
-  .button-link {
-    align-self: center;
-  }
 }
 
 @media (max-width: 1200px) {

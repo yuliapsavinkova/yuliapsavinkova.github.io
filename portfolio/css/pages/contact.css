@@ -19,10 +19,6 @@
     flex-direction: column;
   }
 
-  .button-link {
-    align-self: center;
-  }
-
   input,
   textarea {
     caret-color: var(--primary-color-dark);
