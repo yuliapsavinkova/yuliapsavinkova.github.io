@@ -10,7 +10,10 @@ class HeroComponent extends HTMLElement {
                         <h3>10+ years of experience</h3>
                         <h4>MS in Computer Science</h4>
                     </div>
-                    <a href="#about" class="button button-secondary">Learn More</a>
+                    <div>
+                        <a href="#about" class="button button-action">Resume</a>
+                        <a href="#about" class="button button-secondary">Learn More</a>
+                    </div>
                 </div>
                 <div class="hero-portrait">
                     <img src="../assets/images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
