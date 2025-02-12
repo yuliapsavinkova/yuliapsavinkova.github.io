@@ -1,7 +1,7 @@
 :root {
   /* colors */
   --primary-dark-color: #2d4a77;
-  --primary-light-color: #f9fafb;
+  --primary-light-color: #d8e0ec;
 
   --neutral-dark-color: #fadbd1;
   --neutral-light-color: #fefafa;
@@ -9,7 +9,7 @@
   --accent-dark-color: #8a150f;
   --accent-light-color: #e04a50;
 
-  --text-color: #464646;
+  --text-color: #64748b;
   --white-color: #ffffff;
   --grey-color: #e0e0e0;
   --black-color: black;

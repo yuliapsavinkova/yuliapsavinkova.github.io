@@ -94,15 +94,14 @@
   background-color: var(--accent-light-color);
   border-color: var(--accent-light-color);
   transform: scale(1);
-  padding: var(--button-padding); /* Ensures same size as primary */
-  font-size: var(--button-font-size); /* Ensures same font size as primary */
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
 }
 
 .button-action:hover {
   color: var(--white-color);
-
-  background-color: var(--accent-dark-color);
-  border-color: var(--accent-dark-color);
+  /* background-color: var(--accent-dark-color); */
+  /* border-color: var(--accent-dark-color); */
   transform: scale(1.05);
 }
 
