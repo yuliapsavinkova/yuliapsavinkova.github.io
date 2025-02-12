@@ -1,11 +1,11 @@
 /* Customize the selection color */
 ::selection {
-  background-color: var(--accent-color-light);
+  background-color: var(--accent-light-color);
   color: var(--white-color);
 }
 
 /* For webkit browsers like Chrome and Safari */
 ::-webkit-selection {
-  background-color: var(--accent-color-light);
+  background-color: var(--accent-light-color);
   color: var(--white-color);
 }

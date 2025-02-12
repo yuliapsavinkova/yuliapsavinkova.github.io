@@ -29,7 +29,7 @@
     padding-left: 0.5rem;
     font-weight: bold;
     font-size: 1.5rem;
-    color: var(--primary-color-dark);
+    color: var(--primary-dark-color);
     cursor: pointer;
   }
 
@@ -83,12 +83,12 @@
       user-select: none;
       font-size: 3rem;
       height: 5rem;
-      color: var(--primary-color-dark);
+      color: var(--primary-dark-color);
       transition: color 1s ease;
     }
 
     label:hover {
-      color: var(--accent-color-light);
+      color: var(--accent-light-color);
     }
 
     .gra-nav {
@@ -107,7 +107,7 @@
       right: -16rem;
       width: 16rem;
       height: 100%;
-      background-color: var(--primary-color-dark);
+      background-color: var(--primary-dark-color);
       color: var(--white-color);
       padding: 4rem 0;
       text-align: center;
@@ -125,7 +125,7 @@
           margin: 0;
           padding: 1rem;
           &:hover {
-            background-color: var(--accent-color-light);
+            background-color: var(--accent-light-color);
           }
         }
       }
@@ -143,7 +143,7 @@
     }
 
     input[type="checkbox"]:checked + label {
-      color: var(--accent-color-light);
+      color: var(--accent-light-color);
     }
   }
 }

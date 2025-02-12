@@ -19,7 +19,7 @@ class DebugPanelComponent extends HTMLElement {
                     padding: 0.7rem;
                     border-radius: 1.4rem;
 
-                    background: hsl(var(--accent-color-light) / 0.9);
+                    background: hsl(var(--accent-light-color) / 0.9);
                     backdrop-filter: blur(1rem);
                     -webkit-backdrop-filter: blur(1rem);
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */

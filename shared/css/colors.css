@@ -11,16 +11,16 @@ h6,
 a,
 i,
 label {
-  color: var(--primary-color-dark);
+  color: var(--primary-dark-color);
 }
 
 i:hover,
 a:hover {
-  color: var(--accent-color-light);
+  color: var(--accent-light-color);
 }
 
 .footer {
-  background-color: var(--primary-color-dark);
+  background-color: var(--primary-dark-color);
 }
 
 .footer *,
@@ -29,5 +29,5 @@ a:hover {
 }
 
 li::marker {
-  color: var(--accent-color-light);
+  color: var(--accent-light-color);
 }

@@ -8,24 +8,21 @@
   --button-padding: 0.5rem 1rem;
 
   /* Colors */
-  /* --primary-color-dark: #2d4a77;
-  --primary-color-light: #f9fafb;
+  /* --primary-dark-color: #2d4a77;
+  --primary-light-color: #f9fafb;
 
-  --neutral-color-dark: #fadbd1;
-  --neutral-color-light: #fefafa;
+  --neutral-dark-color: #fadbd1;
+  --neutral-light-color: #fefafa;
 
-  --accent-color-dark: #8a150f;
-  --accent-color-light: #e04a50;
+  --accent-dark-color: #8a150f;
+  --accent-light-color: #e04a50;
 
   --text-color: #464646;
   --white-color: #ffffff;
   --grey-color: #e0e0e0;
   --black-color: black; */
 
-  /* Configurable Outline & Shadow Colors */
   --outline-color: rgba(45, 74, 119, 0.5); /* Default outline color */
-  --shadow-color: rgba(138, 21, 15, 0.3); /* Default shadow color */
-  --shadow-hover-color: rgba(138, 21, 15, 0.5); /* Hover shadow color */
 }
 
 /* 🔹 Base Button (Common Styles) */
@@ -52,38 +49,38 @@
 /* 🔵 Primary Button (Solid) */
 .button-primary {
   color: var(--white-color);
-  background-color: var(--primary-color-dark);
-  border-color: var(--primary-color-dark);
+  background-color: var(--primary-dark-color);
+  border-color: var(--primary-dark-color);
 }
 
 .button-primary:hover {
-  background-color: var(--primary-color-light);
-  color: var(--primary-color-dark);
-  border-color: var(--primary-color-dark);
+  background-color: var(--primary-light-color);
+  color: var(--primary-dark-color);
+  border-color: var(--primary-dark-color);
 }
 
 .button-primary:active {
-  background-color: var(--primary-color-dark);
+  background-color: var(--primary-dark-color);
 }
 
 .button-primary:focus-visible {
-  outline: 3px solid var(--outline-color);
+  outline: 2px solid var(--outline-color);
 }
 
 /* ⚪ Secondary Button (Ghost) */
 .button-secondary {
-  color: var(--primary-color-dark);
+  color: var(--primary-dark-color);
   background-color: transparent;
-  border-color: var(--primary-color-dark);
+  border-color: var(--primary-dark-color);
 }
 
 .button-secondary:hover {
-  background-color: var(--primary-color-dark);
+  background-color: var(--primary-dark-color);
   color: var(--white-color);
 }
 
 .button-secondary:active {
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-light-color);
   color: var(--text-color);
 }
 
@@ -94,9 +91,8 @@
 /* ✅ Actionable Button (Pop Effect) */
 .button-action {
   color: var(--white-color);
-  background-color: var(--accent-color-light);
-  border-color: var(--accent-color-light);
-  box-shadow: 0px 4px 12px var(--shadow-color);
+  background-color: var(--accent-light-color);
+  border-color: var(--accent-light-color);
   transform: scale(1);
   padding: var(--button-padding); /* Ensures same size as primary */
   font-size: var(--button-font-size); /* Ensures same font size as primary */
@@ -105,14 +101,13 @@
 .button-action:hover {
   color: var(--white-color);
 
-  background-color: var(--accent-color-dark);
-  border-color: var(--accent-color-dark);
-  box-shadow: 0px 6px 16px var(--shadow-hover-color);
+  background-color: var(--accent-dark-color);
+  border-color: var(--accent-dark-color);
   transform: scale(1.05);
 }
 
 .button-action:active {
-  background-color: var(--accent-color-light);
+  background-color: var(--accent-light-color);
   transform: scale(0.97);
 }
 
@@ -133,8 +128,8 @@
 }
 
 .button-tertiary:active {
-  background-color: var(--neutral-color-light);
-  border-color: var(--neutral-color-dark);
+  background-color: var(--neutral-light-color);
+  border-color: var(--neutral-dark-color);
 }
 
 .button-tertiary:focus-visible {
@@ -143,7 +138,7 @@
 
 /* 🔗 Button Link (Styled Like a Link) */
 .button-link {
-  color: var(--primary-color-dark);
+  color: var(--primary-dark-color);
   background-color: transparent;
   border: none;
   text-decoration: none;
@@ -151,7 +146,7 @@
 }
 
 .button-link:hover {
-  color: var(--accent-color-light);
+  color: var(--accent-light-color);
   background-color: transparent;
 }
 

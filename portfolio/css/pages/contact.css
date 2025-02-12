@@ -21,19 +21,19 @@
 
   input,
   textarea {
-    caret-color: var(--primary-color-dark);
+    caret-color: var(--primary-dark-color);
     width: 100%;
     padding: 0.6rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: var(--primary-color-light);
+    background-color: var(--primary-light-color);
     margin-bottom: 1rem;
     resize: none;
   }
 
   input:focus,
   textarea:focus {
-    border-color: var(--primary-color-dark);
+    border-color: var(--primary-dark-color);
     outline: none;
     background-color: #fff;
   }

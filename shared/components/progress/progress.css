@@ -22,8 +22,8 @@
   height: 2.5rem;
   border-radius: 50%;
   background: conic-gradient(
-    var(--primary-color-dark) 0%,
-    var(--primary-color-dark) var(--scroll-progress, 0%),
+    var(--primary-dark-color) 0%,
+    var(--primary-dark-color) var(--scroll-progress, 0%),
     var(--grey-color) var(--scroll-progress, 0%),
     var(--grey-color) 100%
   );
@@ -47,7 +47,7 @@
   align-items: center;
 
   &:hover i {
-    color: var(--primary-color-dark);
+    color: var(--primary-dark-color);
     margin-bottom: 2px;
   }
 }

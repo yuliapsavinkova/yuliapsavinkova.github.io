@@ -28,7 +28,7 @@
   span {
     padding: 0.5rem;
     background-color: var(--white-color);
-    color: var(--primary-color-dark);
+    color: var(--primary-dark-color);
     border-radius: 4px;
     box-shadow: 1px 1px 10px rgba(0, 45, 91, 0.1);
 

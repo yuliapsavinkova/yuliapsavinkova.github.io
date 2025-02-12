@@ -1,13 +1,13 @@
 :root {
   /* colors */
-  --primary-color-dark: #2d4a77;
-  --primary-color-light: #f9fafb;
+  --primary-dark-color: #2d4a77;
+  --primary-light-color: #f9fafb;
 
-  --neutral-color-dark: #fadbd1;
-  --neutral-color-light: #fefafa;
+  --neutral-dark-color: #fadbd1;
+  --neutral-light-color: #fefafa;
 
-  --accent-color-dark: #8a150f;
-  --accent-color-light: #e04a50;
+  --accent-dark-color: #8a150f;
+  --accent-light-color: #e04a50;
 
   --text-color: #464646;
   --white-color: #ffffff;
