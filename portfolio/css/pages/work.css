@@ -49,5 +49,9 @@
     img {
       order: -1;
     }
+
+    .magic-description {
+      text-align: center;
+    }
   }
 }

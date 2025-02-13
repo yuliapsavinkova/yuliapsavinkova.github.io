@@ -1,5 +1,8 @@
 class AboutComponent extends HTMLElement {
-  connectedCallback() {
+  constructor() {
+    super();
+    const contactLink = this.getAttribute("contact-link") || "./index.html";
+
     this.innerHTML = `
             <section id="about" class="section about">
                 <section-header 
@@ -22,7 +25,7 @@ class AboutComponent extends HTMLElement {
                         </p>
                         <div>
                             <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
-                            <a href="./about.html#contact" class="button button-secondary">Contact Me</a>
+                            <a href="${contactLink}" class="button button-secondary">Contact Me</a>
                         </div>
                     </div>
                 </div>              

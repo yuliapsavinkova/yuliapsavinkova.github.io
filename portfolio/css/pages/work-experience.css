@@ -1,6 +1,7 @@
 .work-experience-container {
   display: flex;
   flex-direction: column;
+  max-width: 768px;
 }
 
 .work-experience-content {

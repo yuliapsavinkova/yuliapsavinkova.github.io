@@ -4,18 +4,21 @@ class WorkExperienceComponent extends HTMLElement {
               <section id="work-experience" class="section work-experience">
                   <section-header 
                       title="Professional Experience"
-                      sub-title="A Journey of Growth and Expertise">
+                      sub-title="A Journey of Growth">
                   </section-header>
 
                   <div class="work-experience-container">
                     <div class="work-experience-content">
-                        <h5>Lead Software Engineer, Gravity Workflow, Miami, FL 2019 - Present</h5>
+                        <h5>Founder & Freelance Web Developer, Gravity Workflow, 2019 - Present</h5>
                         <ul>
-                          <li>Design and develop web applications and websites from scratch.</li>
-                          <li>Design and develop 3D interactive web experiences.</li>
-                          <li>Create custom HTML web components and reusable shared libraries.</li>
+                          <li>Founded and independently manage a freelance web development business with a focus on building long-term client relationships and business growth.</li>
+                          <li>Specialize in developing custom websites and front-end web applications using HTML, CSS, JavaScript, React, Angular, and Node.js.</li>
+                          <li>Provide end-to-end solutions, from project scoping and design to development and deployment.</li>
+                          <li>Handle all aspects of business operations, including client acquisition, project management, and marketing.</li>
+                          <li>Aim to expand and scale the business by building a strong brand and long-term partnerships with clients.</li>
+                          <!--<li>Create custom HTML web components and reusable shared libraries.</li>
                           <li>Build responsive layouts that work across all screen sizes.</li>
-                          <li>Modernize existing applications by rebuilding them with modern technologies.</li>
+                          <li>Modernize existing applications by rebuilding them with modern technologies.</li>-->
                         </ul>
                         <div class="work-experience-technologies">
                           <span>JavaScript</span>
