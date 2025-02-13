@@ -25,7 +25,7 @@
   --global-padding-between: 3rem;
 
   /* logos, buttons, links */
-  --border-radius-button: 0.35rem;
+  --border-radius: 0.5rem;
 }
 
 main {

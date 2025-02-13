@@ -4,34 +4,28 @@ class AboutComponent extends HTMLElement {
             <section id="about" class="section about">
                 <section-header 
                     title="About Me"
-                    sub-title="Bringing Web Ideas to Life">
+                    sub-title="Transforming visions into realities">
                 </section-header>
-                <div class="about-me-container">
-                    <div>
-                        <img src="../assets/images/portrait.png" alt="Portrait - photo of Yulia Savinkova." class="about-me-image"/>
-                    </div>
-                    <div class="about-me-content">
-                        <h3>Transforming visions into realities.</h3>
-                        <p>
-                            I am a Software Engineer with 10+ years of experience and a Master's degree in Computer Science.
-                            I specialize in developing front-end web applications using HTML, CSS, JavaScript, native Web Components, and frameworks like React and Angular.
-                            In my free time I like to read, travel and snowboard.
-                        </p>
-                        <div class="work-experience-technologies">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Web Components</span>
-                            <span>Angular</span>
-                            <span>React</span>
-                            <span>Node</span>
-                            <span>Git</span>
-                            <span>Webpack</span>
-                        </div>
-                        <a href="./portfolio/resume.pdf" target="_blank" class="button button-action">Resume</a>
 
+                <div class="magic-row">
+                    <img src="../assets/images/portrait.png" class="magic-image about-portrait" alt="Portrait - photo of Yulia Savinkova."/>
+                    <div class="magic-description">
+                        <h4>Bringing Web Ideas to Life</h4>
+                        <p>
+                            I am a Software Engineer with a Master's degree in Computer Science and 10 years of experience working in a corporate environment, building full-stack applications using frameworks like React and Angular with a Node.js backend.
+                        </p>
+                        <p>
+                            For the past five years, I have been running my own company, helping businesses build and optimize their online presence. I specialize in developing websites and front-end web applications using HTML, CSS, JavaScript, native Web Components, and modern frameworks.
+                        </p>
+                        <p>
+                            I am passionate about web technologies and focused on delivering efficient, high-quality digital solutions. In my free time, I enjoy reading, traveling, and snowboarding.
+                        </p>
+                        <div>
+                            <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
+                            <a href="./about.html#contact" class="button button-secondary">Contact Me</a>
+                        </div>
                     </div>
-                </div>
+                </div>              
             </section>
         `;
   }
