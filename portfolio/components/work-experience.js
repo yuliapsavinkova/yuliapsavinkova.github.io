@@ -3,7 +3,7 @@ class WorkExperienceComponent extends HTMLElement {
     this.innerHTML = `
               <section id="work-experience" class="section work-experience">
                   <section-header 
-                      title="Professional Experience"
+                      title="Work Experience"
                       sub-title="A Journey of Growth">
                   </section-header>
 
