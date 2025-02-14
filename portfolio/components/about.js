@@ -7,13 +7,13 @@ class AboutComponent extends HTMLElement {
             <section id="about" class="section about">
                 <section-header 
                     title="About Me"
-                    sub-title="Transforming visions into realities">
+                    sub-title="Bringing Web Ideas to Life">
                 </section-header>
 
                 <div class="magic-row">
                     <img src="../assets/images/portrait.png" class="magic-image about-portrait" alt="Portrait - photo of Yulia Savinkova."/>
                     <div class="magic-description">
-                        <h4>Bringing Web Ideas to Life</h4>
+                        <h4>My Journey</h4>
                         <p>
                             I am a Software Engineer with a Master's degree in Computer Science and 10 years of experience working in a corporate environment, building full-stack applications using frameworks like React and Angular with a Node.js backend.
                         </p>
