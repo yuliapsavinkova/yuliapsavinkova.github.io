@@ -15,6 +15,11 @@
     width: 50%;
   }
 
+  /* TODO: fix this */
+  .magic-image.about-portrait:hover {
+    transform: none;
+  }
+
   img {
     max-width: 25rem;
     object-fit: cover;
