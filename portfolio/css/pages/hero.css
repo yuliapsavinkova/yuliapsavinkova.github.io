@@ -3,37 +3,27 @@
   height: calc(100vh - var(--header-size));
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("../../../assets/images/Laptop.png"),
+    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-position: center center, 0 0, 5px 5px;
+  background-repeat: no-repeat, repeat, repeat;
+  background-size: 60rem, 10px 10px;
 }
 
-.hero-portrait,
-.hero-content {
-  flex-grow: 1;
-}
-
-.hero-portrait img {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
-  object-position: bottom right;
-
-  &:hover {
-    transform: none;
-  }
+.hero-portrait {
+  display: none;
 }
 
 .hero-content {
-  position: relative;
-  left: 20%;
-
-  min-width: 22rem;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-
   .hero-heading {
     text-align: center;
   }
@@ -41,26 +31,33 @@
 
 @media (max-width: 1200px) {
   .hero {
+    background: none;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
 
-    .hero-portrait {
-      height: 40%;
-      overflow: hidden;
+    .hero-portrait,
+    .hero-content {
+      flex-grow: 1;
     }
 
     .hero-portrait {
-      order: -1;
+      height: 40%;
+      overflow: hidden;
+      display: block;
+
       img {
+        object-fit: contain;
         width: 100%;
+        height: 100%;
         object-position: center center;
+        transform: none;
       }
     }
 
     .hero-content {
-      left: 0;
       justify-content: flex-start;
     }
 

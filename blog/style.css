@@ -16,6 +16,7 @@
 
 /* Palette */
 @import "./palette.css";
+@import "./parallax.css";
 
 main {
   display: flex;

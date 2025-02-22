@@ -2,6 +2,9 @@ class HeroComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
             <section id="hero" class="hero">
+                <div class="hero-portrait">
+                    <img src="../assets/images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
+                </div>
                 <div class="hero-content">
                     <social-icons></social-icons>
                     <div class="hero-heading">
@@ -14,9 +17,6 @@ class HeroComponent extends HTMLElement {
                         <a href="./portfolio/about.html" class="button button-primary">Learn More</a>
                         <a href="./portfolio/resume.pdf" target="_blank" class="button button-action">Resume</a>
                     </div>
-                </div>
-                <div class="hero-portrait">
-                    <img src="../assets/images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
                 </div>
             </section>
         `;
