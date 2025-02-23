@@ -1,0 +1,26 @@
+/* Shared */
+@import "/assets/fonts/montserrat-v29-latin/fonts-montserrat.css";
+@import "./shared/css/reset.css";
+@import "./shared/css/debug.css";
+@import "./shared/css/variables.css";
+@import "./shared/css/colors.css";
+@import "./shared/css/scroll.css";
+@import "./shared/css/buttons.css";
+@import "./shared/css/images.css";
+@import "./shared/css/selection.css";
+@import "./shared/css/typography.css";
+@import "./shared/css/cards.css";
+
+@import "./shared/components/header/header.css";
+@import "./shared/components/footer/footer.css";
+@import "./shared/components/progress/progress.css";
+
+@import "./portfolio/css/layout/logo.css";
+@import "./portfolio/css/layout/section.css";
+
+@import "./portfolio/css/pages/work-experience.css";
+@import "./portfolio/css/pages/contact.css";
+@import "./portfolio/css/pages/hero.css";
+@import "./portfolio/css/pages/work.css";
+@import "./portfolio/css/pages/process.css";
+@import "./portfolio/css/pages/section-header.css";

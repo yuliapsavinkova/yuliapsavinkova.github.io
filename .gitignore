@@ -1,3 +1,5 @@
 # Ignore system files
 .DS_Store
-_gravityOld/
+lucid
+node_modules
+dist
