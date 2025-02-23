@@ -27,8 +27,10 @@
     <link rel="stylesheet" crossorigin href="/assets/main-DZMxJoEe.css">
   </head>
   <body>
+
     <header-component
-      logo-src="assets/images/logo-colored.svg"
+      logo-link="../index.html"
+      logo-src="../assets/images/logo-colored.svg"
       links='[
         {"href": "/index.html", "text": "Home"},
         {"href": "/public/about.html", "text": "About"},
@@ -37,16 +39,10 @@
       ]'
       button='{"href": "/public/contact.html", "text": "Contact"}'
     >
-    </header-component>
-
     <main>
-      <hero-component></hero-component>
-      <expertise-component></expertise-component>
-      <about-component contact-link="./index.html#contact"></about-component>
-      <working-process-component></working-process-component>
+      <work-component></work-component>
       <contact-component></contact-component>
     </main>
-
     <scroll-progress-ring></scroll-progress-ring>
     <footer-component copyright-name="Yulia Savinkova"></footer-component>
 

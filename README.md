@@ -1,3 +1,0 @@
-# yuliapsavinkova.github.io
-
-Portfolio
