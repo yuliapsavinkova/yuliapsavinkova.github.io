@@ -4,47 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Personal Portfolio Website" />
-    <meta name="keywords" content="Personal Portfolio, HTML, CSS, JavaScript, Web Development, HTML, CSS, JavaScript" />
+    <meta name="keywords" content="Personal Portfolio, HTML, CSS, JavaScript, Web Development" />
     <meta name="author" content="Yulia Savinkova" />
     <title>Portfolio</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-white.svg" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG1XW4WL1T"></script>
-
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-VG1XW4WL1T");
     </script>
-    <script type="module" crossorigin src="/assets/main-CPgBiyra.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-DZMxJoEe.css">
+    <script type="module" crossorigin src="/assets/index-BkfigP04.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CLX4PsHq.css">
   </head>
   <body>
     <header-component
       logo-src="assets/images/logo-colored.svg"
       links='[
-        {"href": "/index.html", "text": "Home"},
-        {"href": "/public/about.html", "text": "About"},
-        {"href": "/public/work.html", "text": "Work"},
+        {"href": "/", "text": "Home"},
+        {"href": "/about", "text": "About"},
+        {"href": "/work", "text": "Work"},
         {"href": "/resume.pdf", "text": "Resume", "target": "_blank"}
       ]'
-      button='{"href": "/public/contact.html", "text": "Contact"}'
-    >
-    </header-component>
+      button='{"href": "/contact", "text": "Contact"}'
+    ></header-component>
 
     <main>
-      <hero-component></hero-component>
-      <expertise-component></expertise-component>
-      <about-component contact-link="./index.html#contact"></about-component>
-      <working-process-component></working-process-component>
-      <contact-component></contact-component>
+      <!-- Content will be dynamically injected by router.js -->
     </main>
 
     <scroll-progress-ring></scroll-progress-ring>

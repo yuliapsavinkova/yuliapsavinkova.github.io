@@ -1,14 +1,19 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))a(s);new MutationObserver(s=>{for(const i of s)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function t(s){const i={};return s.integrity&&(i.integrity=s.integrity),s.referrerPolicy&&(i.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?i.credentials="include":s.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function a(s){if(s.ep)return;s.ep=!0;const i=t(s);fetch(s.href,i)}})();const r={throttle:function(n,e){let t=0;return function(...a){const s=Date.now();s-t>=e&&(t=s,n.apply(this,a))}},debounce:function(n,e){let t;return function(...a){clearTimeout(t),t=setTimeout(()=>{n.apply(this,a)},e)}}};class l extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./index.html",t=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",a=this.getAttribute("logo-name")||"",s=JSON.parse(this.getAttribute("links")||"[]"),i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const i of o)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function n(o){const i={};return o.integrity&&(i.integrity=o.integrity),o.referrerPolicy&&(i.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?i.credentials="include":o.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(o){if(o.ep)return;o.ep=!0;const i=n(o);fetch(o.href,i)}})();const r={throttle:function(e,t){let n=0;return function(...s){const o=Date.now();o-n>=t&&(n=o,e.apply(this,s))}},debounce:function(e,t){let n;return function(...s){clearTimeout(n),n=setTimeout(()=>{e.apply(this,s)},t)}}};class m extends HTMLElement{connectedCallback(){this.innerHTML=`
+        <div class="error-page">
+            <h2>404 - Page Not Found</h2>
+            <p>The page you are looking for does not exist.</p>
+        </div>
+      `}}customElements.define("error-component",m);class u extends HTMLElement{constructor(){super();const t=this.getAttribute("logo-link")||"./",n=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]"),i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
-          <a href="${e}" class="logo">
-              <img src="${t}" alt="Logo - personal portfolio."/>
-              <span class="logo-name">${a}</span>
+          <a href="${t}" class="logo">
+              <img src="${n}" alt="Logo - personal portfolio."/>
+              <span class="logo-name">${s}</span>
           </a>
           <nav class="gra-nav">
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
             <div class="nav-menu">
-                <div class="nav-links">${s.map(o=>`<a href="${o.href}" target="${o.target||"_self"}">${o.image?`<img src="${o.image}" />`:""}${o.text}</a>`).join("")}
+                <div class="nav-links">${o.map(a=>`<a href="${a.href}" target="${a.target||"_self"}">${a.image?`<img src="${a.image}" />`:""}${a.text}</a>`).join("")}
                 </div>
                 <div class="nav-action">
                   <a href="${i.href}" target="${i.target||"_self"}" class="button button-action">${i.text}</a>
@@ -16,14 +21,14 @@
             </div>
           </nav>
       </header>
-    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",o=>this._handleOutsideClick(o))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",l);class c extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",t=new Date().getFullYear();this.innerHTML=`
+    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(t){this.contains(t.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",u);class h extends HTMLElement{connectedCallback(){const t=this.getAttribute("copyright-name")||"All rights reserved.",n=new Date().getFullYear();this.innerHTML=`
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
-                <p>&copy; ${t} ${e}</p>
+                <p>&copy; ${n} ${t}</p>
             </div>
         </footer>
-    `}}customElements.define("footer-component",c);class d extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"../../blog/index.html",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
+    `}}customElements.define("footer-component",h);class g extends HTMLElement{connectedCallback(){let t=[];this.getAttribute("icons")?t=JSON.parse(this.getAttribute("icons")):t=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
             <style>
             .social-icons {
                 display: flex;
@@ -31,14 +36,14 @@
                 gap: 2rem;
             }
             </style>
-            <div class="social-icons">${e.map(t=>`<a href="${t.href}" target="${t.target||"_self"}"><i class="${t.display}"></i></a>`).join("")}
+            <div class="social-icons">${t.map(n=>`<a href="${n.href}" target="${n.target||"_self"}"><i class="${n.display}"></i></a>`).join("")}
             </div>
-        `}}customElements.define("social-icons",d);class p extends HTMLElement{constructor(){super(),this.innerHTML=`
+        `}}customElements.define("social-icons",g);class v extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
       </div>
-    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,a=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${a}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",p);class u extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const t=window.scrollY,n=document.documentElement.scrollHeight-window.innerHeight,s=Math.min(t/n*100,100);t>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${s}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",v);class b extends HTMLElement{connectedCallback(){this.innerHTML=`
             <section id="hero" class="hero">
                 <div class="hero-portrait">
                     <img src="../assets/images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
@@ -52,12 +57,12 @@
                         <h4>MS in Computer Science</h4>
                     </div>
                     <div>
-                        <a href="/public/about.html" class="button button-primary">Learn More</a>
+                        <a href="/about" class="button button-primary">Learn More</a>
                         <a href="/resume.pdf" target="_blank" class="button button-action">Resume</a>
                     </div>
                 </div>
             </section>
-        `}}customElements.define("hero-component",u);class h extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("hero-component",b);class f extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise" class="section expertise">
             <section-header 
                 title="My Expertise"
@@ -68,8 +73,7 @@
                     <img src="../../assets/images/web-dev.png" class="card-image" alt="maintenance-image" />
                     <h4>Web Development</h4>
                     <p>Build websites from scratch using HTML, CSS, JavaScript, and Web Components.</p>
-                    <a href="/public/work.html#work-row-web">
-                    
+                    <a href="/work#work-row-web">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>
@@ -80,7 +84,7 @@
                     <img src="../../assets/images/app-dev.png" class="card-image" alt="web-development-image" />            
                     <h4>App Development</h4>
                     <p>Build web applications using modern frameworks such as React and Angular.</p>
-                    <a href="/public/work.html#work-row-app">
+                    <a href="/work#work-row-app">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>                    </a>
@@ -89,16 +93,16 @@
                     <img src="../../assets/images/three-d-dev.png" class="card-image" alt="design-image" />
                     <h4>3D Development</h4>
                     <p>Build 3D web experiences using modern web technologies and libraries.</p>
-                    <a href="/public/work.html#work-row-3d">
+                    <a href="/work#work-row-3d">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>
                     </a>
                 </div>
             </div>
-            <a href="/public/work.html" class="button button-secondary">Learn More</a>
+            <a href="/work" class="button button-secondary">Learn More</a>
         </section>
-    `}}customElements.define("expertise-component",h);class m extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("expertise-component",f);class w extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="work" class="section work">
             <section-header 
                 title="My Expertise"
@@ -109,7 +113,7 @@
                 <div class="magic-description">
                     <h4>Web Development</h4>  
                     <p>Need a sleek, high-performing website to showcase your brand? I specialize in building modern, responsive websites that look great on any device and deliver a seamless user experience. Whether you need a portfolio, business site, or landing page, I provide custom solutions tailored to your needs. With a focus on speed, SEO, and user-friendly design, I’ll help create a site that not only looks amazing but also drives results. Let's work together to make your online presence shine!</p>
-                    <a href="/public/work.html#contact" class="button button-secondary">Get a Quote</a>
+                    <a href="/work#contact" class="button button-secondary">Get a Quote</a>
                 </div>
                 <img src="../../assets/images/web-dev.png" class="magic-image vertical" alt="maintenance-image" />
             </div>
@@ -119,7 +123,7 @@
                 <div class="magic-description">
                     <h4>App Development</h4>
                     <p>Need a powerful, high-performance web application? I build dynamic, user-friendly apps using cutting-edge frameworks like React and Angular. Whether it's a business tool, an e-commerce platform, or a custom solution, I create fast, scalable, and secure applications designed to elevate your brand and streamline your operations. Let’s bring your vision to life!</p>
-                    <a href="/public/work.html#contact" class="button button-secondary">Get a Quote</a>
+                    <a href="/work#contact" class="button button-secondary">Get a Quote</a>
                 </div>
             </div>
 
@@ -127,12 +131,12 @@
                 <div class="magic-description">
                     <h4>3D Development</h4>  
                     <p>Bring your website to life with stunning 3D experiences! I create interactive, immersive visuals that run smoothly in any modern browser—perfect for showcasing products, engaging users, or adding a unique touch to your site. Whether you need an interactive model, an animated scene, or a full 3D experience, I’ll build a solution that captivates your audience. Let’s make your vision a reality!</p>  
-                    <a href="/public/work.html#contact" class="button button-secondary">Get a Quote</a>
+                    <a href="/work#contact" class="button button-secondary">Get a Quote</a>
                 </div>
                 <img src="../../assets/images/three-d-dev.png" class="magic-image" alt="design-image" />
             </div>
         </section>
-    `}}customElements.define("work-component",m);class g extends HTMLElement{constructor(){super();const e=this.getAttribute("contact-link")||"./index.html";this.innerHTML=`
+    `}}customElements.define("work-component",w);class k extends HTMLElement{constructor(){super(),this.innerHTML=`
             <section id="about" class="section about">
                 <section-header 
                     title="About Me"
@@ -154,12 +158,12 @@
                         </p>
                         <div>
                             <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
-                            <a href="${e}" class="button button-secondary">Contact Me</a>
+                            <a href="/work" class="button button-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>              
             </section>
-        `}}customElements.define("about-component",g);class b extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("about-component",k);class y extends HTMLElement{connectedCallback(){this.innerHTML=`
               <section id="work-experience" class="section work-experience">
                   <section-header 
                       title="Work Experience"
@@ -268,14 +272,14 @@
                   </div>-->
 
               </section>
-          `}}customElements.define("work-experience-component",b);class v extends HTMLElement{connectedCallback(){this.innerHTML=`
+          `}}customElements.define("work-experience-component",y);class x extends HTMLElement{connectedCallback(){this.innerHTML=`
             <section id="working-process" class="section working-process">
                 <section-header 
                     title="Working Process"
                     sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
                 </section-header>
             </section>
-        `}}customElements.define("working-process-component",v);class f extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("working-process-component",x);class L extends HTMLElement{connectedCallback(){this.innerHTML=`
             <section id="contact" class="section contact">
                 <section-header 
                     title="Stay In Touch"
@@ -296,13 +300,13 @@
                     </form>
                 </div>
             </section>
-        `}}customElements.define("contact-component",f);class w extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
+        `}}customElements.define("contact-component",L);class E extends HTMLElement{connectedCallback(){const t=this.getAttribute("title")||"",n=this.getAttribute("sub-title")||"";this.innerHTML=`
       <div class="section-header">
-        <h1>${e}</h1>
-        <p class="large">${t}</p>
+        <h1>${t}</h1>
+        <p class="large">${n}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",w);class k extends HTMLElement{_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").innerHTML=e+" x "+t}connectedCallback(){this.innerHTML=`
+    `}}customElements.define("section-header",E);class S extends HTMLElement{_updateWidth(){const t=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,n=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").innerHTML=t+" x "+n}connectedCallback(){this.innerHTML=`
             <style>
                 .debug-panel {
                     z-index: 1000;
@@ -321,4 +325,17 @@
                 }
             </style>
             <div id="debugPanel" class="debug-panel"></div>
-        `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),this._updateWidth()}}customElements.define("debug-panel-component",k);
+        `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),this._updateWidth()}}customElements.define("debug-panel-component",S);function l(){const e={"/":`
+      <hero-component></hero-component>
+      <expertise-component></expertise-component>
+      <about-component></about-component>
+      <working-process-component></working-process-component>
+      <contact-component></contact-component>
+    `,"/about":`
+      <about-component></about-component>
+      <work-experience-component></work-experience-component>
+      <contact-component></contact-component>
+    `,"/work":`
+      <work-component></work-component>
+      <contact-component></contact-component>
+    `,"/contact":"<contact-component></contact-component>","/profile/:id":s=>`<profile-component user-id="${s.id}"></profile-component>`},t=window.location.pathname,n=document.querySelector("main");for(const s in e){const o=new RegExp(`^${s.replace(/:\w+/g,"(\\w+)")}$`),i=t.match(o);if(i){const a=(s.match(/:(\w+)/g)||[]).map(c=>c.substring(1)),d=Object.fromEntries(a.map((c,p)=>[c,i[p+1]]));n.innerHTML=typeof e[s]=="function"?e[s](d):e[s],window.scrollTo({top:0,behavior:"smooth"});return}}n.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{l(),window.addEventListener("popstate",l)});document.body.addEventListener("click",e=>{e.target.matches("a[href]:not([target])")&&(e.preventDefault(),history.pushState({},"",e.target.href),l())});
