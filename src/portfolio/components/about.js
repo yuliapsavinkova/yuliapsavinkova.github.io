@@ -9,7 +9,7 @@ class AboutComponent extends HTMLElement {
                 </section-header>
 
                 <div class="magic-row">
-                    <img src="../assets/images/portrait.png" class="magic-image about-portrait" alt="Portrait - photo of Yulia Savinkova."/>
+                    <img src="../images/portrait.png" class="magic-image about-portrait" alt="Portrait - photo of Yulia Savinkova."/>
                     <div class="magic-description">
                         <h4>My Journey</h4>
                         <p>

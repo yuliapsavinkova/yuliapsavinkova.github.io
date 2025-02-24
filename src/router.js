@@ -1,4 +1,3 @@
-// router.js (Enhanced Client-side Router with 404 Handling & Parameterized Routes)
 export function renderPage() {
   const routes = {
     "/": `

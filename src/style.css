@@ -1,5 +1,6 @@
 /* Shared */
-@import "/assets/fonts/montserrat-v29-latin/fonts-montserrat.css";
+@import "/fonts/montserrat-v29-latin/fonts-montserrat.css";
+
 @import "./shared/css/reset.css";
 @import "./shared/css/debug.css";
 @import "./shared/css/variables.css";
