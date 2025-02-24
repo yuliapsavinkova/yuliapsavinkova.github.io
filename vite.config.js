@@ -7,16 +7,12 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
     open: true,
+    historyApiFallback: true, // Ensures correct routing for SPA
   },
   build: {
     outDir: "dist",
     rollupOptions: {
-      input: {
-        main: "index.html", // Main entry point for index.html
-        about: "public/about.html",
-        work: "public/work.html",
-        contact: "public/contact.html",
-      },
+      input: "index.html",
     },
   },
 });
