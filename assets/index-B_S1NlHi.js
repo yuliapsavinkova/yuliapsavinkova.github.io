@@ -46,7 +46,7 @@
     `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const t=window.scrollY,n=document.documentElement.scrollHeight-window.innerHeight,s=Math.min(t/n*100,100);t>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${s}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",v);class b extends HTMLElement{connectedCallback(){this.innerHTML=`
             <section id="hero" class="hero">
                 <div class="hero-portrait">
-                    <img src="../images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
+                    <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
                 </div>
                 <div class="hero-content">
                     <social-icons></social-icons>
@@ -70,7 +70,7 @@
             </section-header>
             <div class="cards-container">
                 <div class="card">
-                    <img src="../../images/web-dev.png" class="card-image" alt="maintenance-image" />
+                    <img src="./images/web-dev.png" class="card-image" alt="maintenance-image" />
                     <h4>Web Development</h4>
                     <p>Build websites from scratch using HTML, CSS, JavaScript, and Web Components.</p>
                     <a href="/work#work-row-web">
@@ -81,7 +81,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <img src="../../images/app-dev.png" class="card-image" alt="web-development-image" />            
+                    <img src="./images/app-dev.png" class="card-image" alt="web-development-image" />            
                     <h4>App Development</h4>
                     <p>Build web applications using modern frameworks such as React and Angular.</p>
                     <a href="/work#work-row-app">
@@ -90,7 +90,7 @@
 </svg>                    </a>
                 </div>
                 <div class="card">
-                    <img src="../../images/three-d-dev.png" class="card-image" alt="design-image" />
+                    <img src="./images/three-d-dev.png" class="card-image" alt="design-image" />
                     <h4>3D Development</h4>
                     <p>Build 3D web experiences using modern web technologies and libraries.</p>
                     <a href="/work#work-row-3d">
@@ -115,11 +115,11 @@
                     <p>Need a sleek, high-performing website to showcase your brand? I specialize in building modern, responsive websites that look great on any device and deliver a seamless user experience. Whether you need a portfolio, business site, or landing page, I provide custom solutions tailored to your needs. With a focus on speed, SEO, and user-friendly design, I’ll help create a site that not only looks amazing but also drives results. Let's work together to make your online presence shine!</p>
                     <a href="/work#contact" class="button button-secondary">Get a Quote</a>
                 </div>
-                <img src="../../images/web-dev.png" class="magic-image vertical" alt="maintenance-image" />
+                <img src="./images/web-dev.png" class="magic-image vertical" alt="maintenance-image" />
             </div>
 
             <div id="work-row-app" class="magic-row">
-                <img src="../../images/app-dev.png" class="magic-image" alt="web-development-image" />            
+                <img src="./images/app-dev.png" class="magic-image" alt="web-development-image" />            
                 <div class="magic-description">
                     <h4>App Development</h4>
                     <p>Need a powerful, high-performance web application? I build dynamic, user-friendly apps using cutting-edge frameworks like React and Angular. Whether it's a business tool, an e-commerce platform, or a custom solution, I create fast, scalable, and secure applications designed to elevate your brand and streamline your operations. Let’s bring your vision to life!</p>
@@ -133,7 +133,7 @@
                     <p>Bring your website to life with stunning 3D experiences! I create interactive, immersive visuals that run smoothly in any modern browser—perfect for showcasing products, engaging users, or adding a unique touch to your site. Whether you need an interactive model, an animated scene, or a full 3D experience, I’ll build a solution that captivates your audience. Let’s make your vision a reality!</p>  
                     <a href="/work#contact" class="button button-secondary">Get a Quote</a>
                 </div>
-                <img src="../../images/three-d-dev.png" class="magic-image" alt="design-image" />
+                <img src="./images/three-d-dev.png" class="magic-image" alt="design-image" />
             </div>
         </section>
     `}}customElements.define("work-component",w);class k extends HTMLElement{constructor(){super(),this.innerHTML=`
@@ -144,7 +144,7 @@
                 </section-header>
 
                 <div class="magic-row">
-                    <img src="../images/portrait.png" class="magic-image about-portrait" alt="Portrait - photo of Yulia Savinkova."/>
+                    <img src="./images/portrait.png" class="magic-image about-portrait" alt="Portrait - photo of Yulia Savinkova."/>
                     <div class="magic-description">
                         <h4>My Journey</h4>
                         <p>
