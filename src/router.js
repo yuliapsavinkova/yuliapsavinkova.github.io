@@ -20,8 +20,7 @@ export function renderPage() {
     "/profile/:id": (params) => `<profile-component user-id="${params.id}"></profile-component>`,
   };
 
-  // const path = window.location.pathname;
-  const path = window.location.pathname.replace("/yuliapsavinkova.github.io", "");
+  const path = window.location.pathname;
   const app = document.querySelector("main");
 
   // Handle parameterized routes
