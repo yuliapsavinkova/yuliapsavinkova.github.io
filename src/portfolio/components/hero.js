@@ -3,7 +3,7 @@ class HeroComponent extends HTMLElement {
     this.innerHTML = `
             <section id="hero" class="hero">
                 <div class="hero-portrait">
-                    <img src="../images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
+                    <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
                 </div>
                 <div class="hero-content">
                     <social-icons></social-icons>

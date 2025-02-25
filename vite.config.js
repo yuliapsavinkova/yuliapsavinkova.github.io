@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import imagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
   base: "/", // Update this to match your GitHub repo name
@@ -14,4 +15,23 @@ export default defineConfig({
     open: true,
     historyApiFallback: true, // Ensures correct routing for SPA
   },
+  plugins: [
+    imagemin({
+      gifsicle: {
+        optimizationLevel: 3, // Optimize GIFs
+      },
+      mozjpeg: {
+        quality: 75, // Optimize JPEG
+      },
+      optipng: {
+        optimizationLevel: 5, // Optimize PNG
+      },
+      svgo: {
+        plugins: [
+          { name: "removeViewBox", active: false },
+          { name: "removeEmptyAttrs", active: false },
+        ],
+      },
+    }),
+  ],
 });
