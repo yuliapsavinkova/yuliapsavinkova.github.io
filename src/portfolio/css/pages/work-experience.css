@@ -31,7 +31,7 @@
     background-color: var(--white-color);
     color: var(--primary-dark-color);
     border-radius: 4px;
-    box-shadow: 1px 1px 10px rgba(0, 45, 91, 0.1);
+    box-shadow: var(--box-shadow);
 
     font-size: 0.85rem;
     line-height: 1.5;

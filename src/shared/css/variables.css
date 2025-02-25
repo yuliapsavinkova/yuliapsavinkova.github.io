@@ -26,6 +26,9 @@
 
   /* logos, buttons, links */
   --border-radius: 0.5rem;
+
+  /* Other */
+  --box-shadow: 0 -1px 1rem rgba(0, 45, 91, 0.1);
 }
 
 main {
