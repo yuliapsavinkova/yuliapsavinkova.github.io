@@ -1,9 +1,9 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const i of o)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function n(o){const i={};return o.integrity&&(i.integrity=o.integrity),o.referrerPolicy&&(i.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?i.credentials="include":o.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(o){if(o.ep)return;o.ep=!0;const i=n(o);fetch(o.href,i)}})();const r={throttle:function(e,t){let n=0;return function(...s){const o=Date.now();o-n>=t&&(n=o,e.apply(this,s))}},debounce:function(e,t){let n;return function(...s){clearTimeout(n),n=setTimeout(()=>{e.apply(this,s)},t)}}};class m extends HTMLElement{connectedCallback(){this.innerHTML=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const i of o)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function n(o){const i={};return o.integrity&&(i.integrity=o.integrity),o.referrerPolicy&&(i.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?i.credentials="include":o.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(o){if(o.ep)return;o.ep=!0;const i=n(o);fetch(o.href,i)}})();const r={throttle:function(e,t){let n=0;return function(...s){const o=Date.now();o-n>=t&&(n=o,e.apply(this,s))}},debounce:function(e,t){let n;return function(...s){clearTimeout(n),n=setTimeout(()=>{e.apply(this,s)},t)}}};class u extends HTMLElement{connectedCallback(){this.innerHTML=`
         <div class="error-page">
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
         </div>
-      `}}customElements.define("error-component",m);class u extends HTMLElement{constructor(){super();const t=this.getAttribute("logo-link")||"./",n=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]");console.log(o);const i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+      `}}customElements.define("error-component",u);class m extends HTMLElement{constructor(){super();const t=this.getAttribute("logo-link")||"./",n=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]");console.log(o);const i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
           <a href="${t}" class="logo">
               <img src="${n}" alt="Logo - personal portfolio."/>
@@ -21,7 +21,7 @@
             </div>
           </nav>
       </header>
-    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(t){this.contains(t.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",u);class h extends HTMLElement{connectedCallback(){const t=this.getAttribute("copyright-name")||"All rights reserved.",n=new Date().getFullYear();this.innerHTML=`
+    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(t){this.contains(t.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",m);class h extends HTMLElement{connectedCallback(){const t=this.getAttribute("copyright-name")||"All rights reserved.",n=new Date().getFullYear();this.innerHTML=`
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
@@ -38,13 +38,13 @@
             </style>
             <div class="social-icons">${t.map(n=>`<a href="${n.href}" target="${n.target||"_self"}"><i class="${n.display}"></i></a>`).join("")}
             </div>
-        `}}customElements.define("social-icons",g);class v extends HTMLElement{constructor(){super(),this.innerHTML=`
+        `}}customElements.define("social-icons",g);class b extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
       </div>
-    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const t=window.scrollY,n=document.documentElement.scrollHeight-window.innerHeight,s=Math.min(t/n*100,100);t>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${s}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",v);class b extends HTMLElement{connectedCallback(){this.innerHTML=`
-            <section id="hero" class="hero">
+    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const t=window.scrollY,n=document.documentElement.scrollHeight-window.innerHeight,s=Math.min(t/n*100,100);t>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${s}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",b);class v extends HTMLElement{connectedCallback(){this.innerHTML=`
+            <section id="hero" class="hero bg-laptop bg-texture">
                 <div class="hero-portrait">
                     <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
                 </div>
@@ -62,14 +62,14 @@
                     </div>
                 </div>
             </section>
-        `}}customElements.define("hero-component",b);class f extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("hero-component",v);class f extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise" class="section expertise">
             <section-header 
                 title="My Expertise"
                 sub-title="Transforming Ideas into Code">
             </section-header>
             <div class="cards-container">
-                <div class="card">
+                <div class="card bg-texture">
                     <img src="./images/web-dev.png" class="card-image" alt="maintenance-image" />
                     <h4>Web Development</h4>
                     <p>Build websites from scratch using HTML, CSS, JavaScript, and Web Components.</p>
@@ -80,7 +80,7 @@
 
                     </a>
                 </div>
-                <div class="card">
+                <div class="card bg-texture">
                     <img src="./images/app-dev.png" class="card-image" alt="web-development-image" />            
                     <h4>App Development</h4>
                     <p>Build web applications using modern frameworks such as React and Angular.</p>
@@ -89,7 +89,7 @@
   <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>                    </a>
                 </div>
-                <div class="card">
+                <div class="card bg-texture">
                     <img src="./images/three-d-dev.png" class="card-image" alt="design-image" />
                     <h4>3D Development</h4>
                     <p>Build 3D web experiences using modern web technologies and libraries.</p>
@@ -103,7 +103,7 @@
             <a href="/work" class="button button-secondary">Learn More</a>
         </section>
     `}}customElements.define("expertise-component",f);class w extends HTMLElement{connectedCallback(){this.innerHTML=`
-        <section id="work" class="section work">
+        <section id="work" class="section expertise-full bg-texture">
             <section-header 
                 title="My Expertise"
                 sub-title="Transforming Ideas into Code">
@@ -136,7 +136,7 @@
                 <img src="./images/three-d-dev.png" class="magic-image" alt="design-image" />
             </div>
         </section>
-    `}}customElements.define("work-component",w);class k extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("expertise-full-component",w);class k extends HTMLElement{constructor(){super(),this.innerHTML=`
             <section id="about" class="section about">
                 <section-header 
                     title="About Me"
@@ -336,6 +336,6 @@
       <work-experience-component></work-experience-component>
       <contact-component></contact-component>
     `,"/work":`
-      <work-component></work-component>
+      <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
     `,"/contact":"<contact-component></contact-component>","/profile/:id":s=>`<profile-component user-id="${s.id}"></profile-component>`},t=window.location.pathname,n=document.querySelector("main");for(const s in e){const o=new RegExp(`^${s.replace(/:\w+/g,"(\\w+)")}$`),i=t.match(o);if(i){const a=(s.match(/:(\w+)/g)||[]).map(c=>c.substring(1)),d=Object.fromEntries(a.map((c,p)=>[c,i[p+1]]));n.innerHTML=typeof e[s]=="function"?e[s](d):e[s],window.scrollTo({top:0,behavior:"smooth"});return}}n.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{l(),window.addEventListener("popstate",l)});document.body.addEventListener("click",e=>{e.target.matches("a[href]:not([target])")&&(e.preventDefault(),history.pushState({},"",e.target.href),l())});
