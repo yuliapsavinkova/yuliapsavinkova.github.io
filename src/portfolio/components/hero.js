@@ -1,7 +1,7 @@
 class HeroComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-            <section id="hero" class="hero bg-laptop bg-texture">
+            <section id="hero" class="hero bg-laptop-with-texture">
                 <div class="hero-portrait">
                     <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova."/>
                 </div>
