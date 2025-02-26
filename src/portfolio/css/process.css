@@ -1,5 +1,5 @@
 /* Mobile & Tablet Devices */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .working-process {
     background-attachment: scroll;
   }
@@ -9,10 +9,4 @@
   .working-process {
     background-attachment: scroll;
   }
-}
-
-@supports (-webkit-touch-callout: none) {
-  .working-process {
-    background-attachment: scroll;
-  }
-}
+} */
