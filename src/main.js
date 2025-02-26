@@ -9,7 +9,7 @@ import "./shared/components/progress/progress.js";
 
 import "./portfolio/components/hero.js";
 import "./portfolio/components/expertise.js";
-import "./portfolio/components/work.js";
+import "./portfolio/components/expertise-full.js";
 import "./portfolio/components/about.js";
 import "./portfolio/components/work-experience.js";
 import "./portfolio/components/process.js";

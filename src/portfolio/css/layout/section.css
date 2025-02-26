@@ -12,10 +12,3 @@
   box-shadow: none; */
   padding: var(--global-padding-between) var(--global-padding-sides);
 }
-
-.textured-back {
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  background-position: 0 0, 5px 5px;
-  background-size: 10px 10px;
-}

@@ -1,7 +1,7 @@
-class WorkComponent extends HTMLElement {
+class ExpertiseFullComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-        <section id="work" class="section work">
+        <section id="work" class="section expertise-full bg-texture">
             <section-header 
                 title="My Expertise"
                 sub-title="Transforming Ideas into Code">
@@ -37,4 +37,4 @@ class WorkComponent extends HTMLElement {
     `;
   }
 }
-customElements.define("work-component", WorkComponent);
+customElements.define("expertise-full-component", ExpertiseFullComponent);

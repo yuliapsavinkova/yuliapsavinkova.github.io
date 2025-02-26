@@ -1,0 +1,17 @@
+.bg-laptop {
+  background-image: url("../../../assets/images/Laptop.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 60rem;
+}
+
+.bg-texture {
+  background-image: radial-gradient(circle, var(--primary-dark-color) 2%, transparent 3%);
+  background-size: 1rem 1rem;
+  background-repeat: repeat;
+}
+
+/* This works in CSS Modules */
+/* .bg-combined {
+  composes: bg-laptop bg-texture;
+} */

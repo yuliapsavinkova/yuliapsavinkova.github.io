@@ -2,6 +2,7 @@
 @import "./assets/fonts/montserrat-v29-latin/fonts-montserrat.css";
 
 @import "./shared/css/reset.css";
+@import "./shared/css/reusable-classes.css";
 @import "./shared/css/debug.css";
 @import "./shared/css/variables.css";
 @import "./shared/css/colors.css";
@@ -23,6 +24,6 @@
 @import "./portfolio/css/pages/work-experience.css";
 @import "./portfolio/css/pages/contact.css";
 @import "./portfolio/css/pages/hero.css";
-@import "./portfolio/css/pages/work.css";
+@import "./portfolio/css/pages/expertise.css";
 @import "./portfolio/css/pages/process.css";
 @import "./portfolio/css/pages/section-header.css";

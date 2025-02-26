@@ -13,7 +13,7 @@ export function renderPage() {
       <contact-component></contact-component>
     `,
     "/work": `
-      <work-component></work-component>
+      <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
     `,
     "/contact": "<contact-component></contact-component>",

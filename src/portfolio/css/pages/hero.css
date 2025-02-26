@@ -5,13 +5,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  background-image: url("../../../assets/images/Laptop.png"),
-    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  background-position: center center, 0 0, 5px 5px;
-  background-repeat: no-repeat, repeat, repeat;
-  background-size: 60rem, 10px 10px;
 }
 
 .hero-portrait {
@@ -23,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   .hero-heading {
     text-align: center;
   }
@@ -36,7 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 
     .hero-portrait,
     .hero-content {
