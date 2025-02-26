@@ -12,6 +12,7 @@
 @import "./shared/css/selection.css";
 @import "./shared/css/typography.css";
 @import "./shared/css/cards.css";
+@import "./shared/css/animations.css";
 
 @import "./shared/components/404/404.css";
 @import "./shared/components/header/header.css";
