@@ -1,3 +1,10 @@
+.gra-separator {
+  border-top-width: 2px;
+  border-top-style: solid;
+  width: 6rem;
+  border-top-color: var(--accent-light-color);
+}
+
 .bg-laptop {
   background-image: url("../../../assets/images/Laptop.png");
   background-position: center center;

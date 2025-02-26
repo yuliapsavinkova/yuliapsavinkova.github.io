@@ -1,14 +1,19 @@
 .section {
-  box-shadow: var(--box-shadow);
-
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  /* max-width: 100%;
-  margin: auto;
-  box-shadow: none; */
+
+  box-shadow: var(--box-shadow);
   padding: var(--global-padding-between) var(--global-padding-sides);
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
