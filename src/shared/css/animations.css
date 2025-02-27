@@ -36,9 +36,9 @@
 
 @keyframes tilt {
   0% {
-    transform: rotate(-10deg);
+    transform: rotate(-10deg) scale(1.05);
   }
   100% {
-    transform: rotate(10deg);
+    transform: rotate(10deg) scale(1.05);
   }
 }

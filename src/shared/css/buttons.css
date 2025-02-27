@@ -63,7 +63,6 @@
   color: var(--white-color);
   background-color: var(--accent-light-color);
   border-color: var(--accent-light-color);
-  transform: scale(1);
   padding: var(--button-padding);
   font-size: var(--button-font-size);
 }
