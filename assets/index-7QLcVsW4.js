@@ -36,7 +36,7 @@
                 gap: 2rem;
             }
             </style>
-            <div class="social-icons">${t.map(n=>`<a href="${n.href}" target="${n.target||"_self"}"><i class="${n.display}"></i></a>`).join("")}
+            <div class="social-icons"">${t.map(n=>`<a href="${n.href}" target="${n.target||"_self"}"><i class="${n.display} tilt-effect"></i></a>`).join("")}
             </div>
         `}}customElements.define("social-icons",g);class b extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
