@@ -28,6 +28,7 @@ class WorkExperienceComponent extends HTMLElement {
                         <span>Node.js</span>
                         <span>CSS</span>
                         <span>HTML</span>
+                        <span>Vite</span>
                       </div>
                   </div>
 
@@ -43,9 +44,9 @@ class WorkExperienceComponent extends HTMLElement {
                         <span>React</span>
                         <span>Angular</span>
                         <span>Redux</span>
-                        <span>Webpack</span>
                         <span>SASS</span>
                         <span>HTML</span>
+                        <span>Webpack</span>
                       </div>
                   </div>
 
