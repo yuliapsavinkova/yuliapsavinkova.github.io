@@ -16,11 +16,9 @@
 @import "./shared/components/footer/footer.css";
 @import "./shared/components/progress/progress.css";
 
-@import "./portfolio/css/logo.css";
-@import "./portfolio/css/section.css";
+@import "./portfolio/css/_general.css";
 
 @import "./portfolio/css/work-experience.css";
 @import "./portfolio/css/contact.css";
 @import "./portfolio/css/hero.css";
 @import "./portfolio/css/expertise.css";
-@import "./portfolio/css/process.css";

@@ -17,3 +17,11 @@
   align-items: center;
   gap: 2rem;
 }
+
+/* TODO: fix this */
+a img {
+  vertical-align: middle;
+  border: none;
+  max-height: var(--logo-size);
+  width: auto;
+}
