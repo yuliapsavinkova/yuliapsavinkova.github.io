@@ -3,7 +3,7 @@
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
         </div>
-      `}}customElements.define("error-component",u);class m extends HTMLElement{constructor(){super();const t=this.getAttribute("logo-link")||"./",n=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]");console.log(o);const i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+      `}}customElements.define("error-component",u);class m extends HTMLElement{constructor(){super();const t=this.getAttribute("logo-link")||"./",n=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]"),i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
           <a href="${t}" class="logo">
               <img src="${n}" alt="Logo - personal portfolio."/>
