@@ -1,3 +1,9 @@
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-size);
+}
+
 /* Customize the selection color */
 ::selection {
   background-color: var(--accent-light-color);

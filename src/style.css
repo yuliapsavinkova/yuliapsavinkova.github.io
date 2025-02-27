@@ -2,12 +2,11 @@
 @import "./assets/fonts/montserrat-v29-latin/fonts-montserrat.css";
 
 @import "./shared/css/reset.css";
+@import "./shared/css/utils.css";
 @import "./shared/css/reusable-classes.css";
 @import "./shared/css/variables.css";
 @import "./shared/css/colors.css";
-@import "./shared/css/scroll.css";
 @import "./shared/css/buttons.css";
-@import "./shared/css/selection.css";
 @import "./shared/css/typography.css";
 @import "./shared/css/cards.css";
 @import "./shared/css/animations.css";
