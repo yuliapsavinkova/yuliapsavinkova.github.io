@@ -12,10 +12,9 @@ class ExpertiseComponent extends HTMLElement {
                     <h4>Web Development</h4>
                     <p>Build websites from scratch using HTML, CSS, JavaScript, and Web Components.</p>
                     <a href="/work#work-row-web">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-</svg>
-
+                      <svg class="icon">
+                        <use href="/icons.svg#arrow-icon"></use>
+                      </svg>
                     </a>
                 </div>
                 <div class="card bg-texture">
@@ -23,18 +22,19 @@ class ExpertiseComponent extends HTMLElement {
                     <h4>App Development</h4>
                     <p>Build web applications using modern frameworks such as React and Angular.</p>
                     <a href="/work#work-row-app">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-</svg>                    </a>
+                      <svg class="icon">
+                        <use href="/icons.svg#arrow-icon"></use>
+                      </svg>
+                    </a>
                 </div>
                 <div class="card bg-texture">
                     <img src="./images/three-d-dev.png" class="card-image" alt="design-image" />
                     <h4>3D Development</h4>
                     <p>Build 3D web experiences using modern web technologies and libraries.</p>
                     <a href="/work#work-row-3d">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-</svg>
+                      <svg class="icon">
+                        <use href="/icons.svg#arrow-icon"></use>
+                      </svg>
                     </a>
                 </div>
             </div>
