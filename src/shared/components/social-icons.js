@@ -19,10 +19,12 @@ class SocialIcons extends HTMLElement {
                 gap: 2rem;
             }
             </style>
-            <div class="social-icons">${icons
+            <div class="social-icons"">${icons
               .map(
                 (icon) =>
-                  `<a href="${icon.href}" target="${icon.target || "_self"}"><i class="${icon.display}"></i></a>`
+                  `<a href="${icon.href}" target="${icon.target || "_self"}"><i class="${
+                    icon.display
+                  } tilt-effect"></i></a>`
               )
               .join("")}
             </div>
