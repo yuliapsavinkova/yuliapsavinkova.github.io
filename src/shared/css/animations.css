@@ -29,7 +29,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-/* Hover Effect: Animate */
 .tilt-effect:hover {
   animation: tilt 1s ease-in-out infinite alternate;
 }

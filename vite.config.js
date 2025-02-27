@@ -15,6 +15,9 @@ export default defineConfig({
     open: true,
     historyApiFallback: true, // Ensures correct routing for SPA
   },
+  define: {
+    __DEBUG__: process.env.NODE_ENV !== "production",
+  },
   // plugins: [
   //   imagemin({
   //     gifsicle: {

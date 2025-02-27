@@ -8,7 +8,6 @@ class HeaderComponent extends HTMLElement {
     const logoSrc = this.getAttribute("logo-src") || "../shared/components/header/defaultHeaderLogo.svg";
     const logoName = this.getAttribute("logo-name") || "";
     const links = JSON.parse(this.getAttribute("links") || "[]");
-    console.log(links);
     const buttonLink = JSON.parse(this.getAttribute("button") || "{}");
     this.innerHTML =
       `

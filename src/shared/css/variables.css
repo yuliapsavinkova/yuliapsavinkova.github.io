@@ -25,6 +25,7 @@
   --global-padding-between: 3rem;
 
   /* logos, buttons, links */
+  --border-color: var(--primary-light-color);
   --border-radius: 0.5rem;
 
   /* Other */

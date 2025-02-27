@@ -33,3 +33,8 @@ document.body.addEventListener("click", (event) => {
     renderPage();
   }
 });
+
+if (__DEBUG__) {
+  console.log("Debug mode active!");
+  document.getElementById("debug-panel").innerHTML = "<debug-panel-component></debug-panel-component>";
+}
