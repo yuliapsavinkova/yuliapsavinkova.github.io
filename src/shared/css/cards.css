@@ -1,22 +1,25 @@
 .cards-container {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
-
-  .card-image {
-    width: 90%;
-  }
 }
 
 .card {
+  flex: 1 1 20rem; /* Cards expand but do not shrink below 20rem */
+  max-width: 30rem; /* Prevents cards from becoming too wide */
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   box-shadow: var(--box-shadow);
+
+  .card-image {
+    width: 90%;
+  }
 
   p {
     text-align: center;
