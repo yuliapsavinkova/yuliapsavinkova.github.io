@@ -1,14 +1,3 @@
-.icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.work {
-  background-size: 1rem 1rem;
-}
-
 .magic-row-container {
   display: flex;
   flex-direction: column;
@@ -27,7 +16,6 @@
   }
 
   img {
-    max-width: 25rem;
     object-fit: cover;
     border-radius: var(--border-radius);
   }
@@ -45,9 +33,9 @@
   }
 }
 
+/* 768px too small */
 @media (max-width: 1000px) {
   .magic-row {
-    max-width: 90%;
     justify-content: center;
     flex-wrap: wrap;
 

@@ -34,10 +34,13 @@
   background-clip: padding-box;
   background-repeat: no-repeat;
   background-position: center center;
-  min-height: 500px;
+  min-height: 30rem;
+  /* transition: background-position 0.1s ease-out; */
 }
 
-/* This works in CSS Modules */
-/* .bg-combined {
-  composes: bg-laptop bg-texture;
-} */
+@media (max-width: 768px) {
+  .bg-working-girl {
+    background-attachment: scroll; /* Fallback for mobile devices */
+    min-height: 20rem;
+  }
+}

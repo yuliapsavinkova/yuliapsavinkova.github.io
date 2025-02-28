@@ -35,3 +35,9 @@
     background-color: var(--white-color);
   }
 }
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 2rem;
+  }
+}

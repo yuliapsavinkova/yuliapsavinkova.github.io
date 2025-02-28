@@ -26,4 +26,11 @@
   a {
     margin: 1rem;
   }
+
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
