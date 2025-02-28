@@ -43,7 +43,7 @@
             </style>
             <div class="social-icons"">${e.map(n=>`<a href="${n.href}" target="${n.target||"_self"}"><i class="${n.display} tilt-effect"></i></a>`).join("")}
             </div>
-        `}}customElements.define("social-icons",b);class v extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,n=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${n}`}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
+        `}}customElements.define("social-icons",b);class v extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,n=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${n}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
       <style>
         .debug-panel {
           z-index: 1000;
@@ -69,6 +69,7 @@
 
       <div id="debugPanel" class="debug-panel">
         <div class="debug-size">Loading...</div>
+        <div class="orientation">Loading...</div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
       </div>
     `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",r.throttle(this._updateWidth,200)),window.removeEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",v);class f extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",n=this.getAttribute("sub-title")||"";this.innerHTML=`
