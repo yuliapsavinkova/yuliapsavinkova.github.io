@@ -75,7 +75,7 @@
     `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",r.throttle(this._updateWidth,200)),window.removeEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",v);class f extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",n=this.getAttribute("sub-title")||"";this.innerHTML=`
       <div class="section-header">
         <h1>${e}</h1>
-        <p class="large">${n}</p>
+        <p class="subtitle large">${n}</p>
         <div class="gra-separator"></div>
       </div>
     `}}customElements.define("section-header",f);class w extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
