@@ -21,19 +21,19 @@
             </div>
           </nav>
       </header>
-    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",m);class h extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",n=new Date().getFullYear();this.innerHTML=`
+    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",m);class g extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",n=new Date().getFullYear();this.innerHTML=`
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
                 <p>&copy; ${n} ${e}</p>
             </div>
         </footer>
-    `}}customElements.define("footer-component",h);class g extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("footer-component",g);class h extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
       </div>
-    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,n=document.documentElement.scrollHeight-window.innerHeight,s=Math.min(e/n*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${s}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",g);class b extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
+    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,n=document.documentElement.scrollHeight-window.innerHeight,s=Math.min(e/n*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${s}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",h);class b extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
             <style>
             .social-icons {
                 display: flex;
@@ -97,12 +97,19 @@
         </section>
       `}}customElements.define("hero-component",w);class k extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
-        <section-header 
+        <section-header
           title="Working Process"
           sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
         </section-header>
       </section>
     `}}customElements.define("working-process-component",k);class y extends HTMLElement{connectedCallback(){this.innerHTML=`
+      <section id="working-process" class="section working-process bg-working-girl">
+        <section-header 
+          title="Working Process"
+          sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
+        </section-header>
+      </section>
+    `;const e=this.querySelector(".bg-working-girl");if(e){const n=()=>{const s=window.scrollY;e.style.backgroundPosition=`center ${s*.3}px`};window.addEventListener("scroll",n),n()}}}customElements.define("working-process-component2",y);class x extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise" class="section expertise">
             <section-header 
                 title="My Expertise"
@@ -142,7 +149,7 @@
             </div>
             <a href="/work" class="button button-secondary">Learn More</a>
         </section>
-    `}}customElements.define("expertise-component",y);class x extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("expertise-component",x);class L extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="work" class="section expertise-full">
             <section-header 
                 title="My Expertise"
@@ -178,7 +185,7 @@
                 </div>
             </div>
         </section>
-    `}}customElements.define("expertise-full-component",x);class L extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("expertise-full-component",L);class E extends HTMLElement{constructor(){super(),this.innerHTML=`
             <section id="about" class="section about">
                 <section-header 
                     title="About Me"
@@ -205,7 +212,7 @@
                     </div>
                 </div>              
             </section>
-        `}}customElements.define("about-component",L);class E extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("about-component",E);class S extends HTMLElement{connectedCallback(){this.innerHTML=`
               <section id="work-experience" class="section work-experience">
                 <section-header 
                     title="Work Experience"
@@ -311,7 +318,7 @@
                     <h5>Passed CFA Level 1, CFA Institute; December, 2017</h5>
                 </div>-->
               </section>
-          `}}customElements.define("work-experience-component",E);class S extends HTMLElement{connectedCallback(){this.innerHTML=`
+          `}}customElements.define("work-experience-component",S);class T extends HTMLElement{connectedCallback(){this.innerHTML=`
             <section id="contact" class="section contact">
                 <section-header 
                     title="Stay In Touch"
@@ -332,7 +339,7 @@
                     </form>
                 </div>
             </section>
-        `}}customElements.define("contact-component",S);function l(){const t={"/":`
+        `}}customElements.define("contact-component",T);function l(){const t={"/":`
       <hero-component></hero-component>
       <expertise-component></expertise-component>
       <about-component></about-component>
