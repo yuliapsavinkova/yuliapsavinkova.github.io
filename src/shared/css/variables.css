@@ -22,7 +22,7 @@
 
   /* padding */
   --global-padding-sides: 2rem;
-  --global-padding-between: 3rem;
+  --global-padding-between: 4rem;
 
   /* logos, buttons, links */
   --border-color: var(--primary-light-color);

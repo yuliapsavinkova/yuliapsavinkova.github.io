@@ -1,12 +1,11 @@
 .work-experience-container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   max-width: 768px;
 }
 
 .work-experience-content {
-  margin: 2rem 0;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -29,12 +28,9 @@
   span {
     padding: 0.5rem;
     background-color: var(--white-color);
-    color: var(--primary-dark-color);
     border-radius: 4px;
     box-shadow: var(--box-shadow);
-
-    font-size: 0.85rem;
-    line-height: 1.5;
+    color: var(--primary-dark-color);
   }
 }
 

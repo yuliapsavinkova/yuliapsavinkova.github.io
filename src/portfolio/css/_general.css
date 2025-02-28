@@ -1,5 +1,4 @@
 .section {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,12 +15,4 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-}
-
-/* TODO: fix this */
-a img {
-  vertical-align: middle;
-  border: none;
-  max-height: var(--logo-size);
-  width: auto;
 }

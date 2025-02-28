@@ -26,8 +26,8 @@ class DebugPanelComponent extends HTMLElement {
           position: fixed;
           bottom: 0;
           left: 0;
-          margin: 0.7rem;
-          padding: 0.7rem;
+          margin: 1rem;
+          padding: 1rem;
           border-radius: 1.4rem;
           background: hsl(var(--accent-light-color) / 0.9);
           backdrop-filter: blur(1rem);
