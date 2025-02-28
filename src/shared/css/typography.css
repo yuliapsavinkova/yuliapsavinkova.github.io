@@ -1,6 +1,6 @@
 /* Base typography rules (font-family, size, weight, line-height, letter spacing.) */
 html {
-  font-size: clamp(14px, 2vw, 18px); /* standard between 14px and 18px */
+  font-size: clamp(15px, 2vw, 18px); /* standard between 14px and 18px */
   font-style: regular;
   font-family: "Montserrat", Arial, sans-serif;
 }
@@ -54,7 +54,7 @@ span {
 }
 p.large,
 span.large {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   letter-spacing: -0.01em;
 }
 p.small,

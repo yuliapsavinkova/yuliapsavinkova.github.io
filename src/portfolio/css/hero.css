@@ -32,8 +32,8 @@
       max-width: 25rem;
     }
   }
-  h3,
-  h4 {
+  .hero-heading h3,
+  .hero-heading h4 {
     display: none;
   }
 }
