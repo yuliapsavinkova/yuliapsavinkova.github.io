@@ -79,20 +79,20 @@
       </div>
     `}}customElements.define("section-header",f);class w extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
         <section id="hero" class="hero bg-laptop-with-texture">
-          <div class="hero-content">
-            <img class="hero-portrait" src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
+            <div class="hero-portrait">  
+                <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
+            </div>
             <social-icons></social-icons>
             <div class="hero-heading">
-              <h1>Yulia Savinkova</h1>
-              <h2>Software Engineer</h2>
-              <h3>10+ years of experience</h3>
-              <h4>MS in Computer Science</h4>
+                <h1>Yulia Savinkova</h1>
+                <h2>Software Engineer</h2>
+                <h3>10+ years of experience</h3>
+                <h4>MS in Computer Science</h4>
             </div>
             <div>
-              <a href="/about" class="button button-primary">Learn More</a>
-              <a href="/resume.pdf" target="_blank" class="button button-action">Resume</a>
+                <a href="/about" class="button button-primary">Learn More</a>
+                <a href="/resume.pdf" target="_blank" class="button button-action">Resume</a>
             </div>
-          </div>
         </section>
       `}}customElements.define("hero-component",w);class k extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
