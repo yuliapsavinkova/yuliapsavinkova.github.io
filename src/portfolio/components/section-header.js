@@ -5,7 +5,7 @@ class SectionHeader extends HTMLElement {
     this.innerHTML = `
       <div class="section-header">
         <h1>${title}</h1>
-        <p class="large">${subTitle}</p>
+        <p class="subtitle large">${subTitle}</p>
         <div class="gra-separator"></div>
       </div>
     `;

@@ -7,10 +7,6 @@
 
   box-shadow: var(--box-shadow);
   padding: var(--global-padding-between) var(--global-padding-sides);
-
-  p {
-    text-align: center;
-  }
 }
 
 .section-header {
@@ -19,4 +15,8 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  .subtitle {
+    text-align: center;
+  }
 }
