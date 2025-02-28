@@ -11,6 +11,11 @@ class DebugPanelComponent extends HTMLElement {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     document.getElementById("debugPanel").querySelector(".debug-size").textContent = `${width} x ${height}`;
+    document.getElementById("debugPanel").querySelector(".orientation").textContent = window.matchMedia(
+      "(orientation: portrait)"
+    ).matches
+      ? "Portrait"
+      : "Landscape";
   }
 
   // Toggle debug outlines on body
@@ -45,6 +50,7 @@ class DebugPanelComponent extends HTMLElement {
 
       <div id="debugPanel" class="debug-panel">
         <div class="debug-size">Loading...</div>
+        <div class="orientation">Loading...</div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
       </div>
     `;
