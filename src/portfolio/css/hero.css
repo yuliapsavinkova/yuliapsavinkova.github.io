@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  height: calc(100vh - var(--header-size));
+  height: calc(100dvh - var(--header-size));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,6 +22,7 @@
     display: block;
     overflow: hidden;
     position: relative;
+    max-width: 70dvw;
 
     img {
       object-fit: contain;
