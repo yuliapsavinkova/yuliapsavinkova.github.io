@@ -113,7 +113,7 @@
                     <img src="./images/web-dev.png" class="card-image" alt="maintenance-image" />
                     <h4>Web Development</h4>
                     <p>Build websites from scratch using HTML, CSS, JavaScript, and Web Components.</p>
-                    <a href="/work#work-row-web" class="">
+                    <a href="/work#work-row-web">
                       <svg class="icon">
                         <use href="/icons.svg#arrow-icon"></use>
                       </svg>
