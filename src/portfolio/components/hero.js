@@ -5,7 +5,7 @@ class HeroComponent extends HTMLElement {
 
   getTemplate() {
     return `
-        <section id="hero" class="hero bg-laptop-with-texture">
+        <section id="hero" class="hero bg-texture">
             <div class="hero-portrait">  
                 <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
             </div>
