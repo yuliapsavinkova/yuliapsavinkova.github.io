@@ -9,6 +9,7 @@ class HeaderComponent extends HTMLElement {
     const logoName = this.getAttribute("logo-name") || "";
     const links = JSON.parse(this.getAttribute("links") || "[]");
     const buttonLink = JSON.parse(this.getAttribute("button") || "{}");
+
     this.innerHTML =
       `
       <header class="header">
@@ -23,7 +24,7 @@ class HeaderComponent extends HTMLElement {
                 <div class="nav-links">${links
                   .map(
                     (link) =>
-                      `<a class="large" href="${link.href}" target="${link.target || "_self"}">${
+                      `<a class="nav-link large" href="${link.href}" target="${link.target || "_self"}">${
                         link.image ? `<img src="${link.image}" />` : ""
                       }${link.text}</a>`
                   )
@@ -37,7 +38,7 @@ class HeaderComponent extends HTMLElement {
             </div>
           </nav>
       </header>
-    ` + this.innerHTML; // Append existing content;
+    ` + this.innerHTML; // Append existing content
 
     this.checkbox = document.getElementById("menu-toggle");
     this._handleResize = this._handleResize.bind(this);
@@ -59,14 +60,34 @@ class HeaderComponent extends HTMLElement {
     this.checkbox.checked = false;
   }
 
+  _updateActiveLink() {
+    const links = this.querySelectorAll(".nav-link");
+    const currentPath = window.location.pathname;
+
+    links.forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
   connectedCallback() {
     window.addEventListener("resize", Utils.throttle(this._handleResize, 200));
     window.addEventListener("scroll", Utils.throttle(this._handleScroll, 300));
+
+    // Update active link when component is loaded
+    this._updateActiveLink();
+
+    // Listen for navigation changes if using a custom router
+    window.addEventListener("popstate", () => this._updateActiveLink());
   }
 
   disconnectedCallback() {
     window.removeEventListener("resize", this._handleResize);
     window.removeEventListener("scroll", this._handleScroll);
+    window.removeEventListener("popstate", () => this._updateActiveLink());
   }
 }
 

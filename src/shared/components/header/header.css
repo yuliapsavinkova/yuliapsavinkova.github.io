@@ -72,6 +72,11 @@
   label {
     display: none;
   }
+
+  .nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-light-color);
+  }
 }
 
 @media (max-width: 768px) {
@@ -136,6 +141,11 @@
         display: inline-block;
         margin-top: 1.5rem;
         align-self: center;
+      }
+
+      .nav-link.active {
+        font-weight: bold;
+        border: 1px solid var(--accent-light-color);
       }
     }
 
