@@ -3,7 +3,7 @@
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
         </div>
-      `}}customElements.define("error-component",u);class m extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",n=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]"),i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+      `}}customElements.define("error-component",u);class g extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",n=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]"),i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
           <a href="${e}" class="logo">
               <img src="${n}" alt="Logo - personal portfolio."/>
@@ -13,7 +13,7 @@
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
             <div class="nav-menu">
-                <div class="nav-links">${o.map(a=>`<a href="${a.href}" target="${a.target||"_self"}">${a.image?`<img src="${a.image}" />`:""}${a.text}</a>`).join("")}
+                <div class="nav-links">${o.map(a=>`<a class="large" href="${a.href}" target="${a.target||"_self"}">${a.image?`<img src="${a.image}" />`:""}${a.text}</a>`).join("")}
                 </div>
                 <div class="nav-action">
                   <a href="${i.href}" target="${i.target||"_self"}" class="button button-action">${i.text}</a>
@@ -21,14 +21,14 @@
             </div>
           </nav>
       </header>
-    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",m);class g extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",n=new Date().getFullYear();this.innerHTML=`
+    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",g);class m extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",n=new Date().getFullYear();this.innerHTML=`
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
                 <p>&copy; ${n} ${e}</p>
             </div>
         </footer>
-    `}}customElements.define("footer-component",g);class h extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("footer-component",m);class h extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
@@ -79,7 +79,7 @@
         <div class="gra-separator"></div>
       </div>
     `}}customElements.define("section-header",f);class w extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
-        <section id="hero" class="hero bg-laptop-with-texture">
+        <section id="hero" class="hero bg-texture">
             <div class="hero-portrait">  
                 <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
             </div>
