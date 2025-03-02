@@ -20,8 +20,8 @@
       gtag("js", new Date());
       gtag("config", "G-VG1XW4WL1T");
     </script>
-    <script type="module" crossorigin src="/assets/index-dBdpLiYm.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Bh41qSz7.css">
+    <script type="module" crossorigin src="/assets/index-CZXvU8KL.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C9Z6Wwmz.css">
   </head>
   <body>
     <header-component
@@ -35,7 +35,7 @@
       button='{"href": "/resume.pdf", "text": "Resume", "target": "_blank"}'
     ></header-component>
 
-    <div id="particles-js"></div>
+    <!-- <div id="particles-js"></div> -->
     <div id="debug-panel"></div>
 
     <main>
@@ -47,10 +47,11 @@
 
 
     <!-- Include particles.js from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-    <!-- Include particles.js from node_modules -->
-    <!-- <script src="/node_modules/particles.js/particles.js"></script> -->
-
+    <script type="module">
+      import { particlesConfig } from "./src/portfolio/components/particles.js";
+      particlesJS("particles-js", particlesConfig);
+    </script> -->
   </body>
 </html>

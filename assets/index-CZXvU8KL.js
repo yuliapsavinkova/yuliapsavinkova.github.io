@@ -1,9 +1,9 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))o(i);new MutationObserver(i=>{for(const s of i)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&o(a)}).observe(document,{childList:!0,subtree:!0});function t(i){const s={};return i.integrity&&(s.integrity=i.integrity),i.referrerPolicy&&(s.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?s.credentials="include":i.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function o(i){if(i.ep)return;i.ep=!0;const s=t(i);fetch(i.href,s)}})();const r={throttle:function(n,e){let t=0;return function(...o){const i=Date.now();i-t>=e&&(t=i,n.apply(this,o))}},debounce:function(n,e){let t;return function(...o){clearTimeout(t),t=setTimeout(()=>{n.apply(this,o)},e)}}};class u extends HTMLElement{connectedCallback(){this.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))o(i);new MutationObserver(i=>{for(const a of i)if(a.type==="childList")for(const s of a.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function t(i){const a={};return i.integrity&&(a.integrity=i.integrity),i.referrerPolicy&&(a.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?a.credentials="include":i.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function o(i){if(i.ep)return;i.ep=!0;const a=t(i);fetch(i.href,a)}})();const p={throttle:function(n,e){let t=0;return function(...o){const i=Date.now();i-t>=e&&(t=i,n.apply(this,o))}},debounce:function(n,e){let t;return function(...o){clearTimeout(t),t=setTimeout(()=>{n.apply(this,o)},e)}}};class b extends HTMLElement{connectedCallback(){this.innerHTML=`
         <div class="error-page">
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
         </div>
-      `}}customElements.define("error-component",u);class m extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",t=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",o=this.getAttribute("logo-name")||"",i=JSON.parse(this.getAttribute("links")||"[]"),s=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+      `}}customElements.define("error-component",b);class f extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",t=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",o=this.getAttribute("logo-name")||"",i=JSON.parse(this.getAttribute("links")||"[]"),a=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
           <a href="${e}" class="logo">
               <img src="${t}" alt="Logo - personal portfolio."/>
@@ -13,27 +13,27 @@
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
             <div class="nav-menu">
-                <div class="nav-links">${i.map(a=>`<a class="nav-link large" href="${a.href}" target="${a.target||"_self"}">${a.image?`<img src="${a.image}" />`:""}${a.text}</a>`).join("")}
+                <div class="nav-links">${i.map(s=>`<a class="nav-link large" href="${s.href}" target="${s.target||"_self"}">${s.image?`<img src="${s.image}" />`:""}${s.text}</a>`).join("")}
                 </div>
                 <div class="nav-action">
-                  <a href="${s.href}" target="${s.target||"_self"}" class="button button-action">${s.text}</a>
+                  <a href="${a.href}" target="${a.target||"_self"}" class="button button-action">${a.text}</a>
                 </div>
             </div>
           </nav>
       </header>
-    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}_updateActiveLink(){const e=this.querySelectorAll(".nav-link"),t=window.location.pathname;e.forEach(o=>{o.getAttribute("href")===t?o.classList.add("active"):o.classList.remove("active")})}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300)),this._updateActiveLink(),window.addEventListener("popstate",()=>this._updateActiveLink())}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll),window.removeEventListener("popstate",()=>this._updateActiveLink())}}customElements.define("header-component",m);class g extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",t=new Date().getFullYear();this.innerHTML=`
+    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",s=>this._handleOutsideClick(s))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}_updateActiveLink(){const e=this.querySelectorAll(".nav-link"),t=window.location.pathname;e.forEach(o=>{o.getAttribute("href")===t?o.classList.add("active"):o.classList.remove("active")})}connectedCallback(){window.addEventListener("resize",p.throttle(this._handleResize,200)),window.addEventListener("scroll",p.throttle(this._handleScroll,300)),this._updateActiveLink(),window.addEventListener("popstate",()=>this._updateActiveLink())}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll),window.removeEventListener("popstate",()=>this._updateActiveLink())}}customElements.define("header-component",f);class w extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",t=new Date().getFullYear();this.innerHTML=`
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
                 <p>&copy; ${t} ${e}</p>
             </div>
         </footer>
-    `}}customElements.define("footer-component",g);class h extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("footer-component",w);class k extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
       </div>
-    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,o=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${o}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",h);class b extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
+    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,o=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${o}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",k);class y extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
             <style>
             .social-icons {
                 display: flex;
@@ -43,7 +43,7 @@
             </style>
             <div class="social-icons"">${e.map(t=>`<a href="${t.href}" target="${t.target||"_self"}"><i class="${t.display} tilt-effect"></i></a>`).join("")}
             </div>
-        `}}customElements.define("social-icons",b);class v extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${t}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
+        `}}customElements.define("social-icons",y);class x extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${t}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
       <style>
         .debug-panel {
           z-index: 1000;
@@ -72,46 +72,47 @@
         <div class="orientation">Loading...</div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
       </div>
-    `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",r.throttle(this._updateWidth,200)),window.removeEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",v);class f extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
+    `,window.addEventListener("resize",p.throttle(this._updateWidth,200)),window.addEventListener("scroll",p.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",p.throttle(this._updateWidth,200)),window.removeEventListener("scroll",p.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",x);class L extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
       <div class="section-header">
         <h1>${e}</h1>
         <p class="subtitle large">${t}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",f);class w extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
+    `}}customElements.define("section-header",L);const E="modulepreload",S=function(n){return"/"+n},m={},C=function(e,t,o){let i=Promise.resolve();if(t&&t.length>0){document.getElementsByTagName("link");const s=document.querySelector("meta[property=csp-nonce]"),c=(s==null?void 0:s.nonce)||(s==null?void 0:s.getAttribute("nonce"));i=Promise.allSettled(t.map(r=>{if(r=S(r),r in m)return;m[r]=!0;const d=r.endsWith(".css"),h=d?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${r}"]${h}`))return;const l=document.createElement("link");if(l.rel=d?"stylesheet":E,d||(l.as="script"),l.crossOrigin="",l.href=r,c&&l.setAttribute("nonce",c),document.head.appendChild(l),d)return new Promise((g,v)=>{l.addEventListener("load",g),l.addEventListener("error",()=>v(new Error(`Unable to preload CSS for ${r}`)))})}))}function a(s){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=s,window.dispatchEvent(c),!c.defaultPrevented)throw s}return i.then(s=>{for(const c of s||[])c.status==="rejected"&&a(c.reason);return e().catch(a)})};class T extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(),this.loadParticles()}getTemplate(){return`
       <section id="hero" class="hero bg-texture">
-          <div class="hero-container">
-            <div class="hero-portrait">  
-                <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
-            </div>
-            <social-icons></social-icons>
-            <div class="hero-heading">
-                <h1>Yulia Savinkova</h1>
-                <h2>Software Engineer</h2>
-                <h3>10+ years of experience</h3>
-                <h4>MS in Computer Science</h4>
-            </div>
-            <div>
-                <a href="/about" class="button button-primary">Learn More</a>
-                <a href="/contact" class="button button-action">Contact</a>
-            </div>
+        <div id="particles-js"></div> <!-- Particles are only in the hero section -->
+        <div class="hero-container">
+          <div class="hero-portrait">  
+            <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
           </div>
+          <social-icons></social-icons>
+          <div class="hero-heading">
+            <h1>Yulia Savinkova</h1>
+            <h2>Software Engineer</h2>
+            <h3>10+ years of experience</h3>
+            <h4>MS in Computer Science</h4>
+          </div>
+          <div>
+            <a href="/about" class="button button-primary">Learn More</a>
+            <a href="/contact" class="button button-action">Contact</a>
+          </div>
+        </div>
       </section>
-    `}}customElements.define("hero-component",w);class k extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){C(async()=>{const{particlesConfig:e}=await import("./particles-Bs1us0Bm.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",T);class M extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
         <section-header
           title="Working Process"
           sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
         </section-header>
       </section>
-    `}}customElements.define("working-process-component",k);class y extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("working-process-component",M);class H extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
         <section-header 
           title="Working Process"
           sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
         </section-header>
       </section>
-    `;const e=this.querySelector(".bg-working-girl");if(e){const t=()=>{const o=window.scrollY;e.style.backgroundPosition=`center ${o*.3}px`};window.addEventListener("scroll",t),t()}}}customElements.define("working-process-component2",y);class x extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `;const e=this.querySelector(".bg-working-girl");if(e){const t=()=>{const o=window.scrollY;e.style.backgroundPosition=`center ${o*.3}px`};window.addEventListener("scroll",t),t()}}}customElements.define("working-process-component2",H);class P extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise" class="section expertise">
             <section-header 
                 title="My Expertise"
@@ -151,7 +152,7 @@
             </div>
             <a href="/work" class="button button-secondary">Learn More</a>
         </section>
-    `}}customElements.define("expertise-component",x);class L extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("expertise-component",P);class A extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="work" class="section expertise-full">
             <section-header 
                 title="My Expertise"
@@ -187,7 +188,7 @@
                 </div>
             </div>
         </section>
-    `}}customElements.define("expertise-full-component",L);class E extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("expertise-full-component",A);class _ extends HTMLElement{constructor(){super(),this.innerHTML=`
             <section id="about" class="section about">
                 <section-header 
                     title="About Me"
@@ -214,7 +215,7 @@
                     </div>
                 </div>              
             </section>
-        `}}customElements.define("about-component",E);class S extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("about-component",_);class W extends HTMLElement{connectedCallback(){this.innerHTML=`
               <section id="work-experience" class="section work-experience">
                 <section-header 
                     title="Work Experience"
@@ -320,7 +321,7 @@
                     <h5>Passed CFA Level 1, CFA Institute; December, 2017</h5>
                 </div>-->
               </section>
-          `}}customElements.define("work-experience-component",S);class T extends HTMLElement{connectedCallback(){this.innerHTML=`
+          `}}customElements.define("work-experience-component",W);class I extends HTMLElement{connectedCallback(){this.innerHTML=`
             <section id="contact" class="section contact">
                 <section-header 
                     title="Stay In Touch"
@@ -341,7 +342,7 @@
                     </form>
                 </div>
             </section>
-        `}}customElements.define("contact-component",T);function l(){const n={"/":`
+        `}}customElements.define("contact-component",I);function u(){const n={"/":`
       <hero-component></hero-component>
       <expertise-component></expertise-component>
       <about-component></about-component>
@@ -354,4 +355,4 @@
     `,"/work":`
       <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
-    `,"/contact":"<contact-component></contact-component>","/profile/:id":o=>`<profile-component user-id="${o.id}"></profile-component>`},e=window.location.pathname,t=document.querySelector("main");for(const o in n){const i=new RegExp(`^${o.replace(/:\w+/g,"(\\w+)")}$`),s=e.match(i);if(s){const a=(o.match(/:(\w+)/g)||[]).map(c=>c.substring(1)),d=Object.fromEntries(a.map((c,p)=>[c,s[p+1]]));t.innerHTML=typeof n[o]=="function"?n[o](d):n[o],window.scrollTo({top:0,behavior:"smooth"});return}}t.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{l(),window.addEventListener("popstate",l)});document.body.addEventListener("click",n=>{n.target.matches("a[href]:not([target])")&&(n.preventDefault(),history.pushState({},"",n.target.href),l())});const C={particles:{number:{value:6,density:{enable:!0,value_area:800}},color:{value:"#2d4a77"},shape:{type:"polygon",stroke:{width:0,color:"#000"},polygon:{nb_sides:6},image:{src:"img/github.svg",width:100,height:100}},opacity:{value:.1,random:!0,anim:{enable:!1,speed:1,opacity_min:.1,sync:!1}},size:{value:160,random:!1,anim:{enable:!0,speed:10,size_min:40,sync:!1}},line_linked:{enable:!1,distance:200,color:"#ffffff",opacity:1,width:2},move:{enable:!0,speed:8,direction:"none",random:!1,straight:!1,out_mode:"out",bounce:!1,attract:{enable:!1,rotateX:600,rotateY:1200}}},retina_detect:!0};particlesJS("particles-js",C);
+    `,"/contact":"<contact-component></contact-component>","/profile/:id":o=>`<profile-component user-id="${o.id}"></profile-component>`},e=window.location.pathname,t=document.querySelector("main");for(const o in n){const i=new RegExp(`^${o.replace(/:\w+/g,"(\\w+)")}$`),a=e.match(i);if(a){const s=(o.match(/:(\w+)/g)||[]).map(r=>r.substring(1)),c=Object.fromEntries(s.map((r,d)=>[r,a[d+1]]));t.innerHTML=typeof n[o]=="function"?n[o](c):n[o],window.scrollTo({top:0,behavior:"smooth"});return}}t.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{u(),window.addEventListener("popstate",u)});document.body.addEventListener("click",n=>{n.target.matches("a[href]:not([target])")&&(n.preventDefault(),history.pushState({},"",n.target.href),u())});
