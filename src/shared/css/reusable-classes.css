@@ -38,7 +38,7 @@
   /* transition: background-position 0.1s ease-out; */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .bg-working-girl {
     background-attachment: scroll; /* Fallback for mobile devices */
     min-height: 20rem;
