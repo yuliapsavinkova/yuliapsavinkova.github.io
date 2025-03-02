@@ -1,39 +1,39 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const i of o)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function n(o){const i={};return o.integrity&&(i.integrity=o.integrity),o.referrerPolicy&&(i.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?i.credentials="include":o.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(o){if(o.ep)return;o.ep=!0;const i=n(o);fetch(o.href,i)}})();const r={throttle:function(t,e){let n=0;return function(...s){const o=Date.now();o-n>=e&&(n=o,t.apply(this,s))}},debounce:function(t,e){let n;return function(...s){clearTimeout(n),n=setTimeout(()=>{t.apply(this,s)},e)}}};class u extends HTMLElement{connectedCallback(){this.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))o(i);new MutationObserver(i=>{for(const s of i)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&o(a)}).observe(document,{childList:!0,subtree:!0});function t(i){const s={};return i.integrity&&(s.integrity=i.integrity),i.referrerPolicy&&(s.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?s.credentials="include":i.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function o(i){if(i.ep)return;i.ep=!0;const s=t(i);fetch(i.href,s)}})();const r={throttle:function(n,e){let t=0;return function(...o){const i=Date.now();i-t>=e&&(t=i,n.apply(this,o))}},debounce:function(n,e){let t;return function(...o){clearTimeout(t),t=setTimeout(()=>{n.apply(this,o)},e)}}};class u extends HTMLElement{connectedCallback(){this.innerHTML=`
         <div class="error-page">
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
         </div>
-      `}}customElements.define("error-component",u);class g extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",n=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]"),i=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+      `}}customElements.define("error-component",u);class m extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",t=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",o=this.getAttribute("logo-name")||"",i=JSON.parse(this.getAttribute("links")||"[]"),s=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
           <a href="${e}" class="logo">
-              <img src="${n}" alt="Logo - personal portfolio."/>
-              <span class="logo-name">${s}</span>
+              <img src="${t}" alt="Logo - personal portfolio."/>
+              <span class="logo-name">${o}</span>
           </a>
           <nav class="gra-nav">
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
             <div class="nav-menu">
-                <div class="nav-links">${o.map(a=>`<a class="large" href="${a.href}" target="${a.target||"_self"}">${a.image?`<img src="${a.image}" />`:""}${a.text}</a>`).join("")}
+                <div class="nav-links">${i.map(a=>`<a class="nav-link large" href="${a.href}" target="${a.target||"_self"}">${a.image?`<img src="${a.image}" />`:""}${a.text}</a>`).join("")}
                 </div>
                 <div class="nav-action">
-                  <a href="${i.href}" target="${i.target||"_self"}" class="button button-action">${i.text}</a>
+                  <a href="${s.href}" target="${s.target||"_self"}" class="button button-action">${s.text}</a>
                 </div>
             </div>
           </nav>
       </header>
-    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300))}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll)}}customElements.define("header-component",g);class m extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",n=new Date().getFullYear();this.innerHTML=`
+    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",a=>this._handleOutsideClick(a))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}_updateActiveLink(){const e=this.querySelectorAll(".nav-link"),t=window.location.pathname;e.forEach(o=>{o.getAttribute("href")===t?o.classList.add("active"):o.classList.remove("active")})}connectedCallback(){window.addEventListener("resize",r.throttle(this._handleResize,200)),window.addEventListener("scroll",r.throttle(this._handleScroll,300)),this._updateActiveLink(),window.addEventListener("popstate",()=>this._updateActiveLink())}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll),window.removeEventListener("popstate",()=>this._updateActiveLink())}}customElements.define("header-component",m);class g extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",t=new Date().getFullYear();this.innerHTML=`
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
-                <p>&copy; ${n} ${e}</p>
+                <p>&copy; ${t} ${e}</p>
             </div>
         </footer>
-    `}}customElements.define("footer-component",m);class h extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("footer-component",g);class h extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
       </div>
-    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,n=document.documentElement.scrollHeight-window.innerHeight,s=Math.min(e/n*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${s}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",h);class b extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
+    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,o=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${o}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",h);class v extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
             <style>
             .social-icons {
                 display: flex;
@@ -41,9 +41,9 @@
                 gap: 2rem;
             }
             </style>
-            <div class="social-icons"">${e.map(n=>`<a href="${n.href}" target="${n.target||"_self"}"><i class="${n.display} tilt-effect"></i></a>`).join("")}
+            <div class="social-icons"">${e.map(t=>`<a href="${t.href}" target="${t.target||"_self"}"><i class="${t.display} tilt-effect"></i></a>`).join("")}
             </div>
-        `}}customElements.define("social-icons",b);class v extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,n=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${n}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
+        `}}customElements.define("social-icons",v);class b extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${t}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
       <style>
         .debug-panel {
           z-index: 1000;
@@ -72,10 +72,10 @@
         <div class="orientation">Loading...</div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
       </div>
-    `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",r.throttle(this._updateWidth,200)),window.removeEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",v);class f extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",n=this.getAttribute("sub-title")||"";this.innerHTML=`
+    `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",r.throttle(this._updateWidth,200)),window.removeEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",b);class f extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
       <div class="section-header">
         <h1>${e}</h1>
-        <p class="subtitle large">${n}</p>
+        <p class="subtitle large">${t}</p>
         <div class="gra-separator"></div>
       </div>
     `}}customElements.define("section-header",f);class w extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
@@ -92,7 +92,7 @@
             </div>
             <div>
                 <a href="/about" class="button button-primary">Learn More</a>
-                <a href="/resume.pdf" target="_blank" class="button button-action">Resume</a>
+                <a href="/contact" class="button button-action">Contact</a>
             </div>
         </section>
       `}}customElements.define("hero-component",w);class k extends HTMLElement{connectedCallback(){this.innerHTML=`
@@ -109,7 +109,7 @@
           sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
         </section-header>
       </section>
-    `;const e=this.querySelector(".bg-working-girl");if(e){const n=()=>{const s=window.scrollY;e.style.backgroundPosition=`center ${s*.3}px`};window.addEventListener("scroll",n),n()}}}customElements.define("working-process-component2",y);class x extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `;const e=this.querySelector(".bg-working-girl");if(e){const t=()=>{const o=window.scrollY;e.style.backgroundPosition=`center ${o*.3}px`};window.addEventListener("scroll",t),t()}}}customElements.define("working-process-component2",y);class x extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise" class="section expertise">
             <section-header 
                 title="My Expertise"
@@ -339,7 +339,7 @@
                     </form>
                 </div>
             </section>
-        `}}customElements.define("contact-component",T);function l(){const t={"/":`
+        `}}customElements.define("contact-component",T);function l(){const n={"/":`
       <hero-component></hero-component>
       <expertise-component></expertise-component>
       <about-component></about-component>
@@ -352,4 +352,4 @@
     `,"/work":`
       <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
-    `,"/contact":"<contact-component></contact-component>","/profile/:id":s=>`<profile-component user-id="${s.id}"></profile-component>`},e=window.location.pathname,n=document.querySelector("main");for(const s in t){const o=new RegExp(`^${s.replace(/:\w+/g,"(\\w+)")}$`),i=e.match(o);if(i){const a=(s.match(/:(\w+)/g)||[]).map(c=>c.substring(1)),d=Object.fromEntries(a.map((c,p)=>[c,i[p+1]]));n.innerHTML=typeof t[s]=="function"?t[s](d):t[s],window.scrollTo({top:0,behavior:"smooth"});return}}n.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{l(),window.addEventListener("popstate",l)});document.body.addEventListener("click",t=>{t.target.matches("a[href]:not([target])")&&(t.preventDefault(),history.pushState({},"",t.target.href),l())});
+    `,"/contact":"<contact-component></contact-component>","/profile/:id":o=>`<profile-component user-id="${o.id}"></profile-component>`},e=window.location.pathname,t=document.querySelector("main");for(const o in n){const i=new RegExp(`^${o.replace(/:\w+/g,"(\\w+)")}$`),s=e.match(i);if(s){const a=(o.match(/:(\w+)/g)||[]).map(c=>c.substring(1)),d=Object.fromEntries(a.map((c,p)=>[c,s[p+1]]));t.innerHTML=typeof n[o]=="function"?n[o](d):n[o],window.scrollTo({top:0,behavior:"smooth"});return}}t.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{l(),window.addEventListener("popstate",l)});document.body.addEventListener("click",n=>{n.target.matches("a[href]:not([target])")&&(n.preventDefault(),history.pushState({},"",n.target.href),l())});
