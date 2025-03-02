@@ -1,8 +1,4 @@
 /* Spinning Border ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.header {
-  overflow-x: hidden; /* Prevents overflow-x on mobile*/
-}
-
 .header::after {
   content: "";
   position: absolute;
@@ -25,6 +21,12 @@
   }
   to {
     transform: translateX(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .header::after {
+    display: none;
   }
 }
 
