@@ -11,12 +11,12 @@ export const particlesConfig = {
     opacity: {
       value: 0.1,
       random: true,
-      anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+      // anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
     },
     size: {
       value: 200,
       random: false,
-      anim: { enable: true, speed: 10, size_min: 50, sync: false },
+      anim: { enable: true, speed: 20, size_min: 100, sync: false },
     },
     // line_linked: {
     //   enable: false,
