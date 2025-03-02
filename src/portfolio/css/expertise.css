@@ -33,6 +33,10 @@
   }
 }
 
+.about-portrait {
+  max-width: 25rem;
+}
+
 /* 768px too small */
 @media (max-width: 1000px) {
   .magic-row {
