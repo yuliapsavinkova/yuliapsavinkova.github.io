@@ -23,7 +23,7 @@ class HeaderComponent extends HTMLElement {
                 <div class="nav-links">${links
                   .map(
                     (link) =>
-                      `<a href="${link.href}" target="${link.target || "_self"}">${
+                      `<a class="large" href="${link.href}" target="${link.target || "_self"}">${
                         link.image ? `<img src="${link.image}" />` : ""
                       }${link.text}</a>`
                   )
