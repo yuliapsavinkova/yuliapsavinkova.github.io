@@ -1,27 +1,27 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const r of o)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function t(o){const r={};return o.integrity&&(r.integrity=o.integrity),o.referrerPolicy&&(r.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?r.credentials="include":o.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function s(o){if(o.ep)return;o.ep=!0;const r=t(o);fetch(o.href,r)}})();const p={throttle:function(n,e){let t=0;return function(...s){const o=Date.now();o-t>=e&&(t=o,n.apply(this,s))}},debounce:function(n,e){let t;return function(...s){clearTimeout(t),t=setTimeout(()=>{n.apply(this,s)},e)}}};class b extends HTMLElement{connectedCallback(){this.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))o(i);new MutationObserver(i=>{for(const a of i)if(a.type==="childList")for(const s of a.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function t(i){const a={};return i.integrity&&(a.integrity=i.integrity),i.referrerPolicy&&(a.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?a.credentials="include":i.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function o(i){if(i.ep)return;i.ep=!0;const a=t(i);fetch(i.href,a)}})();const p={throttle:function(n,e){let t=0;return function(...o){const i=Date.now();i-t>=e&&(t=i,n.apply(this,o))}},debounce:function(n,e){let t;return function(...o){clearTimeout(t),t=setTimeout(()=>{n.apply(this,o)},e)}}};class b extends HTMLElement{connectedCallback(){this.innerHTML=`
         <div class="error-page">
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
         </div>
-      `}}customElements.define("error-component",b);class f extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",t=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",s=this.getAttribute("logo-name")||"",o=JSON.parse(this.getAttribute("links")||"[]"),r=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+      `}}customElements.define("error-component",b);class f extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",t=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",o=this.getAttribute("logo-name")||"",i=JSON.parse(this.getAttribute("links")||"[]"),a=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
           <a href="${e}" class="logo">
               <img src="${t}" alt="Logo - personal portfolio."/>
-              <span class="logo-name">${s}</span>
+              <span class="logo-name">${o}</span>
           </a>
           <nav class="gra-nav">
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
             <div class="nav-menu">
-                <div class="nav-links">${o.map(i=>`<a class="nav-link large" href="${i.href}" target="${i.target||"_self"}">${i.image?`<img src="${i.image}" />`:""}${i.text}</a>`).join("")}
+                <div class="nav-links">${i.map(s=>`<a class="nav-link large" href="${s.href}" target="${s.target||"_self"}">${s.image?`<img src="${s.image}" />`:""}${s.text}</a>`).join("")}
                 </div>
                 <div class="nav-action">
-                  <a href="${r.href}" target="${r.target||"_self"}" class="button button-action">${r.text}</a>
+                  <a href="${a.href}" target="${a.target||"_self"}" class="button button-action">${a.text}</a>
                 </div>
             </div>
           </nav>
       </header>
-    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",i=>this._handleOutsideClick(i))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}_updateActiveLink(){const e=this.querySelectorAll(".nav-link"),t=window.location.pathname;e.forEach(s=>{s.getAttribute("href")===t?s.classList.add("active"):s.classList.remove("active")})}connectedCallback(){window.addEventListener("resize",p.throttle(this._handleResize,200)),window.addEventListener("scroll",p.throttle(this._handleScroll,300)),this._updateActiveLink(),window.addEventListener("popstate",()=>this._updateActiveLink())}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll),window.removeEventListener("popstate",()=>this._updateActiveLink())}}customElements.define("header-component",f);class w extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",t=new Date().getFullYear();this.innerHTML=`
+    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",s=>this._handleOutsideClick(s))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}_updateActiveLink(){const e=this.querySelectorAll(".nav-link"),t=window.location.pathname;e.forEach(o=>{o.getAttribute("href")===t?o.classList.add("active"):o.classList.remove("active")})}connectedCallback(){window.addEventListener("resize",p.throttle(this._handleResize,200)),window.addEventListener("scroll",p.throttle(this._handleScroll,300)),this._updateActiveLink(),window.addEventListener("popstate",()=>this._updateActiveLink())}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll),window.removeEventListener("popstate",()=>this._updateActiveLink())}}customElements.define("header-component",f);class w extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",t=new Date().getFullYear();this.innerHTML=`
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
@@ -33,7 +33,7 @@
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
       </div>
-    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,s=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${s}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",k);class y extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
+    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,o=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${o}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",k);class y extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
             <style>
             .social-icons {
                 display: flex;
@@ -43,7 +43,7 @@
             </style>
             <div class="social-icons"">${e.map(t=>`<a href="${t.href}" target="${t.target||"_self"}"><i class="${t.display} tilt-effect"></i></a>`).join("")}
             </div>
-        `}}customElements.define("social-icons",y);class E extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${t}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
+        `}}customElements.define("social-icons",y);class x extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${t}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
       <style>
         .debug-panel {
           z-index: 1000;
@@ -72,13 +72,13 @@
         <div class="orientation">Loading...</div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
       </div>
-    `,window.addEventListener("resize",p.throttle(this._updateWidth,200)),window.addEventListener("scroll",p.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",p.throttle(this._updateWidth,200)),window.removeEventListener("scroll",p.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",E);class x extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
+    `,window.addEventListener("resize",p.throttle(this._updateWidth,200)),window.addEventListener("scroll",p.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",p.throttle(this._updateWidth,200)),window.removeEventListener("scroll",p.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",x);class L extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
       <div class="section-header">
         <h1>${e}</h1>
         <p class="subtitle large">${t}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",x);const L="modulepreload",S=function(n){return"/"+n},h={},T=function(e,t,s){let o=Promise.resolve();if(t&&t.length>0){document.getElementsByTagName("link");const i=document.querySelector("meta[property=csp-nonce]"),c=(i==null?void 0:i.nonce)||(i==null?void 0:i.getAttribute("nonce"));o=Promise.allSettled(t.map(a=>{if(a=S(a),a in h)return;h[a]=!0;const d=a.endsWith(".css"),m=d?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${a}"]${m}`))return;const l=document.createElement("link");if(l.rel=d?"stylesheet":L,d||(l.as="script"),l.crossOrigin="",l.href=a,c&&l.setAttribute("nonce",c),document.head.appendChild(l),d)return new Promise((g,v)=>{l.addEventListener("load",g),l.addEventListener("error",()=>v(new Error(`Unable to preload CSS for ${a}`)))})}))}function r(i){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=i,window.dispatchEvent(c),!c.defaultPrevented)throw i}return o.then(i=>{for(const c of i||[])c.status==="rejected"&&r(c.reason);return e().catch(r)})};class C extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(),this.loadParticles()}getTemplate(){return`
+    `}}customElements.define("section-header",L);const E="modulepreload",S=function(n){return"/"+n},m={},C=function(e,t,o){let i=Promise.resolve();if(t&&t.length>0){document.getElementsByTagName("link");const s=document.querySelector("meta[property=csp-nonce]"),c=(s==null?void 0:s.nonce)||(s==null?void 0:s.getAttribute("nonce"));i=Promise.allSettled(t.map(r=>{if(r=S(r),r in m)return;m[r]=!0;const d=r.endsWith(".css"),h=d?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${r}"]${h}`))return;const l=document.createElement("link");if(l.rel=d?"stylesheet":E,d||(l.as="script"),l.crossOrigin="",l.href=r,c&&l.setAttribute("nonce",c),document.head.appendChild(l),d)return new Promise((g,v)=>{l.addEventListener("load",g),l.addEventListener("error",()=>v(new Error(`Unable to preload CSS for ${r}`)))})}))}function a(s){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=s,window.dispatchEvent(c),!c.defaultPrevented)throw s}return i.then(s=>{for(const c of s||[])c.status==="rejected"&&a(c.reason);return e().catch(a)})};class T extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(),this.loadParticles()}getTemplate(){return`
       <section id="hero" class="hero bg-texture">
         <div id="particles-js"></div>
         <div class="hero-container">
@@ -98,14 +98,21 @@
           </div>
         </div>
       </section>
-    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){T(async()=>{const{particlesConfig:e}=await import("./particles-D53slVvN.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",C);class M extends HTMLElement{constructor(){super(),this.handleScroll=this.handleScroll.bind(this),this.observeIntersection=this.observeIntersection.bind(this),this.observer=null}connectedCallback(){this.innerHTML=`
+    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){C(async()=>{const{particlesConfig:e}=await import("./particles-D53slVvN.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",T);class M extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
         <section-header
           title="Working Process"
           sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
         </section-header>
       </section>
-    `,this.bgElement=this.querySelector(".bg-working-girl"),this.bgElement&&(this.bgElement.style.backgroundPosition="center center",this.observer=new IntersectionObserver(this.observeIntersection,{threshold:.1}),this.observer.observe(this.bgElement))}observeIntersection(e){e.forEach(t=>{t.isIntersecting?window.addEventListener("scroll",this.handleScroll,{passive:!0}):window.removeEventListener("scroll",this.handleScroll)})}handleScroll(){if(this.bgElement){const e=this.bgElement.getBoundingClientRect(),t=window.scrollY,s=e.top+t,r=(t-s)*.4;window.requestAnimationFrame(()=>{this.bgElement.style.backgroundPosition=`center ${r}px`})}}disconnectedCallback(){this.observer&&this.observer.disconnect(),window.removeEventListener("scroll",this.handleScroll)}}customElements.define("working-process-component",M);class H extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("working-process-component",M);class H extends HTMLElement{connectedCallback(){this.innerHTML=`
+      <section id="working-process" class="section working-process bg-working-girl">
+        <section-header 
+          title="Working Process"
+          sub-title="Collaborate, Design, Code, and Optimize for Responsive, High-Quality Web Experiences">
+        </section-header>
+      </section>
+    `;const e=this.querySelector(".bg-working-girl");if(e){const t=()=>{const o=window.scrollY;e.style.backgroundPosition=`center ${o*.3}px`};window.addEventListener("scroll",t),t()}}}customElements.define("working-process-component2",H);class P extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise" class="section expertise">
             <section-header 
                 title="My Expertise"
@@ -145,7 +152,7 @@
             </div>
             <a href="/work" class="button button-secondary">Learn More</a>
         </section>
-    `}}customElements.define("expertise-component",H);class P extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("expertise-component",P);class A extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="work" class="section expertise-full">
             <section-header 
                 title="My Expertise"
@@ -181,7 +188,7 @@
                 </div>
             </div>
         </section>
-    `}}customElements.define("expertise-full-component",P);class A extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("expertise-full-component",A);class _ extends HTMLElement{constructor(){super(),this.innerHTML=`
             <section id="about" class="section about">
                 <section-header 
                     title="About Me"
@@ -208,7 +215,7 @@
                     </div>
                 </div>              
             </section>
-        `}}customElements.define("about-component",A);class _ extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("about-component",_);class W extends HTMLElement{connectedCallback(){this.innerHTML=`
               <section id="work-experience" class="section work-experience">
                 <section-header 
                     title="Work Experience"
@@ -314,7 +321,7 @@
                     <h5>Passed CFA Level 1, CFA Institute; December, 2017</h5>
                 </div>-->
               </section>
-          `}}customElements.define("work-experience-component",_);class I extends HTMLElement{connectedCallback(){this.innerHTML=`
+          `}}customElements.define("work-experience-component",W);class I extends HTMLElement{connectedCallback(){this.innerHTML=`
             <section id="contact" class="section contact">
                 <section-header 
                     title="Stay In Touch"
@@ -348,4 +355,4 @@
     `,"/work":`
       <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
-    `,"/contact":"<contact-component></contact-component>","/profile/:id":s=>`<profile-component user-id="${s.id}"></profile-component>`},e=window.location.pathname,t=document.querySelector("main");for(const s in n){const o=new RegExp(`^${s.replace(/:\w+/g,"(\\w+)")}$`),r=e.match(o);if(r){const i=(s.match(/:(\w+)/g)||[]).map(a=>a.substring(1)),c=Object.fromEntries(i.map((a,d)=>[a,r[d+1]]));t.innerHTML=typeof n[s]=="function"?n[s](c):n[s],window.scrollTo({top:0,behavior:"smooth"});return}}t.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{u(),window.addEventListener("popstate",u)});document.body.addEventListener("click",n=>{n.target.matches("a[href]:not([target])")&&(n.preventDefault(),history.pushState({},"",n.target.href),u())});
+    `,"/contact":"<contact-component></contact-component>","/profile/:id":o=>`<profile-component user-id="${o.id}"></profile-component>`},e=window.location.pathname,t=document.querySelector("main");for(const o in n){const i=new RegExp(`^${o.replace(/:\w+/g,"(\\w+)")}$`),a=e.match(i);if(a){const s=(o.match(/:(\w+)/g)||[]).map(r=>r.substring(1)),c=Object.fromEntries(s.map((r,d)=>[r,a[d+1]]));t.innerHTML=typeof n[o]=="function"?n[o](c):n[o],window.scrollTo({top:0,behavior:"smooth"});return}}t.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{u(),window.addEventListener("popstate",u)});document.body.addEventListener("click",n=>{n.target.matches("a[href]:not([target])")&&(n.preventDefault(),history.pushState({},"",n.target.href),u())});
