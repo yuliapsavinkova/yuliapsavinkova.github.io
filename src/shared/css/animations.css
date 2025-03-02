@@ -1,26 +1,30 @@
 /* Spinning Border ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.header {
+  overflow-x: hidden; /* Prevents overflow-x on mobile*/
+}
+
 .header::after {
   content: "";
   position: absolute;
-  left: -100%; /* Start the underline off-screen */
-  bottom: -1px;
   width: 100%;
-  height: 1px;
+  height: 2px;
+  bottom: 0;
   background: linear-gradient(
     90deg,
     transparent,
     color-mix(in srgb, var(--primary-dark-color) 50%, transparent),
     transparent
   );
+  transform: translateX(-100%);
   animation: lightStrike 4s infinite linear;
 }
 
 @keyframes lightStrike {
-  0% {
-    left: -100%; /* Start off-screen to the left */
+  from {
+    transform: translateX(-100%);
   }
-  100% {
-    left: 100%; /* Move to the right side, off-screen */
+  to {
+    transform: translateX(100%);
   }
 }
 
