@@ -33,7 +33,7 @@
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
       </div>
-    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,o=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${o}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",h);class v extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
+    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,o=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${o}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",h);class b extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
             <style>
             .social-icons {
                 display: flex;
@@ -43,7 +43,7 @@
             </style>
             <div class="social-icons"">${e.map(t=>`<a href="${t.href}" target="${t.target||"_self"}"><i class="${t.display} tilt-effect"></i></a>`).join("")}
             </div>
-        `}}customElements.define("social-icons",v);class b extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${t}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
+        `}}customElements.define("social-icons",b);class v extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this)}_updateWidth(){const e=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;document.getElementById("debugPanel").querySelector(".debug-size").textContent=`${e} x ${t}`,document.getElementById("debugPanel").querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}connectedCallback(){this.innerHTML=`
       <style>
         .debug-panel {
           z-index: 1000;
@@ -72,32 +72,32 @@
         <div class="orientation">Loading...</div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
       </div>
-    `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",r.throttle(this._updateWidth,200)),window.removeEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",b);class f extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
+    `,window.addEventListener("resize",r.throttle(this._updateWidth,200)),window.addEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",r.throttle(this._updateWidth,200)),window.removeEventListener("scroll",r.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline)}}customElements.define("debug-panel-component",v);class f extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
       <div class="section-header">
         <h1>${e}</h1>
         <p class="subtitle large">${t}</p>
         <div class="gra-separator"></div>
       </div>
     `}}customElements.define("section-header",f);class w extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
-        <section id="hero" class="hero bg-texture">
-            <div class="hero-container">
-              <div class="hero-portrait">  
-                  <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
-              </div>
-              <social-icons></social-icons>
-              <div class="hero-heading">
-                  <h1>Yulia Savinkova</h1>
-                  <h2>Software Engineer</h2>
-                  <h3>10+ years of experience</h3>
-                  <h4>MS in Computer Science</h4>
-              </div>
-              <div>
-                  <a href="/about" class="button button-primary">Learn More</a>
-                  <a href="/contact" class="button button-action">Contact</a>
-              </div>
+      <section id="hero" class="hero bg-texture">
+          <div class="hero-container">
+            <div class="hero-portrait">  
+                <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
             </div>
-        </section>
-      `}}customElements.define("hero-component",w);class k extends HTMLElement{connectedCallback(){this.innerHTML=`
+            <social-icons></social-icons>
+            <div class="hero-heading">
+                <h1>Yulia Savinkova</h1>
+                <h2>Software Engineer</h2>
+                <h3>10+ years of experience</h3>
+                <h4>MS in Computer Science</h4>
+            </div>
+            <div>
+                <a href="/about" class="button button-primary">Learn More</a>
+                <a href="/contact" class="button button-action">Contact</a>
+            </div>
+          </div>
+      </section>
+    `}}customElements.define("hero-component",w);class k extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
         <section-header
           title="Working Process"
@@ -354,4 +354,4 @@
     `,"/work":`
       <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
-    `,"/contact":"<contact-component></contact-component>","/profile/:id":o=>`<profile-component user-id="${o.id}"></profile-component>`},e=window.location.pathname,t=document.querySelector("main");for(const o in n){const i=new RegExp(`^${o.replace(/:\w+/g,"(\\w+)")}$`),s=e.match(i);if(s){const a=(o.match(/:(\w+)/g)||[]).map(c=>c.substring(1)),d=Object.fromEntries(a.map((c,p)=>[c,s[p+1]]));t.innerHTML=typeof n[o]=="function"?n[o](d):n[o],window.scrollTo({top:0,behavior:"smooth"});return}}t.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{l(),window.addEventListener("popstate",l)});document.body.addEventListener("click",n=>{n.target.matches("a[href]:not([target])")&&(n.preventDefault(),history.pushState({},"",n.target.href),l())});
+    `,"/contact":"<contact-component></contact-component>","/profile/:id":o=>`<profile-component user-id="${o.id}"></profile-component>`},e=window.location.pathname,t=document.querySelector("main");for(const o in n){const i=new RegExp(`^${o.replace(/:\w+/g,"(\\w+)")}$`),s=e.match(i);if(s){const a=(o.match(/:(\w+)/g)||[]).map(c=>c.substring(1)),d=Object.fromEntries(a.map((c,p)=>[c,s[p+1]]));t.innerHTML=typeof n[o]=="function"?n[o](d):n[o],window.scrollTo({top:0,behavior:"smooth"});return}}t.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{l(),window.addEventListener("popstate",l)});document.body.addEventListener("click",n=>{n.target.matches("a[href]:not([target])")&&(n.preventDefault(),history.pushState({},"",n.target.href),l())});const C={particles:{number:{value:6,density:{enable:!0,value_area:800}},color:{value:"#2d4a77"},shape:{type:"polygon",stroke:{width:0,color:"#000"},polygon:{nb_sides:6},image:{src:"img/github.svg",width:100,height:100}},opacity:{value:.1,random:!0,anim:{enable:!1,speed:1,opacity_min:.1,sync:!1}},size:{value:160,random:!1,anim:{enable:!0,speed:10,size_min:40,sync:!1}},line_linked:{enable:!1,distance:200,color:"#ffffff",opacity:1,width:2},move:{enable:!0,speed:8,direction:"none",random:!1,straight:!1,out_mode:"out",bounce:!1,attract:{enable:!1,rotateX:600,rotateY:1200}}},retina_detect:!0};particlesJS("particles-js",C);
