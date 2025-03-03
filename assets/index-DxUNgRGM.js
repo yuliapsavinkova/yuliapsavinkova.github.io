@@ -12,7 +12,7 @@
           <nav class="gra-nav">
             <label for="menu-toggle">☰</label>
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-            <div class="nav-menu">
+            <div class="nav-menu glass-effect">
                 <div class="nav-links">${o.map(s=>`<a class="nav-link large" href="${s.href}" target="${s.target||"_self"}">${s.image?`<img src="${s.image}" />`:""}${s.text}</a>`).join("")}
                 </div>
                 <div class="nav-action">
@@ -55,7 +55,7 @@
           border-radius: 1.4rem;
           backdrop-filter: blur(1rem);
           box-shadow: var(--box-shadow);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid var(--primary-dark-color-10);
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
@@ -64,7 +64,7 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          border-bottom: 1px solid rgba(45, 74, 119, 0.1);
+          border-bottom: 1px solid var(--primary-dark-color-10);
         }
         .close-btn {
           cursor: pointer;
@@ -92,7 +92,7 @@
         <p class="subtitle large">${n}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",L);const E="modulepreload",S=function(t){return"/"+t},h={},T=function(e,n,i){let o=Promise.resolve();if(n&&n.length>0){document.getElementsByTagName("link");const s=document.querySelector("meta[property=csp-nonce]"),c=(s==null?void 0:s.nonce)||(s==null?void 0:s.getAttribute("nonce"));o=Promise.allSettled(n.map(r=>{if(r=S(r),r in h)return;h[r]=!0;const d=r.endsWith(".css"),m=d?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${r}"]${m}`))return;const l=document.createElement("link");if(l.rel=d?"stylesheet":E,d||(l.as="script"),l.crossOrigin="",l.href=r,c&&l.setAttribute("nonce",c),document.head.appendChild(l),d)return new Promise((g,v)=>{l.addEventListener("load",g),l.addEventListener("error",()=>v(new Error(`Unable to preload CSS for ${r}`)))})}))}function a(s){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=s,window.dispatchEvent(c),!c.defaultPrevented)throw s}return o.then(s=>{for(const c of s||[])c.status==="rejected"&&a(c.reason);return e().catch(a)})};class C extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(),this.loadParticles()}getTemplate(){return`
+    `}}customElements.define("section-header",L);const E="modulepreload",S=function(t){return"/"+t},m={},T=function(e,n,i){let o=Promise.resolve();if(n&&n.length>0){document.getElementsByTagName("link");const s=document.querySelector("meta[property=csp-nonce]"),c=(s==null?void 0:s.nonce)||(s==null?void 0:s.getAttribute("nonce"));o=Promise.allSettled(n.map(r=>{if(r=S(r),r in m)return;m[r]=!0;const d=r.endsWith(".css"),h=d?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${r}"]${h}`))return;const l=document.createElement("link");if(l.rel=d?"stylesheet":E,d||(l.as="script"),l.crossOrigin="",l.href=r,c&&l.setAttribute("nonce",c),document.head.appendChild(l),d)return new Promise((g,v)=>{l.addEventListener("load",g),l.addEventListener("error",()=>v(new Error(`Unable to preload CSS for ${r}`)))})}))}function a(s){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=s,window.dispatchEvent(c),!c.defaultPrevented)throw s}return o.then(s=>{for(const c of s||[])c.status==="rejected"&&a(c.reason);return e().catch(a)})};class C extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(),this.loadParticles()}getTemplate(){return`
       <section id="hero" class="hero bg-texture">
         <div id="particles-js"></div>
         <div class="hero-container">
