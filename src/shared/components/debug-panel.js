@@ -4,6 +4,7 @@ class DebugPanelComponent extends HTMLElement {
   constructor() {
     super();
     this._toggleOutline = this._toggleOutline.bind(this);
+    this._closePanel = this._closePanel.bind(this);
   }
 
   // Update screen width x height
@@ -23,6 +24,11 @@ class DebugPanelComponent extends HTMLElement {
     document.body.classList.toggle("debug-outline", event.target.checked);
   }
 
+  // Remove the debug panel from the view
+  _closePanel() {
+    this.remove();
+  }
+
   connectedCallback() {
     this.innerHTML = `
       <style>
@@ -34,14 +40,22 @@ class DebugPanelComponent extends HTMLElement {
           margin: 1rem;
           padding: 1rem;
           border-radius: 1.4rem;
-          background: hsl(var(--accent-light-color) / 0.9);
           backdrop-filter: blur(1rem);
           box-shadow: var(--box-shadow);
-          border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-          
+          border: 1px solid rgba(255, 255, 255, 0.2);
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.5rem;
+        }
+        .debug-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid rgba(45, 74, 119, 0.1);
+        }
+        .close-btn {
+          cursor: pointer;
+          align-self: flex-start;
         }
         .debug-outline * {
           outline: 1px solid red;
@@ -49,8 +63,14 @@ class DebugPanelComponent extends HTMLElement {
       </style>
 
       <div id="debugPanel" class="debug-panel">
-        <div class="debug-size">Loading...</div>
-        <div class="orientation">Loading...</div>
+        <div class="debug-header">
+          <h6>Debug Panel</h6>
+          <i class="close-btn fa-solid fa-xmark"></i>
+        </div>
+        <div>
+          <span class="orientation">Loading...</span>:
+          <span class="debug-size">Loading...</span>
+        </div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
       </div>
     `;
@@ -59,6 +79,7 @@ class DebugPanelComponent extends HTMLElement {
     window.addEventListener("resize", Utils.throttle(this._updateWidth, 200));
     window.addEventListener("scroll", Utils.throttle(this._updateWidth, 300));
     document.getElementById("toggle-outline").addEventListener("change", this._toggleOutline);
+    this.querySelector(".close-btn").addEventListener("click", this._closePanel);
 
     // Initial width update
     this._updateWidth();
@@ -69,6 +90,7 @@ class DebugPanelComponent extends HTMLElement {
     window.removeEventListener("resize", Utils.throttle(this._updateWidth, 200));
     window.removeEventListener("scroll", Utils.throttle(this._updateWidth, 300));
     document.getElementById("toggle-outline").removeEventListener("change", this._toggleOutline);
+    this.querySelector(".close-btn").removeEventListener("click", this._closePanel);
   }
 }
 
