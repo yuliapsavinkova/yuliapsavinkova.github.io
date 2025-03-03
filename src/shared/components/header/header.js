@@ -18,8 +18,8 @@ class HeaderComponent extends HTMLElement {
               <span class="logo-name">${logoName}</span>
           </a>
           <nav class="gra-nav">
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle">☰</label>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <div class="nav-menu">
                 <div class="nav-links">${links
                   .map(
