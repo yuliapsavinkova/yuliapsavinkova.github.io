@@ -27,7 +27,8 @@
 }
 
 .bg-working-girl {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/working-girl.jpeg");
+  background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
+    url("../../images/working-girl.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -37,9 +38,15 @@
   transition: background-position 0.2s ease-out;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
   .bg-working-girl {
     background-attachment: scroll; /* Fallback for mobile devices */
     min-height: 20rem;
   }
+}
+
+.glass-effect {
+  background-color: var(--primary-dark-color-80); /* Use the color with transparency */
+  backdrop-filter: blur(1rem); /* Blur the background behind the element */
+  box-shadow: var(--box-shadow);
 }

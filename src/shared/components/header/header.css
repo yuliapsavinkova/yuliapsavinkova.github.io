@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
 
-  border-bottom: 1px solid rgba(45, 74, 119, 0.1);
+  border-bottom: 1px solid var(--primary-dark-color-10);
 
   background-color: var(--white-color);
   height: var(--header-size);
@@ -25,52 +25,36 @@
   }
 
   /* TODO: fix this for web bites */
-  .logo-name {
+  /* .logo-name {
     padding-left: 0.5rem;
     color: var(--primary-dark-color);
     cursor: pointer;
-  }
+  } */
 
   a {
     text-decoration: none;
   }
 
-  .gra-nav {
-    display: contents;
-  }
-
+  .gra-nav,
   .nav-menu {
     display: contents;
-    flex: 1;
-    align-items: center;
-    gap: 2rem;
-
-    .nav-links {
-      flex: 1;
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      gap: 2rem;
-
-      a {
-        display: inline-flex;
-        gap: 0.5rem;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-
-      img {
-        width: 1rem;
-        object-fit: contain;
-      }
-    }
   }
 
   .menu-checkbox,
   label {
     display: none;
+  }
+
+  .nav-links {
+    flex: 1;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 2rem;
+
+    a:hover {
+      transform: scale(1.05);
+    }
   }
 
   .nav-link.active {
@@ -81,25 +65,14 @@
 
 @media (max-width: 768px) {
   .header {
-    justify-content: space-between;
-
     label {
       z-index: 10;
-      display: block;
+      display: contents;
       cursor: pointer;
-      user-select: none;
-      font-size: 3rem;
-      height: 5rem;
-      color: var(--primary-dark-color);
-      transition: color 1s ease;
-    }
 
-    label:hover {
-      color: var(--accent-light-color);
-    }
-
-    .gra-nav {
-      display: flex;
+      :hover {
+        transform: scale(1.05);
+      }
     }
 
     .nav-menu {
@@ -107,45 +80,42 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: stretch;
-      gap: 0;
 
       position: fixed;
       top: var(--header-size);
       right: -16rem;
       width: 16rem;
-      height: 100%;
-      background-color: var(--primary-dark-color);
       color: var(--white-color);
-      padding: 4rem 0;
       text-align: center;
+
+      border-radius: 1px;
+      border: 1px solid var(--white-color);
 
       transition: transform 0.3s ease-in-out;
 
       .nav-links {
         display: block;
-        flex: 0;
+
+        .nav-link {
+          padding: 1rem;
+        }
+
         a {
           display: flex;
           justify-content: center;
           color: var(--white-color);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-          padding: 1rem;
+          border-bottom: 1px solid var(--primary-light-color-10);
           &:hover {
             transform: none;
-            background-color: var(--accent-light-color);
+            background-color: var(--primary-dark-color-10);
           }
         }
       }
 
       .nav-action {
         display: inline-block;
-        margin-top: 1.5rem;
+        margin: 1rem;
         align-self: center;
-      }
-
-      .nav-link.active {
-        font-weight: bold;
-        /* border: 1px solid var(--accent-light-color); */
       }
     }
 

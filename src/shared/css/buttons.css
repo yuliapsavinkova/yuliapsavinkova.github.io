@@ -1,7 +1,7 @@
 :root {
   --button-transition: all 0.15s ease-in-out;
   --button-padding: 0.5rem 1rem;
-  --outline-color: rgba(45, 74, 119, 0.5); /* Default outline color */
+  --outline-color: var(--primary-dark-color-80);
 }
 
 .button {

@@ -1,18 +1,25 @@
 :root {
   /* colors */
-  --primary-dark-color: #2d4a77;
-  --primary-light-color: #e4ebf5;
+  --primary-dark-color: hsl(217, 45%, 32%);
+  --primary-light-color: hsl(217, 43%, 93%);
+  --primary-light-color-10: hsla(217, 43%, 93%, 0.1);
 
-  --neutral-dark-color: #fadbd1;
-  --neutral-light-color: #fefafa;
+  --primary-dark-color-10: hsla(217, 45%, 32%, 0.1);
+  --primary-dark-color-50: hsla(217, 45%, 32%, 0.5);
+  --primary-dark-color-80: hsla(217, 45%, 32%, 0.8);
 
-  --accent-dark-color: #8a150f;
-  --accent-light-color: #e04a50;
+  --box-shadow-color: hsla(208, 100%, 18%, 0.1);
 
-  --text-color: #64748b;
-  --white-color: #ffffff;
-  --grey-color: #e0e0e0;
-  --black-color: black;
+  --neutral-dark-color: hsl(10, 82%, 86%);
+  --neutral-light-color: hsl(20, 100%, 98%);
+
+  --accent-dark-color: hsl(3, 78%, 30%);
+  --accent-light-color: hsl(357, 71%, 58%);
+
+  --text-color: hsl(217, 17%, 47%);
+  --white-color: hsl(0, 0%, 100%);
+  --grey-color: hsl(0, 0%, 88%);
+  --black-color: hsl(0, 0%, 0%);
 
   /* sizes */
   --header-size: 4rem;
@@ -29,7 +36,7 @@
   --border-radius: 0.5rem;
 
   /* Other */
-  --box-shadow: 0 -1px 1rem rgba(0, 45, 91, 0.1);
+  --box-shadow: 0 -1px 1rem var(--box-shadow-color);
 }
 
 main {

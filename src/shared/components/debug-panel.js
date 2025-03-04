@@ -42,7 +42,7 @@ class DebugPanelComponent extends HTMLElement {
           border-radius: 1.4rem;
           backdrop-filter: blur(1rem);
           box-shadow: var(--box-shadow);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid var(--primary-dark-color-10);
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
@@ -51,7 +51,7 @@ class DebugPanelComponent extends HTMLElement {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          border-bottom: 1px solid rgba(45, 74, 119, 0.1);
+          border-bottom: 1px solid var(--primary-dark-color-10);
         }
         .close-btn {
           cursor: pointer;

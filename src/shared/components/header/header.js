@@ -18,9 +18,11 @@ class HeaderComponent extends HTMLElement {
               <span class="logo-name">${logoName}</span>
           </a>
           <nav class="gra-nav">
-            <label for="menu-toggle">☰</label>
+            <label for="menu-toggle">
+              <i class="fa-solid fa-bars fa-2x"></i>
+            </label>
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-            <div class="nav-menu">
+            <div class="nav-menu glass-effect">
                 <div class="nav-links">${links
                   .map(
                     (link) =>
