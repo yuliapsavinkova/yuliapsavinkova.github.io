@@ -8,7 +8,7 @@
 
 .card {
   flex: 1 1 20rem; /* Cards expand but do not shrink below 20rem */
-  max-width: 30rem; /* Prevents cards from becoming too wide */
+  max-width: 20rem; /* Prevents cards from becoming too wide */
 
   display: flex;
   flex-direction: column;

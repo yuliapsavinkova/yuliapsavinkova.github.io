@@ -33,10 +33,6 @@
   }
 }
 
-.about-portrait {
-  max-width: 25rem;
-}
-
 /* 768px too small */
 @media (max-width: 1000px) {
   .magic-row {
@@ -55,6 +51,11 @@
 
     .magic-description {
       text-align: center;
+    }
+
+    /* TODO: refactor this */
+    .about-portrait {
+      max-width: 20rem;
     }
   }
 }
