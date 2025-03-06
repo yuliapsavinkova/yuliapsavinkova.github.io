@@ -5,6 +5,8 @@ import "./shared/components/footer/footer.js";
 import "./shared/components/progress/progress.js";
 import "./shared/components/social-icons.js";
 import "./shared/components/debug-panel.js";
+import "./shared/components/palette/palette.js";
+import "./shared/components/d3/d3.js";
 
 import "./portfolio/components/section-header.js";
 

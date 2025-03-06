@@ -16,6 +16,8 @@ export function renderPage() {
       <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
     `,
+    "/palette": "<palette-component></palette-component>",
+    "/d3": "<options-chart></options-chart>",
     "/contact": "<contact-component></contact-component>",
     "/profile/:id": (params) => `<profile-component user-id="${params.id}"></profile-component>`,
   };

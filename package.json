@@ -25,6 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.4.20",
+    "d3": "^7.9.0",
     "particles.js": "^2.0.0",
     "postcss": "^8.5.3"
   },

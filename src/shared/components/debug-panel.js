@@ -40,9 +40,12 @@ class DebugPanelComponent extends HTMLElement {
           margin: 1rem;
           padding: 1rem;
           border-radius: 1.4rem;
-          backdrop-filter: blur(1rem);
+          color: hsl(217, 45%, 60%);
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle depth */
+          background: var(--primary-light-color-10);
+          backdrop-filter: blur(4rem);
           box-shadow: var(--box-shadow);
-          border: 1px solid var(--primary-dark-color-10);
+          border: 1px solid hsl(217, 45%, 85%);
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
@@ -51,7 +54,7 @@ class DebugPanelComponent extends HTMLElement {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          border-bottom: 1px solid var(--primary-dark-color-10);
+          border-bottom: 1px solid hsl(217, 45%, 60%);
         }
         .close-btn {
           cursor: pointer;
@@ -72,6 +75,7 @@ class DebugPanelComponent extends HTMLElement {
           <span class="debug-size">Loading...</span>
         </div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
+        <div><a href="/palette" target="_blank">Palette</a></div>
       </div>
     `;
 
