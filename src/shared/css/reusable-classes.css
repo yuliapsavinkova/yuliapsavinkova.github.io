@@ -38,9 +38,10 @@
   transition: background-position 0.2s ease-out;
 }
 
-@media (max-width: 1000px) {
+/* Fallback for mobile device, my tablet screen size 1024px */
+@media (max-width: 1025px) {
   .bg-working-girl {
-    background-attachment: scroll; /* Fallback for mobile devices */
+    background-attachment: scroll;
   }
 }
 
