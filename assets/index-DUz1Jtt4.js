@@ -1,13 +1,14 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))o(t);new MutationObserver(t=>{for(const a of t)if(a.type==="childList")for(const s of a.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function i(t){const a={};return t.integrity&&(a.integrity=t.integrity),t.referrerPolicy&&(a.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?a.credentials="include":t.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function o(t){if(t.ep)return;t.ep=!0;const a=i(t);fetch(t.href,a)}})();const m={throttle:function(n,e){let i=0;return function(...o){const t=Date.now();t-i>=e&&(i=t,n.apply(this,o))}},debounce:function(n,e){let i;return function(...o){clearTimeout(i),i=setTimeout(()=>{n.apply(this,o)},e)}}};class L extends HTMLElement{connectedCallback(){this.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const n of o.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function i(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(t){if(t.ep)return;t.ep=!0;const o=i(t);fetch(t.href,o)}})();const m={throttle:function(s,e){let i=0;return function(...a){const t=Date.now();t-i>=e&&(i=t,s.apply(this,a))}},debounce:function(s,e){let i;return function(...a){clearTimeout(i),i=setTimeout(()=>{s.apply(this,a)},e)}}};class L extends HTMLElement{connectedCallback(){this.innerHTML=`
         <div class="error-page">
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
+            <p>If you are not redirected, <a href="/#">click here</a>.</p>
         </div>
-      `}}customElements.define("error-component",L);class E extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",i=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",o=this.getAttribute("logo-name")||"",t=JSON.parse(this.getAttribute("links")||"[]"),a=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+      `}}customElements.define("error-component",L);class E extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",i=this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg",a=this.getAttribute("logo-name")||"",t=JSON.parse(this.getAttribute("links")||"[]"),o=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
           <a href="${e}" class="logo">
               <img src="${i}" alt="Logo - personal portfolio."/>
-              <span class="logo-name">${o}</span>
+              <span class="logo-name">${a}</span>
           </a>
           <nav class="gra-nav">
             <label for="menu-toggle">
@@ -15,15 +16,15 @@
             </label>
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <div class="nav-menu glass-effect">
-                <div class="nav-links">${t.map(s=>`<a class="nav-link large" href="${s.href}" target="${s.target||"_self"}">${s.image?`<img src="${s.image}" />`:""}${s.text}</a>`).join("")}
+                <div class="nav-links">${t.map(n=>`<a class="nav-link large" href="${n.href}" target="${n.target||"_self"}">${n.image?`<img src="${n.image}" />`:""}${n.text}</a>`).join("")}
                 </div>
                 <div class="nav-action">
-                  <a href="${a.href}" target="${a.target||"_self"}" class="button button-action">${a.text}</a>
+                  <a href="${o.href}" target="${o.target||"_self"}" class="button button-action">${o.text}</a>
                 </div>
             </div>
           </nav>
       </header>
-    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),document.addEventListener("click",s=>this._handleOutsideClick(s))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}_updateActiveLink(){const e=this.querySelectorAll(".nav-link"),i=window.location.pathname;e.forEach(o=>{o.getAttribute("href")===i?o.classList.add("active"):o.classList.remove("active")})}connectedCallback(){window.addEventListener("resize",m.throttle(this._handleResize,200)),window.addEventListener("scroll",m.throttle(this._handleScroll,300)),this._updateActiveLink(),window.addEventListener("popstate",()=>this._updateActiveLink())}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll),window.removeEventListener("popstate",()=>this._updateActiveLink())}}customElements.define("header-component",E);class S extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",i=new Date().getFullYear();this.innerHTML=`
+    `+this.innerHTML,this.checkbox=document.getElementById("menu-toggle"),this._handleResize=this._handleResize.bind(this),this._handleScroll=this._handleScroll.bind(this),this._updateActiveLink=this._updateActiveLink.bind(this),document.addEventListener("click",n=>this._handleOutsideClick(n))}_handleOutsideClick(e){this.contains(e.target)||(this.checkbox.checked=!1)}_handleResize(){this.checkbox.checked=!1}_handleScroll(){this.checkbox.checked=!1}_updateActiveLink(){const e=this.querySelectorAll(".nav-link"),i=window.location.hash||"#";e.forEach(a=>{a.getAttribute("href")===i?a.classList.add("active"):a.classList.remove("active")})}connectedCallback(){window.addEventListener("resize",m.throttle(this._handleResize,200)),window.addEventListener("scroll",m.throttle(this._handleScroll,300)),this._updateActiveLink(),window.addEventListener("hashchange",this._updateActiveLink)}disconnectedCallback(){window.removeEventListener("resize",this._handleResize),window.removeEventListener("scroll",this._handleScroll),window.removeEventListener("hashchange",this._updateActiveLink)}}customElements.define("header-component",E);class S extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",i=new Date().getFullYear();this.innerHTML=`
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
@@ -35,7 +36,7 @@
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow"><i class="fa-duotone fa-solid fa-angle-up"></i></div>
       </div>
-    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,i=document.documentElement.scrollHeight-window.innerHeight,o=Math.min(e/i*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${o}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",T);class C extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
+    `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,i=document.documentElement.scrollHeight-window.innerHeight,a=Math.min(e/i*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${a}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",T);class C extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",display:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",display:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",display:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
             <style>
             .social-icons {
                 display: flex;
@@ -90,7 +91,7 @@
           <span class="debug-size">Loading...</span>
         </div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
-        <div><a href="/palette" target="_blank">Palette</a></div>
+        <div><a href="#/palette" target="_blank">Palette</a></div>
       </div>
     `,window.addEventListener("resize",m.throttle(this._updateWidth,200)),window.addEventListener("scroll",m.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").addEventListener("change",this._toggleOutline),this.querySelector(".close-btn").addEventListener("click",this._closePanel),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",m.throttle(this._updateWidth,200)),window.removeEventListener("scroll",m.throttle(this._updateWidth,300)),document.getElementById("toggle-outline").removeEventListener("change",this._toggleOutline),this.querySelector(".close-btn").removeEventListener("click",this._closePanel)}}customElements.define("debug-panel-component",M);class P extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
         <section id="palette" class="palette">
@@ -116,21 +117,21 @@
                 <a href="#" class="button button-link">Button Link</a>
             </div>
         </section>
-        `}}customElements.define("palette-component",P);const _="modulepreload",H=function(n){return"/"+n},k={},w=function(e,i,o){let t=Promise.resolve();if(i&&i.length>0){document.getElementsByTagName("link");const s=document.querySelector("meta[property=csp-nonce]"),c=(s==null?void 0:s.nonce)||(s==null?void 0:s.getAttribute("nonce"));t=Promise.allSettled(i.map(l=>{if(l=H(l),l in k)return;k[l]=!0;const h=l.endsWith(".css"),u=h?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${l}"]${u}`))return;const d=document.createElement("link");if(d.rel=h?"stylesheet":_,h||(d.as="script"),d.crossOrigin="",d.href=l,c&&d.setAttribute("nonce",c),document.head.appendChild(d),h)return new Promise((p,b)=>{d.addEventListener("load",p),d.addEventListener("error",()=>b(new Error(`Unable to preload CSS for ${l}`)))})}))}function a(s){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=s,window.dispatchEvent(c),!c.defaultPrevented)throw s}return t.then(s=>{for(const c of s||[])c.status==="rejected"&&a(c.reason);return e().catch(a)})};class A extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render(),this.drawChart()}render(){this.shadowRoot.innerHTML=`<style>
+        `}}customElements.define("palette-component",P);const _="modulepreload",H=function(s){return"/"+s},y={},f=function(e,i,a){let t=Promise.resolve();if(i&&i.length>0){document.getElementsByTagName("link");const n=document.querySelector("meta[property=csp-nonce]"),r=(n==null?void 0:n.nonce)||(n==null?void 0:n.getAttribute("nonce"));t=Promise.allSettled(i.map(d=>{if(d=H(d),d in y)return;y[d]=!0;const u=d.endsWith(".css"),h=u?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${d}"]${h}`))return;const l=document.createElement("link");if(l.rel=u?"stylesheet":_,u||(l.as="script"),l.crossOrigin="",l.href=d,r&&l.setAttribute("nonce",r),document.head.appendChild(l),u)return new Promise((p,b)=>{l.addEventListener("load",p),l.addEventListener("error",()=>b(new Error(`Unable to preload CSS for ${d}`)))})}))}function o(n){const r=new Event("vite:preloadError",{cancelable:!0});if(r.payload=n,window.dispatchEvent(r),!r.defaultPrevented)throw n}return t.then(n=>{for(const r of n||[])r.status==="rejected"&&o(r.reason);return e().catch(o)})};class A extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render(),this.drawChart()}render(){this.shadowRoot.innerHTML=`<style>
             :host { display: block; }
             svg { width: 100%; height: auto; }
         </style>
-        <div id="chart"></div>`}drawChart(){w(()=>import("./index-Bato3lut.js"),[]).then(e=>{const t={top:20,right:20,bottom:40,left:50},a=this.shadowRoot.getElementById("chart"),s=e.select(a).append("svg").attr("width",600+t.left+t.right).attr("height",400+t.top+t.bottom).append("g").attr("transform",`translate(${t.left},${t.top})`),c=[{type:"buy",strike:100,premium:5},{type:"sell",strike:120,premium:2}],l=e.range(50,150,2),h=r=>c.reduce((g,v)=>{const y=Math.max(r-v.strike,0);return g+(v.type==="buy"?y-v.premium:v.premium-y)},0),u=l.map(r=>({price:r,pnl:h(r)})),d=e.scaleLinear().domain([50,150]).range([0,600]),p=e.scaleLinear().domain([e.min(u,r=>r.pnl),e.max(u,r=>r.pnl)]).range([400,0]);s.append("g").attr("transform","translate(0,400)").call(e.axisBottom(d)),s.append("g").call(e.axisLeft(p));const b=e.line().x(r=>d(r.price)).y(r=>p(r.pnl)).curve(e.curveMonotoneX);s.append("path").datum(u).attr("fill","none").attr("stroke","blue").attr("stroke-width",2).attr("d",b);const x=c.reduce((r,g)=>r+(g.type==="buy"?g.premium:-g.premium),0);c.map(r=>r.strike+x).forEach(r=>{s.append("line").attr("x1",d(r)).attr("x2",d(r)).attr("y1",0).attr("y2",400).attr("stroke","red").attr("stroke-dasharray","5,5")})})}}customElements.define("options-chart",A);class I extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render(),this.drawChart()}render(){this.shadowRoot.innerHTML=`<style>
+        <div id="chart"></div>`}drawChart(){f(()=>import("./index-Bato3lut.js"),[]).then(e=>{const t={top:20,right:20,bottom:40,left:50},o=this.shadowRoot.getElementById("chart"),n=e.select(o).append("svg").attr("width",600+t.left+t.right).attr("height",400+t.top+t.bottom).append("g").attr("transform",`translate(${t.left},${t.top})`),r=[{type:"buy",strike:100,premium:5},{type:"sell",strike:120,premium:2}],d=e.range(50,150,2),u=c=>r.reduce((g,v)=>{const w=Math.max(c-v.strike,0);return g+(v.type==="buy"?w-v.premium:v.premium-w)},0),h=d.map(c=>({price:c,pnl:u(c)})),l=e.scaleLinear().domain([50,150]).range([0,600]),p=e.scaleLinear().domain([e.min(h,c=>c.pnl),e.max(h,c=>c.pnl)]).range([400,0]);n.append("g").attr("transform","translate(0,400)").call(e.axisBottom(l)),n.append("g").call(e.axisLeft(p));const b=e.line().x(c=>l(c.price)).y(c=>p(c.pnl)).curve(e.curveMonotoneX);n.append("path").datum(h).attr("fill","none").attr("stroke","blue").attr("stroke-width",2).attr("d",b);const x=r.reduce((c,g)=>c+(g.type==="buy"?g.premium:-g.premium),0);r.map(c=>c.strike+x).forEach(c=>{n.append("line").attr("x1",l(c)).attr("x2",l(c)).attr("y1",0).attr("y2",400).attr("stroke","red").attr("stroke-dasharray","5,5")})})}}customElements.define("options-chart",A);class I extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render(),this.drawChart()}render(){this.shadowRoot.innerHTML=`<style>
           :host { display: block; }
           svg { width: 100%; height: auto; }
       </style>
-      <div id="chart"></div>`}drawChart(){w(()=>import("./index-Bato3lut.js"),[]).then(e=>{const t=Math.min(400,400)/2,a=this.shadowRoot.getElementById("chart"),s=e.select(a).append("svg").attr("width",400).attr("height",400).append("g").attr("transform",`translate(${400/2},${400/2})`),c={stocks:15e3,options:5e3,bonds:1e4},l=e.scaleOrdinal().domain(Object.keys(c)).range(["#1f77b4","#ff7f0e","#2ca02c"]),u=e.pie().value(p=>p[1])(Object.entries(c)),d=e.arc().innerRadius(0).outerRadius(t);s.selectAll("pieces").data(u).enter().append("path").attr("d",d).attr("fill",p=>l(p.data[0])).style("stroke","#fff"),s.selectAll("labels").data(u).enter().append("text").text(p=>p.data[0]).attr("transform",p=>`translate(${d.centroid(p)})`).style("text-anchor","middle").style("font-size","14px")})}}customElements.define("portfolio-chart",I);class $ extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",i=this.getAttribute("sub-title")||"";this.innerHTML=`
+      <div id="chart"></div>`}drawChart(){f(()=>import("./index-Bato3lut.js"),[]).then(e=>{const t=Math.min(400,400)/2,o=this.shadowRoot.getElementById("chart"),n=e.select(o).append("svg").attr("width",400).attr("height",400).append("g").attr("transform",`translate(${400/2},${400/2})`),r={stocks:15e3,options:5e3,bonds:1e4},d=e.scaleOrdinal().domain(Object.keys(r)).range(["#1f77b4","#ff7f0e","#2ca02c"]),h=e.pie().value(p=>p[1])(Object.entries(r)),l=e.arc().innerRadius(0).outerRadius(t);n.selectAll("pieces").data(h).enter().append("path").attr("d",l).attr("fill",p=>d(p.data[0])).style("stroke","#fff"),n.selectAll("labels").data(h).enter().append("text").text(p=>p.data[0]).attr("transform",p=>`translate(${l.centroid(p)})`).style("text-anchor","middle").style("font-size","14px")})}}customElements.define("portfolio-chart",I);class O extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",i=this.getAttribute("sub-title")||"";this.innerHTML=`
       <div class="section-header">
         <h1>${e}</h1>
         <p class="subtitle large">${i}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",$);class O extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(),this.loadParticles()}getTemplate(){return`
+    `}}customElements.define("section-header",O);class W extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(),this.loadParticles()}getTemplate(){return`
       <section id="hero" class="hero bg-texture">
         <div id="particles-js"></div>
         <div class="hero-container">
@@ -145,19 +146,19 @@
             <h4>MS in Computer Science</h4>
           </div>
           <div>
-            <a href="/about" class="button button-primary">Learn More</a>
-            <a href="/contact" class="button button-action">Contact</a>
+            <a href="#/about" class="button button-primary">Learn More</a>
+            <a href="#/contact" class="button button-action">Contact</a>
           </div>
         </div>
       </section>
-    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){w(async()=>{const{particlesConfig:e}=await import("./particles-D53slVvN.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",O);class W extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){f(async()=>{const{particlesConfig:e}=await import("./particles-D53slVvN.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",W);class $ extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
         <section-header
           title="Working Process"
           sub-title="Collaborate, Design, Code, and Optimize for Fast, Responsive Web Experiences.">
         </section-header>
       </section>
-    `}}customElements.define("working-process-component",W);class D extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("working-process-component",$);class D extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise" class="section expertise">
             <section-header 
                 title="My Expertise"
@@ -168,7 +169,7 @@
                     <img src="./images/web-dev.png" class="card-image" alt="maintenance-image" />
                     <h4>Web Development</h4>
                     <p>Build websites from scratch using HTML, CSS, JavaScript, and Web Components.</p>
-                    <a href="/work#work-row-web">
+                    <a href="#/work?section=work-row-web">
                       <svg class="icon">
                         <use href="/icons.svg#arrow-icon"></use>
                       </svg>
@@ -178,7 +179,7 @@
                     <img src="./images/app-dev.png" class="card-image" alt="web-development-image" />            
                     <h4>App Development</h4>
                     <p>Build web applications using modern frameworks such as React and Angular.</p>
-                    <a href="/work#work-row-app">
+                    <a href="#/work?section=work-row-app">
                       <svg class="icon">
                         <use href="/icons.svg#arrow-icon"></use>
                       </svg>
@@ -188,14 +189,14 @@
                     <img src="./images/three-d-dev.png" class="card-image" alt="design-image" />
                     <h4>3D Development</h4>
                     <p>Build 3D web experiences using modern web technologies and libraries.</p>
-                    <a href="/work#work-row-3d">
+                    <a href="#/work?section=work-row-3d">
                       <svg class="icon">
                         <use href="/icons.svg#arrow-icon"></use>
                       </svg>
                     </a>
                 </div>
             </div>
-            <a href="/work" class="button button-secondary">Learn More</a>
+            <a href="#/work" class="button button-secondary">Learn More</a>
         </section>
     `}}customElements.define("expertise-component",D);class R extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="work" class="section expertise-full">
@@ -209,7 +210,7 @@
                     <div class="magic-description">
                         <h4>Web Development</h4>  
                         <p>Need a sleek, high-performing website to showcase your brand? I specialize in building modern, responsive websites that look great on any device and deliver a seamless user experience. Whether you need a portfolio, business site, or landing page, I provide custom solutions tailored to your needs. With a focus on speed, SEO, and user-friendly design, I’ll help create a site that not only looks amazing but also drives results. Let's work together to make your online presence shine!</p>
-                        <a href="/contact" class="button button-secondary">Get a Quote</a>
+                        <a href="#/contact" class="button button-secondary">Get a Quote</a>
                     </div>
                     <img src="./images/web-dev.png" class="magic-image vertical bg-texture" alt="maintenance-image" />
                 </div>
@@ -219,7 +220,7 @@
                     <div class="magic-description">
                         <h4>App Development</h4>
                         <p>Need a powerful, high-performance web application? I build dynamic, user-friendly apps using cutting-edge frameworks like React and Angular. Whether it's a business tool, an e-commerce platform, or a custom solution, I create fast, scalable, and secure applications designed to elevate your brand and streamline your operations. Let’s bring your vision to life!</p>
-                        <a href="/contact" class="button button-secondary">Get a Quote</a>
+                        <a href="#/contact" class="button button-secondary">Get a Quote</a>
                     </div>
                 </div>
 
@@ -227,7 +228,7 @@
                     <div class="magic-description">
                         <h4>3D Development</h4>  
                         <p>Bring your website to life with stunning 3D experiences! I create interactive, immersive visuals that run smoothly in any modern browser—perfect for showcasing products, engaging users, or adding a unique touch to your site. Whether you need an interactive model, an animated scene, or a full 3D experience, I’ll build a solution that captivates your audience. Let’s make your vision a reality!</p>  
-                        <a href="/contact" class="button button-secondary">Get a Quote</a>
+                        <a href="#/contact" class="button button-secondary">Get a Quote</a>
                     </div>
                     <img src="./images/three-d-dev.png" class="magic-image bg-texture" alt="design-image" />
                 </div>
@@ -255,12 +256,12 @@
                         </p>
                         <div>
                             <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
-                            <a href="/work" class="button button-secondary">Learn More</a>
+                            <a href="#/work" class="button button-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>              
             </section>
-        `}}customElements.define("about-component",j);class z extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("about-component",j);class B extends HTMLElement{connectedCallback(){this.innerHTML=`
               <section id="work-experience" class="section work-experience">
                 <section-header 
                     title="Work Experience"
@@ -366,7 +367,7 @@
                     <h5>Passed CFA Level 1, CFA Institute; December, 2017</h5>
                 </div>-->
               </section>
-          `}}customElements.define("work-experience-component",z);class B extends HTMLElement{connectedCallback(){this.innerHTML=`
+          `}}customElements.define("work-experience-component",B);class z extends HTMLElement{connectedCallback(){this.innerHTML=`
             <section id="contact" class="section contact">
                 <section-header 
                     title="Stay In Touch"
@@ -387,17 +388,17 @@
                     </form>
                 </div>
             </section>
-        `}}customElements.define("contact-component",B);function f(){const n={"/":`
+        `}}customElements.define("contact-component",z);function k(){const s={"":`
       <hero-component></hero-component>
       <expertise-component></expertise-component>
       <about-component></about-component>
       <working-process-component></working-process-component>
       <contact-component></contact-component>
-    `,"/about":`
+    `,about:`
       <about-component></about-component>
       <work-experience-component></work-experience-component>
       <contact-component></contact-component>
-    `,"/work":`
+    `,work:`
       <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
-    `,"/palette":"<palette-component></palette-component>","/d3":"<options-chart></options-chart>","/portfolio":"<portfolio-chart></portfolio-chart>","/contact":"<contact-component></contact-component>","/profile/:id":o=>`<profile-component user-id="${o.id}"></profile-component>`},e=window.location.pathname,i=document.querySelector("main");for(const o in n){const t=new RegExp(`^${o.replace(/:\w+/g,"(\\w+)")}$`),a=e.match(t);if(a){const s=(o.match(/:(\w+)/g)||[]).map(l=>l.substring(1)),c=Object.fromEntries(s.map((l,h)=>[l,a[h+1]]));i.innerHTML=typeof n[o]=="function"?n[o](c):n[o],window.scrollTo({top:0,behavior:"smooth"});return}}i.innerHTML="<error-component></error-component>"}document.addEventListener("DOMContentLoaded",()=>{f(),window.addEventListener("popstate",f)});document.body.addEventListener("click",n=>{n.target.matches("a[href]:not([target])")&&(n.preventDefault(),history.pushState({},"",n.target.href),f())});
+    `,palette:"<palette-component></palette-component>",d3:"<options-chart></options-chart>",portfolio:"<portfolio-chart></portfolio-chart>",contact:"<contact-component></contact-component>"},e=window.location.hash.slice(2),[i,a]=e.split("?"),o=new URLSearchParams(a).get("section"),n=document.querySelector("main");n.innerHTML=s[i]||"<error-component></error-component>",requestAnimationFrame(()=>{if(o){const r=document.getElementById(o);r&&r.scrollIntoView({behavior:"smooth"})}}),o||window.scrollTo({top:0,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",()=>{k(),window.addEventListener("hashchange",k)});document.body.addEventListener("click",s=>{const e=s.target.closest("a[href]");e&&e.getAttribute("href").startsWith("#/")&&(s.preventDefault(),window.location.hash=e.getAttribute("href").slice(1))});
