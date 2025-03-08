@@ -42,26 +42,30 @@ class HeaderComponent extends HTMLElement {
       </header>
     ` + this.innerHTML;
 
-    this.checkbox = document.getElementById("menu-toggle");
+    this.checkbox = this.querySelector("#menu-toggle");
+    this.navLinks = this.querySelectorAll(".nav-link");
+
     this._handleResize = this._handleResize.bind(this);
     this._handleScroll = this._handleScroll.bind(this);
     this._updateActiveLink = this._updateActiveLink.bind(this);
+    this._closeMenu = this._closeMenu.bind(this);
+    this._handleOutsideClick = this._handleOutsideClick.bind(this);
 
-    document.addEventListener("click", (e) => this._handleOutsideClick(e));
+    document.addEventListener("click", this._handleOutsideClick);
   }
 
   _handleOutsideClick(event) {
     if (!this.contains(event.target)) {
-      this.checkbox.checked = false;
+      this._closeMenu();
     }
   }
 
   _handleResize() {
-    this.checkbox.checked = false;
+    this._closeMenu();
   }
 
   _handleScroll() {
-    this.checkbox.checked = false;
+    this._closeMenu();
   }
 
   _updateActiveLink() {
@@ -77,21 +81,36 @@ class HeaderComponent extends HTMLElement {
     });
   }
 
+  _closeMenu() {
+    if (this.checkbox) {
+      this.checkbox.checked = false;
+    }
+  }
+
   connectedCallback() {
     window.addEventListener("resize", Utils.throttle(this._handleResize, 200));
     window.addEventListener("scroll", Utils.throttle(this._handleScroll, 300));
+    window.addEventListener("hashchange", this._updateActiveLink);
+
+    // Close menu when clicking a navigation link
+    this.navLinks.forEach((link) => {
+      link.addEventListener("click", this._closeMenu);
+    });
 
     // Update active link when component is loaded
     this._updateActiveLink();
-
-    // Listen for navigation changes in hash-based SPA
-    window.addEventListener("hashchange", this._updateActiveLink);
   }
 
   disconnectedCallback() {
     window.removeEventListener("resize", this._handleResize);
     window.removeEventListener("scroll", this._handleScroll);
     window.removeEventListener("hashchange", this._updateActiveLink);
+    document.removeEventListener("click", this._handleOutsideClick);
+
+    // Remove event listeners for nav links
+    this.navLinks.forEach((link) => {
+      link.removeEventListener("click", this._closeMenu);
+    });
   }
 }
 
