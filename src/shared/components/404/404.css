@@ -1,5 +1,5 @@
 .error-page {
-  height: 100vh;
+  height: var(--content-min-height);
   display: flex;
   flex-direction: column;
   justify-content: center;
