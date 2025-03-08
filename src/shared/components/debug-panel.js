@@ -75,7 +75,7 @@ class DebugPanelComponent extends HTMLElement {
           <span class="debug-size">Loading...</span>
         </div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
-        <div><a href="/palette" target="_blank">Palette</a></div>
+        <div><a href="#/palette" target="_blank">Palette</a></div>
       </div>
     `;
 

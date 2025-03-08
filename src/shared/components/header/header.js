@@ -40,11 +40,13 @@ class HeaderComponent extends HTMLElement {
             </div>
           </nav>
       </header>
-    ` + this.innerHTML; // Append existing content
+    ` + this.innerHTML;
 
     this.checkbox = document.getElementById("menu-toggle");
     this._handleResize = this._handleResize.bind(this);
     this._handleScroll = this._handleScroll.bind(this);
+    this._updateActiveLink = this._updateActiveLink.bind(this);
+
     document.addEventListener("click", (e) => this._handleOutsideClick(e));
   }
 
@@ -64,7 +66,7 @@ class HeaderComponent extends HTMLElement {
 
   _updateActiveLink() {
     const links = this.querySelectorAll(".nav-link");
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.hash || "#";
 
     links.forEach((link) => {
       if (link.getAttribute("href") === currentPath) {
@@ -82,14 +84,14 @@ class HeaderComponent extends HTMLElement {
     // Update active link when component is loaded
     this._updateActiveLink();
 
-    // Listen for navigation changes if using a custom router
-    window.addEventListener("popstate", () => this._updateActiveLink());
+    // Listen for navigation changes in hash-based SPA
+    window.addEventListener("hashchange", this._updateActiveLink);
   }
 
   disconnectedCallback() {
     window.removeEventListener("resize", this._handleResize);
     window.removeEventListener("scroll", this._handleScroll);
-    window.removeEventListener("popstate", () => this._updateActiveLink());
+    window.removeEventListener("hashchange", this._updateActiveLink);
   }
 }
 

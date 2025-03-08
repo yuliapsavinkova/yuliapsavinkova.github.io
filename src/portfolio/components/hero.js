@@ -20,8 +20,8 @@ class HeroComponent extends HTMLElement {
             <h4>MS in Computer Science</h4>
           </div>
           <div>
-            <a href="/about" class="button button-primary">Learn More</a>
-            <a href="/contact" class="button button-action">Contact</a>
+            <a href="#/about" class="button button-primary">Learn More</a>
+            <a href="#/contact" class="button button-action">Contact</a>
           </div>
         </div>
       </section>

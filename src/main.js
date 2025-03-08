@@ -7,9 +7,9 @@ import "./shared/components/social-icons.js";
 import "./shared/components/debug-panel.js";
 import "./shared/components/palette/palette.js";
 import "./shared/components/d3/d3.js";
+import "./shared/components/d3/portfolio.js";
 
 import "./portfolio/components/section-header.js";
-
 import "./portfolio/components/hero.js";
 import "./portfolio/components/process.js";
 import "./portfolio/components/expertise.js";
@@ -18,23 +18,24 @@ import "./portfolio/components/about.js";
 import "./portfolio/components/work-experience.js";
 import "./portfolio/components/contact.js";
 
-// main.js (entry point for SPA using Vanilla JS with Vite)
+// Import router
 import { renderPage } from "./router.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   renderPage();
-  window.addEventListener("popstate", renderPage);
+  window.addEventListener("hashchange", renderPage);
 });
 
 document.body.addEventListener("click", (event) => {
-  if (event.target.matches("a[href]:not([target])")) {
+  const link = event.target.closest("a[href]");
+  if (link && link.getAttribute("href").startsWith("#/")) {
     event.preventDefault();
-    history.pushState({}, "", event.target.href);
-    renderPage();
+    window.location.hash = link.getAttribute("href").slice(1);
   }
 });
 
-if (__DEBUG__) {
+// Debug mode
+if (typeof __DEBUG__ !== "undefined" && __DEBUG__) {
   console.log("Debug mode active!");
   document.getElementById("debug-panel").innerHTML = "<debug-panel-component></debug-panel-component>";
 }

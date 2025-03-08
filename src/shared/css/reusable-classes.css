@@ -26,27 +26,27 @@
   background-size: 60rem, 1rem 1rem;
 }
 
+.glass-effect {
+  background-color: var(--primary-dark-color-80); /* Use the color with transparency */
+  backdrop-filter: blur(1rem); /* Blur the background behind the element */
+  box-shadow: var(--box-shadow);
+}
+
 .bg-working-girl {
   background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
     url("../../images/working-girl.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  min-height: 30rem;
-
   background-attachment: fixed;
-  transition: background-position 0.2s ease-out;
+  height: 30rem;
+  width: auto;
 }
 
-/* Fallback for mobile device, my tablet screen size 1024px */
-@media (max-width: 1025px) {
+@media (max-width: 1400px) {
   .bg-working-girl {
+    height: 25rem;
     background-attachment: scroll;
+    background-position: left center;
   }
-}
-
-.glass-effect {
-  background-color: var(--primary-dark-color-80); /* Use the color with transparency */
-  backdrop-filter: blur(1rem); /* Blur the background behind the element */
-  box-shadow: var(--box-shadow);
 }
