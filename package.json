@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
-    "build_for_github": "rm -rf dist && vite build && touch dist/.nojekyll",
+    "build_for_github": "rm -rf dist && vite build && cp README_gh-pages.md dist/README.md && touch dist/.nojekyll",
     "deploy_to_github": "gh-pages -d dist --dotfiles"
   },
   "repository": {
