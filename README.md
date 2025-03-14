@@ -1,26 +1,69 @@
-# yuliapsavinkova.github.io
+# Portfolio - Main Branch
 
-This is the codebase for my personal portfolio. Below are the instructions for setting up and running the project locally, as well as using the code.
+This is the **main branch** of my portfolio website. It contains the source code for development and production builds.
 
 ## 🚀 Getting Started
 
-### 1 Clone the Repository
+### 1️⃣ Clone the Repository
 
-````sh
+```sh
 git clone git@github.com-personal:yuliapsavinkova/yuliapsavinkova.github.io.git
 cd yuliapsavinkova.github.io
+```
 
-```bash
-git clone https://github.com/yuliapsavinkova/yuliapsavinkova.github.io.git
-cd yuliapsavinkova.github.io
-````
+### 2️⃣ Install Dependencies
 
-2. **Install dependencies:**
-
+```sh
 npm install
+```
 
-3. **Run the project locally:**
+### 3️⃣ Run in Development Mode
 
+```sh
 npm run dev
+```
 
-This will start the development server, and you can view the portfolio by opening http://localhost:3000 in your browser.
+This starts a local development server using **Vite**.
+
+## 🔨 Building for Production
+
+```sh
+npm run build
+```
+
+This creates an optimized production build in the `dist/` folder.
+
+## 🌍 Deploying to GitHub Pages
+
+### 🔹 Build for GitHub Pages
+
+```sh
+npm run github_build
+```
+
+- Deletes the previous `dist/` folder.
+- Builds the project.
+- Copies the `README_gh-pages.md` file for the deployed version.
+- Creates a `.nojekyll` file to prevent GitHub Pages from ignoring files.
+
+### 🔹 Deploy to GitHub Pages
+
+```sh
+npm run github_deploy
+```
+
+This pushes the built files to the `gh-pages` branch.
+
+## 🖥️ Previewing Production Build Locally
+
+```sh
+npm run preview
+```
+
+This serves the production build locally before deploying.
+
+## 📌 Notes
+
+- The `main` branch is for source code and development.
+- The `gh-pages` branch is only for deployment and should not be edited manually.
+- Any changes to the source code should be made in `main`, then built and deployed.
