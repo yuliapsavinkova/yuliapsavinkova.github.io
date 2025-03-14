@@ -132,29 +132,24 @@
         <div class="gra-separator"></div>
       </div>
     `}}customElements.define("section-header",I);class W extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(),this.loadParticles()}getTemplate(){return`
-      <section id="hero" class="hero">
+      <section id="hero" class="hero bg-texture">
         <div id="particles-js"></div>
         <div class="hero-container">
-          <!--<div class="hero-portrait">  
+          <div class="hero-portrait">  
             <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
-          </div>-->
+          </div>
           <social-icons></social-icons>
           <div class="hero-heading">
             <h1>Yulia Savinkova</h1>
             <h2>Software Engineer</h2>
-            <!--<h3>10+ years of experience</h3>
-            <h4>MS in Computer Science</h4>-->
+            <h3>10+ years of experience</h3>
+            <h4>MS in Computer Science</h4>
           </div>
           <div>
             <a href="#/about" class="button button-primary">Learn More</a>
             <a href="#/contact" class="button button-action">Contact</a>
-          </div>          
-
-
+          </div>
         </div>
-
-        <img class="hero-portrait-full" src="./images/web-dev-cropped.png" alt="Portrait - photo of Yulia Savinkova." />
-
       </section>
     `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){f(async()=>{const{particlesConfig:e}=await import("./particles-CJ3RF_y6.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",W);class $ extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
