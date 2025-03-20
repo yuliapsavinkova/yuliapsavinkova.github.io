@@ -1,6 +1,7 @@
 .palette {
-  background: linear-gradient(90deg, #c3d1e5 1px, transparent 1px), linear-gradient(#c3d1e5 1px, transparent 1px),
-    #f0f0f0;
+  background:
+    linear-gradient(90deg, #c3d1e5 1px, transparent 1px),
+    linear-gradient(#c3d1e5 1px, transparent 1px), #f0f0f0;
   background-size: 1rem 1rem;
 }
 .circle {

@@ -33,7 +33,8 @@ class ScrollProgressRing extends HTMLElement {
 
   updateProgress() {
     const scrollTop = window.scrollY;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = Math.min((scrollTop / scrollHeight) * 100, 100);
 
     // Show the progress container only after some scrolling
@@ -44,7 +45,10 @@ class ScrollProgressRing extends HTMLElement {
     }
 
     // Update CSS variable for the conic-gradient
-    this.progressRing.style.setProperty("--scroll-progress", `${scrollPercent}%`);
+    this.progressRing.style.setProperty(
+      "--scroll-progress",
+      `${scrollPercent}%`,
+    );
   }
 
   scrollToTop() {

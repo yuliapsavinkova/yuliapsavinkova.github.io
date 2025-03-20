@@ -17,10 +17,19 @@ class DebugPanelComponent extends HTMLElement {
     const debugPanel = this.querySelector("#debugPanel");
     if (!debugPanel) return; // Avoid errors if the component is removed
 
-    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    debugPanel.querySelector(".debug-size").textContent = `${width} x ${height}`;
-    debugPanel.querySelector(".orientation").textContent = window.matchMedia("(orientation: portrait)").matches
+    const width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    const height =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    debugPanel.querySelector(".debug-size").textContent =
+      `${width} x ${height}`;
+    debugPanel.querySelector(".orientation").textContent = window.matchMedia(
+      "(orientation: portrait)",
+    ).matches
       ? "Portrait"
       : "Landscape";
   }
@@ -88,8 +97,14 @@ class DebugPanelComponent extends HTMLElement {
     // Bind events
     window.addEventListener("resize", this._resizeHandler);
     window.addEventListener("scroll", this._scrollHandler);
-    this.querySelector("#toggle-outline").addEventListener("change", this._toggleOutline);
-    this.querySelector(".close-btn").addEventListener("click", this._closePanel);
+    this.querySelector("#toggle-outline").addEventListener(
+      "change",
+      this._toggleOutline,
+    );
+    this.querySelector(".close-btn").addEventListener(
+      "click",
+      this._closePanel,
+    );
 
     // Initial width update
     this._updateWidth();
@@ -103,7 +118,8 @@ class DebugPanelComponent extends HTMLElement {
     const toggleOutline = this.querySelector("#toggle-outline");
     const closeBtn = this.querySelector(".close-btn");
 
-    if (toggleOutline) toggleOutline.removeEventListener("change", this._toggleOutline);
+    if (toggleOutline)
+      toggleOutline.removeEventListener("change", this._toggleOutline);
     if (closeBtn) closeBtn.removeEventListener("click", this._closePanel);
   }
 }

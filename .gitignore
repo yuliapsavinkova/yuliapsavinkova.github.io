@@ -3,3 +3,4 @@
 lucid
 node_modules
 dist
+.env*

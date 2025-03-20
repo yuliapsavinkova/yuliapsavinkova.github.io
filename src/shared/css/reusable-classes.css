@@ -13,27 +13,39 @@
 }
 
 .bg-texture {
-  background-image: radial-gradient(circle, var(--primary-dark-color) 2%, transparent 3%);
+  background-image: radial-gradient(
+    circle,
+    var(--primary-dark-color) 2%,
+    transparent 3%
+  );
   background-size: 1rem 1rem;
   background-repeat: repeat;
 }
 
 .bg-laptop-with-texture {
-  background-image: url("../../images/laptop.png"),
+  background-image:
+    url("../../images/laptop.png"),
     radial-gradient(circle, var(--primary-dark-color) 2%, transparent 3%);
-  background-position: center center, 0 0;
+  background-position:
+    center center,
+    0 0;
   background-repeat: no-repeat, repeat;
-  background-size: 60rem, 1rem 1rem;
+  background-size:
+    60rem,
+    1rem 1rem;
 }
 
 .glass-effect {
-  background-color: var(--primary-dark-color-80); /* Use the color with transparency */
+  background-color: var(
+    --primary-dark-color-80
+  ); /* Use the color with transparency */
   backdrop-filter: blur(1rem); /* Blur the background behind the element */
   box-shadow: var(--box-shadow);
 }
 
 .bg-working-girl {
-  background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
+  background:
+    linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
     url("../../images/working-girl.jpeg");
   background-size: cover;
   background-repeat: no-repeat;

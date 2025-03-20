@@ -38,7 +38,10 @@ class PortfolioChart extends HTMLElement {
         bonds: 10000,
       };
 
-      const color = d3.scaleOrdinal().domain(Object.keys(assets)).range(["#1f77b4", "#ff7f0e", "#2ca02c"]);
+      const color = d3
+        .scaleOrdinal()
+        .domain(Object.keys(assets))
+        .range(["#1f77b4", "#ff7f0e", "#2ca02c"]);
 
       const pie = d3.pie().value((d) => d[1]);
       const data_ready = pie(Object.entries(assets));

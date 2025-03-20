@@ -5,10 +5,26 @@ class SocialIcons extends HTMLElement {
       icons = JSON.parse(this.getAttribute("icons"));
     } else {
       icons = [
-        { href: "https://github.com/yuliapsavinkova", target: "_blank", display: "fab fa-github fa-xl" },
-        { href: "https://www.linkedin.com/in/juliia", target: "_blank", display: "fab fa-linkedin fa-xl" },
-        { href: "https://codepen.io/star5/pens/public", target: "_blank", display: "fab fa-codepen fa-xl" },
-        { href: "https://codepen.io/star5/pens/public", target: "_blank", display: "fa-solid fa-blog fa-xl" },
+        {
+          href: "https://github.com/yuliapsavinkova",
+          target: "_blank",
+          display: "fab fa-github fa-xl",
+        },
+        {
+          href: "https://www.linkedin.com/in/juliia",
+          target: "_blank",
+          display: "fab fa-linkedin fa-xl",
+        },
+        {
+          href: "https://codepen.io/star5/pens/public",
+          target: "_blank",
+          display: "fab fa-codepen fa-xl",
+        },
+        {
+          href: "https://codepen.io/star5/pens/public",
+          target: "_blank",
+          display: "fa-solid fa-blog fa-xl",
+        },
       ];
     }
     this.innerHTML = `
@@ -24,7 +40,7 @@ class SocialIcons extends HTMLElement {
                 (icon) =>
                   `<a href="${icon.href}" target="${icon.target || "_self"}"><i class="${
                     icon.display
-                  } tilt-effect"></i></a>`
+                  } tilt-effect"></i></a>`,
               )
               .join("")}
             </div>

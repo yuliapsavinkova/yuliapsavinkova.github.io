@@ -35,7 +35,8 @@ document.body.addEventListener("click", (event) => {
 });
 
 // Debug mode
-if (typeof __DEBUG__ !== "undefined" && __DEBUG__) {
+if (__DEBUG__) {
   console.log("Debug mode active!");
-  document.getElementById("debug-panel").innerHTML = "<debug-panel-component></debug-panel-component>";
+  document.getElementById("debug-panel").innerHTML =
+    "<debug-panel-component></debug-panel-component>";
 }

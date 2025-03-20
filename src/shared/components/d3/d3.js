@@ -42,11 +42,19 @@ class OptionsChart extends HTMLElement {
       const calculatePnL = (price) => {
         return options.reduce((totalPnL, option) => {
           const intrinsicValue = Math.max(price - option.strike, 0);
-          return totalPnL + (option.type === "buy" ? intrinsicValue - option.premium : option.premium - intrinsicValue);
+          return (
+            totalPnL +
+            (option.type === "buy"
+              ? intrinsicValue - option.premium
+              : option.premium - intrinsicValue)
+          );
         }, 0);
       };
 
-      const pnlData = stockPrices.map((price) => ({ price, pnl: calculatePnL(price) }));
+      const pnlData = stockPrices.map((price) => ({
+        price,
+        pnl: calculatePnL(price),
+      }));
 
       const xScale = d3.scaleLinear().domain([50, 150]).range([0, width]);
       const yScale = d3
@@ -54,7 +62,10 @@ class OptionsChart extends HTMLElement {
         .domain([d3.min(pnlData, (d) => d.pnl), d3.max(pnlData, (d) => d.pnl)])
         .range([height, 0]);
 
-      svg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(xScale));
+      svg
+        .append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(xScale));
       svg.append("g").call(d3.axisLeft(yScale));
 
       const line = d3
@@ -73,10 +84,13 @@ class OptionsChart extends HTMLElement {
 
       // Calculate break-even points
       const totalPremium = options.reduce(
-        (sum, option) => sum + (option.type === "buy" ? option.premium : -option.premium),
-        0
+        (sum, option) =>
+          sum + (option.type === "buy" ? option.premium : -option.premium),
+        0,
       );
-      const breakEvenPoints = options.map((option) => option.strike + totalPremium);
+      const breakEvenPoints = options.map(
+        (option) => option.strike + totalPremium,
+      );
 
       // Draw break-even points
       breakEvenPoints.forEach((point) => {

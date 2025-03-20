@@ -5,7 +5,9 @@ class HeaderComponent extends HTMLElement {
     super();
 
     const logoLink = this.getAttribute("logo-link") || "./";
-    const logoSrc = this.getAttribute("logo-src") || "../shared/components/header/defaultHeaderLogo.svg";
+    const logoSrc =
+      this.getAttribute("logo-src") ||
+      "../shared/components/header/defaultHeaderLogo.svg";
     const logoName = this.getAttribute("logo-name") || "";
     const links = JSON.parse(this.getAttribute("links") || "[]");
     const buttonLink = JSON.parse(this.getAttribute("button") || "{}");
@@ -28,14 +30,14 @@ class HeaderComponent extends HTMLElement {
                     (link) =>
                       `<a class="nav-link large" href="${link.href}" target="${link.target || "_self"}">${
                         link.image ? `<img src="${link.image}" />` : ""
-                      }${link.text}</a>`
+                      }${link.text}</a>`,
                   )
                   .join("")}
                 </div>
                 <div class="nav-action">
                   <a href="${buttonLink.href}" target="${buttonLink.target || "_self"}" class="button button-action">${
-        buttonLink.text
-      }</a>
+                    buttonLink.text
+                  }</a>
                 </div>
             </div>
           </nav>
