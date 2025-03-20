@@ -1,12 +1,12 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 // import imagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
-  base: '/',
+  base: "/",
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     rollupOptions: {
-      input: 'index.html',
+      input: "index.html",
     },
   },
   server: {
@@ -14,10 +14,6 @@ export default defineConfig({
     strictPort: true,
     open: true,
     historyApiFallback: true, // Ensures correct routing for SPA
-  },
-  define: {
-    // __DEBUG__: JSON.stringify(import.meta.env.VITE_ENVIRONMENT !== 'production'),
-    __DEBUG__: process.env.NODE_ENV !== 'production',
   },
   // plugins: [
   //   imagemin({
