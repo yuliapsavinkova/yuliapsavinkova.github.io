@@ -13,13 +13,13 @@ class AboutComponent extends HTMLElement {
                     <div class="magic-description">
                         <h4>My Journey</h4>
                         <p>
-                            I am a Software Engineer with a Master's degree in Computer Science and 10 years of experience working in a corporate environment, building full-stack applications using frameworks like React and Angular with a Node.js backend.
+                            I'm a freelance Software Engineer with a Master's degree in Computer Science and over a decade of experience building websites and web applications. After working in the corporate tech world, I transitioned to freelance work to collaborate more closely with clients and help bring their ideas to life.
                         </p>
                         <p>
-                            For the past five years, I have been running my own company, helping businesses build and optimize their online presence. I specialize in developing websites and front-end web applications using HTML, CSS, JavaScript, native Web Components, and modern frameworks.
+                            I create clean, responsive, and user-friendly digital experiences using a variety of modern tools and best practices. Whether it's a simple website or a more complex web application, I focus on building solutions that are fast, reliable, and tailored to each client's needs.
                         </p>
                         <p>
-                            I am passionate about web technologies and focused on delivering efficient, high-quality digital solutions. In my free time, I enjoy reading, traveling, and snowboarding.
+                            I'm passionate about great design, thoughtful user experience, and efficient code. Outside of work, I enjoy reading, traveling, and spending time with animals.                        
                         </p>
                         <div>
                             <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
@@ -31,4 +31,4 @@ class AboutComponent extends HTMLElement {
         `;
   }
 }
-customElements.define("about-component", AboutComponent);
+customElements.define('about-component', AboutComponent);
