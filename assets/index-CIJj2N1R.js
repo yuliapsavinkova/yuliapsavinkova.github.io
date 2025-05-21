@@ -244,16 +244,12 @@
                 <div class="magic-row">
                     <img src="./images/portrait.png" class="magic-image about-portrait" alt="Portrait - photo of Yulia Savinkova."/>
                     <div class="magic-description">
-                        <h4>My Journey</h4>
-                        <p>
-                            I'm a freelance Software Engineer with a Master's degree in Computer Science and over a decade of experience building websites and web applications. After working in the corporate tech world, I transitioned to freelance work to collaborate more closely with clients and help bring their ideas to life.
-                        </p>
-                        <p>
-                            I create clean, responsive, and user-friendly digital experiences using a variety of modern tools and best practices. Whether it's a simple website or a more complex web application, I focus on building solutions that are fast, reliable, and tailored to each client's needs.
-                        </p>
-                        <p>
-                            I'm passionate about great design, thoughtful user experience, and efficient code. Outside of work, I enjoy reading, traveling, and spending time with animals.                        
-                        </p>
+                        <h4>Code & Beyond</h4>
+                        <p>I'm a freelance Software Engineer with over a decade of experience building websites and web applications.</p>
+                        <p>I create clean, responsive, and user-friendly digital experiences using modern tools and best practices. Whether it's a simple website or a complex web application, I focus on building fast, reliable solutions tailored to each client's needs.</p>
+                        <p>Alongside web development, I help traders and finance professionals build custom tools for trading, portfolio management, and market analysis - drawing on my own experience managing a personal portfolio.</p>
+                        <p>I stay current on how AI is transforming work and integrate it into my workflows to improve productivity and efficiency.</p>
+                        <p>Outside of work, I enjoy reading, traveling, and spending time with animals.</p>
                         <div>
                             <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
                             <a href="#/work" class="button button-secondary">Learn More</a>
