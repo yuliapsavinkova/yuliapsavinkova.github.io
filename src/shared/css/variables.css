@@ -37,6 +37,7 @@
 
   /* Other */
   --box-shadow: 0 -1px 1rem var(--box-shadow-color);
+  --box-shadow-darker: 0 -5px 5rem var(--box-shadow-color);
 }
 
 main {

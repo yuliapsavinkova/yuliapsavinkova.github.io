@@ -17,6 +17,10 @@
   padding: 1rem;
   box-shadow: var(--box-shadow);
 
+  &:hover {
+    box-shadow: var(--box-shadow-darker);
+  }
+
   .card-image {
     width: 90%;
   }

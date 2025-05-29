@@ -1,16 +1,15 @@
-import { Utils } from "../../js/utils.js";
+import { Utils } from '../../js/utils.js';
 
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
 
-    const logoLink = this.getAttribute("logo-link") || "./";
+    const logoLink = this.getAttribute('logo-link') || './';
     const logoSrc =
-      this.getAttribute("logo-src") ||
-      "../shared/components/header/defaultHeaderLogo.svg";
-    const logoName = this.getAttribute("logo-name") || "";
-    const links = JSON.parse(this.getAttribute("links") || "[]");
-    const buttonLink = JSON.parse(this.getAttribute("button") || "{}");
+      this.getAttribute('logo-src') || '../shared/components/header/defaultHeaderLogo.svg';
+    const logoName = this.getAttribute('logo-name') || '';
+    const links = JSON.parse(this.getAttribute('links') || '[]');
+    const buttonLink = JSON.parse(this.getAttribute('button') || '{}');
 
     this.innerHTML =
       `
@@ -23,29 +22,29 @@ class HeaderComponent extends HTMLElement {
             <label for="menu-toggle">
               <i class="fa-solid fa-bars fa-2x"></i>
             </label>
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <input type="checkbox" id="menu-toggle" name="menu-toggle" class="menu-checkbox">
             <div class="nav-menu glass-effect">
                 <div class="nav-links">${links
                   .map(
                     (link) =>
-                      `<a class="nav-link large" href="${link.href}" target="${link.target || "_self"}">${
-                        link.image ? `<img src="${link.image}" />` : ""
-                      }${link.text}</a>`,
+                      `<a class="nav-link large" href="${link.href}" target="${
+                        link.target || '_self'
+                      }">${link.image ? `<img src="${link.image}" />` : ''}${link.text}</a>`,
                   )
-                  .join("")}
+                  .join('')}
                 </div>
                 <div class="nav-action">
-                  <a href="${buttonLink.href}" target="${buttonLink.target || "_self"}" class="button button-action">${
-                    buttonLink.text
-                  }</a>
+                  <a href="${buttonLink.href}" target="${
+        buttonLink.target || '_self'
+      }" class="button button-action">${buttonLink.text}</a>
                 </div>
             </div>
           </nav>
       </header>
     ` + this.innerHTML;
 
-    this.checkbox = this.querySelector("#menu-toggle");
-    this.navLinks = this.querySelectorAll(".nav-link");
+    this.checkbox = this.querySelector('#menu-toggle');
+    this.navLinks = this.querySelectorAll('.nav-link');
 
     this._handleResize = this._handleResize.bind(this);
     this._handleScroll = this._handleScroll.bind(this);
@@ -53,7 +52,7 @@ class HeaderComponent extends HTMLElement {
     this._closeMenu = this._closeMenu.bind(this);
     this._handleOutsideClick = this._handleOutsideClick.bind(this);
 
-    document.addEventListener("click", this._handleOutsideClick);
+    document.addEventListener('click', this._handleOutsideClick);
   }
 
   _handleOutsideClick(event) {
@@ -71,14 +70,14 @@ class HeaderComponent extends HTMLElement {
   }
 
   _updateActiveLink() {
-    const links = this.querySelectorAll(".nav-link");
-    const currentPath = window.location.hash || "#";
+    const links = this.querySelectorAll('.nav-link');
+    const currentPath = window.location.hash || '#';
 
     links.forEach((link) => {
-      if (link.getAttribute("href") === currentPath) {
-        link.classList.add("active");
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
       } else {
-        link.classList.remove("active");
+        link.classList.remove('active');
       }
     });
   }
@@ -90,13 +89,13 @@ class HeaderComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    window.addEventListener("resize", Utils.throttle(this._handleResize, 200));
-    window.addEventListener("scroll", Utils.throttle(this._handleScroll, 300));
-    window.addEventListener("hashchange", this._updateActiveLink);
+    window.addEventListener('resize', Utils.throttle(this._handleResize, 200));
+    window.addEventListener('scroll', Utils.throttle(this._handleScroll, 300));
+    window.addEventListener('hashchange', this._updateActiveLink);
 
     // Close menu when clicking a navigation link
     this.navLinks.forEach((link) => {
-      link.addEventListener("click", this._closeMenu);
+      link.addEventListener('click', this._closeMenu);
     });
 
     // Update active link when component is loaded
@@ -104,16 +103,16 @@ class HeaderComponent extends HTMLElement {
   }
 
   disconnectedCallback() {
-    window.removeEventListener("resize", this._handleResize);
-    window.removeEventListener("scroll", this._handleScroll);
-    window.removeEventListener("hashchange", this._updateActiveLink);
-    document.removeEventListener("click", this._handleOutsideClick);
+    window.removeEventListener('resize', this._handleResize);
+    window.removeEventListener('scroll', this._handleScroll);
+    window.removeEventListener('hashchange', this._updateActiveLink);
+    document.removeEventListener('click', this._handleOutsideClick);
 
     // Remove event listeners for nav links
     this.navLinks.forEach((link) => {
-      link.removeEventListener("click", this._closeMenu);
+      link.removeEventListener('click', this._closeMenu);
     });
   }
 }
 
-customElements.define("header-component", HeaderComponent);
+customElements.define('header-component', HeaderComponent);
