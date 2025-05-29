@@ -14,7 +14,7 @@
             <label for="menu-toggle">
               <i class="fa-solid fa-bars fa-2x"></i>
             </label>
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <input type="checkbox" id="menu-toggle" name="menu-toggle" class="menu-checkbox">
             <div class="nav-menu glass-effect">
                 <div class="nav-links">${n.map(s=>`<a class="nav-link large" href="${s.href}" target="${s.target||"_self"}">${s.image?`<img src="${s.image}" />`:""}${s.text}</a>`).join("")}
                 </div>
@@ -242,7 +242,7 @@
                 </section-header>
 
                 <div class="magic-row">
-                    <img src="./images/portrait.png" class="magic-image about-portrait" alt="Portrait - photo of Yulia Savinkova."/>
+                    <img src="./images/portrait.png" class="magic-image about-portrait" alt="Head shot of Yulia Savinkova, a web developer."/>
                     <div class="magic-description">
                         <h4>Code & Beyond</h4>
                         <p>I'm a freelance Software Engineer with over a decade of experience building websites and web applications.</p>
