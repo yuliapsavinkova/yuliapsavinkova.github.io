@@ -5,9 +5,27 @@ class HeaderComponent extends HTMLElement {
     super();
 
     const logoLink = this.getAttribute('logo-link') || './';
-    const logoSrc =
-      this.getAttribute('logo-src') || '../shared/components/header/defaultHeaderLogo.svg';
+
+    const logoSvgId = this.getAttribute('logo-svg-id');
     const logoName = this.getAttribute('logo-name') || '';
+
+    let logoContent;
+    if (logoSvgId) {
+      // If logoSvgId is provided, use the SVG sprite
+      // Directly embedding the SVG tag here, no external CSS changes needed for this.
+      logoContent = `
+        <svg style="width: 3rem; height: 3rem; fill: currentColor; flex-shrink: 0;" role="img" aria-labelledby="header-logo-title">
+          <title id="header-logo-title">${logoName || 'Site Logo'}</title>
+          <use href="#${logoSvgId}"></use>
+        </svg>
+      `;
+    } else {
+      // Fallback to original img src if logoSvgId is not provided
+      const logoSrc =
+        this.getAttribute('logo-src') || '../shared/components/header/defaultHeaderLogo.svg';
+      logoContent = `<img src="${logoSrc}" alt="Logo - personal portfolio."/>`;
+    }
+
     const links = JSON.parse(this.getAttribute('links') || '[]');
     const buttonLink = JSON.parse(this.getAttribute('button') || '{}');
 
@@ -15,8 +33,7 @@ class HeaderComponent extends HTMLElement {
       `
       <header class="header">
           <a href="${logoLink}" class="logo">
-              <img src="${logoSrc}" alt="Logo - personal portfolio."/>
-              <span class="logo-name">${logoName}</span>
+              ${logoContent} <span class="logo-name">${logoName}</span>
           </a>
           <nav class="gra-nav">
             <label for="menu-toggle">
@@ -29,7 +46,12 @@ class HeaderComponent extends HTMLElement {
                     (link) =>
                       `<a class="nav-link large" href="${link.href}" target="${
                         link.target || '_self'
-                      }">${link.image ? `<img src="${link.image}" />` : ''}${link.text}</a>`,
+                      }">
+                        ${
+                          link.svgId
+                            ? `<svg style="width: 1.2em; height: 1.2em; fill: currentColor; flex-shrink: 0;"><use href="#${link.svgId}"></use></svg>`
+                            : ''
+                        } ${link.image ? `<img src="${link.image}" />` : ''}${link.text}</a>`,
                   )
                   .join('')}
                 </div>

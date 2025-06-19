@@ -1,12 +1,15 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
+import { createHtmlPlugin } from 'vite-plugin-html';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
 // import imagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
-  base: "/",
+  base: '/',
   build: {
-    outDir: "dist",
+    outDir: 'dist',
     rollupOptions: {
-      input: "index.html",
+      input: 'index.html',
     },
   },
   server: {
@@ -34,4 +37,20 @@ export default defineConfig({
   //     },
   //   }),
   // ],
+  plugins: [
+    createHtmlPlugin({
+      /**
+       * After all the Vite transformations,
+       * this hook allows to modify the final HTML.
+       */
+      inject: {
+        data: {
+          // Read the SVG sprite file content
+          svgSprite: readFileSync(resolve(__dirname, 'src/assets/sprites/icons.svg'), 'utf-8'),
+        },
+      },
+      // Use `minify: true` for production to minify HTML
+      // minify: process.env.NODE_ENV === 'production',
+    }),
+  ],
 });
