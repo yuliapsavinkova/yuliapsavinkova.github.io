@@ -124,7 +124,7 @@
       transform: translateX(-100%);
     }
 
-    input[type="checkbox"]:checked + label {
+    input[type='checkbox']:checked + label {
       color: var(--accent-light-color);
     }
   }
