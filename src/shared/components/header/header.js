@@ -1,5 +1,6 @@
 import { Utils } from '../../js/utils.js';
 
+// TODO: refactor
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();

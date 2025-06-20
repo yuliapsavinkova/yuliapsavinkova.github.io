@@ -40,13 +40,6 @@ class SocialIcons extends HTMLElement {
         //   href: 'https://yoursite.com/portfolio',
         //   target: '_blank',
         //   title: 'Portfolio',
-        //   svgId: 'ys-logo-original',
-        // },
-        // ,
-        // {
-        //   href: 'https://yoursite.com/portfolio',
-        //   target: '_blank',
-        //   title: 'Portfolio',
         //   svgId: 'ys-logo',
         // },
       ];
