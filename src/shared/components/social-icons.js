@@ -1,3 +1,42 @@
+const DEFAULT_ICONS = [
+  {
+    href: 'https://github.com/yuliapsavinkova',
+    target: '_blank',
+    title: 'GitHub',
+    faIconClass: 'fab fa-github fa-xl',
+  },
+  {
+    href: 'https://www.linkedin.com/in/juliia',
+    target: '_blank',
+    title: 'LinkedIn',
+    faIconClass: 'fab fa-linkedin fa-xl',
+  },
+  {
+    href: 'https://codepen.io/star5/pens/public',
+    target: '_blank',
+    title: 'CodePen',
+    faIconClass: 'fab fa-codepen fa-xl',
+  },
+  {
+    href: 'https://codepen.io/star5/pens/public',
+    target: '_blank',
+    title: 'Blog',
+    faIconClass: 'fa-solid fa-blog fa-xl',
+  },
+  // {
+  //   href: 'https://yuliapsavinkova.github.io/#/blog',
+  //   target: '_blank',
+  //   title: "Yulia's Blog",
+  //   svgId: 'web-bites',
+  // },
+  // {
+  //   href: 'https://yoursite.com/portfolio',
+  //   target: '_blank',
+  //   title: 'Portfolio',
+  //   svgId: 'ys-logo',
+  // },
+];
+
 class SocialIcons extends HTMLElement {
   connectedCallback() {
     let icons = [];
@@ -5,44 +44,7 @@ class SocialIcons extends HTMLElement {
       icons = JSON.parse(this.getAttribute('icons'));
     } else {
       // Default icons for demonstration
-      icons = [
-        {
-          href: 'https://github.com/yuliapsavinkova',
-          target: '_blank',
-          title: 'GitHub',
-          faIconClass: 'fab fa-github fa-xl',
-        },
-        {
-          href: 'https://www.linkedin.com/in/juliia',
-          target: '_blank',
-          title: 'LinkedIn',
-          faIconClass: 'fab fa-linkedin fa-xl',
-        },
-        {
-          href: 'https://codepen.io/star5/pens/public',
-          target: '_blank',
-          title: 'CodePen',
-          faIconClass: 'fab fa-codepen fa-xl',
-        },
-        {
-          href: 'https://codepen.io/star5/pens/public',
-          target: '_blank',
-          title: 'Blog',
-          faIconClass: 'fa-solid fa-blog fa-xl',
-        },
-        // {
-        //   href: 'https://yuliapsavinkova.github.io/#/blog',
-        //   target: '_blank',
-        //   title: "Yulia's Blog",
-        //   svgId: 'web-bites',
-        // },
-        // {
-        //   href: 'https://yoursite.com/portfolio',
-        //   target: '_blank',
-        //   title: 'Portfolio',
-        //   svgId: 'ys-logo',
-        // },
-      ];
+      icons = DEFAULT_ICONS;
     }
 
     this.innerHTML = `
