@@ -44,32 +44,41 @@
     `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const e=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight,o=Math.min(e/t*100,100);e>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${o}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",C);class T extends HTMLElement{connectedCallback(){let e=[];this.getAttribute("icons")?e=JSON.parse(this.getAttribute("icons")):e=[{href:"https://github.com/yuliapsavinkova",target:"_blank",title:"GitHub",faIconClass:"fab fa-github fa-xl"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",title:"LinkedIn",faIconClass:"fab fa-linkedin fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",title:"CodePen",faIconClass:"fab fa-codepen fa-xl"},{href:"https://codepen.io/star5/pens/public",target:"_blank",title:"Blog",faIconClass:"fa-solid fa-blog fa-xl"}],this.innerHTML=`
       <style>
         .social-icons {
+          align-items: center;
           display: flex;
           width: fit-content;
           gap: 2rem;
         }
 
-        /* Base styling for both Font Awesome <i> and custom <svg> icons */
-        .social-icons i,
-        .social-icons svg {
+        .social-icons a {
+          display: inline-block;
+          position: relative;
           width: 2rem;
           height: 2rem;
-          display: inline-block;
-          transition: transform 0.3s ease;
-          fill: currentColor; /* Allows coloring SVG with text color */
-          flex-shrink: 0; /* Prevents shrinking in flex container */
+          color: inherit;
+        }
+
+        .social-icons i,
+        .social-icons svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: transform 0.2s ease-in-out;
+          fill: currentColor; 
         }
 
         .social-icons a:hover i,
         .social-icons a:hover svg {
-          transform: scale(1.1);
+          transform: translate(-50%, -50%) scale(1.1);
         }
+
       </style>
       <div class="social-icons">
-        ${e.map(t=>{const o=t.title?` title="${t.title}"`:"";let n="";if(t.faIconClass)n=`<i class="${t.faIconClass}"></i>`;else if(t.svgId)n=`<svg class="custom-social-icon" role="img" aria-labelledby="${t.svgId}-title">
+        ${e.map(t=>{const o=t.title?` title="${t.title}"`:"";let n="";if(t.faIconClass)n=`<i class="${t.faIconClass}" aria-hidden="true"></i>`;else if(t.svgId)n=`<svg role="img" aria-labelledby="${t.svgId}-title">
                            <title id="${t.svgId}-title">${t.title||""}</title>
                            <use href="#${t.svgId}"></use>
-                         </svg>`;else return console.warn("Icon configuration missing faIconClass or svgId:",t),"";return`<a href="${t.href}" target="${t.target||"_self"}"${o}>${n}</a>`}).join("")}
+                         </svg>`;else return console.warn("Icon configuration missing faIconClass or svgId:",t),"";return`<a href="${t.href}" target="${t.target||"_self"}" aria-label="${t.title}"${o}>${n}</a>`}).join("")}
       </div>
     `}}customElements.define("social-icons",T);class _ extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this),this._closePanel=this._closePanel.bind(this),this._updateWidth=this._updateWidth.bind(this),this._resizeHandler=v.throttle(this._updateWidth,200),this._scrollHandler=v.throttle(this._updateWidth,300)}_updateWidth(){const e=this.querySelector("#debugPanel");if(!e)return;const t=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,o=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;e.querySelector(".debug-size").textContent=`${t} x ${o}`,e.querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}_closePanel(){this.remove()}connectedCallback(){this.innerHTML=`
       <style>
