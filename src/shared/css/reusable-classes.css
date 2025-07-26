@@ -19,7 +19,7 @@
 
 .bg-working-girl {
   background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
-    url('../../images/working-girl.jpeg');
+    url('../../images/working-girl-1280.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -28,10 +28,21 @@
   width: auto;
 }
 
+/* for tablet */
 @media (max-width: 1400px) {
   .bg-working-girl {
+    background-image: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
+      url('../../images/working-girl-768.jpeg');
     height: 25rem;
     background-attachment: scroll;
     background-position: left center;
+  }
+}
+
+/* for mobile */
+@media (max-width: 768px) {
+  .bg-working-girl {
+    background-image: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
+      url('../../images/working-girl-768.jpeg');
   }
 }
