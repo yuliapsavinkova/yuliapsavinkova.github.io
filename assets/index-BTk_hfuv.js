@@ -1,18 +1,18 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))o(s);new MutationObserver(s=>{for(const a of s)if(a.type==="childList")for(const r of a.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&o(r)}).observe(document,{childList:!0,subtree:!0});function t(s){const a={};return s.integrity&&(a.integrity=s.integrity),s.referrerPolicy&&(a.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?a.credentials="include":s.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function o(s){if(s.ep)return;s.ep=!0;const a=t(s);fetch(s.href,a)}})();const v={throttle:function(i,e){let t=0;return function(...o){const s=Date.now();s-t>=e&&(t=s,i.apply(this,o))}},debounce:function(i,e){let t;return function(...o){clearTimeout(t),t=setTimeout(()=>{i.apply(this,o)},e)}}};class L extends HTMLElement{connectedCallback(){this.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))o(n);new MutationObserver(n=>{for(const a of n)if(a.type==="childList")for(const r of a.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&o(r)}).observe(document,{childList:!0,subtree:!0});function t(n){const a={};return n.integrity&&(a.integrity=n.integrity),n.referrerPolicy&&(a.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?a.credentials="include":n.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function o(n){if(n.ep)return;n.ep=!0;const a=t(n);fetch(n.href,a)}})();const v={throttle:function(i,e){let t=0;return function(...o){const n=Date.now();n-t>=e&&(t=n,i.apply(this,o))}},debounce:function(i,e){let t;return function(...o){clearTimeout(t),t=setTimeout(()=>{i.apply(this,o)},e)}}};class L extends HTMLElement{connectedCallback(){this.innerHTML=`
         <div class="error-page">
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
             <p>To return to home page, <a href="/#">click here</a>.</p>
         </div>
-      `}}customElements.define("error-component",L);class E extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",t=this.getAttribute("logo-svg-id"),o=this.getAttribute("logo-name")||"";let s;t?s=`
+      `}}customElements.define("error-component",L);class E extends HTMLElement{constructor(){super();const e=this.getAttribute("logo-link")||"./",t=this.getAttribute("logo-svg-id"),o=this.getAttribute("logo-name")||"";let n;t?n=`
         <svg style="width: 3rem; height: 3rem; fill: currentColor; flex-shrink: 0;" role="img" aria-labelledby="header-logo-title">
           <title id="header-logo-title">${o||"Site Logo"}</title>
           <use href="#${t}"></use>
         </svg>
-      `:s=`<img src="${this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg"}" alt="Logo - personal portfolio."/>`;const a=JSON.parse(this.getAttribute("links")||"[]"),r=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
+      `:n=`<img src="${this.getAttribute("logo-src")||"../shared/components/header/defaultHeaderLogo.svg"}" loading="lazy" alt="Logo - personal portfolio."/>`;const a=JSON.parse(this.getAttribute("links")||"[]"),r=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
           <a href="${e}" class="logo">
-              ${s} <span class="logo-name">${o}</span>
+              ${n} <span class="logo-name">${o}</span>
           </a>
           <nav class="gra-nav">
             <label for="menu-toggle">
@@ -20,8 +20,8 @@
             </label>
             <input type="checkbox" id="menu-toggle" name="menu-toggle" class="menu-checkbox">
             <div class="nav-menu glass-effect">
-                <div class="nav-links">${a.map(n=>`<a class="nav-link large" href="${n.href}" target="${n.target||"_self"}">
-                        ${n.svgId?`<svg style="width: 1.2em; height: 1.2em; fill: currentColor; flex-shrink: 0;"><use href="#${n.svgId}"></use></svg>`:""} ${n.image?`<img src="${n.image}" />`:""}${n.text}</a>`).join("")}
+                <div class="nav-links">${a.map(s=>`<a class="nav-link large" href="${s.href}" target="${s.target||"_self"}">
+                        ${s.svgId?`<svg style="width: 1.2em; height: 1.2em; fill: currentColor; flex-shrink: 0;"><use href="#${s.svgId}"></use></svg>`:""} ${s.image?`<img src="${s.image}" loading="lazy" />`:""}${s.text}</a>`).join("")}
                 </div>
                 <div class="nav-action">
                   <a href="${r.href}" target="${r.target||"_self"}" class="button button-action">${r.text}</a>
@@ -75,10 +75,10 @@
 
       </style>
       <div class="social-icons">
-        ${e.map(t=>{const o=t.title?` title="${t.title}"`:"";let s="";if(t.faIconClass)s=`<i class="${t.faIconClass}" aria-hidden="true"></i>`;else if(t.svgId)s=`<svg role="img" aria-labelledby="${t.svgId}-title">
+        ${e.map(t=>{const o=t.title?` title="${t.title}"`:"";let n="";if(t.faIconClass)n=`<i class="${t.faIconClass}" aria-hidden="true"></i>`;else if(t.svgId)n=`<svg role="img" aria-labelledby="${t.svgId}-title">
                            <title id="${t.svgId}-title">${t.title||""}</title>
                            <use href="#${t.svgId}"></use>
-                         </svg>`;else return console.warn("Icon configuration missing faIconClass or svgId:",t),"";return`<a href="${t.href}" target="${t.target||"_self"}" aria-label="${t.title}"${o}>${s}</a>`}).join("")}
+                         </svg>`;else return console.warn("Icon configuration missing faIconClass or svgId:",t),"";return`<a href="${t.href}" target="${t.target||"_self"}" aria-label="${t.title}"${o}>${n}</a>`}).join("")}
       </div>
     `}}customElements.define("social-icons",_);class M extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this),this._closePanel=this._closePanel.bind(this),this._updateWidth=this._updateWidth.bind(this),this._resizeHandler=v.throttle(this._updateWidth,200),this._scrollHandler=v.throttle(this._updateWidth,300)}_updateWidth(){const e=this.querySelector("#debugPanel");if(!e)return;const t=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,o=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;e.querySelector(".debug-size").textContent=`${t} x ${o}`,e.querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}_closePanel(){this.remove()}connectedCallback(){this.innerHTML=`
       <style>
@@ -151,15 +151,15 @@
                 <a href="#" class="button button-link">Button Link</a>
             </div>
         </section>
-        `}}customElements.define("palette-component",P);const H="modulepreload",A=function(i){return"/"+i},y={},w=function(e,t,o){let s=Promise.resolve();if(t&&t.length>0){let r=function(d){return Promise.all(d.map(p=>Promise.resolve(p).then(h=>({status:"fulfilled",value:h}),h=>({status:"rejected",reason:h}))))};document.getElementsByTagName("link");const n=document.querySelector("meta[property=csp-nonce]"),u=(n==null?void 0:n.nonce)||(n==null?void 0:n.getAttribute("nonce"));s=r(t.map(d=>{if(d=A(d),d in y)return;y[d]=!0;const p=d.endsWith(".css"),h=p?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${d}"]${h}`))return;const c=document.createElement("link");if(c.rel=p?"stylesheet":H,p||(c.as="script"),c.crossOrigin="",c.href=d,u&&c.setAttribute("nonce",u),document.head.appendChild(c),p)return new Promise((f,b)=>{c.addEventListener("load",f),c.addEventListener("error",()=>b(new Error(`Unable to preload CSS for ${d}`)))})}))}function a(r){const n=new Event("vite:preloadError",{cancelable:!0});if(n.payload=r,window.dispatchEvent(n),!n.defaultPrevented)throw r}return s.then(r=>{for(const n of r||[])n.status==="rejected"&&a(n.reason);return e().catch(a)})};class I extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render(),this.drawChart()}render(){this.shadowRoot.innerHTML=`<style>
+        `}}customElements.define("palette-component",P);const H="modulepreload",A=function(i){return"/"+i},k={},w=function(e,t,o){let n=Promise.resolve();if(t&&t.length>0){let r=function(d){return Promise.all(d.map(p=>Promise.resolve(p).then(h=>({status:"fulfilled",value:h}),h=>({status:"rejected",reason:h}))))};document.getElementsByTagName("link");const s=document.querySelector("meta[property=csp-nonce]"),u=(s==null?void 0:s.nonce)||(s==null?void 0:s.getAttribute("nonce"));n=r(t.map(d=>{if(d=A(d),d in k)return;k[d]=!0;const p=d.endsWith(".css"),h=p?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${d}"]${h}`))return;const l=document.createElement("link");if(l.rel=p?"stylesheet":H,p||(l.as="script"),l.crossOrigin="",l.href=d,u&&l.setAttribute("nonce",u),document.head.appendChild(l),p)return new Promise((f,b)=>{l.addEventListener("load",f),l.addEventListener("error",()=>b(new Error(`Unable to preload CSS for ${d}`)))})}))}function a(r){const s=new Event("vite:preloadError",{cancelable:!0});if(s.payload=r,window.dispatchEvent(s),!s.defaultPrevented)throw r}return n.then(r=>{for(const s of r||[])s.status==="rejected"&&a(s.reason);return e().catch(a)})};class I extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render(),this.drawChart()}render(){this.shadowRoot.innerHTML=`<style>
             :host { display: block; }
             svg { width: 100%; height: auto; }
         </style>
-        <div id="chart"></div>`}drawChart(){w(()=>import("./index-DI3N6lXb.js"),[]).then(e=>{const s={top:20,right:20,bottom:40,left:50},a=this.shadowRoot.getElementById("chart"),r=e.select(a).append("svg").attr("width",600+s.left+s.right).attr("height",400+s.top+s.bottom).append("g").attr("transform",`translate(${s.left},${s.top})`),n=[{type:"buy",strike:100,premium:5},{type:"sell",strike:120,premium:2}],u=e.range(50,150,2),d=l=>n.reduce((m,g)=>{const k=Math.max(l-g.strike,0);return m+(g.type==="buy"?k-g.premium:g.premium-k)},0),p=u.map(l=>({price:l,pnl:d(l)})),h=e.scaleLinear().domain([50,150]).range([0,600]),c=e.scaleLinear().domain([e.min(p,l=>l.pnl),e.max(p,l=>l.pnl)]).range([400,0]);r.append("g").attr("transform","translate(0,400)").call(e.axisBottom(h)),r.append("g").call(e.axisLeft(c));const f=e.line().x(l=>h(l.price)).y(l=>c(l.pnl)).curve(e.curveMonotoneX);r.append("path").datum(p).attr("fill","none").attr("stroke","blue").attr("stroke-width",2).attr("d",f);const b=n.reduce((l,m)=>l+(m.type==="buy"?m.premium:-m.premium),0);n.map(l=>l.strike+b).forEach(l=>{r.append("line").attr("x1",h(l)).attr("x2",h(l)).attr("y1",0).attr("y2",400).attr("stroke","red").attr("stroke-dasharray","5,5")})})}}customElements.define("options-chart",I);class $ extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render(),this.drawChart()}render(){this.shadowRoot.innerHTML=`<style>
+        <div id="chart"></div>`}drawChart(){w(()=>import("./index-DI3N6lXb.js"),[]).then(e=>{const n={top:20,right:20,bottom:40,left:50},a=this.shadowRoot.getElementById("chart"),r=e.select(a).append("svg").attr("width",600+n.left+n.right).attr("height",400+n.top+n.bottom).append("g").attr("transform",`translate(${n.left},${n.top})`),s=[{type:"buy",strike:100,premium:5},{type:"sell",strike:120,premium:2}],u=e.range(50,150,2),d=c=>s.reduce((m,g)=>{const y=Math.max(c-g.strike,0);return m+(g.type==="buy"?y-g.premium:g.premium-y)},0),p=u.map(c=>({price:c,pnl:d(c)})),h=e.scaleLinear().domain([50,150]).range([0,600]),l=e.scaleLinear().domain([e.min(p,c=>c.pnl),e.max(p,c=>c.pnl)]).range([400,0]);r.append("g").attr("transform","translate(0,400)").call(e.axisBottom(h)),r.append("g").call(e.axisLeft(l));const f=e.line().x(c=>h(c.price)).y(c=>l(c.pnl)).curve(e.curveMonotoneX);r.append("path").datum(p).attr("fill","none").attr("stroke","blue").attr("stroke-width",2).attr("d",f);const b=s.reduce((c,m)=>c+(m.type==="buy"?m.premium:-m.premium),0);s.map(c=>c.strike+b).forEach(c=>{r.append("line").attr("x1",h(c)).attr("x2",h(c)).attr("y1",0).attr("y2",400).attr("stroke","red").attr("stroke-dasharray","5,5")})})}}customElements.define("options-chart",I);class $ extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render(),this.drawChart()}render(){this.shadowRoot.innerHTML=`<style>
           :host { display: block; }
           svg { width: 100%; height: auto; }
       </style>
-      <div id="chart"></div>`}drawChart(){w(()=>import("./index-DI3N6lXb.js"),[]).then(e=>{const s=Math.min(400,400)/2,a=this.shadowRoot.getElementById("chart"),r=e.select(a).append("svg").attr("width",400).attr("height",400).append("g").attr("transform",`translate(${400/2},${400/2})`),n={stocks:15e3,options:5e3,bonds:1e4},u=e.scaleOrdinal().domain(Object.keys(n)).range(["#1f77b4","#ff7f0e","#2ca02c"]),p=e.pie().value(c=>c[1])(Object.entries(n)),h=e.arc().innerRadius(0).outerRadius(s);r.selectAll("pieces").data(p).enter().append("path").attr("d",h).attr("fill",c=>u(c.data[0])).style("stroke","#fff"),r.selectAll("labels").data(p).enter().append("text").text(c=>c.data[0]).attr("transform",c=>`translate(${h.centroid(c)})`).style("text-anchor","middle").style("font-size","14px")})}}customElements.define("portfolio-chart",$);class O extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
+      <div id="chart"></div>`}drawChart(){w(()=>import("./index-DI3N6lXb.js"),[]).then(e=>{const n=Math.min(400,400)/2,a=this.shadowRoot.getElementById("chart"),r=e.select(a).append("svg").attr("width",400).attr("height",400).append("g").attr("transform",`translate(${400/2},${400/2})`),s={stocks:15e3,options:5e3,bonds:1e4},u=e.scaleOrdinal().domain(Object.keys(s)).range(["#1f77b4","#ff7f0e","#2ca02c"]),p=e.pie().value(l=>l[1])(Object.entries(s)),h=e.arc().innerRadius(0).outerRadius(n);r.selectAll("pieces").data(p).enter().append("path").attr("d",h).attr("fill",l=>u(l.data[0])).style("stroke","#fff"),r.selectAll("labels").data(p).enter().append("text").text(l=>l.data[0]).attr("transform",l=>`translate(${h.centroid(l)})`).style("text-anchor","middle").style("font-size","14px")})}}customElements.define("portfolio-chart",$);class O extends HTMLElement{connectedCallback(){const e=this.getAttribute("title")||"",t=this.getAttribute("sub-title")||"";this.innerHTML=`
       <div class="section-header">
         <h1>${e}</h1>
         <p class="subtitle large">${t}</p>
@@ -170,7 +170,7 @@
         <div id="particles-js"></div>
         <div class="hero-container">
           <div class="hero-portrait">  
-            <img src="./images/hero-background.svg" alt="Portrait - photo of Yulia Savinkova." />
+            <img src="./images/hero-background.svg" loading="lazy" alt="Portrait - photo of Yulia Savinkova." />
           </div>
           <social-icons></social-icons>
           <div class="hero-heading">
@@ -185,14 +185,14 @@
           </div>
         </div>
       </section>
-    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){w(async()=>{const{particlesConfig:e}=await import("./particles-DyFdLuFD.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",D);class W extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){w(async()=>{const{particlesConfig:e}=await import("./particles-DyFdLuFD.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",D);class z extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
         <section-header
           title="Working Process"
           sub-title="Collaborate, Design, Code, and Optimize for Fast, Responsive Web Experiences.">
         </section-header>
       </section>
-    `}}customElements.define("working-process-component",W);class R extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("working-process-component",z);class W extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise" class="section expertise">
             <section-header 
                 title="My Expertise"
@@ -200,7 +200,7 @@
             </section-header>
             <div class="cards-container">
                 <div class="card bg-texture">
-                    <img src="./images/web-dev.png" class="card-image" alt="maintenance-image" />
+                    <img src="./images/web-dev.png" class="card-image" loading="lazy" alt="maintenance-image" />
                     <h4>Web Development</h4>
                     <p>Build websites from scratch using HTML, CSS, JavaScript, and Web Components.</p>
                     <a href="#/work?section=work-row-web">
@@ -210,7 +210,7 @@
                     </a>
                 </div>
                 <div class="card bg-texture">
-                    <img src="./images/app-dev.png" class="card-image" alt="web-development-image" />            
+                    <img src="./images/app-dev.png" class="card-image" loading="lazy" alt="web-development-image" />            
                     <h4>App Development</h4>
                     <p>Build web applications using modern frameworks such as React and Angular.</p>
                     <a href="#/work?section=work-row-app">
@@ -220,7 +220,7 @@
                     </a>
                 </div>
                 <div class="card bg-texture">
-                    <img src="./images/three-d-dev.png" class="card-image" alt="design-image" />
+                    <img src="./images/three-d-dev.png" class="card-image" loading="lazy" alt="design-image" />
                     <h4>3D Development</h4>
                     <p>Build 3D web experiences using modern web technologies and libraries.</p>
                     <a href="#/work?section=work-row-3d">
@@ -232,7 +232,7 @@
             </div>
             <a href="#/work" class="button button-secondary">Learn More</a>
         </section>
-    `}}customElements.define("expertise-component",R);class q extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}}customElements.define("expertise-component",W);class R extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="work" class="section expertise-full">
             <section-header 
                 title="My Expertise"
@@ -246,11 +246,11 @@
                         <p>Need a sleek, high-performing website to showcase your brand? I specialize in building modern, responsive websites that look great on any device and deliver a seamless user experience. Whether you need a portfolio, business site, or landing page, I provide custom solutions tailored to your needs. With a focus on speed, SEO, and user-friendly design, I’ll help create a site that not only looks amazing but also drives results. Let's work together to make your online presence shine!</p>
                         <a href="#/contact" class="button button-secondary">Get a Quote</a>
                     </div>
-                    <img src="./images/web-dev.png" class="magic-image vertical bg-texture" alt="maintenance-image" />
+                    <img src="./images/web-dev.png" class="magic-image vertical bg-texture" loading="lazy" alt="maintenance-image" />
                 </div>
 
                 <div id="work-row-app" class="magic-row">
-                    <img src="./images/app-dev.png" class="magic-image bg-texture" alt="web-development-image" />            
+                    <img src="./images/app-dev.png" class="magic-image bg-texture" loading="lazy" alt="web-development-image" />            
                     <div class="magic-description">
                         <h4>App Development</h4>
                         <p>Need a powerful, high-performance web application? I build dynamic, user-friendly apps using cutting-edge frameworks like React and Angular. Whether it's a business tool, an e-commerce platform, or a custom solution, I create fast, scalable, and secure applications designed to elevate your brand and streamline your operations. Let’s bring your vision to life!</p>
@@ -264,11 +264,11 @@
                         <p>Bring your website to life with stunning 3D experiences! I create interactive, immersive visuals that run smoothly in any modern browser—perfect for showcasing products, engaging users, or adding a unique touch to your site. Whether you need an interactive model, an animated scene, or a full 3D experience, I’ll build a solution that captivates your audience. Let’s make your vision a reality!</p>  
                         <a href="#/contact" class="button button-secondary">Get a Quote</a>
                     </div>
-                    <img src="./images/three-d-dev.png" class="magic-image bg-texture" alt="design-image" />
+                    <img src="./images/three-d-dev.png" class="magic-image bg-texture" loading="lazy" alt="design-image" />
                 </div>
             </div>
         </section>
-    `}}customElements.define("expertise-full-component",q);class z extends HTMLElement{constructor(){super(),this.innerHTML=`
+    `}}customElements.define("expertise-full-component",R);class q extends HTMLElement{constructor(){super(),this.innerHTML=`
             <section id="about" class="section about">
                 <section-header 
                     title="About Me"
@@ -276,7 +276,7 @@
                 </section-header>
 
                 <div class="magic-row">
-                    <img src="./images/portrait.png" class="magic-image about-portrait" alt="Head shot of Yulia Savinkova, a web developer."/>
+                    <img src="./images/portrait.png" class="magic-image about-portrait" loading="lazy" alt="Head shot of Yulia Savinkova, a web developer."/>
                     <div class="magic-description">
                         <h4>Code & Beyond</h4>
                         <p>I'm a freelance Software Engineer with over a decade of experience building websites and web applications.</p>
@@ -291,7 +291,7 @@
                     </div>
                 </div>              
             </section>
-        `}}customElements.define("about-component",z);class B extends HTMLElement{connectedCallback(){this.innerHTML=`
+        `}}customElements.define("about-component",q);class B extends HTMLElement{connectedCallback(){this.innerHTML=`
               <section id="work-experience" class="section work-experience">
                 <section-header 
                     title="Work Experience"
@@ -429,4 +429,4 @@
     `,work:`
       <expertise-full-component></expertise-full-component>
       <contact-component></contact-component>
-    `,palette:"<palette-component></palette-component>",d3:"<options-chart></options-chart>",portfolio:"<portfolio-chart></portfolio-chart>",contact:"<contact-component></contact-component>"},e=window.location.hash.slice(2),[t,o]=e.split("?"),a=new URLSearchParams(o).get("section"),r=document.querySelector("main");r.innerHTML=i[t]||"<error-component></error-component>",requestAnimationFrame(()=>{if(a){const n=document.getElementById(a);n&&n.scrollIntoView({behavior:"smooth"})}}),a||window.scrollTo({top:0,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",()=>{x(),window.addEventListener("hashchange",x)});document.body.addEventListener("click",i=>{const e=i.target.closest("a[href]");e&&e.getAttribute("href").startsWith("#/")&&(i.preventDefault(),window.location.hash=e.getAttribute("href").slice(1))});
+    `,palette:"<palette-component></palette-component>",d3:"<options-chart></options-chart>",portfolio:"<portfolio-chart></portfolio-chart>",contact:"<contact-component></contact-component>"},e=window.location.hash.slice(2),[t,o]=e.split("?"),a=new URLSearchParams(o).get("section"),r=document.querySelector("main");r.innerHTML=i[t]||"<error-component></error-component>",requestAnimationFrame(()=>{if(a){const s=document.getElementById(a);s&&s.scrollIntoView({behavior:"smooth"})}}),a||window.scrollTo({top:0,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",()=>{x(),window.addEventListener("hashchange",x)});document.body.addEventListener("click",i=>{const e=i.target.closest("a[href]");e&&e.getAttribute("href").startsWith("#/")&&(i.preventDefault(),window.location.hash=e.getAttribute("href").slice(1))});
