@@ -5,8 +5,8 @@ class Palette extends HTMLElement {
 
   getTemplate() {
     return `
-        <section id="palette" class="palette">
-            <div>
+        <section id="palette" class="palette squares-bg">
+            <div class="palette-colors">
                 <h1>Colors</h1>
                 <div class="circle primary-dark-circle"></div>
                 <div class="circle primary-light-circle"></div>
@@ -19,7 +19,7 @@ class Palette extends HTMLElement {
                 <div class="circle grey-circle"></div>
                 <div class="circle black-circle"></div>
             </div>
-            <div>
+            <div class="palette-buttons">
                 <h1>Buttons</h1>
                 <button class="button button-primary">Primary</button>
                 <button class="button button-secondary">Secondary</button>
@@ -31,4 +31,4 @@ class Palette extends HTMLElement {
         `;
   }
 }
-customElements.define("palette-component", Palette);
+customElements.define('palette-component', Palette);

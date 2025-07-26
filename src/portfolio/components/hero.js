@@ -31,8 +31,8 @@ class HeroComponent extends HTMLElement {
   loadParticles() {
     if (!window.particlesJS) {
       // Create a script element for particles.js
-      const script = document.createElement("script");
-      script.src = "https://cdn.jsdelivr.net/npm/particles.js";
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/particles.js';
       script.onload = () => {
         this.initParticles();
       };
@@ -43,12 +43,12 @@ class HeroComponent extends HTMLElement {
   }
 
   initParticles() {
-    import("../../portfolio/components/particles.js")
+    import('../../portfolio/components/particles.js')
       .then(({ particlesConfig }) => {
-        particlesJS("particles-js", particlesConfig);
+        particlesJS('particles-js', particlesConfig);
       })
-      .catch((err) => console.error("Particles.js config loading failed", err));
+      .catch((err) => console.error('Particles.js config loading failed', err));
   }
 }
 
-customElements.define("hero-component", HeroComponent);
+customElements.define('hero-component', HeroComponent);

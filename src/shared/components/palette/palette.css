@@ -1,15 +1,21 @@
 .palette {
-  background:
-    linear-gradient(90deg, #c3d1e5 1px, transparent 1px),
+  height: var(--content-min-height);
+  padding: var(--global-padding-sides);
+}
+.squares-bg {
+  background: linear-gradient(90deg, #c3d1e5 1px, transparent 1px),
     linear-gradient(#c3d1e5 1px, transparent 1px), #f0f0f0;
   background-size: 1rem 1rem;
+}
+.palette div {
+  padding-bottom: var(--global-padding-between);
 }
 .circle {
   display: inline-flex;
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 .primary-dark-circle {
   background-color: var(--primary-dark-color);

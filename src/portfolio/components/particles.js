@@ -1,11 +1,11 @@
 export const particlesConfig = {
   particles: {
     number: { value: 5, density: { enable: true, value_area: 800 } },
-    color: { value: "#e2ebf6" },
+    color: { value: '#e2ebf6' },
     shape: {
-      type: "polygon",
-      stroke: { width: 0, color: "#000" },
-      polygon: { nb_sides: 10 },
+      type: 'polygon',
+      stroke: { width: 0, color: '#000' },
+      polygon: { nb_sides: 100 },
       // image: { src: "img/github.svg", width: 100, height: 100 },
     },
     opacity: {
@@ -28,10 +28,10 @@ export const particlesConfig = {
     move: {
       enable: true,
       speed: 10,
-      direction: "none",
+      direction: 'none',
       random: false,
       straight: false,
-      out_mode: "out",
+      out_mode: 'out',
       bounce: false,
       attract: { enable: false, rotateX: 600, rotateY: 1200 },
     },
