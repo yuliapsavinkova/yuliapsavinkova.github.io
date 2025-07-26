@@ -128,8 +128,8 @@
         <div><a href="#/palette" target="_blank">Palette</a></div>
       </div>
     `,window.addEventListener("resize",this._resizeHandler),window.addEventListener("scroll",this._scrollHandler),this.querySelector("#toggle-outline").addEventListener("change",this._toggleOutline),this.querySelector(".close-btn").addEventListener("click",this._closePanel),this._updateWidth()}disconnectedCallback(){window.removeEventListener("resize",this._resizeHandler),window.removeEventListener("scroll",this._scrollHandler);const e=this.querySelector("#toggle-outline"),t=this.querySelector(".close-btn");e&&e.removeEventListener("change",this._toggleOutline),t&&t.removeEventListener("click",this._closePanel)}}customElements.define("debug-panel-component",M);class H extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
-        <section id="palette" class="palette">
-            <div>
+        <section id="palette" class="palette squares-bg">
+            <div class="palette-colors">
                 <h1>Colors</h1>
                 <div class="circle primary-dark-circle"></div>
                 <div class="circle primary-light-circle"></div>
@@ -142,7 +142,7 @@
                 <div class="circle grey-circle"></div>
                 <div class="circle black-circle"></div>
             </div>
-            <div>
+            <div class="palette-buttons">
                 <h1>Buttons</h1>
                 <button class="button button-primary">Primary</button>
                 <button class="button button-secondary">Secondary</button>
@@ -185,7 +185,7 @@
           </div>
         </div>
       </section>
-    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){w(async()=>{const{particlesConfig:e}=await import("./particles-CJ3RF_y6.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",W);class D extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}loadParticles(){if(window.particlesJS)this.initParticles();else{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/particles.js",e.onload=()=>{this.initParticles()},document.body.appendChild(e)}}initParticles(){w(async()=>{const{particlesConfig:e}=await import("./particles-DyFdLuFD.js");return{particlesConfig:e}},[]).then(({particlesConfig:e})=>{particlesJS("particles-js",e)}).catch(e=>console.error("Particles.js config loading failed",e))}}customElements.define("hero-component",W);class D extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="working-process" class="section working-process bg-working-girl">
         <section-header
           title="Working Process"
