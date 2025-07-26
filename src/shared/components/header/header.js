@@ -24,7 +24,7 @@ class HeaderComponent extends HTMLElement {
       // Fallback to original img src if logoSvgId is not provided
       const logoSrc =
         this.getAttribute('logo-src') || '../shared/components/header/defaultHeaderLogo.svg';
-      logoContent = `<img src="${logoSrc}" alt="Logo - personal portfolio."/>`;
+      logoContent = `<img src="${logoSrc}" loading="lazy" alt="Logo - personal portfolio."/>`;
     }
 
     const links = JSON.parse(this.getAttribute('links') || '[]');
@@ -52,7 +52,9 @@ class HeaderComponent extends HTMLElement {
                           link.svgId
                             ? `<svg style="width: 1.2em; height: 1.2em; fill: currentColor; flex-shrink: 0;"><use href="#${link.svgId}"></use></svg>`
                             : ''
-                        } ${link.image ? `<img src="${link.image}" />` : ''}${link.text}</a>`,
+                        } ${link.image ? `<img src="${link.image}" loading="lazy" />` : ''}${
+                        link.text
+                      }</a>`,
                   )
                   .join('')}
                 </div>
