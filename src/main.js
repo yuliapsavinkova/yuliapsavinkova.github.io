@@ -7,17 +7,7 @@ import './shared/components/header/header.js';
 import './shared/components/footer/footer.js';
 import './shared/components/progress/progress.js';
 import './shared/components/social-icons.js';
-import './shared/components/debug-panel.js';
-import './shared/components/palette/palette.js';
-
 import './portfolio/components/section-header.js';
-import './portfolio/components/hero.js';
-import './portfolio/components/process.js';
-import './portfolio/components/expertise.js';
-import './portfolio/components/expertise-full.js';
-import './portfolio/components/about.js';
-import './portfolio/components/work-experience.js';
-import './portfolio/components/contact.js';
 
 // Import router
 import { renderPage } from './router.js';
@@ -37,6 +27,8 @@ document.body.addEventListener('click', (event) => {
 
 // Debug mode
 if (import.meta.env.VITE_ENVIRONMENT) {
+  await import('./shared/components/debug-panel.js');
+
   console.log('Debug mode active!');
   document.getElementById('debug-panel').innerHTML =
     '<debug-panel-component></debug-panel-component>';

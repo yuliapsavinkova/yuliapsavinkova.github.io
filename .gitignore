@@ -1,6 +1,7 @@
 # Ignore system files
 .DS_Store
-lucid
 node_modules
 dist
 .env*
+lucid
+
