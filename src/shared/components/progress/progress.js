@@ -6,11 +6,11 @@ class ScrollProgressRing extends HTMLElement {
       `
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
-        <a class="arrow">
-          <svg class="icon icon-fill icon-sm" aria-hidden="true">
+        <div class="arrow">
+          <svg class="icon icon-fill" aria-hidden="true">
             <use href="#icon-fa-angle-up"></use>
           </svg>
-        </a>
+        </div>
       </div>
     ` + this.innerHTML; // Append existing content;
 

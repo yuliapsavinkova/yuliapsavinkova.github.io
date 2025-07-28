@@ -63,7 +63,7 @@ class SocialIcons extends HTMLElement {
 
             return `<a href="${icon.href}" target="${icon.target || '_self'}" aria-label="${
               icon.title
-            }"${titleAttr}><svg class="icon icon-lg icon-fill enable-icon-scale" aria-hidden="true"><use href="#${
+            }"${titleAttr}><svg class="icon icon-fill enable-icon-scale" aria-hidden="true"><use href="#${
               icon.svgId
             }"></use></svg></a>`;
           })
