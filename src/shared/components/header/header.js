@@ -13,14 +13,14 @@ class HeaderComponent extends HTMLElement {
     this.innerHTML =
       `
       <header class="header">
-          <a href="${logoLink}" class="logo">
+          <a href="${logoLink}" class="logo" aria-label="Home">
               <svg class="icon icon-stroke" aria-hidden="true">
                 <use href="#${logoSvgId}"></use>
               </svg>
               <span class="logo-name">${logoName}</span>
           </a>
           <nav class="gra-nav">
-            <label for="menu-toggle">
+            <label for="menu-toggle" aria-label="Open Menu">
               <svg class="icon icon-fill enable-icon-scale" aria-hidden="true">
                 <use href="#icon-fa-bars"></use>
               </svg>

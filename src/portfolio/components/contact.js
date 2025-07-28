@@ -7,7 +7,7 @@ class ContactComponent extends HTMLElement {
                     sub-title="Available for On-Site Travel">
                 </section-header>
                 <div id="contact-form" class="contact-form">
-                    <h3>Contact Me</h3>
+                    <h4>Contact Me</h4>
                     <form action="https://formspree.io/f/xqakdrpw" method="POST">
                         <label for="name">Name</label>
                         <input type="text" autocomplete="on" id="name" name="name" placeholder="Enter your name" required>
@@ -24,4 +24,4 @@ class ContactComponent extends HTMLElement {
         `;
   }
 }
-customElements.define("contact-component", ContactComponent);
+customElements.define('contact-component', ContactComponent);
