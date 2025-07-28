@@ -27,9 +27,10 @@ document.body.addEventListener('click', (event) => {
 
 // Debug mode
 if (import.meta.env.VITE_ENVIRONMENT) {
-  await import('./shared/components/debug-panel.js');
-
-  console.log('Debug mode active!');
-  document.getElementById('debug-panel').innerHTML =
-    '<debug-panel-component></debug-panel-component>';
+  (async () => {
+    await import('./shared/components/debug-panel.js');
+    console.log('Debug mode active!');
+    document.getElementById('debug-panel').innerHTML =
+      '<debug-panel-component></debug-panel-component>';
+  })();
 }
