@@ -6,14 +6,14 @@
         </div>
       `}}customElements.define("error-component",k);class M extends HTMLElement{constructor(){super();const h=this.getAttribute("logo-link")||"./",v=this.getAttribute("logo-svg-id"),t=this.getAttribute("logo-name")||"",e=JSON.parse(this.getAttribute("links")||"[]"),z=JSON.parse(this.getAttribute("button")||"{}");this.innerHTML=`
       <header class="header">
-          <a href="${h}" class="logo">
+          <a href="${h}" class="logo" aria-label="Home">
               <svg class="icon icon-stroke" aria-hidden="true">
                 <use href="#${v}"></use>
               </svg>
               <span class="logo-name">${t}</span>
           </a>
           <nav class="gra-nav">
-            <label for="menu-toggle">
+            <label for="menu-toggle" aria-label="Open Menu">
               <svg class="icon icon-fill enable-icon-scale" aria-hidden="true">
                 <use href="#icon-fa-bars"></use>
               </svg>
@@ -406,7 +406,7 @@
                     sub-title="Available for On-Site Travel">
                 </section-header>
                 <div id="contact-form" class="contact-form">
-                    <h3>Contact Me</h3>
+                    <h4>Contact Me</h4>
                     <form action="https://formspree.io/f/xqakdrpw" method="POST">
                         <label for="name">Name</label>
                         <input type="text" autocomplete="on" id="name" name="name" placeholder="Enter your name" required>
