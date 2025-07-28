@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
-import { createHtmlPlugin } from 'vite-plugin-html';
-import { readFileSync } from 'fs';
-import { resolve } from 'path';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import path from 'path';
 // import imagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
@@ -38,19 +37,37 @@ export default defineConfig({
   //   }),
   // ],
   plugins: [
-    createHtmlPlugin({
+    createSvgIconsPlugin({
+      // Specify the icon folder to be cached
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+      // Specify symbolId format
+      symbolId: 'icon-[dir]-[name]',
       /**
-       * After all the Vite transformations,
-       * this hook allows to modify the final HTML.
+       * custom insert position
+       * @default: body-last
        */
-      inject: {
-        data: {
-          // Read the SVG sprite file content
-          svgSprite: readFileSync(resolve(__dirname, 'src/assets/sprites/icons.svg'), 'utf-8'),
-        },
+      inject: 'body-last',
+      /**
+       * custom dom id
+       * @default: __svg__icons__dom__
+       */
+      customDomId: '__svg__icons__dom__',
+      /**
+       * SVGO optimization options
+       * @default: true
+       */
+      svgoOptions: {
+        plugins: [
+          {
+            name: 'removeViewBox',
+            active: false,
+          },
+          {
+            name: 'removeDimensions',
+            active: true,
+          },
+        ],
       },
-      // Use `minify: true` for production to minify HTML
-      // minify: process.env.NODE_ENV === 'production',
     }),
   ],
 });

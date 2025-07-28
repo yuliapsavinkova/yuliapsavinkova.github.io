@@ -1,4 +1,4 @@
-import { Utils } from "../js/utils.js";
+import { Utils } from '../js/utils.js';
 
 class DebugPanelComponent extends HTMLElement {
   constructor() {
@@ -14,29 +14,24 @@ class DebugPanelComponent extends HTMLElement {
 
   // Update screen width x height
   _updateWidth() {
-    const debugPanel = this.querySelector("#debugPanel");
+    const debugPanel = this.querySelector('#debugPanel');
     if (!debugPanel) return; // Avoid errors if the component is removed
 
     const width =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
+      window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const height =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight;
-    debugPanel.querySelector(".debug-size").textContent =
-      `${width} x ${height}`;
-    debugPanel.querySelector(".orientation").textContent = window.matchMedia(
-      "(orientation: portrait)",
+      window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    debugPanel.querySelector('.debug-size').textContent = `${width} x ${height}`;
+    debugPanel.querySelector('.orientation').textContent = window.matchMedia(
+      '(orientation: portrait)',
     ).matches
-      ? "Portrait"
-      : "Landscape";
+      ? 'Portrait'
+      : 'Landscape';
   }
 
   // Toggle debug outlines on body
   _toggleOutline(event) {
-    document.body.classList.toggle("debug-outline", event.target.checked);
+    document.body.classList.toggle('debug-outline', event.target.checked);
   }
 
   // Remove the debug panel from the view
@@ -71,19 +66,37 @@ class DebugPanelComponent extends HTMLElement {
           align-items: center;
           border-bottom: 1px solid hsl(217, 45%, 60%);
         }
-        .close-btn {
-          cursor: pointer;
-          align-self: flex-start;
-        }
         .debug-outline * {
           outline: 1px solid red;
         }
+        .close-btn {
+          all: unset;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          padding: 0;
+          margin: 0;
+          width: 1.5rem;
+          height: 1.5rem;
+
+          svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+        }
+
       </style>
 
       <div id="debugPanel" class="debug-panel">
         <div class="debug-header">
           <h6>Debug Panel</h6>
-          <i class="close-btn fa-solid fa-xmark"></i>
+          <button class="icon icon-sm icon-fill close-btn" aria-label="Close Debug Panel">
+            <svg focusable="false" aria-hidden="true">
+              <use href="#icon-fa-xmark"></use>
+            </svg>
+          </button>
         </div>
         <div>
           <span class="orientation">Loading...</span>:
@@ -95,16 +108,10 @@ class DebugPanelComponent extends HTMLElement {
     `;
 
     // Bind events
-    window.addEventListener("resize", this._resizeHandler);
-    window.addEventListener("scroll", this._scrollHandler);
-    this.querySelector("#toggle-outline").addEventListener(
-      "change",
-      this._toggleOutline,
-    );
-    this.querySelector(".close-btn").addEventListener(
-      "click",
-      this._closePanel,
-    );
+    window.addEventListener('resize', this._resizeHandler);
+    window.addEventListener('scroll', this._scrollHandler);
+    this.querySelector('#toggle-outline').addEventListener('change', this._toggleOutline);
+    this.querySelector('.close-btn').addEventListener('click', this._closePanel);
 
     // Initial width update
     this._updateWidth();
@@ -112,16 +119,15 @@ class DebugPanelComponent extends HTMLElement {
 
   disconnectedCallback() {
     // Cleanup event listeners
-    window.removeEventListener("resize", this._resizeHandler);
-    window.removeEventListener("scroll", this._scrollHandler);
+    window.removeEventListener('resize', this._resizeHandler);
+    window.removeEventListener('scroll', this._scrollHandler);
 
-    const toggleOutline = this.querySelector("#toggle-outline");
-    const closeBtn = this.querySelector(".close-btn");
+    const toggleOutline = this.querySelector('#toggle-outline');
+    const closeBtn = this.querySelector('.close-btn');
 
-    if (toggleOutline)
-      toggleOutline.removeEventListener("change", this._toggleOutline);
-    if (closeBtn) closeBtn.removeEventListener("click", this._closePanel);
+    if (toggleOutline) toggleOutline.removeEventListener('change', this._toggleOutline);
+    if (closeBtn) closeBtn.removeEventListener('click', this._closePanel);
   }
 }
 
-customElements.define("debug-panel-component", DebugPanelComponent);
+customElements.define('debug-panel-component', DebugPanelComponent);

@@ -6,39 +6,24 @@ class HeaderComponent extends HTMLElement {
     super();
 
     const logoLink = this.getAttribute('logo-link') || './';
-
     const logoSvgId = this.getAttribute('logo-svg-id');
     const logoName = this.getAttribute('logo-name') || '';
-
-    let logoContent;
-    if (logoSvgId) {
-      // If logoSvgId is provided, use the SVG sprite
-      // Directly embedding the SVG tag here, no external CSS changes needed for this.
-      logoContent = `
-        <svg style="width: 3rem; height: 3rem; fill: currentColor; flex-shrink: 0;" role="img" aria-labelledby="header-logo-title">
-          <title id="header-logo-title">${logoName || 'Site Logo'}</title>
-          <use href="#${logoSvgId}"></use>
-        </svg>
-      `;
-    } else {
-      // Fallback to original img src if logoSvgId is not provided
-      const logoSrc =
-        this.getAttribute('logo-src') || '../shared/components/header/defaultHeaderLogo.svg';
-      logoContent = `<img src="${logoSrc}" loading="lazy" alt="Logo - personal portfolio."/>`;
-    }
-
     const links = JSON.parse(this.getAttribute('links') || '[]');
     const buttonLink = JSON.parse(this.getAttribute('button') || '{}');
-
     this.innerHTML =
       `
       <header class="header">
           <a href="${logoLink}" class="logo">
-              ${logoContent} <span class="logo-name">${logoName}</span>
+              <svg class="icon icon-stroke" aria-hidden="true">
+                <use href="#${logoSvgId}"></use>
+              </svg>
+              <span class="logo-name">${logoName}</span>
           </a>
           <nav class="gra-nav">
             <label for="menu-toggle">
-              <i class="fa-solid fa-bars fa-2x"></i>
+              <svg class="icon icon-fill enable-icon-scale" aria-hidden="true">
+                <use href="#icon-fa-bars"></use>
+              </svg>
             </label>
             <input type="checkbox" id="menu-toggle" name="menu-toggle" class="menu-checkbox">
             <div class="nav-menu glass-effect">

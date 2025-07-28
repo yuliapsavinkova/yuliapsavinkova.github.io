@@ -3,38 +3,26 @@ const DEFAULT_ICONS = [
     href: 'https://github.com/yuliapsavinkova',
     target: '_blank',
     title: 'GitHub',
-    faIconClass: 'fab fa-github fa-xl',
+    svgId: 'icon-fa-github',
   },
   {
     href: 'https://www.linkedin.com/in/juliia',
     target: '_blank',
     title: 'LinkedIn',
-    faIconClass: 'fab fa-linkedin fa-xl',
+    svgId: 'icon-fa-linkedin',
   },
   {
     href: 'https://codepen.io/star5/pens/public',
     target: '_blank',
     title: 'CodePen',
-    faIconClass: 'fab fa-codepen fa-xl',
+    svgId: 'icon-fa-codepen',
   },
   {
     href: 'https://codepen.io/star5/pens/public',
     target: '_blank',
     title: 'Blog',
-    faIconClass: 'fa-solid fa-blog fa-xl',
+    svgId: 'icon-fa-blog',
   },
-  // {
-  //   href: 'https://yuliapsavinkova.github.io/#/blog',
-  //   target: '_blank',
-  //   title: "Yulia's Blog",
-  //   svgId: 'web-bites',
-  // },
-  // {
-  //   href: 'https://yoursite.com/portfolio',
-  //   target: '_blank',
-  //   title: 'Portfolio',
-  //   svgId: 'ys-logo',
-  // },
 ];
 
 class SocialIcons extends HTMLElement {
@@ -61,48 +49,23 @@ class SocialIcons extends HTMLElement {
           position: relative;
           width: 2rem;
           height: 2rem;
-          color: inherit;
         }
-
-        .social-icons i,
-        .social-icons svg {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          transition: transform 0.2s ease-in-out;
-          fill: currentColor; 
-        }
-
-        .social-icons a:hover i,
-        .social-icons a:hover svg {
-          transform: translate(-50%, -50%) scale(1.1);
-        }
-
       </style>
       <div class="social-icons">
         ${icons
           .map((icon) => {
             const titleAttr = icon.title ? ` title="${icon.title}"` : '';
-            let content = '';
 
-            if (icon.faIconClass) {
-              // Render Font Awesome icon
-              content = `<i class="${icon.faIconClass}" aria-hidden="true"></i>`;
-            } else if (icon.svgId) {
-              // Render custom SVG from sprite
-              content = `<svg role="img" aria-labelledby="${icon.svgId}-title">
-                           <title id="${icon.svgId}-title">${icon.title || ''}</title>
-                           <use href="#${icon.svgId}"></use>
-                         </svg>`;
-            } else {
-              console.warn('Icon configuration missing faIconClass or svgId:', icon);
-              return ''; // Skip rendering this icon
+            if (!icon.svgId) {
+              console.warn('Icon configuration is missing:', icon);
+              return '';
             }
 
             return `<a href="${icon.href}" target="${icon.target || '_self'}" aria-label="${
               icon.title
-            }"${titleAttr}>${content}</a>`;
+            }"${titleAttr}><svg class="icon icon-lg icon-fill enable-icon-scale" aria-hidden="true"><use href="#${
+              icon.svgId
+            }"></use></svg></a>`;
           })
           .join('')}
       </div>

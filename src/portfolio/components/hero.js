@@ -9,8 +9,10 @@ class HeroComponent extends HTMLElement {
       <section id="hero" class="hero bg-texture">
         <div id="particles-js"></div>
         <div class="hero-container">
-          <div class="hero-portrait">  
-            <img src="./images/hero-background.svg" loading="lazy" alt="Portrait - photo of Yulia Savinkova." />
+          <div class="hero-portrait">
+            <svg class="icon hero-icon" focusable="false" role="img" aria-label="Portrait - photo of Yulia Savinkova.">
+              <use href="#icon-hero-background"></use>
+            </svg>
           </div>
           <social-icons></social-icons>
           <div class="hero-heading">

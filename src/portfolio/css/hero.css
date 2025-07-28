@@ -33,18 +33,16 @@
   #particles-js {
     display: none;
   }
-  /* .hero {
-    background: none;
-  } */
+
   .hero-portrait {
     display: block;
-    width: 20rem;
+
+    .hero-icon {
+      height: 20rem;
+      width: auto;
+    }
   }
-  .hero-portrait img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+
   .hero-heading h3,
   .hero-heading h4 {
     display: none;

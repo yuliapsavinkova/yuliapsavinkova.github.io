@@ -25,7 +25,7 @@
   --header-size: 4rem;
   --footer-size: 10rem;
   --content-min-height: calc(100vh - var(--header-size) - var(--footer-size));
-  --logo-size: 2.8rem;
+  --logo-size: 3rem;
 
   /* padding */
   --global-padding-sides: 2rem;

@@ -1,0 +1,52 @@
+.logo svg.icon {
+  width: var(--logo-size);
+  height: var(--logo-size);
+}
+
+svg.icon {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: inherit;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+svg.icon-sm {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+svg.icon-md {
+  font-size: 1.5rem;
+}
+svg.icon-lg {
+  font-size: 2rem;
+}
+svg.icon-xl {
+  font-size: 3rem;
+}
+
+/* For fill-based icons like Font Awesome */
+svg.icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* For stroke-based icons like Hero icons */
+svg.icon-stroke {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+svg.enable-icon-scale {
+  transition: transform 0.3s ease;
+}
+
+svg.enable-icon-scale:hover {
+  transform: scale(1.1);
+}
