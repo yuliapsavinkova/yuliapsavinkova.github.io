@@ -90,7 +90,12 @@ export default defineConfig({
       },
     }),
     viteSingleFile(),
-    visualizer({ open: true }),
+    visualizer({
+      filename: 'dist/stats.html', // path to generated report
+      open: true, // automatically opens it after build
+      gzipSize: true,
+      brotliSize: true,
+    }),
     // createHtmlPlugin(),
   ],
 });
