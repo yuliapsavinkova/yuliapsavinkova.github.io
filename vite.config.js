@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite';
+// import { createHtmlPlugin } from 'vite-plugin-html';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
+import { viteSingleFile } from 'vite-plugin-singlefile';
+
 // import imagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
@@ -10,6 +13,9 @@ export default defineConfig({
     rollupOptions: {
       input: 'index.html',
     },
+    // Optional: minify inline CSS/JS
+    minify: 'esbuild',
+    cssCodeSplit: false, // Important: combine all CSS into one file to inline
   },
   server: {
     port: 3001,
@@ -60,14 +66,28 @@ export default defineConfig({
         plugins: [
           {
             name: 'removeViewBox',
-            active: false,
+            active: false, // Keep viewBox for proper scaling
           },
           {
             name: 'removeDimensions',
+            active: true, // Remove width/height attributes
+          },
+          {
+            name: 'removeUselessStrokeAndFill',
+            active: true,
+          },
+          {
+            name: 'removeComments',
+            active: true,
+          },
+          {
+            name: 'removeMetadata',
             active: true,
           },
         ],
       },
     }),
+    // createHtmlPlugin(),
+    viteSingleFile(),
   ],
 });
