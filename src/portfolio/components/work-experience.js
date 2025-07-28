@@ -9,7 +9,8 @@ class WorkExperienceComponent extends HTMLElement {
 
                 <div class="work-experience-container">
                   <div class="work-experience-content">
-                      <h5>Indie Developer & Investor, 2019 - Present</h5>
+                      <h2>Indie Developer & Investor</h2>
+                      <h3>2019 - Present</h3>
                       <ul>
                         <li>Design and develop web applications and websites from scratch.</li>
                         <li>Create custom HTML web components and reusable shared libraries</li>
@@ -24,14 +25,13 @@ class WorkExperienceComponent extends HTMLElement {
                         <span>Node</span>
                         <span>Express</span>
                         <span>PostgreSQL</span>
-                        <span>CSS</span>
-                        <span>HTML</span>
                         <span>Vite</span>
                       </div>
                   </div>
 
                   <div class="work-experience-content">
-                      <h5>Sr. Software Engineer, Bloomberg, New York, NY 2016 - 2019</h5>
+                      <h2>Sr. Software Engineer, Bloomberg, New York, NY</h2>
+                      <h3>2016 - 2019</h3>
                       <ul>
                         <li>Worked on developing bloomberg add-ins for Excel, Word and Outlook.</li>
                         <li>Designed and developed a research management tool.</li>
@@ -49,7 +49,8 @@ class WorkExperienceComponent extends HTMLElement {
                   </div>
 
                   <div class="work-experience-content">
-                      <h5>Sr. UI Developer, Yahoo, San Francisco, CA 2015 - 2016</h5>
+                      <h2>Sr. UI Developer, Yahoo, San Francisco, CA</h2>
+                      <h3>2015 - 2016</h3>
                       <ul>
                         <li>Rebuilt analytics platform UI for new design.</li>
                         <li>Developed new features for the analytics platform.</li>
@@ -67,7 +68,8 @@ class WorkExperienceComponent extends HTMLElement {
                   </div>
 
                   <div class="work-experience-content">
-                      <h5>Sr. JavaScript UI Engineer, MuleSoft, San Francisco, CA 2012 - 2015</h5>
+                      <h2>Sr. JavaScript UI Engineer, MuleSoft, San Francisco, CA</h2>
+                      <h3>2012 - 2015</h3>
                       <ul>
                         <li>Developed UI's for CloudHub and Anypoint Platform.</li>
                         <li>Unified and developed common UI components for all MuleSoft products.</li>
@@ -84,25 +86,6 @@ class WorkExperienceComponent extends HTMLElement {
                       </div>
                   </div>
                 </div>
-
-                <!--<h2>Education</h2>
-                <div class="work-experience-content">
-                    <div class="work-experience-header">
-                      Master of Science in Computer Science, Suffolk University, Boston, MA May, 2011
-                    </div>
-                </div>-->
-
-                <!--<h2>Other</h2>
-                <div class="work-experience-content">
-                    <h5>Instructor, Suffolk University; Boston, MA 2010 - 2011</h5>
-                    <ul>
-                      <li>Teach Pre Calculus course.</li>
-                      <li>Teach Web Development course.</li>
-                    </ul>
-                </div>
-                <div class="work-experience-content">
-                    <h5>Passed CFA Level 1, CFA Institute; December, 2017</h5>
-                </div>-->
               </section>
           `;
   }

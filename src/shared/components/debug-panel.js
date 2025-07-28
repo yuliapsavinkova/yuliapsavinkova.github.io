@@ -91,7 +91,7 @@ class DebugPanelComponent extends HTMLElement {
 
       <div id="debugPanel" class="debug-panel">
         <div class="debug-header">
-          <h6>Debug Panel</h6>
+          <h3>Debug Panel</h3>
           <button class="icon icon-fill close-btn" aria-label="Close Debug Panel">
             <svg focusable="false" aria-hidden="true">
               <use href="#icon-fa-xmark"></use>

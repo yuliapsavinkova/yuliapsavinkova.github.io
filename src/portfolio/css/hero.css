@@ -32,8 +32,7 @@
     }
   }
 
-  .hero-heading h3,
-  .hero-heading h4 {
+  .hero-heading p.large {
     display: none;
   }
 }

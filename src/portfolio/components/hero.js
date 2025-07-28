@@ -16,8 +16,8 @@ class HeroComponent extends HTMLElement {
           <div class="hero-heading">
             <h1>Yulia Savinkova</h1>
             <h2>Software Engineer</h2>
-            <h3>10+ years of experience</h3>
-            <h4>MS in Computer Science</h4>
+            <p class="large">10+ years of experience</p>
+            <p class="large">MS in Computer Science</p>
           </div>
           <div>
             <a href="#/about" class="button button-primary">Learn More</a>

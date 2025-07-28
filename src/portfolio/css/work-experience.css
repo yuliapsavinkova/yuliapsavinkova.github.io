@@ -3,6 +3,11 @@
   flex-direction: column;
   gap: 2rem;
   max-width: 768px;
+
+  h2,
+  h3 {
+    text-align: center;
+  }
 }
 
 .work-experience-content {
@@ -23,12 +28,15 @@
 .work-experience-technologies {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
 
   span {
+    font-size: 0.7rem;
     padding: 0.5rem;
     background-color: var(--white-color);
-    border-radius: 4px;
+    border-radius: 1rem;
     box-shadow: var(--box-shadow);
     color: var(--primary-dark-color);
   }

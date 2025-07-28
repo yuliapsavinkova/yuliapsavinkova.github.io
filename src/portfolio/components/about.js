@@ -11,7 +11,7 @@ class AboutComponent extends HTMLElement {
                 <div class="magic-row">
                     <img src="./images/portrait.png" class="magic-image about-portrait" loading="lazy" alt="Head shot of Yulia Savinkova, a web developer."/>
                     <div class="magic-description">
-                        <h4>Code & Beyond</h4>
+                        <h2>Code & Beyond</h2>
                         <p>I'm a freelance Software Engineer with over a decade of experience building websites and web applications.</p>
                         <p>I create clean, responsive, and user-friendly digital experiences using modern tools and best practices. Whether it's a simple website or a complex web application, I focus on building fast, reliable solutions tailored to each client's needs.</p>
                         <p>Alongside web development, I help traders and finance professionals build custom tools for trading, portfolio management, and market analysis - drawing on my own experience managing a personal portfolio.</p>
