@@ -1,11 +1,7 @@
 import { defineConfig } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
-import { viteSingleFile } from 'vite-plugin-singlefile';
 import { visualizer } from 'rollup-plugin-visualizer';
-
-// import { createHtmlPlugin } from 'vite-plugin-html';
-// import imagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
   base: '/',
@@ -25,25 +21,6 @@ export default defineConfig({
     open: true,
     historyApiFallback: true, // Ensures correct routing for SPA
   },
-  // plugins: [
-  //   imagemin({
-  //     gifsicle: {
-  //       optimizationLevel: 3, // Optimize GIFs
-  //     },
-  //     mozjpeg: {
-  //       quality: 75, // Optimize JPEG
-  //     },
-  //     optipng: {
-  //       optimizationLevel: 5, // Optimize PNG
-  //     },
-  //     svgo: {
-  //       plugins: [
-  //         { name: "removeViewBox", active: false },
-  //         { name: "removeEmptyAttrs", active: false },
-  //       ],
-  //     },
-  //   }),
-  // ],
   plugins: [
     createSvgIconsPlugin({
       // Specify the icon folder to be cached
@@ -89,13 +66,11 @@ export default defineConfig({
         ],
       },
     }),
-    viteSingleFile(),
-    visualizer({
-      filename: 'dist/stats.html', // path to generated report
-      open: true, // automatically opens it after build
-      gzipSize: true,
-      brotliSize: true,
-    }),
-    // createHtmlPlugin(),
+    // visualizer({
+    //   filename: 'dist/stats.html', // path to generated report
+    //   open: true, // automatically opens it after build
+    //   gzipSize: true,
+    //   brotliSize: true,
+    // }),
   ],
 });
