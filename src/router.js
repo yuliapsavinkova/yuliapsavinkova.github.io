@@ -17,8 +17,6 @@ export function renderPage() {
       <contact-component></contact-component>
     `,
     palette: '<palette-component></palette-component>',
-    d3: '<options-chart></options-chart>',
-    portfolio: '<portfolio-chart></portfolio-chart>',
     contact: '<contact-component></contact-component>',
   };
 

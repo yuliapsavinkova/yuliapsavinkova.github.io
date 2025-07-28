@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
 import { viteSingleFile } from 'vite-plugin-singlefile';
+import { visualizer } from 'rollup-plugin-visualizer';
+
 // import { createHtmlPlugin } from 'vite-plugin-html';
 // import imagemin from "vite-plugin-imagemin";
 
@@ -88,6 +90,7 @@ export default defineConfig({
       },
     }),
     viteSingleFile(),
+    visualizer({ open: true }),
     // createHtmlPlugin(),
   ],
 });
