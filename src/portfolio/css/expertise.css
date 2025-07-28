@@ -2,60 +2,75 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  padding: 2rem;
 }
 
 .magic-row {
-  max-width: 1000px;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 
   .magic-image,
   .magic-description {
-    width: 50%;
+    flex: 1 1 0;
+    min-width: 300px;
+    order: 0;
   }
 
-  img {
-    object-fit: cover;
-    border-radius: var(--border-radius);
-  }
-}
-
-.magic-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-
-  .button {
-    width: fit-content;
-    margin-top: 1rem;
-  }
-}
-
-/* 768px too small */
-@media (max-width: 1000px) {
-  .magic-row {
+  .magic-image {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-
-    .magic-description,
-    .magic-image {
-      width: 90%;
-      align-items: center;
-    }
+    height: 100%;
 
     img {
-      order: -1;
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+    }
+  }
+
+  .magic-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 50%;
+
+    .button {
+      width: fit-content;
+      margin-top: 1rem;
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 768px) {
+  .magic-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .magic-image {
+      order: 0;
     }
 
     .magic-description {
-      text-align: center;
-    }
+      order: 1;
+      width: 100%;
+      align-items: center;
 
-    /* TODO: refactor this */
-    .about-portrait {
-      max-width: 20rem;
+      .button {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }
