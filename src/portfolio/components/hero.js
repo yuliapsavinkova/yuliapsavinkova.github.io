@@ -11,7 +11,7 @@ class HeroComponent extends HTMLElement {
         <div class="hero-container">
           <div class="hero-portrait">
             <svg class="icon hero-icon" focusable="false" role="img" aria-label="Portrait - photo of Yulia Savinkova.">
-              <use href="#icon-hero-background"></use>
+              <use href="#icon-custom-hero-background"></use>
             </svg>
           </div>
           <social-icons></social-icons>
