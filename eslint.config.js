@@ -7,10 +7,6 @@ export default [
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: {
-        ...globals.browser,
-        particlesJS: 'readonly', // Mark particlesJS as a global variable
-      },
       sourceType: 'module',
     },
     rules: {

@@ -21,19 +21,8 @@
   text-align: center;
 }
 
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: calc(100dvh - var(--header-size));
-  z-index: -1;
-}
-
 /* Portrait */
 @media (orientation: portrait) {
-  #particles-js {
-    display: none;
-  }
-
   .hero-portrait {
     display: block;
 

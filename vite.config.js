@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite';
-// import { createHtmlPlugin } from 'vite-plugin-html';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
 import { viteSingleFile } from 'vite-plugin-singlefile';
-
+// import { createHtmlPlugin } from 'vite-plugin-html';
 // import imagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
@@ -16,6 +15,7 @@ export default defineConfig({
     // Optional: minify inline CSS/JS
     minify: 'esbuild',
     cssCodeSplit: false, // Important: combine all CSS into one file to inline
+    // sourcemap: true,
   },
   server: {
     port: 3001,
@@ -87,7 +87,7 @@ export default defineConfig({
         ],
       },
     }),
-    // createHtmlPlugin(),
     viteSingleFile(),
+    // createHtmlPlugin(),
   ],
 });
