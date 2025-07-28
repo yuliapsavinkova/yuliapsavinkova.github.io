@@ -39,11 +39,11 @@
     `}}customElements.define("footer-component",x);class V extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
-        <a class="arrow">
-          <svg class="icon icon-fill icon-sm" aria-hidden="true">
+        <div class="arrow">
+          <svg class="icon icon-fill" aria-hidden="true">
             <use href="#icon-fa-angle-up"></use>
           </svg>
-        </a>
+        </div>
       </div>
     `+this.innerHTML,this.progressContainer=document.querySelector("#progress-container"),this.progressRing=document.querySelector("#progress-ring"),this.updateProgress=this.updateProgress.bind(this),this.scrollToTop=this.scrollToTop.bind(this)}connectedCallback(){window.addEventListener("scroll",this.updateProgress),this.progressContainer.addEventListener("click",this.scrollToTop),this.updateProgress()}disconnectedCallback(){window.removeEventListener("scroll",this.updateProgress),this.progressContainer.removeEventListener("click",this.scrollToTop)}updateProgress(){const h=window.scrollY,v=document.documentElement.scrollHeight-window.innerHeight,t=Math.min(h/v*100,100);h>0?this.progressContainer.classList.add("visible"):this.progressContainer.classList.remove("visible"),this.progressRing.style.setProperty("--scroll-progress",`${t}%`)}scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}}customElements.define("scroll-progress-ring",V);const C=[{href:"https://github.com/yuliapsavinkova",target:"_blank",title:"GitHub",svgId:"icon-fa-github"},{href:"https://www.linkedin.com/in/juliia",target:"_blank",title:"LinkedIn",svgId:"icon-fa-linkedin"},{href:"https://codepen.io/star5/pens/public",target:"_blank",title:"CodePen",svgId:"icon-fa-codepen"},{href:"https://codepen.io/star5/pens/public",target:"_blank",title:"Blog",svgId:"icon-fa-blog"}];class E extends HTMLElement{connectedCallback(){let h=[];this.getAttribute("icons")?h=JSON.parse(this.getAttribute("icons")):h=C,this.innerHTML=`
       <style>
@@ -62,7 +62,7 @@
         }
       </style>
       <div class="social-icons">
-        ${h.map(v=>{const t=v.title?` title="${v.title}"`:"";return v.svgId?`<a href="${v.href}" target="${v.target||"_self"}" aria-label="${v.title}"${t}><svg class="icon icon-lg icon-fill enable-icon-scale" aria-hidden="true"><use href="#${v.svgId}"></use></svg></a>`:(console.warn("Icon configuration is missing:",v),"")}).join("")}
+        ${h.map(v=>{const t=v.title?` title="${v.title}"`:"";return v.svgId?`<a href="${v.href}" target="${v.target||"_self"}" aria-label="${v.title}"${t}><svg class="icon icon-fill enable-icon-scale" aria-hidden="true"><use href="#${v.svgId}"></use></svg></a>`:(console.warn("Icon configuration is missing:",v),"")}).join("")}
       </div>
     `}}customElements.define("social-icons",E);class _ extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this),this._closePanel=this._closePanel.bind(this),this._updateWidth=this._updateWidth.bind(this),this._resizeHandler=u.throttle(this._updateWidth,200),this._scrollHandler=u.throttle(this._updateWidth,300)}_updateWidth(){const h=this.querySelector("#debugPanel");if(!h)return;const v=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,t=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;h.querySelector(".debug-size").textContent=`${v} x ${t}`,h.querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(h){document.body.classList.toggle("debug-outline",h.target.checked)}_closePanel(){this.remove()}connectedCallback(){this.innerHTML=`
       <style>
@@ -116,7 +116,7 @@
       <div id="debugPanel" class="debug-panel">
         <div class="debug-header">
           <h6>Debug Panel</h6>
-          <button class="icon icon-sm icon-fill close-btn" aria-label="Close Debug Panel">
+          <button class="icon icon-fill close-btn" aria-label="Close Debug Panel">
             <svg focusable="false" aria-hidden="true">
               <use href="#icon-fa-xmark"></use>
             </svg>
