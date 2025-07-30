@@ -6,7 +6,7 @@
 }
 
 .bg-texture {
-  background-image: radial-gradient(circle, var(--primary-dark-color) 2%, transparent 3%);
+  background-image: radial-gradient(circle, var(--primary-dark-color) 1%, transparent 4%);
   background-size: 1rem 1rem;
   background-repeat: repeat;
 }
@@ -31,7 +31,7 @@
 /* for tablet */
 @media (max-width: 1400px) {
   .bg-working-girl {
-    background-image: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
+    background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
       url('../../images/working-girl-768.jpeg');
     height: 25rem;
     background-attachment: scroll;
@@ -42,7 +42,7 @@
 /* for mobile */
 @media (max-width: 768px) {
   .bg-working-girl {
-    background-image: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
+    background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
       url('../../images/working-girl-768.jpeg');
   }
 }

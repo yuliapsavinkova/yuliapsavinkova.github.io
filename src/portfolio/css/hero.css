@@ -21,6 +21,12 @@
   text-align: center;
 }
 
+.hero-image {
+  background: url('../../images/hero.png') no-repeat bottom right;
+  background-size: contain;
+  background-position: bottom right;
+}
+
 /* Portrait */
 @media (orientation: portrait) {
   .hero-portrait {

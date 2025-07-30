@@ -19,13 +19,13 @@ class ExpertiseFullComponent extends HTMLElement {
                     </div>
                 </div>
                 <div id="work-row-app" class="magic-row">
+                    <div class="magic-image">
+                        <img src="./images/app-dev.png" class="bg-texture" loading="lazy" alt="web-development-image" />            
+                    </div>
                     <div class="magic-description">
                         <h2>App Development</h2>
                         <p>Need a powerful, high-performance web application? I build dynamic, user-friendly apps using cutting-edge frameworks like React and Angular. Whether it's a business tool, an e-commerce platform, or a custom solution, I create fast, scalable, and secure applications designed to elevate your brand and streamline your operations. Let’s bring your vision to life!</p>
                         <a href="#/contact" class="button button-secondary">Get a Quote</a>
-                    </div>
-                    <div class="magic-image">
-                        <img src="./images/app-dev.png" class="bg-texture" loading="lazy" alt="web-development-image" />            
                     </div>
                 </div>
 
