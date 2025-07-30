@@ -6,7 +6,9 @@ class ExpertiseComponent extends HTMLElement {
                 title="My Expertise"
                 sub-title="Transforming Ideas into Code">
             </section-header>
+
             <div class="cards-container">
+
                 <div class="card bg-texture">
                     <img src="./images/web-dev.png" class="card-image" loading="lazy" alt="maintenance-image" />
                     <h2>Web Development</h2>
@@ -17,6 +19,7 @@ class ExpertiseComponent extends HTMLElement {
                       </svg>
                     </a>
                 </div>
+
                 <div class="card bg-texture">
                     <img src="./images/app-dev.png" class="card-image" loading="lazy" alt="web-development-image" />            
                     <h2>App Development</h2>
@@ -27,6 +30,7 @@ class ExpertiseComponent extends HTMLElement {
                       </svg>
                     </a>
                 </div>
+
                 <div class="card bg-texture">
                     <img src="./images/three-d-dev.png" class="card-image" loading="lazy" alt="design-image" />
                     <h2>3D Development</h2>
@@ -37,7 +41,9 @@ class ExpertiseComponent extends HTMLElement {
                       </svg>
                     </a>
                 </div>
+
             </div>
+            
             <a href="#/work" class="button button-secondary">Learn More</a>
         </section>
     `;
