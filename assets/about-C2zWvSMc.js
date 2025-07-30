@@ -7,7 +7,7 @@ class e extends HTMLElement{constructor(){super(),this.innerHTML=`
 
                 <div class="magic-row">
                     <div class="magic-image">
-                        <img src="./images/portrait.png" class="about-portrait" loading="lazy" alt="Head shot of Yulia Savinkova, a web developer."/>
+                        <img src="./images/portrait.png" loading="lazy" alt="Head shot of Yulia Savinkova, a web developer."/>
                     </div>
                     <div class="magic-description">
                         <h2>Code & Beyond</h2>

@@ -70,17 +70,17 @@
         <p class="subtitle large">${h}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",E);async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([s(()=>import("./hero-BBOZcDok.js"),[]),s(()=>import("./expertise-8WQ20N1n.js"),[]),s(()=>import("./about-qRaXZM78.js"),[]),s(()=>import("./process-BBJOrrWN.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",E);async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([s(()=>import("./hero-BBOZcDok.js"),[]),s(()=>import("./expertise-8WQ20N1n.js"),[]),s(()=>import("./about-C2zWvSMc.js"),[]),s(()=>import("./process-BBJOrrWN.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
         <working-process-component></working-process-component>
         <contact-component></contact-component>
-      `;break;case"about":await Promise.all([s(()=>import("./about-qRaXZM78.js"),[]),s(()=>import("./work-experience-C_dWUsnK.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+      `;break;case"about":await Promise.all([s(()=>import("./about-C2zWvSMc.js"),[]),s(()=>import("./work-experience-C_dWUsnK.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <about-component></about-component>
         <work-experience-component></work-experience-component>
         <contact-component></contact-component>
-      `;break;case"work":await Promise.all([s(()=>import("./expertise-full-DV65oj0z.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+      `;break;case"work":await Promise.all([s(()=>import("./expertise-full-C1lTvhrn.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
       `;break;case"palette":await s(()=>import("./palette-vBWljmPN.js"),[]),m.innerHTML="<palette-component></palette-component>";break;case"contact":await s(()=>import("./contact-BKIuB0kO.js"),[]),m.innerHTML="<contact-component></contact-component>";break;default:await s(()=>Promise.resolve().then(()=>b),void 0),m.innerHTML="<error-component></error-component>"}requestAnimationFrame(()=>{if(l){const e=document.getElementById(l);e?e.scrollIntoView({behavior:"smooth"}):window.scrollTo({top:0,behavior:"smooth"})}})}document.addEventListener("DOMContentLoaded",()=>{u(),window.addEventListener("hashchange",u)});document.body.addEventListener("click",z=>{const v=z.target.closest("a[href]");v&&v.getAttribute("href").startsWith("#/")&&(z.preventDefault(),window.location.hash=v.getAttribute("href").slice(1))});
