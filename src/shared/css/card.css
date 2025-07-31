@@ -95,10 +95,6 @@
     gap: 3rem;
     text-align: left;
   }
-  /* Automatic alternating layout for even-numbered cards */
-  .feature-card:nth-child(even) {
-    flex-direction: row-reverse;
-  }
   .feature-card .card-image {
     flex: 2;
     order: unset; /* No longer need to order on desktop */
