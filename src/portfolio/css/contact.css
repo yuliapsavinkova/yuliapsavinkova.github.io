@@ -1,6 +1,7 @@
 .contact-form {
   box-shadow: var(--box-shadow);
   padding: 2rem 4rem;
+  border-radius: var(--border-radius);
 
   button {
     align-self: center;

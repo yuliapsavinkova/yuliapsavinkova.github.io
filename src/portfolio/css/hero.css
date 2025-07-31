@@ -22,9 +22,14 @@
 }
 
 .hero-image {
-  background: url('../../images/hero.png') no-repeat bottom right;
+  /* background: url('../../images/hero.png') no-repeat bottom right;
   background-size: contain;
-  background-position: bottom right;
+  background-position: bottom right; */
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Portrait */
