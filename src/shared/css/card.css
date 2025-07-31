@@ -66,6 +66,10 @@
   margin-top: 1rem;
 }
 
+.card-layout-horizontal .card-image img {
+  min-height: 20rem;
+}
+
 /* --- DESKTOP & HORIZONTAL LAYOUT MODIFIER --- */
 @media (min-width: 48rem) {
   .card.card-layout-horizontal {
@@ -86,9 +90,6 @@
   }
   .card.card-layout-horizontal .card-image {
     flex: 2;
-  }
-  .card.card-layout-horizontal .card-image img {
-    height: auto;
   }
   .card.card-layout-horizontal .card-content {
     flex: 3;
