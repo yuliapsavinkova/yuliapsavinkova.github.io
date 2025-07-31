@@ -7,6 +7,11 @@
 
   box-shadow: var(--box-shadow);
   padding: var(--global-padding-between) var(--global-padding-sides);
+
+  .about-me,
+  .contact-form {
+    width: min(100%, 1000px);
+  }
 }
 
 .section-header {
