@@ -6,7 +6,6 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(
               <use href="#icon-custom-hero-background"></use>
             </svg>
           </div>-->
-          <social-icons></social-icons>
           <div>
             <img src="./images/hero.png" alt="hero image" class="hero-image">
           </div>
@@ -20,6 +19,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate(
             <a href="#/about" class="button button-primary">Learn More</a>
             <a href="#/contact" class="button button-action">Contact</a>
           </div>
+          <!--<social-icons></social-icons>-->
         </div>
       </section>
     `}}customElements.define("hero-component",e);

@@ -83,7 +83,7 @@
         <p class="subtitle large">${h}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",E);async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([n(()=>import("./hero-BzapNBQs.js"),[]),n(()=>import("./expertise-CpubPLVY.js"),[]),n(()=>import("./about-DRrKDrKm.js"),[]),n(()=>import("./process-BBJOrrWN.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",E);async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([n(()=>import("./hero-CSCPSfgw.js"),[]),n(()=>import("./expertise-CpubPLVY.js"),[]),n(()=>import("./about-DRrKDrKm.js"),[]),n(()=>import("./process-BBJOrrWN.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
