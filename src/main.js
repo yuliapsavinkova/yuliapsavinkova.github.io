@@ -7,7 +7,7 @@ import './shared/components/header/header.js';
 import './shared/components/footer/footer.js';
 import './shared/components/progress/progress.js';
 import './shared/components/social-icons.js';
-import './portfolio/components/section-header.js';
+import './shared/components/section-header.js';
 
 // Import router
 import { renderPage } from './router.js';

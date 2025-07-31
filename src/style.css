@@ -18,7 +18,7 @@
 @import './shared/components/progress/progress.css';
 @import './shared/components/palette/palette.css';
 
-@import './portfolio/css/_general.css';
+@import './portfolio/css/layout.css';
 
 @import './portfolio/css/work-experience.css';
 @import './portfolio/css/contact.css';
