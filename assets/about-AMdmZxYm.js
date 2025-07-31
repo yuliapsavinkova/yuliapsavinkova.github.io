@@ -1,15 +1,15 @@
 class e extends HTMLElement{constructor(){super(),this.innerHTML=`
-            <section id="about" class="section about">
+            <section id="about" class="section">
                 <section-header 
                     title="About Me"
                     sub-title="Bringing Ideas to Life">
                 </section-header>
 
-                <div class="magic-row">
-                    <div class="magic-image">
+                <div class="about-me card card-layout-horizontal">
+                    <div class="card-image">
                         <img src="./images/portrait.png" loading="lazy" alt="Head shot of Yulia Savinkova, a web developer."/>
                     </div>
-                    <div class="magic-description">
+                    <div class="card-content">
                         <h2>Code & Beyond</h2>
                         <p>I'm a freelance Software Engineer with over a decade of experience building websites and web applications.</p>
                         <!--<p>I create clean, responsive, and user-friendly digital experiences using modern tools and best practices. Whether it's a simple website or a complex web application, I focus on building fast, reliable solutions tailored to each client's needs.</p>-->
