@@ -5,7 +5,7 @@ class e extends HTMLElement{constructor(){super(),this.innerHTML=`
                     sub-title="Bringing Ideas to Life">
                 </section-header>
 
-                <div class="about-me card card-layout-horizontal">
+                <div class="about-me feature-card">
                     <div class="card-image">
                         <img src="./images/portrait.png" loading="lazy" alt="Head shot of Yulia Savinkova, a web developer."/>
                     </div>

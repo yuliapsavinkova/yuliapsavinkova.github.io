@@ -5,9 +5,9 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                 sub-title="Transforming Ideas into Code">
             </section-header>
 
-            <div class="cards-column-container">
+            <div class="feature-list">
 
-                <div id="work-row-web" class="card card-layout-horizontal">
+                <div id="work-row-web" class="feature-card">
                     <div class="card-content">
                         <h2>Web Development</h2>  
                         <p>Need a sleek, high-performing website to showcase your brand? I specialize in building modern, responsive websites that look great on any device and deliver a seamless user experience. Whether you need a portfolio, business site, or landing page, I provide custom solutions tailored to your needs. With a focus on speed, SEO, and user-friendly design, I’ll help create a site that not only looks amazing but also drives results. Let's work together to make your online presence shine!</p>
@@ -18,7 +18,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                     </div>
                 </div>
 
-                <div id="work-row-app" class="card card-layout-horizontal">
+                <div id="work-row-app" class="feature-card">
                     <div class="card-image">
                         <img src="./images/app-dev.png" class="bg-texture" loading="lazy" alt="web-development-image" />            
                     </div>
@@ -29,7 +29,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                     </div>
                 </div>
 
-                <div id="work-row-3d" class="card card-layout-horizontal">
+                <div id="work-row-3d" class="feature-card">
                     <div class="card-content">
                         <h2>3D Development</h2>  
                         <p>Bring your website to life with stunning 3D experiences! I create interactive, immersive visuals that run smoothly in any modern browser—perfect for showcasing products, engaging users, or adding a unique touch to your site. Whether you need an interactive model, an animated scene, or a full 3D experience, I’ll build a solution that captivates your audience. Let’s make your vision a reality!</p>  

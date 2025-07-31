@@ -5,7 +5,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                 sub-title="Transforming Ideas into Code">
             </section-header>
 
-            <div class="cards-grid-container">
+            <div class="card-grid">
 
                 <div class="card bg-texture">
                     <div class="card-image">
