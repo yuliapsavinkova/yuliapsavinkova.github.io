@@ -83,7 +83,7 @@
         <p class="subtitle large">${h}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",E);async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([n(()=>import("./hero-CSCPSfgw.js"),[]),n(()=>import("./expertise-CpubPLVY.js"),[]),n(()=>import("./about-DRrKDrKm.js"),[]),n(()=>import("./process-BBJOrrWN.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",E);async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([n(()=>import("./hero-CSCPSfgw.js"),[]),n(()=>import("./expertise-Dh1ONKlZ.js"),[]),n(()=>import("./about-DRrKDrKm.js"),[]),n(()=>import("./process-BBJOrrWN.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
@@ -93,7 +93,7 @@
         <about-component></about-component>
         <work-experience-component></work-experience-component>
         <contact-component></contact-component>
-      `;break;case"work":await Promise.all([n(()=>import("./expertise-full-CkKRsPiX.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+      `;break;case"work":await Promise.all([n(()=>import("./expertise-full-C24sPkCy.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
       `;break;case"palette":await n(()=>import("./palette-vBWljmPN.js"),[]),m.innerHTML="<palette-component></palette-component>";break;case"contact":await n(()=>import("./contact-BKIuB0kO.js"),[]),m.innerHTML="<contact-component></contact-component>";break;default:await n(()=>Promise.resolve().then(()=>b),void 0),m.innerHTML="<error-component></error-component>"}requestAnimationFrame(()=>{if(l){const e=document.getElementById(l);e?e.scrollIntoView({behavior:"smooth"}):window.scrollTo({top:0,behavior:"smooth"})}})}document.addEventListener("DOMContentLoaded",()=>{u(),window.addEventListener("hashchange",u)});document.body.addEventListener("click",z=>{const v=z.target.closest("a[href]");v&&v.getAttribute("href").startsWith("#/")&&(z.preventDefault(),window.location.hash=v.getAttribute("href").slice(1))});

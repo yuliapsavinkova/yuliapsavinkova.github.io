@@ -31,6 +31,17 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
 
                 <div id="work-row-3d" class="feature-card">
                     <div class="card-content">
+                        <h2>Financial Tools</h2>  
+                        <p> I build custom tools for traders and investors — including Excel-style portfolio trackers and options strategy visualizers (like payout charts). I use React and D3.js for the frontend, FastAPI for backend logic, and store data in PostgreSQL or Google Sheets.</p>  
+                        <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
+                    </div>
+                    <div class="card-image">
+                        <img src="./images/fin-tools.png" class="bg-texture" loading="lazy" alt="design-image" />
+                    </div>
+                </div>
+
+                <!--<div id="work-row-3d" class="feature-card">
+                    <div class="card-content">
                         <h2>3D Development</h2>  
                         <p>Bring your website to life with stunning 3D experiences! I create interactive, immersive visuals that run smoothly in any modern browser—perfect for showcasing products, engaging users, or adding a unique touch to your site. Whether you need an interactive model, an animated scene, or a full 3D experience, I’ll build a solution that captivates your audience. Let’s make your vision a reality!</p>  
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
@@ -38,7 +49,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                     <div class="card-image">
                         <img src="./images/three-d-dev.png" class="bg-texture" loading="lazy" alt="design-image" />
                     </div>
-                </div>
+                </div>-->
 
             </div>
 
