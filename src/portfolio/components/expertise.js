@@ -7,9 +7,9 @@ class ExpertiseComponent extends HTMLElement {
                 sub-title="Transforming Ideas into Code">
             </section-header>
 
-            <div class="cards-grid-container">
+            <div class="grid-container">
 
-                <div class="card bg-texture">
+                <div class="compact-card bg-texture">
                     <div class="card-image">
                       <img src="./images/web-dev.png" loading="lazy" alt="maintenance-image" />
                     </div>
@@ -24,7 +24,7 @@ class ExpertiseComponent extends HTMLElement {
                     </div>
                 </div>
 
-                <div class="card bg-texture">
+                <div class="compact-card bg-texture">
                     <div class="card-image">
                       <img src="./images/app-dev.png" class="card-image" loading="lazy" alt="web-development-image" />            
                     </div>
@@ -39,7 +39,7 @@ class ExpertiseComponent extends HTMLElement {
                     </div>
                 </div>
 
-                <div class="card bg-texture">
+                <div class="compact-card bg-texture">
                     <div class="card-image">
                       <img src="./images/three-d-dev.png" class="card-image" loading="lazy" alt="design-image" />
                     </div>
