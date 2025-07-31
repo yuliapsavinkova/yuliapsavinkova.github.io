@@ -45,9 +45,9 @@
   align-items: center;
   order: 2;
 }
-.card .card-content .button,
+.feature-card .card-content .button,
 .card .card-content .icon {
-  margin-top: auto;
+  margin-top: 0.5rem;
 }
 
 /* ======================================================= */
