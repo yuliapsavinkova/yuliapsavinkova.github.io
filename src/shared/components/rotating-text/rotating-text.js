@@ -32,7 +32,7 @@ class RotatingText extends HTMLElement {
     try {
       this.titles = JSON.parse(this.getAttribute('data-titles')) || [];
     } catch (e) {
-      console.error('Invalid JSON for data-titles attribute on rotating-text component.');
+      console.error('Invalid JSON for data-titles attribute on rotating-text component:', e);
       this.titles = [];
     }
 

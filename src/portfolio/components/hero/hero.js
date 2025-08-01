@@ -14,8 +14,7 @@ class HeroComponent extends HTMLElement {
             <rotating-text data-titles='[
                 "Software Engineer",
                 "Web Developer",
-                "Frontend Specialist",
-                "UI/UX Enthusiast"
+                "Animal Lover"
             ]'></rotating-text>
           </div>
           <div class="hero-buttons">
