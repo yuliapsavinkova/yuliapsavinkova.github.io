@@ -48,7 +48,7 @@
   }
 
   .nav-link.active {
-    font-weight: bold;
+    font-weight: 700;
     border-bottom: 2px solid var(--accent-light-color);
   }
 }
