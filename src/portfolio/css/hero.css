@@ -22,9 +22,6 @@
 }
 
 .hero-image {
-  /* background: url('../../images/hero.png') no-repeat bottom right;
-  background-size: contain;
-  background-position: bottom right; */
   width: 100%;
   max-width: 40rem;
   height: auto;
@@ -46,4 +43,33 @@
   .hero-heading p.large {
     display: none;
   }
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  color: currentColor;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.rotating-subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  overflow: hidden;
+}
+
+.rotating-subtitle #subtitle,
+.rotating-subtitle .cursor {
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  white-space: pre;
 }
