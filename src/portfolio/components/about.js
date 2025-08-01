@@ -21,7 +21,7 @@ class AboutComponent extends HTMLElement {
                         <p>Outside of work, I enjoy reading, traveling, and spending time with animals.</p>
                         <div>
                             <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
-                            <a href="#/work" class="button button-secondary">Learn More</a>
+                            <a href="#/about" class="button button-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>              

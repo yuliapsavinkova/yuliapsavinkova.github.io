@@ -1,3 +1,14 @@
+// Helper to wait until all custom elements are defined and rendered
+async function waitForElement(selector, timeout = 3000) {
+  const start = performance.now();
+  while (performance.now() - start < timeout) {
+    const el = document.querySelector(selector);
+    if (el) return el;
+    await new Promise((r) => setTimeout(r, 50));
+  }
+  return null;
+}
+
 export async function renderPage() {
   const hash = window.location.hash.slice(2); // Remove `#/`
   const [path, queryString] = hash.split('?');
@@ -5,7 +16,7 @@ export async function renderPage() {
   const sectionId = params.get('section');
   const app = document.querySelector('main');
 
-  // Dynamically import components based on route
+  // Dynamically import and render
   switch (path) {
     case '':
       await Promise.all([
@@ -64,12 +75,16 @@ export async function renderPage() {
   }
 
   // Scroll to section if provided
-  requestAnimationFrame(() => {
-    if (sectionId) {
-      const section = document.getElementById(sectionId);
-      section
-        ? section.scrollIntoView({ behavior: 'smooth' })
-        : window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (sectionId) {
+    const sectionSelector = `#${CSS.escape(sectionId)}`;
+    const section = await waitForElement(sectionSelector);
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

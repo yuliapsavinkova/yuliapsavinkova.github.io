@@ -15,7 +15,7 @@ class ExpertiseComponent extends HTMLElement {
                     </div>
                     <div class="card-content">
                       <h2>Custom Websites</h2>
-                      <p>I build custom websites for portfolios, freelancers, and small businesses</p>
+                      <p>I build custom websites for portfolios, freelancers, and small businesses.</p>
                       <a href="#/work?section=work-row-web" aria-label="Go to Web Development section">
                         <svg class="icon icon-stroke enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
@@ -30,7 +30,7 @@ class ExpertiseComponent extends HTMLElement {
                     </div>
                     <div class="card-content">
                       <h2>Web Applications</h2>
-                      <p>I develop web applications with user logins, forms, and dashboards</p>
+                      <p>I develop web applications with user logins, forms, and dashboards.</p>
                       <a href="#/work?section=work-row-app" aria-label="Go to App Development section">
                         <svg class="icon icon-stroke enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
@@ -45,7 +45,7 @@ class ExpertiseComponent extends HTMLElement {
                     </div>
                     <div class="card-content">
                       <h2>Financial Tools</h2>
-                      <p>I create financial tools that help traders and investors make financial decisions</p>
+                      <p>I create financial tools that help traders and investors make financial decisions.</p>
                       <a href="#/work?section=work-row-app" aria-label="Go to App Development section">
                         <svg class="icon icon-stroke enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
