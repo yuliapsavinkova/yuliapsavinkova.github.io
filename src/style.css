@@ -12,14 +12,4 @@
 @import './shared/css/animations.css';
 @import './shared/css/card.css';
 
-@import './shared/components/404/404.css';
-@import './shared/components/header/header.css';
-@import './shared/components/footer/footer.css';
-@import './shared/components/progress/progress.css';
-@import './shared/components/palette/palette.css';
-
 @import './portfolio/css/layout.css';
-
-@import './portfolio/css/work-experience.css';
-@import './portfolio/css/contact.css';
-@import './portfolio/css/hero.css';

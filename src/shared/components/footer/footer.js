@@ -1,7 +1,9 @@
+import './footer.css';
+import '../../components/social-icons.js';
+
 class FooterComponent extends HTMLElement {
   connectedCallback() {
-    const copyrightName =
-      this.getAttribute("copyright-name") || "All rights reserved.";
+    const copyrightName = this.getAttribute('copyright-name') || 'All rights reserved.';
     const year = new Date().getFullYear(); // Get current year
     this.innerHTML = `
         <footer id="footer" class="footer">
@@ -13,4 +15,4 @@ class FooterComponent extends HTMLElement {
     `;
   }
 }
-customElements.define("footer-component", FooterComponent);
+customElements.define('footer-component', FooterComponent);

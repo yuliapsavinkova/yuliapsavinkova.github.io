@@ -20,11 +20,11 @@ export async function renderPage() {
   switch (path) {
     case '':
       await Promise.all([
-        import('./portfolio/components/hero.js'),
+        import('./portfolio/components/hero/hero.js'),
         import('./portfolio/components/expertise.js'),
         import('./portfolio/components/about.js'),
         import('./portfolio/components/process.js'),
-        import('./portfolio/components/contact.js'),
+        import('./portfolio/components/contact/contact.js'),
       ]);
       app.innerHTML = `
         <hero-component></hero-component>
@@ -38,8 +38,8 @@ export async function renderPage() {
     case 'about':
       await Promise.all([
         import('./portfolio/components/about.js'),
-        import('./portfolio/components/work-experience.js'),
-        import('./portfolio/components/contact.js'),
+        import('./portfolio/components/work-experience/work-experience.js'),
+        import('./portfolio/components/contact/contact.js'),
       ]);
       app.innerHTML = `
         <about-component></about-component>
@@ -51,7 +51,7 @@ export async function renderPage() {
     case 'work':
       await Promise.all([
         import('./portfolio/components/expertise-full.js'),
-        import('./portfolio/components/contact.js'),
+        import('./portfolio/components/contact/contact.js'),
       ]);
       app.innerHTML = `
         <expertise-full-component></expertise-full-component>
@@ -65,7 +65,7 @@ export async function renderPage() {
       break;
 
     case 'contact':
-      await import('./portfolio/components/contact.js');
+      await import('./portfolio/components/contact/contact.js');
       app.innerHTML = `<contact-component></contact-component>`;
       break;
 

@@ -1,3 +1,5 @@
+import './palette.css';
+
 class Palette extends HTMLElement {
   connectedCallback() {
     this.innerHTML = this.getTemplate();

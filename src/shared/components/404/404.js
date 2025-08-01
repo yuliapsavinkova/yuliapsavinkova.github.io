@@ -1,3 +1,5 @@
+import './404.css';
+
 class ErrorComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -9,4 +11,5 @@ class ErrorComponent extends HTMLElement {
       `;
   }
 }
-customElements.define("error-component", ErrorComponent);
+
+customElements.define('error-component', ErrorComponent);

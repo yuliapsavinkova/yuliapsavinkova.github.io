@@ -1,3 +1,4 @@
+import './work-experience.css';
 class WorkExperienceComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `

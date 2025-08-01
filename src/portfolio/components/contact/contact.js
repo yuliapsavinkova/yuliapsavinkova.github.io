@@ -1,3 +1,5 @@
+import './contact.css';
+
 class ContactComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `

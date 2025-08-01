@@ -1,3 +1,4 @@
+import './header.css';
 import { Utils } from '../../js/utils.js';
 
 // TODO: refactor

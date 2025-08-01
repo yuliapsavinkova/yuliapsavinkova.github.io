@@ -1,3 +1,5 @@
+import './progress.css';
+
 class ScrollProgressRing extends HTMLElement {
   constructor() {
     super();
