@@ -7,7 +7,7 @@ class HeroComponent extends HTMLElement {
       <section id="hero" class="hero bg-texture">
         <div class="hero-container">
           <div>
-            <img src="./images/hero.png" alt="hero image" class="hero-image">
+            <img src="./images/hero.png" alt="hero image" class="hero-image" loading="lazy">
           </div>
           <div class="hero-heading">
             <h1>Hello, I'm Yulia</h1>
