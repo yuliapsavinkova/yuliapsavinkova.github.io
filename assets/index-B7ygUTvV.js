@@ -77,7 +77,7 @@
         <p class="subtitle large">${h}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",k);async function C(z,v=3e3){const h=performance.now();for(;performance.now()-h<v;){const e=document.querySelector(z);if(e)return e;await new Promise(l=>setTimeout(l,50))}return null}async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([s(()=>import("./hero-BUzAFNmA.js"),[]),s(()=>import("./expertise-BgilZSjn.js"),[]),s(()=>import("./about-BHjef94g.js"),[]),s(()=>import("./process-BBJOrrWN.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",k);async function C(z,v=3e3){const h=performance.now();for(;performance.now()-h<v;){const e=document.querySelector(z);if(e)return e;await new Promise(l=>setTimeout(l,50))}return null}async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([s(()=>import("./hero-3J0Vpcno.js"),[]),s(()=>import("./expertise-BgilZSjn.js"),[]),s(()=>import("./about-BHjef94g.js"),[]),s(()=>import("./process-BBJOrrWN.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
