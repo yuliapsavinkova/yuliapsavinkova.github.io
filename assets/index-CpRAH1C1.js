@@ -83,13 +83,13 @@
         <p class="subtitle large">${h}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",E);async function T(z,v=3e3){const h=performance.now();for(;performance.now()-h<v;){const e=document.querySelector(z);if(e)return e;await new Promise(l=>setTimeout(l,50))}return null}async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([n(()=>import("./hero-CSCPSfgw.js"),[]),n(()=>import("./expertise-BgilZSjn.js"),[]),n(()=>import("./about-BvxH3aUz.js"),[]),n(()=>import("./process-BBJOrrWN.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",E);async function T(z,v=3e3){const h=performance.now();for(;performance.now()-h<v;){const e=document.querySelector(z);if(e)return e;await new Promise(l=>setTimeout(l,50))}return null}async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([n(()=>import("./hero-CSCPSfgw.js"),[]),n(()=>import("./expertise-BgilZSjn.js"),[]),n(()=>import("./about-BHjef94g.js"),[]),n(()=>import("./process-BBJOrrWN.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
         <working-process-component></working-process-component>
         <contact-component></contact-component>
-      `;break;case"about":await Promise.all([n(()=>import("./about-BvxH3aUz.js"),[]),n(()=>import("./work-experience-C_dWUsnK.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+      `;break;case"about":await Promise.all([n(()=>import("./about-BHjef94g.js"),[]),n(()=>import("./work-experience-C_dWUsnK.js"),[]),n(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <about-component></about-component>
         <work-experience-component></work-experience-component>
         <contact-component></contact-component>
