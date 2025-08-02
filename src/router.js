@@ -25,6 +25,7 @@ export async function renderPage() {
         import('./components/about.js'),
         import('./components/process.js'),
         import('./components/contact/contact.js'),
+        import('./components/footer.js'),
       ]);
       app.innerHTML = `
         <hero-component></hero-component>
@@ -32,6 +33,7 @@ export async function renderPage() {
         <about-component></about-component>
         <working-process-component></working-process-component>
         <contact-component></contact-component>
+        <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;
       break;
 
@@ -40,11 +42,13 @@ export async function renderPage() {
         import('./components/about.js'),
         import('./components/work-experience/work-experience.js'),
         import('./components/contact/contact.js'),
+        import('./components/footer.js'),
       ]);
       app.innerHTML = `
         <about-component></about-component>
         <work-experience-component></work-experience-component>
         <contact-component></contact-component>
+        <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;
       break;
 
@@ -52,26 +56,43 @@ export async function renderPage() {
       await Promise.all([
         import('./components/expertise-full.js'),
         import('./components/contact/contact.js'),
+        import('./components/footer.js'),
       ]);
       app.innerHTML = `
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
+        <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;
       break;
 
     case 'palette':
-      await import('./components/palette/palette.js');
-      app.innerHTML = `<palette-component></palette-component>`;
+      await Promise.all([
+        import('./components/palette/palette.js'),
+        import('./components/footer.js'),
+      ]);
+      app.innerHTML = `
+        <palette-component></palette-component>
+        <footer-component copyright-name="Yulia Savinkova"></footer-component>
+      `;
       break;
 
     case 'contact':
-      await import('./components/contact/contact.js');
-      app.innerHTML = `<contact-component></contact-component>`;
+      await Promise.all([
+        import('./components/contact/contact.js'),
+        import('./components/footer.js'),
+      ]);
+      app.innerHTML = `
+        <contact-component></contact-component>
+        <footer-component copyright-name="Yulia Savinkova"></footer-component>
+      `;
       break;
 
     default:
-      await import('./components/404/404.js');
-      app.innerHTML = `<error-component></error-component>`;
+      await Promise.all([import('./components/404/404.js'), import('./components/footer.js')]);
+      app.innerHTML = `
+        <error-component></error-component>
+        <footer-component copyright-name="Yulia Savinkova"></footer-component>
+      `;
   }
 
   // Scroll to section if provided

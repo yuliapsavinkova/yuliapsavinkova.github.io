@@ -24,7 +24,6 @@
   /* sizes */
   --header-size: 4rem;
   --footer-size: 10rem;
-  --content-min-height: calc(100dvh - var(--header-size) - var(--footer-size));
   --logo-size: 3rem;
 
   /* padding */
