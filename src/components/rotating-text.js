@@ -27,6 +27,8 @@ class RotatingText extends HTMLElement {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 2.5rem;
+            min-width: 30ch;
           }
           .typewriter-text,
           .cursor {
