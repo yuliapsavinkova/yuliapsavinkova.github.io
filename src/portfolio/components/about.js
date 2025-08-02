@@ -10,7 +10,7 @@ class AboutComponent extends HTMLElement {
 
                 <div class="about-me feature-card">
                     <div class="card-image">
-                        <img src="./images/portrait.png" loading="lazy" alt="Head shot of Yulia Savinkova, a web developer."/>
+                        <img src="./images/portrait.webp" loading="lazy" alt="Head shot of Yulia Savinkova, a web developer."/>
                     </div>
                     <div class="card-content">
                         <h2>Code & Beyond</h2>
