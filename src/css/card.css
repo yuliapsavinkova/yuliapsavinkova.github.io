@@ -9,7 +9,7 @@
   width: min(100%, 1200px);
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: var(--global-padding-between);
 }
 
 /* ======================================================= */

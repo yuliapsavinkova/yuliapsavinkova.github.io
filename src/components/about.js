@@ -2,7 +2,7 @@ class AboutComponent extends HTMLElement {
   constructor() {
     super();
     this.innerHTML = `
-            <section id="about" class="section">
+            <section id="about">
                 <section-header 
                     title="About Me"
                     sub-title="Bringing Ideas to Life">

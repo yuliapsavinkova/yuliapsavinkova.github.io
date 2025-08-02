@@ -1,4 +1,8 @@
-.section {
+main {
+  min-height: var(--content-min-height);
+}
+
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;

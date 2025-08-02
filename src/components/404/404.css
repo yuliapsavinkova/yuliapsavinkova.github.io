@@ -1,7 +1,9 @@
 .error-page {
   height: var(--content-min-height);
+  padding: var(--global-padding-sides);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }

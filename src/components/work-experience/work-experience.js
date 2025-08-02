@@ -2,7 +2,7 @@ import './work-experience.css';
 class WorkExperienceComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-              <section id="work-experience" class="section work-experience">
+              <section id="work-experience" class="work-experience">
                 <section-header 
                     title="Work Experience"
                     sub-title="A Journey of Growth">

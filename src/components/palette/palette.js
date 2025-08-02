@@ -7,7 +7,7 @@ class Palette extends HTMLElement {
 
   getTemplate() {
     return `
-        <section id="palette" class="palette squares-bg">
+        <section id="palette" class="palette">
             <div class="palette-colors">
                 <h1>Colors</h1>
                 <div class="circle primary-dark-circle"></div>

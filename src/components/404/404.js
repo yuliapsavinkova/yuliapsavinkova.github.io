@@ -2,14 +2,19 @@ import './404.css';
 
 class ErrorComponent extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
-        <div class="error-page">
-            <h2>404 - Page Not Found</h2>
-            <p>The page you are looking for does not exist.</p>
-            <p>To return to home page, <a href="/#">click here</a>.</p>
+    this.innerHTML = this.getTemplate();
+  }
+
+  getTemplate() {
+    return `
+      <section id="error-page" class="error-page">
+        <div>
+          <h1>404 - Page Not Found</h1>
+          <p class="large">The page you are looking for does not exist.</p>
+          <p class="large">To return to home page, <a href="/#">click here</a>.</p>
         </div>
-      `;
+      </section>
+    `;
   }
 }
-
 customElements.define('error-component', ErrorComponent);

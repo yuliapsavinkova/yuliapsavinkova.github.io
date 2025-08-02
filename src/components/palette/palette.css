@@ -1,15 +1,15 @@
 .palette {
   height: var(--content-min-height);
-  padding: var(--global-padding-sides);
-}
-.squares-bg {
   background: linear-gradient(90deg, #c3d1e5 1px, transparent 1px),
     linear-gradient(#c3d1e5 1px, transparent 1px), #f0f0f0;
   background-size: 1rem 1rem;
 }
-.palette div {
-  padding-bottom: var(--global-padding-between);
+
+.palette-colors,
+.palette-buttons {
+  width: min(100%, 1000px);
 }
+
 .circle {
   display: inline-flex;
   border-radius: 50%;

@@ -40,10 +40,6 @@
   --box-shadow-darker: 0 -5px 5rem var(--box-shadow-color);
 }
 
-main {
-  min-height: var(--content-min-height);
-}
-
 @media (max-width: 768px) {
   :root {
     --global-padding-sides: 1rem;
