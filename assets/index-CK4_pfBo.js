@@ -77,17 +77,17 @@
         <p class="subtitle large">${v}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",P);async function x(m,h=3e3){const v=performance.now();for(;performance.now()-v<h;){const e=document.querySelector(m);if(e)return e;await new Promise(l=>setTimeout(l,50))}return null}async function f(){const m=window.location.hash.slice(2),[h,v]=m.split("?"),l=new URLSearchParams(v).get("section"),z=document.querySelector("main");switch(h){case"":await Promise.all([s(()=>import("./hero-CjpnQKHe.js"),[]),s(()=>import("./expertise-wiztlpfK.js"),[]),s(()=>import("./about-DNTsJG5F.js"),[]),s(()=>import("./process-BgRZauYn.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),z.innerHTML=`
+    `}}customElements.define("section-header",P);async function x(m,h=3e3){const v=performance.now();for(;performance.now()-v<h;){const e=document.querySelector(m);if(e)return e;await new Promise(l=>setTimeout(l,50))}return null}async function f(){const m=window.location.hash.slice(2),[h,v]=m.split("?"),l=new URLSearchParams(v).get("section"),z=document.querySelector("main");switch(h){case"":await Promise.all([s(()=>import("./hero-CjpnQKHe.js"),[]),s(()=>import("./expertise-ZmTQA4Oo.js"),[]),s(()=>import("./about-Cl14EsJa.js"),[]),s(()=>import("./process-BpDnGVbE.js"),[]),s(()=>import("./contact-CGamQLAB.js"),[])]),z.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
         <working-process-component></working-process-component>
         <contact-component></contact-component>
-      `;break;case"about":await Promise.all([s(()=>import("./about-DNTsJG5F.js"),[]),s(()=>import("./work-experience-C_dWUsnK.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),z.innerHTML=`
+      `;break;case"about":await Promise.all([s(()=>import("./about-Cl14EsJa.js"),[]),s(()=>import("./work-experience-JqKe5h0T.js"),[]),s(()=>import("./contact-CGamQLAB.js"),[])]),z.innerHTML=`
         <about-component></about-component>
         <work-experience-component></work-experience-component>
         <contact-component></contact-component>
-      `;break;case"work":await Promise.all([s(()=>import("./expertise-full-Cn2geGh1.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),z.innerHTML=`
+      `;break;case"work":await Promise.all([s(()=>import("./expertise-full-C8EiztWJ.js"),[]),s(()=>import("./contact-CGamQLAB.js"),[])]),z.innerHTML=`
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
-      `;break;case"palette":await s(()=>import("./palette-vBWljmPN.js"),[]),z.innerHTML="<palette-component></palette-component>";break;case"contact":await s(()=>import("./contact-BKIuB0kO.js"),[]),z.innerHTML="<contact-component></contact-component>";break;default:await s(()=>import("./404-vn9eVRTm.js"),[]),z.innerHTML="<error-component></error-component>"}if(l){const t=`#${CSS.escape(l)}`,o=await x(t);o?o.scrollIntoView({behavior:"smooth"}):window.scrollTo({top:0,behavior:"smooth"})}else window.scrollTo({top:0,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",()=>{f(),window.addEventListener("hashchange",f)});document.body.addEventListener("click",m=>{const h=m.target.closest("a[href]");h&&h.getAttribute("href").startsWith("#/")&&(m.preventDefault(),window.location.hash=h.getAttribute("href").slice(1))});
+      `;break;case"palette":await s(()=>import("./palette-Bhcmir4U.js"),[]),z.innerHTML="<palette-component></palette-component>";break;case"contact":await s(()=>import("./contact-CGamQLAB.js"),[]),z.innerHTML="<contact-component></contact-component>";break;default:await s(()=>import("./404-CCsRiY0Q.js"),[]),z.innerHTML="<error-component></error-component>"}if(l){const t=`#${CSS.escape(l)}`,o=await x(t);o?o.scrollIntoView({behavior:"smooth"}):window.scrollTo({top:0,behavior:"smooth"})}else window.scrollTo({top:0,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",()=>{f(),window.addEventListener("hashchange",f)});document.body.addEventListener("click",m=>{const h=m.target.closest("a[href]");h&&h.getAttribute("href").startsWith("#/")&&(m.preventDefault(),window.location.hash=h.getAttribute("href").slice(1))});

@@ -1,5 +1,5 @@
 class e extends HTMLElement{connectedCallback(){this.innerHTML=`
-            <section id="contact" class="section contact">
+            <section id="contact" class="contact">
                 <section-header 
                     title="Stay In Touch"
                     sub-title="Available for On-Site Travel">

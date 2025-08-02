@@ -1,5 +1,5 @@
 class e extends HTMLElement{connectedCallback(){this.innerHTML=`
-        <section id="expertise" class="section">
+        <section id="expertise">
             <section-header 
                 title="My Expertise"
                 sub-title="Transforming Ideas into Code">

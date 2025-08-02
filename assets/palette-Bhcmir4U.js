@@ -1,5 +1,5 @@
 class t extends HTMLElement{connectedCallback(){this.innerHTML=this.getTemplate()}getTemplate(){return`
-        <section id="palette" class="palette squares-bg">
+        <section id="palette" class="palette">
             <div class="palette-colors">
                 <h1>Colors</h1>
                 <div class="circle primary-dark-circle"></div>
