@@ -1,4 +1,4 @@
-import { Utils } from '../js/utils.js';
+import { Utils } from '../utils.js';
 
 class DebugPanelComponent extends HTMLElement {
   constructor() {

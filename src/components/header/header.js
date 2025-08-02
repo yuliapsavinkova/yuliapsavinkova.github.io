@@ -1,5 +1,5 @@
 import './header.css';
-import { Utils } from '../../js/utils.js';
+import { Utils } from '../../utils.js';
 
 // TODO: refactor
 class HeaderComponent extends HTMLElement {

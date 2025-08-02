@@ -1,14 +1,28 @@
-// Need this for svg sprite icons to be added to html
+/* Fonts */
+import './assets/fonts/montserrat-v29-latin/fonts-montserrat.css';
+/* Shared CSS */
+import './css/reset.css';
+import './css/utils.css';
+import './css/reusable-classes.css';
+import './css/variables.css';
+import './css/colors.css';
+import './css/buttons.css';
+import './css/icons.css';
+import './css/typography.css';
+import './css/animations.css';
+import './css/card.css';
+import './css/layout.css';
+/* Svg sprite icons */
 import 'virtual:svg-icons-register';
-
-import './shared/components/header/header.js';
-import './shared/components/footer/footer.js';
-import './shared/components/progress/progress.js';
-import './shared/components/section-header.js';
+/* Components */
+import './components/header/header.js';
+import './components/footer/footer.js';
+import './components/progress/progress.js';
+import './components/section-header.js';
 
 // Import router
 import { renderPage } from './router.js';
-
+// Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
   renderPage();
   window.addEventListener('hashchange', renderPage);
@@ -25,7 +39,7 @@ document.body.addEventListener('click', (event) => {
 // Debug mode
 if (import.meta.env.VITE_ENVIRONMENT) {
   (async () => {
-    await import('./shared/components/debug-panel.js');
+    await import('./components/debug-panel.js');
     console.log('Debug mode active!');
     document.getElementById('debug-panel').innerHTML =
       '<debug-panel-component></debug-panel-component>';

@@ -20,19 +20,3 @@ export const Utils = {
     };
   },
 };
-
-// Usage examples
-//   window.addEventListener(
-//     'resize',
-//     Utils.throttle(() => {
-//       console.log('Throttled resize event');
-//     }, 200)
-//   );
-
-//   const inputField = document.getElementById('input');
-//   inputField.addEventListener(
-//     'input',
-//     Utils.debounce((e) => {
-//       console.log('Debounced input:', e.target.value);
-//     }, 300)
-//   );
