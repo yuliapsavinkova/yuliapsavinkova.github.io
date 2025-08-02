@@ -1,6 +1,6 @@
 :root {
   /* colors */
-  --primary-dark-color: hsl(221, 49%, 35%);
+  --primary-dark-color: hsl(221, 45%, 32%);
   --primary-light-color: hsl(217, 43%, 93%);
   --primary-light-color-10: hsla(217, 43%, 93%, 0.1);
 
@@ -13,7 +13,7 @@
   --neutral-dark-color: hsl(10, 82%, 86%);
   --neutral-light-color: hsl(20, 100%, 98%);
 
-  --accent-dark-color: hsl(3, 78%, 30%);
+  --accent-dark-color: hsl(3, 71%, 50%);
   --accent-light-color: hsl(357, 80%, 52%);
 
   --text-color: hsl(217, 17%, 47%);
