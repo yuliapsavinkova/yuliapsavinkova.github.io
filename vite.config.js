@@ -9,9 +9,6 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: 'index.html',
-      output: {
-        assetFileNames: 'assets/[name][extname]', // No hash
-      },
     },
     // Optional: minify inline CSS/JS
     minify: 'esbuild',

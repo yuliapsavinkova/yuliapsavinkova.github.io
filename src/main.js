@@ -1,5 +1,3 @@
-/* Fonts */
-import './assets/fonts/montserrat-v29-latin/fonts-montserrat.css';
 /* Shared CSS */
 import './css/reset.css';
 import './css/utils.css';
