@@ -66,7 +66,7 @@
           justify-content: center;
           align-items: center;
           gap: 2rem;
-
+          
           .subtitle {
             text-align: center;
           }
