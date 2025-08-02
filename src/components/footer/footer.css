@@ -1,5 +1,5 @@
 .footer {
-  height: var(--footer-size);
+  min-height: var(--footer-size);
   padding: var(--global-padding-sides);
 
   display: flex;

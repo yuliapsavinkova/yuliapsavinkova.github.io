@@ -2,7 +2,8 @@
 html {
   font-size: clamp(15px, 2vw, 18px); /* standard between 14px and 18px */
   font-style: regular;
-  font-family: 'Montserrat', system-ui, sans-serif;
+  font-family: 'Montserrat', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-size-adjust: 0.5;
 }
 
 /* Headings */
