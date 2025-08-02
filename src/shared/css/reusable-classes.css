@@ -19,7 +19,7 @@
 
 .bg-working-girl {
   background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
-    url('../../images/working-girl-1280.jpeg');
+    url('../../images/working-girl-1280.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
