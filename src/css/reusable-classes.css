@@ -19,7 +19,7 @@
 
 .working-process {
   background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
-    url('../../images/originals/working-girl-1280.jpeg');
+    url('../../images/working-girl-1280.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -34,7 +34,7 @@
 
 /* FOR TABLET AND MOBILE */
 @media (max-width: 1400px) {
-  .bg-working-girl {
+  .working-process {
     background-attachment: scroll;
     background-position: left center;
   }
