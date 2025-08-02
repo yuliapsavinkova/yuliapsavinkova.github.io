@@ -42,6 +42,7 @@ class SocialIcons extends HTMLElement {
           display: flex;
           width: fit-content;
           gap: 2rem;
+          height: 2rem;
         }
 
         .social-icons a {

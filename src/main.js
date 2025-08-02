@@ -18,7 +18,7 @@ import './css/layout.css';
 import 'virtual:svg-icons-register';
 /* Components */
 import './components/header/header.js';
-import './components/footer/footer.js';
+import './components/footer.js';
 import './components/progress/progress.js';
 import './components/section-header.js';
 
