@@ -8,8 +8,6 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 2rem;
-            min-width: 20ch;
           }
           .typewriter-text,
           .cursor {

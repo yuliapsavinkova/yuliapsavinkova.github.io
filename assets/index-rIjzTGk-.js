@@ -51,7 +51,7 @@
         <p class="subtitle large">${v}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",C);async function P(z,h=3e3){const v=performance.now();for(;performance.now()-v<h;){const t=document.querySelector(z);if(t)return t;await new Promise(l=>setTimeout(l,50))}return null}async function L(){const z=window.location.hash.slice(2),[h,v]=z.split("?"),l=new URLSearchParams(v).get("section"),m=document.querySelector("main");switch(h){case"":await Promise.all([o(()=>import("./hero-B2Ay-DMF.js"),[]),o(()=>import("./expertise-ZmTQA4Oo.js"),[]),o(()=>import("./about-Cl14EsJa.js"),[]),o(()=>import("./process-BpDnGVbE.js"),[]),o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-tOLlJUG8.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",C);async function P(z,h=3e3){const v=performance.now();for(;performance.now()-v<h;){const t=document.querySelector(z);if(t)return t;await new Promise(l=>setTimeout(l,50))}return null}async function L(){const z=window.location.hash.slice(2),[h,v]=z.split("?"),l=new URLSearchParams(v).get("section"),m=document.querySelector("main");switch(h){case"":await Promise.all([o(()=>import("./hero-DSYqzQFK.js"),[]),o(()=>import("./expertise-ZmTQA4Oo.js"),[]),o(()=>import("./about-Cl14EsJa.js"),[]),o(()=>import("./process-BpDnGVbE.js"),[]),o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-tOLlJUG8.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
