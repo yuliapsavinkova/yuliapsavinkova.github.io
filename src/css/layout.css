@@ -1,5 +1,5 @@
 main {
-  min-height: var(--content-min-height);
+  min-height: calc(100dvh - var(--header-size));
 }
 
 section {

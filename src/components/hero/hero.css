@@ -1,5 +1,6 @@
 .hero {
   width: 100%;
+  min-width: 20rem;
   height: calc(100dvh - var(--header-size));
   display: flex;
   justify-content: center;
@@ -21,4 +22,6 @@
   width: 100%;
   max-width: 40rem;
   height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
 }

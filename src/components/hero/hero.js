@@ -9,8 +9,6 @@ class HeroComponent extends HTMLElement {
           <div>
             <img
               src="./images/hero-small.webp"
-              width="600"
-              height="300"
               alt="hero image"
               class="hero-image"
               fetchpriority="high"
