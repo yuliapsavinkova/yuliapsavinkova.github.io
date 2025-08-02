@@ -1,3 +1,6 @@
+/* Fonts */
+import './preload-fonts.js';
+import './css/fonts.css';
 /* Shared CSS */
 import './css/reset.css';
 import './css/utils.css';
