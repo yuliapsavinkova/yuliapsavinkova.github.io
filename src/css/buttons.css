@@ -62,8 +62,8 @@
 
 .button-action {
   color: var(--white-color);
-  background-color: var(--accent-light-color);
-  border-color: var(--accent-light-color);
+  background-color: var(--accent-dark-color);
+  border-color: var(--accent-dark-color);
   padding: var(--button-padding);
   font-size: var(--button-font-size);
 }
