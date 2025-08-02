@@ -8,7 +8,7 @@ class HeroComponent extends HTMLElement {
         <div class="hero-container">
           <div>
             <img
-              src="./images/hero.png"
+              src="./images/hero-small.png"
               alt="hero image"
               class="hero-image"
               fetchpriority="high"
