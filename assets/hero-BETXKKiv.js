@@ -8,7 +8,7 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
         <div class="hero-container">
           <div>
             <img
-              src="./images/hero.png"
+              src="./images/hero-small.png"
               alt="hero image"
               class="hero-image"
               fetchpriority="high"
