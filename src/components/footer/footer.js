@@ -9,7 +9,7 @@ class FooterComponent extends HTMLElement {
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
-                <p>&copy; ${year} ${copyrightName}</p>
+                <p class="large">&copy; ${year} ${copyrightName}</p>
             </div>
         </footer>
     `;

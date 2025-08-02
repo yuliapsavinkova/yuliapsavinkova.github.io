@@ -1,6 +1,6 @@
 .footer {
-  min-height: var(--footer-size);
-  padding: var(--global-padding-sides);
+  height: var(--footer-size);
+  min-width: 16rem;
 
   display: flex;
   flex-direction: column;
