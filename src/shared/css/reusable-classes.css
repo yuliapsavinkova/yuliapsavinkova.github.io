@@ -20,13 +20,16 @@
 .working-process {
   background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
     url('../../images/working-girl-1280.webp');
-  color: var(--white-color);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   height: 25rem;
   width: auto;
+
+  * {
+    color: var(--white-color);
+  }
 }
 
 /* FOR TABLET AND MOBILE */
