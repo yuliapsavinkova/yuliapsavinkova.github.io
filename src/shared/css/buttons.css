@@ -1,7 +1,8 @@
 :root {
   --button-transition: all 0.15s ease-in-out;
   --button-padding: 0.5rem 1rem;
-  --outline-color: var(--primary-dark-color-80);
+  --button-outline-color: var(--primary-dark-color-80);
+  --button-font-size: 1rem;
 }
 
 .button {
@@ -36,7 +37,7 @@
 }
 
 .button-primary:focus-visible {
-  outline: 2px solid var(--outline-color);
+  outline: 2px solid var(--button-outline-color);
 }
 
 .button-secondary {
@@ -56,7 +57,7 @@
 }
 
 .button-secondary:focus-visible {
-  outline: 2px solid var(--outline-color);
+  outline: 2px solid var(--button-outline-color);
 }
 
 .button-action {
@@ -78,7 +79,7 @@
 }
 
 .button-action:focus-visible {
-  outline: 3px solid var(--outline-color);
+  outline: 3px solid var(--button-outline-color);
 }
 
 .button-tertiary {
@@ -98,7 +99,7 @@
 }
 
 .button-tertiary:focus-visible {
-  outline: 2px solid var(--outline-color);
+  outline: 2px solid var(--button-outline-color);
 }
 
 .button-link {
@@ -115,5 +116,5 @@
 }
 
 .button-link:focus-visible {
-  outline: 2px solid var(--outline-color);
+  outline: 2px solid var(--button-outline-color);
 }
