@@ -14,13 +14,13 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
-                        <img src="./images/web-dev.png" class="bg-texture" loading="lazy" alt="maintenance-image" />
+                        <img src="./images/web-dev.webp" class="bg-texture" loading="lazy" alt="maintenance-image" />
                     </div>
                 </div>
 
                 <div id="work-row-app" class="feature-card">
                     <div class="card-image">
-                        <img src="./images/app-dev.png" class="bg-texture" loading="lazy" alt="web-development-image" />            
+                        <img src="./images/app-dev.webp" class="bg-texture" loading="lazy" alt="web-development-image" />            
                     </div>
                     <div class="card-content">
                         <h2>App Development</h2>
@@ -36,7 +36,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
-                        <img src="./images/fin-tools.png" class="bg-texture" loading="lazy" alt="design-image" />
+                        <img src="./images/fin-tools.webp" class="bg-texture" loading="lazy" alt="design-image" />
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
-                        <img src="./images/three-d-dev.png" class="bg-texture" loading="lazy" alt="design-image" />
+                        <img src="./images/three-d-dev.webp" class="bg-texture" loading="lazy" alt="design-image" />
                     </div>
                 </div>-->
 

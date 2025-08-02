@@ -77,7 +77,7 @@
         <p class="subtitle large">${h}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",k);async function C(z,v=3e3){const h=performance.now();for(;performance.now()-h<v;){const e=document.querySelector(z);if(e)return e;await new Promise(l=>setTimeout(l,50))}return null}async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([s(()=>import("./hero-BETXKKiv.js"),[]),s(()=>import("./expertise-BgilZSjn.js"),[]),s(()=>import("./about-DNTsJG5F.js"),[]),s(()=>import("./process-BBJOrrWN.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",k);async function C(z,v=3e3){const h=performance.now();for(;performance.now()-h<v;){const e=document.querySelector(z);if(e)return e;await new Promise(l=>setTimeout(l,50))}return null}async function u(){const z=window.location.hash.slice(2),[v,h]=z.split("?"),l=new URLSearchParams(h).get("section"),m=document.querySelector("main");switch(v){case"":await Promise.all([s(()=>import("./hero-CjpnQKHe.js"),[]),s(()=>import("./expertise-wiztlpfK.js"),[]),s(()=>import("./about-DNTsJG5F.js"),[]),s(()=>import("./process-BBJOrrWN.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
@@ -87,7 +87,7 @@
         <about-component></about-component>
         <work-experience-component></work-experience-component>
         <contact-component></contact-component>
-      `;break;case"work":await Promise.all([s(()=>import("./expertise-full-C24sPkCy.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
+      `;break;case"work":await Promise.all([s(()=>import("./expertise-full-Cn2geGh1.js"),[]),s(()=>import("./contact-BKIuB0kO.js"),[])]),m.innerHTML=`
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
       `;break;case"palette":await s(()=>import("./palette-vBWljmPN.js"),[]),m.innerHTML="<palette-component></palette-component>";break;case"contact":await s(()=>import("./contact-BKIuB0kO.js"),[]),m.innerHTML="<contact-component></contact-component>";break;default:await s(()=>import("./404-vn9eVRTm.js"),[]),m.innerHTML="<error-component></error-component>"}if(l){const t=`#${CSS.escape(l)}`,o=await C(t);o?o.scrollIntoView({behavior:"smooth"}):window.scrollTo({top:0,behavior:"smooth"})}else window.scrollTo({top:0,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",()=>{u(),window.addEventListener("hashchange",u)});document.body.addEventListener("click",z=>{const v=z.target.closest("a[href]");v&&v.getAttribute("href").startsWith("#/")&&(z.preventDefault(),window.location.hash=v.getAttribute("href").slice(1))});
