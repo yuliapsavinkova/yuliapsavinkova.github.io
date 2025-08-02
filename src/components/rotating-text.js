@@ -1,5 +1,3 @@
-import './rotating-text.css';
-
 class RotatingText extends HTMLElement {
   constructor() {
     super();
@@ -20,6 +18,38 @@ class RotatingText extends HTMLElement {
 
   render() {
     this.innerHTML = `
+        <style>
+          rotating-text {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .typewriter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2rem;
+            min-width: 20ch;
+          }
+          .typewriter-text,
+          .cursor {
+            white-space: pre;
+            font-size: 1.75rem;
+            font-weight: 500;
+            letter-spacing: 0em;
+            line-height: 1.3;
+            color: var(--primary-dark-color);
+          }
+
+          .cursor {
+            display: inline-block;
+            animation: blink 1s step-end infinite;
+          }
+          @keyframes blink {
+            50% {
+              opacity: 0;
+            }
+          }
+        </style>
         <div class="typewriter-container">
             <span class="typewriter-text"></span>
             <span class="cursor">|</span>

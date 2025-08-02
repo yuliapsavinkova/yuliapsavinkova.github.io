@@ -4,16 +4,17 @@ import './preload-fonts.js';
 
 /* Shared CSS */
 import './css/reset.css';
-import './css/utils.css';
-import './css/reusable-classes.css';
 import './css/variables.css';
+import './css/typography.css';
+import './css/layout.css';
 import './css/colors.css';
 import './css/buttons.css';
 import './css/icons.css';
-import './css/typography.css';
+
+import './css/utils.css';
+import './css/reusable-classes.css';
 import './css/animations.css';
 import './css/card.css';
-import './css/layout.css';
 /* Svg sprite icons */
 import 'virtual:svg-icons-register';
 /* Components */

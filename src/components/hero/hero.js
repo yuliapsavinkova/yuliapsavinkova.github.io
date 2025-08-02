@@ -1,5 +1,5 @@
 import './hero.css';
-import '../rotating-text/rotating-text.js';
+import '../rotating-text.js';
 
 class HeroComponent extends HTMLElement {
   connectedCallback() {
