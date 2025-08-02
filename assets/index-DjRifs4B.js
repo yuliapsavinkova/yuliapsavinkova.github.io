@@ -46,7 +46,7 @@
         <footer id="footer" class="footer">
             <social-icons></social-icons>
             <div class="footer-copyright">
-                <p>&copy; ${v} ${h}</p>
+                <p class="large">&copy; ${v} ${h}</p>
             </div>
         </footer>
     `}}customElements.define("footer-component",I);class T extends HTMLElement{constructor(){super(),this.innerHTML=`
