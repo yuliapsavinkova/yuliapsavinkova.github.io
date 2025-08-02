@@ -17,3 +17,9 @@ section {
     width: min(100%, 1000px);
   }
 }
+
+/* Cumulative Layout Shift */
+footer-component {
+  display: block;
+  min-height: var(--footer-size);
+}
