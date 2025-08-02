@@ -11,7 +11,7 @@ class ExpertiseComponent extends HTMLElement {
 
                 <div class="card">
                     <div class="card-image bg-texture">
-                      <img src="./images/web-dev.png" loading="lazy" alt="maintenance-image" />
+                      <img src="./images/web-dev.webp" loading="lazy" alt="maintenance-image" />
                     </div>
                     <div class="card-content">
                       <h2>Custom Websites</h2>
@@ -26,7 +26,7 @@ class ExpertiseComponent extends HTMLElement {
 
                 <div class="card">
                     <div class="card-image bg-texture">
-                      <img src="./images/app-dev.png" class="card-image" loading="lazy" alt="web-development-image" />            
+                      <img src="./images/app-dev.webp" class="card-image" loading="lazy" alt="web-development-image" />            
                     </div>
                     <div class="card-content">
                       <h2>Web Applications</h2>
@@ -41,7 +41,7 @@ class ExpertiseComponent extends HTMLElement {
 
                 <div class="card">
                     <div class="card-image bg-texture">
-                      <img src="./images/fin-tools.png" class="card-image" loading="lazy" alt="web-development-image" />            
+                      <img src="./images/fin-tools.webp" class="card-image" loading="lazy" alt="web-development-image" />            
                     </div>
                     <div class="card-content">
                       <h2>Financial Tools</h2>
@@ -56,7 +56,7 @@ class ExpertiseComponent extends HTMLElement {
 
                 <!--<div class="card bg-texture">
                     <div class="card-image">
-                      <img src="./images/three-d-dev.png" class="card-image" loading="lazy" alt="design-image" />
+                      <img src="./images/three-d-dev.webp" class="card-image" loading="lazy" alt="design-image" />
                     </div>
                     <div class="card-content">
                       <h2>3D Development</h2>
