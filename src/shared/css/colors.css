@@ -17,8 +17,7 @@ label {
   background-color: var(--primary-dark-color);
 }
 
-.footer *,
-.working-process * {
+.footer * {
   color: var(--white-color);
 }
 
