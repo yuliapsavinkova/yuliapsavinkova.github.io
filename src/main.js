@@ -10,16 +10,13 @@ import './css/layout.css';
 import './css/colors.css';
 import './css/buttons.css';
 import './css/icons.css';
-
 import './css/utils.css';
-import './css/reusable-classes.css';
-import './css/animations.css';
-import './css/card.css';
+
 /* Svg sprite icons */
 import 'virtual:svg-icons-register';
+
 /* Components */
 import './components/header/header.js';
-import './components/progress/progress.js';
 import './components/section-header.js';
 
 // Import router

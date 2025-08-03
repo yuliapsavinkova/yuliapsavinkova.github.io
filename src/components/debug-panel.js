@@ -9,7 +9,6 @@ class DebugPanelComponent extends HTMLElement {
 
     // Store throttled event handlers
     this._resizeHandler = Utils.throttle(this._updateWidth, 200);
-    this._scrollHandler = Utils.throttle(this._updateWidth, 300);
   }
 
   // Update screen width x height
@@ -109,7 +108,6 @@ class DebugPanelComponent extends HTMLElement {
 
     // Bind events
     window.addEventListener('resize', this._resizeHandler);
-    window.addEventListener('scroll', this._scrollHandler);
     this.querySelector('#toggle-outline').addEventListener('change', this._toggleOutline);
     this.querySelector('.close-btn').addEventListener('click', this._closePanel);
 
@@ -120,7 +118,6 @@ class DebugPanelComponent extends HTMLElement {
   disconnectedCallback() {
     // Cleanup event listeners
     window.removeEventListener('resize', this._resizeHandler);
-    window.removeEventListener('scroll', this._scrollHandler);
 
     const toggleOutline = this.querySelector('#toggle-outline');
     const closeBtn = this.querySelector('.close-btn');

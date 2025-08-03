@@ -9,3 +9,9 @@ html {
   background-color: var(--accent-light-color);
   color: var(--white-color);
 }
+
+.bg-texture {
+  background-image: radial-gradient(circle, var(--primary-dark-color) 1%, transparent 4%);
+  background-size: 1rem 1rem;
+  background-repeat: repeat;
+}

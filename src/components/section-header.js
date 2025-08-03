@@ -14,6 +14,13 @@ class SectionHeader extends HTMLElement {
           .subtitle {
             text-align: center;
           }
+
+          .gra-separator {
+            border-top-width: 2px;
+            border-top-style: solid;
+            width: 6rem;
+            border-top-color: var(--accent-light-color);
+          }
         }
       </style>
       <div class="section-header">

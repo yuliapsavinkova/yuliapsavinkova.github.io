@@ -1,3 +1,5 @@
+import './card.css';
+
 class AboutComponent extends HTMLElement {
   constructor() {
     super();

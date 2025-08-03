@@ -108,4 +108,11 @@ export async function renderPage() {
   } else {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  // Defer progress bar loading until scroll starts (non-blocking and minimal)
+  const onScroll = () => {
+    import('./components/progress/progress.js');
+    window.removeEventListener('scroll', onScroll);
+  };
+  window.addEventListener('scroll', onScroll, { once: true });
 }

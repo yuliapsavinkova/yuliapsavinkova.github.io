@@ -1,3 +1,5 @@
+import './card.css';
+
 class ExpertiseComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `

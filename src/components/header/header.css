@@ -16,6 +16,8 @@
   justify-content: space-between;
   align-items: center;
 
+  overflow-x: hidden;
+
   .logo {
     display: contents;
     line-height: 0;
@@ -50,6 +52,32 @@
   .nav-link.active {
     font-weight: 700;
     border-bottom: 2px solid var(--accent-light-color);
+  }
+
+  .glass-effect {
+    background-color: var(--primary-dark-color-80); /* Use the color with transparency */
+    backdrop-filter: blur(1rem); /* Blur the background behind the element */
+    box-shadow: var(--box-shadow);
+  }
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, var(--primary-dark-color-50), transparent);
+  transform: translateX(-100%);
+  animation: lightStrike 4s infinite linear;
+}
+
+@keyframes lightStrike {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
 
