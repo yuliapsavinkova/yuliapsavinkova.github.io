@@ -51,29 +51,29 @@
         <p class="subtitle large">${v}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",C);async function P(z,h=3e3){const v=performance.now();for(;performance.now()-v<h;){const t=document.querySelector(z);if(t)return t;await new Promise(l=>setTimeout(l,50))}return null}async function L(){const z=window.location.hash.slice(2),[h,v]=z.split("?"),l=new URLSearchParams(v).get("section"),m=document.querySelector("main");switch(h){case"":await Promise.all([o(()=>import("./hero-D49bkCc2.js"),[]),o(()=>import("./expertise-ZmTQA4Oo.js"),[]),o(()=>import("./about-Cl14EsJa.js"),[]),o(()=>import("./process-BpDnGVbE.js"),[]),o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-tOLlJUG8.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",C);async function P(z,h=3e3){const v=performance.now();for(;performance.now()-v<h;){const t=document.querySelector(z);if(t)return t;await new Promise(l=>setTimeout(l,50))}return null}async function L(){const z=window.location.hash.slice(2),[h,v]=z.split("?"),l=new URLSearchParams(v).get("section"),m=document.querySelector("main");switch(h){case"":await Promise.all([o(()=>import("./hero-D49bkCc2.js"),[]),o(()=>import("./expertise-ZmTQA4Oo.js"),[]),o(()=>import("./about-Cl14EsJa.js"),[]),o(()=>import("./process-BpDnGVbE.js"),[]),o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
         <working-process-component></working-process-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;break;case"about":await Promise.all([o(()=>import("./about-Cl14EsJa.js"),[]),o(()=>import("./work-experience-JqKe5h0T.js"),[]),o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-tOLlJUG8.js"),[])]),m.innerHTML=`
+      `;break;case"about":await Promise.all([o(()=>import("./about-Cl14EsJa.js"),[]),o(()=>import("./work-experience-JqKe5h0T.js"),[]),o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <about-component></about-component>
         <work-experience-component></work-experience-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;break;case"work":await Promise.all([o(()=>import("./expertise-full-C8EiztWJ.js"),[]),o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-tOLlJUG8.js"),[])]),m.innerHTML=`
+      `;break;case"work":await Promise.all([o(()=>import("./expertise-full-C8EiztWJ.js"),[]),o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;break;case"palette":await Promise.all([o(()=>import("./palette-Bhcmir4U.js"),[]),o(()=>import("./footer-tOLlJUG8.js"),[])]),m.innerHTML=`
+      `;break;case"palette":await Promise.all([o(()=>import("./palette-Bhcmir4U.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <palette-component></palette-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;break;case"contact":await Promise.all([o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-tOLlJUG8.js"),[])]),m.innerHTML=`
+      `;break;case"contact":await Promise.all([o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;break;default:await Promise.all([o(()=>import("./404-CCsRiY0Q.js"),[]),o(()=>import("./footer-tOLlJUG8.js"),[])]),m.innerHTML=`
+      `;break;default:await Promise.all([o(()=>import("./404-CCsRiY0Q.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <error-component></error-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `}if(l){const e=`#${CSS.escape(l)}`,n=await P(e);n?n.scrollIntoView({behavior:"smooth"}):window.scrollTo({top:0,behavior:"smooth"})}else window.scrollTo({top:0,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",()=>{L(),window.addEventListener("hashchange",L)});document.body.addEventListener("click",z=>{const h=z.target.closest("a[href]");h&&h.getAttribute("href").startsWith("#/")&&(z.preventDefault(),window.location.hash=h.getAttribute("href").slice(1))});

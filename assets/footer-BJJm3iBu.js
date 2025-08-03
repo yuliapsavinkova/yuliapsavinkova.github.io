@@ -34,8 +34,6 @@ const n=[{href:"https://github.com/yuliapsavinkova",target:"_blank",title:"GitHu
               display: flex;
               justify-content: center;
               align-items: center;
-              gap: 1rem;
-              height: var(--logo-size);
             }
           }
         </style>
