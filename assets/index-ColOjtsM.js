@@ -67,7 +67,7 @@
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;break;case"palette":await Promise.all([o(()=>import("./palette-Bhcmir4U.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
+      `;break;case"palette":await Promise.all([o(()=>import("./palette-DoE2HHcF.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <palette-component></palette-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;break;case"contact":await Promise.all([o(()=>import("./contact-CGamQLAB.js"),[]),o(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
