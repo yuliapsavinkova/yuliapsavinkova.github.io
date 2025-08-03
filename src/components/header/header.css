@@ -1,64 +1,61 @@
 .header {
   z-index: 1000;
-
   position: sticky;
   top: 0;
-
   border-bottom: 1px solid var(--primary-dark-color-10);
-
   background-color: var(--white-color);
-
   height: var(--header-size);
-
   padding: 0 var(--global-padding-sides);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   overflow-x: hidden;
+}
 
-  .logo {
-    display: contents;
-    line-height: 0;
-  }
+.header .logo {
+  display: contents;
+  line-height: 0;
+}
 
-  a {
-    text-decoration: none;
-  }
+.header a {
+  text-decoration: none;
+}
 
-  .gra-nav,
-  .nav-menu {
-    display: contents;
-  }
+.header .main-nav {
+  display: contents;
+}
 
-  .menu-checkbox,
-  label {
-    display: none;
-  }
+.header .menu-toggle-button {
+  display: none; /* Hidden on desktop */
+  color: var(--primary-dark-color);
+}
 
-  .nav-links {
-    flex: 1;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 2rem;
+.header .nav-menu {
+  display: contents;
+}
 
-    a:hover {
-      transform: scale(1.05);
-    }
-  }
+.header .nav-links {
+  flex: 1;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 2rem;
+}
 
-  .nav-link.active {
-    font-weight: 700;
-    border-bottom: 2px solid var(--accent-light-color);
-  }
+.header .nav-links a:hover {
+  transform: scale(1.05);
+}
 
-  .glass-effect {
-    background-color: var(--primary-dark-color-80); /* Use the color with transparency */
-    backdrop-filter: blur(1rem); /* Blur the background behind the element */
-    box-shadow: var(--box-shadow);
-  }
+.header .nav-link.active {
+  font-weight: 700;
+  box-shadow: 0 0 0 1px var(--white-color);
+  margin: 1px 3px;
+}
+
+.header .glass-effect {
+  background-color: var(--primary-dark-color-80);
+  backdrop-filter: blur(1rem);
+  box-shadow: var(--box-shadow);
 }
 
 .header::after {
@@ -82,64 +79,61 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    label {
-      z-index: 10;
-      display: contents;
-      cursor: pointer;
-    }
+  .header .menu-toggle-button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu */
+    padding: 0.5rem;
+  }
 
-    .nav-menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: stretch;
+  .header .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: fixed;
+    top: var(--header-size);
+    right: 0;
+    width: 16rem;
+    /* height: calc(100vh - var(--header-size)); */
+    color: var(--white-color);
+    text-align: center;
+    border-radius: 1px;
+    border: 1px solid var(--white-color);
+    transform: translateX(100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out;
+  }
 
-      position: fixed;
-      top: var(--header-size);
-      right: -16rem;
-      width: 16rem;
-      color: var(--white-color);
-      text-align: center;
+  /* This is the new rule that shows the menu */
+  header-component.is-menu-open .nav-menu {
+    transform: translateX(0);
+  }
 
-      border-radius: 1px;
-      border: 1px solid var(--white-color);
+  .header .nav-links {
+    display: block;
+  }
 
-      transition: transform 0.3s ease-in-out;
+  .header .nav-links .nav-link {
+    padding: 1rem;
+  }
 
-      .nav-links {
-        display: block;
+  .header .nav-links a {
+    display: flex;
+    justify-content: center;
+    color: var(--white-color);
+    border-bottom: 1px solid var(--primary-light-color-10);
+  }
 
-        .nav-link {
-          padding: 1rem;
-        }
+  .header .nav-links a:hover {
+    transform: none;
+    background-color: var(--primary-dark-color-10);
+  }
 
-        a {
-          display: flex;
-          justify-content: center;
-          color: var(--white-color);
-          border-bottom: 1px solid var(--primary-light-color-10);
-          &:hover {
-            transform: none;
-            background-color: var(--primary-dark-color-10);
-          }
-        }
-      }
-
-      .nav-action {
-        display: inline-block;
-        margin: 1rem;
-        align-self: center;
-      }
-    }
-
-    /* Open the menu when checked */
-    .menu-checkbox:checked ~ .nav-menu {
-      transform: translateX(-100%);
-    }
-
-    input[type='checkbox']:checked + label {
-      color: var(--accent-light-color);
-    }
+  .header .nav-action {
+    display: inline-block;
+    margin: 1rem;
+    align-self: center;
   }
 }

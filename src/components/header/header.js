@@ -1,18 +1,35 @@
 import './header.css';
 import { Utils } from '../../utils.js';
 
-// TODO: refactor
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
+    this._handleResize = Utils.throttle(this._handleResize.bind(this), 200);
+    this._handleScroll = Utils.throttle(this._handleScroll.bind(this), 300);
+    this._updateActiveLink = this._updateActiveLink.bind(this);
+    this._toggleMenu = this._toggleMenu.bind(this);
+    this._closeMenu = this._closeMenu.bind(this);
+    this._handleOutsideClick = this._handleOutsideClick.bind(this);
+  }
 
+  connectedCallback() {
+    this.render();
+    this._addEventListeners();
+    this._updateActiveLink();
+  }
+
+  disconnectedCallback() {
+    this._removeEventListeners();
+  }
+
+  render() {
     const logoLink = this.getAttribute('logo-link') || './';
     const logoSvgId = this.getAttribute('logo-svg-id');
     const logoName = this.getAttribute('logo-name') || '';
     const links = JSON.parse(this.getAttribute('links') || '[]');
     const buttonLink = JSON.parse(this.getAttribute('button') || '{}');
-    this.innerHTML =
-      `
+
+    this.innerHTML = /*html*/ `
       <header class="header">
           <a href="${logoLink}" class="logo" aria-label="Home">
               <svg class="icon icon-stroke" aria-hidden="true">
@@ -20,53 +37,68 @@ class HeaderComponent extends HTMLElement {
               </svg>
               <span class="logo-name">${logoName}</span>
           </a>
-          <nav class="gra-nav">
-            <label for="menu-toggle" aria-label="Open Menu">
+          <nav class="main-nav">
+            <button class="menu-toggle-button" aria-label="Open Menu">
               <svg class="icon icon-fill enable-icon-scale" aria-hidden="true">
                 <use href="#icon-fa-bars"></use>
               </svg>
-            </label>
-            <input type="checkbox" id="menu-toggle" name="menu-toggle" class="menu-checkbox">
+            </button>
             <div class="nav-menu glass-effect">
-                <div class="nav-links">${links
-                  .map(
-                    (link) =>
-                      `<a class="nav-link large" href="${link.href}" target="${
-                        link.target || '_self'
-                      }">
-                        ${
-                          link.svgId
-                            ? `<svg style="width: 1.2em; height: 1.2em; fill: currentColor; flex-shrink: 0;"><use href="#${link.svgId}"></use></svg>`
-                            : ''
-                        } ${link.image ? `<img src="${link.image}" loading="lazy" />` : ''}${
-                        link.text
-                      }</a>`,
-                  )
-                  .join('')}
+                <div class="nav-links">
+                    ${links
+                      .map(
+                        (link) => `
+                      <a class="nav-link large" href="${link.href}" target="${
+                          link.target || '_self'
+                        }">${link.text}</a>
+                    `,
+                      )
+                      .join('')}
                 </div>
                 <div class="nav-action">
                   <a href="${buttonLink.href}" target="${
-        buttonLink.target || '_self'
-      }" class="button button-action">${buttonLink.text}</a>
+      buttonLink.target || '_self'
+    }" class="button button-action">${buttonLink.text}</a>
                 </div>
             </div>
           </nav>
       </header>
-    ` + this.innerHTML;
+    `;
 
-    this.checkbox = this.querySelector('#menu-toggle');
+    this.menuToggleButton = this.querySelector('.menu-toggle-button');
     this.navLinks = this.querySelectorAll('.nav-link');
-
-    this._handleResize = this._handleResize.bind(this);
-    this._handleScroll = this._handleScroll.bind(this);
-    this._updateActiveLink = this._updateActiveLink.bind(this);
-    this._closeMenu = this._closeMenu.bind(this);
-    this._handleOutsideClick = this._handleOutsideClick.bind(this);
-
-    document.addEventListener('click', this._handleOutsideClick);
   }
 
+  _addEventListeners() {
+    this.menuToggleButton.addEventListener('click', this._toggleMenu);
+    document.addEventListener('click', this._handleOutsideClick);
+    window.addEventListener('resize', this._handleResize);
+    window.addEventListener('scroll', this._handleScroll);
+    window.addEventListener('hashchange', this._updateActiveLink);
+    this.navLinks.forEach((link) => link.addEventListener('click', this._closeMenu));
+  }
+
+  _removeEventListeners() {
+    this.menuToggleButton.removeEventListener('click', this._toggleMenu);
+    document.removeEventListener('click', this._handleOutsideClick);
+    window.removeEventListener('resize', this._handleResize);
+    window.removeEventListener('scroll', this._handleScroll);
+    window.removeEventListener('hashchange', this._updateActiveLink);
+    this.navLinks.forEach((link) => link.removeEventListener('click', this._closeMenu));
+  }
+
+  // --- State Management for Mobile Menu ---
+  _toggleMenu() {
+    this.classList.toggle('is-menu-open');
+  }
+
+  _closeMenu() {
+    this.classList.remove('is-menu-open');
+  }
+
+  // --- Event Handlers ---
   _handleOutsideClick(event) {
+    // Close the menu if the click is outside the header component itself
     if (!this.contains(event.target)) {
       this._closeMenu();
     }
@@ -81,47 +113,13 @@ class HeaderComponent extends HTMLElement {
   }
 
   _updateActiveLink() {
-    const links = this.querySelectorAll('.nav-link');
     const currentPath = window.location.hash || '#';
-
-    links.forEach((link) => {
+    this.querySelectorAll('.nav-link').forEach((link) => {
       if (link.getAttribute('href') === currentPath) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
       }
-    });
-  }
-
-  _closeMenu() {
-    if (this.checkbox) {
-      this.checkbox.checked = false;
-    }
-  }
-
-  connectedCallback() {
-    window.addEventListener('resize', Utils.throttle(this._handleResize, 200));
-    window.addEventListener('scroll', Utils.throttle(this._handleScroll, 300));
-    window.addEventListener('hashchange', this._updateActiveLink);
-
-    // Close menu when clicking a navigation link
-    this.navLinks.forEach((link) => {
-      link.addEventListener('click', this._closeMenu);
-    });
-
-    // Update active link when component is loaded
-    this._updateActiveLink();
-  }
-
-  disconnectedCallback() {
-    window.removeEventListener('resize', this._handleResize);
-    window.removeEventListener('scroll', this._handleScroll);
-    window.removeEventListener('hashchange', this._updateActiveLink);
-    document.removeEventListener('click', this._handleOutsideClick);
-
-    // Remove event listeners for nav links
-    this.navLinks.forEach((link) => {
-      link.removeEventListener('click', this._closeMenu);
     });
   }
 }
