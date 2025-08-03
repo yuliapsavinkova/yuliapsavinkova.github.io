@@ -10,7 +10,7 @@
                 <div id="work-row-web" class="feature-card">
                     <div class="card-content">
                         <h2>Web Development</h2>  
-                        <p>Need a sleek, high-performing website to showcase your brand? I specialize in building modern, responsive websites that look great on any device and deliver a seamless user experience. Whether you need a portfolio, business site, or landing page, I provide custom solutions tailored to your needs. With a focus on speed, SEO, and user-friendly design, I’ll help create a site that not only looks amazing but also drives results. Let's work together to make your online presence shine!</p>
+                        <p>I build modern, responsive websites that work well on any device and are easy for your visitors to use. Whether you need a portfolio, business site, or landing page, I create custom solutions that fit your goals. I pay attention to speed and SEO to help your site perform better and reach more people.</p>
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="card-content">
                         <h2>App Development</h2>
-                        <p>Need a powerful, high-performance web application? I build dynamic, user-friendly apps using cutting-edge frameworks like React and Angular. Whether it's a business tool, an e-commerce platform, or a custom solution, I create fast, scalable, and secure applications designed to elevate your brand and streamline your operations. Let’s bring your vision to life!</p>
+                        <p>I build fast, user-friendly web applications using modern tools like React and Angular. Whether it’s a business dashboard, an e-commerce platform, or something entirely custom, I focus on clean design, solid performance, and features that make your day-to-day easier. I design apps to be reliable and flexible, so they can grow and adapt alongside your business.</p>
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                 <div id="work-row-3d" class="feature-card">
                     <div class="card-content">
                         <h2>Financial Tools</h2>  
-                        <p> I build custom tools for traders and investors — including Excel-style portfolio trackers and options strategy visualizers (like payout charts). I use React and D3.js for the frontend, FastAPI for backend logic, and store data in PostgreSQL or Google Sheets.</p>  
+                        <p>I create tools to help traders and investors manage everyday tasks like tracking portfolios, analyzing strategies, setting up alerts, or pulling in market data. I work with Excel, Google Sheets, and web apps—and can connect them so your data moves easily between platforms. You describe your workflow, and I help turn it into something more streamlined and automated—so it's easier, faster, and tailored to how you work.</p>  
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">

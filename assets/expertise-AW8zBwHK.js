@@ -43,7 +43,7 @@
                     </div>
                     <div class="card-content">
                       <h2>Financial Tools</h2>
-                      <p>I create financial tools that help traders and investors make financial decisions.</p>
+                      <p>I create financial tools to streamline daily tasks for traders and investors.</p>
                       <a href="#/work?section=work-row-app" aria-label="Go to App Development section">
                         <svg class="icon icon-stroke enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>

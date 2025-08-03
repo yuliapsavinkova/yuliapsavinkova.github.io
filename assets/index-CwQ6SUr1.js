@@ -49,7 +49,7 @@
         <p class="subtitle large">${v}</p>
         <div class="gra-separator"></div>
       </div>
-    `}}customElements.define("section-header",E);async function C(z,h=3e3){const v=performance.now();for(;performance.now()-v<h;){const o=document.querySelector(z);if(o)return o;await new Promise(l=>setTimeout(l,50))}return null}async function L(){const z=window.location.hash.slice(2),[h,v]=z.split("?"),l=new URLSearchParams(v).get("section"),m=document.querySelector("main");switch(h){case"":await Promise.all([t(()=>import("./hero-D49bkCc2.js"),[]),t(()=>import("./expertise-Do-Hjov3.js"),[]),t(()=>import("./about-DyJr2zb9.js"),[]),t(()=>import("./process-B6Q95cB5.js"),[]),t(()=>import("./contact-CGamQLAB.js"),[]),t(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
+    `}}customElements.define("section-header",E);async function C(z,h=3e3){const v=performance.now();for(;performance.now()-v<h;){const o=document.querySelector(z);if(o)return o;await new Promise(l=>setTimeout(l,50))}return null}async function L(){const z=window.location.hash.slice(2),[h,v]=z.split("?"),l=new URLSearchParams(v).get("section"),m=document.querySelector("main");switch(h){case"":await Promise.all([t(()=>import("./hero-D49bkCc2.js"),[]),t(()=>import("./expertise-AW8zBwHK.js"),[]),t(()=>import("./about-DyJr2zb9.js"),[]),t(()=>import("./process-B6Q95cB5.js"),[]),t(()=>import("./contact-CGamQLAB.js"),[]),t(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <hero-component></hero-component>
         <expertise-component></expertise-component>
         <about-component></about-component>
@@ -61,7 +61,7 @@
         <work-experience-component></work-experience-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;break;case"work":await Promise.all([t(()=>import("./expertise-full-Dgy7o0Yp.js"),[]),t(()=>import("./contact-CGamQLAB.js"),[]),t(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
+      `;break;case"work":await Promise.all([t(()=>import("./expertise-full-COslCNZd.js"),[]),t(()=>import("./contact-CGamQLAB.js"),[]),t(()=>import("./footer-BJJm3iBu.js"),[])]),m.innerHTML=`
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
