@@ -1,4 +1,4 @@
-class e extends HTMLElement{constructor(){super(),this.innerHTML=`
+/* empty css             */class e extends HTMLElement{constructor(){super(),this.innerHTML=`
             <section id="about">
                 <section-header 
                     title="About Me"

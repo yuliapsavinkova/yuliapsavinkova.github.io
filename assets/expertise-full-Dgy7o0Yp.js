@@ -1,4 +1,4 @@
-class e extends HTMLElement{connectedCallback(){this.innerHTML=`
+/* empty css             */class e extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="work" class="expertise-full">
             <section-header 
                 title="My Expertise"
