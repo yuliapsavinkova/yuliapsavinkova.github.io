@@ -1,4 +1,6 @@
 :root {
+  --font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
+
   /* colors */
   --primary-dark-color: hsl(221, 45%, 32%);
   --primary-light-color: hsl(217, 43%, 93%);

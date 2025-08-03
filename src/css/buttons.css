@@ -2,7 +2,6 @@
   --button-transition: all 0.15s ease-in-out;
   --button-padding: 0.5rem 1rem;
   --button-outline-color: var(--primary-dark-color-80);
-  --button-font-size: 1rem;
 }
 
 .button {
@@ -19,6 +18,7 @@
   transition: var(--button-transition);
   user-select: none;
   border: 1px solid transparent;
+  min-width: 10rem;
 }
 
 .button-primary {
@@ -64,8 +64,6 @@
   color: var(--white-color);
   background-color: var(--accent-dark-color);
   border-color: var(--accent-dark-color);
-  padding: var(--button-padding);
-  font-size: var(--button-font-size);
 }
 
 .button-action:hover {

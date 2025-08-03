@@ -16,3 +16,10 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+/* These elements inside form doesn't inherit font  */
+button,
+input,
+textarea {
+  font-family: var(--font-family);
+}
