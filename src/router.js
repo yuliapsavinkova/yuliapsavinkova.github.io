@@ -16,25 +16,41 @@ export async function renderPage() {
   const sectionId = params.get('section');
   const app = document.querySelector('main');
 
-  // Dynamically import and render
   switch (path) {
     case '':
-      await Promise.all([
-        import('./components/hero/hero.js'),
-        import('./components/expertise.js'),
-        import('./components/about.js'),
-        import('./components/process.js'),
-        import('./components/contact/contact.js'),
-        import('./components/footer.js'),
-      ]);
-      app.innerHTML = `
-        <hero-component></hero-component>
-        <expertise-component></expertise-component>
-        <about-component></about-component>
-        <working-process-component></working-process-component>
-        <contact-component></contact-component>
-        <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;
+      // 1. Load and render only the hero component immediately.
+      await import('./components/hero/hero.js');
+      app.innerHTML = `<hero-component></hero-component>`;
+
+      // 2. Load the rest of the page.
+      const loadRemainingContent = async () => {
+        await Promise.all([
+          import('./components/expertise.js'),
+          import('./components/about.js'),
+          import('./components/process.js'),
+          import('./components/contact/contact.js'),
+          import('./components/footer.js'),
+        ]);
+
+        app.insertAdjacentHTML(
+          'beforeend',
+          `
+          <expertise-component></expertise-component>
+          <about-component></about-component>
+          <working-process-component></working-process-component>
+          <contact-component></contact-component>
+          <footer-component copyright-name="Yulia Savinkova"></footer-component>
+        `,
+        );
+      };
+
+      // 3. Ask the browser to run this function when it's idle.
+      // A small timeout is used as a fallback for browsers that don't support it.
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadRemainingContent);
+      } else {
+        setTimeout(loadRemainingContent, 200);
+      }
       break;
 
     case 'about':
