@@ -23,12 +23,6 @@
 .primary-light-circle {
   background-color: var(--primary-light-color);
 }
-.neutral-dark-circle {
-  background-color: var(--neutral-dark-color);
-}
-.neutral-light-circle {
-  background-color: var(--neutral-light-color);
-}
 .accent-dark-circle {
   background-color: var(--accent-dark-color);
 }
@@ -40,9 +34,6 @@
 }
 .white-circle {
   background-color: var(--white-color);
-}
-.grey-circle {
-  background-color: var(--grey-color);
 }
 .black-circle {
   background-color: var(--black-color);

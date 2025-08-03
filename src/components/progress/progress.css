@@ -25,8 +25,8 @@
   background: conic-gradient(
     var(--primary-dark-color) 0%,
     var(--primary-dark-color) var(--scroll-progress, 0%),
-    var(--grey-color) var(--scroll-progress, 0%),
-    var(--grey-color) 100%
+    var(--primary-light-color) var(--scroll-progress, 0%),
+    var(--primary-light-color) 100%
   );
   display: flex;
   justify-content: center;

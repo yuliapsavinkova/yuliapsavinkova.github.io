@@ -1,7 +1,6 @@
 :root {
   --button-transition: all 0.15s ease-in-out;
   --button-padding: 0.5rem 1rem;
-  --button-outline-color: var(--primary-dark-color-80);
 }
 
 .button {
@@ -37,7 +36,7 @@
 }
 
 .button-primary:focus-visible {
-  outline: 2px solid var(--button-outline-color);
+  outline: 2px solid var(--primary-dark-color);
 }
 
 .button-secondary {
@@ -57,7 +56,7 @@
 }
 
 .button-secondary:focus-visible {
-  outline: 2px solid var(--button-outline-color);
+  outline: 2px solid var(--primary-dark-color);
 }
 
 .button-action {
@@ -77,42 +76,5 @@
 }
 
 .button-action:focus-visible {
-  outline: 3px solid var(--button-outline-color);
-}
-
-.button-tertiary {
-  color: var(--text-color);
-  background-color: transparent;
-  border: 2px solid var(--grey-color);
-}
-
-.button-tertiary:hover {
-  background-color: var(--grey-color);
-  color: var(--black-color);
-}
-
-.button-tertiary:active {
-  background-color: var(--neutral-light-color);
-  border-color: var(--neutral-dark-color);
-}
-
-.button-tertiary:focus-visible {
-  outline: 2px solid var(--button-outline-color);
-}
-
-.button-link {
-  color: var(--primary-dark-color);
-  background-color: transparent;
-  border: none;
-  text-decoration: none;
-  padding: 0;
-}
-
-.button-link:hover {
-  color: var(--accent-light-color);
-  background-color: transparent;
-}
-
-.button-link:focus-visible {
-  outline: 2px solid var(--button-outline-color);
+  outline: 2px solid var(--accent-dark-color);
 }
