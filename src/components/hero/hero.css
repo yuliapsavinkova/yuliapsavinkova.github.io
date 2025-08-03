@@ -14,7 +14,8 @@
   gap: 1rem;
 }
 
-.hero-heading {
+.hero-heading,
+.hero-buttons {
   text-align: center;
 }
 
