@@ -20,8 +20,6 @@ class FooterComponent extends HTMLElement {
               display: flex;
               justify-content: center;
               align-items: center;
-              gap: 1rem;
-              height: var(--logo-size);
             }
           }
         </style>

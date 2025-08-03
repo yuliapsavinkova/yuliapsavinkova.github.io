@@ -67,9 +67,11 @@
 }
 .feature-card .card-image img {
   display: block;
-  width: 100%;
+  width: min(100%, 30rem);
+
   min-height: 20rem; /* Larger image for this layout on mobile */
   object-fit: cover;
+  margin: auto;
 }
 .feature-card .card-content {
   order: 2; /* Content is second on mobile */
@@ -88,11 +90,11 @@
 }
 
 /* Desktop: Switch to horizontal layout */
-@media (min-width: 48rem) {
+@media (min-width: 1000px) {
   .feature-card {
     flex-direction: row;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     text-align: left;
   }
   .feature-card .card-image {
