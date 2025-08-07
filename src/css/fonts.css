@@ -1,46 +1,18 @@
-/* ===================================================================== */
-/* 1. Creating fallback font to prevent Cumulative Layout Shift.         */
-/* This uses Arial (a very common system font) and adjusts it to match   */
-/* the metrics of Montserrat.                                            */
-/* ===================================================================== */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  /* Define the entire range of weights this single file supports */
+  font-weight: 400 700;
+  src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+}
+
+/* You can keep your fallback font rule as is */
 @font-face {
   font-family: 'Montserrat Fallback';
-  src: local('Arial'); /* Arial as the base */
-  /* Adjust the font metrics */
+  src: local('Arial');
   ascent-override: 92.5%;
   descent-override: 22.5%;
   line-gap-override: 0%;
-  size-adjust: 105%; /* Montserrat is slightly wider than Arial */
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../assets/fonts/montserrat-v29-latin-regular.woff2') format('woff2');
-}
-/* montserrat-500 - latin */
-@font-face {
-  font-display: swap;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../assets/fonts/montserrat-v29-latin-500.woff2') format('woff2');
-}
-/* montserrat-600 - latin */
-@font-face {
-  font-display: swap;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../assets/fonts/montserrat-v29-latin-600.woff2') format('woff2');
-}
-/* montserrat-700 - latin */
-@font-face {
-  font-display: swap;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../assets/fonts/montserrat-v29-latin-700.woff2') format('woff2');
+  size-adjust: 105%;
 }
