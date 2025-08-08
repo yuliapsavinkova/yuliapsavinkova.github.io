@@ -2,8 +2,12 @@ class o extends HTMLElement{constructor(){super(),this.innerHTML=`
       <div class="progress-container" id="progress-container">
         <div class="progress-ring" id="progress-ring"></div>
         <div class="arrow">
-          <svg class="icon icon-fill" aria-hidden="true">
-            <use href="#icon-fa-angle-up"></use>
+          <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              className="angleUpIcon"
+              fill="currentColor"
+              aria-hidden="true">
+              <path d="M10.588 5.587c.781-.781 2.05-.781 2.83 0l9.996 9.996a2.002 2.002 0 0 1-2.83 2.83L12 9.83l-8.584 8.578a2.002 2.002 0 0 1-2.83-2.83l9.996-9.996Z" />
           </svg>
         </div>
       </div>
