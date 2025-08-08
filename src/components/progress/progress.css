@@ -47,7 +47,13 @@
   justify-content: center;
   align-items: center;
 
-  &:hover .icon {
-    margin-bottom: 2px;
+  svg {
+    color: var(--primary-dark-color);
+    width: 0.8rem;
+    height: 0.8rem;
+
+    &:hover {
+      margin-bottom: 2px;
+    }
   }
 }

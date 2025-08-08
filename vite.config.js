@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-// import viteImagemin from 'vite-plugin-imagemin';
 import path from 'path';
 
 export default defineConfig({
@@ -36,14 +35,5 @@ export default defineConfig({
         ],
       },
     }),
-    // viteImagemin({
-    //   gifsicle: { optimizationLevel: 7 },
-    //   optipng: { optimizationLevel: 7 },
-    //   mozjpeg: { quality: 80 },
-    //   svgo: true,
-    //   webp: {
-    //     quality: 80,
-    //   },
-    // }),
   ],
 });

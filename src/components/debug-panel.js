@@ -80,20 +80,24 @@ class DebugPanelComponent extends HTMLElement {
           height: 1.5rem;
 
           svg {
-            width: 100%;
-            height: 100%;
-            display: block;
+            width: 1rem;
+            height: 1rem;
+            padding: 1px;
           }
         }
-
       </style>
 
       <div id="debugPanel" class="debug-panel">
         <div class="debug-header">
           <h3>Debug Panel</h3>
-          <button class="icon icon-fill close-btn" aria-label="Close Debug Panel">
-            <svg focusable="false" aria-hidden="true">
-              <use href="#icon-fa-xmark"></use>
+          <button class="close-btn" aria-label="Close Debug Panel">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="enable-icon-scale"
+                aria-hidden="true">
+                <path fill="currentColor"
+                    d="M3.416.592a2.002 2.002 0 0 0-2.83 2.83L9.17 12 .592 20.584a2.002 2.002 0 0 0 2.83 2.83L12 14.83l8.584 8.578a2.002 2.002 0 0 0 2.83-2.83L14.83 12l8.578-8.584a2.002 2.002 0 0 0-2.83-2.83L12 9.17z" />
             </svg>
           </button>
         </div>
