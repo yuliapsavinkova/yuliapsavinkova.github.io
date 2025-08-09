@@ -51,12 +51,8 @@ document.body.addEventListener('click', (event) => {
   }
 });
 
-// Debug mode
 if (import.meta.env.VITE_ENVIRONMENT) {
-  (async () => {
-    await import('./components/debug-panel.js');
-    console.log('Debug mode active!');
-    document.getElementById('debug-panel').innerHTML =
-      '<debug-panel-component></debug-panel-component>';
-  })();
+  import('./debug-tools.js').then(({ loadDebugTools }) => {
+    loadDebugTools();
+  });
 }
