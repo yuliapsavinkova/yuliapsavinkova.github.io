@@ -46,8 +46,10 @@
   order: 2;
 }
 .feature-card .card-content .button,
-.card .card-content .icon {
+.card .card-content svg {
   margin-top: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 /* ======================================================= */
@@ -72,6 +74,7 @@
   min-height: 20rem; /* Larger image for this layout on mobile */
   object-fit: cover;
   margin: auto;
+  border-radius: var(--border-radius);
 }
 .feature-card .card-content {
   order: 2; /* Content is second on mobile */

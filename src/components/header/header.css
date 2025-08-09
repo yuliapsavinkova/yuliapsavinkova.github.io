@@ -33,6 +33,10 @@
 .header .menu-toggle-button {
   display: none; /* Hidden on desktop */
   color: var(--primary-dark-color);
+  svg {
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
 }
 
 .header .nav-menu {
