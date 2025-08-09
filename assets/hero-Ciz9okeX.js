@@ -36,6 +36,36 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
             <span class="cursor">|</span>
         </div>
     `}init(){this.textElement=this.querySelector(".typewriter-text");try{this.titles=JSON.parse(this.getAttribute("data-titles"))||[]}catch(t){console.error("Invalid JSON for data-titles attribute on rotating-text component:",t),this.titles=[]}this.titles.length>0&&(this.type=this.type.bind(this),requestAnimationFrame(this.type))}type(t){if(!this.textElement)return;this.lastFrameTime||(this.lastFrameTime=t);const s=t-this.lastFrameTime,n=this.isDeleting?this.deleteSpeed:this.typeSpeed;if(s>n){this.lastFrameTime=t;const e=this.titles[this.titleIndex];this.isDeleting?(this.textElement.textContent=e.substring(0,this.charIndex--),this.charIndex<0&&(this.isDeleting=!1,this.titleIndex=(this.titleIndex+1)%this.titles.length)):(this.textElement.textContent=e.substring(0,this.charIndex++),this.charIndex>e.length&&setTimeout(()=>{this.isDeleting=!0},1e3))}requestAnimationFrame(this.type)}}customElements.define("rotating-text",r);class a extends HTMLElement{connectedCallback(){this.innerHTML=`
+      <style>
+        .hero {
+          width: 100%;
+          min-width: 20rem;
+          height: calc(100dvh - var(--header-size));
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .hero-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .hero-heading,
+        .hero-buttons {
+          text-align: center;
+        }
+
+        .hero-image {
+          width: 100%;
+          max-width: 40rem;
+          height: auto;
+          aspect-ratio: 2 / 1;
+          object-fit: contain;
+        }
+      </style>
       <section id="hero" class="hero bg-texture">
         <div class="hero-container">
           <div>
