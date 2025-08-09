@@ -1,6 +1,3 @@
-/* Fonts */
-import './css/fonts.css';
-
 /* Inline Critical CSS */
 import resetCss from './css/reset.css?inline';
 import variablesCss from './css/variables.css?inline';

@@ -19,7 +19,7 @@ export async function renderPage() {
   switch (path) {
     case '':
       // 1. Load and render only the hero component immediately.
-      await import('./components/hero/hero.js');
+      await import('./components/hero.js');
       app.innerHTML = `<hero-component></hero-component>`;
 
       // 2. Load the rest of the page.

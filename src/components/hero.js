@@ -1,9 +1,38 @@
-import './hero.css';
-import '../rotating-text.js';
+import './rotating-text.js';
 
 class HeroComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
+      <style>
+        .hero {
+          width: 100%;
+          min-width: 20rem;
+          height: calc(100dvh - var(--header-size));
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .hero-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .hero-heading,
+        .hero-buttons {
+          text-align: center;
+        }
+
+        .hero-image {
+          width: 100%;
+          max-width: 40rem;
+          height: auto;
+          aspect-ratio: 2 / 1;
+          object-fit: contain;
+        }
+      </style>
       <section id="hero" class="hero bg-texture">
         <div class="hero-container">
           <div>
