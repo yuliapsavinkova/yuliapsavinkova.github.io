@@ -9,13 +9,8 @@ class HeroComponent extends HTMLElement {
           min-width: 20rem;
           height: calc(100dvh - var(--header-size));
           display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .hero-container {
-          display: flex;
           flex-direction: column;
+          justify-content: center;
           align-items: center;
           gap: 1rem;
         }
@@ -34,28 +29,22 @@ class HeroComponent extends HTMLElement {
         }
       </style>
       <section id="hero" class="hero bg-texture">
-        <div class="hero-container">
-          <div>
-            <img
-              src="./images/hero-small.webp"
+        <img src="./images/hero-small.webp"
               alt="hero image"
               class="hero-image"
               fetchpriority="high"
-              decoding="async"
-            >
-          </div>
-          <div class="hero-heading">
-            <h1>Hello, I'm Yulia</h1>
-            <rotating-text data-titles='[
-                "Software Engineer",
-                "Web Developer",
-                "Animal Lover"
-            ]'></rotating-text>
-          </div>
-          <div class="hero-buttons">
-            <a href="#/about" class="button button-primary">Learn More</a>
-            <a href="#/contact" class="button button-action">Contact</a>
-          </div>
+              decoding="async">
+        <div class="hero-heading">
+          <h1>Hello, I'm Yulia</h1>
+          <rotating-text data-titles='[
+              "Software Engineer",
+              "Web Developer",
+              "Animal Lover"
+          ]'></rotating-text>
+        </div>
+        <div class="hero-buttons">
+          <a href="#/about" class="button button-primary">Learn More</a>
+          <a href="#/contact" class="button button-action">Contact</a>
         </div>
       </section>
     `;
