@@ -1,4 +1,3 @@
-import './header.css';
 import { Utils } from '../../utils.js';
 
 class HeaderComponent extends HTMLElement {
