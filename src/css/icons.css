@@ -1,22 +1,11 @@
-.logo svg.icon {
-  width: var(--logo-size);
-  height: var(--logo-size);
-}
-
-svg.icon {
-  width: 2rem;
-  height: 2rem;
-  display: inline-block;
+svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  /* display: inline-block;
   vertical-align: middle;
   font-size: inherit;
   color: inherit;
-  flex-shrink: 0;
-}
-
-/* For fill-based icons like Font Awesome */
-svg.icon-fill {
-  fill: currentColor;
-  stroke: none;
+  flex-shrink: 0; */
 }
 
 .enable-icon-scale {

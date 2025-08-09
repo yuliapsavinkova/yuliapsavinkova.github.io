@@ -1,12 +1,19 @@
 @font-face {
   font-family: 'Montserrat Fallback';
-  src: local('Arial'); /* Arial as the base */
-  /* Adjust the font metrics */
+  src: local('Arial');
+  /* Adjust the font metrics for Arial as base */
   ascent-override: 92.5%;
   descent-override: 22.5%;
   line-gap-override: 0%;
   size-adjust: 105%; /* Montserrat is slightly wider than Arial */
 }
+
+/* @font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-variable-subset.woff2') format('woff2-variations');
+  font-weight: 400 600;
+  font-display: swap;
+} */
 
 @font-face {
   font-display: swap;
@@ -15,7 +22,6 @@
   font-weight: 400;
   src: url('../assets/fonts/montserrat-v29-latin-regular.woff2') format('woff2');
 }
-/* montserrat-500 - latin */
 @font-face {
   font-display: swap;
   font-family: 'Montserrat';
@@ -23,7 +29,6 @@
   font-weight: 500;
   src: url('../assets/fonts/montserrat-v29-latin-500.woff2') format('woff2');
 }
-/* montserrat-600 - latin */
 @font-face {
   font-display: swap;
   font-family: 'Montserrat';

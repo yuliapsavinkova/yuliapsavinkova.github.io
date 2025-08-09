@@ -32,15 +32,15 @@ class HeaderComponent extends HTMLElement {
     this.innerHTML = /*html*/ `
       <header class="header">
           <a href="${logoLink}" class="logo" aria-label="Home">
-              <svg class="icon icon-stroke" aria-hidden="true">
+              <svg aria-hidden="true">
                 <use href="#${logoSvgId}"></use>
               </svg>
               <span class="logo-name">${logoName}</span>
           </a>
           <nav class="main-nav">
             <button class="menu-toggle-button" aria-label="Open Menu">
-              <svg class="icon icon-fill enable-icon-scale" aria-hidden="true">
-                <use href="#icon-fa-bars"></use>
+              <svg class="icon enable-icon-scale" aria-hidden="true">
+                <use href="#icon-bars"></use>
               </svg>
             </button>
             <div class="nav-menu glass-effect">
