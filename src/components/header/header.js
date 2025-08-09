@@ -38,8 +38,9 @@ class HeaderComponent extends HTMLElement {
           </a>
           <nav class="main-nav">
             <button class="menu-toggle-button" aria-label="Open Menu">
-              <svg class="icon enable-icon-scale" aria-hidden="true">
-                <use href="#icon-bars"></use>
+              <svg viewBox="0 0 24 24" class="icon enable-icon-scale" aria-hidden="true">
+                <path fill="currentColor"
+                    d="M0 3.429c0-.949.766-1.715 1.714-1.715h20.572c.948 0 1.714.766 1.714 1.715 0 .948-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 3.429ZM0 12c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714.766 1.714 1.714s-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 12Zm24 8.571c0 .949-.766 1.715-1.714 1.715H1.714A1.712 1.712 0 0 1 0 20.57c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714.766 1.714 1.714z" />
               </svg>
             </button>
             <div class="nav-menu glass-effect">

@@ -91,8 +91,7 @@ class DebugPanelComponent extends HTMLElement {
         <div class="debug-header">
           <h3>Debug Panel</h3>
           <button class="close-btn" aria-label="Close Debug Panel">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
+            <svg viewBox="0 0 24 24"
                 fill="currentColor"
                 class="enable-icon-scale"
                 aria-hidden="true">

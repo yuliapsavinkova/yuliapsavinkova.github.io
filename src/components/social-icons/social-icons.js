@@ -20,8 +20,7 @@ class SocialIcons extends HTMLElement {
           target="_blank" 
           aria-label="Link to GitHub account" 
           title="GitHub">
-          <svg xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+          <svg viewBox="0 0 24 24"
               className="githubIcon"
               class="enable-icon-scale"
               fill="currentColor"
@@ -42,8 +41,7 @@ class SocialIcons extends HTMLElement {
           target="_blank" 
           aria-label="Link to Linkedin account" 
           title="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+          <svg viewBox="0 0 24 24"
               className="linkedinIcon"
               class="enable-icon-scale"
               fill="currentColor"
@@ -58,8 +56,7 @@ class SocialIcons extends HTMLElement {
           aria-label="Link to CodePen account" 
           title="CodePen">
 
-          <svg xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 24 24"
+          <svg viewBox="0 0 24 24"
                 fill="currentColor"
                 class="enable-icon-scale"
                 aria-hidden="true">
@@ -74,8 +71,7 @@ class SocialIcons extends HTMLElement {
           target="_blank" 
           aria-label="Link to Blog" 
           title="Blog">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 24 24"
+          <svg viewBox="0 0 24 24"
                 fill="currentColor"
                 class="enable-icon-scale"
                 aria-hidden="true">
