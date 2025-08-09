@@ -15,7 +15,7 @@
                       <h2>Custom Websites</h2>
                       <p>I build custom websites for portfolios, freelancers, and small businesses.</p>
                       <a href="#/work?section=work-row-web" aria-label="Go to Web Development section">
-                        <svg class="icon icon-stroke enable-icon-scale" aria-hidden="true">
+                        <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
                       </a>
@@ -30,7 +30,7 @@
                       <h2>Web Applications</h2>
                       <p>I develop web applications with user logins, forms, and dashboards.</p>
                       <a href="#/work?section=work-row-app" aria-label="Go to App Development section">
-                        <svg class="icon icon-stroke enable-icon-scale" aria-hidden="true">
+                        <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
                       </a>
@@ -45,7 +45,7 @@
                       <h2>Financial Tools</h2>
                       <p>I create financial tools to streamline daily tasks for traders and investors.</p>
                       <a href="#/work?section=work-row-app" aria-label="Go to App Development section">
-                        <svg class="icon icon-stroke enable-icon-scale" aria-hidden="true">
+                        <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
                       </a>
@@ -60,7 +60,7 @@
                       <h2>3D Development</h2>
                       <p>Build 3D web experiences using modern web technologies and libraries.</p>
                       <a href="#/work?section=work-row-3d" aria-label="Go to 3D web experiences section">
-                        <svg class="icon icon-stroke enable-icon-scale" aria-hidden="true">
+                        <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
                       </a>
