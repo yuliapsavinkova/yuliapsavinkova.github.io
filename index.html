@@ -13,10 +13,13 @@
     <meta name="keywords" content="Personal Portfolio, HTML, CSS, JavaScript, Web Development" />
     <meta name="author" content="Yulia Savinkova" />
     <meta name="google-site-verification" content="_RYGvXQXzFpCLlJNYOcq2Q7iHsOshqgc3Yk5WS6a4Rk" />
+
     <title>Portfolio</title>
 
+    <!-- Preload hero image -->
     <link rel="preload" as="image" href="./images/hero-small.webp" fetchpriority="high" />
 
+    <!-- Preload Fonts -->
     <link
       rel="preload"
       href="/assets/montserrat-v29-latin-regular-CIMKXMQI.woff2"
@@ -39,6 +42,7 @@
       crossorigin
     />
 
+    <!-- Inline Fonts -->
     <style>
       @font-face {
         font-display: swap;
@@ -63,26 +67,20 @@
       }
     </style>
 
+    <!-- Favicon for light and dark schemes -->
     <link rel="icon" href="/assets/favicon-light-C7viIQ36.svg" media="(prefers-color-scheme: light)" />
     <link rel="icon" href="/assets/favicon-dark-eAPPfRe-.svg" media="(prefers-color-scheme: dark)" />
 
-    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG1XW4WL1T"></script>
     <script>
-      window.addEventListener('DOMContentLoaded', function () {
-        setTimeout(() => {
-          const script = document.createElement('script');
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VG1XW4WL1T';
-          script.async = true;
-          document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-          gtag('config', 'G-VG1XW4WL1T');
-        }, 2000);
-      });
+      gtag('config', 'G-VG1XW4WL1T');
     </script>
     <script type="module" crossorigin src="/assets/index-C9e3efH6.js"></script>
   </head>
@@ -98,8 +96,6 @@
         ]'
       button='{"href": "/resume.pdf", "text": "Resume", "target": "_blank"}'
     ></header-component>
-
-    <div id="debug-panel"></div>
 
     <main>
       <!-- Content will be dynamically injected by router.js -->
