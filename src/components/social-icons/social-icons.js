@@ -6,7 +6,7 @@ class SocialIcons extends HTMLElement {
           display: flex;
           align-items: center;
           width: fit-content;
-          gap: 2rem;
+          gap: var(--gap);
         }
 
         .social-icons a {

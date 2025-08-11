@@ -1,6 +1,6 @@
 .error-page {
   height: var(--content-min-height);
-  padding: var(--global-padding-sides);
+  padding: var(--padding-block) var(--padding-inline);
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -14,7 +14,7 @@ class FooterComponent extends HTMLElement {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: var(--gap-small);
 
             .footer-copyright {
               display: flex;

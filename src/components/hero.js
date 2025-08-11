@@ -12,7 +12,7 @@ class HeroComponent extends HTMLElement {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 1rem;
+          gap: var(--gap-small);
         }
 
         .hero-heading,

@@ -9,7 +9,7 @@ class SectionHeader extends HTMLElement {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 2rem;
+          gap: var(--gap);
           
           .subtitle {
             text-align: center;

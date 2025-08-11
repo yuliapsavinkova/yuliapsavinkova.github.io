@@ -3,13 +3,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: var(--gap);
 }
 .feature-list {
   width: min(100%, 1200px);
   display: flex;
   flex-direction: column;
-  gap: var(--global-padding-between);
+  gap: var(--gap-large);
 }
 
 /* ======================================================= */
@@ -18,7 +18,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--gap-small);
   background: white;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 0.75rem;
+  gap: var(--gap-tiny);
   align-items: center;
   order: 2;
 }
@@ -59,7 +59,7 @@
 .feature-card {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--gap);
   text-align: center;
 }
 .feature-card .card-image {
@@ -80,7 +80,7 @@
   order: 2; /* Content is second on mobile */
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--gap-small);
   align-items: center;
 }
 .feature-card .card-content h2 {
@@ -88,7 +88,7 @@
 }
 .feature-card .card-content .button-group {
   display: flex;
-  gap: 1rem;
+  gap: var(--gap-small);
   margin-top: 1rem;
 }
 
@@ -97,7 +97,7 @@
   .feature-card {
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
+    gap: var(--gap);
     text-align: left;
   }
   .feature-card .card-image {

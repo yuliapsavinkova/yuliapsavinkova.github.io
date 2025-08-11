@@ -1,6 +1,6 @@
 .contact-form {
   box-shadow: var(--box-shadow);
-  padding: var(--global-padding-between) var(--global-padding-sides);
+  padding: var(--padding-block) var(--padding-inline);
   border-radius: var(--border-radius);
 
   button {

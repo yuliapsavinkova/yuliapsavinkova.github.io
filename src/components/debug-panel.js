@@ -57,7 +57,7 @@ class DebugPanelComponent extends HTMLElement {
           border: 1px solid hsl(217, 45%, 85%);
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: var(--gap-tiny);
         }
         .debug-header {
           display: flex;

@@ -26,21 +26,24 @@
   --icon-size: 2rem;
   --content-min-height: calc(100vh - var(--header-size) - var(--footer-size));
 
-  /* padding */
-  --global-padding-sides: 2rem;
-  --global-padding-between: 4rem;
-
   /* logos, buttons, links */
-  --border-color: var(--primary-light-color);
   --border-radius: 0.5rem;
 
   /* Other */
   --box-shadow: 0 -1px 1rem var(--box-shadow-color);
   --box-shadow-darker: 0 -5px 5rem var(--box-shadow-color);
+
+  /* Padding */
+  --padding-inline: 1rem;
+  --padding-block: 4rem;
+
+  --gap-tiny: 0.5rem;
+  --gap-small: 1rem;
+  --gap: 2rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   :root {
-    --global-padding-sides: 1rem;
+    --padding-inline: 2rem;
   }
 }
