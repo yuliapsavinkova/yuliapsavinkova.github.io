@@ -1,7 +1,7 @@
 class e extends HTMLElement{connectedCallback(){this.innerHTML=`
       <style>
         .working-process {
-          background: linear-gradient(var(--color-primary-50), var(--color-primary-50)),
+          background: linear-gradient(var(--color-overlay), var(--color-overlay)),
             url('../../images/working-girl-1280.webp');
           background-size: cover;
           background-repeat: no-repeat;
