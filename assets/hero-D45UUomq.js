@@ -45,7 +45,7 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 1rem;
+          gap: var(--gap-small);
         }
 
         .hero-heading,
