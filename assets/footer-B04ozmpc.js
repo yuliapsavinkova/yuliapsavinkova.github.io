@@ -1,4 +1,4 @@
-class a extends HTMLElement{connectedCallback(){this.innerHTML=`
+class o extends HTMLElement{connectedCallback(){this.innerHTML=`
       <style>
         .social-icons {
           display: flex;
@@ -8,8 +8,9 @@ class a extends HTMLElement{connectedCallback(){this.innerHTML=`
         }
 
         .social-icons a {
-          width: 2rem;
-          height: 2rem;
+          width: 1.75rem;
+          height: 1.75rem;
+          color: var(--color-text-footer);
         }
       </style>
       <div class="social-icons">
@@ -80,7 +81,7 @@ class a extends HTMLElement{connectedCallback(){this.innerHTML=`
           </svg>
         </a>
       </div>
-    `}}customElements.define("social-icons",a);class i extends HTMLElement{connectedCallback(){const t=this.getAttribute("copyright-name")||"All rights reserved.",l=new Date().getFullYear();this.innerHTML=`
+    `}}customElements.define("social-icons",o);class c extends HTMLElement{connectedCallback(){const t=this.getAttribute("copyright-name")||"All rights reserved.",l=new Date().getFullYear();this.innerHTML=`
         <style>
           .footer {
             height: var(--footer-size);
@@ -91,6 +92,8 @@ class a extends HTMLElement{connectedCallback(){this.innerHTML=`
             justify-content: center;
             align-items: center;
             gap: var(--gap-small);
+            background-color: var(--color-bg-footer);
+            color: var(--color-text-footer);
 
             .footer-copyright {
               display: flex;
@@ -105,4 +108,4 @@ class a extends HTMLElement{connectedCallback(){this.innerHTML=`
                 <p class="large">&copy; ${l} ${t}</p>
             </div>
         </footer>
-    `}}customElements.define("footer-component",i);
+    `}}customElements.define("footer-component",c);

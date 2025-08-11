@@ -18,7 +18,7 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
             font-weight: 500;
             letter-spacing: 0em;
             line-height: 1.3;
-            color: var(--primary-dark-color);
+            color: var(--color-primary);
           }
 
           .cursor {
