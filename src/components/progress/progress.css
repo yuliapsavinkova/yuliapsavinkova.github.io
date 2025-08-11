@@ -8,12 +8,12 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid var(--white);
 }
 
 .progress-container.visible {
   display: block;
-  opacity: 1; /* Fade in when visible */
+  opacity: 1;
 }
 
 .progress-ring {
@@ -21,12 +21,12 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--color-shadow);
   background: conic-gradient(
-    var(--primary-dark-color) 0%,
-    var(--primary-dark-color) var(--scroll-progress, 0%),
-    var(--primary-light-color) var(--scroll-progress, 0%),
-    var(--primary-light-color) 100%
+    var(--color-primary) 0%,
+    var(--color-primary) var(--scroll-progress, 0%),
+    var(--primary-light) var(--scroll-progress, 0%),
+    var(--primary-light) 100%
   );
   display: flex;
   justify-content: center;
@@ -40,7 +40,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--white-color);
+  background-color: var(--white);
   border-radius: 50%;
 
   display: flex;
@@ -48,7 +48,7 @@
   align-items: center;
 
   svg {
-    color: var(--primary-dark-color);
+    color: var(--color-primary);
     width: 0.8rem;
     height: 0.8rem;
 

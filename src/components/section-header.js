@@ -19,7 +19,7 @@ class SectionHeader extends HTMLElement {
             border-top-width: 2px;
             border-top-style: solid;
             width: 6rem;
-            border-top-color: var(--accent-light-color);
+            border-top-color: var(--color-accent);
           }
         }
       </style>

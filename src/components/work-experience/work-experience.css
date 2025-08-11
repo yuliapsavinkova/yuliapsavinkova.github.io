@@ -38,7 +38,7 @@
     background-color: var(--white-color);
     border-radius: 1rem;
     box-shadow: var(--box-shadow);
-    color: var(--primary-dark-color);
+    color: var(--color-primary);
   }
 }
 

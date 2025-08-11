@@ -1,5 +1,6 @@
 body {
-  color: var(--text-color);
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 h1,
@@ -10,17 +11,9 @@ h5,
 h6,
 a,
 label {
-  color: var(--primary-dark-color);
-}
-
-.footer {
-  background-color: var(--primary-dark-color);
-}
-
-.footer * {
-  color: var(--white-color);
+  color: var(--color-primary);
 }
 
 li::marker {
-  color: var(--accent-light-color);
+  color: var(--color-accent);
 }

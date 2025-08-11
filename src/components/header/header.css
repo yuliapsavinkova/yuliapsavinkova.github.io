@@ -2,8 +2,9 @@
   z-index: 1000;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid var(--primary-dark-color-10);
-  background-color: var(--white-color);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-header);
+  color: var(--color-text-header);
   height: var(--header-size);
   padding-inline: var(--padding-inline);
   display: flex;
@@ -32,10 +33,10 @@
 
 .header .menu-toggle-button {
   display: none; /* Hidden on desktop */
-  color: var(--primary-dark-color);
+  color: var(--color-primary);
   svg {
-    width: var(--icon-size);
-    height: var(--icon-size);
+    width: 2rem;
+    height: 2rem;
   }
 }
 
@@ -57,13 +58,13 @@
 
 .header .nav-link.active {
   font-weight: 600;
-  border-bottom: 2px solid var(--accent-light-color);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 .header .glass-effect {
-  background-color: var(--primary-dark-color-80);
+  background-color: var(--color-primary-80);
+  box-shadow: var(--color-shadow);
   backdrop-filter: blur(1rem);
-  box-shadow: var(--box-shadow);
 }
 
 .header::after {
@@ -72,7 +73,7 @@
   width: 100%;
   height: 2px;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, var(--primary-dark-color-50), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-primary-50), transparent);
   transform: translateX(-100%);
   animation: lightStrike 4s infinite linear;
 }
@@ -107,10 +108,10 @@
     right: 0;
     width: 16rem;
     /* height: calc(100vh - var(--header-size)); */
-    color: var(--white-color);
+    color: var(--white);
     text-align: center;
     border-radius: 1px;
-    border: 1px solid var(--white-color);
+    border: 1px solid var(--white);
     transform: translateX(100%); /* Hidden by default */
     transition: transform 0.3s ease-in-out;
   }
@@ -132,12 +133,12 @@
     display: flex;
     justify-content: center;
     color: var(--white-color);
-    border-bottom: 1px solid var(--primary-light-color-10);
+    border-bottom: 1px solid var(--color-primary-10);
   }
 
   .header .nav-links a:hover {
     transform: none;
-    background-color: var(--primary-dark-color-10);
+    background-color: var(--color-primary-10);
   }
 
   .header .nav-action {
@@ -148,7 +149,7 @@
 
   .header .nav-link.active {
     border-bottom: none;
-    box-shadow: 0 0 0 1px var(--white-color);
+    box-shadow: 0 0 0 1px var(--white);
     margin: 1px 3px;
   }
 }

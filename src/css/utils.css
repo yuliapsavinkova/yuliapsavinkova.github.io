@@ -6,12 +6,13 @@ html {
 
 /* Customize the selection color */
 ::selection {
-  background-color: var(--accent-light-color);
-  color: var(--white-color);
+  background-color: var(--color-accent);
+  color: var(--white);
 }
 
+/* Background texture */
 .bg-texture {
-  background-image: radial-gradient(circle, var(--primary-dark-color) 1%, transparent 4%);
+  background-image: radial-gradient(circle, var(--color-primary) 1%, transparent 4%);
   background-size: 1rem 1rem;
   background-repeat: repeat;
 }

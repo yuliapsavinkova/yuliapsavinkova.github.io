@@ -4,18 +4,15 @@ class DebugPanelComponent extends HTMLElement {
   constructor() {
     super();
     this._toggleOutline = this._toggleOutline.bind(this);
+    this._toggleTheme = this._toggleTheme.bind(this);
     this._closePanel = this._closePanel.bind(this);
     this._updateWidth = this._updateWidth.bind(this);
-
-    // Store throttled event handlers
     this._resizeHandler = Utils.throttle(this._updateWidth, 200);
   }
 
-  // Update screen width x height
   _updateWidth() {
     const debugPanel = this.querySelector('#debugPanel');
-    if (!debugPanel) return; // Avoid errors if the component is removed
-
+    if (!debugPanel) return;
     const width =
       window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const height =
@@ -28,12 +25,17 @@ class DebugPanelComponent extends HTMLElement {
       : 'Landscape';
   }
 
-  // Toggle debug outlines on body
   _toggleOutline(event) {
     document.body.classList.toggle('debug-outline', event.target.checked);
   }
 
-  // Remove the debug panel from the view
+  _toggleTheme() {
+    const root = document.documentElement;
+    const newTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = newTheme;
+    localStorage.setItem('theme', newTheme);
+  }
+
   _closePanel() {
     this.remove();
   }
@@ -49,12 +51,12 @@ class DebugPanelComponent extends HTMLElement {
           margin: 1rem;
           padding: 1rem;
           border-radius: 1.4rem;
-          color: hsl(217, 45%, 60%);
+          color: var(--color-primary);
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-          background: var(--primary-light-color-10);
+          background: var(--color-primary-10);
           backdrop-filter: blur(4rem);
           box-shadow: var(--box-shadow);
-          border: 1px solid hsl(217, 45%, 85%);
+          border: 1px solid var(--color-primary-30);
           display: flex;
           flex-direction: column;
           gap: var(--gap-tiny);
@@ -63,7 +65,7 @@ class DebugPanelComponent extends HTMLElement {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          border-bottom: 1px solid hsl(217, 45%, 60%);
+          border-bottom: 1px solid var(--color-primary);
         }
         .debug-outline * {
           outline: 1px solid red;
@@ -78,12 +80,22 @@ class DebugPanelComponent extends HTMLElement {
           margin: 0;
           width: 1.5rem;
           height: 1.5rem;
-
-          svg {
-            width: 1rem;
-            height: 1rem;
-            padding: 1px;
-          }
+        }
+        .close-btn svg {
+          width: 1rem;
+          height: 1rem;
+          padding: 1px;
+        }
+        .theme-toggle-btn {
+          cursor: pointer;
+          padding: 0.25rem 0.5rem;
+          border-radius: var(--border-radius);
+          border: 1px solid var(--color-primary);
+          background: var(--color-primary-10);
+          color: var(--color-primary);
+        }
+        .theme-toggle-btn:hover {
+          background: var(--color-primary-20);
         }
       </style>
 
@@ -91,12 +103,9 @@ class DebugPanelComponent extends HTMLElement {
         <div class="debug-header">
           <h3>Debug Panel</h3>
           <button class="close-btn" aria-label="Close Debug Panel">
-            <svg viewBox="0 0 24 24"
-                fill="currentColor"
-                class="enable-icon-scale"
-                aria-hidden="true">
-                <path fill="currentColor"
-                    d="M3.416.592a2.002 2.002 0 0 0-2.83 2.83L9.17 12 .592 20.584a2.002 2.002 0 0 0 2.83 2.83L12 14.83l8.584 8.578a2.002 2.002 0 0 0 2.83-2.83L14.83 12l8.578-8.584a2.002 2.002 0 0 0-2.83-2.83L12 9.17z" />
+            <svg class="enable-icon-scale" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill="currentColor"
+                d="M3.416.592a2.002 2.002 0 0 0-2.83 2.83L9.17 12 .592 20.584a2.002 2.002 0 0 0 2.83 2.83L12 14.83l8.584 8.578a2.002 2.002 0 0 0 2.83-2.83L14.83 12l8.578-8.584a2.002 2.002 0 0 0-2.83-2.83L12 9.17z" />
             </svg>
           </button>
         </div>
@@ -105,28 +114,36 @@ class DebugPanelComponent extends HTMLElement {
           <span class="debug-size">Loading...</span>
         </div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
+        <div><button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button></div>
         <div><a href="#/palette" target="_blank">Palette</a></div>
       </div>
     `;
 
-    // Bind events
+    // Events
     window.addEventListener('resize', this._resizeHandler);
     this.querySelector('#toggle-outline').addEventListener('change', this._toggleOutline);
+    this.querySelector('#theme-toggle').addEventListener('click', this._toggleTheme);
     this.querySelector('.close-btn').addEventListener('click', this._closePanel);
 
-    // Initial width update
+    // Set theme from saved preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+
+    // Initial size update
     this._updateWidth();
   }
 
   disconnectedCallback() {
-    // Cleanup event listeners
     window.removeEventListener('resize', this._resizeHandler);
-
     const toggleOutline = this.querySelector('#toggle-outline');
     const closeBtn = this.querySelector('.close-btn');
+    const themeToggle = this.querySelector('#theme-toggle');
 
     if (toggleOutline) toggleOutline.removeEventListener('change', this._toggleOutline);
     if (closeBtn) closeBtn.removeEventListener('click', this._closePanel);
+    if (themeToggle) themeToggle.removeEventListener('click', this._toggleTheme);
   }
 }
 

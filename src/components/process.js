@@ -3,7 +3,7 @@ class WorkingProcessComponent extends HTMLElement {
     this.innerHTML = `
       <style>
         .working-process {
-          background: linear-gradient(var(--primary-dark-color-50), var(--primary-dark-color-50)),
+          background: linear-gradient(var(--color-primary-50), var(--color-primary-50)),
             url('../../images/working-girl-1280.webp');
           background-size: cover;
           background-repeat: no-repeat;
@@ -13,11 +13,10 @@ class WorkingProcessComponent extends HTMLElement {
           width: auto;
 
           * {
-            color: var(--white-color);
+            color: var(--white);
           }
         }
 
-        /* FOR TABLET AND MOBILE */
         @media (max-width: 1400px) {
           .working-process {
             background-attachment: scroll;

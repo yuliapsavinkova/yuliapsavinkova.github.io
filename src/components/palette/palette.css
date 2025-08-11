@@ -1,7 +1,7 @@
 .palette {
   height: var(--content-min-height);
-  background: linear-gradient(90deg, #c3d1e5 1px, transparent 1px),
-    linear-gradient(#c3d1e5 1px, transparent 1px), #f0f0f0;
+  background: linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(var(--grid-line) 1px, transparent 1px), var(--grid-bg);
   background-size: 1rem 1rem;
 }
 
@@ -18,23 +18,23 @@
   border: 1px solid black;
 }
 .primary-dark-circle {
-  background-color: var(--primary-dark-color);
+  background-color: var(--primary-dark);
 }
 .primary-light-circle {
-  background-color: var(--primary-light-color);
+  background-color: var(--primary-light);
 }
 .accent-dark-circle {
-  background-color: var(--accent-dark-color);
+  background-color: var(--accent-dark);
 }
 .accent-light-circle {
-  background-color: var(--accent-light-color);
+  background-color: var(--accent-light);
 }
 .text-circle {
-  background-color: var(--text-color);
+  background-color: var(--color-text);
 }
 .white-circle {
-  background-color: var(--white-color);
+  background-color: var(--white);
 }
 .black-circle {
-  background-color: var(--black-color);
+  background-color: var(--black);
 }

@@ -3,12 +3,12 @@
   --button-padding: 0.5rem 1rem;
 }
 
+/* Base button */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: var(--button-padding);
-
   text-align: center;
   text-decoration: none;
   border-radius: var(--border-radius);
@@ -20,15 +20,16 @@
   min-width: 10rem;
 }
 
+/* Primary button */
 .button-primary {
-  color: var(--white-color);
-  background-color: var(--primary-dark-color);
-  border-color: var(--primary-dark-color);
+  color: var(--white);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .button-primary:hover {
   filter: brightness(1.2);
-  color: var(--white-color);
+  color: var(--white);
 }
 
 .button-primary:active {
@@ -36,45 +37,47 @@
 }
 
 .button-primary:focus-visible {
-  outline: 2px solid var(--primary-dark-color);
+  outline: 2px solid var(--color-primary);
 }
 
+/* Secondary button */
 .button-secondary {
-  color: var(--primary-dark-color);
+  color: var(--color-primary);
   background-color: transparent;
-  border-color: var(--primary-dark-color);
+  border-color: var(--color-primary);
 }
 
 .button-secondary:hover {
-  background-color: var(--primary-dark-color);
-  color: var(--white-color);
+  background-color: var(--color-primary);
+  color: var(--white);
 }
 
 .button-secondary:active {
-  background-color: var(--primary-light-color);
-  color: var(--text-color);
+  background-color: var(--color-primary-10);
+  color: var(--color-text);
 }
 
 .button-secondary:focus-visible {
-  outline: 2px solid var(--primary-dark-color);
+  outline: 2px solid var(--color-primary);
 }
 
+/* Action button */
 .button-action {
-  color: var(--white-color);
-  background-color: var(--accent-dark-color);
-  border-color: var(--accent-dark-color);
+  color: var(--white);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .button-action:hover {
-  color: var(--white-color);
+  color: var(--white);
   filter: brightness(1.1);
 }
 
 .button-action:active {
-  background-color: var(--accent-light-color);
+  background-color: var(--accent-light);
   filter: brightness(0.9);
 }
 
 .button-action:focus-visible {
-  outline: 2px solid var(--accent-dark-color);
+  outline: 2px solid var(--color-accent);
 }

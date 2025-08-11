@@ -37,7 +37,7 @@ class RotatingText extends HTMLElement {
             font-weight: 500;
             letter-spacing: 0em;
             line-height: 1.3;
-            color: var(--primary-dark-color);
+            color: var(--color-primary);
           }
 
           .cursor {

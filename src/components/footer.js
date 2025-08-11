@@ -15,6 +15,8 @@ class FooterComponent extends HTMLElement {
             justify-content: center;
             align-items: center;
             gap: var(--gap-small);
+            background-color: var(--color-bg-footer);
+            color: var(--color-text-footer);
 
             .footer-copyright {
               display: flex;
