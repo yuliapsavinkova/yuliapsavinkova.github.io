@@ -23,8 +23,8 @@
   border-radius: 50%;
   box-shadow: var(--color-shadow);
   background: conic-gradient(
-    var(--color-primary) 0%,
-    var(--color-primary) var(--scroll-progress, 0%),
+    var(--color-scroll) 0%,
+    var(--color-scroll) var(--scroll-progress, 0%),
     var(--primary-light) var(--scroll-progress, 0%),
     var(--primary-light) 100%
   );
@@ -48,7 +48,7 @@
   align-items: center;
 
   svg {
-    color: var(--color-primary);
+    color: var(--color-scroll);
     width: 0.8rem;
     height: 0.8rem;
 

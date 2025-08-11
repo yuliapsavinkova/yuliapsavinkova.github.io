@@ -1,6 +1,7 @@
 /* Inline Critical CSS */
 import resetCss from './css/reset.css?inline';
 import variablesCss from './css/variables.css?inline';
+import themesCss from './css/themes.css?inline';
 import typographyCss from './css/typography.css?inline';
 import layoutCss from './css/layout.css?inline';
 import colorsCss from './css/colors.css?inline';
@@ -20,6 +21,7 @@ import './components/section-header.js';
 const criticalCss = [
   resetCss,
   variablesCss,
+  themesCss,
   typographyCss,
   layoutCss,
   colorsCss,

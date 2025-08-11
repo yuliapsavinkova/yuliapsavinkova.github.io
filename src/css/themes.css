@@ -1,0 +1,80 @@
+/* Light theme (default): */
+:root {
+  /* Backgrounds */
+  --color-bg: var(--white);
+  --color-bg-header: var(--white);
+  --color-bg-footer: var(--primary-dark);
+  --color-bg-menu: var(--primary-dark);
+
+  /* Text */
+  --color-text: hsl(var(--hue-primary), 17%, 47%);
+  --color-text-header: var(--primary-dark);
+  --color-text-footer: var(--white);
+  --color-on-bg: var(--white);
+
+  /* Primary colors for UI elements */
+  --color-primary: var(--primary-dark);
+  --color-primary-10: hsla(var(--hue-primary), 45%, 32%, 0.1);
+  --color-primary-50: hsla(var(--hue-primary), 45%, 32%, 0.5);
+  --color-primary-80: hsla(var(--hue-primary), 45%, 32%, 0.8);
+
+  /* Accent colors */
+  --color-accent: var(--accent-light);
+
+  /* Borders / shadows */
+  --color-border: var(--color-primary-10);
+  --color-shadow: hsla(208, 100%, 18%, 0.1);
+
+  /* Shadow color for light mode */
+  --box-shadow-color: hsla(var(--hue-primary), 45%, 32%, 0.15);
+
+  /* Shadows */
+  --box-shadow: 0 -1px 1rem var(--box-shadow-color);
+  --box-shadow-darker: 0 -5px 5rem var(--box-shadow-color);
+
+  /* Grid */
+  --grid-line: var(--primary-light);
+  --grid-bg: var(--white);
+
+  /* COLORS DO NOT CHANGE between themes */
+  --color-scroll: var(--primary-dark);
+  --color-overlay: hsla(var(--hue-primary), 45%, 32%, 0.5);
+}
+
+/* Dark theme:  */
+:root[data-theme='dark'] {
+  /* Backgrounds */
+  --color-bg: hsl(var(--hue-primary), 30%, 8%);
+  --color-bg-header: hsl(var(--hue-primary), 28%, 12%);
+  --color-bg-footer: hsl(var(--hue-primary), 25%, 15%);
+  --color-bg-menu: hsl(var(--hue-primary), 25%, 12%);
+  --color-on-bg: var(--primary-dark);
+
+  /* Text */
+  --color-text: var(--primary-light);
+  --color-text-header: var(--primary-light);
+  --color-text-footer: var(--primary-light);
+
+  /* Primary colors */
+  --color-primary: var(--primary-light);
+  --color-primary-10: hsla(var(--hue-primary), 43%, 93%, 0.1);
+  --color-primary-50: hsla(var(--hue-primary), 43%, 93%, 0.5);
+  --color-primary-80: hsla(var(--hue-primary), 43%, 93%, 0.8);
+
+  /* Accent colors */
+  --color-accent: var(--accent-light);
+
+  /* Borders / shadows */
+  --color-border: var(--color-primary-10);
+  --color-shadow: hsla(var(--hue-primary), 100%, 0%, 0.2);
+
+  /* Shadow color for dark mode */
+  --box-shadow-color: hsla(var(--hue-primary), 43%, 93%, 0.15);
+
+  --box-shadow: 0 -1px 1rem var(--box-shadow-color);
+  --box-shadow-darker: 0 -5px 5rem var(--box-shadow-color);
+
+  /* Grid */
+  --grid-line: var(--primary-dark);
+  --grid-bg: var(--black);
+}

@@ -22,14 +22,14 @@
 
 /* Primary button */
 .button-primary {
-  color: var(--white);
+  color: var(--color-on-bg);
   background-color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
 .button-primary:hover {
   filter: brightness(1.2);
-  color: var(--white);
+  color: var(--color-on-bg);
 }
 
 .button-primary:active {
@@ -49,7 +49,7 @@
 
 .button-secondary:hover {
   background-color: var(--color-primary);
-  color: var(--white);
+  color: var(--color-on-bg);
 }
 
 .button-secondary:active {
