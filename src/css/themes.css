@@ -11,7 +11,7 @@
   --light-text-heading: hsl(var(--hue-primary), 25%, 15%);
   --light-text-body: hsl(var(--hue-primary), 15%, 35%);
   --light-primary: hsl(var(--hue-primary), 45%, 32%);
-  --light-accent: hsl(var(--hue-accent), 85%, 52%);
+  --light-accent: hsl(var(--hue-accent), 85%, 48%);
   --light-border: hsl(var(--hue-primary), 25%, 90%);
   --light-shadow-values: var(--hue-primary), 45%, 32%;
 }
