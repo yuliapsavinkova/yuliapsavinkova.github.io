@@ -1,4 +1,4 @@
-import './social-icons/social-icons.js';
+import './social-icons.js';
 
 class FooterComponent extends HTMLElement {
   connectedCallback() {

@@ -38,9 +38,14 @@
 
 /* Primary button */
 .button-primary {
-  color: var(--color-surface); /* Use surface color for text */
+  color: var(--white); /* white text for contrast */
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+}
+
+.button-primary:hover {
+  background-color: hsl(var(--hue-primary), 70%, 40%);
+  border-color: hsl(var(--hue-primary), 70%, 40%);
 }
 
 /* Secondary button */
@@ -52,12 +57,18 @@
 
 .button-secondary:hover {
   background-color: var(--color-primary);
-  color: var(--color-surface);
+  color: var(--white); /* white text on hover */
+  border-color: var(--color-primary);
 }
 
-/* Action button (uses accent color) */
+/* Action button */
 .button-action {
   color: var(--white);
   background-color: var(--color-accent);
   border-color: var(--color-accent);
+}
+
+.button-action:hover {
+  background-color: hsl(var(--hue-accent), 70%, 45%);
+  border-color: hsl(var(--hue-accent), 70%, 45%);
 }
