@@ -95,10 +95,6 @@ class a extends HTMLElement{connectedCallback(){this.innerHTML=`
               display: flex;
               justify-content: center;
               align-items: center;
-              
-              p {
-              font-weight: 500;
-              }
             }
           }
         </style>
