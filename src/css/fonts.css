@@ -8,13 +8,6 @@
   size-adjust: 105%; /* Montserrat is slightly wider than Arial */
 }
 
-/* @font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/montserrat-variable-subset.woff2') format('woff2-variations');
-  font-weight: 400 600;
-  font-display: swap;
-} */
-
 @font-face {
   font-display: swap;
   font-family: 'Montserrat';

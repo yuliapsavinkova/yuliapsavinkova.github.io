@@ -22,10 +22,6 @@ class FooterComponent extends HTMLElement {
               display: flex;
               justify-content: center;
               align-items: center;
-              
-              p {
-              font-weight: 500;
-              }
             }
           }
         </style>
