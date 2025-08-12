@@ -35,7 +35,7 @@
   span {
     font-size: 0.7rem;
     padding: 0.5rem;
-    background-color: var(--white-color);
+    background-color: var(--color-surface-color);
     border-radius: 1rem;
     box-shadow: var(--box-shadow);
     color: var(--color-primary);

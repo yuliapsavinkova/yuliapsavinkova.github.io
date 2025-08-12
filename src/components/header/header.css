@@ -3,81 +3,63 @@
   position: sticky;
   top: 0;
   border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-bg-header);
-  color: var(--color-text-header);
+  background-color: var(--color-surface); /* Use surface color for header */
+  color: var(--color-text-body); /* Set default text color for header */
   height: var(--header-size);
   padding-inline: var(--padding-inline);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow-x: hidden;
 }
-
 .header .logo {
   display: contents;
-  line-height: 0;
-
-  svg {
-    width: var(--logo-size);
-    height: var(--logo-size);
-  }
 }
-
+.header .logo svg {
+  width: var(--logo-size);
+  height: var(--logo-size);
+  color: var(--color-primary);
+}
 .header a {
   text-decoration: none;
 }
-
-.header .main-nav {
+.header .main-nav,
+.header .nav-menu {
   display: contents;
 }
-
 .header .menu-toggle-button {
-  display: none; /* Hidden on desktop */
+  display: none;
   color: var(--color-primary);
   svg {
     width: 2rem;
     height: 2rem;
   }
 }
-
-.header .nav-menu {
-  display: contents;
-}
-
 .header .nav-links {
   flex: 1;
   display: flex;
-  text-align: center;
   justify-content: center;
   gap: var(--gap);
 }
-
-.header .nav-links a:hover {
-  transform: scale(1.05);
-}
-
 .header .nav-link.active {
   font-weight: 600;
+  color: var(--color-primary);
   border-bottom: 2px solid var(--color-accent);
 }
-
 .header .glass-effect {
-  background-color: var(--color-primary-80);
-  box-shadow: var(--color-shadow);
+  background-color: hsla(var(--color-shadow), 0.8);
+  box-shadow: var(--box-shadow);
   backdrop-filter: blur(1rem);
 }
-
 .header::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, var(--color-primary-50), transparent);
+  background: linear-gradient(90deg, transparent, hsla(var(--color-shadow), 0.5), transparent);
   transform: translateX(-100%);
   animation: lightStrike 4s infinite linear;
 }
-
 @keyframes lightStrike {
   from {
     transform: translateX(-100%);
@@ -93,63 +75,43 @@
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1001; /* Ensure it's above the menu */
+    z-index: 1001;
     padding: 0.5rem;
-    line-height: 0; /* Remove line height for icon centering */
+    line-height: 0;
   }
-
   .header .nav-menu {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
     position: fixed;
     top: var(--header-size);
     right: 0;
     width: 16rem;
-    /* height: calc(100vh - var(--header-size)); */
-    color: var(--white);
-    text-align: center;
-    border-radius: 1px;
-    border: 1px solid var(--white);
-    transform: translateX(100%); /* Hidden by default */
+    background-color: var(--color-surface); /* Use surface color for menu */
+    border-left: 1px solid var(--color-border);
+    transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
   }
-
-  /* This is the new rule that shows the menu */
   header-component.is-menu-open .nav-menu {
     transform: translateX(0);
   }
-
   .header .nav-links {
     display: block;
   }
-
-  .header .nav-links .nav-link {
-    padding: 1rem;
-  }
-
   .header .nav-links a {
     display: flex;
+    padding: 1rem;
     justify-content: center;
-    color: var(--white-color);
-    border-bottom: 1px solid var(--color-primary-10);
+    /* border-bottom: 1px solid var(--color-border); */
   }
-
   .header .nav-links a:hover {
-    transform: none;
-    background-color: var(--color-primary-10);
+    background-color: var(--color-background); /* Use main bg for hover */
   }
-
   .header .nav-action {
-    display: inline-block;
-    margin: 1rem;
+    padding: 1rem;
     align-self: center;
   }
-
   .header .nav-link.active {
-    border-bottom: none;
-    box-shadow: 0 0 0 1px var(--white);
-    margin: 1px 3px;
+    border: 1px solid var(--color-border);
+    background-color: hsla(var(--color-shadow), 0.1);
   }
 }

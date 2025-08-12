@@ -1,10 +1,10 @@
 import { Utils } from '../utils.js';
+import './theme-toggle.js';
 
 class DebugPanelComponent extends HTMLElement {
   constructor() {
     super();
     this._toggleOutline = this._toggleOutline.bind(this);
-    this._toggleTheme = this._toggleTheme.bind(this);
     this._closePanel = this._closePanel.bind(this);
     this._updateWidth = this._updateWidth.bind(this);
     this._resizeHandler = Utils.throttle(this._updateWidth, 200);
@@ -13,10 +13,13 @@ class DebugPanelComponent extends HTMLElement {
   _updateWidth() {
     const debugPanel = this.querySelector('#debugPanel');
     if (!debugPanel) return;
+
     const width =
       window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
     const height =
       window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
     debugPanel.querySelector('.debug-size').textContent = `${width} x ${height}`;
     debugPanel.querySelector('.orientation').textContent = window.matchMedia(
       '(orientation: portrait)',
@@ -27,13 +30,6 @@ class DebugPanelComponent extends HTMLElement {
 
   _toggleOutline(event) {
     document.body.classList.toggle('debug-outline', event.target.checked);
-  }
-
-  _toggleTheme() {
-    const root = document.documentElement;
-    const newTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = newTheme;
-    localStorage.setItem('theme', newTheme);
   }
 
   _closePanel() {
@@ -50,13 +46,10 @@ class DebugPanelComponent extends HTMLElement {
           left: 0;
           margin: 1rem;
           padding: 1rem;
-          border-radius: 1.4rem;
+          border-radius: 1rem;
           color: var(--color-primary);
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-          background: var(--color-primary-10);
-          backdrop-filter: blur(4rem);
+          background-color: var(--color-surface);          
           box-shadow: var(--box-shadow);
-          border: 1px solid var(--color-primary-30);
           display: flex;
           flex-direction: column;
           gap: var(--gap-tiny);
@@ -78,24 +71,18 @@ class DebugPanelComponent extends HTMLElement {
           cursor: pointer;
           padding: 0;
           margin: 0;
-          width: 1.5rem;
-          height: 1.5rem;
+          width: 2rem;
+          height: 2rem;
         }
         .close-btn svg {
           width: 1rem;
           height: 1rem;
           padding: 1px;
         }
-        .theme-toggle-btn {
-          cursor: pointer;
-          padding: 0.25rem 0.5rem;
-          border-radius: var(--border-radius);
-          border: 1px solid var(--color-primary);
-          background: var(--color-primary-10);
+        .theme-toggle-inline .theme-toggle-btn {
+          width: 2rem;
+          height: 2rem;
           color: var(--color-primary);
-        }
-        .theme-toggle-btn:hover {
-          background: var(--color-primary-20);
         }
       </style>
 
@@ -114,22 +101,17 @@ class DebugPanelComponent extends HTMLElement {
           <span class="debug-size">Loading...</span>
         </div>
         <div><input type="checkbox" id="toggle-outline"> Show Outlines</div>
-        <div><button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button></div>
         <div><a href="#/palette" target="_blank">Palette</a></div>
+        <span class="theme-toggle-inline">
+          <theme-toggle-button></theme-toggle-button>
+        </span> 
       </div>
     `;
 
     // Events
     window.addEventListener('resize', this._resizeHandler);
     this.querySelector('#toggle-outline').addEventListener('change', this._toggleOutline);
-    this.querySelector('#theme-toggle').addEventListener('click', this._toggleTheme);
     this.querySelector('.close-btn').addEventListener('click', this._closePanel);
-
-    // Set theme from saved preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.documentElement.dataset.theme = savedTheme;
-    }
 
     // Initial size update
     this._updateWidth();
@@ -137,13 +119,12 @@ class DebugPanelComponent extends HTMLElement {
 
   disconnectedCallback() {
     window.removeEventListener('resize', this._resizeHandler);
-    const toggleOutline = this.querySelector('#toggle-outline');
-    const closeBtn = this.querySelector('.close-btn');
-    const themeToggle = this.querySelector('#theme-toggle');
 
+    const toggleOutline = this.querySelector('#toggle-outline');
     if (toggleOutline) toggleOutline.removeEventListener('change', this._toggleOutline);
+
+    const closeBtn = this.querySelector('.close-btn');
     if (closeBtn) closeBtn.removeEventListener('click', this._closePanel);
-    if (themeToggle) themeToggle.removeEventListener('click', this._toggleTheme);
   }
 }
 

@@ -82,10 +82,7 @@ export async function renderPage() {
       break;
 
     case 'palette':
-      await Promise.all([
-        import('./components/palette/palette.js'),
-        import('./components/footer.js'),
-      ]);
+      await Promise.all([import('./components/palette.js'), import('./components/footer.js')]);
       app.innerHTML = `
         <palette-component></palette-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>

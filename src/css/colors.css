@@ -1,6 +1,6 @@
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-background);
+  color: var(--color-text-body);
 }
 
 h1,

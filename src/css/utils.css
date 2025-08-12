@@ -7,7 +7,7 @@ html {
 /* Customize the selection color */
 ::selection {
   background-color: var(--color-accent);
-  color: var(--white);
+  color: var(--color-surface);
 }
 
 /* Background texture */

@@ -13,7 +13,7 @@ class WorkingProcessComponent extends HTMLElement {
           width: auto;
 
           * {
-            color: var(--white);
+            color: var(--color-surface);
           }
         }
 

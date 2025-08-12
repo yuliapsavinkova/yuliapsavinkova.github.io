@@ -12,7 +12,6 @@ class SocialIcons extends HTMLElement {
         .social-icons a {
           width: 1.75rem;
           height: 1.75rem;
-          color: var(--color-text-footer);
         }
       </style>
       <div class="social-icons">
