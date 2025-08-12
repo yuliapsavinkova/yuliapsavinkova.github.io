@@ -68,4 +68,5 @@
   /* Global component styles that use the semantic variables */
   --box-shadow: 0 4px 12px hsla(var(--shadow-color-values), 0.1);
   --color-overlay: hsla(var(--hue-primary), 45%, 32%, 0.5);
+  --white: var(--color-text-heading);
 }
