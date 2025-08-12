@@ -101,7 +101,7 @@ export async function renderPage() {
       break;
 
     default:
-      await Promise.all([import('./components/404/404.js'), import('./components/footer.js')]);
+      await Promise.all([import('./components/404.js'), import('./components/footer.js')]);
       app.innerHTML = `
         <error-component></error-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
