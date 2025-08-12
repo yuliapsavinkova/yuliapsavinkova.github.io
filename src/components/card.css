@@ -48,6 +48,9 @@
 .feature-card .card-content .button,
 .card .card-content svg {
   margin-top: 0.5rem;
+}
+
+.card .card-content svg {
   width: 2.5rem;
   height: 2.5rem;
 }

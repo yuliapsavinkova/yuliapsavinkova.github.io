@@ -16,10 +16,9 @@
   outline: none;
   transition: var(--button-transition);
   user-select: none;
-  border: 2px solid transparent; /* Increased border width for better visibility */
+  border: 2px solid transparent;
   min-width: 10rem;
-  font-weight: 600; /* Bolder for better readability */
-  position: relative; /* For hover effect */
+  position: relative;
 }
 
 /* Add a subtle overlay on hover for all buttons */
@@ -58,7 +57,7 @@
 
 /* Action button (uses accent color) */
 .button-action {
-  color: var(--color-surface);
+  color: var(--white);
   background-color: var(--color-accent);
   border-color: var(--color-accent);
 }

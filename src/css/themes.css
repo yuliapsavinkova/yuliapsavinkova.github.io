@@ -29,8 +29,8 @@
   --dark-form-bg: hsl(var(--hue-primary), 15%, 20%); /* A subtle dark blue for forms */
   --dark-text-heading: hsl(var(--hue-primary), 15%, 90%);
   --dark-text-body: hsl(var(--hue-primary), 10%, 75%);
-  --dark-primary: hsl(var(--hue-primary), 45%, 55%);
-  --dark-accent: hsl(var(--hue-accent), 85%, 52%);
+  --dark-primary: hsl(var(--hue-primary), 60%, 65%);
+  --dark-accent: hsl(var(--hue-accent), 85%, 45%);
   --dark-border: hsl(var(--hue-primary), 15%, 25%);
   --dark-shadow-values: var(--hue-primary), 45%, 5%;
 }
