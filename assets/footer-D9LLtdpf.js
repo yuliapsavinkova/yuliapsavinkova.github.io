@@ -82,7 +82,6 @@ class a extends HTMLElement{connectedCallback(){this.innerHTML=`
           .footer {
             height: var(--footer-size);
             min-width: 16rem;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -90,12 +89,12 @@ class a extends HTMLElement{connectedCallback(){this.innerHTML=`
             gap: var(--gap-small);
             background-color: var(--color-background);
             color: var(--color-primary);
+          }
 
-            .footer-copyright {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
+          .footer-copyright {
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         </style>
         <footer id="footer" class="footer">
