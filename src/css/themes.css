@@ -1,19 +1,13 @@
-/* ==================================================================== */
-/* 1. BRAND HUES                                                      */
-/* ==================================================================== */
 :root {
   --hue-primary: 221;
   --hue-accent: 357;
 }
 
-/* ==================================================================== */
-/* 2. LIGHT & DARK THEME PALETTES (Simplified)                        */
-/* ==================================================================== */
+/* Light Theme */
 :root {
-  /* --- Light Theme Palette --- */
   --light-bg: hsl(var(--hue-primary), 25%, 98%);
   --light-surface: hsl(0, 0%, 100%);
-  --light-form-bg: hsl(var(--hue-primary), 25%, 94%); /* A pleasant light blue for forms */
+  --light-form-bg: hsl(var(--hue-primary), 25%, 94%);
   --light-text-heading: hsl(var(--hue-primary), 25%, 15%);
   --light-text-body: hsl(var(--hue-primary), 15%, 35%);
   --light-primary: hsl(var(--hue-primary), 45%, 32%);
@@ -22,24 +16,23 @@
   --light-shadow-values: var(--hue-primary), 45%, 32%;
 }
 
+/* Dark Theme */
 :root[data-theme='dark'] {
-  /* --- Dark Theme Palette --- */
-  --dark-bg: hsl(var(--hue-primary), 15%, 10%);
-  --dark-surface: hsl(var(--hue-primary), 15%, 15%);
-  --dark-form-bg: hsl(var(--hue-primary), 15%, 20%); /* A subtle dark blue for forms */
-  --dark-text-heading: hsl(var(--hue-primary), 15%, 90%);
-  --dark-text-body: hsl(var(--hue-primary), 10%, 75%);
-  --dark-primary: hsl(var(--hue-primary), 60%, 65%);
-  --dark-accent: hsl(var(--hue-accent), 85%, 45%);
-  --dark-border: hsl(var(--hue-primary), 15%, 25%);
-  --dark-shadow-values: var(--hue-primary), 45%, 5%;
+  --dark-bg: hsl(var(--hue-primary), 15%, 12%);
+  --dark-surface: hsl(var(--hue-primary), 15%, 18%);
+  --dark-form-bg: hsl(var(--hue-primary), 15%, 22%);
+  --dark-text-heading: hsl(var(--hue-primary), 20%, 90%);
+  --dark-text-body: hsl(var(--hue-primary), 15%, 75%);
+  --dark-primary: hsl(var(--hue-primary), 65%, 60%);
+
+  --dark-accent: hsl(var(--hue-accent), 60%, 50%);
+
+  --dark-border: hsl(var(--hue-primary), 15%, 30%);
+  --dark-shadow-values: var(--hue-primary), 45%, 10%;
 }
 
-/* ==================================================================== */
-/* 3. SEMANTIC VARIABLES (Your Single Source of Truth)                */
-/* ==================================================================== */
+/* Semantic Variables */
 :root {
-  /* Light Theme Default */
   --color-background: var(--light-bg);
   --color-surface: var(--light-surface);
   --color-form-background: var(--light-form-bg);
@@ -52,7 +45,6 @@
 }
 
 :root[data-theme='dark'] {
-  /* Dark Theme Overrides */
   --color-background: var(--dark-bg);
   --color-surface: var(--dark-surface);
   --color-form-background: var(--dark-form-bg);
@@ -64,8 +56,8 @@
   --shadow-color-values: var(--dark-shadow-values);
 }
 
+/* Global styles */
 :root {
-  /* Global component styles that use the semantic variables */
   --box-shadow: 0 4px 12px hsla(var(--shadow-color-values), 0.1);
   --color-overlay: hsla(var(--hue-primary), 45%, 32%, 0.5);
   --white: hsl(0, 0%, 100%);
