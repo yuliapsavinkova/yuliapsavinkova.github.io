@@ -15,9 +15,15 @@ class HeroComponent extends HTMLElement {
           gap: var(--gap-small);
         }
 
-        .hero-heading,
-        .hero-buttons {
+        .hero-heading {
           text-align: center;
+        }
+
+        .hero-buttons {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: var(--gap-tiny);
         }
 
         .hero-image {

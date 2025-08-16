@@ -15,7 +15,7 @@ class Palette extends HTMLElement {
 
         .palette-container h2 {
           text-align: center;
-          padding: 2rem 0;
+          padding-bottom: 1rem;
         }
 
         /* Shared swatch layout */
@@ -28,7 +28,7 @@ class Palette extends HTMLElement {
         }
 
         .palette-grid > * {
-          flex: 0 0 12rem;         /* fixed width */
+          flex: 0 0 10rem;         /* fixed width */
         }
 
         /* Swatches */
@@ -78,7 +78,7 @@ class Palette extends HTMLElement {
 
         .color-info p {
           margin: 0;
-          font-size: 0.875rem;
+          font-size: 0.7rem;
           color: var(--color-text-body);
         }
 
@@ -103,13 +103,11 @@ class Palette extends HTMLElement {
         .theme-toggle-float .theme-toggle-btn {
           width: 2rem;
           height: 2rem;
-          background: var(--button-bg, #fff);
-          color: var(--button-fg, #333);
-          border: none;
+          background: var(--color-surface);
+          color: var(--color-primary);
           border-radius: 0.5rem 0 0 0.5rem;
-          padding: 0.5rem;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-          cursor: pointer;
+          padding: 0.3rem;
+          box-shadow: var(--shadow-md);
           transition: transform 0.2s ease, right 0.2s ease;
         }
 
@@ -122,28 +120,24 @@ class Palette extends HTMLElement {
         <theme-toggle-button></theme-toggle-button>
       </div>      
       <section id="palette">
-        <section-header 
+        <!--<section-header 
             title="Design System Palette"
             sub-title="See everything in one place">
-        </section-header>
+        </section-header>-->
         <div class="palette-container">
           <h2>Core Palette</h2>
           <div class="palette-grid">
               <div class="color-swatch"><div class="color-display" style="background-color: var(--color-background);"></div><div class="color-info"><h3>Background</h3><p>--color-background</p></div></div>
               <div class="color-swatch"><div class="color-display" style="background-color: var(--color-surface);"></div><div class="color-info"><h3>Surface</h3><p>--color-surface</p></div></div>
-              <div class="color-swatch"><div class="color-display" style="background-color: var(--color-text-heading);"></div><div class="color-info"><h3>Heading Text</h3><p>--color-text-heading</p></div></div>
-              <div class="color-swatch"><div class="color-display" style="background-color: var(--color-text-body);"></div><div class="color-info"><h3>Body Text</h3><p>--color-text-body</p></div></div>
               <div class="color-swatch"><div class="color-display" style="background-color: var(--color-primary);"></div><div class="color-info"><h3>Primary</h3><p>--color-primary</p></div></div>
               <div class="color-swatch"><div class="color-display" style="background-color: var(--color-accent);"></div><div class="color-info"><h3>Accent</h3><p>--color-accent</p></div></div>
-          </div>
-          <h2>Component Colors</h2>
-          <div class="palette-grid">
-              <div class="color-swatch"><div class="color-display" style="background-color: var(--color-form-background);"></div><div class="color-info"><h3>Form Background</h3><p>--color-form-background</p></div></div>
+              <div class="color-swatch"><div class="color-display" style="background-color: var(--color-text-heading);"></div><div class="color-info"><h3>Heading Text</h3><p>--color-text-heading</p></div></div>
+              <div class="color-swatch"><div class="color-display" style="background-color: var(--color-text-body);"></div><div class="color-info"><h3>Body Text</h3><p>--color-text-body</p></div></div>
           </div>
           <h2>Effects</h2>
           <div class="palette-grid">
               <div class="effect-swatch">
-                  <div class="effect-display" style="box-shadow: var(--box-shadow);">Box Shadow</div>
+                  <div class="effect-display" style="box-shadow: var(--shadow-md);">Box Shadow</div>
                   <div class="color-info"><h3>Box Shadow</h3><p>--box-shadow</p></div>
               </div>
               <div class="effect-swatch">

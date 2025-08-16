@@ -1,31 +1,48 @@
+// theme-toggle.js
 class ThemeToggleButton extends HTMLElement {
   constructor() {
     super();
     this._toggleTheme = this._toggleTheme.bind(this);
+    this._themes = ['light', 'dark', 'pastel']; // Add new themes here
   }
 
   _toggleTheme() {
     const root = document.documentElement;
-    const newTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = newTheme;
-    localStorage.setItem('theme', newTheme);
-    this._updateIcon(newTheme);
+    const currentTheme = root.dataset.theme || this._themes[0];
+    const currentIndex = this._themes.indexOf(currentTheme);
+    const nextTheme = this._themes[(currentIndex + 1) % this._themes.length];
+
+    root.dataset.theme = nextTheme;
+    localStorage.setItem('theme', nextTheme);
+    this._updateIcon(nextTheme);
   }
 
   _updateIcon(theme) {
     const sunIcon = this.querySelector('.sun');
     const moonIcon = this.querySelector('.moon');
+
+    // Basic example: sun for light, moon for dark, sun tinted for pastel
     if (theme === 'light') {
       sunIcon.style.display = 'block';
+      sunIcon.style.opacity = '1';
       moonIcon.style.display = 'none';
-    } else {
+    } else if (theme === 'dark') {
       sunIcon.style.display = 'none';
       moonIcon.style.display = 'block';
+    } else if (theme === 'pastel') {
+      sunIcon.style.display = 'block';
+      sunIcon.style.opacity = '0.6'; // visually differentiate pastel
+      moonIcon.style.display = 'none';
     }
   }
 
   connectedCallback() {
     this.innerHTML = `
+      <style>    
+        .theme-toggle-btn {
+          cursor: pointer;
+        } 
+      </style>
       <div class="theme-toggle-btn" aria-label="Toggle Theme">
         <!-- Sun -->
         <svg class="sun enable-icon-scale" viewBox="0 0 24 24" fill="currentColor">
@@ -50,9 +67,10 @@ class ThemeToggleButton extends HTMLElement {
     `;
 
     // Init theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || this._themes[0];
     document.documentElement.dataset.theme = savedTheme;
     this._updateIcon(savedTheme);
+
     this.querySelector('.theme-toggle-btn').addEventListener('click', this._toggleTheme);
   }
 

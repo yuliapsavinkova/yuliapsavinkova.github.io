@@ -49,7 +49,7 @@ class DebugPanelComponent extends HTMLElement {
           border-radius: 1rem;
           color: var(--color-primary);
           background-color: var(--color-surface);          
-          box-shadow: var(--box-shadow);
+          box-shadow: var(--shadow-md);
           display: flex;
           flex-direction: column;
           gap: var(--gap-tiny);
@@ -88,7 +88,7 @@ class DebugPanelComponent extends HTMLElement {
 
       <div id="debugPanel" class="debug-panel">
         <div class="debug-header">
-          <h3>Debug Panel</h3>
+          <h2>Debug Panel</h2>
           <button class="close-btn" aria-label="Close Debug Panel">
             <svg class="enable-icon-scale" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path fill="currentColor"

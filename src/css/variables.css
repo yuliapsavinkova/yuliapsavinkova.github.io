@@ -1,24 +1,6 @@
 :root {
   --font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
 
-  /* Base palette colors*/
-
-  /* Brand hues */
-  /* --hue-primary: 221;
-  --hue-accent: 357; */
-
-  /* Primary palette */
-  /* --primary-dark: hsl(var(--hue-primary), 45%, 32%);
-  --primary-light: hsl(var(--hue-primary), 43%, 93%); */
-
-  /* Accent palette */
-  /* --accent-dark: hsl(var(--hue-accent), 71%, 50%);
-  --accent-light: hsl(var(--hue-accent), 85%, 52%); */
-
-  /* Neutrals */
-  /* --color-surface: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%); */
-
   /* sizes */
   --header-size: 4rem;
   --footer-size: 8rem;

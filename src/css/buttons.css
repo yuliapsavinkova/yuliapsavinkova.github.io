@@ -1,74 +1,82 @@
-:root {
-  --button-transition: all 0.15s ease-in-out;
-  --button-padding: 0.5rem 1rem;
-}
-
-/* Base button */
+/* ---------------- Base Button ---------------- */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--button-padding);
-  text-align: center;
-  text-decoration: none;
+  padding: 0.5rem 1rem;
+  min-width: 10rem;
   border-radius: var(--border-radius);
+  border: 2px solid transparent;
   cursor: pointer;
   outline: none;
-  transition: var(--button-transition);
-  user-select: none;
-  border: 2px solid transparent;
-  min-width: 10rem;
   position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  transition: all 0.15s ease-in-out;
+  color: inherit;
+  background-clip: padding-box;
 }
 
-/* Add a subtle overlay on hover for all buttons */
-.button:hover::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: hsla(0, 0%, 100%, 0.1); /* Light overlay */
-}
-
+/* Press effect */
 .button:active {
-  transform: scale(0.98); /* Add a subtle press effect */
+  transform: scale(0.98);
 }
 
-/* Primary button */
+/* Focus outline */
+.button:focus-visible {
+  box-shadow: 0 0 0 3px hsla(var(--theme-primary-values), 0.5);
+}
+
+/* Disabled state */
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ---------------- PRIMARY BUTTON ---------------- */
 .button-primary {
-  color: var(--white); /* white text for contrast */
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: var(--white);
+  background-color: hsl(var(--theme-primary-values));
+  border-color: hsl(var(--theme-primary-values));
 }
 
 .button-primary:hover {
-  background-color: hsl(var(--hue-primary), 70%, 40%);
-  border-color: hsl(var(--hue-primary), 70%, 40%);
+  filter: brightness(1.15);
 }
 
-/* Secondary button */
+.button-primary:active {
+  filter: brightness(0.9);
+}
+
+/* ---------------- SECONDARY BUTTON ---------------- */
 .button-secondary {
-  color: var(--color-primary);
+  color: hsl(var(--theme-primary-values));
   background-color: transparent;
-  border-color: var(--color-primary);
+  border-color: hsl(var(--theme-primary-values));
 }
 
 .button-secondary:hover {
+  color: var(--white);
   background-color: var(--color-primary);
-  color: var(--white); /* white text on hover */
-  border-color: var(--color-primary);
 }
 
-/* Action button */
+.button-secondary:active {
+  background-color: hsla(var(--theme-primary-values), 0.15);
+}
+
+/* ---------------- ACTION BUTTON ---------------- */
 .button-action {
   color: var(--white);
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  background-color: hsl(var(--theme-accent-values));
+  border-color: hsl(var(--theme-accent-values));
 }
 
 .button-action:hover {
-  background-color: hsl(var(--hue-accent), 70%, 45%);
-  border-color: hsl(var(--hue-accent), 70%, 45%);
+  filter: brightness(1.1);
+}
+
+.button-action:active {
+  filter: brightness(0.9);
 }
