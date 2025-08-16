@@ -48,9 +48,15 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
           gap: var(--gap-small);
         }
 
-        .hero-heading,
-        .hero-buttons {
+        .hero-heading {
           text-align: center;
+        }
+
+        .hero-buttons {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: var(--gap-tiny);
         }
 
         .hero-image {
