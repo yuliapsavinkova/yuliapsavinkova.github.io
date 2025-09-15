@@ -18,7 +18,7 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   background: conic-gradient(
     var(--color-primary) 0%,
     var(--color-primary) var(--scroll-progress, 0%),

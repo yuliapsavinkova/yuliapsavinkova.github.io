@@ -15,7 +15,7 @@ class WorkExperienceComponent extends HTMLElement {
                       <ul>
                         <li>Design and develop web applications and websites from scratch.</li>
                         <li>Create custom HTML web components and reusable shared libraries</li>
-                        <li>Build responsive layouts that work across different screen sizes.</li>
+                        <li>Build responsive layouts that work across different devices and screen sizes.</li>
                         <li>Modernize existing applications by rebuilding them with modern technologies.</li>
                       </ul>
                       <div class="work-experience-technologies">
