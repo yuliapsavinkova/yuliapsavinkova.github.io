@@ -7,7 +7,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
 
                 <div class="work-experience-container">
                   <div class="work-experience-content">
-                      <h2>Indie Developer & Investor</h2>
+                      <h2>Independent Software Engineer, San Diego, CA</h2>
                       <h3>2019 - Present</h3>
                       <ul>
                         <li>Design and develop web applications and websites from scratch.</li>
