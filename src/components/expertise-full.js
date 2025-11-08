@@ -36,7 +36,7 @@ class ExpertiseFullComponent extends HTMLElement {
                 <div id="work-row-3d" class="feature-card">
                     <div class="card-content">
                         <h2>Financial Tools</h2>  
-                        <p>I create tools to help traders and investors manage everyday tasks like tracking portfolios, analyzing strategies, setting up alerts, or pulling in market data. I work with Excel, Google Sheets, and web apps, and can connect them so your data moves easily between platforms. You describe your workflow, and I help turn it into something more streamlined and automated, making it easier, faster, and tailored to how you work.</p>  
+                        <p>I create tools that help traders and investors manage tasks like tracking portfolios, analyzing strategies, setting alerts, and pulling market data. I work with Excel, Google Sheets, and web apps, integrating them to keep your data in sync. You describe your workflow, and I turn it into a streamlined, automated solution that's faster, easier, and tailored to your work.</p>  
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
