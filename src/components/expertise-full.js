@@ -28,7 +28,7 @@ class ExpertiseFullComponent extends HTMLElement {
                     </div>
                     <div class="card-content">
                         <h2>App Development</h2>
-                        <p>I build fast, user-friendly web applications using modern tools like React and Angular. Whether it’s a business dashboard, an e-commerce platform, or something entirely custom, I focus on clean design, solid performance, and features that make your day-to-day easier. I design apps to be reliable and flexible, so they can grow and adapt alongside your business.</p>
+                        <p>I build fast, user-friendly web applications using modern frameworks like React and Angular. I work on customer-facing products, internal tools, and interactive dashboards, focusing on clean design, strong performance, and seamless user experiences. Each application is designed to be flexible and easy to maintain as products evolve.</p>
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ class ExpertiseFullComponent extends HTMLElement {
                 <div id="work-row-3d" class="feature-card">
                     <div class="card-content">
                         <h2>Financial Tools</h2>  
-                        <p>I create tools to help traders and investors manage everyday tasks like tracking portfolios, analyzing strategies, setting up alerts, or pulling in market data. I work with Excel, Google Sheets, and web apps—and can connect them so your data moves easily between platforms. You describe your workflow, and I help turn it into something more streamlined and automated—so it's easier, faster, and tailored to how you work.</p>  
+                        <p>I create tools to help traders and investors manage everyday tasks like tracking portfolios, analyzing strategies, setting up alerts, or pulling in market data. I work with Excel, Google Sheets, and web apps, and can connect them so your data moves easily between platforms. You describe your workflow, and I help turn it into something more streamlined and automated, making it easier, faster, and tailored to how you work.</p>  
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
