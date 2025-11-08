@@ -14,7 +14,7 @@ class ExpertiseFullComponent extends HTMLElement {
                 <div id="work-row-web" class="feature-card">
                     <div class="card-content">
                         <h2>Web Development</h2>  
-                        <p>I build modern, responsive websites that work well on any device and are easy for your visitors to use. Whether you need a portfolio, business site, or landing page, I create custom solutions that fit your goals. I pay attention to speed and SEO to help your site perform better and reach more people.</p>
+                        <p>I build modern, responsive websites that work well on any device and are intuitive for your visitors. Whether you need a portfolio, business site, or landing page, I create custom solutions tailored to your goals. I focus on performance, speed, and SEO to help your site run smoothly, reach more people, and make a strong impact.</p>
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
