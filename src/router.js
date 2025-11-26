@@ -57,12 +57,14 @@ export async function renderPage() {
       await Promise.all([
         import('./components/about.js'),
         import('./components/work-experience/work-experience.js'),
+        import('./components/expertise.js'),
         import('./components/contact/contact.js'),
         import('./components/footer.js'),
       ]);
       app.innerHTML = `
         <about-component></about-component>
         <work-experience-component></work-experience-component>
+        <expertise-component></expertise-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;
