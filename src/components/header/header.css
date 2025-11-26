@@ -2,7 +2,14 @@
   z-index: 1000;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
+  border-image: linear-gradient(
+      90deg,
+      var(--color-border),
+      var(--color-primary),
+      var(--color-border)
+    )
+    1;
   background-color: var(--color-surface); /* Use surface color for header */
   color: var(--color-text-body); /* Set default text color for header */
   height: var(--header-size);
@@ -45,7 +52,7 @@
   color: var(--color-primary);
   border-bottom: 2px solid var(--color-accent);
 }
-.header::after {
+/* .header::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -54,15 +61,15 @@
   background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
   transform: translateX(-100%);
   animation: lightStrike 4s infinite linear;
-}
-@keyframes lightStrike {
+} */
+/* @keyframes lightStrike {
   from {
     transform: translateX(-100%);
   }
   to {
     transform: translateX(100%);
   }
-}
+} */
 
 @media (max-width: 768px) {
   .header .menu-toggle-button {
