@@ -40,7 +40,8 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
         .hero {
           width: 100%;
           min-width: 20rem;
-          height: calc(100dvh - var(--header-size));
+          min-height: calc(100dvh - var(--header-size));
+          height: auto;
           display: flex;
           flex-direction: column;
           justify-content: center;
