@@ -1,3 +1,5 @@
+import { trackPageview } from './analytics.js';
+
 // Helper to wait until all custom elements are defined and rendered
 async function waitForElement(selector, timeout = 3000) {
   const start = performance.now();
@@ -130,4 +132,6 @@ export async function renderPage() {
     window.removeEventListener('scroll', onScroll);
   };
   window.addEventListener('scroll', onScroll, { once: true });
+
+  trackPageview(path);
 }

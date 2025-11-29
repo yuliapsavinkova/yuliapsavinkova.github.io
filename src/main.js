@@ -9,6 +9,7 @@ import buttonsCss from './css/buttons.css?inline';
 import iconsCss from './css/icons.css?inline';
 import utilsCss from './css/utils.css?inline';
 import header from './components/header/header.css?inline';
+import { initAnalytics } from './analytics.js';
 
 /* Svg sprite icons */
 import 'virtual:svg-icons-register';
@@ -43,6 +44,10 @@ import { renderPage } from './router.js';
 document.addEventListener('DOMContentLoaded', () => {
   renderPage();
   window.addEventListener('hashchange', renderPage);
+});
+
+window.addEventListener('load', () => {
+  initAnalytics();
 });
 
 document.body.addEventListener('click', (event) => {
