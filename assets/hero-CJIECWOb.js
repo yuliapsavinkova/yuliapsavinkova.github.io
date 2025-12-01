@@ -60,18 +60,21 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
           gap: var(--gap-tiny);
         }
 
-        .hero-image {
-          width: 100%;
-          max-width: 40rem;
-          height: auto;
-          aspect-ratio: 2 / 1;
+        .hero-image-portrait {
+          height: 50%;
+          aspect-ratio: 1 / 1;
           object-fit: contain;
+          border-radius: var(--border-radius);
         }
       </style>
       <section id="hero" class="hero bg-texture">
-        <img src="./images/hero-small.webp"
-              alt="hero image"
-              class="hero-image"
+        <img src="./images/portrait-800.webp"
+              srcset="./images/portrait-400.webp 400w, 
+                      ./images/portrait-800.webp 800w, 
+                      ./images/portrait-1200.webp 1200w"
+              sizes="(max-width: 600px) 90vw, 50vh"
+              alt="Portrait of Yulia"
+              class="hero-image-portrait"
               fetchpriority="high"
               decoding="async">
         <div class="hero-heading">
