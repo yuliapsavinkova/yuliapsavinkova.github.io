@@ -8,13 +8,9 @@
                 <div class="about-me feature-card">
                     <div class="card-image">
                         <img 
-                            src="./images/portrait-800.webp" 
-                            srcset="./images/portrait-400.webp 400w, 
-                                    ./images/portrait-800.webp 800w, 
-                                    ./images/portrait-1200.webp 1200w"
-                            sizes="(max-width: 500px) 95vw, 480px"
+                            src="./images/about-me.webp" 
                             loading="lazy" 
-                            alt="Head shot of Yulia Savinkova, a web developer."
+                            alt="About me image."
                         />
                     </div>
                     <div class="card-content">
