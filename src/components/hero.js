@@ -54,8 +54,8 @@ class HeroComponent extends HTMLElement {
           ]'></rotating-text>
         </div>
         <div class="hero-buttons">
-          <a href="#about" class="button button-primary">Learn More</a>
-          <a href="#contact" class="button button-action">Contact</a>
+          <a href="#/about" class="button button-primary">Learn More</a>
+          <a href="#/contact" class="button button-action">Contact</a>
         </div>
       </section>
     `;
