@@ -1,4 +1,12 @@
-import { trackPageview } from './analytics.js';
+// Simpler GA pageview function
+function trackPageview(path) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'page_view', {
+      page_path: '/' + path,
+      page_title: document.title,
+    });
+  }
+}
 
 // Helper to wait until all custom elements are defined and rendered
 async function waitForElement(selector, timeout = 3000) {
@@ -133,5 +141,6 @@ export async function renderPage() {
   };
   window.addEventListener('scroll', onScroll, { once: true });
 
+  // Send GA virtual pageview
   trackPageview(path);
 }
