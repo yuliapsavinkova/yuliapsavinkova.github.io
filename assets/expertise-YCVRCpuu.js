@@ -8,7 +8,7 @@
             <div class="card-grid">
 
                 <div class="card">
-                    <div class="card-image bg-new">
+                    <div class="card-image bg-texture">
                       <img src="./images/web.webp" loading="lazy" alt="maintenance-image" />
                     </div>
                     <div class="card-content">
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-image bg-new">
+                    <div class="card-image bg-texture">
                       <img src="./images/app.webp" class="card-image" loading="lazy" alt="web-development-image" />            
                     </div>
                     <div class="card-content">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-image bg-new">
+                    <div class="card-image bg-texture">
                       <img src="./images/fin.webp" class="card-image" loading="lazy" alt="web-development-image" />            
                     </div>
                     <div class="card-content">
@@ -54,7 +54,7 @@
 
                 <!--<div class="card bg-texture">
                     <div class="card-image">
-                      <img src="./images/three-d-dev.webp" class="card-image" loading="lazy" alt="design-image" />
+                      <img src="./images/three.webp" class="card-image" loading="lazy" alt="design-image" />
                     </div>
                     <div class="card-content">
                       <h2>3D Development</h2>

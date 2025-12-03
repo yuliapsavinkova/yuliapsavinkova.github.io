@@ -87,8 +87,8 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
           ]'></rotating-text>
         </div>
         <div class="hero-buttons">
-          <a href="#/about" class="button button-primary">Learn More</a>
-          <a href="#/contact" class="button button-action">Contact</a>
+          <a href="#/?section=about" class="button button-primary">Learn More</a>
+          <a href="#/?section=contact" class="button button-action">Contact</a>
         </div>
       </section>
     `}}customElements.define("hero-component",a);
