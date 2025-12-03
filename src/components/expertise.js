@@ -12,8 +12,8 @@ class ExpertiseComponent extends HTMLElement {
             <div class="card-grid">
 
                 <div class="card">
-                    <div class="card-image bg-texture">
-                      <img src="./images/web-dev.webp" loading="lazy" alt="maintenance-image" />
+                    <div class="card-image bg-new">
+                      <img src="./images/web.webp" loading="lazy" alt="maintenance-image" />
                     </div>
                     <div class="card-content">
                       <h2>Custom Websites</h2>
@@ -27,8 +27,8 @@ class ExpertiseComponent extends HTMLElement {
                 </div>
 
                 <div class="card">
-                    <div class="card-image bg-texture">
-                      <img src="./images/app-dev.webp" class="card-image" loading="lazy" alt="web-development-image" />            
+                    <div class="card-image bg-new">
+                      <img src="./images/app.webp" class="card-image" loading="lazy" alt="web-development-image" />            
                     </div>
                     <div class="card-content">
                       <h2>Web Applications</h2>
@@ -42,8 +42,8 @@ class ExpertiseComponent extends HTMLElement {
                 </div>
 
                 <div class="card">
-                    <div class="card-image bg-texture">
-                      <img src="./images/fin-tools.webp" class="card-image" loading="lazy" alt="web-development-image" />            
+                    <div class="card-image bg-new">
+                      <img src="./images/fin.webp" class="card-image" loading="lazy" alt="web-development-image" />            
                     </div>
                     <div class="card-content">
                       <h2>Financial Tools</h2>

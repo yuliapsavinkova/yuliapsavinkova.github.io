@@ -16,3 +16,9 @@ html {
   background-size: 1rem 1rem;
   background-repeat: repeat;
 }
+
+/* Background test */
+.bg-new {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+}
