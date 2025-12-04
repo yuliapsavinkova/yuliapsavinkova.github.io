@@ -68,7 +68,7 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/expertise-YCVRC
         <expertise-full-component></expertise-full-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;break;case"palette":await Promise.all([a(()=>import("./palette-mqSDOjc3.js"),[]),a(()=>import("./footer-D9LLtdpf.js"),[])]),r.innerHTML=`
+      `;break;case"palette":await Promise.all([a(()=>import("./palette-DJnRxa81.js"),[]),a(()=>import("./footer-D9LLtdpf.js"),[])]),r.innerHTML=`
         <palette-component></palette-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;break;case"contact":await Promise.all([a(()=>import("./contact-CBX4ex8b.js"),__vite__mapDeps([3,4])),a(()=>import("./footer-D9LLtdpf.js"),[])]),r.innerHTML=`
