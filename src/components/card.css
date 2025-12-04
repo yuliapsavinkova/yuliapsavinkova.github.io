@@ -74,7 +74,7 @@
   width: min(100%, 30rem);
 
   min-height: 20rem; /* Larger image for this layout on mobile */
-  object-fit: cover;
+  object-fit: contain;
   margin: auto;
   border-radius: var(--border-radius);
 }

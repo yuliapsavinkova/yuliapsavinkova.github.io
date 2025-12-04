@@ -13,18 +13,18 @@ class ExpertiseFullComponent extends HTMLElement {
 
                 <div id="work-row-web" class="feature-card">
                     <div class="card-content">
-                        <h2>Web Development</h2>  
+                        <h2>Custom Websites</h2>  
                         <p>I build modern, responsive websites that work well on any device and are intuitive for your visitors. Whether you need a portfolio, business site, or landing page, I create custom solutions tailored to your goals. I focus on performance, speed, and SEO to help your site run smoothly, reach more people, and make a strong impact.</p>
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
-                        <img src="./images/web.webp" class="bg-texture" loading="lazy" alt="maintenance-image" />
+                        <img src="./images/work-web.webp" class="bg-texture" loading="lazy" alt="maintenance-image" />
                     </div>
                 </div>
 
                 <div id="work-row-app" class="feature-card">
                     <div class="card-image">
-                        <img src="./images/app.webp" class="bg-texture" loading="lazy" alt="web-development-image" />            
+                        <img src="./images/work-app.webp" class="bg-texture" loading="lazy" alt="web-development-image" />            
                     </div>
                     <div class="card-content">
                         <h2>App Development</h2>
@@ -40,7 +40,7 @@ class ExpertiseFullComponent extends HTMLElement {
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                     <div class="card-image">
-                        <img src="./images/fin.webp" class="bg-texture" loading="lazy" alt="design-image" />
+                        <img src="./images/work-fin.webp" class="bg-texture" loading="lazy" alt="design-image" />
                     </div>
                 </div>
 
