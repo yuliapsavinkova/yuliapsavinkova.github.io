@@ -1,4 +1,5 @@
 import './rotating-text.js';
+import './social-icons.js';
 
 class HeroComponent extends HTMLElement {
   connectedCallback() {
@@ -34,6 +35,7 @@ class HeroComponent extends HTMLElement {
         }
       </style>
       <section id="hero" class="hero bg-texture">
+        <social-icons></social-icons>
         <img src="./images/portrait-900.webp"
             srcset="./images/portrait-400.webp 400w, 
                     ./images/portrait-600.webp 600w, 
