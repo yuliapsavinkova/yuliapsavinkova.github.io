@@ -82,6 +82,7 @@
   flex-direction: column;
   gap: var(--gap-small);
   align-items: center;
+  max-width: 1000px;
 }
 .feature-card .card-content h2 {
   margin: 0;
