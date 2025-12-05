@@ -47,6 +47,7 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
           justify-content: center;
           align-items: center;
           gap: var(--gap-small);
+          padding: 0;
         }
 
         .hero-heading {
