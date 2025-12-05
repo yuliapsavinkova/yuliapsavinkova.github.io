@@ -4,7 +4,7 @@ class HeaderComponent extends HTMLElement {
   constructor() {
     super();
     this._handleResize = Utils.throttle(this._handleResize.bind(this), 200);
-    this._handleScroll = Utils.throttle(this._handleScroll.bind(this), 300);
+    this._handleScroll = Utils.throttle(this._handleScroll.bind(this), 50);
     this._updateActiveLink = this._updateActiveLink.bind(this);
     this._toggleMenu = this._toggleMenu.bind(this);
     this._closeMenu = this._closeMenu.bind(this);
@@ -15,6 +15,7 @@ class HeaderComponent extends HTMLElement {
     this.render();
     this._addEventListeners();
     this._updateActiveLink();
+    this._handleScroll(); // Run once to check initial scroll position (if user reloads halfway down)
   }
 
   disconnectedCallback() {
@@ -30,38 +31,40 @@ class HeaderComponent extends HTMLElement {
 
     this.innerHTML = /*html*/ `
       <header class="header">
-          <a href="${logoLink}" class="logo" aria-label="Home">
-              <svg aria-hidden="true">
-                <use href="#${logoSvgId}"></use>
-              </svg>
-              <span class="logo-name">${logoName}</span>
-          </a>
-          <nav class="main-nav">
-            <button class="menu-toggle-button" aria-label="Open Menu">
-              <svg viewBox="0 0 24 24" class="icon enable-icon-scale" aria-hidden="true">
-                <path fill="currentColor"
-                    d="M0 3.429c0-.949.766-1.715 1.714-1.715h20.572c.948 0 1.714.766 1.714 1.715 0 .948-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 3.429ZM0 12c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714.766 1.714 1.714s-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 12Zm24 8.571c0 .949-.766 1.715-1.714 1.715H1.714A1.712 1.712 0 0 1 0 20.57c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714.766 1.714 1.714z" />
-              </svg>
-            </button>
-            <div class="nav-menu">
-                <div class="nav-links">
-                    ${links
-                      .map(
-                        (link) => `
-                      <a class="nav-link large" href="${link.href}" target="${
-                          link.target || '_self'
-                        }">${link.text}</a>
-                    `,
-                      )
-                      .join('')}
-                </div>
-                <div class="nav-action">
-                  <a href="${buttonLink.href}" target="${
+          <div class="header-content-wrapper">
+              <a href="${logoLink}" class="logo" aria-label="Home">
+                  <svg aria-hidden="true">
+                    <use href="#${logoSvgId}"></use>
+                  </svg>
+                  <span class="logo-name">${logoName}</span>
+              </a>
+              <nav class="main-nav">
+                <button class="menu-toggle-button" aria-label="Open Menu">
+                  <svg viewBox="0 0 24 24" class="icon enable-icon-scale" aria-hidden="true">
+                    <path fill="currentColor"
+                        d="M0 3.429c0-.949.766-1.715 1.714-1.715h20.572c.948 0 1.714.766 1.714 1.715 0 .948-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 3.429ZM0 12c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714.766 1.714 1.714s-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 12Zm24 8.571c0 .949-.766 1.715-1.714 1.715H1.714A1.712 1.712 0 0 1 0 20.57c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714.766 1.714 1.714z" />
+                  </svg>
+                </button>
+                <div class="nav-menu">
+                    <div class="nav-links">
+                        ${links
+                          .map(
+                            (link) => `
+                          <a class="nav-link large" href="${link.href}" target="${
+                              link.target || '_self'
+                            }">${link.text}</a>
+                        `,
+                          )
+                          .join('')}
+                    </div>
+                    <div class="nav-action">
+                      <a href="${buttonLink.href}" target="${
       buttonLink.target || '_self'
     }" class="button button-action">${buttonLink.text}</a>
+                    </div>
                 </div>
-            </div>
-          </nav>
+              </nav>
+          </div>
       </header>
     `;
 
@@ -105,11 +108,12 @@ class HeaderComponent extends HTMLElement {
   }
 
   _handleResize() {
-    this._closeMenu();
+    this.classList.remove('is-menu-open'); // Ensure menu closes on resize
   }
 
   _handleScroll() {
-    this._closeMenu();
+    this.classList.toggle('is-scrolled', window.scrollY > 50);
+    this.classList.remove('is-menu-open'); // Close menu on scroll
   }
 
   _updateActiveLink() {
