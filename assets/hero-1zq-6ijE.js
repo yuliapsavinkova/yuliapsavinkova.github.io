@@ -63,7 +63,6 @@ class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex
         .hero-image-portrait {
           height: 50%;
           aspect-ratio: 1 / 1;
-          object-fit: contain;
           border-radius: 50%;
         }
       </style>
