@@ -65,7 +65,7 @@ class g extends HTMLElement{constructor(){super(),this._toggleTheme=this._toggle
         .color-swatch,
         .effect-swatch {
           border: 1px solid var(--color-border);
-          border-radius: 0.5rem;
+          border-radius: var(--border-radius);
           overflow: hidden;
         }
 
@@ -143,7 +143,7 @@ class g extends HTMLElement{constructor(){super(),this._toggleTheme=this._toggle
           height: 2rem;
           background: var(--color-surface);
           color: var(--color-primary);
-          border-radius: 0.5rem 0 0 0.5rem;
+          border-radius: var(--border-radius) 0 0 var(--border-radius);
           padding: 0.3rem;
           box-shadow: var(--shadow-md);
           transition: transform 0.2s ease, right 0.2s ease;
