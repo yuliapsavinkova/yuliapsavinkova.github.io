@@ -3,6 +3,7 @@
   box-shadow: var(--shadow-sm);
   padding: var(--padding-block) var(--padding-inline);
   border-radius: var(--border-radius);
+  width: min(100%, 1000px);
 
   button {
     align-self: center;

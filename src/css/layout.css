@@ -8,9 +8,4 @@ section {
   gap: var(--gap);
 
   box-shadow: var(--shadow-md);
-
-  .about-me,
-  .contact-form {
-    width: min(100%, 1000px);
-  }
 }
