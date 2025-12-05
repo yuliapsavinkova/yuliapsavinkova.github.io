@@ -77,30 +77,4 @@ class a extends HTMLElement{connectedCallback(){this.innerHTML=`
           </svg>
         </a>
       </div>
-    `}}customElements.define("social-icons",a);class c extends HTMLElement{connectedCallback(){const t=this.getAttribute("copyright-name")||"All rights reserved.",l=new Date().getFullYear();this.innerHTML=`
-        <style>
-          .footer {
-            height: var(--footer-size);
-            min-width: 16rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: var(--gap-small);
-            background-color: var(--color-background);
-            color: var(--color-primary);
-          }
-
-          .footer-copyright {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        </style>
-        <footer id="footer" class="footer">
-            <social-icons></social-icons>
-            <div class="footer-copyright">
-                <p class="large">&copy; ${l} ${t}</p>
-            </div>
-        </footer>
-    `}}customElements.define("footer-component",c);
+    `}}customElements.define("social-icons",a);
