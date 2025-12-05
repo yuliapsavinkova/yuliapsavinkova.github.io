@@ -1,4 +1,4 @@
-import"./social-icons-DnKUvfDZ.js";class t extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",o=new Date().getFullYear();this.innerHTML=`
+import"./social-icons-D5rXZ1el.js";class t extends HTMLElement{connectedCallback(){const e=this.getAttribute("copyright-name")||"All rights reserved.",o=new Date().getFullYear();this.innerHTML=`
         <style>
           .footer {
             height: var(--footer-size);

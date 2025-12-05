@@ -1,4 +1,4 @@
-import"./social-icons-DnKUvfDZ.js";class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex=0,this.charIndex=0,this.isDeleting=!1,this.lastFrameTime=0,this.typeSpeed=100,this.deleteSpeed=50}connectedCallback(){this.render(),this.init()}render(){this.innerHTML=`
+import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex=0,this.charIndex=0,this.isDeleting=!1,this.lastFrameTime=0,this.typeSpeed=100,this.deleteSpeed=50}connectedCallback(){this.render(),this.init()}render(){this.innerHTML=`
         <style>
           rotating-text {
             display: inline-block;
@@ -67,7 +67,6 @@ import"./social-icons-DnKUvfDZ.js";class r extends HTMLElement{constructor(){sup
         }
       </style>
       <section id="hero" class="hero bg-texture">
-        <social-icons></social-icons>
         <img src="./images/portrait-900.webp"
             srcset="./images/portrait-400.webp 400w, 
                     ./images/portrait-600.webp 600w, 
@@ -78,6 +77,7 @@ import"./social-icons-DnKUvfDZ.js";class r extends HTMLElement{constructor(){sup
             class="hero-image-portrait"
             fetchpriority="high"
             decoding="async">
+        <social-icons></social-icons>
         <div class="hero-heading">
           <h1>Hello, I'm Yulia</h1>
           <rotating-text data-titles='[
