@@ -11,7 +11,6 @@ class FooterComponent extends HTMLElement {
             min-width: 16rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             gap: var(--gap-small);
             background-color: var(--color-background);
