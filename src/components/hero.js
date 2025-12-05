@@ -35,7 +35,6 @@ class HeroComponent extends HTMLElement {
         }
       </style>
       <section id="hero" class="hero bg-texture">
-        <social-icons></social-icons>
         <img src="./images/portrait-900.webp"
             srcset="./images/portrait-400.webp 400w, 
                     ./images/portrait-600.webp 600w, 
@@ -46,6 +45,7 @@ class HeroComponent extends HTMLElement {
             class="hero-image-portrait"
             fetchpriority="high"
             decoding="async">
+        <social-icons></social-icons>
         <div class="hero-heading">
           <h1>Hello, I'm Yulia</h1>
           <rotating-text data-titles='[

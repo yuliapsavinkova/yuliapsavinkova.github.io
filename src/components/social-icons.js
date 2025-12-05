@@ -6,12 +6,16 @@ class SocialIcons extends HTMLElement {
           display: flex;
           align-items: center;
           width: fit-content;
-          gap: var(--gap);
+          gap: var(--gap-med);
         }
 
         .social-icons a {
-          width: 1.75rem;
-          height: 1.75rem;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        .social-icons svg {
+          color: var(--color-primary);
         }
       </style>
       <div class="social-icons">
