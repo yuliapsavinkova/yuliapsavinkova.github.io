@@ -30,7 +30,7 @@ class HeroComponent extends HTMLElement {
         .hero-image-portrait {
           height: 50%;
           aspect-ratio: 1 / 1;
-          border-radius: 50%;
+          border-radius: var(--border-radius-lg);
         }
       </style>
       <section id="hero" class="hero bg-texture">

@@ -46,7 +46,7 @@ class DebugPanelComponent extends HTMLElement {
           left: 0;
           margin: 1rem;
           padding: 1rem;
-          border-radius: 1rem;
+          border-radius: var(--border-radius-lg);
           color: var(--color-primary);
           background-color: var(--color-surface);          
           box-shadow: var(--shadow-md);

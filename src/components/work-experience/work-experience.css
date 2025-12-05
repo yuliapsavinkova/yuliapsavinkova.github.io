@@ -36,7 +36,7 @@
     font-size: 0.7rem;
     padding: 0.5rem;
     background-color: var(--color-surface-color);
-    border-radius: 1rem;
+    border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
     color: var(--color-primary);
   }

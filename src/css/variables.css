@@ -9,6 +9,8 @@
 
   /* logos, buttons, links */
   --border-radius: 0.5rem;
+  /* images */
+  --border-radius-lg: 1rem;
 
   /* Padding */
   --padding-inline: 1rem;
