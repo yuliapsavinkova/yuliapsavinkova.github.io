@@ -15,6 +15,7 @@ class HeroComponent extends HTMLElement {
           justify-content: center;
           align-items: center;
           gap: var(--gap-small);
+          padding: 0;
         }
 
         .hero-heading {
