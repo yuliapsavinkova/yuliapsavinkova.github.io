@@ -14,7 +14,7 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
                         <input type="email" autocomplete="on" id="email" name="email" placeholder="Enter email address" required>
 
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Enter your Message" required></textarea>
+                        <textarea id="message" name="message" rows="6" placeholder="Enter your Message" required></textarea>
                         <button type="submit" class="button button-primary">Send Message</button>
                     </form>
                 </div>
