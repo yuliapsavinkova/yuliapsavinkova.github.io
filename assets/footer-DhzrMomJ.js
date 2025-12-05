@@ -5,7 +5,6 @@ import"./social-icons-D5rXZ1el.js";class t extends HTMLElement{connectedCallback
             min-width: 16rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             gap: var(--gap-small);
             background-color: var(--color-background);
