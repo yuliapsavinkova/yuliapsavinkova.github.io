@@ -12,11 +12,41 @@ class HeroComponent extends HTMLElement {
           height: auto;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: flex-end; 
           align-items: center;
           gap: var(--gap-small);
           padding: 0;
-          background-color: var(--color-background);
+          position: relative; 
+          padding-bottom: var(--gap-large); 
+        }
+
+        .hero-banner {
+          background-color: var(--color-primary); 
+          overflow: hidden; 
+          position: absolute; 
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 50%;
+          z-index: -1; 
+        }
+
+        .hero-banner::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: url('/images/banner-bg.png') no-repeat;
+          background-size: cover;
+          opacity: 0.9;
+          mix-blend-mode: luminosity; 
+          pointer-events: none;
+        }
+        
+        .hero-image-portrait {
+          height: 50%;
+          aspect-ratio: 1 / 1;
+          border-radius: var(--border-radius-lg);
+          border: 4px solid var(--white)
         }
 
         .hero-heading {
@@ -29,14 +59,9 @@ class HeroComponent extends HTMLElement {
           justify-content: center;
           gap: var(--gap-tiny);
         }
-
-        .hero-image-portrait {
-          height: 50%;
-          aspect-ratio: 1 / 1;
-          border-radius: var(--border-radius-lg);
-        }
       </style>
       <section id="hero" class="hero">
+        <div class="hero-banner"></div> 
         <img src="./images/portrait-900.webp"
             srcset="./images/portrait-400.webp 400w, 
                     ./images/portrait-600.webp 600w, 
