@@ -30,20 +30,9 @@ class HeroComponent extends HTMLElement {
           z-index: -1; 
         }
 
-        .hero-banner::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: url('/images/banner-bg.png') no-repeat;
-          background-size: cover;
-          opacity: 0.9;
-          mix-blend-mode: luminosity; 
-          pointer-events: none;
-        }
-        
         .hero-image-portrait {
           height: 50%;
-          max-height: calc(100svh - var(--header-size) - 20rem); //TODO: fix 20rem
+          max-height: calc(100svh - var(--header-size) - 20rem);
           aspect-ratio: 1 / 1;
           border-radius: var(--border-radius-lg);
           border: 4px solid var(--white)
@@ -58,6 +47,19 @@ class HeroComponent extends HTMLElement {
           flex-wrap: wrap;
           justify-content: center;
           gap: var(--gap-tiny);
+        }
+
+        @media (min-width: 768px) {
+            .hero-banner::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: url('/images/banner-bg.png') no-repeat;
+                background-size: cover;
+                opacity: 0.9;
+                mix-blend-mode: luminosity; 
+                pointer-events: none;
+            }
         }
       </style>
       <section id="hero" class="hero">
