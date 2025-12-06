@@ -70,11 +70,11 @@
 }
 .feature-card .card-image img {
   display: block;
-  width: min(100%, 30rem);
-
-  min-height: 20rem; /* Larger image for this layout on mobile */
+  width: 100%;
+  height: auto;
   margin: auto;
   border-radius: var(--border-radius);
+  object-fit: cover;
 }
 .feature-card .card-content {
   order: 2; /* Content is second on mobile */
