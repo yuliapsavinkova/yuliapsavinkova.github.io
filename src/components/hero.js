@@ -16,6 +16,7 @@ class HeroComponent extends HTMLElement {
           align-items: center;
           gap: var(--gap-small);
           padding: 0;
+          background-color: var(--color-background);
         }
 
         .hero-heading {
@@ -35,7 +36,7 @@ class HeroComponent extends HTMLElement {
           border-radius: var(--border-radius-lg);
         }
       </style>
-      <section id="hero" class="hero bg-texture">
+      <section id="hero" class="hero">
         <img src="./images/portrait-900.webp"
             srcset="./images/portrait-400.webp 400w, 
                     ./images/portrait-600.webp 600w, 
