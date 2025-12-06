@@ -1,4 +1,4 @@
-import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex=0,this.charIndex=0,this.isDeleting=!1,this.lastFrameTime=0,this.typeSpeed=100,this.deleteSpeed=50}connectedCallback(){this.render(),this.init()}render(){this.innerHTML=`
+import"./social-icons-D5rXZ1el.js";class n extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex=0,this.charIndex=0,this.isDeleting=!1,this.lastFrameTime=0,this.typeSpeed=100,this.deleteSpeed=50}connectedCallback(){this.render(),this.init()}render(){this.innerHTML=`
         <style>
           rotating-text {
             display: inline-block;
@@ -35,7 +35,7 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
             <span class="typewriter-text"></span>
             <span class="cursor">|</span>
         </div>
-    `}init(){this.textElement=this.querySelector(".typewriter-text");try{this.titles=JSON.parse(this.getAttribute("data-titles"))||[]}catch(t){console.error("Invalid JSON for data-titles attribute on rotating-text component:",t),this.titles=[]}this.titles.length>0&&(this.type=this.type.bind(this),requestAnimationFrame(this.type))}type(t){if(!this.textElement)return;this.lastFrameTime||(this.lastFrameTime=t);const s=t-this.lastFrameTime,n=this.isDeleting?this.deleteSpeed:this.typeSpeed;if(s>n){this.lastFrameTime=t;const e=this.titles[this.titleIndex];this.isDeleting?(this.textElement.textContent=e.substring(0,this.charIndex--),this.charIndex<0&&(this.isDeleting=!1,this.titleIndex=(this.titleIndex+1)%this.titles.length)):(this.textElement.textContent=e.substring(0,this.charIndex++),this.charIndex>e.length&&setTimeout(()=>{this.isDeleting=!0},1e3))}requestAnimationFrame(this.type)}}customElements.define("rotating-text",r);class a extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}init(){this.textElement=this.querySelector(".typewriter-text");try{this.titles=JSON.parse(this.getAttribute("data-titles"))||[]}catch(e){console.error("Invalid JSON for data-titles attribute on rotating-text component:",e),this.titles=[]}this.titles.length>0&&(this.type=this.type.bind(this),requestAnimationFrame(this.type))}type(e){if(!this.textElement)return;this.lastFrameTime||(this.lastFrameTime=e);const s=e-this.lastFrameTime,r=this.isDeleting?this.deleteSpeed:this.typeSpeed;if(s>r){this.lastFrameTime=e;const t=this.titles[this.titleIndex];this.isDeleting?(this.textElement.textContent=t.substring(0,this.charIndex--),this.charIndex<0&&(this.isDeleting=!1,this.titleIndex=(this.titleIndex+1)%this.titles.length)):(this.textElement.textContent=t.substring(0,this.charIndex++),this.charIndex>t.length&&setTimeout(()=>{this.isDeleting=!0},1e3))}requestAnimationFrame(this.type)}}customElements.define("rotating-text",n);class a extends HTMLElement{connectedCallback(){this.innerHTML=`
       <style>
         .hero {
           width: 100%;
@@ -47,9 +47,8 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
           justify-content: flex-end; 
           align-items: center;
           gap: var(--gap-small);
-          padding: 0;
+          padding: var(--gap-large) 0;
           position: relative; 
-          padding-bottom: var(--gap-large); 
         }
 
         .hero-banner {
@@ -76,6 +75,7 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
         
         .hero-image-portrait {
           height: 50%;
+          max-height: calc(100svh - var(--header-size) - 20rem); //TODO: fix 20rem
           aspect-ratio: 1 / 1;
           border-radius: var(--border-radius-lg);
           border: 4px solid var(--white)
