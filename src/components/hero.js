@@ -15,9 +15,8 @@ class HeroComponent extends HTMLElement {
           justify-content: flex-end; 
           align-items: center;
           gap: var(--gap-small);
-          padding: 0;
+          padding: var(--gap-large) 0;
           position: relative; 
-          padding-bottom: var(--gap-large); 
         }
 
         .hero-banner {
@@ -44,6 +43,7 @@ class HeroComponent extends HTMLElement {
         
         .hero-image-portrait {
           height: 50%;
+          max-height: calc(100svh - var(--header-size) - 20rem); //TODO: fix 20rem
           aspect-ratio: 1 / 1;
           border-radius: var(--border-radius-lg);
           border: 4px solid var(--white)
