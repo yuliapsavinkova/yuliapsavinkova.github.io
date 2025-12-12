@@ -1,3 +1,7 @@
+main {
+  padding-top: var(--header-size);
+}
+
 section {
   padding: var(--padding-block) var(--padding-inline);
   display: flex;

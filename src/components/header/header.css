@@ -1,11 +1,10 @@
 .header {
   z-index: 1000;
-  position: sticky; /* sticky or fixed for transparency effect */
+  position: fixed; /* sticky or fixed for transparency effect */
   top: 0;
+  width: 100%;
   background-color: hsla(var(--theme-surface-values), 0.9); /* 10% transparent */
-  box-shadow: 0 4px 6px -1px hsla(var(--theme-primary-values), 0.1),
-    0 2px 4px -2px hsla(var(--theme-primary-values), 0.1);
-
+  box-shadow: var(--shadow-md);
   color: var(--color-text-body);
   height: var(--header-size);
   padding-inline: 0;
@@ -13,12 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-header-component {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 /* header-component.is-scrolled .header {
