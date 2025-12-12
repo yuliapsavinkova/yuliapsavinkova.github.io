@@ -35,7 +35,7 @@ import"./social-icons-D5rXZ1el.js";class n extends HTMLElement{constructor(){sup
             <span class="typewriter-text"></span>
             <span class="cursor">|</span>
         </div>
-    `}init(){this.textElement=this.querySelector(".typewriter-text");try{this.titles=JSON.parse(this.getAttribute("data-titles"))||[]}catch(t){console.error("Invalid JSON for data-titles attribute on rotating-text component:",t),this.titles=[]}this.titles.length>0&&(this.type=this.type.bind(this),requestAnimationFrame(this.type))}type(t){if(!this.textElement)return;this.lastFrameTime||(this.lastFrameTime=t);const s=t-this.lastFrameTime,r=this.isDeleting?this.deleteSpeed:this.typeSpeed;if(s>r){this.lastFrameTime=t;const e=this.titles[this.titleIndex];this.isDeleting?(this.textElement.textContent=e.substring(0,this.charIndex--),this.charIndex<0&&(this.isDeleting=!1,this.titleIndex=(this.titleIndex+1)%this.titles.length)):(this.textElement.textContent=e.substring(0,this.charIndex++),this.charIndex>e.length&&setTimeout(()=>{this.isDeleting=!0},1e3))}requestAnimationFrame(this.type)}}customElements.define("rotating-text",n);class a extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}init(){this.textElement=this.querySelector(".typewriter-text");try{this.titles=JSON.parse(this.getAttribute("data-titles"))||[]}catch(t){console.error("Invalid JSON for data-titles attribute on rotating-text component:",t),this.titles=[]}this.titles.length>0&&(this.type=this.type.bind(this),requestAnimationFrame(this.type))}type(t){if(!this.textElement)return;this.lastFrameTime||(this.lastFrameTime=t);const r=t-this.lastFrameTime,s=this.isDeleting?this.deleteSpeed:this.typeSpeed;if(r>s){this.lastFrameTime=t;const e=this.titles[this.titleIndex];this.isDeleting?(this.textElement.textContent=e.substring(0,this.charIndex--),this.charIndex<0&&(this.isDeleting=!1,this.titleIndex=(this.titleIndex+1)%this.titles.length)):(this.textElement.textContent=e.substring(0,this.charIndex++),this.charIndex>e.length&&setTimeout(()=>{this.isDeleting=!0},1e3))}requestAnimationFrame(this.type)}}customElements.define("rotating-text",n);class a extends HTMLElement{connectedCallback(){this.innerHTML=`
       <style>
         .hero {
           width: 100%;
@@ -58,6 +58,8 @@ import"./social-icons-D5rXZ1el.js";class n extends HTMLElement{constructor(){sup
           aspect-ratio: 4 / 3;
           border-radius: var(--border-radius-lg);
           object-fit: cover;
+          border: 2px solid var(--color-primary);
+
         }
 
         .hero-heading {
