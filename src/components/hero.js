@@ -16,6 +16,7 @@ class HeroComponent extends HTMLElement {
           gap: var(--gap-small);
           padding: 0;
           position: relative; 
+          padding: 0 4px;
         }
         .hero-banner {
           display: none;
@@ -25,9 +26,8 @@ class HeroComponent extends HTMLElement {
           height: 50vh;
           aspect-ratio: 4 / 3;
           border-radius: var(--border-radius-lg);
+          box-shadow: var(--shadow-lg);
           object-fit: cover;
-          border: 2px solid var(--color-primary);
-
         }
 
         .hero-heading {
