@@ -18,7 +18,9 @@ class HeroComponent extends HTMLElement {
           padding: 0;
           position: relative; 
         }
-
+        .hero-banner {
+          display: none;
+        }
         .hero-image-portrait {
           width: auto;
           height: 50vh;
