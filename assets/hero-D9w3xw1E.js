@@ -80,7 +80,6 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
           .hero-banner {
             display: block;
             background-color: var(--color-primary); 
-            overflow: hidden; 
             position: absolute; 
             top: 0;
             left: 0;
