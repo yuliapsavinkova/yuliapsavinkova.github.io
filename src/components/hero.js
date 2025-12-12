@@ -73,16 +73,22 @@ class HeroComponent extends HTMLElement {
       </style>
       <section id="hero" class="hero">
         <div class="hero-banner"></div> 
-        <img src="./images/portrait-900.webp"
-            srcset="./images/portrait-400.webp 400w, 
-                    ./images/portrait-600.webp 600w, 
-                    ./images/portrait-900.webp 900w, 
-                    ./images/portrait-1200.webp 1200w"
-            sizes="(max-width: 600px) 90vw, 50vh"
-            alt="Portrait of Yulia"
-            class="hero-image-portrait"
-            fetchpriority="high"
-            decoding="async">
+        <img
+          src="./images/portrait-900.webp"
+          srcset="
+            ./images/portrait-400.webp 400w,
+            ./images/portrait-600.webp 600w,
+            ./images/portrait-900.webp 900w,
+            ./images/portrait-1200.webp 1200w
+          "
+          sizes="(max-width: 600px) 90vw, 50vw"
+          width="900"
+          height="1200"
+          alt="Portrait of Yulia"
+          class="hero-image-portrait"
+          fetchpriority="high"
+          loading="eager"
+        >
         <social-icons></social-icons>
         <div class="hero-heading">
           <h1>Hello, I'm Yulia</h1>

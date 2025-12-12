@@ -12,11 +12,20 @@ class AboutComponent extends HTMLElement {
 
                 <div class="about-me feature-card">
                     <div class="card-image">
-                        <img 
-                            src="./images/about-me.webp" 
-                            loading="lazy" 
-                            alt="About me image."
-                        />
+                        <img
+                            src="./images/about-me-600.webp"
+                            srcset="
+                                ./images/about-me-400.webp 400w,
+                                ./images/about-me-600.webp 600w,
+                                ./images/about-me-900.webp 900w
+                            "
+                            sizes="(max-width: 600px) 90vw, 600px"
+                            width="600"
+                            height="800"
+                            alt="Yulia is working on the computer."
+                            loading="lazy"
+                            decoding="async"
+                        >
                     </div>
                     <div class="card-content">
                         <h2>Code & Beyond</h2>
