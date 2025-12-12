@@ -19,9 +19,9 @@ class SectionHeader extends HTMLElement {
             height: 2px;
             width: 20rem;
             background: linear-gradient(to right, 
-              var(--color-background) 0%, 
+              transparent 0%, 
               var(--color-accent) 50%, 
-              var(--color-background) 100%
+              transparent 100%
             );
           }
         }
