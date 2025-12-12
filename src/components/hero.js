@@ -15,19 +15,8 @@ class HeroComponent extends HTMLElement {
           justify-content: flex-end; 
           align-items: center;
           gap: var(--gap-small);
-          padding: var(--gap-large) 0;
+          padding: 0;
           position: relative; 
-        }
-
-        .hero-banner {
-          background-color: var(--color-primary); 
-          overflow: hidden; 
-          position: absolute; 
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 50%;
-          z-index: -1; 
         }
 
         .hero-image-portrait {
@@ -51,16 +40,31 @@ class HeroComponent extends HTMLElement {
         }
 
         @media (min-width: 768px) {
-            .hero-banner::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background: url('/images/banner-bg.png') no-repeat;
-                background-size: cover;
-                opacity: 0.9;
-                mix-blend-mode: luminosity; 
-                pointer-events: none;
-            }
+          .hero {
+              padding: var(--gap-large) 0;
+          }
+
+          .hero-banner {
+            background-color: var(--color-primary); 
+            overflow: hidden; 
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            z-index: -1; 
+          }
+
+          .hero-banner::before {
+              content: '';
+              position: absolute;
+              inset: 0;
+              background: url('/images/banner-bg.png') no-repeat;
+              background-size: cover;
+              opacity: 0.9;
+              mix-blend-mode: luminosity; 
+              pointer-events: none;
+          }
         }
       </style>
       <section id="hero" class="hero">
