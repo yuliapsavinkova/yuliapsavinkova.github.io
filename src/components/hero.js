@@ -7,7 +7,6 @@ class HeroComponent extends HTMLElement {
       <style>
         .hero {
           width: 100%;
-          min-width: 20rem;
           min-height: calc(100svh - var(--header-size));
           height: auto;
           display: flex;
