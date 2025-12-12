@@ -31,11 +31,12 @@ class HeroComponent extends HTMLElement {
         }
 
         .hero-image-portrait {
-          height: 50%;
-          max-height: calc(100svh - var(--header-size) - 20rem);
-          aspect-ratio: 1 / 1;
+          width: auto;
+          height: 50vh;
+          aspect-ratio: 4 / 3;
           border-radius: var(--border-radius-lg);
-          border: 4px solid var(--white)
+          border: 4px solid var(--white);
+          object-fit: cover;
         }
 
         .hero-heading {
