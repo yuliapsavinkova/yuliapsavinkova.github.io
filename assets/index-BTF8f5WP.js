@@ -42,10 +42,14 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/hero-D9w3xw1E.j
           }
 
           .gra-separator {
-            border-top-width: 2px;
-            border-top-style: solid;
-            width: 6rem;
-            border-top-color: var(--color-accent);
+            height: 2px;
+            width: 20rem;
+            background: linear-gradient(to right, 
+              var(--color-background) 0%, 
+              var(--color-accent) 50%, 
+              var(--color-background) 100%
+            );
+            
           }
         }
       </style>
