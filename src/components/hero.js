@@ -26,7 +26,6 @@ class HeroComponent extends HTMLElement {
           height: 50vh;
           aspect-ratio: 4 / 3;
           border-radius: var(--border-radius-lg);
-          border: 4px solid var(--white);
           object-fit: cover;
         }
 
@@ -43,7 +42,7 @@ class HeroComponent extends HTMLElement {
 
         @media (min-width: 768px) {
           .hero {
-              padding: var(--gap-large) 0;
+            padding: var(--gap-large) 0;
           }
 
           .hero-banner {
@@ -59,14 +58,17 @@ class HeroComponent extends HTMLElement {
           }
 
           .hero-banner::before {
-              content: '';
-              position: absolute;
-              inset: 0;
-              background: url('/images/banner-bg.png') no-repeat;
-              background-size: cover;
-              opacity: 0.9;
-              mix-blend-mode: luminosity; 
-              pointer-events: none;
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('/images/banner-bg.png') no-repeat;
+            background-size: cover;
+            opacity: 0.9;
+            mix-blend-mode: luminosity; 
+            pointer-events: none;
+          }
+          .hero-image-portrait {
+            border: 4px solid var(--white);
           }
         }
       </style>

@@ -4,7 +4,7 @@ class HeaderComponent extends HTMLElement {
   constructor() {
     super();
     this._handleResize = Utils.throttle(this._handleResize.bind(this), 200);
-    this._handleScroll = Utils.throttle(this._handleScroll.bind(this), 50);
+    // this._handleScroll = Utils.throttle(this._handleScroll.bind(this), 50);
     this._updateActiveLink = this._updateActiveLink.bind(this);
     this._toggleMenu = this._toggleMenu.bind(this);
     this._closeMenu = this._closeMenu.bind(this);
@@ -112,7 +112,7 @@ class HeaderComponent extends HTMLElement {
   }
 
   _handleScroll() {
-    this.classList.toggle('is-scrolled', window.scrollY > 50);
+    // this.classList.toggle('is-scrolled', window.scrollY > 50);
     this.classList.remove('is-menu-open'); // Close menu on scroll
   }
 

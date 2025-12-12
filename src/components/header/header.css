@@ -1,10 +1,10 @@
 .header {
   z-index: 1000;
-  position: static;
+  position: sticky; /* sticky or fixed for transparency effect */
   top: 0;
-  background-color: transparent;
-  box-shadow: none;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: hsla(var(--theme-surface-values), 0.9); /* 10% transparent */
+  box-shadow: 0 4px 6px -1px hsla(var(--theme-primary-values), 0.1),
+    0 2px 4px -2px hsla(var(--theme-primary-values), 0.1);
 
   color: var(--color-text-body);
   height: var(--header-size);
@@ -21,11 +21,11 @@ header-component {
   z-index: 1000;
 }
 
-header-component.is-scrolled .header {
+/* header-component.is-scrolled .header {
   background-color: hsla(var(--theme-surface-values), 0.95);
   box-shadow: 0 4px 6px -1px hsla(var(--theme-primary-values), 0.1),
     0 2px 4px -2px hsla(var(--theme-primary-values), 0.1);
-}
+} */
 
 .header-content-wrapper {
   max-width: 1600px;
