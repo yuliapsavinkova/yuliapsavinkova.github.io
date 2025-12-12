@@ -26,6 +26,8 @@ class HeroComponent extends HTMLElement {
           aspect-ratio: 4 / 3;
           border-radius: var(--border-radius-lg);
           object-fit: cover;
+          border: 2px solid var(--color-primary);
+
         }
 
         .hero-heading {
