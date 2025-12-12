@@ -14,9 +14,8 @@ class HeroComponent extends HTMLElement {
           justify-content: center; 
           align-items: center;
           gap: var(--gap-small);
-          padding: 0;
           position: relative; 
-          padding: 0 4px;
+          padding: 0 var(--padding-inline);
         }
         .hero-banner {
           display: none;
