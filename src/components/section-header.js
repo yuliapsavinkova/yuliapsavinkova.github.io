@@ -23,7 +23,6 @@ class SectionHeader extends HTMLElement {
               var(--color-accent) 50%, 
               var(--color-background) 100%
             );
-            
           }
         }
       </style>
