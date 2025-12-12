@@ -12,7 +12,7 @@ class HeroComponent extends HTMLElement {
           height: auto;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start; 
+          justify-content: center; 
           align-items: center;
           gap: var(--gap-small);
           padding: 0;
@@ -47,6 +47,7 @@ class HeroComponent extends HTMLElement {
           }
 
           .hero-banner {
+            display: block;
             background-color: var(--color-primary); 
             overflow: hidden; 
             position: absolute; 
