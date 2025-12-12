@@ -49,7 +49,6 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/hero-D9w3xw1E.j
               var(--color-accent) 50%, 
               var(--color-background) 100%
             );
-            
           }
         }
       </style>
