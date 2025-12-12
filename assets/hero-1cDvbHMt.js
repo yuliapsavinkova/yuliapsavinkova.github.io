@@ -44,7 +44,7 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
           height: auto;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start; 
+          justify-content: center; 
           align-items: center;
           gap: var(--gap-small);
           padding: 0;
@@ -79,6 +79,7 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
           }
 
           .hero-banner {
+            display: block;
             background-color: var(--color-primary); 
             overflow: hidden; 
             position: absolute; 
