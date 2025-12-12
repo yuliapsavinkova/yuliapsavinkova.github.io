@@ -35,7 +35,7 @@ export async function renderPage() {
       // 2. Load the rest of the page.
       const loadRemainingContent = async () => {
         await Promise.all([
-          import('./components/expertise.js'),
+          import('./components/expertise-full.js'),
           import('./components/about.js'),
           import('./components/process.js'),
           import('./components/contact/contact.js'),
@@ -45,7 +45,7 @@ export async function renderPage() {
         app.insertAdjacentHTML(
           'beforeend',
           `
-          <expertise-component></expertise-component>
+          <expertise-full-component></expertise-full-component>
           <about-component></about-component>
           <working-process-component></working-process-component>
           <contact-component></contact-component>
@@ -83,11 +83,13 @@ export async function renderPage() {
     case 'work':
       await Promise.all([
         import('./components/expertise-full.js'),
+        import('./components/about.js'),
         import('./components/contact/contact.js'),
         import('./components/footer.js'),
       ]);
       app.innerHTML = `
         <expertise-full-component></expertise-full-component>
+        <about-component></about-component>        
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;
