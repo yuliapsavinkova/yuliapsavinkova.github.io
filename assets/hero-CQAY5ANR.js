@@ -44,7 +44,7 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
           height: auto;
           display: flex;
           flex-direction: column;
-          justify-content: flex-end; 
+          justify-content: flex-start; 
           align-items: center;
           gap: var(--gap-small);
           padding: 0;
