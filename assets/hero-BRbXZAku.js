@@ -50,7 +50,9 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
           padding: 0;
           position: relative; 
         }
-
+        .hero-banner {
+          display: none;
+        }
         .hero-image-portrait {
           width: auto;
           height: 50vh;
