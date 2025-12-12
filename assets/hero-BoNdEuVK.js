@@ -1,4 +1,4 @@
-import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex=0,this.charIndex=0,this.isDeleting=!1,this.lastFrameTime=0,this.typeSpeed=100,this.deleteSpeed=50}connectedCallback(){this.render(),this.init()}render(){this.innerHTML=`
+import"./social-icons-D5rXZ1el.js";class n extends HTMLElement{constructor(){super(),this.titles=[],this.titleIndex=0,this.charIndex=0,this.isDeleting=!1,this.lastFrameTime=0,this.typeSpeed=100,this.deleteSpeed=50}connectedCallback(){this.render(),this.init()}render(){this.innerHTML=`
         <style>
           rotating-text {
             display: inline-block;
@@ -35,7 +35,7 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
             <span class="typewriter-text"></span>
             <span class="cursor">|</span>
         </div>
-    `}init(){this.textElement=this.querySelector(".typewriter-text");try{this.titles=JSON.parse(this.getAttribute("data-titles"))||[]}catch(t){console.error("Invalid JSON for data-titles attribute on rotating-text component:",t),this.titles=[]}this.titles.length>0&&(this.type=this.type.bind(this),requestAnimationFrame(this.type))}type(t){if(!this.textElement)return;this.lastFrameTime||(this.lastFrameTime=t);const s=t-this.lastFrameTime,n=this.isDeleting?this.deleteSpeed:this.typeSpeed;if(s>n){this.lastFrameTime=t;const e=this.titles[this.titleIndex];this.isDeleting?(this.textElement.textContent=e.substring(0,this.charIndex--),this.charIndex<0&&(this.isDeleting=!1,this.titleIndex=(this.titleIndex+1)%this.titles.length)):(this.textElement.textContent=e.substring(0,this.charIndex++),this.charIndex>e.length&&setTimeout(()=>{this.isDeleting=!0},1e3))}requestAnimationFrame(this.type)}}customElements.define("rotating-text",r);class a extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `}init(){this.textElement=this.querySelector(".typewriter-text");try{this.titles=JSON.parse(this.getAttribute("data-titles"))||[]}catch(t){console.error("Invalid JSON for data-titles attribute on rotating-text component:",t),this.titles=[]}this.titles.length>0&&(this.type=this.type.bind(this),requestAnimationFrame(this.type))}type(t){if(!this.textElement)return;this.lastFrameTime||(this.lastFrameTime=t);const r=t-this.lastFrameTime,s=this.isDeleting?this.deleteSpeed:this.typeSpeed;if(r>s){this.lastFrameTime=t;const e=this.titles[this.titleIndex];this.isDeleting?(this.textElement.textContent=e.substring(0,this.charIndex--),this.charIndex<0&&(this.isDeleting=!1,this.titleIndex=(this.titleIndex+1)%this.titles.length)):(this.textElement.textContent=e.substring(0,this.charIndex++),this.charIndex>e.length&&setTimeout(()=>{this.isDeleting=!0},1e3))}requestAnimationFrame(this.type)}}customElements.define("rotating-text",n);class a extends HTMLElement{connectedCallback(){this.innerHTML=`
       <style>
         .hero {
           width: 100%;
@@ -105,16 +105,22 @@ import"./social-icons-D5rXZ1el.js";class r extends HTMLElement{constructor(){sup
       </style>
       <section id="hero" class="hero">
         <div class="hero-banner"></div> 
-        <img src="./images/portrait-900.webp"
-            srcset="./images/portrait-400.webp 400w, 
-                    ./images/portrait-600.webp 600w, 
-                    ./images/portrait-900.webp 900w, 
-                    ./images/portrait-1200.webp 1200w"
-            sizes="(max-width: 600px) 90vw, 50vh"
-            alt="Portrait of Yulia"
-            class="hero-image-portrait"
-            fetchpriority="high"
-            decoding="async">
+        <img
+          src="./images/portrait-900.webp"
+          srcset="
+            ./images/portrait-400.webp 400w,
+            ./images/portrait-600.webp 600w,
+            ./images/portrait-900.webp 900w,
+            ./images/portrait-1200.webp 1200w
+          "
+          sizes="(max-width: 600px) 90vw, 50vw"
+          width="900"
+          height="1200"
+          alt="Portrait of Yulia"
+          class="hero-image-portrait"
+          fetchpriority="high"
+          loading="eager"
+        >
         <social-icons></social-icons>
         <div class="hero-heading">
           <h1>Hello, I'm Yulia</h1>
