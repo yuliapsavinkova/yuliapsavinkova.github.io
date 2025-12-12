@@ -45,9 +45,9 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/hero-DWac2F0m.j
             height: 2px;
             width: 20rem;
             background: linear-gradient(to right, 
-              var(--color-background) 0%, 
+              transparent 0%, 
               var(--color-accent) 50%, 
-              var(--color-background) 100%
+              transparent 100%
             );
           }
         }
