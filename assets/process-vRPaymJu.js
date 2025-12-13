@@ -17,14 +17,21 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
             color: var(--white);
           }
         }
-          
-        /* min-width: var(--breakpoint-xl) */
-        @media (min-width: 1200px) {
+
+        /* Desktop-only parallax: mouse + hover */
+        /* min-width: var(--breakpoint-sm) */
+        @media (min-width: 576px) and (hover: hover) and (pointer: fine) {
+          .working-process {
+            /* Enable the parallax effect for tablets, laptops, and desktops */
+            background-attachment: fixed;
+          }
+        }
+
+        /* min-width: var(--breakpoint-md) */          
+        @media (min-width: 768px) {
           .working-process {
             background-image: linear-gradient(var(--color-overlay), var(--color-overlay)),
               url('../../images/working-girl-768.webp');
-            /* Enable the parallax effect for tablets, laptops, and desktops */
-            background-attachment: fixed;
           }
         }
 
