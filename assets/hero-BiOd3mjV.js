@@ -92,7 +92,7 @@ import"./social-icons-D5rXZ1el.js";class n extends HTMLElement{constructor(){sup
             content: '';
             position: absolute;
             inset: 0;
-            background: url('/images/banner-bg.png') no-repeat;
+            background: url('/images/banner-bg.webp') no-repeat;
             background-size: cover;
             opacity: 0.9;
             mix-blend-mode: luminosity; 
