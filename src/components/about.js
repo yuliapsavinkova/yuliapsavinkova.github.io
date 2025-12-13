@@ -29,7 +29,7 @@ class AboutComponent extends HTMLElement {
                     </div>
                     <div class="card-content">
                         <h2>Code & Beyond</h2>
-                        <p>I'm a freelance Software Engineer with over a decade of experience building websites and web applications.</p>
+                        <p>I'm a freelance Software Engineer with over a decade of experience building for the web.</p>
                         <!--<p>I create clean, responsive, and user-friendly digital experiences using modern tools and best practices. Whether it's a simple website or a complex web application, I focus on building fast, reliable solutions tailored to each client's needs.</p>-->
                         <p>Alongside web development, I help traders and finance professionals build custom tools for trading, portfolio management, and market analysis.</p>
                         <p>I stay current on how AI is transforming work and integrate it into my workflows to improve productivity and efficiency.</p>

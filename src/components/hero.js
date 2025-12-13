@@ -17,9 +17,30 @@ class HeroComponent extends HTMLElement {
           position: relative; 
           padding: 0 var(--padding-inline);
         }
+
         .hero-banner {
-          display: none;
+            display: block;
+            background-color: var(--color-primary); 
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            z-index: -1; 
         }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('/images/banner-bg-mobile.webp'); /* Mobile (Vertical) Image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+            mix-blend-mode: luminosity; 
+            pointer-events: none;
+        }
+
         .hero-image-portrait {
           width: auto;
           height: 50vh;
@@ -45,29 +66,18 @@ class HeroComponent extends HTMLElement {
             padding: var(--gap-large) 0;
           }
 
-          .hero-banner {
-            display: block;
-            background-color: var(--color-primary); 
-            position: absolute; 
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            z-index: -1; 
-          }
-
-          .hero-banner::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('/images/banner-bg.webp') no-repeat;
-            background-size: cover;
-            opacity: 0.9;
-            mix-blend-mode: luminosity; 
-            pointer-events: none;
-          }
           .hero-image-portrait {
             border: 4px solid var(--white);
+          }
+          
+          .hero-banner::before {
+              background-image: url('/images/banner-bg-tablet.webp');
+          }
+        }
+
+        @media (min-width: 1025px) {
+          .hero-banner::before {
+              background-image: url('/images/banner-bg-desktop.webp');
           }
         }
       </style>
