@@ -80,6 +80,7 @@ import"./social-icons-D5rXZ1el.js";class a extends HTMLElement{constructor(){sup
           border-radius: var(--border-radius-lg);
           box-shadow: var(--shadow-lg);
           object-fit: cover;
+          border: 4px solid var(--white);
         }
 
         .hero-heading {
@@ -96,10 +97,6 @@ import"./social-icons-D5rXZ1el.js";class a extends HTMLElement{constructor(){sup
         @media (min-width: 768px) {
           .hero {
             padding: var(--gap-large) 0;
-          }
-
-          .hero-image-portrait {
-            border: 4px solid var(--white);
           }
           
           .hero-banner::before {
