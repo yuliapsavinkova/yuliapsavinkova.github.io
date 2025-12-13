@@ -1,7 +1,6 @@
 /* Base typography rules (font-family, size, weight, line-height, letter spacing.) */
 html {
   font-size: clamp(15px, 2vw, 18px); /* standard between 14px and 18px */
-  font-style: regular;
   font-family: var(--font-family);
 }
 

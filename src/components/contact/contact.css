@@ -9,7 +9,7 @@
 
   button {
     align-self: center;
-    margin-top: 0.5rem;
+    margin-top: var(--gap-tiny);
   }
 
   h2 {

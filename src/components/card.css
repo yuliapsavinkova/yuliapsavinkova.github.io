@@ -1,13 +1,16 @@
-.card-grid {
-  width: min(100%, 1200px);
+.card-grid,
+.feature-list {
+  margin-left: auto;
+  margin-right: auto;
+  width: min(100%, var(--breakpoint-xl));
   display: flex;
+}
+.card-grid {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--gap);
 }
 .feature-list {
-  width: min(100%, 1200px);
-  display: flex;
   flex-direction: column;
   gap: var(--gap-large);
 }
@@ -23,9 +26,9 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
   padding: 1.5rem;
-  flex-basis: 18rem;
-  flex-grow: 1;
+  flex-basis: 20rem;
   max-width: 20rem;
+  flex-grow: 1;
   text-align: center;
 }
 .card .card-image {
@@ -82,7 +85,7 @@
   flex-direction: column;
   gap: var(--gap-small);
   align-items: center;
-  max-width: 1000px;
+  max-width: var(--breakpoint-lg);
 }
 .feature-card .card-content h2 {
   margin: 0;
@@ -94,7 +97,8 @@
 }
 
 /* Desktop: Switch to horizontal layout */
-@media (min-width: 1000px) {
+/* min-width: var(--breakpoint-lg) */
+@media (min-width: 992px) {
   .feature-card {
     flex-direction: row;
     align-items: center;
@@ -103,11 +107,11 @@
   }
   .feature-card .card-image {
     flex: 2;
-    order: unset; /* No longer need to order on desktop */
+    order: 0; /* No longer need to order on desktop */
   }
   .feature-card .card-content {
     flex: 3;
     align-items: flex-start;
-    order: unset; /* No longer need to order on desktop */
+    order: 0; /* No longer need to order on desktop */
   }
 }
