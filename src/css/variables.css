@@ -1,6 +1,12 @@
 :root {
   --font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
 
+  /* Breakpoints for min-width (Mobile-First approach) */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
   /* sizes */
   --header-size: 4rem;
   --footer-size: 8rem;
