@@ -48,6 +48,7 @@ class HeroComponent extends HTMLElement {
           border-radius: var(--border-radius-lg);
           box-shadow: var(--shadow-lg);
           object-fit: cover;
+          border: 4px solid var(--white);
         }
 
         .hero-heading {
@@ -64,10 +65,6 @@ class HeroComponent extends HTMLElement {
         @media (min-width: 768px) {
           .hero {
             padding: var(--gap-large) 0;
-          }
-
-          .hero-image-portrait {
-            border: 4px solid var(--white);
           }
           
           .hero-banner::before {
