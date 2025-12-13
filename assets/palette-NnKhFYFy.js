@@ -1,42 +1,15 @@
-class g extends HTMLElement{constructor(){super(),this._toggleTheme=this._toggleTheme.bind(this),this._themes=["light","dark","pastel"]}_toggleTheme(){const e=document.documentElement,t=e.dataset.theme||this._themes[0],o=this._themes.indexOf(t),r=this._themes[(o+1)%this._themes.length];e.dataset.theme=r,localStorage.setItem("theme",r),this._updateIcon(r)}_updateIcon(e){const t=this.querySelector(".sun"),o=this.querySelector(".moon");e==="light"?(t.style.display="block",t.style.opacity="1",o.style.display="none"):e==="dark"?(t.style.display="none",o.style.display="block"):e==="pastel"&&(t.style.display="block",t.style.opacity="0.6",o.style.display="none")}connectedCallback(){this.innerHTML=`
-      <style>    
-        .theme-toggle-btn {
-          cursor: pointer;
-        } 
-      </style>
-      <div class="theme-toggle-btn" aria-label="Toggle Theme">
-        <!-- Sun -->
-        <svg class="sun enable-icon-scale" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="4"/>
-          <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <line x1="12" y1="2" x2="12" y2="5"/>
-            <line x1="12" y1="19" x2="12" y2="22"/>
-            <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
-            <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
-            <line x1="2" y1="12" x2="5" y2="12"/>
-            <line x1="19" y1="12" x2="22" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
-            <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
-          </g>
-        </svg>
-
-        <!-- Moon -->
-        <svg class="moon enable-icon-scale" viewBox="0 0 24 24" fill="currentColor" style="display:none">
-          <path d="M21 12.79A9 9 0 0 1 12.21 3a9 9 0 1 0 8.79 9.79z"/>
-        </svg>
-      </div>
-    `;const e=localStorage.getItem("theme")||this._themes[0];document.documentElement.dataset.theme=e,this._updateIcon(e),this.querySelector(".theme-toggle-btn").addEventListener("click",this._toggleTheme)}disconnectedCallback(){const e=this.querySelector(".theme-toggle-btn");e&&e.removeEventListener("click",this._toggleTheme)}}customElements.define("theme-toggle-button",g);class m extends HTMLElement{connectedCallback(){this.render()}hslToRgb(e,t,o){t/=100,o/=100;let r=(1-Math.abs(2*o-1))*t,a=r*(1-Math.abs(e/60%2-1)),c=o-r/2,s=0,l=0,n=0;return 0<=e&&e<60?(s=r,l=a,n=0):60<=e&&e<120?(s=a,l=r,n=0):120<=e&&e<180?(s=0,l=r,n=a):180<=e&&e<240?(s=0,l=a,n=r):240<=e&&e<300?(s=a,l=0,n=r):300<=e&&e<360&&(s=r,l=0,n=a),s=Math.round((s+c)*255),l=Math.round((l+c)*255),n=Math.round((n+c)*255),[s,l,n]}componentToHex(e){const t=e.toString(16);return t.length===1?"0"+t:t}rgbToHex(e,t,o){return"#"+this.componentToHex(e)+this.componentToHex(t)+this.componentToHex(o)}getColorCodes(e,t=document.documentElement){const o=getComputedStyle(t).getPropertyValue(e).trim(),r=o.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);if(!r)return{hsl:o,rgb:"N/A",hex:"N/A"};const a=parseInt(r[1]),c=parseInt(r[2]),s=parseInt(r[3]),[l,n,i]=this.hslToRgb(a,c,s),h=this.rgbToHex(l,n,i);return{hsl:`hsl(${a}, ${c}%, ${s}%)`,rgb:`rgb(${l}, ${n}, ${i})`,hex:h}}createColorSwatch(e,t,o){return`
+import"./theme-toggle-9PDmT22X.js";class h extends HTMLElement{connectedCallback(){this.render()}hslToRgb(t,o,r){o/=100,r/=100;let e=(1-Math.abs(2*r-1))*o,c=e*(1-Math.abs(t/60%2-1)),l=r-e/2,a=0,s=0,n=0;return 0<=t&&t<60?(a=e,s=c,n=0):60<=t&&t<120?(a=c,s=e,n=0):120<=t&&t<180?(a=0,s=e,n=c):180<=t&&t<240?(a=0,s=c,n=e):240<=t&&t<300?(a=c,s=0,n=e):300<=t&&t<360&&(a=e,s=0,n=c),a=Math.round((a+l)*255),s=Math.round((s+l)*255),n=Math.round((n+l)*255),[a,s,n]}componentToHex(t){const o=t.toString(16);return o.length===1?"0"+o:o}rgbToHex(t,o,r){return"#"+this.componentToHex(t)+this.componentToHex(o)+this.componentToHex(r)}getColorCodes(t,o=document.documentElement){const r=getComputedStyle(o).getPropertyValue(t).trim(),e=r.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);if(!e)return{hsl:r,rgb:"N/A",hex:"N/A"};const c=parseInt(e[1]),l=parseInt(e[2]),a=parseInt(e[3]),[s,n,i]=this.hslToRgb(c,l,a),d=this.rgbToHex(s,n,i);return{hsl:`hsl(${c}, ${l}%, ${a}%)`,rgb:`rgb(${s}, ${n}, ${i})`,hex:d}}createColorSwatch(t,o,r){return`
           <div class="color-swatch">
-              <div class="color-display" style="background-color: var(${t});"></div>
+              <div class="color-display" style="background-color: var(${o});"></div>
               <div class="color-info">
-                  <h3>${e}</h3>
-                  <p class="color-name">--${t.replace("--","")}</p>
-                  <p><strong>HEX:</strong> ${o.hex}</p>
-                  <p><strong>RGB:</strong> ${o.rgb}</p>
-                  <p><strong>HLS:</strong> ${o.hsl}</p>
+                  <h3>${t}</h3>
+                  <p class="color-name">--${o.replace("--","")}</p>
+                  <p><strong>HEX:</strong> ${r.hex}</p>
+                  <p><strong>RGB:</strong> ${r.rgb}</p>
+                  <p><strong>HLS:</strong> ${r.hsl}</p>
               </div>
           </div>
-      `}render(){const e=this.getColorCodes("--color-background"),t=this.getColorCodes("--color-surface"),o=this.getColorCodes("--color-primary"),r=this.getColorCodes("--color-accent"),a=this.getColorCodes("--color-text-heading"),c=this.getColorCodes("--color-text-body");this.innerHTML=`
+      `}render(){const t=this.getColorCodes("--color-background"),o=this.getColorCodes("--color-surface"),r=this.getColorCodes("--color-primary"),e=this.getColorCodes("--color-accent"),c=this.getColorCodes("--color-text-heading"),l=this.getColorCodes("--color-text-body");this.innerHTML=`
       <style>
         .palette-container {
           max-width: 100%;
@@ -161,12 +134,12 @@ class g extends HTMLElement{constructor(){super(),this._toggleTheme=this._toggle
         <div class="palette-container">
           <h2>Core Palette</h2>
           <div class="palette-grid">
-              ${this.createColorSwatch("Background","--color-background",e)}
-              ${this.createColorSwatch("Surface","--color-surface",t)}
-              ${this.createColorSwatch("Primary","--color-primary",o)}
-              ${this.createColorSwatch("Accent","--color-accent",r)}
-              ${this.createColorSwatch("Heading Text","--color-text-heading",a)}
-              ${this.createColorSwatch("Body Text","--color-text-body",c)}
+              ${this.createColorSwatch("Background","--color-background",t)}
+              ${this.createColorSwatch("Surface","--color-surface",o)}
+              ${this.createColorSwatch("Primary","--color-primary",r)}
+              ${this.createColorSwatch("Accent","--color-accent",e)}
+              ${this.createColorSwatch("Heading Text","--color-text-heading",c)}
+              ${this.createColorSwatch("Body Text","--color-text-body",l)}
           </div>
           <h2>Effects</h2>
           <div class="palette-grid">
@@ -189,4 +162,4 @@ class g extends HTMLElement{constructor(){super(),this._toggleTheme=this._toggle
           </div>
         </div>
       </section>
-    `}}customElements.define("palette-component",m);
+    `}}customElements.define("palette-component",h);
