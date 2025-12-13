@@ -6,7 +6,6 @@
             </section-header>
 
             <div class="feature-list">
-
                 <div id="work-row-web" class="feature-card">
                     <div class="card-content">
                         <h2>Custom Websites</h2>  
@@ -17,7 +16,6 @@
                         <img src="./images/work-web.webp" class="bg-texture" loading="lazy" alt="maintenance-image" />
                     </div>
                 </div>
-
                 <div id="work-row-app" class="feature-card">
                     <div class="card-image">
                         <img src="./images/work-app.webp" class="bg-texture" loading="lazy" alt="web-development-image" />            
@@ -28,7 +26,6 @@
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                 </div>
-
                 <div id="work-row-3d" class="feature-card">
                     <div class="card-content">
                         <h2>Financial Tools</h2>  
@@ -39,19 +36,6 @@
                         <img src="./images/work-fin.webp" class="bg-texture" loading="lazy" alt="design-image" />
                     </div>
                 </div>
-
-                <!--<div id="work-row-3d" class="feature-card">
-                    <div class="card-content">
-                        <h2>3D Development</h2>  
-                        <p>Bring your website to life with stunning 3D experiences! I create interactive, immersive visuals that run smoothly in any modern browser—perfect for showcasing products, engaging users, or adding a unique touch to your site. Whether you need an interactive model, an animated scene, or a full 3D experience, I’ll build a solution that captivates your audience. Let’s make your vision a reality!</p>  
-                        <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
-                    </div>
-                    <div class="card-image">
-                        <img src="./images/three.webp" class="bg-texture" loading="lazy" alt="design-image" />
-                    </div>
-                </div>-->
-
             </div>
-
         </section>
     `}}customElements.define("expertise-full-component",e);

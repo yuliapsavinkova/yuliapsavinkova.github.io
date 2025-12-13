@@ -4,9 +4,7 @@
                 title="My Expertise"
                 sub-title="Transforming Ideas into Code">
             </section-header>
-
             <div class="card-grid">
-
                 <div class="card">
                     <div class="card-image bg-texture">
                       <img src="./images/work-web.webp" loading="lazy" alt="maintenance-image" />
@@ -21,7 +19,6 @@
                       </a>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-image bg-texture">
                       <img src="./images/work-app.webp" class="card-image" loading="lazy" alt="web-development-image" />            
@@ -36,7 +33,6 @@
                       </a>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-image bg-texture">
                       <img src="./images/work-fin.webp" class="card-image" loading="lazy" alt="web-development-image" />            
@@ -51,24 +47,7 @@
                       </a>
                     </div>
                 </div>
-
-                <!--<div class="card bg-texture">
-                    <div class="card-image">
-                      <img src="./images/three.webp" class="card-image" loading="lazy" alt="design-image" />
-                    </div>
-                    <div class="card-content">
-                      <h2>3D Development</h2>
-                      <p>Build 3D web experiences using modern web technologies and libraries.</p>
-                      <a href="#/work?section=work-row-3d" aria-label="Go to 3D web experiences section">
-                        <svg class="icon enable-icon-scale" aria-hidden="true">
-                          <use href="#icon-arrow-right"></use>
-                        </svg>
-                      </a>
-                    </div>
-                </div>-->
-
             </div>
-            
             <a href="#/work" class="button button-secondary">Learn More</a>
         </section>
     `}}customElements.define("expertise-component",e);
