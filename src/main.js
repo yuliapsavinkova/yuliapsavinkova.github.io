@@ -13,7 +13,7 @@ import header from './components/header/header.css?inline';
 /* Svg sprite icons */
 import 'virtual:svg-icons-register';
 
-/* Components */
+/* Global components */
 import './components/header/header.js';
 import './components/section-header.js';
 
@@ -32,11 +32,11 @@ const criticalCss = [
 ].join('\n');
 
 const styleTag = document.createElement('style');
-styleTag.setAttribute('id', 'critical-css-inline');
+styleTag.id = 'critical-css-inline';
 styleTag.textContent = criticalCss;
 document.head.appendChild(styleTag);
 
-// Import router
+// Router bootstrap
 import { renderPage } from './router.js';
 
 // Initialize the app
@@ -53,8 +53,8 @@ document.body.addEventListener('click', (event) => {
   }
 });
 
-if (import.meta.env.VITE_ENVIRONMENT) {
-  import('./debug-tools.js').then(({ loadDebugTools }) => {
-    loadDebugTools();
-  });
-}
+// if (import.meta.env.VITE_ENVIRONMENT) {
+//   import('./debug-tools.js').then(({ loadDebugTools }) => {
+//     loadDebugTools();
+//   });
+// }

@@ -95,14 +95,6 @@ export async function renderPage() {
       `;
       break;
 
-    case 'palette':
-      await Promise.all([import('./components/palette.js'), import('./components/footer.js')]);
-      app.innerHTML = `
-        <palette-component></palette-component>
-        <footer-component copyright-name="Yulia Savinkova"></footer-component>
-      `;
-      break;
-
     case 'contact':
       await Promise.all([
         import('./components/contact/contact.js'),
@@ -113,6 +105,25 @@ export async function renderPage() {
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;
       break;
+
+    case 'palette':
+      await Promise.all([import('./components/palette.js'), import('./components/footer.js')]);
+      app.innerHTML = `
+          <palette-component></palette-component>
+          <footer-component copyright-name="Yulia Savinkova"></footer-component>
+        `;
+      break;
+
+    case 'debug': {
+      // Debug tools are enabled only on this route
+      const { loadDebugTools } = await import('./debug-tools.js');
+      loadDebugTools();
+
+      app.innerHTML = `
+          <h1 style="text-align:center; padding:2rem;">Debug mode enabled</h1>
+        `;
+      break;
+    }
 
     default:
       await Promise.all([import('./components/404.js'), import('./components/footer.js')]);

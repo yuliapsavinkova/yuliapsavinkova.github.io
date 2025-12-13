@@ -1,25 +1,12 @@
 export async function loadDebugTools() {
-  console.log('Debug mode active!');
+  if (document.getElementById('debug-panel')) return;
 
-  const tools = [
-    async () => {
-      await import('./components/debug-panel.js');
-      const container = document.createElement('div');
-      container.id = 'debug-panel';
-      container.innerHTML = '<debug-panel-component></debug-panel-component>';
-      document.body.appendChild(container);
-    },
-    async () => {
-      // Example: Load another tool
-      // await import('./components/another-tool.js');
-    },
-  ];
+  console.log('Debug mode active');
 
-  for (const tool of tools) {
-    try {
-      await tool();
-    } catch (err) {
-      console.error('Error loading debug tool:', err);
-    }
-  }
+  await import('./components/debug-panel.js');
+
+  const container = document.createElement('div');
+  container.id = 'debug-panel';
+  container.innerHTML = '<debug-panel-component></debug-panel-component>';
+  document.body.appendChild(container);
 }
