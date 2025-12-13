@@ -18,8 +18,8 @@ class e extends HTMLElement{connectedCallback(){this.innerHTML=`
           }
         }
           
-        /* Tablet size and up (Min-width: 768px) */
-        @media (min-width: 768px) {
+        /* min-width: var(--breakpoint-xl) */
+        @media (min-width: 1200px) {
           .working-process {
             background-image: linear-gradient(var(--color-overlay), var(--color-overlay)),
               url('../../images/working-girl-768.webp');
