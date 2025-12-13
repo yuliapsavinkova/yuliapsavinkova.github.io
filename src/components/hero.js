@@ -60,7 +60,7 @@ class HeroComponent extends HTMLElement {
             content: '';
             position: absolute;
             inset: 0;
-            background: url('/images/banner-bg.png') no-repeat;
+            background: url('/images/banner-bg.webp') no-repeat;
             background-size: cover;
             opacity: 0.9;
             mix-blend-mode: luminosity; 
