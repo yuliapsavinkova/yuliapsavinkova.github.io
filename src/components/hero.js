@@ -93,8 +93,6 @@ class HeroComponent extends HTMLElement {
           height="1200"
           alt="Portrait of Yulia"
           class="hero-image-portrait"
-          fetchpriority="high"
-          loading="eager"
         >
         <social-icons></social-icons>
         <div class="hero-heading">
