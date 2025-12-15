@@ -9,6 +9,7 @@ import buttonsCss from './css/buttons.css?inline';
 import iconsCss from './css/icons.css?inline';
 import utilsCss from './css/utils.css?inline';
 import header from './components/header/header.css?inline';
+import dropdown from './components/dropdown/dropdown.css?inline';
 
 /* Svg sprite icons */
 import 'virtual:svg-icons-register';
@@ -29,6 +30,7 @@ const criticalCss = [
   iconsCss,
   utilsCss,
   header,
+  dropdown,
 ].join('\n');
 
 const styleTag = document.createElement('style');

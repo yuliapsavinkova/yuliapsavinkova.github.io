@@ -1,0 +1,69 @@
+.menu-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: calc(var(--header-size) + var(--gap-small));
+  right: var(--padding-inline);
+  left: var(--padding-inline);
+  width: calc(100vw - (var(--padding-inline) * 2));
+  z-index: 999;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: var(--gap-small);
+  gap: var(--gap-small);
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 0.2s ease-out, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu-dropdown.is-menu-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.menu-dropdown .drop-items {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-tiny);
+}
+
+.menu-dropdown .drop-items .drop-item {
+  width: 100%;
+  display: flex;
+  padding: calc(1rem - 1px);
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s, border-color 0.2s;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  color: var(--color-primary);
+}
+
+.menu-dropdown .drop-items .drop-item:hover,
+.menu-dropdown .drop-items .drop-item:focus {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+}
+
+.menu-dropdown .drop-items .drop-item.active {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+}
+
+.menu-dropdown .drop-action {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--gap-small);
+  border-top: 1px solid var(--color-border);
+}

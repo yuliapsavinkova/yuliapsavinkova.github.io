@@ -1,36 +1,26 @@
 .header {
   z-index: 1000;
-  position: fixed; /* sticky or fixed for transparency effect */
+  position: fixed;
   top: 0;
   width: 100%;
-  background-color: hsla(var(--theme-surface-values), 0.9); /* 10% transparent */
+  background-color: hsla(var(--theme-surface-values), 0.9);
   box-shadow: var(--shadow-md);
   color: var(--color-text-body);
   height: var(--header-size);
   padding-inline: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* header-component.is-scrolled .header {
-  background-color: hsla(var(--theme-surface-values), 0.95);
-  box-shadow: 0 4px 6px -1px hsla(var(--theme-primary-values), 0.1),
-    0 2px 4px -2px hsla(var(--theme-primary-values), 0.1);
-} */
 
 .header-content-wrapper {
   max-width: 1600px;
   width: 100%;
   padding-inline: var(--padding-inline);
   height: var(--header-size);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  border-bottom: none;
 }
 
 .header .logo {
@@ -38,13 +28,11 @@
   align-items: center;
   margin-right: var(--gap);
 }
-
 .header .logo svg {
   width: var(--logo-size, 2rem);
   height: var(--logo-size, 2rem);
   color: var(--color-primary);
 }
-
 .header .logo-name {
   font-weight: 600;
   color: var(--color-text-heading);
@@ -59,135 +47,65 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: var(--gap);
 }
 
-.header .nav-menu {
-  display: flex;
+/* 1. FULL LINKS (Hidden by Default on Narrow Screens) */
+.header .nav-links-full {
+  display: none; /* Hidden by default */
+}
+
+/* 2. CONDENSED CONTROLS (Visible by Default) */
+.header .nav-controls-condensed {
+  display: flex; /* Visible by default */
   align-items: center;
-  gap: var(--gap);
+  position: relative;
 }
 
 .header .menu-toggle-button {
-  display: none;
-  color: var(--color-primary);
-  & svg {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-.header .nav-links {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: var(--gap);
-  margin: 0 auto;
-}
-
-.header .nav-link.active {
-  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.5rem;
   color: var(--color-primary);
-  border-bottom: 2px solid var(--color-accent);
 }
 
-@media (max-width: 768px) {
-  header-component {
-    width: 100%;
-    display: block;
-  }
+.header .menu-toggle-button svg {
+  width: 2rem;
+  height: 2rem;
+}
 
-  .header-content-wrapper {
-    justify-content: space-between;
-  }
-
-  .header .main-nav {
-    flex-grow: 0;
-    justify-content: flex-end;
-  }
-
-  .header .menu-toggle-button {
+/* --- WIDE SCREEN OVERRIDES (min-width: 768px) --- */
+@media (min-width: 768px) {
+  /* 1. FULL LINKS (Visible on Wide Screens) */
+  .header .nav-links-full {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-    padding: 0.5rem;
-    color: var(--color-primary);
+    gap: var(--gap);
   }
 
-  .header .nav-menu {
-    display: flex;
-    flex-direction: column;
-
-    position: fixed;
-
-    top: calc(var(--header-size) + var(--gap-small));
-    right: var(--padding-inline);
-    left: var(--padding-inline);
-
-    width: calc(100vw - (var(--padding-inline) * 2));
-
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-lg);
-    padding: var(--gap-small);
-    gap: var(--gap-small);
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-    pointer-events: none;
-    transition: opacity 0.2s ease-out, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
-  header-component.is-menu-open .nav-menu {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-  }
-
-  .header .nav-links {
-    width: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-tiny);
-  }
-
-  .header .nav-links a {
-    width: 100%;
-    display: flex;
-    /* Reduce padding by 1px to compensate for the border on active state */
-    padding: calc(1rem - 1px);
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--border-radius);
-    transition: background-color 0.2s, border-color 0.2s;
-    font-weight: 500;
+  /* Target ONLY the full navigation links (a.nav-link) */
+  .header .nav-links-full .nav-link {
     text-decoration: none;
-
-    /* Transparent border to reserve the space */
-    border: 1px solid transparent;
-  }
-
-  .header .nav-links a:hover,
-  .header .nav-links a:focus {
-    background-color: var(--color-background);
+    padding: 0;
+    font-weight: 500;
     color: var(--color-primary);
   }
 
-  .header .nav-link.active {
-    background-color: var(--color-background);
-    color: var(--color-primary);
+  /* Apply WIDE-SCREEN active style */
+  .header .nav-links-full a.nav-link.active {
     font-weight: 600;
-    border: 1px solid var(--color-border);
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    background: none;
   }
 
-  .header .nav-action {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-top: var(--gap-small);
-    border-top: 1px solid var(--color-border);
+  /* 2. CONDENSED CONTROLS (Hidden on Wide Screens) */
+  .header .nav-controls-condensed {
+    display: none;
   }
 }
