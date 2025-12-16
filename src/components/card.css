@@ -67,7 +67,6 @@
   text-align: center;
 }
 .feature-card .card-image {
-  order: 1; /* Image is first on mobile */
   border-radius: var(--border-radius);
   overflow: hidden;
 }
@@ -80,20 +79,11 @@
   object-fit: cover;
 }
 .feature-card .card-content {
-  order: 2; /* Content is second on mobile */
   display: flex;
   flex-direction: column;
   gap: var(--gap-small);
   align-items: center;
   max-width: var(--breakpoint-lg);
-}
-.feature-card .card-content h2 {
-  margin: 0;
-}
-.feature-card .card-content .button-group {
-  display: flex;
-  gap: var(--gap-small);
-  margin-top: 1rem;
 }
 
 /* Desktop: Switch to horizontal layout */
@@ -102,16 +92,20 @@
   .feature-card {
     flex-direction: row;
     align-items: center;
-    gap: var(--gap);
     text-align: left;
   }
+
   .feature-card .card-image {
     flex: 2;
-    order: 0; /* No longer need to order on desktop */
   }
+
   .feature-card .card-content {
     flex: 3;
     align-items: flex-start;
-    order: 0; /* No longer need to order on desktop */
+  }
+
+  /* flip every even feature card */
+  .feature-card:nth-child(odd) {
+    flex-direction: row-reverse;
   }
 }
