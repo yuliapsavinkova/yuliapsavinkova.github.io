@@ -46,6 +46,10 @@
   --color-border: hsla(var(--theme-text-body-values), 0.25);
   --color-overlay: hsla(var(--theme-primary-values), 0.6);
 
+  /* Transparent strikes */
+  --color-primary-soft: hsla(var(--theme-primary-values), 0.15);
+  --color-accent-soft: hsla(var(--theme-accent-values), 0.15);
+
   --shadow-sm: 0 1px 2px hsla(var(--theme-primary-values), 0.1);
   --shadow-md: 0 4px 12px hsla(var(--theme-primary-values), 0.15);
   --shadow-lg: 0 12px 24px hsla(var(--theme-primary-values), 0.2);

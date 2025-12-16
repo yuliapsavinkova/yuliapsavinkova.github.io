@@ -1,0 +1,63 @@
+/* content block */
+.feature-card .card-content {
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+}
+
+/* ---------- STRIKE BASE ---------- */
+.strike-top,
+.strike-right,
+.strike-bottom,
+.strike-left {
+  border-color: var(--color-primary-soft);
+  border-style: solid;
+}
+
+/* ---------- TOP STRIKE ---------- */
+.strike-top {
+  border-top-width: 4px;
+  padding-top: 1.5rem;
+  border-top-left-radius: 999px;
+  border-top-right-radius: 999px;
+}
+
+/* ---------- RIGHT STRIKE ---------- */
+.strike-right {
+  border-right-width: 4px;
+  padding-right: 1.5rem;
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+/* ---------- BOTTOM STRIKE ---------- */
+.strike-bottom {
+  border-bottom-width: 4px;
+  padding-bottom: 1.5rem;
+  border-bottom-left-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+/* ---------- LEFT STRIKE ---------- */
+.strike-left {
+  border-left-width: 4px;
+  padding-left: 1.5rem;
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+/* ---------- ACCENT VARIANT ---------- */
+.strike-accent {
+  border-color: var(--color-accent-soft);
+}
+
+/* ---------- DESKTOP SWITCH ---------- */
+@media (min-width: 992px) {
+  .feature-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .feature-card:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+}
