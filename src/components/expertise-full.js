@@ -76,7 +76,7 @@ class ExpertiseFullComponent extends HTMLElement {
                 alt="design-image"
               />
             </div>
-            <div class="card-content strike-bottom">
+            <div class="card-content strike-top strike-right">
               <h2>Financial Tools</h2>  
               <p>
                 I create tools that help traders and investors manage tasks like tracking portfolios,
