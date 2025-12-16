@@ -7,13 +7,13 @@
 
             <div class="feature-list">
                 <div id="work-row-web" class="feature-card">
+                    <div class="card-image">
+                        <img src="./images/work-web.webp" class="bg-texture" loading="lazy" alt="maintenance-image" />
+                    </div>
                     <div class="card-content">
                         <h2>Custom Websites</h2>  
                         <p>I build modern, responsive websites that work well on any device and are intuitive for your visitors. Whether you need a portfolio, business site, or landing page, I create custom solutions tailored to your goals. I focus on performance, speed, and SEO to help your site run smoothly, reach more people, and make a strong impact.</p>
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
-                    </div>
-                    <div class="card-image">
-                        <img src="./images/work-web.webp" class="bg-texture" loading="lazy" alt="maintenance-image" />
                     </div>
                 </div>
                 <div id="work-row-app" class="feature-card">
@@ -26,14 +26,14 @@
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
                     </div>
                 </div>
-                <div id="work-row-3d" class="feature-card">
+                <div id="work-row-fin" class="feature-card">
+                    <div class="card-image">
+                        <img src="./images/work-fin.webp" class="bg-texture" loading="lazy" alt="design-image" />
+                    </div>
                     <div class="card-content">
                         <h2>Financial Tools</h2>  
                         <p>I create tools that help traders and investors manage tasks like tracking portfolios, analyzing strategies, setting alerts, and pulling market data. I work with Excel, Google Sheets, and web apps, integrating them to keep your data in sync. You describe your workflow, and I turn it into a streamlined, automated solution that's faster, easier, and tailored to your work.</p>  
                         <a href="#/contact" class="button button-secondary" aria-label="Go to contact form">Get a Quote</a>
-                    </div>
-                    <div class="card-image">
-                        <img src="./images/work-fin.webp" class="bg-texture" loading="lazy" alt="design-image" />
                     </div>
                 </div>
             </div>
