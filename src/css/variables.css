@@ -20,7 +20,7 @@
 
   /* Padding */
   --padding-inline: 1rem;
-  --padding-block: 3rem;
+  --padding-block: 4rem;
 
   --gap-tiny: 0.5rem;
   --gap-small: 1rem;
@@ -33,6 +33,5 @@
 @media (min-width: 768px) {
   :root {
     --padding-inline: 2rem;
-    --padding-block: 4rem;
   }
 }

@@ -44,7 +44,7 @@ class ExpertiseComponent extends HTMLElement {
                     <div class="card-content">
                       <h2>Financial Tools</h2>
                       <p>I create financial tools to streamline daily tasks for traders and investors.</p>
-                      <a href="#/work?section=work-row-app" aria-label="Go to App Development section">
+                      <a href="#/work?section=work-row-fin" aria-label="Go to App Development section">
                         <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
