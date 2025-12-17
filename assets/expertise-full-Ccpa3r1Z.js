@@ -16,7 +16,7 @@
                 alt="maintenance-image"
               />
             </div>
-            <div class="card-content strike-top strike-right">
+            <div class="card-content strike-top">
               <h2>Custom Websites</h2>  
               <p>
                 I build modern, responsive websites that work well on any device and are intuitive
@@ -43,7 +43,7 @@
                 alt="web-development-image"
               />            
             </div>
-            <div class="card-content strike-left strike-accent">
+            <div class="card-content strike-right">
               <h2>App Development</h2>
               <p>
                 I build fast, user-friendly web applications using modern frameworks like React
@@ -71,7 +71,7 @@
                 alt="design-image"
               />
             </div>
-            <div class="card-content strike-top strike-right">
+            <div class="card-content strike-bottom">
               <h2>Financial Tools</h2>  
               <p>
                 I create tools that help traders and investors manage tasks like tracking portfolios,
