@@ -12,7 +12,7 @@ class ExpertiseFullComponent extends HTMLElement {
 
         <div class="feature-list">
 
-          <div id="work-row-web" class="feature-card strike-top strike-bottom">
+          <div id="work-row-web" class="feature-card">
             <div class="card-image">
               <img
                 src="./images/work-web.webp"
@@ -39,7 +39,7 @@ class ExpertiseFullComponent extends HTMLElement {
             </div>
           </div>
 
-          <div id="work-row-app" class="feature-card strike-right strike-left">
+          <div id="work-row-app" class="feature-card">
             <div class="card-image">
               <img
                 src="./images/work-app.webp"
@@ -67,7 +67,7 @@ class ExpertiseFullComponent extends HTMLElement {
             </div>
           </div>
 
-          <div id="work-row-fin" class="feature-card strike-top strike-bottom">
+          <div id="work-row-fin" class="feature-card">
             <div class="card-image">
               <img
                 src="./images/work-fin.webp"
