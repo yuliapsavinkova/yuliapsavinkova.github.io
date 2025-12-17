@@ -7,7 +7,7 @@
 
         <div class="feature-list">
 
-          <div id="work-row-web" class="feature-card strike-top strike-bottom">
+          <div id="work-row-web" class="feature-card">
             <div class="card-image">
               <img
                 src="./images/work-web.webp"
@@ -34,7 +34,7 @@
             </div>
           </div>
 
-          <div id="work-row-app" class="feature-card strike-right strike-left">
+          <div id="work-row-app" class="feature-card">
             <div class="card-image">
               <img
                 src="./images/work-app.webp"
@@ -62,7 +62,7 @@
             </div>
           </div>
 
-          <div id="work-row-fin" class="feature-card strike-top strike-bottom">
+          <div id="work-row-fin" class="feature-card">
             <div class="card-image">
               <img
                 src="./images/work-fin.webp"
