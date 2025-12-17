@@ -12,7 +12,7 @@ class ExpertiseFullComponent extends HTMLElement {
 
         <div class="feature-list">
 
-          <div id="work-row-web" class="feature-card">
+          <div id="work-row-web" class="feature-card strike-top strike-bottom">
             <div class="card-image">
               <img
                 src="./images/work-web.webp"
@@ -21,7 +21,7 @@ class ExpertiseFullComponent extends HTMLElement {
                 alt="maintenance-image"
               />
             </div>
-            <div class="card-content strike-top">
+            <div class="card-content">
               <h2>Custom Websites</h2>  
               <p>
                 I build modern, responsive websites that work well on any device and are intuitive
@@ -39,7 +39,7 @@ class ExpertiseFullComponent extends HTMLElement {
             </div>
           </div>
 
-          <div id="work-row-app" class="feature-card">
+          <div id="work-row-app" class="feature-card strike-right strike-left">
             <div class="card-image">
               <img
                 src="./images/work-app.webp"
@@ -48,7 +48,7 @@ class ExpertiseFullComponent extends HTMLElement {
                 alt="web-development-image"
               />            
             </div>
-            <div class="card-content strike-right">
+            <div class="card-content">
               <h2>App Development</h2>
               <p>
                 I build fast, user-friendly web applications using modern frameworks like React
@@ -67,7 +67,7 @@ class ExpertiseFullComponent extends HTMLElement {
             </div>
           </div>
 
-          <div id="work-row-fin" class="feature-card">
+          <div id="work-row-fin" class="feature-card strike-top strike-bottom">
             <div class="card-image">
               <img
                 src="./images/work-fin.webp"
@@ -76,7 +76,7 @@ class ExpertiseFullComponent extends HTMLElement {
                 alt="design-image"
               />
             </div>
-            <div class="card-content strike-bottom">
+            <div class="card-content">
               <h2>Financial Tools</h2>  
               <p>
                 I create tools that help traders and investors manage tasks like tracking portfolios,
