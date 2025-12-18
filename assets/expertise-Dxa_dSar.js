@@ -11,8 +11,8 @@
                     </div>
                     <div class="card-content">
                       <h2>Custom Websites</h2>
-                      <p>I develop custom websites for portfolios, freelancers, and small businesses.</p>
-                      <a href="#/work?section=work-row-web" aria-label="Go to Web Development section">
+                      <p>High-performance, professional responsive sites built with plain HTML/JS or Next.js. I skip the bloat of site-builders to deliver clean code, fast load times, and superior SEO.</p>
+                      <a href="#/work?section=work-row-web" aria-label="Go to Web Applications section">
                         <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
@@ -21,11 +21,11 @@
                 </div>
                 <div class="card">
                     <div class="card-image bg-texture">
-                      <img src="./images/work-app.webp" class="card-image" loading="lazy" alt="web-development-image" />            
+                      <img src="./images/work-app.webp" class="card-image" loading="lazy" alt="web-application-image" />            
                     </div>
                     <div class="card-content">
                       <h2>Web Applications</h2>
-                      <p>I build web applications with dynamic interactions and feature-rich experiences.</p>
+                      <p>Feature-rich applications built with React and Angular. I develop interactive dashboards and internal tools focused on scalable architecture and seamless user logic.</p>
                       <a href="#/work?section=work-row-app" aria-label="Go to App Development section">
                         <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="card-content">
                       <h2>Financial Tools</h2>
-                      <p>I create financial tools to streamline daily tasks for traders and investors.</p>
+                      <p>Custom automation for traders and investors. I integrate web apps with Excel and Google Sheets to streamline market data, portfolio tracking, and strategy analysis.</p>
                       <a href="#/work?section=work-row-fin" aria-label="Go to App Development section">
                         <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
