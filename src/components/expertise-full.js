@@ -1,4 +1,3 @@
-import './borders.css';
 import './card.css';
 
 class ExpertiseFullComponent extends HTMLElement {
@@ -22,12 +21,10 @@ class ExpertiseFullComponent extends HTMLElement {
               />
             </div>
             <div class="card-content">
-              <h2>Custom Websites</h2>  
+              <h2>Custom Websites</h2>
+              <h3>Focus: Performance, SEO, and Brand Identity</h3>  
               <p>
-                I build modern, responsive websites that work well on any device and are intuitive
-                for your visitors. Whether you need a portfolio, business site, or landing page,
-                I create custom solutions tailored to your goals. I focus on performance, speed,
-                and SEO to help your site run smoothly, reach more people, and make a strong impact.
+                I build high-performance, responsive websites using a "right-tool-for-the-job" approach. By avoiding bloated site-builders and rigid templates, I ensure every project is lightweight, secure, and lightning-fast. For streamlined landing pages, I write clean, efficient HTML, CSS, and JavaScript. For complex, SEO-driven business sites and portfolios, I leverage Next.js to deliver scalable, production-ready web experiences that rank well and convert visitors.
               </p>
               <a
                 href="#/contact"
@@ -49,13 +46,10 @@ class ExpertiseFullComponent extends HTMLElement {
               />            
             </div>
             <div class="card-content">
-              <h2>App Development</h2>
+              <h2>Web Applications</h2>
+              <h3>Focus: Logic, State Management, and Utility</h3>  
               <p>
-                I build fast, user-friendly web applications using modern frameworks like React
-                and Angular. I work on customer-facing products, internal tools, and interactive
-                dashboards, focusing on clean design, strong performance, and seamless user
-                experiences. Each application is designed to be flexible and easy to maintain
-                as products evolve.
+                I engineer dynamic web applications designed to solve complex functional problems. Specializing in React and Angular, I build everything from interactive dashboards and internal tools to robust customer-facing products. My focus is on clean architecture, ensuring that state management and performance remain seamless as the product grows. I deliver maintainable, "clean-code" solutions that prioritize intuitive user experiences and long-term flexibility.
               </p>
               <a
                 href="#/contact"
@@ -78,12 +72,9 @@ class ExpertiseFullComponent extends HTMLElement {
             </div>
             <div class="card-content">
               <h2>Financial Tools</h2>  
+              <h3>Focus: Automation, Data Integrity, and Workflow</h3>  
               <p>
-                I create tools that help traders and investors manage tasks like tracking portfolios,
-                analyzing strategies, setting alerts, and pulling market data. I work with Excel,
-                Google Sheets, and web apps, integrating them to keep your data in sync. You describe
-                your workflow, and I turn it into a streamlined, automated solution that's faster,
-                easier, and tailored to your work.
+                I develop specialized tools that empower traders and investors to automate their workflows and data analysis. Whether it’s tracking portfolios, backtesting strategies, or setting real-time alerts, I bridge the gap between platforms. By integrating Excel and Google Sheets with custom web apps, I create automated systems that sync market data and eliminate manual entry. You describe your strategy; I turn it into a streamlined, high-accuracy solution tailored to your edge.
               </p>  
               <a
                 href="#/contact"
