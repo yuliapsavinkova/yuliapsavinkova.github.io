@@ -14,15 +14,17 @@ class HeroComponent extends HTMLElement {
           justify-content: center; 
           align-items: center;
           gap: var(--gap-small);
-          position: relative; 
           padding: 0 var(--padding-inline);
         }
 
+        .hero-banner, .hero-banner::before {
+            border-radius: var(--border-radius-lg);
+        }
         .hero-banner {
             display: block;
             background-color: var(--color-primary); 
             position: absolute; 
-            top: 0;
+            top: 3rem;
             left: 0;
             right: 0;
             height: 50%;
@@ -45,10 +47,10 @@ class HeroComponent extends HTMLElement {
           width: auto;
           height: 50vh;
           aspect-ratio: 4 / 3;
-          border-radius: var(--border-radius-lg);
-          box-shadow: var(--shadow-lg);
           object-fit: cover;
-          border: 4px solid var(--white);
+          border: 1px solid var(--glass-border);
+          box-shadow: var(--glass-shadow);
+          border-radius: var(--border-radius-lg);
         }
 
         .hero-heading {
@@ -66,7 +68,11 @@ class HeroComponent extends HTMLElement {
           .hero {
             padding: var(--gap-large) 0;
           }
-          
+
+          .hero-banner {
+            margin: 0 1rem;
+          }
+
           .hero-banner::before {
               background-image: url('/images/banner-bg-tablet.webp');
           }

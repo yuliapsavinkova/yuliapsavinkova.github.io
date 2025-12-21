@@ -1,26 +1,30 @@
 .header {
   z-index: 1000;
+  width: 96%;
   position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: hsla(var(--theme-surface-values), 0.9);
-  box-shadow: var(--shadow-md);
-  color: var(--color-text-body);
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  box-shadow: var(--glass-shadow);
+
+  /* background-color: hsla(var(--theme-surface-values), 0.9); */
+  /* box-shadow: var(--shadow-md); */
+  /* color: var(--color-text-body); */
   height: var(--header-size);
-  padding-inline: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.header-content-wrapper {
-  max-width: 1600px;
-  width: 100%;
-  padding-inline: var(--padding-inline);
-  height: var(--header-size);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-radius: var(--border-radius);
+
+  transition: background-color var(--transition-duration) ease-in-out;
 }
 
 .header .logo {
@@ -81,6 +85,9 @@
 
 /* --- WIDE SCREEN OVERRIDES (min-width: 768px) --- */
 @media (min-width: 768px) {
+  .header {
+    width: 80%;
+  }
   /* 1. FULL LINKS (Visible on Wide Screens) */
   .header .nav-links-full {
     display: flex;

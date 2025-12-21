@@ -5,7 +5,6 @@
   top: calc(var(--header-size) + var(--gap-small));
   right: var(--padding-inline);
   left: var(--padding-inline);
-  width: calc(100vw - (var(--padding-inline) * 2));
   z-index: 999;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);

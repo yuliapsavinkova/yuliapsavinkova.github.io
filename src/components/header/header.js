@@ -45,7 +45,6 @@ class HeaderComponent extends HTMLElement {
 
     this.innerHTML = /*html*/ `
       <header class="header">
-          <div class="header-content-wrapper">
               <a href="${logoLink}" class="logo" aria-label="Home">
                   <svg aria-hidden="true">
                     <use href="#${logoSvgId}"></use>
@@ -75,7 +74,6 @@ class HeaderComponent extends HTMLElement {
                 </div>
                 
               </nav>
-          </div>
       </header>
     `;
 
