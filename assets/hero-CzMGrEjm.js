@@ -77,7 +77,7 @@ import"./social-icons-D5rXZ1el.js";class a extends HTMLElement{constructor(){sup
 
         .hero-image-portrait {
           width: auto;
-          height: 50vh;
+          height: 45vh;
           aspect-ratio: 4 / 3;
           object-fit: cover;
           border: 1px solid var(--glass-border);
