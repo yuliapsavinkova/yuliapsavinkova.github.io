@@ -1,17 +1,8 @@
 menu-dropdown-component[popover] {
   position: fixed;
   top: calc(1rem + var(--header-size) + var(--gap-small));
-
-  left: 2%;
-  right: 2%;
   margin: 0 auto;
   width: 96%;
-
-  /* Hardware acceleration for smooth iOS transition */
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateY(-10px) scale(0.98);
-
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -19,22 +10,12 @@ menu-dropdown-component[popover] {
   padding: var(--gap-small);
   opacity: 0;
   pointer-events: none;
-
   transition: opacity 0.2s ease-out, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 menu-dropdown-component:popover-open {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
-}
-
-@media (min-width: 768px) {
-  menu-dropdown-component[popover] {
-    left: 10%;
-    right: 10%;
-    width: 80%;
-  }
 }
 
 .menu-dropdown .drop-items {
@@ -48,15 +29,12 @@ menu-dropdown-component:popover-open {
   justify-content: center;
   align-items: center;
   text-align: center;
-
   padding: calc(1rem - 1px);
   border-radius: var(--border-radius);
   border: 1px solid transparent;
-
   font-weight: 500;
   text-decoration: none;
   color: var(--color-primary);
-
   transition: background-color 0.2s ease, border-color 0.2s ease;
   border-color: color-mix(in srgb, var(--glass-border) 10%, var(--color-text-heading) 10%);
 }
@@ -70,16 +48,13 @@ menu-dropdown-component:popover-open {
 .menu-dropdown .drop-item.active {
   font-weight: 600;
   color: var(--color-text-heading);
-
   background-color: var(--white);
-
   border-color: color-mix(in srgb, var(--glass-border) 70%, var(--color-text-heading) 30%);
 }
 
 .menu-dropdown .drop-action {
   padding-top: var(--gap-small);
   border-top: 1px solid var(--glass-border);
-
   display: flex;
   justify-content: center;
 }
