@@ -5,18 +5,7 @@
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  padding: 1rem;
 
-  background: var(--glass-bg);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid var(--glass-border);
-  border-radius: 18px;
-  box-shadow: var(--glass-shadow);
-
-  /* background-color: hsla(var(--theme-surface-values), 0.9); */
-  /* box-shadow: var(--shadow-md); */
-  /* color: var(--color-text-body); */
   height: var(--header-size);
   display: flex;
   justify-content: center;
@@ -54,14 +43,12 @@
   gap: var(--gap);
 }
 
-/* 1. FULL LINKS (Hidden by Default on Narrow Screens) */
 .header .nav-links-full {
-  display: none; /* Hidden by default */
+  display: none;
 }
 
-/* 2. CONDENSED CONTROLS (Visible by Default) */
 .header .nav-controls-condensed {
-  display: flex; /* Visible by default */
+  display: flex;
   align-items: center;
   position: relative;
 }
@@ -83,35 +70,27 @@
   height: 2rem;
 }
 
-/* --- WIDE SCREEN OVERRIDES (min-width: 768px) --- */
 @media (min-width: 768px) {
   .header {
     width: 80%;
   }
-  /* 1. FULL LINKS (Visible on Wide Screens) */
   .header .nav-links-full {
     display: flex;
     align-items: center;
     gap: var(--gap);
   }
-
-  /* Target ONLY the full navigation links (a.nav-link) */
   .header .nav-links-full .nav-link {
     text-decoration: none;
     padding: 0;
     font-weight: 500;
     color: var(--color-primary);
   }
-
-  /* Apply WIDE-SCREEN active style */
   .header .nav-links-full a.nav-link.active {
     font-weight: 600;
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-accent);
     background: none;
   }
-
-  /* 2. CONDENSED CONTROLS (Hidden on Wide Screens) */
   .header .nav-controls-condensed {
     display: none;
   }

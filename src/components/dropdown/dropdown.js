@@ -7,6 +7,7 @@ class MenuDropdownComponent extends HTMLElement {
     super();
     this.links = [];
     this.buttonLink = {};
+    this._onInternalClick = this._onInternalClick.bind(this);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -20,57 +21,58 @@ class MenuDropdownComponent extends HTMLElement {
   }
 
   connectedCallback() {
+    this.setAttribute('popover', 'auto');
+    this.classList.add('menu-dropdown', 'glass');
     this.render();
-    this.classList.add('menu-dropdown');
+    this.addEventListener('click', this._onInternalClick);
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this._onInternalClick);
+  }
+
+  _onInternalClick(event) {
+    const link = event.target.closest('a');
+    if (!link) return;
+    this.hidePopover();
   }
 
   render() {
     const linksHtml = this.links
       .map(
         (link) => `
-            <a class="drop-item large" href="${link.href}" target="${link.target || '_self'}">${
-          link.text
-        }</a>
+          <a class="drop-item large"
+             href="${link.href}"
+             target="${link.target || '_self'}">
+            ${link.text}
+          </a>
         `,
       )
       .join('');
 
     const buttonHtml = this.buttonLink.href
       ? `
-            <a href="${this.buttonLink.href}" target="${
-          this.buttonLink.target || '_self'
-        }" class="button button-action drop-button">${this.buttonLink.text}</a>
-            `
+        <a href="${this.buttonLink.href}"
+           target="${this.buttonLink.target || '_self'}"
+           class="button button-action drop-button">
+          ${this.buttonLink.text}
+        </a>
+      `
       : '';
 
     this.innerHTML = `
-            <div class="drop-items">
-                ${linksHtml}
-            </div>
-            <div class="drop-action">
-                ${buttonHtml}
-            </div>
-        `;
-  }
-
-  open() {
-    this.classList.add('is-menu-open');
-  }
-
-  close() {
-    this.classList.remove('is-menu-open');
+      <div class="drop-items">${linksHtml}</div>
+      <div class="drop-action">${buttonHtml}</div>
+    `;
   }
 
   toggle() {
-    this.classList.toggle('is-menu-open');
-  }
-
-  get isOpen() {
-    return this.classList.contains('is-menu-open');
+    this.matches(':popover-open') ? this.hidePopover() : this.showPopover();
   }
 
   get linkElements() {
     return this.querySelectorAll('.drop-item');
   }
 }
+
 customElements.define('menu-dropdown-component', MenuDropdownComponent);

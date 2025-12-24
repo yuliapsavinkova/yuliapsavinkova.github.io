@@ -65,7 +65,8 @@
   --bg-accent-2: #a5f3fc; */
   --glass-bg: rgba(255, 255, 255, 0.65);
   --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
+  --glass-shadow: 0 1rem 10rem rgba(0, 0, 0, 0.1);
+  --glass-saturate: 140%;
   /* --text-primary: #0b0b12;
   --text-secondary: rgba(0, 0, 0, 0.75);
   --btn-primary-bg: linear-gradient(135deg, #2563eb, #06b6d4);

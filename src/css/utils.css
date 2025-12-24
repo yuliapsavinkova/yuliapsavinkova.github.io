@@ -16,3 +16,13 @@ html {
   background-size: 1rem 1rem;
   background-repeat: repeat;
 }
+
+.glass {
+  padding: 1rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(1rem) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(1rem) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  box-shadow: var(--glass-shadow);
+}
