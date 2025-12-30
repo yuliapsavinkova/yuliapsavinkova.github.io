@@ -90,9 +90,10 @@
 }
 
 /* Desktop: Switch to horizontal layout */
-/* min-width: var(--breakpoint-lg) */
-@media (min-width: 992px) {
+/* min-width: var(--breakpoint-md) */
+@media (min-width: 768px) {
   .feature-card {
+    max-width: var(--breakpoint-xl);
     flex-direction: row;
     align-items: center;
     text-align: left;
