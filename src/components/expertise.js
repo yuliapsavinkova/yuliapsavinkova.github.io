@@ -14,8 +14,8 @@ class ExpertiseComponent extends HTMLElement {
                       <img src="./images/work-web.webp" loading="lazy" alt="maintenance-image" />
                     </div>
                     <div class="card-content">
-                      <h2>Custom Websites</h2>
-                      <p>High-performance, professional responsive sites built with plain HTML/JS or Next.js. I skip the bloat of site-builders to deliver clean code, fast load times, and superior SEO.</p>
+                      <h2>Custom Solutions</h2>
+                      <p>High-performance, professional, responsive web solutions using HTML, JavaScript, and Next.js, delivering fast loading, clean, maintainable code, and strong SEO.</p>
                       <a href="#/work?section=work-row-web" aria-label="Go to Web Applications section">
                         <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>

@@ -21,10 +21,12 @@ class ExpertiseFullComponent extends HTMLElement {
               />
             </div>
             <div class="card-content">
-              <h2>Custom Websites</h2>
+              <h2>Custom Web Solutions</h2>
               <h3>Focus: Performance, SEO, and Brand Identity</h3>  
               <p>
-                I build high-performance, responsive websites using a "right-tool-for-the-job" approach. By avoiding bloated site-builders and rigid templates, I ensure every project is lightweight, secure, and lightning-fast. For streamlined landing pages, I write clean, efficient HTML, CSS, and JavaScript. For complex, SEO-driven business sites and portfolios, I leverage Next.js to deliver scalable, production-ready web experiences that rank well and convert visitors.
+                I create high-performance, responsive web solutions with a “right-tool-for-the-job” approach.
+                For simple projects, I write clean, efficient HTML, CSS, and JavaScript.
+                For complex, SEO-focused business sites and portfolios, I use Next.js to deliver scalable, production-ready web experiences that rank well and convert visitors.
               </p>
               <a
                 href="#/contact"

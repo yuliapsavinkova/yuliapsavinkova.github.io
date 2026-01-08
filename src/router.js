@@ -45,8 +45,8 @@ export async function renderPage() {
         app.insertAdjacentHTML(
           'beforeend',
           `
-          <expertise-full-component></expertise-full-component>
           <about-component></about-component>
+          <expertise-full-component></expertise-full-component>
           <working-process-component></working-process-component>
           <contact-component></contact-component>
           <footer-component copyright-name="Yulia Savinkova"></footer-component>
