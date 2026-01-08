@@ -26,7 +26,8 @@ class ExpertiseFullComponent extends HTMLElement {
               <p>
                 I create high-performance, responsive web solutions with a “right-tool-for-the-job” approach.
                 For simple projects, I write clean, efficient HTML, CSS, and JavaScript.
-                For complex, SEO-focused business sites and portfolios, I use Next.js to deliver scalable, production-ready web experiences that rank well and convert visitors.
+                For complex, SEO-focused business sites and portfolios, I use Next.js to deliver scalable, production-ready web experiences.
+                My solutions are built to rank well, convert visitors, and remain reliable, maintainable, and easy to update.
               </p>
               <a
                 href="#/contact"

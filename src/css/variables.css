@@ -7,6 +7,8 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
 
+  --article-width: 600px;
+
   /* sizes */
   --header-size: 4rem;
   --footer-size: 8rem;

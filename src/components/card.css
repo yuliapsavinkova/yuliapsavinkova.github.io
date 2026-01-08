@@ -86,7 +86,7 @@
   flex-direction: column;
   gap: var(--gap-small);
   align-items: center;
-  max-width: var(--breakpoint-lg);
+  max-width: var(--article-width);
 }
 
 /* Desktop: Switch to horizontal layout */
