@@ -1,2 +1,0 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/debug-panel-BVS_aUGe.js","assets/index-9o3mDiEN.js","assets/theme-toggle-9PDmT22X.js"])))=>i.map(i=>d[i]);
-import{_ as n}from"./index-9o3mDiEN.js";async function t(){if(document.getElementById("debug-panel"))return;console.log("Debug mode active"),await n(()=>import("./debug-panel-BVS_aUGe.js"),__vite__mapDeps([0,1,2]));const e=document.createElement("div");e.id="debug-panel",e.innerHTML="<debug-panel-component></debug-panel-component>",document.body.appendChild(e)}export{t as loadDebugTools};
