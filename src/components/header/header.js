@@ -4,6 +4,8 @@ import './../dropdown/dropdown.js';
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
+    this.lastScrollY = window.scrollY;
+    // Throttled at 50ms for smooth but performant scroll tracking
     this._handleResize = Utils.throttle(this._handleResize.bind(this), 200);
     this._handleScroll = Utils.throttle(this._handleScroll.bind(this), 50);
     this._updateActiveLink = this._updateActiveLink.bind(this);
@@ -71,10 +73,10 @@ class HeaderComponent extends HTMLElement {
                   fill="currentColor"
                   d="M0 3.429c0-.949.766-1.715 1.714-1.715h20.572c.948 0 1.714.766 1.714 1.715
                      0 .948-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 3.429ZM0 12
-                     c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714.766 1.714 1.714
+                     c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714 1.714 1.714 1.714
                      s-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 12Zm24 8.571
                      c0 .949-.766 1.715-1.714 1.715H1.714A1.712 1.712 0 0 1 0 20.57
-                     c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714.766 1.714 1.714z"
+                     c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714 1.714 1.714 1.714z"
                 />
               </svg>
             </button>
@@ -89,6 +91,7 @@ class HeaderComponent extends HTMLElement {
       </header>
     `;
 
+    this.headerElement = this.querySelector('.header');
     this.menuDropdown = this.querySelector('#main-menu');
 
     this.navLinks = [
@@ -118,7 +121,21 @@ class HeaderComponent extends HTMLElement {
   }
 
   _handleScroll() {
+    // Hide dropdown on scroll
     this.menuDropdown.hidePopover();
+
+    const currentScrollY = window.scrollY;
+
+    // Scroll Down logic
+    if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
+      this.headerElement.classList.add('header--hidden');
+    }
+    // Scroll Up logic
+    else {
+      this.headerElement.classList.remove('header--hidden');
+    }
+
+    this.lastScrollY = currentScrollY;
   }
 
   _updateActiveLink() {

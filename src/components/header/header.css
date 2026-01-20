@@ -4,7 +4,7 @@
   position: fixed;
   top: 1rem;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0);
 
   height: var(--header-size);
   display: flex;
@@ -13,7 +13,16 @@
 
   border-radius: var(--border-radius);
 
-  transition: background-color var(--transition-duration) ease-in-out;
+  /* Added transform to transition for smooth slide effect */
+  transition:
+    background-color var(--transition-duration) ease-in-out,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hidden state: slides header up off-screen */
+.header--hidden {
+  /* -200% ensures it moves up enough to clear the 'top: 1rem' margin */
+  transform: translate(-50%, -200%);
 }
 
 .header .logo {
