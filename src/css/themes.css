@@ -5,12 +5,22 @@
 
 /* ---------------- LIGHT THEME ---------------- */
 :root {
+  /* Core HSL Components */
   --theme-background-values: var(--hue-primary), 35%, 97%;
   --theme-surface-values: var(--hue-primary), 10%, 99%;
   --theme-primary-values: var(--hue-primary), 45%, 32%;
   --theme-accent-values: var(--hue-accent), 85%, 48%;
   --theme-text-heading-values: var(--hue-primary), 45%, 25%;
   --theme-text-body-values: var(--hue-primary), 15%, 35%;
+
+  /* Glass Values (Light) */
+  --theme-glass-bg-values: 0, 0%, 100%, 0.45;
+  --theme-glass-border-values: 0, 0%, 100%, 0.5;
+  --theme-glass-shadow-values: var(--hue-primary), 20%, 10%, 0.08;
+
+  /* Mesh Gradient Colors (Light) */
+  --mesh-color-1: hsla(var(--hue-primary), 60%, 85%, 0.4);
+  --mesh-color-2: hsla(var(--hue-accent), 70%, 90%, 0.3);
 }
 
 /* ---------------- DARK THEME ---------------- */
@@ -21,6 +31,15 @@
   --theme-accent-values: var(--hue-accent), 60%, 50%;
   --theme-text-heading-values: var(--hue-primary), 20%, 90%;
   --theme-text-body-values: var(--hue-primary), 15%, 75%;
+
+  /* Glass Values (Dark) */
+  --theme-glass-bg-values: var(--hue-primary), 20%, 15%, 0.4;
+  --theme-glass-border-values: 0, 0%, 100%, 0.1;
+  --theme-glass-shadow-values: 0, 0%, 0%, 0.4;
+
+  /* Mesh Gradient Colors (Dark) */
+  --mesh-color-1: hsla(var(--hue-primary), 40%, 20%, 0.5);
+  --mesh-color-2: hsla(var(--hue-accent), 30%, 15%, 0.4);
 }
 
 /* ---------------- PASTEL THEME ---------------- */
@@ -31,10 +50,20 @@
   --theme-accent-values: var(--hue-accent), 65%, 75%;
   --theme-text-heading-values: var(--hue-primary), 40%, 30%;
   --theme-text-body-values: var(--hue-primary), 25%, 40%;
+
+  /* Glass Values (Pastel) */
+  --theme-glass-bg-values: 0, 0%, 100%, 0.5;
+  --theme-glass-border-values: 0, 0%, 100%, 0.6;
+  --theme-glass-shadow-values: var(--hue-primary), 30%, 20%, 0.05;
+
+  /* Mesh Gradient Colors (Pastel) */
+  --mesh-color-1: hsla(var(--hue-primary), 80%, 90%, 0.6);
+  --mesh-color-2: hsla(var(--hue-accent), 80%, 92%, 0.5);
 }
 
-/* ---------------- SEMANTIC COLORS ---------------- */
+/* ---------------- SEMANTIC LOGIC (Shared) ---------------- */
 :root {
+  /* Core Colors */
   --color-background: hsl(var(--theme-background-values));
   --color-surface: hsl(var(--theme-surface-values));
   --color-primary: hsl(var(--theme-primary-values));
@@ -42,33 +71,23 @@
   --color-text-heading: hsl(var(--theme-text-heading-values));
   --color-text-body: hsl(var(--theme-text-body-values));
 
+  /* Glass Constants */
+  --glass-bg: hsla(var(--theme-glass-bg-values));
+  --glass-border: hsla(var(--theme-glass-border-values));
+  --glass-shadow: 0 0.5rem 2rem hsla(var(--theme-glass-shadow-values));
+  --glass-blur: 1.25rem;
+  --glass-saturate: 180%;
+
   /* Derived Utilities */
   --color-border: hsla(var(--theme-text-body-values), 0.25);
   --color-overlay: hsla(var(--theme-primary-values), 0.6);
 
-  /* Transparent strikes */
-  --color-primary-soft: hsla(var(--theme-primary-values), 0.05);
-  --color-accent-soft: hsla(var(--theme-accent-values), 0.05);
+  /* Shadows */
+  --shadow-sm: 0 0.0625rem 0.125rem hsla(var(--theme-primary-values), 0.1);
+  --shadow-md: 0 0.25rem 0.75rem hsla(var(--theme-primary-values), 0.15);
+  --shadow-lg: 0 0.75rem 1.5rem hsla(var(--theme-primary-values), 0.2);
 
-  --shadow-sm: 0 1px 2px hsla(var(--theme-primary-values), 0.1);
-  --shadow-md: 0 4px 12px hsla(var(--theme-primary-values), 0.15);
-  --shadow-lg: 0 12px 24px hsla(var(--theme-primary-values), 0.2);
-
-  /* Utility Constants */
+  /* Constants */
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
-
-  /* Glass */
-
-  /* --bg-base: #f5f7fb;
-  --bg-accent-1: #93c5fd;
-  --bg-accent-2: #a5f3fc; */
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-shadow: 0 1rem 10rem rgba(0, 0, 0, 0.1);
-  --glass-saturate: 140%;
-  /* --text-primary: #0b0b12;
-  --text-secondary: rgba(0, 0, 0, 0.75);
-  --btn-primary-bg: linear-gradient(135deg, #2563eb, #06b6d4);
-  --btn-glass-bg: rgba(255, 255, 255, 0.45); */
 }

@@ -1,94 +1,85 @@
 import './work-experience.css';
+
 class WorkExperienceComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-              <section id="work-experience" class="work-experience">
-                <section-header 
-                    title="Work Experience"
-                    sub-title="A Journey of Growth">
-                </section-header>
+      <section id="work-experience" class="work-experience">
+        <section-header 
+            title="Work Experience"
+            sub-title="A Journey of Growth">
+        </section-header>
 
-                <div class="work-experience-container">
-                  <div class="work-experience-content">
-                      <h2>Independent Software Engineer, San Francisco, CA</h2>
-                      <h3>2020 - Present</h3>
-                      <ul>
-                        <li>Design and develop web applications and websites from scratch.</li>
-                        <li>Create custom HTML web components and reusable shared libraries</li>
-                        <li>Build responsive layouts that work across different devices and screen sizes.</li>
-                        <li>Modernize existing applications by rebuilding them with modern technologies.</li>
-                      </ul>
-                      <div class="work-experience-technologies">
-                        <span>JavaScript</span>
-                        <span>Web Components</span>
-                        <span>React</span>
-                        <span>Next.js</span>
-                        <span>Node</span>
-                        <span>Express</span>
-                        <span>PostgreSQL</span>
-                        <span>Vite</span>
-                      </div>
-                  </div>
+        <div class="work-experience-container">
+          
+          <div class="work-experience-content">
+              <div class="work-header">
+                <h2>Gravity - Founder & Senior Engineer</h2>
+                <p class="work-meta">San Francisco, CA • 2021 – Present</p>
+              </div>
+              <ul class="work-bullets">
+                <li>Built trading tools and dashboards for real-time market analysis and portfolio management.</li>
+                <li>Developed and launched custom web applications using React, TypeScript, and Next.js.</li>
+                <li>Created rapid prototypes and MVPs using AI to explore new product ideas and workflows.</li>
+                <li>Designed and prototyped user interfaces for custom machine control systems.</li>
+              </ul>
+              <div class="work-experience-technologies">
+                <span>React</span><span>Next.js</span><span>TypeScript</span><span>Node</span><span>PostgreSQL</span><span>Vite</span>
+              </div>
+          </div>
 
-                  <div class="work-experience-content">
-                      <h2>Sr. Software Engineer, Bloomberg, New York, NY</h2>
-                      <h3>2016 - 2019</h3>
-                      <ul>
-                        <li>Worked on developing bloomberg add-ins for Excel, Word and Outlook.</li>
-                        <li>Designed and developed a research management tool.</li>
-                        <li>Conducted technical interviews to evaluate candidates expertise in JavaScript.</li>
-                      </ul>
-                      <div class="work-experience-technologies">
-                        <span>TypeScript</span>
-                        <span>React</span>
-                        <span>Angular</span>
-                        <span>Redux</span>
-                        <span>SASS</span>
-                        <span>HTML</span>
-                        <span>Webpack</span>
-                      </div>
-                  </div>
+          <div class="work-experience-content">
+              <div class="work-header">
+                <h2>Bloomberg - Senior Software Engineer</h2>
+                <p class="work-meta">New York, NY • 2016 – 2020</p>
+              </div>
+              <ul class="work-bullets">
+                <li>Built the financial tools used by research analysts to stream and manage live Bloomberg financial data within Excel and Word.</li>
+                <li>Designed user interfaces for internal research platforms, turning complex backend APIs into clear, task-oriented dashboards.</li>
+                <li>Optimized UI performance to ensure the platform stayed responsive while handling high-frequency, real-time data updates.</li>
+                <li>Interviewed and evaluated university candidates for engineering roles.</li>
+              </ul>
+              <div class="work-experience-technologies">
+                <span>TypeScript</span><span>React</span><span>Angular</span><span>Redux</span><span>Webpack</span><span>SASS</span>
+              </div>
+          </div>
 
-                  <div class="work-experience-content">
-                      <h2>Sr. UI Developer, Yahoo, San Francisco, CA</h2>
-                      <h3>2015 - 2016</h3>
-                      <ul>
-                        <li>Rebuilt analytics platform UI for new design.</li>
-                        <li>Developed new features for the analytics platform.</li>
-                      </ul>
-                      <div class="work-experience-technologies">
-                        <span>JavaScript</span>
-                        <span>Angular</span>
-                        <span>D3.js</span>
-                        <span>Node.js</span>
-                        <span>Gulp</span>
-                        <span>Git</span>
-                        <span>SASS</span>
-                        <span>HTML</span>
-                      </div>
-                  </div>
+          <div class="work-experience-content">
+              <div class="work-header">
+                <h2>Yahoo - Senior UI Developer <span class="weight-normal">(Flurry Analytics)</span></h2>
+                <p class="work-meta">San Francisco, CA • 2015 – 2016</p>
+              </div>
+              <ul class="work-bullets">
+                <li>Rebuilt the Flurry Analytics web UI in Angular, introducing a modular, reusable component architecture.</li>
+                <li>Built interactive data visualization tools that enabled mobile developers to analyze millions of app events in real-time.</li>
+              </ul>
+              <div class="work-experience-technologies">
+                <span>JavaScript</span><span>Angular</span><span>D3.js</span><span>Node.js</span><span>SASS</span><span>Git</span>
+              </div>
+          </div>
 
-                  <div class="work-experience-content">
-                      <h2>Sr. JavaScript UI Engineer, MuleSoft, San Francisco, CA</h2>
-                      <h3>2012 - 2015</h3>
-                      <ul>
-                        <li>Developed UI's for CloudHub and Anypoint Platform.</li>
-                        <li>Unified and developed common UI components for all MuleSoft products.</li>
-                      </ul>
-                      <div class="work-experience-technologies">
-                        <span>JavaScript</span>
-                        <span>Angular</span>
-                        <span>Backbone</span>
-                        <span>Node.js</span>
-                        <span>Grunt</span>
-                        <span>Git</span>
-                        <span>LESS</span>
-                        <span>HTML</span>
-                      </div>
-                  </div>
-                </div>
-              </section>
-          `;
+          <div class="work-experience-content">
+              <div class="work-header">
+                <h2>MuleSoft - Senior Frontend Engineer <span class="weight-normal">(Acquired by Salesforce)</span></h2>
+                <p class="work-meta">San Francisco, CA • 2012 – 2015</p>
+              </div>
+              <ul class="work-bullets">
+                <li>Joined as the first frontend engineer in the San Francisco office, owned the CloudHub UI, and helped build the engineering team.</li>
+                <li>Developed the reusable UI components and architecture used to create the unified Anypoint Platform.</li>
+                <li>Established coding standards, project structures, and build tools used by the frontend team as the company scaled.</li>
+                <li>Built real-time dashboards and control panels used by enterprise customers to manage cloud infrastructure.</li>
+                <li>Interviewed and mentored new engineering hires to help scale the San Francisco UI team.</li>
+              </ul>
+              <div class="work-experience-technologies">
+                <span>JavaScript</span><span>Angular</span><span>Backbone</span><span>Node.js</span><span>LESS</span><span>Grunt</span>
+              </div>
+          </div>
+
+        </div>
+      </section>
+    `;
   }
 }
-customElements.define('work-experience-component', WorkExperienceComponent);
+
+if (!customElements.get('work-experience-component')) {
+  customElements.define('work-experience-component', WorkExperienceComponent);
+}

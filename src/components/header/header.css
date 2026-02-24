@@ -12,6 +12,7 @@
   align-items: center;
 
   border-radius: var(--border-radius);
+  padding: 0 1rem;
 
   /* Added transform to transition for smooth slide effect */
   transition:

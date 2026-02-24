@@ -1,8 +1,9 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import prettierConfig from 'eslint-config-prettier';
 
 export default [
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'node_modules'] },
 
   // Main config: browser JS
   {
@@ -18,16 +19,18 @@ export default [
         CSS: 'readonly',
         performance: 'readonly',
         URLSearchParams: 'readonly',
+        gtag: 'readonly', // Added for your GA tracking
       },
     },
     rules: {
       ...js.configs.recommended.rules,
       'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }],
-      'no-undef': 'off',
+      'no-undef': 'error', // Changed to error now that globals are defined
+      quotes: ['error', 'single', { avoidEscape: true }], // Enforce single quotes
     },
   },
 
-  // Node.js context (e.g., vite config, sitemap generator)
+  // Node.js context
   {
     files: ['vite.config.js', 'generate-sitemap.js'],
     languageOptions: {
@@ -41,4 +44,7 @@ export default [
       'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
+
+  // Apply Prettier config last to disable conflicting rules
+  prettierConfig,
 ];

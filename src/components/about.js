@@ -30,13 +30,14 @@ class AboutComponent extends HTMLElement {
                     <div class="card-content">
                         <h2>Code & Beyond</h2>
                         <p>
-                            I'm an Independent Software Engineer with over a decade of experience building for the web. 
-                            I create clean, responsive, and user-friendly web experiences using modern tools and best practices. 
-                            Whether it's a business website or a complex web application, I focus on building fast, reliable solutions tailored to each client's needs.
+                            I am a Software Engineer with over a decade of experience building for the web, ranging from the high-growth startup environment at <strong>MuleSoft</strong> to the large-scale corporate systems of <strong>Yahoo and Bloomberg</strong>. I focus on creating clean, responsive, and functional software solutions for complex data environments.
                         </p>
-                        <p>Alongside web development, I help traders and finance professionals build custom tools for trading, portfolio management, and market analysis.</p>
-                        <p>I stay current on how AI is transforming work and integrate it into my workflows to improve productivity and efficiency.</p>
-                        <p>Outside of work, I enjoy reading, traveling, and spending time with animals.</p>
+                        <p>
+                            Currently, I work on designing tools related to market analysis and portfolio management. I integrate market data with custom web applications and automate workflows between Excel, Google Sheets, and the browser to simplify day to day tasks.
+                        </p>
+                        <p>
+                            I stay current on how AI is transforming engineering and integrate it into my workflow to improve productivity and efficiency. Outside of work, I enjoy reading, traveling, and spending time with animals.
+                        </p>
                         <div>
                             <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
                             <a href="#/about?section=work-experience" class="button button-secondary">Learn More</a>

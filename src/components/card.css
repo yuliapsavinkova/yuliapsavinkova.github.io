@@ -15,6 +15,10 @@
   gap: var(--gap-large);
 }
 
+.card-image {
+  border-radius: var(--border-radius);
+}
+
 /* ======================================================= */
 /* PATTERN 1: CARD (Always Vertical)                       */
 /* ======================================================= */
@@ -68,7 +72,6 @@
 }
 
 .feature-card .card-image {
-  border-radius: var(--border-radius);
   overflow: hidden;
 }
 
@@ -77,7 +80,6 @@
   width: max(100%, 30rem);
   height: auto;
   margin: auto;
-  border-radius: var(--border-radius);
   object-fit: cover;
 }
 
