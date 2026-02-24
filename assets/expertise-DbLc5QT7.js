@@ -1,4 +1,4 @@
-/* empty css             */class e extends HTMLElement{connectedCallback(){this.innerHTML=`
+class a extends HTMLElement{connectedCallback(){this.innerHTML=`
         <section id="expertise">
             <section-header 
                 title="My Expertise"
@@ -7,12 +7,12 @@
             <div class="card-grid">
                 <div class="card">
                     <div class="card-image bg-texture">
-                      <img src="./images/work-web.webp" loading="lazy" alt="maintenance-image" />
+                      <img src="./images/work-web.webp" loading="lazy" alt="Custom Solutions" />
                     </div>
                     <div class="card-content">
                       <h2>Custom Solutions</h2>
-                      <p>High-performance, professional, responsive web solutions using HTML, JavaScript, and Next.js, delivering fast loading, clean, maintainable code, and strong SEO.</p>
-                      <a href="#/work?section=work-row-web" aria-label="Go to Web Applications section">
+                      <p>High-performance sites built with <strong>Next.js</strong>. I deliver SEO-optimized, production-ready experiences that are reliable and easy to update.</p>
+                      <a href="#/work?section=work-row-web" aria-label="Go to Custom Solutions section">
                         <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
@@ -21,12 +21,12 @@
                 </div>
                 <div class="card">
                     <div class="card-image bg-texture">
-                      <img src="./images/work-app.webp" class="card-image" loading="lazy" alt="web-application-image" />            
+                      <img src="./images/work-app2.png" class="card-image" loading="lazy" alt="Web Applications" />            
                     </div>
                     <div class="card-content">
                       <h2>Web Applications</h2>
-                      <p>Feature-rich applications built with React and Angular. I develop interactive dashboards and internal tools focused on scalable architecture and seamless user logic.</p>
-                      <a href="#/work?section=work-row-app" aria-label="Go to App Development section">
+                      <p>Dynamic applications built with <strong>React and Angular</strong>. I focus on clean architecture, state management, and long-term maintainability.</p>
+                      <a href="#/work?section=work-row-app" aria-label="Go to Web Applications section">
                         <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
@@ -35,12 +35,12 @@
                 </div>
                 <div class="card">
                     <div class="card-image bg-texture">
-                      <img src="./images/work-fin.webp" class="card-image" loading="lazy" alt="web-development-image" />            
+                      <img src="./images/work-fin.webp" class="card-image" loading="lazy" alt="Financial Tools" />            
                     </div>
                     <div class="card-content">
                       <h2>Financial Tools</h2>
-                      <p>Custom automation for traders and investors. I integrate web apps with Excel and Google Sheets to streamline market data, portfolio tracking, and strategy analysis.</p>
-                      <a href="#/work?section=work-row-fin" aria-label="Go to App Development section">
+                      <p>I integrate web applications with <strong>Excel and Google Sheets</strong> to automate market data syncing, portfolio tracking, and custom strategy analysis.</p>
+                      <a href="#/work?section=work-row-fin" aria-label="Go to Financial Tools section">
                         <svg class="icon enable-icon-scale" aria-hidden="true">
                           <use href="#icon-arrow-right"></use>
                         </svg>
@@ -50,4 +50,4 @@
             </div>
             <a href="#/work" class="button button-secondary">Learn More</a>
         </section>
-    `}}customElements.define("expertise-component",e);
+    `}}customElements.define("expertise-component",a);
