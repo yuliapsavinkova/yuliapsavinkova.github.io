@@ -34,7 +34,7 @@ class e extends HTMLElement{constructor(){super(),this.innerHTML=`
                             I stay current on how AI is transforming engineering and integrate it into my workflow to improve productivity and efficiency. Outside of work, I enjoy reading, traveling, and spending time with animals.
                         </p>
                         <div>
-                            <a href="./resume.pdf" target="_blank" class="button button-primary">Resume</a>
+                            <a href="./resume-full.pdf" target="_blank" class="button button-primary">Resume</a>
                             <a href="#/about?section=work-experience" class="button button-secondary">Learn More</a>
                         </div>
                     </div>
