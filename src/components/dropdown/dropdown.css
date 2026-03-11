@@ -33,7 +33,6 @@ menu-dropdown-component:popover-open {
   border-radius: var(--border-radius);
   border: 1px solid transparent;
   font-weight: 500;
-  text-decoration: none;
   color: var(--color-primary);
   /* transition: background-color 0.2s ease, border-color 0.2s ease; */
   border-color: color-mix(in srgb, var(--glass-border) 10%, var(--color-text-heading) 10%);
