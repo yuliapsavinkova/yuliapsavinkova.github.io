@@ -89,7 +89,7 @@ export async function renderPage() {
       ]);
       app.innerHTML = `
         <expertise-full-component></expertise-full-component>
-        <about-component></about-component>        
+        <about-component></about-component>
         <contact-component></contact-component>
         <footer-component copyright-name="Yulia Savinkova"></footer-component>
       `;
@@ -109,19 +109,15 @@ export async function renderPage() {
     case 'palette':
       await Promise.all([import('./components/palette.js'), import('./components/footer.js')]);
       app.innerHTML = `
-          <palette-component></palette-component>
-          <footer-component copyright-name="Yulia Savinkova"></footer-component>
-        `;
+        <palette-component></palette-component>
+        <footer-component copyright-name="Yulia Savinkova"></footer-component>
+      `;
       break;
 
     case 'debug': {
-      // Debug tools are enabled only on this route
       const { loadDebugTools } = await import('./debug-tools.js');
       loadDebugTools();
-
-      app.innerHTML = `
-          <h1 style="text-align:center; padding:2rem;">Debug mode enabled</h1>
-        `;
+      app.innerHTML = `<h1 style="text-align:center; padding:2rem;">Debug mode enabled</h1>`;
       break;
     }
 
@@ -135,9 +131,7 @@ export async function renderPage() {
 
   // Scroll to section if provided
   if (sectionId) {
-    const sectionSelector = `#${CSS.escape(sectionId)}`;
-    const section = await waitForElement(sectionSelector);
-
+    const section = await waitForElement(`#${CSS.escape(sectionId)}`);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     } else {
