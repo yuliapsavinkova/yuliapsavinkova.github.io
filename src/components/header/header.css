@@ -1,3 +1,9 @@
+/* ═══════════════════════════════════════════════════════════
+   HEADER
+   .glass is applied by JS always — handled by utils.css.
+   JS only toggles .header--hidden on scroll down.
+═══════════════════════════════════════════════════════════ */
+
 .header {
   z-index: 1000;
   width: 100%;
@@ -8,36 +14,59 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  animation: headerReveal var(--duration-slow) var(--ease-silk) 0.1s forwards;
+  transition: transform var(--duration-slow) var(--ease-silk);
 }
 
-.header--hidden {
-  transform: translate(0%, -100%);
+@keyframes headerReveal {
+  to {
+    opacity: 1;
+  }
 }
 
+.header.header--hidden {
+  transform: translateY(-100%);
+}
+
+/* ─── LOGO ───────────────────────────────────────────────── */
 .header .logo {
   display: flex;
   align-items: center;
   margin-right: var(--gap-large);
+  text-decoration: none;
 }
 
 .header .logo svg {
-  width: var(--logo-size, 2rem);
-  height: var(--logo-size, 2rem);
-  color: var(--color-primary);
-}
-.header .logo-name {
-  font-weight: 600;
-  color: var(--color-text-heading);
+  width: var(--logo-size);
+  height: var(--logo-size);
+  color: var(--cream-70);
 }
 
+.header .logo-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--font-size-logo);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--cream-70);
+  transition: color var(--duration-slow) var(--ease-silk);
+}
+
+.header .logo:hover .logo-name {
+  color: var(--cream);
+}
+
+/* ─── MAIN NAV ───────────────────────────────────────────── */
 .header .main-nav {
-  /* flex-grow: 1; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: var(--gap);
 }
 
+/* ─── MOBILE: hamburger, hide full nav ───────────────────── */
 .header .nav-links-full {
   display: none;
 }
@@ -57,31 +86,48 @@
   cursor: pointer;
   z-index: 1001;
   padding: 0.5rem;
-  color: var(--color-primary);
+  color: var(--cream-70);
+  transition: color var(--duration-slow) var(--ease-silk);
+}
+
+.header .menu-toggle-button:hover {
+  color: var(--cream);
 }
 
 .header .menu-toggle-button svg {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
+/* ─── DESKTOP: show full nav, hide hamburger ─────────────── */
 @media (min-width: 768px) {
   .header .nav-links-full {
     display: flex;
     align-items: center;
     gap: var(--gap);
   }
+
   .header .nav-links-full .nav-link {
-    padding: 0;
-    font-weight: 500;
-    color: var(--color-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-label);
+    font-weight: 400;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--cream-55);
+    text-decoration: none;
+    transition: color var(--duration-slow) var(--ease-silk);
   }
-  .header .nav-links-full a.nav-link.active {
-    font-weight: 600;
-    color: var(--color-primary);
-    border-bottom: 2px solid var(--color-accent);
-    background: none;
+
+  .header .nav-links-full .nav-link:hover {
+    color: var(--cream);
   }
+
+  .header .nav-links-full .nav-link.active {
+    color: var(--color-accent-warm);
+    border-bottom: 1px solid var(--color-accent-warm-70);
+    padding-bottom: 0.125rem;
+  }
+
   .header .nav-controls-condensed {
     display: none;
   }

@@ -9,29 +9,40 @@ class SectionHeader extends HTMLElement {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: var(--gap);
-          
-          .subtitle {
-            text-align: center;
-          }
+          gap: var(--gap-small);
+          text-align: center;
+        }
 
-          .gra-separator {
-            height: 2px;
-            width: 20rem;
-            background: linear-gradient(to right, 
-              transparent 0%, 
-              var(--color-accent) 50%, 
-              transparent 100%
-            );
-          }
+        .section-header .subtitle {
+          font-family: var(--font-family);
+          font-size: var(--font-size-label);
+          font-weight: 400;
+          letter-spacing: var(--tracking-widest);
+          text-transform: uppercase;
+          color: var(--cream-55);
+          text-align: center;
+        }
+
+        .section-header .gra-separator {
+          margin-top: var(--gap-tiny);
+          height: 1px;
+          width: 8rem;
+          background: linear-gradient(
+            to right,
+            transparent 0%,
+            var(--color-accent-warm-30) 50%,
+            transparent 100%
+          );
         }
       </style>
+
       <div class="section-header">
         <h1>${title}</h1>
-        <p class="subtitle large">${subTitle}</p>
+        <p class="subtitle">${subTitle}</p>
         <div class="gra-separator"></div>
       </div>
     `;
   }
 }
+
 customElements.define('section-header', SectionHeader);

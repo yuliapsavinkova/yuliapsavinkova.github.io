@@ -1,0 +1,23 @@
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════ */
+
+.footer {
+  height: var(--footer-size);
+  min-width: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-small);
+  background: var(--color-background);
+  border-top: 1px solid var(--cream-08);
+}
+
+.footer-copyright {
+  font-family: var(--font-family);
+  font-size: var(--font-size-label);
+  font-weight: 400;
+  letter-spacing: var(--tracking-normal);
+  color: var(--cream-55);
+}

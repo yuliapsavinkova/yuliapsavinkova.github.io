@@ -1,93 +1,56 @@
+/* ═══════════════════════════════════════════════════════════
+   THEMES.CSS — Dark theme colour tokens
+   Every token here is referenced by at least one component.
+   Nothing else.
+═══════════════════════════════════════════════════════════ */
+
 :root {
-  --hue-primary: 221;
-  --hue-accent: 357;
-}
+  /* ─── NAVY — background family ──────────────────────────── */
+  --navy-deepest: hsl(228, 30%, 4%);
+  --navy-mid: hsl(228, 18%, 13%);
+  --navy-subtle: hsl(228, 14%, 18%);
 
-/* ---------------- LIGHT THEME ---------------- */
-:root {
-  /* Core HSL Components */
-  --theme-background-values: var(--hue-primary), 35%, 97%;
-  --theme-surface-values: var(--hue-primary), 10%, 99%;
-  --theme-primary-values: var(--hue-primary), 45%, 32%;
-  --theme-accent-values: var(--hue-accent), 85%, 48%;
-  --theme-text-heading-values: var(--hue-primary), 45%, 25%;
-  --theme-text-body-values: var(--hue-primary), 15%, 35%;
+  /* ─── CREAM — text/border opacity ladder ────────────────── */
+  --cream: #f5f2ed;
+  --cream-90: rgba(245, 242, 237, 0.9);
+  --cream-80: rgba(245, 242, 237, 0.8);
+  --cream-70: rgba(245, 242, 237, 0.7);
+  --cream-55: rgba(245, 242, 237, 0.55);
+  --cream-30: rgba(245, 242, 237, 0.3);
+  --cream-15: rgba(245, 242, 237, 0.15);
+  --cream-08: rgba(245, 242, 237, 0.08);
+  --cream-06: rgba(245, 242, 237, 0.06);
 
-  /* Glass Values (Light) */
-  --theme-glass-bg-values: 0, 0%, 100%, 0.45;
-  --theme-glass-border-values: 0, 0%, 100%, 0.5;
-  --theme-glass-shadow-values: var(--hue-primary), 20%, 10%, 0.08;
+  /* ─── AMBER — warm accent, used sparingly ───────────────── 
+     Cursor, icon hover, active nav, button hover only.      */
+  --color-accent-warm: hsl(38, 55%, 52%);
+  --color-accent-warm-70: hsla(38, 55%, 52%, 0.7);
+  --color-accent-warm-30: hsla(38, 55%, 52%, 0.3);
+  --color-accent-warm-15: hsla(38, 55%, 52%, 0.15);
 
-  /* Mesh Gradient Colors (Light) */
-  --mesh-color-1: hsla(var(--hue-primary), 60%, 85%, 0.4);
-  --mesh-color-2: hsla(var(--hue-accent), 70%, 90%, 0.3);
-}
+  /* ─── SEMANTIC ───────────────────────────────────────────── 
+     colors.css and typography apply these globally to
+     h1/h2, p, div, span — must be defined here.           */
+  --color-background: var(--navy-deepest);
+  --color-surface: hsl(228, 24%, 8%);
+  --color-border: var(--cream-15);
+  --color-primary: var(--cream);
+  --color-text-heading: var(--cream-90);
+  --color-text-body: var(--cream-70);
+  --color-accent: var(--color-accent-warm);
 
-/* ---------------- DARK THEME ---------------- */
-:root[data-theme='dark'] {
-  --theme-background-values: var(--hue-primary), 15%, 12%;
-  --theme-surface-values: var(--hue-primary), 15%, 18%;
-  --theme-primary-values: var(--hue-primary), 65%, 60%;
-  --theme-accent-values: var(--hue-accent), 60%, 50%;
-  --theme-text-heading-values: var(--hue-primary), 20%, 90%;
-  --theme-text-body-values: var(--hue-primary), 15%, 75%;
+  /* ─── GLASS ──────────────────────────────────────────────── */
+  --glass-blur: 1rem;
+  --glass-blur-dock: 1.5rem;
+  --glass-saturate: 160%;
+  --glass-border: var(--cream-08);
+  --glass-border-dock: var(--cream-15);
+  --glass-dock-bg: rgba(4, 6, 15, 0.88);
+  --glass-shadow-dock: 0 0.5rem 2rem rgba(0, 0, 0, 0.5), inset 0 1px 0 var(--cream-06);
 
-  /* Glass Values (Dark) */
-  --theme-glass-bg-values: var(--hue-primary), 20%, 15%, 0.4;
-  --theme-glass-border-values: 0, 0%, 100%, 0.1;
-  --theme-glass-shadow-values: 0, 0%, 0%, 0.4;
+  /* ─── OVERLAY ────────────────────────────────────────────── */
+  --color-overlay: rgba(4, 6, 15, 0.7);
 
-  /* Mesh Gradient Colors (Dark) */
-  --mesh-color-1: hsla(var(--hue-primary), 40%, 20%, 0.5);
-  --mesh-color-2: hsla(var(--hue-accent), 30%, 15%, 0.4);
-}
-
-/* ---------------- PASTEL THEME ---------------- */
-:root[data-theme='pastel'] {
-  --theme-background-values: var(--hue-primary), 60%, 95%;
-  --theme-surface-values: var(--hue-primary), 50%, 98%;
-  --theme-primary-values: var(--hue-primary), 70%, 75%;
-  --theme-accent-values: var(--hue-accent), 65%, 75%;
-  --theme-text-heading-values: var(--hue-primary), 40%, 30%;
-  --theme-text-body-values: var(--hue-primary), 25%, 40%;
-
-  /* Glass Values (Pastel) */
-  --theme-glass-bg-values: 0, 0%, 100%, 0.5;
-  --theme-glass-border-values: 0, 0%, 100%, 0.6;
-  --theme-glass-shadow-values: var(--hue-primary), 30%, 20%, 0.05;
-
-  /* Mesh Gradient Colors (Pastel) */
-  --mesh-color-1: hsla(var(--hue-primary), 80%, 90%, 0.6);
-  --mesh-color-2: hsla(var(--hue-accent), 80%, 92%, 0.5);
-}
-
-/* ---------------- SEMANTIC LOGIC (Shared) ---------------- */
-:root {
-  /* Core Colors */
-  --color-background: hsl(var(--theme-background-values));
-  --color-surface: hsl(var(--theme-surface-values));
-  --color-primary: hsl(var(--theme-primary-values));
-  --color-accent: hsl(var(--theme-accent-values));
-  --color-text-heading: hsl(var(--theme-text-heading-values));
-  --color-text-body: hsl(var(--theme-text-body-values));
-
-  /* Glass Constants */
-  --glass-bg: hsla(var(--theme-glass-bg-values));
-  --glass-border: hsla(var(--theme-glass-border-values));
-  --glass-shadow: 0 0.5rem 2rem hsla(var(--theme-glass-shadow-values));
-  --glass-blur: 1.25rem;
-  --glass-saturate: 180%;
-
-  /* Derived Utilities */
-  --color-border: hsla(var(--theme-text-body-values), 0.25);
-  --color-overlay: hsla(var(--theme-primary-values), 0.6);
-
-  /* Shadows */
-  --shadow-sm: 0 0.0625rem 0.125rem hsla(var(--theme-primary-values), 0.1);
-  --shadow-md: 0 0.25rem 0.75rem hsla(var(--theme-primary-values), 0.15);
-  --shadow-lg: 0 0.75rem 1.5rem hsla(var(--theme-primary-values), 0.2);
-
-  /* Constants */
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%);
+  /* ─── SHADOWS ────────────────────────────────────────────── */
+  --shadow-md: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.5);
 }

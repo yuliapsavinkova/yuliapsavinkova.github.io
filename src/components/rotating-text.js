@@ -7,8 +7,8 @@ class RotatingText extends HTMLElement {
     this.charIndex = 0;
     this.isDeleting = false;
     this.lastFrameTime = 0;
-    this.typeSpeed = 100;
-    this.deleteSpeed = 50;
+    this.typeSpeed = 90;
+    this.deleteSpeed = 40;
   }
 
   connectedCallback() {
@@ -18,42 +18,46 @@ class RotatingText extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <style>
-          rotating-text {
-            display: inline-block;
-            vertical-align: middle;
-          }
-          .typewriter-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 2.5rem;
-            min-width: 30ch;
-          }
-          .typewriter-text,
-          .cursor {
-            white-space: pre;
-            font-size: 1.75rem;
-            font-weight: 500;
-            letter-spacing: 0em;
-            line-height: 1.3;
-            color: var(--color-primary);
-          }
+      <style>
+        rotating-text { display: inline-block; }
 
-          .cursor {
-            display: inline-block;
-            animation: blink 1s step-end infinite;
-          }
-          @keyframes blink {
-            50% {
-              opacity: 0;
-            }
-          }
-        </style>
-        <div class="typewriter-container">
-            <span class="typewriter-text"></span>
-            <span class="cursor">|</span>
-        </div>
+        .typewriter-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: calc(var(--font-size-typewriter) * 1.4);
+          min-width: 20ch;
+        }
+
+        .typewriter-text {
+          font-family: var(--font-serif);
+          font-style: italic;
+          font-weight: 200;
+          font-size: var(--font-size-typewriter);
+          letter-spacing: var(--tracking-tight);
+          color: var(--cream-90);
+          white-space: pre;
+          line-height: 1.3;
+        }
+
+        /* Amber cursor — the one warm spark in the hero */
+        .cursor {
+          font-family: var(--font-serif);
+          font-style: italic;
+          font-size: var(--font-size-typewriter);
+          font-weight: 200;
+          color: var(--color-accent-warm);
+          line-height: 1.3;
+          animation: twBlink 1.1s step-end infinite;
+        }
+
+        @keyframes twBlink { 50% { opacity: 0; } }
+      </style>
+
+      <div class="typewriter-container">
+        <span class="typewriter-text"></span>
+        <span class="cursor">|</span>
+      </div>
     `;
   }
 
@@ -62,7 +66,7 @@ class RotatingText extends HTMLElement {
     try {
       this.titles = JSON.parse(this.getAttribute('data-titles')) || [];
     } catch (e) {
-      console.error('Invalid JSON for data-titles attribute on rotating-text component:', e);
+      console.error('rotating-text: invalid data-titles JSON', e);
       this.titles = [];
     }
 
@@ -75,10 +79,10 @@ class RotatingText extends HTMLElement {
   type(timestamp) {
     if (!this.textElement) return;
     if (!this.lastFrameTime) this.lastFrameTime = timestamp;
-    const deltaTime = timestamp - this.lastFrameTime;
+    const delta = timestamp - this.lastFrameTime;
     const speed = this.isDeleting ? this.deleteSpeed : this.typeSpeed;
 
-    if (deltaTime > speed) {
+    if (delta > speed) {
       this.lastFrameTime = timestamp;
       const current = this.titles[this.titleIndex];
 
@@ -93,7 +97,7 @@ class RotatingText extends HTMLElement {
         if (this.charIndex > current.length) {
           setTimeout(() => {
             this.isDeleting = true;
-          }, 1000);
+          }, 1400);
         }
       }
     }

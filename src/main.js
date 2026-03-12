@@ -9,7 +9,11 @@ import buttonsCss from './css/buttons.css?inline';
 import iconsCss from './css/icons.css?inline';
 import utilsCss from './css/utils.css?inline';
 import header from './components/header/header.css?inline';
-import dropdown from './components/dropdown/dropdown.css?inline';
+import hero from './components/hero/hero.css?inline';
+
+import '@fontsource/cormorant-garamond/300-italic.css'; // hero greeting, logo, h2
+import '@fontsource/cormorant-garamond/300.css'; // any non-italic serif
+import '@fontsource/cormorant-garamond/400.css'; // fallback body weight
 
 /* Svg sprite icons */
 import 'virtual:svg-icons-register';
@@ -30,7 +34,7 @@ const criticalCss = [
   iconsCss,
   utilsCss,
   header,
-  dropdown,
+  hero,
 ].join('\n');
 
 const styleTag = document.createElement('style');

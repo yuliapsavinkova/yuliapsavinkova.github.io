@@ -1,12 +1,13 @@
-main {
-  padding-top: var(--header-size);
-}
-
 section {
+  margin-top: var(--header-size);
   padding: var(--padding-block) var(--padding-inline);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--gap);
+}
+
+section.hero {
+  margin-top: 0;
 }

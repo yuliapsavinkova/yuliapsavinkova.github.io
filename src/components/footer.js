@@ -1,35 +1,17 @@
 import './social-icons.js';
+import './footer.css';
 
 class FooterComponent extends HTMLElement {
   connectedCallback() {
     const copyrightName = this.getAttribute('copyright-name') || 'All rights reserved.';
-    const year = new Date().getFullYear(); // Get current year
+    const year = new Date().getFullYear();
     this.innerHTML = `
-        <style>
-          .footer {
-            height: var(--footer-size);
-            min-width: 16rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--gap-small);
-            background-color: var(--color-background);
-            color: var(--color-primary);
-          }
-
-          .footer-copyright {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        </style>
-        <footer id="footer" class="footer">
-            <social-icons></social-icons>
-            <div class="footer-copyright">
-                <p class="large">&copy; ${year} ${copyrightName}</p>
-            </div>
-        </footer>
+      <footer id="footer" class="footer">
+        <social-icons mode="default"></social-icons>
+        <p class="footer-copyright">&copy; ${year} ${copyrightName}</p>
+      </footer>
     `;
   }
 }
+
 customElements.define('footer-component', FooterComponent);

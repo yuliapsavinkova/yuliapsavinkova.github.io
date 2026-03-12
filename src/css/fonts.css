@@ -1,3 +1,11 @@
+/* ═══════════════════════════════════════════════════════════
+   FONTS.CSS — Local font declarations
+   Cormorant Garamond is loaded via Fontsource in main.js.
+   This file handles Montserrat (local woff2) and fallback
+   @font-face metrics to prevent layout shift on both fonts.
+═══════════════════════════════════════════════════════════ */
+
+/* ─── MONTSERRAT FALLBACK ────────────────────────────────── */
 @font-face {
   font-family: 'Montserrat Fallback';
   src: local('Arial');
@@ -8,6 +16,7 @@
   size-adjust: 105%; /* Montserrat is slightly wider than Arial */
 }
 
+/* ─── MONTSERRAT ─────────────────────────────────────────── */
 @font-face {
   font-display: swap;
   font-family: 'Montserrat';
@@ -28,4 +37,17 @@
   font-style: normal;
   font-weight: 600;
   src: url('../assets/fonts/montserrat-v29-latin-600.woff2') format('woff2');
+}
+
+/* ─── CORMORANT GARAMOND FALLBACK ────────────────────────── 
+   Fontsource injects the real @font-face via main.js imports.
+   This fallback uses Georgia to approximate metrics and
+   prevent layout shift while the woff2 loads.              */
+@font-face {
+  font-family: 'Cormorant Garamond Fallback';
+  src: local('Georgia');
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+  size-adjust: 98%;
 }

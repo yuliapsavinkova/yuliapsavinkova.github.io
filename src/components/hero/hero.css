@@ -1,0 +1,193 @@
+@keyframes heroPortraitReveal {
+  from {
+    opacity: 0;
+    transform: scale(var(--motion-scale-in));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-fade-up));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─── SECTION ──────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: var(--hero-min-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-small);
+  overflow: hidden;
+  text-align: center;
+  padding: 0 var(--padding-inline);
+  background: var(--color-background);
+}
+
+/* .hero > * {
+  position: relative;
+  z-index: 1;
+} */
+
+/* ─── PORTRAIT CLUSTER ─────────────────────────────── */
+.hero-portrait-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: heroPortraitReveal 1.2s var(--ease-silk) 0.3s forwards;
+}
+
+/* ─── FRAME ────────────────────────────────────────────
+           Must be a perfect square — width and height the same.
+           We use --portrait-diameter for both axes so the circle
+           is never accidentally stretched.
+           aspect-ratio: 1 / 1 is added as a fallback guarantee. */
+.hero-portrait-frame {
+  width: var(--portrait-diameter-mob);
+  height: var(--portrait-diameter-mob);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: var(--portrait-border);
+  padding: var(--portrait-padding);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .hero-portrait-frame {
+    width: var(--portrait-diameter);
+    height: var(--portrait-diameter);
+  }
+}
+
+/* ─── INNER ────────────────────────────────────────────
+           aspect-ratio: 1 / 1 ensures the clipping circle is
+           always perfectly round regardless of image dimensions. */
+.hero-portrait-inner {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+/* ─── IMAGE ────────────────────────────────────────────
+           object-fit: cover fills the circle without distortion.
+           object-position: top center keeps the face in frame.
+           No explicit width/height needed — the parent constrains it. */
+.hero-portrait-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(5%) contrast(1.05) brightness(0.95) saturate(0.88) hue-rotate(6deg);
+}
+
+/* ─── SOCIAL DOCK ──────────────────────────────────── */
+.hero-social-dock {
+  margin-top: var(--dock-overlap);
+  display: flex;
+  align-items: center;
+  gap: var(--dock-gap);
+  padding: var(--dock-padding-block) var(--dock-padding-inline);
+  background: var(--glass-dock-bg);
+  backdrop-filter: blur(var(--glass-blur-dock)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-dock)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border-dock);
+  border-radius: var(--border-radius-pill);
+  box-shadow: var(--glass-shadow-dock);
+  z-index: 2;
+}
+
+/* ─── TEXT ─────────────────────────────────────────── */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-tiny);
+  opacity: 0;
+  animation: heroFadeUp var(--duration-slow) var(--ease-silk) 0.75s forwards;
+}
+
+.hero-greeting {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--font-size-greeting);
+  letter-spacing: var(--tracking-wide);
+  color: var(--cream-90);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ─── BUTTONS ─────────────────────────────────────── */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-small);
+  opacity: 0;
+  animation: heroFadeUp var(--duration-slow) var(--ease-silk) 0.95s forwards;
+}
+
+/* ─── SCROLL INDICATOR ────────────────────────────── */
+.hero-scroll {
+  position: absolute;
+  bottom: var(--gap);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: heroFadeIn var(--duration-slow) var(--ease-silk) 1.6s forwards;
+  z-index: 2;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: var(--gap-small);
+  color: var(--cream-30);
+  transition: color var(--duration-slow) var(--ease-silk);
+}
+
+.hero-scroll:hover {
+  color: var(--cream-70);
+}
+
+.hero-scroll svg {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: chevronPulse 2s var(--ease-silk) infinite;
+}
+
+@keyframes chevronPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0.25rem);
+  }
+}

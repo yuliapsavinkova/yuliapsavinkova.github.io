@@ -1,8 +1,10 @@
+import './card.css';
+
 class ExpertiseFullComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <section id="work" class="expertise-full">
-        <section-header 
+        <section-header
           title="My Expertise"
           sub-title="Transforming Ideas into Code">
         </section-header>
@@ -10,22 +12,26 @@ class ExpertiseFullComponent extends HTMLElement {
         <div class="feature-list">
 
           <div id="work-row-web" class="feature-card">
-            <div class="card-image">
-              <img src="./images/work-web.webp" class="bg-texture" loading="lazy" alt="Custom Solutions" />
+            <div class="card-image card-image--circle card-image--contain">
+              <div class="card-image-inner">
+                <img src="./images/work-web.webp" loading="lazy" alt="Custom Solutions" />
+              </div>
             </div>
             <div class="card-content">
               <h2>Custom Solutions</h2>
               <p><strong>Performance, SEO, and Brand Identity</strong></p>
               <p>
-                I create high-performance, responsive web solutions with a “right-tool-for-the-job” approach. For simple projects, I write clean, efficient HTML, CSS, and JavaScript. For complex, SEO-focused business sites and portfolios, I use <strong>Next.js</strong> to deliver scalable, production-ready web experiences. My solutions are built to rank well, convert visitors, and remain reliable, maintainable, and easy to update.
+                I create high-performance, responsive web solutions with a "right-tool-for-the-job" approach. For simple projects, I write clean, efficient HTML, CSS, and JavaScript. For complex, SEO-focused business sites and portfolios, I use <strong>Next.js</strong> to deliver scalable, production-ready web experiences. My solutions are built to rank well, convert visitors, and remain reliable, maintainable, and easy to update.
               </p>
               <a href="#/contact" class="button button-secondary">Contact Me</a>
             </div>
           </div>
 
           <div id="work-row-app" class="feature-card">
-            <div class="card-image">
-              <img src="./images/work-app2.png" class="bg-texture" loading="lazy" alt="Web Applications" />            
+            <div class="card-image card-image--circle card-image--contain">
+              <div class="card-image-inner">
+                <img src="./images/work-app2.png" loading="lazy" alt="Web Applications" />
+              </div>
             </div>
             <div class="card-content">
               <h2>Web Applications</h2>
@@ -38,15 +44,17 @@ class ExpertiseFullComponent extends HTMLElement {
           </div>
 
           <div id="work-row-fin" class="feature-card">
-            <div class="card-image">
-              <img src="./images/work-fin.webp" class="bg-texture" loading="lazy" alt="Financial Tools" />
+            <div class="card-image card-image--circle card-image--contain">
+              <div class="card-image-inner">
+                <img src="./images/work-fin.webp" loading="lazy" alt="Financial Tools" />
+              </div>
             </div>
             <div class="card-content">
-              <h2>Financial Tools</h2>  
+              <h2>Financial Tools</h2>
               <p><strong>Automation, Data Integrity, and Workflow</strong></p>
               <p>
-                I develop specialized tools that empower traders and investors to automate their workflows and data analysis. Whether it’s tracking portfolios, backtesting strategies, or setting real-time alerts, I bridge the gap between platforms. By integrating <strong>Excel and Google Sheets</strong> with custom web apps, I create automated systems that sync market data and eliminate manual entry. You describe your strategy; I turn it into a streamlined, high-accuracy solution tailored to your edge.
-              </p>  
+                I develop specialized tools that empower traders and investors to automate their workflows and data analysis. Whether it's tracking portfolios, backtesting strategies, or setting real-time alerts, I bridge the gap between platforms. By integrating <strong>Excel and Google Sheets</strong> with custom web apps, I create automated systems that sync market data and eliminate manual entry. You describe your strategy; I turn it into a streamlined, high-accuracy solution tailored to your edge.
+              </p>
               <a href="#/contact" class="button button-secondary">Contact Me</a>
             </div>
           </div>
@@ -56,4 +64,5 @@ class ExpertiseFullComponent extends HTMLElement {
     `;
   }
 }
+
 customElements.define('expertise-full-component', ExpertiseFullComponent);

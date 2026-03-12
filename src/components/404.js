@@ -1,28 +1,16 @@
+import './404.css';
+
 class ErrorComponent extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = this.getTemplate();
-  }
-  getTemplate() {
-    return `
-    <style>
-      .error-page {
-        height: var(--content-min-height);
-        padding: var(--padding-block) var(--padding-inline);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      </style>
+    this.innerHTML = `
       <section id="error-page" class="error-page">
-        <div>
-          <h1>404 - Page Not Found</h1>
-          <p class="large">The page you are looking for does not exist.</p>
-          <p class="large">To return to home page, <a href="/#">click here</a>.</p>
-        </div>
+        <p class="error-code">404</p>
+        <h1>Page Not Found</h1>
+        <p>The page you are looking for does not exist.</p>
+        <a href="/#" class="button button-secondary">Back to Home</a>
       </section>
     `;
   }
 }
+
 customElements.define('error-component', ErrorComponent);

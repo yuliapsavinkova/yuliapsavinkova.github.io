@@ -1,81 +1,79 @@
-/* ---------------- Base Button ---------------- */
+/* ═══════════════════════════════════════════════════════════
+   BUTTONS — pill-shaped, all tokens
+   Amber accent appears only on hover — never at rest.
+═══════════════════════════════════════════════════════════ */
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1rem;
-  min-width: 10rem;
-  border-radius: var(--border-radius);
-  border: 2px solid transparent;
+  padding: 0.7rem 1.875rem;
+  min-width: 7rem;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid transparent;
   cursor: pointer;
   outline: none;
   position: relative;
   text-align: center;
   user-select: none;
-  transition: all 0.15s ease-in-out;
-  color: inherit;
+  font-family: var(--font-family);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  transition: all var(--duration-slow) var(--ease-silk);
+  white-space: nowrap;
   background-clip: padding-box;
 }
 
-/* Press effect */
 .button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-/* Focus outline */
 .button:focus-visible {
-  box-shadow: 0 0 0 3px hsla(var(--theme-primary-values), 0.5);
+  box-shadow:
+    0 0 0 2px var(--navy-deepest),
+    0 0 0 4px var(--color-accent-warm-30);
 }
 
-/* Disabled state */
 .button:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.35;
   pointer-events: none;
 }
 
-/* ---------------- PRIMARY BUTTON ---------------- */
+/* ─── PRIMARY — cream fill at rest, amber warmth on hover ── */
 .button-primary {
-  color: var(--white);
-  background-color: hsl(var(--theme-primary-values));
-  border-color: hsl(var(--theme-primary-values));
+  color: var(--navy-deepest);
+  background-color: var(--cream-80);
+  border-color: var(--cream-80);
 }
-
 .button-primary:hover {
-  filter: brightness(1.15);
+  background-color: var(--cream-90);
+  border-color: var(--color-accent-warm-70);
+  box-shadow: 0 0 0.75rem var(--color-accent-warm-15);
 }
 
-.button-primary:active {
-  filter: brightness(0.9);
-}
-
-/* ---------------- SECONDARY BUTTON ---------------- */
+/* ─── SECONDARY — outlined at rest, amber border on hover ── */
 .button-secondary {
-  color: hsl(var(--theme-primary-values));
+  color: var(--cream-70);
   background-color: transparent;
-  border-color: hsl(var(--theme-primary-values));
+  border-color: var(--cream-30);
 }
-
 .button-secondary:hover {
-  color: var(--white);
-  background-color: var(--color-primary);
+  color: var(--color-accent-warm);
+  border-color: var(--color-accent-warm-70);
+  background-color: var(--color-accent-warm-15);
 }
 
-.button-secondary:active {
-  background-color: hsla(var(--theme-primary-values), 0.15);
-}
-
-/* ---------------- ACTION BUTTON ---------------- */
+/* ─── ACTION — raised navy surface ──────────────────────── */
 .button-action {
-  color: var(--white);
-  background-color: hsl(var(--theme-accent-values));
-  border-color: hsl(var(--theme-accent-values));
+  color: var(--cream-90);
+  background-color: var(--navy-mid);
+  border-color: var(--cream-30);
 }
-
 .button-action:hover {
-  filter: brightness(1.1);
-}
-
-.button-action:active {
-  filter: brightness(0.9);
+  color: var(--color-accent-warm);
+  background-color: var(--navy-subtle);
+  border-color: var(--color-accent-warm-70);
 }

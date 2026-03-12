@@ -1,3 +1,10 @@
+/* ═══════════════════════════════════════════════════════════
+   CARD.CSS — Shared card patterns
+   Single source of truth for .card and .feature-card.
+   All components use these — change here, updates everywhere.
+═══════════════════════════════════════════════════════════ */
+
+/* ─── WRAPPERS ───────────────────────────────────────────── */
 .card-grid,
 .feature-list {
   margin-left: auto;
@@ -5,40 +12,43 @@
   width: min(100%, var(--breakpoint-xl));
   display: flex;
 }
+
 .card-grid {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--gap);
 }
+
 .feature-list {
   flex-direction: column;
   gap: var(--gap-large);
 }
 
-.card-image {
-  border-radius: var(--border-radius);
-}
-
-/* ======================================================= */
-/* PATTERN 1: CARD (Always Vertical)                       */
-/* ======================================================= */
+/* ─── PATTERN 1: CARD (always vertical) ─────────────────── */
 .card {
   display: flex;
   flex-direction: column;
   gap: var(--gap-small);
-  background-color: var(--color-surface);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
-  padding: 1.5rem;
+  padding: var(--gap-med);
   flex-basis: 20rem;
   max-width: 20rem;
   flex-grow: 1;
   text-align: center;
 }
 
+.card .card-image {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
 .card .card-image img {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 .card .card-content {
@@ -49,21 +59,13 @@
   align-items: center;
 }
 
-.feature-card .card-content .button,
 .card .card-content svg {
-  margin-top: 0.5rem;
+  width: var(--gap-med);
+  height: var(--gap-med);
+  margin-top: var(--gap-tiny);
 }
 
-.card .card-content svg {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-/* ======================================================= */
-/* PATTERN 2: FEATURE CARD (Responsive)                    */
-/* ======================================================= */
-
-/* Mobile-first: vertical stack */
+/* ─── PATTERN 2: FEATURE CARD (responsive) ──────────────── */
 .feature-card {
   display: flex;
   flex-direction: column;
@@ -73,13 +75,14 @@
 
 .feature-card .card-image {
   overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  width: 100%;
 }
 
 .feature-card .card-image img {
   display: block;
-  width: max(100%, 30rem);
+  width: 100%;
   height: auto;
-  margin: auto;
   object-fit: cover;
 }
 
@@ -91,8 +94,11 @@
   max-width: var(--article-width);
 }
 
-/* Desktop: Switch to horizontal layout */
-/* min-width: var(--breakpoint-md) */
+.feature-card .card-content .button {
+  margin-top: var(--gap-tiny);
+}
+
+/* Desktop: horizontal, alternating flip */
 @media (min-width: 768px) {
   .feature-card {
     max-width: var(--breakpoint-xl);
@@ -110,8 +116,60 @@
     align-items: flex-start;
   }
 
-  /* Flip every odd card */
-  .feature-card:nth-child(odd) {
+  /* Flip only inside a list — standalone feature-cards stay row */
+  .feature-list .feature-card:nth-child(odd) {
     flex-direction: row-reverse;
+  }
+}
+
+/* ─── CIRCLE MODIFIER ────────────────────────────────────── 
+   Add .card-image--circle to any .card-image for the
+   circular framed portrait treatment. Works in both patterns.
+─────────────────────────────────────────────────────────── */
+.card-image--circle {
+  border-radius: 50% !important;
+  flex-shrink: 0;
+  width: var(--portrait-diameter-mob) !important;
+  height: var(--portrait-diameter-mob) !important;
+  aspect-ratio: 1 / 1;
+  border: var(--portrait-border);
+  padding: var(--portrait-padding);
+  overflow: visible !important;
+  align-self: center;
+}
+
+/* Smaller circle for vertical grid cards */
+.card .card-image--circle {
+  width: var(--portrait-diameter-card);
+  height: var(--portrait-diameter-card);
+}
+
+.card-image--circle .card-image-inner {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.card-image--circle .card-image-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(5%) contrast(1.05) brightness(0.95) saturate(0.88) hue-rotate(6deg);
+}
+
+/* Use on work/expertise images that must show in full */
+.card-image--circle.card-image--contain .card-image-inner img {
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .card-image--circle {
+    width: var(--portrait-diameter) !important;
+    height: var(--portrait-diameter) !important;
   }
 }
