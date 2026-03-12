@@ -11,9 +11,10 @@
 body {
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(ellipse 80% 55% at 50% -5%, var(--glow-primary), transparent),
-    radial-gradient(ellipse 55% 40% at 95% 10%, var(--glow-rim), transparent),
-    radial-gradient(ellipse 60% 50% at 10% 60%, var(--glow-deep), transparent);
+    radial-gradient(ellipse 70% 40% at 50% 15%, var(--glow-primary), transparent),
+    radial-gradient(ellipse 55% 35% at 50% 55%, var(--glow-primary), transparent),
+    radial-gradient(ellipse 50% 35% at 90% 10%, var(--glow-rim), transparent),
+    radial-gradient(ellipse 55% 40% at 10% 70%, var(--glow-deep), transparent);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
