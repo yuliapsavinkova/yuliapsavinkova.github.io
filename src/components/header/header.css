@@ -40,7 +40,7 @@
 .header .logo svg {
   width: var(--logo-size);
   height: var(--logo-size);
-  color: var(--cream-70);
+  color: var(--color-text-70);
 }
 
 .header .logo-name {
@@ -50,12 +50,12 @@
   font-size: var(--font-size-logo);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--cream-70);
+  color: var(--color-text-70);
   transition: color var(--duration-slow) var(--ease-silk);
 }
 
 .header .logo:hover .logo-name {
-  color: var(--cream);
+  color: var(--color-text);
 }
 
 /* ─── MAIN NAV ───────────────────────────────────────────── */
@@ -86,12 +86,12 @@
   cursor: pointer;
   z-index: 1001;
   padding: 0.5rem;
-  color: var(--cream-70);
+  color: var(--color-text-70);
   transition: color var(--duration-slow) var(--ease-silk);
 }
 
 .header .menu-toggle-button:hover {
-  color: var(--cream);
+  color: var(--color-text);
 }
 
 .header .menu-toggle-button svg {
@@ -113,18 +113,18 @@
     font-weight: 400;
     letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
-    color: var(--cream-55);
+    color: var(--color-text-55);
     text-decoration: none;
     transition: color var(--duration-slow) var(--ease-silk);
   }
 
   .header .nav-links-full .nav-link:hover {
-    color: var(--cream);
+    color: var(--color-text);
   }
 
   .header .nav-links-full .nav-link.active {
-    color: var(--color-accent-warm);
-    border-bottom: 1px solid var(--color-accent-warm-70);
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-accent-70);
     padding-bottom: 0.125rem;
   }
 

@@ -18,11 +18,11 @@
   background-position: center center;
   /* Scroll on mobile — fixed causes performance issues on iOS */
   background-attachment: scroll;
-  border-radius: 50%;
+  border-radius: var(--border-radius-lg);
 }
 
 .working-process * {
-  color: var(--cream);
+  color: var(--color-text);
 }
 
 /* Parallax — desktop with mouse only */

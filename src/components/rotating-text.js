@@ -1,7 +1,6 @@
 class RotatingText extends HTMLElement {
   constructor() {
     super();
-    // State for the typewriter effect
     this.titles = [];
     this.titleIndex = 0;
     this.charIndex = 0;
@@ -35,7 +34,7 @@ class RotatingText extends HTMLElement {
           font-weight: 200;
           font-size: var(--font-size-typewriter);
           letter-spacing: var(--tracking-tight);
-          color: var(--cream-90);
+          color: var(--color-text-90);
           white-space: pre;
           line-height: 1.3;
         }
@@ -46,7 +45,7 @@ class RotatingText extends HTMLElement {
           font-style: italic;
           font-size: var(--font-size-typewriter);
           font-weight: 200;
-          color: var(--color-accent-warm);
+          color: var(--color-accent);
           line-height: 1.3;
           animation: twBlink 1.1s step-end infinite;
         }
@@ -69,7 +68,6 @@ class RotatingText extends HTMLElement {
       console.error('rotating-text: invalid data-titles JSON', e);
       this.titles = [];
     }
-
     if (this.titles.length > 0) {
       this.type = this.type.bind(this);
       requestAnimationFrame(this.type);
@@ -104,4 +102,5 @@ class RotatingText extends HTMLElement {
     requestAnimationFrame(this.type);
   }
 }
+
 customElements.define('rotating-text', RotatingText);

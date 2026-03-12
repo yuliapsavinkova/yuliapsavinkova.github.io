@@ -19,13 +19,13 @@ class SocialIcons extends HTMLElement {
           justify-content: center;
           width: var(--gap-med);
           height: var(--gap-med);
-          color: var(--cream-70);
+          color: var(--color-text-70);
           transition:
             color     var(--duration-slow) var(--ease-silk),
             transform var(--duration-mid)  var(--ease-silk);
         }
         .social-icons.mode-default a:hover {
-          color: var(--color-accent-warm);
+          color: var(--color-accent);
           transform: scale(1.12);
         }
         .social-icons.mode-default svg { width: 100%; height: 100%; }
@@ -40,13 +40,13 @@ class SocialIcons extends HTMLElement {
           justify-content: center;
           width: var(--dock-icon-size);
           height: var(--dock-icon-size);
-          color: var(--cream-80);
+          color: var(--color-text-80);
           transition:
             color     var(--duration-slow) var(--ease-silk),
             transform var(--duration-mid)  var(--ease-silk);
         }
         .social-icons.mode-dock a:hover {
-          color: var(--color-accent-warm);
+          color: var(--color-accent);
           transform: scale(1.15);
         }
         .social-icons.mode-dock svg { width: 100%; height: 100%; }

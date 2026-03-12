@@ -1,3 +1,24 @@
+/* ═══════════════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════════════ */
+
+/* ─── BODY BACKGROUND GLOW ────────────────────────────────
+   Three layered radial gradients over the solid base:
+   1. Primary bloom — large, top-centre, accent hue, most visible
+   2. Rim light    — top-right edge, slightly cooler
+   3. Deep fill    — mid-page warmth so the centre isn't flat
+   All fixed so the glow doesn't scroll with content.        */
+body {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 80% 55% at 50% -5%, var(--glow-primary), transparent),
+    radial-gradient(ellipse 55% 40% at 95% 10%, var(--glow-rim), transparent),
+    radial-gradient(ellipse 60% 50% at 10% 60%, var(--glow-deep), transparent);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 section {
   margin-top: var(--header-size);
   padding: var(--padding-block) var(--padding-inline);

@@ -20,7 +20,7 @@
   font-weight: 300;
   font-size: clamp(6rem, 20vw, 14rem);
   line-height: 1;
-  color: var(--cream-08);
+  color: var(--color-text-08);
   letter-spacing: var(--tracking-tight);
   margin: 0;
   /* Pull it up so h1 overlaps slightly */
@@ -29,12 +29,12 @@
 }
 
 .error-page h1 {
-  color: var(--cream-90);
+  color: var(--color-text-90);
   position: relative;
 }
 
 .error-page p {
-  color: var(--cream-55);
+  color: var(--color-text-55);
   max-width: 24rem;
 }
 

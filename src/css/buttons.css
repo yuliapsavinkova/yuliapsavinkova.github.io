@@ -32,8 +32,8 @@
 
 .button:focus-visible {
   box-shadow:
-    0 0 0 2px var(--navy-deepest),
-    0 0 0 4px var(--color-accent-warm-30);
+    0 0 0 2px var(--color-bg),
+    0 0 0 4px var(--color-accent-30);
 }
 
 .button:disabled {
@@ -44,36 +44,36 @@
 
 /* ─── PRIMARY — cream fill at rest, amber warmth on hover ── */
 .button-primary {
-  color: var(--navy-deepest);
-  background-color: var(--cream-80);
-  border-color: var(--cream-80);
+  color: var(--color-bg);
+  background-color: var(--color-text-80);
+  border-color: var(--color-text-80);
 }
 .button-primary:hover {
-  background-color: var(--cream-90);
-  border-color: var(--color-accent-warm-70);
-  box-shadow: 0 0 0.75rem var(--color-accent-warm-15);
+  background-color: var(--color-text-90);
+  border-color: var(--color-accent-70);
+  box-shadow: 0 0 0.75rem var(--color-accent-15);
 }
 
 /* ─── SECONDARY — outlined at rest, amber border on hover ── */
 .button-secondary {
-  color: var(--cream-70);
+  color: var(--color-text-70);
   background-color: transparent;
-  border-color: var(--cream-30);
+  border-color: var(--color-text-30);
 }
 .button-secondary:hover {
-  color: var(--color-accent-warm);
-  border-color: var(--color-accent-warm-70);
-  background-color: var(--color-accent-warm-15);
+  color: var(--color-accent);
+  border-color: var(--color-accent-70);
+  background-color: var(--color-accent-15);
 }
 
 /* ─── ACTION — raised navy surface ──────────────────────── */
 .button-action {
-  color: var(--cream-90);
-  background-color: var(--navy-mid);
-  border-color: var(--cream-30);
+  color: var(--color-text-90);
+  background-color: var(--color-bg-raised);
+  border-color: var(--color-text-30);
 }
 .button-action:hover {
-  color: var(--color-accent-warm);
-  background-color: var(--navy-subtle);
-  border-color: var(--color-accent-warm-70);
+  color: var(--color-accent);
+  background-color: var(--color-bg-subtle);
+  border-color: var(--color-accent-70);
 }

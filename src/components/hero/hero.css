@@ -41,7 +41,6 @@
   overflow: hidden;
   text-align: center;
   padding: 0 var(--padding-inline);
-  background: var(--color-background);
 }
 
 /* .hero > * {
@@ -112,10 +111,10 @@
   align-items: center;
   gap: var(--dock-gap);
   padding: var(--dock-padding-block) var(--dock-padding-inline);
-  background: var(--glass-dock-bg);
+  background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur-dock)) saturate(var(--glass-saturate));
   -webkit-backdrop-filter: blur(var(--glass-blur-dock)) saturate(var(--glass-saturate));
-  border: 1px solid var(--glass-border-dock);
+  border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-pill);
   box-shadow: var(--glass-shadow-dock);
   z-index: 2;
@@ -137,7 +136,7 @@
   font-weight: 300;
   font-size: var(--font-size-greeting);
   letter-spacing: var(--tracking-wide);
-  color: var(--cream-90);
+  color: var(--color-text-90);
   margin: 0;
   line-height: 1.4;
 }
@@ -165,12 +164,12 @@
   background: none;
   border: none;
   padding: var(--gap-small);
-  color: var(--cream-30);
+  color: var(--color-text-30);
   transition: color var(--duration-slow) var(--ease-silk);
 }
 
 .hero-scroll:hover {
-  color: var(--cream-70);
+  color: var(--color-text-70);
 }
 
 .hero-scroll svg {

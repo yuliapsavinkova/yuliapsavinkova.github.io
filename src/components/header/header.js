@@ -1,12 +1,10 @@
 import { Utils } from '../../utils.js';
-import './../dropdown/dropdown.js';
 
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
     this.lastScrollY = window.scrollY;
     // Throttled at 50ms for smooth but performant scroll tracking
-    this._handleResize = Utils.throttle(this._handleResize.bind(this), 200);
     this._handleScroll = Utils.throttle(this._handleScroll.bind(this), 50);
     this._updateActiveLink = this._updateActiveLink.bind(this);
   }
@@ -80,50 +78,27 @@ class HeaderComponent extends HTMLElement {
                 />
               </svg>
             </button>
-
-            <menu-dropdown-component
-              id="main-menu"
-              links='${linksAttr}'
-              button='${buttonAttr}'
-            ></menu-dropdown-component>
           </div>
         </nav>
       </header>
     `;
 
     this.headerElement = this.querySelector('.header');
-    this.menuDropdown = this.querySelector('#main-menu');
 
-    this.navLinks = [
-      ...this.querySelectorAll('.nav-links-full .nav-link'),
-      ...(this.menuDropdown?.linkElements || []),
-    ];
+    this.navLinks = [...this.querySelectorAll('.nav-links-full .nav-link')];
   }
 
   _addEventListeners() {
-    window.addEventListener('resize', this._handleResize);
     window.addEventListener('scroll', this._handleScroll);
     window.addEventListener('hashchange', this._updateActiveLink);
-
-    this.navLinks.forEach((link) =>
-      link.addEventListener('click', () => this.menuDropdown.hidePopover()),
-    );
   }
 
   _removeEventListeners() {
-    window.removeEventListener('resize', this._handleResize);
     window.removeEventListener('scroll', this._handleScroll);
     window.removeEventListener('hashchange', this._updateActiveLink);
   }
 
-  _handleResize() {
-    this.menuDropdown.hidePopover();
-  }
-
   _handleScroll() {
-    // Hide dropdown on scroll
-    this.menuDropdown.hidePopover();
-
     const currentScrollY = window.scrollY;
 
     // Scroll Down logic
