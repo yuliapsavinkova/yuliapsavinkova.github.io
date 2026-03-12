@@ -1,7 +1,8 @@
 /* ═══════════════════════════════════════════════════════════
    HEADER
-   .glass is applied by JS always — handled by utils.css.
-   JS only toggles .header--hidden on scroll down.
+   At rest:        fully transparent — part of the hero
+   --scrolled:     glass effect activates
+   --hidden:       slides out on scroll down
 ═══════════════════════════════════════════════════════════ */
 
 .header {
@@ -14,15 +15,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Transparent by default — blends into hero */
+  background: transparent;
+  border-bottom: 1px solid transparent;
   opacity: 0;
   animation: headerReveal var(--duration-slow) var(--ease-silk) 0.1s forwards;
-  transition: transform var(--duration-slow) var(--ease-silk);
+  transition:
+    background var(--duration-slow) var(--ease-silk),
+    border-color var(--duration-slow) var(--ease-silk),
+    transform var(--duration-slow) var(--ease-silk);
 }
 
 @keyframes headerReveal {
   to {
     opacity: 1;
   }
+}
+
+/* Glass activates once user scrolls past the hero */
+.header.header--scrolled {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border-bottom-color: var(--color-text-08);
+  box-shadow:
+    inset 0 -1px 0 var(--color-text-06),
+    0 0.5rem 2rem hsla(var(--bg-h), var(--bg-s), 0%, 0.4);
 }
 
 .header.header--hidden {
@@ -33,6 +51,7 @@
 .header .logo {
   display: flex;
   align-items: center;
+  gap: var(--gap-tiny);
   margin-right: var(--gap-large);
   text-decoration: none;
 }
@@ -40,7 +59,8 @@
 .header .logo svg {
   width: var(--logo-size);
   height: var(--logo-size);
-  color: var(--color-text-70);
+  color: var(--color-text-55);
+  transition: color var(--duration-slow) var(--ease-silk);
 }
 
 .header .logo-name {
@@ -50,10 +70,12 @@
   font-size: var(--font-size-logo);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-text-70);
+  color: var(--color-text-55);
   transition: color var(--duration-slow) var(--ease-silk);
 }
 
+/* Both icon and name brighten together on hover */
+.header .logo:hover svg,
 .header .logo:hover .logo-name {
   color: var(--color-text);
 }
@@ -66,7 +88,7 @@
   gap: var(--gap);
 }
 
-/* ─── MOBILE: hamburger, hide full nav ───────────────────── */
+/* ─── MOBILE: hamburger only ─────────────────────────────── */
 .header .nav-links-full {
   display: none;
 }
@@ -86,7 +108,7 @@
   cursor: pointer;
   z-index: 1001;
   padding: 0.5rem;
-  color: var(--color-text-70);
+  color: var(--color-text-55);
   transition: color var(--duration-slow) var(--ease-silk);
 }
 
@@ -99,7 +121,20 @@
   height: 1.5rem;
 }
 
-/* ─── DESKTOP: show full nav, hide hamburger ─────────────── */
+/* ─── RESUME BUTTON — ghost pill, accent on hover ────────── */
+.header .button-action {
+  background: transparent;
+  color: var(--color-text-70);
+  border-color: var(--color-text-30);
+}
+
+.header .button-action:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent-70);
+  background: var(--color-accent-15);
+}
+
+/* ─── DESKTOP: full nav ──────────────────────────────────── */
 @media (min-width: 768px) {
   .header .nav-links-full {
     display: flex;

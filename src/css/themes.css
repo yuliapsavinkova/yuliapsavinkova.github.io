@@ -18,8 +18,8 @@
   /* Text/foreground colour
      Cool-white with a faint blue tint for ocean cohesion.  */
   --text-h: 210;
-  --text-s: 40%;
-  --text-l: 94%;
+  --text-s: 10%;
+  --text-l: 100%;
 
   /* Accent — electric cyan, reads as bioluminescent light.
      Try: 38 (amber), 160 (mint), 280 (purple), 0 (red).   */
@@ -30,23 +30,23 @@
   /* Glow — the radial bloom on the body background.
      Matches accent hue by default; change independently.   */
   --glow-h: var(--accent-h);
-  --glow-s: 60%;
-  --glow-primary-l: 18%; /* brighter centre bloom          */
-  --glow-rim-l: 10%; /* dimmer secondary bloom         */
+  --glow-s: 70%;
+  --glow-primary-l: 42%; /* brighter centre bloom          */
+  --glow-rim-l: 26%; /* dimmer secondary bloom         */
 
   /* ════════════════════════════════════════════════════════
      DERIVED TOKENS — do not edit below this line
      ════════════════════════════════════════════════════════ */
 
   /* ─── BACKGROUND SCALE ───────────────────────────────── */
-  --color-bg: hsl(var(--bg-h), var(--bg-s), 5%);
-  --color-bg-raised: hsl(var(--bg-h), calc(var(--bg-s) * 0.25), 11%);
-  --color-bg-subtle: hsl(var(--bg-h), calc(var(--bg-s) * 0.18), 16%);
+  --color-bg: hsl(var(--bg-h), var(--bg-s), 8%);
+  --color-bg-raised: hsl(var(--bg-h), calc(var(--bg-s) * 0.25), 17%);
+  --color-bg-subtle: hsl(var(--bg-h), calc(var(--bg-s) * 0.18), 24%);
 
   /* ─── GLOW LAYERS (used on body in layout.css) ───────── */
-  --glow-primary: hsla(var(--glow-h), var(--glow-s), var(--glow-primary-l), 0.55);
-  --glow-rim: hsla(var(--glow-h), var(--glow-s), var(--glow-rim-l), 0.35);
-  --glow-deep: hsla(var(--bg-h), var(--bg-s), 8%, 0.8);
+  --glow-primary: hsla(var(--glow-h), var(--glow-s), var(--glow-primary-l), 0.85);
+  --glow-rim: hsla(var(--glow-h), var(--glow-s), var(--glow-rim-l), 0.65);
+  --glow-deep: hsla(var(--bg-h), var(--bg-s), 10%, 0.9);
 
   /* ─── TEXT / FOREGROUND OPACITY SCALE ───────────────── */
   --color-text: hsl(var(--text-h), var(--text-s), var(--text-l));
@@ -70,16 +70,19 @@
   --color-surface: var(--color-bg-raised);
   --color-border: var(--color-text-15);
   --color-primary: var(--color-text);
-  --color-text-heading: var(--color-text-90);
-  --color-text-body: var(--color-text-70);
+  --color-text-heading: var(--color-text);
+  --color-text-body: var(--color-text-90);
 
   /* ─── GLASS ──────────────────────────────────────────── */
-  --glass-bg: hsla(var(--bg-h), var(--bg-s), 5%, 0.75);
+  --glass-bg: hsla(var(--bg-h), var(--bg-s), 10%, 0.8);
   --glass-border: var(--color-text-08);
   --glass-blur: 1.25rem;
+  --glass-blur-dock: 0.75rem;
   --glass-saturate: 180%;
   --glass-shadow:
     0 0.5rem 2rem hsla(var(--bg-h), var(--bg-s), 0%, 0.6), inset 0 1px 0 var(--color-text-06);
+  --glass-shadow-dock:
+    0 0.25rem 1rem hsla(var(--bg-h), var(--bg-s), 0%, 0.5), inset 0 1px 0 var(--color-text-08);
 
   /* ─── OVERLAY (process section) ──────────────────────── */
   --color-overlay: hsla(var(--bg-h), var(--bg-s), 3%, 0.75);
