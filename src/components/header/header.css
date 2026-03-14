@@ -90,7 +90,7 @@
 
 .header .logo:hover svg,
 .header .logo:hover .logo-name {
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 .header .logo:focus-visible {

@@ -11,7 +11,7 @@ import utilsCss from './css/utils.css?inline';
 import header from './components/header/header.css?inline';
 import hero from './components/hero/hero.css?inline';
 
-// Fraunces — display, headings, hero (optical size axis for crisp rendering)
+// Fraunces — display, headings, hero
 import '@fontsource-variable/fraunces';
 
 // Plus Jakarta Sans — nav, buttons, labels, body UI
@@ -67,3 +67,8 @@ document.body.addEventListener('click', (event) => {
     window.location.hash = link.getAttribute('href').slice(1);
   }
 });
+
+// ─── Visual effects — remove any line to disable that effect ───
+import './effects/effects-stars.js';
+import './effects/effects-orbit.js';
+import './effects/effects-ember.js';

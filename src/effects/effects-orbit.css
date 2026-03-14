@@ -1,0 +1,71 @@
+/* ═══════════════════════════════════════════════════════════
+   EFFECTS — ORBIT + SOLAR CORONA (combined, no pseudo conflicts)
+   Uses a single injected canvas element — no ::before/::after clash.
+   Remove import from main.js to disable.
+═══════════════════════════════════════════════════════════ */
+
+@keyframes orbit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes corona-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+/* Corona glow — sits behind portrait */
+.orbit-corona {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  animation: corona-pulse 4s ease-in-out infinite;
+}
+
+/* Single orbit ring */
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: none;
+  pointer-events: none;
+  animation: orbit-spin 22s linear infinite;
+  transform-origin: center center;
+}
+
+/* Sun dot on the ring — positioned at top of ring */
+.orbit-ring::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    hsl(45, 100%, 80%) 0%,
+    hsl(38, 90%, 55%) 60%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 12px 5px hsla(38, 90%, 60%, 0.8),
+    0 0 30px 10px hsla(38, 90%, 50%, 0.4);
+}

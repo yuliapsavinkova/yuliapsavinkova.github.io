@@ -1,0 +1,41 @@
+/* ═══════════════════════════════════════════════════════════
+   EFFECTS — EMBER PARTICLES
+   CSS + minimal JS injection. Add/remove this file to enable.
+   Targets: .button-primary, .button-secondary, nav .active
+   To disable: remove import from main.js + effects-ember.js
+═══════════════════════════════════════════════════════════ */
+
+@keyframes ember-rise {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-1.5rem) translateX(var(--drift, 0.3rem)) scale(0.7);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-3rem) translateX(var(--drift, 0.5rem)) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.ember-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: hsl(38, 95%, 65%);
+  box-shadow: 0 0 4px 1px hsla(38, 95%, 65%, 0.6);
+  pointer-events: none;
+  animation: ember-rise var(--dur, 1.2s) ease-out var(--del, 0s) forwards;
+  z-index: 10;
+}
+
+/* Wrap targets in position: relative so embers escape correctly */
+.button-primary,
+.button-secondary,
+.nav-link.active {
+  position: relative;
+  overflow: visible;
+}
