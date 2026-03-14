@@ -4,15 +4,16 @@
 
 :root {
   /* ─── TYPOGRAPHY ─────────────────────────────────────────  */
-  --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --font-serif: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+  --font-serif: 'Fraunces', 'Georgia', serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
-  --font-size-micro: 0.5rem; /*  8px — scroll label       */
-  --font-size-label: 0.5625rem; /*  9px — nav, micro-UI      */
-  --font-size-body: 1rem; /* 16px — base               */
-  --font-size-greeting: 1rem; /* 16px — "Hello, I'm …"     */
-  --font-size-typewriter: 1.375rem; /* 22px — rotating roles     */
-  --font-size-logo: 0.875rem; /* 14px — header logo        */
+  --font-size-micro: 0.5rem;
+  --font-size-label: 0.5625rem;
+  --font-size-body: 1rem;
+  --font-size-greeting: 1.1rem;
+  --font-size-typewriter: 1.375rem;
+  --font-size-logo: 0.875rem;
 
   /* ─── LETTER SPACING ─────────────────────────────────────  */
   --tracking-tight: 0.02em;
@@ -26,32 +27,29 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
 
-  --article-width: 37.5rem; /* 600px */
+  --article-width: 37.5rem;
 
   /* ─── LAYOUT ──────────────────────────────────────────────  */
   --header-size: 4rem;
   --header-top-offset: 1.75rem;
   --footer-size: 8rem;
-  --logo-size: 2rem; /* was 3rem — tighter in header  */
+  --logo-size: 2rem;
   --content-min-height: calc(100svh - var(--header-size) - var(--footer-size));
   --hero-min-height: 37.5rem;
 
-  /* ─── PORTRAIT ────────────────────────────────────────────
-     Diameter defines a square bounding box — the circle is
-     applied via border-radius: 50% on both frame and inner.
-     Portrait padding is the gap between frame ring and image. */
-  --portrait-diameter: 26rem; /* 416px — feature-card portrait desktop */
-  --portrait-diameter-mob: min(72vw, 20rem); /* scales with screen on mobile  */
-  --portrait-diameter-card: 10rem; /* 160px — grid card circle              */
-  --portrait-padding: 0.75rem; /* 12px  — was 16px              */
+  /* ─── PORTRAIT ────────────────────────────────────────────  */
+  --portrait-diameter: 26rem;
+  --portrait-diameter-mob: min(72vw, 20rem);
+  --portrait-diameter-card: 10rem;
+  --portrait-padding: 0.75rem;
   --portrait-border: 1px solid var(--color-border);
 
   /* ─── DOCK ────────────────────────────────────────────────  */
-  --dock-icon-size: 1.25rem; /* 20px — was 1.6rem, too large  */
-  --dock-gap: 1.25rem; /* 20px                          */
-  --dock-padding-block: 0.625rem; /* 10px                          */
-  --dock-padding-inline: 1.5rem; /* 24px                          */
-  --dock-overlap: -1rem; /* pulls dock over portrait edge */
+  --dock-icon-size: 1.25rem;
+  --dock-gap: 1.25rem;
+  --dock-padding-block: 0.625rem;
+  --dock-padding-inline: 1.5rem;
+  --dock-overlap: -1rem;
 
   /* ─── BORDER RADIUS ──────────────────────────────────────  */
   --border-radius: 0.5rem;
@@ -59,7 +57,7 @@
   --border-radius-pill: 999px;
 
   /* ─── SPACING SCALE ──────────────────────────────────────  */
-  --padding-inline: 1rem;
+  --padding-inline: 1.5rem;
   --padding-block: 4rem;
 
   --gap-tiny: 0.5rem;

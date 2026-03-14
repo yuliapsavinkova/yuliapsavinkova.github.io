@@ -21,18 +21,18 @@
   --text-s: 10%;
   --text-l: 100%;
 
-  /* Accent — electric cyan, reads as bioluminescent light.
-     Try: 38 (amber), 160 (mint), 280 (purple), 0 (red).   */
-  --accent-h: 210;
-  --accent-s: 70%;
-  --accent-l: 68%;
+  /* Accent — muted teal, same hue as the glow but desaturated
+     so it feels like part of the background palette rather
+     than a vivid highlight.                                 */
+  --accent-h: 185;
+  --accent-s: 45%;
+  --accent-l: 52%;
 
-  /* Glow — the radial bloom on the body background.
-     Matches accent hue by default; change independently.   */
+  /* Glow — same hue, richer saturation for the body bloom.  */
   --glow-h: var(--accent-h);
   --glow-s: 70%;
-  --glow-primary-l: 42%; /* brighter centre bloom          */
-  --glow-rim-l: 26%; /* dimmer secondary bloom         */
+  --glow-primary-l: 42%;
+  --glow-rim-l: 26%;
 
   /* ════════════════════════════════════════════════════════
      DERIVED TOKENS — do not edit below this line

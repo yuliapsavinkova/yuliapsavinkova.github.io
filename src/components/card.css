@@ -28,13 +28,13 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  border: 1px solid var(--glass-border);
+  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.15);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--color-text-08);
   border-top-color: var(--color-text-15);
   border-radius: var(--border-radius);
-  box-shadow: var(--glass-shadow);
+  box-shadow: inset 0 1px 0 var(--color-text-06);
   overflow: hidden;
   padding: 0;
   flex-basis: 20rem;
@@ -47,11 +47,9 @@
 }
 
 .card:hover {
-  border-color: var(--color-accent-30);
-  border-top-color: var(--color-accent-30);
-  box-shadow:
-    var(--glass-shadow),
-    0 0 1.5rem var(--color-accent-15);
+  border-color: var(--color-text-15);
+  border-top-color: var(--color-text-30);
+  box-shadow: inset 0 1px 0 var(--color-text-08);
 }
 
 /* Image fills flush at top — fixed height, cover crop */
@@ -177,6 +175,7 @@
   padding: var(--portrait-padding);
   overflow: visible !important;
   align-self: center;
+  filter: drop-shadow(0 0 3rem hsla(var(--bg-h), var(--bg-s), 4%, 0.9));
 }
 
 /* Smaller circle for vertical grid cards */
@@ -209,4 +208,26 @@
     width: var(--portrait-diameter) !important;
     height: var(--portrait-diameter) !important;
   }
+}
+
+/* ─── CARD TEXT HELPERS ──────────────────────────────────── */
+.card-tag {
+  font-family: var(--font-family);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--gap-tiny);
+}
+
+.card-mono {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-55);
+  border-left: 1px solid var(--color-text-15);
+  padding-left: var(--gap-small);
+  margin-top: var(--gap-tiny);
 }

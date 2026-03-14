@@ -4,7 +4,6 @@ class HeaderComponent extends HTMLElement {
   constructor() {
     super();
     this.lastScrollY = window.scrollY;
-    // Throttled at 50ms for smooth but performant scroll tracking
     this._handleScroll = Utils.throttle(this._handleScroll.bind(this), 50);
     this._updateActiveLink = this._updateActiveLink.bind(this);
   }
@@ -40,7 +39,7 @@ class HeaderComponent extends HTMLElement {
       .join('');
 
     this.innerHTML = /* html */ `
-      <header class="header glass">
+      <header class="header">
         <a href="${logoLink}" class="logo" aria-label="Home">
           <svg aria-hidden="true">
             <use href="#${logoSvgId}"></use>
@@ -51,45 +50,25 @@ class HeaderComponent extends HTMLElement {
         <nav class="main-nav">
           <div class="nav-links-full">
             ${fullLinksHtml}
-            <a
-              href="${buttonLink.href}"
-              target="${buttonLink.target || '_self'}"
-              class="button button-action"
-            >
-              ${buttonLink.text}
-            </a>
           </div>
 
-          <div class="nav-controls-condensed">
-            <button
-              class="menu-toggle-button"
-              aria-label="Open Menu"
-              popovertarget="main-menu"
-            >
-              <svg viewBox="0 0 24 24" class="icon enable-icon-scale" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M0 3.429c0-.949.766-1.715 1.714-1.715h20.572c.948 0 1.714.766 1.714 1.715
-                     0 .948-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 3.429ZM0 12
-                     c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714 1.714 1.714 1.714
-                     s-.766 1.714-1.714 1.714H1.714A1.712 1.712 0 0 1 0 12Zm24 8.571
-                     c0 .949-.766 1.715-1.714 1.715H1.714A1.712 1.712 0 0 1 0 20.57
-                     c0-.948.766-1.714 1.714-1.714h20.572c.948 0 1.714 1.714 1.714 1.714z"
-                />
-              </svg>
-            </button>
-          </div>
+          <a
+            href="${buttonLink.href}"
+            target="${buttonLink.target || '_self'}"
+            class="button button-action"
+          >
+            ${buttonLink.text}
+          </a>
         </nav>
       </header>
     `;
 
     this.headerElement = this.querySelector('.header');
-
     this.navLinks = [...this.querySelectorAll('.nav-links-full .nav-link')];
   }
 
   _addEventListeners() {
-    window.addEventListener('scroll', this._handleScroll);
+    window.addEventListener('scroll', this._handleScroll, { passive: true });
     window.addEventListener('hashchange', this._updateActiveLink);
   }
 
@@ -101,12 +80,15 @@ class HeaderComponent extends HTMLElement {
   _handleScroll() {
     const currentScrollY = window.scrollY;
 
-    // Scroll Down logic
+    if (currentScrollY > 80) {
+      this.headerElement.classList.add('header--scrolled');
+    } else {
+      this.headerElement.classList.remove('header--scrolled');
+    }
+
     if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
       this.headerElement.classList.add('header--hidden');
-    }
-    // Scroll Up logic
-    else {
+    } else {
       this.headerElement.classList.remove('header--hidden');
     }
 

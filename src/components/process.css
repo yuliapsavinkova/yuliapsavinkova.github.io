@@ -14,7 +14,10 @@
   justify-content: center;
 
   background-image:
-    linear-gradient(var(--color-overlay), var(--color-overlay)),
+    radial-gradient(ellipse 70% 40% at 50% 15%, hsla(185, 70%, 42%, 0.6), transparent),
+    radial-gradient(ellipse 55% 35% at 50% 55%, hsla(185, 70%, 42%, 0.45), transparent),
+    radial-gradient(ellipse 50% 35% at 90% 10%, hsla(185, 70%, 26%, 0.45), transparent),
+    radial-gradient(ellipse 55% 40% at 10% 70%, hsla(229, 84%, 10%, 0.75), transparent),
     url('../../images/working-girl-480.webp');
   background-size: cover;
   background-repeat: no-repeat;
@@ -24,6 +27,18 @@
 
 .working-process * {
   color: var(--color-text);
+}
+
+/* Glass pill behind the text so it lifts off the photo */
+.working-process section-header {
+  padding: var(--gap) var(--gap-large);
+
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--color-text-08);
+  border-top-color: var(--color-text-15);
+  border-radius: var(--border-radius-lg);
+  box-shadow: inset 0 1px 0 var(--color-text-06);
 }
 
 /* Parallax — desktop with mouse only */
@@ -36,7 +51,10 @@
 @media (min-width: 768px) {
   .working-process {
     background-image:
-      linear-gradient(var(--color-overlay), var(--color-overlay)),
+      radial-gradient(ellipse 70% 40% at 50% 15%, hsla(185, 70%, 42%, 0.6), transparent),
+      radial-gradient(ellipse 55% 35% at 50% 55%, hsla(185, 70%, 42%, 0.45), transparent),
+      radial-gradient(ellipse 50% 35% at 90% 10%, hsla(185, 70%, 26%, 0.45), transparent),
+      radial-gradient(ellipse 55% 40% at 10% 70%, hsla(229, 84%, 10%, 0.75), transparent),
       url('../../images/working-girl-768.webp');
   }
 }
@@ -44,7 +62,10 @@
 @media (min-width: 1280px) {
   .working-process {
     background-image:
-      linear-gradient(var(--color-overlay), var(--color-overlay)),
+      radial-gradient(ellipse 70% 40% at 50% 15%, hsla(185, 70%, 42%, 0.6), transparent),
+      radial-gradient(ellipse 55% 35% at 50% 55%, hsla(185, 70%, 42%, 0.45), transparent),
+      radial-gradient(ellipse 50% 35% at 90% 10%, hsla(185, 70%, 26%, 0.45), transparent),
+      radial-gradient(ellipse 55% 40% at 10% 70%, hsla(229, 84%, 10%, 0.75), transparent),
       url('../../images/working-girl-1280.webp');
   }
 }
@@ -52,7 +73,10 @@
 @media (min-width: 1920px) {
   .working-process {
     background-image:
-      linear-gradient(var(--color-overlay), var(--color-overlay)),
+      radial-gradient(ellipse 70% 40% at 50% 15%, hsla(185, 70%, 42%, 0.6), transparent),
+      radial-gradient(ellipse 55% 35% at 50% 55%, hsla(185, 70%, 42%, 0.45), transparent),
+      radial-gradient(ellipse 50% 35% at 90% 10%, hsla(185, 70%, 26%, 0.45), transparent),
+      radial-gradient(ellipse 55% 40% at 10% 70%, hsla(229, 84%, 10%, 0.75), transparent),
       url('../../images/working-girl-1920.webp');
   }
 }

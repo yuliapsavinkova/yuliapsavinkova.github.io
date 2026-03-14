@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    HEADER
-   At rest:        fully transparent — part of the hero
-   --scrolled:     glass effect activates
+   At rest:        solid dark — blends into hero
+   --scrolled:     semi-transparent deep blue
    --hidden:       slides out on scroll down
 ═══════════════════════════════════════════════════════════ */
 
@@ -13,16 +13,18 @@
   left: 0;
   height: var(--header-size);
   display: flex;
-  justify-content: center;
   align-items: center;
-  /* Transparent by default — blends into hero */
-  background: transparent;
+  justify-content: space-between;
+  padding: 0 var(--padding-inline);
+  background: var(--color-bg);
   border-bottom: 1px solid transparent;
+  box-shadow: 0 1px 0 var(--color-text-06);
   opacity: 0;
   animation: headerReveal var(--duration-slow) var(--ease-silk) 0.1s forwards;
   transition:
     background var(--duration-slow) var(--ease-silk),
     border-color var(--duration-slow) var(--ease-silk),
+    box-shadow var(--duration-slow) var(--ease-silk),
     transform var(--duration-slow) var(--ease-silk);
 }
 
@@ -32,15 +34,27 @@
   }
 }
 
-/* Glass activates once user scrolls past the hero */
+/* ─── GRADIENT BLEED ─────────────────────────────────────── */
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  background: linear-gradient(to bottom, hsla(var(--bg-h), var(--bg-s), 8%, 0.4), transparent);
+  pointer-events: none;
+  transition: opacity var(--duration-slow) var(--ease-silk);
+}
+
 .header.header--scrolled {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  border-bottom-color: var(--color-text-08);
-  box-shadow:
-    inset 0 -1px 0 var(--color-text-06),
-    0 0.5rem 2rem hsla(var(--bg-h), var(--bg-s), 0%, 0.4);
+  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.5);
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.header.header--scrolled::after {
+  opacity: 0;
 }
 
 .header.header--hidden {
@@ -52,14 +66,13 @@
   display: flex;
   align-items: center;
   gap: var(--gap-tiny);
-  margin-right: var(--gap-large);
   text-decoration: none;
 }
 
 .header .logo svg {
   width: var(--logo-size);
   height: var(--logo-size);
-  color: var(--color-text-55);
+  color: var(--color-text-80);
   transition: color var(--duration-slow) var(--ease-silk);
 }
 
@@ -70,11 +83,10 @@
   font-size: var(--font-size-logo);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-text-55);
+  color: var(--color-text-80);
   transition: color var(--duration-slow) var(--ease-silk);
 }
 
-/* Both icon and name brighten together on hover */
 .header .logo:hover svg,
 .header .logo:hover .logo-name {
   color: var(--color-text);
@@ -83,45 +95,21 @@
 /* ─── MAIN NAV ───────────────────────────────────────────── */
 .header .main-nav {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: var(--gap);
 }
 
-/* ─── MOBILE: hamburger only ─────────────────────────────── */
+/* ─── MOBILE: logo left, resume button right — no hamburger ─ */
 .header .nav-links-full {
   display: none;
 }
 
+/* hamburger always hidden */
 .header .nav-controls-condensed {
-  display: flex;
-  align-items: center;
-  position: relative;
+  display: none;
 }
 
-.header .menu-toggle-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-  padding: 0.5rem;
-  color: var(--color-text-55);
-  transition: color var(--duration-slow) var(--ease-silk);
-}
-
-.header .menu-toggle-button:hover {
-  color: var(--color-text);
-}
-
-.header .menu-toggle-button svg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-/* ─── RESUME BUTTON — ghost pill, accent on hover ────────── */
+/* ─── RESUME BUTTON ──────────────────────────────────────── */
 .header .button-action {
   background: transparent;
   color: var(--color-text-70);
@@ -134,7 +122,7 @@
   background: var(--color-accent-15);
 }
 
-/* ─── DESKTOP: full nav ──────────────────────────────────── */
+/* ─── DESKTOP: show full nav links ───────────────────────── */
 @media (min-width: 768px) {
   .header .nav-links-full {
     display: flex;
@@ -148,7 +136,7 @@
     font-weight: 400;
     letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
-    color: var(--color-text-55);
+    color: var(--color-text-80);
     text-decoration: none;
     transition: color var(--duration-slow) var(--ease-silk);
   }
@@ -161,9 +149,5 @@
     color: var(--color-accent);
     border-bottom: 1px solid var(--color-accent-70);
     padding-bottom: 0.125rem;
-  }
-
-  .header .nav-controls-condensed {
-    display: none;
   }
 }

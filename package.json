@@ -30,7 +30,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fontsource-variable/fraunces": "^5.2.9",
     "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/jost": "^5.2.8",
+    "@fontsource/plus-jakarta-sans": "^5.2.8",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.3"
   },

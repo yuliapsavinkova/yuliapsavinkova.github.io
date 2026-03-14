@@ -55,6 +55,7 @@
   align-items: center;
   opacity: 0;
   animation: heroPortraitReveal 1.2s var(--ease-silk) 0.3s forwards;
+  filter: drop-shadow(0 0 3rem hsla(var(--bg-h), var(--bg-s), 4%, 0.9));
 }
 
 /* ─── FRAME ────────────────────────────────────────────

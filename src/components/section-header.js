@@ -30,7 +30,7 @@ class SectionHeader extends HTMLElement {
           background: linear-gradient(
             to right,
             transparent 0%,
-            var(--color-accent-30) 50%,
+            var(--color-text-30) 50%,
             transparent 100%
           );
         }

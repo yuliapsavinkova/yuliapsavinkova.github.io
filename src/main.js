@@ -11,9 +11,18 @@ import utilsCss from './css/utils.css?inline';
 import header from './components/header/header.css?inline';
 import hero from './components/hero/hero.css?inline';
 
-import '@fontsource/cormorant-garamond/300-italic.css'; // hero greeting, logo, h2
-import '@fontsource/cormorant-garamond/300.css'; // any non-italic serif
-import '@fontsource/cormorant-garamond/400.css'; // fallback body weight
+// Fraunces — display, headings, hero (optical size axis for crisp rendering)
+import '@fontsource-variable/fraunces';
+
+// Plus Jakarta Sans — nav, buttons, labels, body UI
+import '@fontsource/plus-jakarta-sans/300.css';
+import '@fontsource/plus-jakarta-sans/400.css';
+import '@fontsource/plus-jakarta-sans/500.css';
+import '@fontsource/plus-jakarta-sans/600.css';
+
+// JetBrains Mono — code, technical details
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
 
 /* Svg sprite icons */
 import 'virtual:svg-icons-register';
@@ -58,9 +67,3 @@ document.body.addEventListener('click', (event) => {
     window.location.hash = link.getAttribute('href').slice(1);
   }
 });
-
-// if (import.meta.env.VITE_ENVIRONMENT) {
-//   import('./debug-tools.js').then(({ loadDebugTools }) => {
-//     loadDebugTools();
-//   });
-// }
