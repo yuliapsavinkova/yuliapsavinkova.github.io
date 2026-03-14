@@ -242,7 +242,7 @@
   font-weight: 600;
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-text-55);
   margin-bottom: var(--gap-tiny);
 }
 

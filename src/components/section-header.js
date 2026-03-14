@@ -19,7 +19,7 @@ class SectionHeader extends HTMLElement {
           font-weight: 400;
           letter-spacing: var(--tracking-widest);
           text-transform: uppercase;
-          color: var(--color-text-55);
+          color: var(--color-accent);
           text-align: center;
         }
 

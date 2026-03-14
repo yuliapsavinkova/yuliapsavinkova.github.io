@@ -35,6 +35,7 @@
 /* Wrap targets in position: relative so embers escape correctly */
 .button-primary,
 .button-secondary,
+.button-action,
 .nav-link.active {
   position: relative;
   overflow: visible;

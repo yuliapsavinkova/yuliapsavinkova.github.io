@@ -32,13 +32,17 @@ function spawnEmbers(target) {
 }
 
 function initEmbers() {
-  document.querySelectorAll('.button-primary, .button-secondary, .nav-link.active')
-    .forEach(el => {
-      el.addEventListener('mouseenter', () => spawnEmbers(el));
-    });
+  // Use event delegation on body so it works regardless of render timing
+  document.body.addEventListener(
+    'mouseenter',
+    (e) => {
+      const target = e.target.closest(
+        '.button-primary, .button-secondary, .button-action, .nav-link.active',
+      );
+      if (target) spawnEmbers(target);
+    },
+    true,
+  );
 }
 
-// Re-init on route changes since components re-render
-window.addEventListener('hashchange', () => setTimeout(initEmbers, 100));
 document.addEventListener('DOMContentLoaded', initEmbers);
-setTimeout(initEmbers, 500);

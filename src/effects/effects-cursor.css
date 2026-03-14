@@ -1,12 +1,16 @@
 /* ═══════════════════════════════════════════════════════════
-   EFFECTS — SHOOTING STARS (canvas-based, full viewport)
+   EFFECTS — CUSTOM CURSOR: sun + orbiting planet
    Remove import from main.js to disable.
 ═══════════════════════════════════════════════════════════ */
-.stars-canvas {
+* {
+  cursor: none !important;
+}
+
+.cursor-canvas {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 0;
+  z-index: 99999;
 }

@@ -1,112 +1,98 @@
 import './effects-stars.css';
 
 function initStars() {
-  const hero = document.querySelector('.hero');
-  if (!hero || hero.dataset.starsInit) return;
-  hero.dataset.starsInit = '1';
+  if (document.querySelector('.stars-canvas')) return;
 
   const canvas = document.createElement('canvas');
   canvas.className = 'stars-canvas';
-  hero.appendChild(canvas);
-
+  document.body.appendChild(canvas);
   const ctx = canvas.getContext('2d');
 
-  function resize() {
-    canvas.width = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 
-  const STATIC_COUNT = 40;
-
-  const statics = Array.from({ length: STATIC_COUNT }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height * 0.7,
-    r: Math.random() * 2 + 0.8,
+  // 40 passive twinkling dots spread across full viewport
+  const statics = Array.from({ length: 40 }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: 0.8 + Math.random() * 2,
     phase: Math.random() * Math.PI * 2,
     speed: 0.3 + Math.random() * 0.5,
   }));
 
-  // Only one shooter active at a time, spawned every ~30 frames (0.5s at 60fps)
   let shooter = null;
-  let spawnTimer = 0;
-  const SPAWN_INTERVAL = 30;
+  let lastSpawn = 0;
+  const INTERVAL = 500; // ms
 
-  function spawnShooting() {
-    // Always start from top edge, travel downward with slight horizontal drift
-    const x = canvas.width * (0.1 + Math.random() * 0.8);
-    const y = 0;
-    // 70-110deg = mostly downward, slight left or right lean (90deg = straight down)
-    const angle = ((70 + Math.random() * 40) * Math.PI) / 180;
+  function newShooter() {
     return {
-      x,
-      y,
-      len: 80 + Math.random() * 50,
-      speed: 4 + Math.random() * 2,
-      angle,
+      x: window.innerWidth * (0.1 + Math.random() * 0.8),
+      y: 0,
+      len: 80 + Math.random() * 60,
+      speed: 5 + Math.random() * 3,
+      angle: ((75 + Math.random() * 30) * Math.PI) / 180, // 75-105deg = mostly down
       alpha: 0,
-      totalDist: canvas.height * (0.4 + Math.random() * 0.3),
       travelled: 0,
+      total: window.innerHeight * (0.3 + Math.random() * 0.3),
     };
   }
 
-  let frame = 0;
+  let lastTime = 0;
 
-  function draw() {
+  function draw(ts) {
+    const dt = Math.min(ts - lastTime, 32); // cap delta to avoid jumps
+    lastTime = ts;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    frame++;
-    spawnTimer++;
 
-    // Spawn new shooter every SPAWN_INTERVAL frames
-    if (!shooter && spawnTimer >= SPAWN_INTERVAL) {
-      shooter = spawnShooting();
-      spawnTimer = 0;
-    }
-
-    // Static stars
+    // Passive stars
     statics.forEach((s) => {
-      const alpha = 0.06 + 0.4 * (0.5 + 0.5 * Math.sin(frame * s.speed * 0.02 + s.phase));
+      const a = 0.06 + 0.4 * (0.5 + 0.5 * Math.sin(ts * 0.001 * s.speed + s.phase));
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+      ctx.fillStyle = `rgba(255,255,255,${a.toFixed(3)})`;
       ctx.fill();
     });
 
-    // Active shooter
+    // Spawn one shooter every 500ms
+    if (!shooter && ts - lastSpawn >= INTERVAL) {
+      shooter = newShooter();
+      lastSpawn = ts;
+    }
+
     if (shooter) {
-      const vx = Math.cos(shooter.angle) * shooter.speed;
-      const vy = Math.sin(shooter.angle) * shooter.speed;
-      shooter.x += vx;
-      shooter.y += vy;
-      shooter.travelled += shooter.speed;
+      const px = shooter.speed * (dt / 16);
+      shooter.x += Math.cos(shooter.angle) * px;
+      shooter.y += Math.sin(shooter.angle) * px;
+      shooter.travelled += px;
 
-      const ratio = shooter.travelled / shooter.totalDist;
-      if (ratio < 0.1) shooter.alpha = ratio / 0.1;
-      else if (ratio > 0.8) shooter.alpha = (1 - ratio) / 0.2;
-      else shooter.alpha = 1;
+      const ratio = shooter.travelled / shooter.total;
+      shooter.alpha = ratio < 0.1 ? ratio / 0.1 : ratio > 0.8 ? (1 - ratio) / 0.2 : 1;
 
-      if (shooter.travelled >= shooter.totalDist) {
+      if (shooter.travelled >= shooter.total) {
         shooter = null;
       } else {
-        // Trail points opposite to travel direction
+        // Trail — opposite to travel direction
         const tx = shooter.x - Math.cos(shooter.angle) * shooter.len;
         const ty = shooter.y - Math.sin(shooter.angle) * shooter.len;
 
-        const grad = ctx.createLinearGradient(tx, ty, shooter.x, shooter.y);
-        grad.addColorStop(0, `rgba(255,255,255,0)`);
-        grad.addColorStop(0.6, `rgba(255,255,255,${shooter.alpha * 0.35})`);
-        grad.addColorStop(1, `rgba(255,255,255,${shooter.alpha})`);
-
+        const g = ctx.createLinearGradient(tx, ty, shooter.x, shooter.y);
+        g.addColorStop(0, `rgba(255,255,255,0)`);
+        g.addColorStop(1, `rgba(255,255,255,${(shooter.alpha * 0.9).toFixed(3)})`);
         ctx.beginPath();
         ctx.moveTo(tx, ty);
         ctx.lineTo(shooter.x, shooter.y);
-        ctx.strokeStyle = grad;
+        ctx.strokeStyle = g;
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
+        // Head glow
         const glow = ctx.createRadialGradient(shooter.x, shooter.y, 0, shooter.x, shooter.y, 7);
-        glow.addColorStop(0, `rgba(200,240,255,${shooter.alpha})`);
+        glow.addColorStop(0, `rgba(200,240,255,${shooter.alpha.toFixed(3)})`);
         glow.addColorStop(1, `rgba(200,240,255,0)`);
         ctx.beginPath();
         ctx.arc(shooter.x, shooter.y, 7, 0, Math.PI * 2);
@@ -118,9 +104,8 @@ function initStars() {
     requestAnimationFrame(draw);
   }
 
-  draw();
+  requestAnimationFrame(draw);
 }
 
-window.addEventListener('hashchange', () => setTimeout(initStars, 100));
 document.addEventListener('DOMContentLoaded', initStars);
 setTimeout(initStars, 500);

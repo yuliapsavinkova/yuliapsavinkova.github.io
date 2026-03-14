@@ -72,3 +72,5 @@ document.body.addEventListener('click', (event) => {
 import './effects/effects-stars.js';
 import './effects/effects-orbit.js';
 import './effects/effects-ember.js';
+import './effects/effects-burst.js';
+import './effects/effects-cursor.js';
