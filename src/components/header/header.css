@@ -67,6 +67,7 @@
   align-items: center;
   gap: var(--gap-tiny);
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .header .logo svg {
@@ -92,6 +93,12 @@
   color: var(--color-text);
 }
 
+.header .logo:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-text-30);
+  border-radius: var(--border-radius);
+}
+
 /* ─── MAIN NAV ───────────────────────────────────────────── */
 .header .main-nav {
   display: flex;
@@ -99,13 +106,8 @@
   gap: var(--gap);
 }
 
-/* ─── MOBILE: logo left, resume button right — no hamburger ─ */
+/* ─── MOBILE: nav links hidden, only resume shows ────────── */
 .header .nav-links-full {
-  display: none;
-}
-
-/* hamburger always hidden */
-.header .nav-controls-condensed {
   display: none;
 }
 
@@ -122,8 +124,17 @@
   background: var(--color-accent-15);
 }
 
-/* ─── DESKTOP: show full nav links ───────────────────────── */
+/* ─── DESKTOP: centred layout, logo + nav + button ───────── */
 @media (min-width: 768px) {
+  .header {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .header .logo {
+    margin-right: var(--gap-large);
+  }
+
   .header .nav-links-full {
     display: flex;
     align-items: center;

@@ -107,7 +107,7 @@
 /* Mobile: fixed height image, cover crop */
 .feature-card .card-image {
   width: 100%;
-  height: 16rem;
+  height: 22rem;
   overflow: hidden;
   border-radius: var(--border-radius-lg);
   flex-shrink: 0;
@@ -126,7 +126,8 @@
   flex-direction: column;
   gap: var(--gap-small);
   align-items: center;
-  max-width: var(--article-width);
+  width: 100%;
+  max-width: 100%;
 }
 
 .feature-card .card-content .button {
@@ -134,7 +135,7 @@
 }
 
 /* Desktop: horizontal, image stretches to row height */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .feature-card {
     max-width: var(--breakpoint-xl);
     flex-direction: row;
@@ -153,6 +154,7 @@
     flex: 3;
     align-items: flex-start;
     justify-content: center;
+    max-width: var(--article-width);
   }
 
   /* Flip only inside a list */
@@ -166,16 +168,23 @@
    The inner div clips the image to a circle.
 ─────────────────────────────────────────────────────────── */
 .card-image--circle {
-  border-radius: 50% !important;
   flex-shrink: 0;
-  width: var(--portrait-diameter-mob) !important;
-  height: var(--portrait-diameter-mob) !important;
+  width: min(100%, 22rem) !important;
+  height: auto !important;
   aspect-ratio: 1 / 1;
+  border-radius: 50% !important;
   border: var(--portrait-border);
   padding: var(--portrait-padding);
   overflow: visible !important;
   align-self: center;
-  filter: drop-shadow(0 0 3rem hsla(var(--bg-h), var(--bg-s), 4%, 0.9));
+}
+
+.card-image--circle .card-image-inner {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 /* Smaller circle for vertical grid cards */
@@ -203,10 +212,26 @@
   filter: grayscale(5%) contrast(1.05) brightness(0.95) saturate(0.88) hue-rotate(6deg);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .card-image--circle {
+    border-radius: 50% !important;
     width: var(--portrait-diameter) !important;
     height: var(--portrait-diameter) !important;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    align-self: center;
+    border: var(--portrait-border);
+    padding: var(--portrait-padding);
+    overflow: visible !important;
+    filter: drop-shadow(0 0 3rem hsla(var(--bg-h), var(--bg-s), 4%, 0.9));
+  }
+
+  .card-image--circle .card-image-inner {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }
 
