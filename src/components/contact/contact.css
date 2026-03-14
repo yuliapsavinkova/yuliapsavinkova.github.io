@@ -56,6 +56,14 @@
   transition: border-color var(--duration-slow) var(--ease-silk);
 }
 
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-text-90);
+  -webkit-box-shadow: 0 0 0 1000px hsl(var(--bg-h), var(--bg-s), 10%) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: var(--color-text-30);

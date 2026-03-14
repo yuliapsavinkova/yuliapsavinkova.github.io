@@ -106,18 +106,18 @@
 
 /* ─── SOCIAL DOCK ──────────────────────────────────── */
 .hero-social-dock {
-  margin-top: var(--dock-overlap);
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
-  gap: calc(var(--dock-gap) * 1.5);
-  padding: calc(var(--dock-padding-block) * 1.4) calc(var(--dock-padding-inline) * 1.5);
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur-dock)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur-dock)) saturate(var(--glass-saturate));
+  gap: var(--dock-gap);
+  padding: var(--dock-padding-block) var(--dock-padding-inline);
+  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.45);
+  backdrop-filter: blur(var(--glass-blur-dock));
+  -webkit-backdrop-filter: blur(var(--glass-blur-dock));
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-pill);
   box-shadow: var(--glass-shadow-dock);
-  z-index: 2;
+  z-index: 10;
   transition: box-shadow var(--duration-slow) var(--ease-silk);
 }
 

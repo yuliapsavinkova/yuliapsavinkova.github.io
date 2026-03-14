@@ -32,7 +32,7 @@ class SocialIcons extends HTMLElement {
 
         /* ─── DOCK ─────────────────────────────────────────── */
         .social-icons.mode-dock {
-          gap: var(--dock-gap);
+          gap: calc(var(--dock-gap) * 1.8);
         }
         .social-icons.mode-dock a {
           display: flex;
@@ -42,12 +42,12 @@ class SocialIcons extends HTMLElement {
           height: var(--dock-icon-size);
           color: var(--color-text-80);
           transition:
-            color     var(--duration-slow) var(--ease-silk),
-            transform var(--duration-mid)  var(--ease-silk);
+            color      var(--duration-slow) var(--ease-silk),
+            transform  var(--duration-mid)  var(--ease-silk);
         }
         .social-icons.mode-dock a:hover {
           color: var(--color-accent);
-          transform: scale(1.15);
+          transform: translateY(-3px) scale(1.15);
         }
         .social-icons.mode-dock svg { width: 100%; height: 100%; }
       </style>

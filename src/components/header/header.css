@@ -157,8 +157,8 @@
   }
 
   .header .nav-links-full .nav-link.active {
-    color: var(--color-accent);
-    border-bottom: 1px solid var(--color-accent-70);
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-accent);
     padding-bottom: 0.125rem;
   }
 }
