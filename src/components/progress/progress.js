@@ -4,33 +4,28 @@ class ScrollProgressRing extends HTMLElement {
   constructor() {
     super();
 
-    this.innerHTML =
-      `
+    this.innerHTML = `
       <div class="progress-container" id="progress-container">
-        <div class="progress-ring" id="progress-ring"></div>
-        <div class="arrow">
-          <svg viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true">
+        <div class="progress-ring" id="progress-ring">
+          <div class="progress-arrow">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M10.588 5.587c.781-.781 2.05-.781 2.83 0l9.996 9.996a2.002 2.002 0 0 1-2.83 2.83L12 9.83l-8.584 8.578a2.002 2.002 0 0 1-2.83-2.83l9.996-9.996Z" />
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
-    ` + this.innerHTML; // Append existing content;
+    `;
 
-    this.progressContainer = document.querySelector('#progress-container');
-    this.progressRing = document.querySelector('#progress-ring');
+    this.progressContainer = this.querySelector('#progress-container');
+    this.progressRing = this.querySelector('#progress-ring');
 
     this.updateProgress = this.updateProgress.bind(this);
     this.scrollToTop = this.scrollToTop.bind(this);
   }
 
   connectedCallback() {
-    // Add event listeners
     window.addEventListener('scroll', this.updateProgress);
     this.progressContainer.addEventListener('click', this.scrollToTop);
-
-    // Initial progress update
     this.updateProgress();
   }
 
@@ -45,13 +40,8 @@ class ScrollProgressRing extends HTMLElement {
     const scrollPercent = Math.min((scrollTop / scrollHeight) * 100, 100);
 
     // Show the progress container only after some scrolling
-    if (scrollTop > 0) {
-      this.progressContainer.classList.add('visible');
-    } else {
-      this.progressContainer.classList.remove('visible');
-    }
+    this.progressContainer.classList.toggle('visible', scrollTop > 80);
 
-    // Update CSS variable for the conic-gradient
     this.progressRing.style.setProperty('--scroll-progress', `${scrollPercent}%`);
   }
 
@@ -59,4 +49,5 @@ class ScrollProgressRing extends HTMLElement {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
+
 customElements.define('scroll-progress-ring', ScrollProgressRing);
