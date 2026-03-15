@@ -33,12 +33,21 @@
   transition: background var(--duration-slow) var(--ease-silk);
 }
 
-.work-experience-content:hover {
+/* Active state — triggered by hover on desktop, IntersectionObserver on touch */
+.work-experience-content:hover,
+.work-experience-content.is-active {
   border-color: var(--color-accent-30);
 }
 
-.work-experience-content:hover::before {
+.work-experience-content:hover::before,
+.work-experience-content.is-active::before {
   background: var(--color-accent);
+}
+
+.work-experience-content:hover .work-experience-technologies span,
+.work-experience-content.is-active .work-experience-technologies span {
+  color: var(--color-text-70);
+  border-color: var(--color-accent-30);
 }
 
 /* ─── HEADER ─────────────────────────────────────────────── */
@@ -54,7 +63,6 @@
   margin: 0;
 }
 
-/* The "(Acquired by...)" parenthetical */
 .work-header h2 .weight-normal {
   font-style: normal;
   font-weight: 300;
@@ -88,7 +96,6 @@
   line-height: 1.65;
 }
 
-/* Dash marker */
 .work-bullets li::before {
   content: '—';
   position: absolute;
@@ -118,11 +125,6 @@
   transition:
     color var(--duration-slow) var(--ease-silk),
     border-color var(--duration-slow) var(--ease-silk);
-}
-
-.work-experience-content:hover .work-experience-technologies span {
-  color: var(--color-text-70);
-  border-color: var(--color-accent-30);
 }
 
 /* ─── DESKTOP ────────────────────────────────────────────── */

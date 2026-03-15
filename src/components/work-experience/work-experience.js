@@ -77,6 +77,21 @@ class WorkExperienceComponent extends HTMLElement {
         </div>
       </section>
     `;
+
+    // On touch devices use IntersectionObserver instead of hover
+    if (window.matchMedia('(hover: none)').matches) {
+      const entries = this.querySelectorAll('.work-experience-content');
+      const observer = new IntersectionObserver(
+        (changes) => {
+          changes.forEach((change) => {
+            change.target.classList.toggle('is-active', change.isIntersecting);
+          });
+        },
+        { threshold: 0.4 },
+      );
+
+      entries.forEach((el) => observer.observe(el));
+    }
   }
 }
 
