@@ -11,7 +11,7 @@ class SocialIcons extends HTMLElement {
 
         /* ─── DEFAULT ──────────────────────────────────────── */
         .social-icons.mode-default {
-          gap: calc(var(--gap-med) * 1.8);
+          gap: var(--gap);
         }
         .social-icons.mode-default a {
           display: flex;
@@ -32,7 +32,7 @@ class SocialIcons extends HTMLElement {
 
         /* ─── DOCK ─────────────────────────────────────────── */
         .social-icons.mode-dock {
-          gap: calc(var(--dock-gap) * 1.8);
+          gap: var(--gap);
         }
         .social-icons.mode-dock a {
           display: flex;
