@@ -91,10 +91,13 @@ class RotatingText extends HTMLElement {
           this.titleIndex = (this.titleIndex + 1) % this.titles.length;
         }
       } else {
-        this.textElement.textContent = current.substring(0, this.charIndex++);
-        if (this.charIndex > current.length) {
-          setTimeout(() => {
+        this.textElement.textContent = current.substring(0, this.charIndex);
+        if (this.charIndex < current.length) {
+          this.charIndex++;
+        } else if (!this.deleteTimer) {
+          this.deleteTimer = setTimeout(() => {
             this.isDeleting = true;
+            this.deleteTimer = null;
           }, 1400);
         }
       }

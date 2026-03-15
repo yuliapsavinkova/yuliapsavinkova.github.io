@@ -37,7 +37,7 @@ export async function renderPage() {
         await Promise.all([
           import('./components/expertise-full.js'),
           import('./components/about.js'),
-          import('./components/process.js'),
+          // import('./components/process.js'),
           import('./components/contact/contact.js'),
           import('./components/footer.js'),
         ]);
@@ -47,7 +47,7 @@ export async function renderPage() {
           `
           <about-component></about-component>
           <expertise-full-component></expertise-full-component>
-          <working-process-component></working-process-component>
+          <!--><working-process-component></working-process-component>-->
           <contact-component></contact-component>
           <footer-component copyright-name="Yulia Savinkova"></footer-component>
         `,

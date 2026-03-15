@@ -15,41 +15,59 @@ function initStars() {
     canvas.height = window.innerHeight;
   });
 
-  // 40 passive twinkling dots spread across full viewport
-  const statics = Array.from({ length: 40 }, () => ({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    r: 0.8 + Math.random() * 2,
-    phase: Math.random() * Math.PI * 2,
-    speed: 0.3 + Math.random() * 0.5,
-  }));
+  // Keep stars in top strip and side margins to avoid content
+  function starPosition() {
+    const zone = Math.random();
+    if (zone < 0.6) {
+      return { x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight * 0.3 };
+    } else if (zone < 0.8) {
+      return { x: Math.random() * window.innerWidth * 0.15, y: Math.random() * window.innerHeight };
+    } else {
+      return {
+        x: window.innerWidth * 0.85 + Math.random() * window.innerWidth * 0.15,
+        y: Math.random() * window.innerHeight,
+      };
+    }
+  }
+
+  const STATIC_COUNT = 20;
+  const statics = Array.from({ length: STATIC_COUNT }, () => {
+    const pos = starPosition();
+    return {
+      x: pos.x,
+      y: pos.y,
+      r: 0.8 + Math.random() * 2,
+      phase: Math.random() * Math.PI * 2,
+      speed: 0.3 + Math.random() * 0.5,
+    };
+  });
 
   let shooter = null;
   let lastSpawn = 0;
-  const INTERVAL = 500; // ms
+  const INTERVAL = 1000; // one star per second
 
   function newShooter() {
     return {
-      x: window.innerWidth * (0.1 + Math.random() * 0.8),
-      y: 0,
-      len: 80 + Math.random() * 60,
-      speed: 5 + Math.random() * 3,
-      angle: ((75 + Math.random() * 30) * Math.PI) / 180, // 75-105deg = mostly down
+      x: window.innerWidth * (0.05 + Math.random() * 0.5),
+      y: Math.random() * window.innerHeight * 0.15,
+      len: 18 + Math.random() * 12, // short tail
+      speed: 0.9 + Math.random() * 0.6, // slow
+      angle: ((30 + Math.random() * 15) * Math.PI) / 180, // 30-45deg diagonal
       alpha: 0,
       travelled: 0,
-      total: window.innerHeight * (0.3 + Math.random() * 0.3),
+      total: window.innerHeight * (0.18 + Math.random() * 0.12),
     };
   }
 
   let lastTime = 0;
 
   function draw(ts) {
-    const dt = Math.min(ts - lastTime, 32); // cap delta to avoid jumps
+    const dt = Math.min(ts - lastTime, 32);
     lastTime = ts;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Passive stars
+    // Passive twinkling stars
     statics.forEach((s) => {
       const a = 0.06 + 0.4 * (0.5 + 0.5 * Math.sin(ts * 0.001 * s.speed + s.phase));
       ctx.beginPath();
@@ -58,7 +76,7 @@ function initStars() {
       ctx.fill();
     });
 
-    // Spawn one shooter every 500ms
+    // Spawn shooter
     if (!shooter && ts - lastSpawn >= INTERVAL) {
       shooter = newShooter();
       lastSpawn = ts;
@@ -76,26 +94,25 @@ function initStars() {
       if (shooter.travelled >= shooter.total) {
         shooter = null;
       } else {
-        // Trail — opposite to travel direction
         const tx = shooter.x - Math.cos(shooter.angle) * shooter.len;
         const ty = shooter.y - Math.sin(shooter.angle) * shooter.len;
 
         const g = ctx.createLinearGradient(tx, ty, shooter.x, shooter.y);
         g.addColorStop(0, `rgba(255,255,255,0)`);
-        g.addColorStop(1, `rgba(255,255,255,${(shooter.alpha * 0.9).toFixed(3)})`);
+        g.addColorStop(1, `rgba(255,255,255,${(shooter.alpha * 0.85).toFixed(3)})`);
         ctx.beginPath();
         ctx.moveTo(tx, ty);
         ctx.lineTo(shooter.x, shooter.y);
         ctx.strokeStyle = g;
-        ctx.lineWidth = 1.5;
+        ctx.lineWidth = 1;
         ctx.stroke();
 
         // Head glow
-        const glow = ctx.createRadialGradient(shooter.x, shooter.y, 0, shooter.x, shooter.y, 7);
+        const glow = ctx.createRadialGradient(shooter.x, shooter.y, 0, shooter.x, shooter.y, 4);
         glow.addColorStop(0, `rgba(200,240,255,${shooter.alpha.toFixed(3)})`);
         glow.addColorStop(1, `rgba(200,240,255,0)`);
         ctx.beginPath();
-        ctx.arc(shooter.x, shooter.y, 7, 0, Math.PI * 2);
+        ctx.arc(shooter.x, shooter.y, 4, 0, Math.PI * 2);
         ctx.fillStyle = glow;
         ctx.fill();
       }
