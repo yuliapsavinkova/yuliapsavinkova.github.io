@@ -11,7 +11,7 @@ class SocialIcons extends HTMLElement {
 
         /* ─── DEFAULT ──────────────────────────────────────── */
         .social-icons.mode-default {
-          gap: var(--gap-med);
+          gap: calc(var(--gap-med) * 1.8);
         }
         .social-icons.mode-default a {
           display: flex;
@@ -19,14 +19,14 @@ class SocialIcons extends HTMLElement {
           justify-content: center;
           width: var(--gap-med);
           height: var(--gap-med);
-          color: var(--color-text-70);
+          color: var(--color-text-55);
           transition:
             color     var(--duration-slow) var(--ease-silk),
             transform var(--duration-mid)  var(--ease-silk);
         }
         .social-icons.mode-default a:hover {
           color: var(--color-accent);
-          transform: scale(1.12);
+          transform: translateY(-3px) scale(1.15);
         }
         .social-icons.mode-default svg { width: 100%; height: 100%; }
 

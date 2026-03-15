@@ -50,6 +50,58 @@ function initOrbit() {
 
     cluster.appendChild(corona);
     cluster.appendChild(ring);
+
+    // Sparks around portrait edge on hover
+    frame.addEventListener('mouseenter', () => {
+      const rect = frame.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const r = rect.width / 2;
+      const count = 12;
+
+      for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+          // Random point on circle edge
+          const angle = Math.random() * Math.PI * 2;
+          const x = cx + Math.cos(angle) * r;
+          const y = cy + Math.sin(angle) * r;
+
+          // Dispatch a custom burst event picked up by effects-burst.js
+          // or draw directly on burst canvas if available
+          const burstCanvas = document.querySelector('.burst-canvas');
+          if (!burstCanvas) return;
+          const ctx = burstCanvas.getContext('2d');
+
+          const amber = Math.random() > 0.4;
+          const color = amber ? `rgba(255,185,60,` : `rgba(200,240,255,`;
+          const size = 0.8 + Math.random() * 1.5;
+          const speed = 0.5 + Math.random() * 1.2;
+          // Spark flies outward from edge
+          const vx = Math.cos(angle) * speed;
+          const vy = Math.sin(angle) * speed;
+
+          let alpha = 0.8;
+          let px = x,
+            py = y;
+
+          function drawSpark() {
+            if (alpha <= 0) return;
+            const glow = ctx.createRadialGradient(px, py, 0, px, py, size * 3);
+            glow.addColorStop(0, `${color}${alpha.toFixed(3)})`);
+            glow.addColorStop(1, `${color}0)`);
+            ctx.beginPath();
+            ctx.arc(px, py, size * 3, 0, Math.PI * 2);
+            ctx.fillStyle = glow;
+            ctx.fill();
+            px += vx;
+            py += vy;
+            alpha -= 0.025;
+            requestAnimationFrame(drawSpark);
+          }
+          drawSpark();
+        }, i * 30);
+      }
+    });
   });
 }
 

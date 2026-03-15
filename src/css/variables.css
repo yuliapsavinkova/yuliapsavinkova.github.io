@@ -42,7 +42,7 @@
   --portrait-diameter-mob: min(72vw, 20rem);
   --portrait-diameter-card: 10rem;
   --portrait-padding: 0.75rem;
-  --portrait-border: 1px solid var(--color-border);
+  --portrait-border: 1px solid hsla(10, 75%, 50%, 0.6);
 
   /* ─── DOCK ────────────────────────────────────────────────  */
   --dock-icon-size: 1.25rem;

@@ -1,12 +1,16 @@
+/* ═══════════════════════════════════════════════════════════
+   PROGRESS — minimal SVG arc ring
+═══════════════════════════════════════════════════════════ */
+
 .progress-container {
   z-index: 1000;
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   cursor: pointer;
   border-radius: 50%;
   opacity: 0;
-  transform: scale(0.75);
+  transform: scale(0.8) translateY(0.5rem);
   pointer-events: none;
   transition:
     opacity var(--duration-mid) var(--ease-silk),
@@ -15,53 +19,53 @@
 
 .progress-container.visible {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateY(0);
   pointer-events: auto;
 }
+
 .progress-ring {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 50%;
   background: conic-gradient(
-    var(--color-accent) 0%,
-    var(--color-accent) var(--scroll-progress, 0%),
-    var(--color-text-15) var(--scroll-progress, 0%),
-    var(--color-text-15) 100%
+    hsl(10, 75%, 50%) 0%,
+    hsl(10, 75%, 50%) var(--scroll-progress, 0%),
+    var(--color-text-08) var(--scroll-progress, 0%),
+    var(--color-text-08) 100%
   );
-  box-shadow:
-    var(--shadow-md),
-    0 0 1rem var(--color-accent-15);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .progress-arrow {
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
-  /* Glass treatment — matches header/dock language */
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.6);
+  backdrop-filter: blur(var(--glass-blur-dock));
+  -webkit-backdrop-filter: blur(var(--glass-blur-dock));
   display: flex;
   justify-content: center;
   align-items: center;
-  /* transition:
-    background var(--duration-mid) var(--ease-silk),
-    border-color var(--duration-mid) var(--ease-silk); */
+  transition: background var(--duration-mid) var(--ease-silk);
+}
+
+.progress-container:hover .progress-arrow {
+  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.8);
 }
 
 .progress-arrow svg {
-  width: 0.8rem;
-  height: 0.8rem;
-  color: var(--color-text-70);
-  /* transition:
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--color-text-55);
+  transition:
     color var(--duration-mid) var(--ease-silk),
-    transform var(--duration-mid) var(--ease-silk); */
+    transform var(--duration-mid) var(--ease-silk);
 }
 
-.progress-arrow svg:hover {
-  transform: translateY(-0.1rem);
+.progress-container:hover .progress-arrow svg {
+  color: var(--color-accent);
+  transform: translateY(-1px);
 }

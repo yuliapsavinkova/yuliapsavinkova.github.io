@@ -27,59 +27,68 @@ function initCursor() {
   document.addEventListener('mousedown', () => (clicking = true));
   document.addEventListener('mouseup', () => (clicking = false));
 
-  const ORBIT_R = 14; // orbit radius
-  const ORBIT_SPD = 0.06; // radians per frame
-  const SUN_R = 4; // sun dot radius
-  const PLANET_R = 2.5; // planet dot radius
+  const MARS_R = 8;
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    angle += ORBIT_SPD;
 
-    const scale = clicking ? 0.75 : 1;
+    const scale = clicking ? 0.85 : 1;
+    const r = MARS_R * scale;
 
-    // Sun glow
-    const sunGlow = ctx.createRadialGradient(mx, my, 0, mx, my, SUN_R * 4 * scale);
-    sunGlow.addColorStop(0, `rgba(255,185,60,${clicking ? 0.9 : 0.7})`);
-    sunGlow.addColorStop(1, `rgba(255,185,60,0)`);
+    // Atmosphere rim glow
+    const atmo = ctx.createRadialGradient(mx, my, r * 0.7, mx, my, r * 1.6);
+    atmo.addColorStop(0, `rgba(200,80,40,0)`);
+    atmo.addColorStop(0.6, `rgba(180,60,30,0.12)`);
+    atmo.addColorStop(1, `rgba(180,60,30,0)`);
     ctx.beginPath();
-    ctx.arc(mx, my, SUN_R * 4 * scale, 0, Math.PI * 2);
-    ctx.fillStyle = sunGlow;
+    ctx.arc(mx, my, r * 1.6, 0, Math.PI * 2);
+    ctx.fillStyle = atmo;
     ctx.fill();
 
-    // Sun core
+    // Sphere shading — light source top-left
+    const sphere = ctx.createRadialGradient(
+      mx - r * 0.35,
+      my - r * 0.35,
+      r * 0.1, // light source
+      mx,
+      my,
+      r,
+    );
+    sphere.addColorStop(0, `rgba(235,130,85,0.95)`); // lit
+    sphere.addColorStop(0.4, `rgba(190,75,45,0.95)`); // mid
+    sphere.addColorStop(0.8, `rgba(130,40,20,0.95)`); // dark
+    sphere.addColorStop(1, `rgba(80,20,10,0.95)`); // edge
+
     ctx.beginPath();
-    ctx.arc(mx, my, SUN_R * scale, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,210,90,${clicking ? 1 : 0.9})`;
+    ctx.arc(mx, my, r, 0, Math.PI * 2);
+    ctx.fillStyle = sphere;
     ctx.fill();
 
-    // Orbit trail — faint dashed ring
+    // Valles Marineris — dark horizontal canyon stripe
+    ctx.save();
+    ctx.clip();
     ctx.beginPath();
-    ctx.arc(mx, my, ORBIT_R * scale, 0, Math.PI * 2);
-    ctx.strokeStyle = `rgba(120,210,200,0.12)`;
-    ctx.lineWidth = 1;
-    ctx.setLineDash([2, 4]);
-    ctx.stroke();
-    ctx.setLineDash([]);
+    ctx.ellipse(mx + r * 0.1, my + r * 0.05, r * 0.55, r * 0.08, -0.2, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(80,25,10,0.35)`;
+    ctx.fill();
+    ctx.restore();
 
-    // Planet position
-    const px = mx + Math.cos(angle) * ORBIT_R * scale;
-    const py = my + Math.sin(angle) * ORBIT_R * scale;
-
-    // Planet glow
-    const planetGlow = ctx.createRadialGradient(px, py, 0, px, py, PLANET_R * 3);
-    planetGlow.addColorStop(0, `rgba(100,220,210,0.6)`);
-    planetGlow.addColorStop(1, `rgba(100,220,210,0)`);
+    // Clip to circle for clean edge
+    ctx.save();
     ctx.beginPath();
-    ctx.arc(px, py, PLANET_R * 3, 0, Math.PI * 2);
-    ctx.fillStyle = planetGlow;
+    ctx.arc(mx, my, r, 0, Math.PI * 2);
+    ctx.clip();
+
+    // Polar ice cap — white top
+    const pole = ctx.createRadialGradient(mx, my - r * 0.75, 0, mx, my - r * 0.75, r * 0.4);
+    pole.addColorStop(0, `rgba(240,230,220,0.6)`);
+    pole.addColorStop(1, `rgba(240,230,220,0)`);
+    ctx.beginPath();
+    ctx.arc(mx, my - r * 0.75, r * 0.4, 0, Math.PI * 2);
+    ctx.fillStyle = pole;
     ctx.fill();
 
-    // Planet core
-    ctx.beginPath();
-    ctx.arc(px, py, PLANET_R * scale, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(150,235,225,0.95)`;
-    ctx.fill();
+    ctx.restore();
 
     requestAnimationFrame(draw);
   }

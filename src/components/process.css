@@ -1,6 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
    WORKING PROCESS — full-bleed background image section
-   Parallax enabled only on pointer-capable desktop devices.
 ═══════════════════════════════════════════════════════════ */
 
 .working-process {
@@ -29,23 +28,14 @@
   color: var(--color-text);
 }
 
-/* Glass pill behind the text so it lifts off the photo */
-.working-process section-header {
+.working-process-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--gap) var(--gap-large);
-
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--color-text-08);
-  border-top-color: var(--color-text-15);
   border-radius: var(--border-radius-lg);
-  box-shadow: inset 0 1px 0 var(--color-text-06);
-}
-
-/* Parallax — desktop with mouse only */
-@media (min-width: 576px) and (hover: hover) and (pointer: fine) {
-  .working-process {
-    background-attachment: fixed;
-  }
 }
 
 @media (min-width: 768px) {
@@ -81,9 +71,12 @@
   }
 }
 
-/* Ultra-wide height bump */
 @media (min-width: 2560px) {
   .working-process {
     height: 40rem;
   }
+}
+
+.working-process .section-header .subtitle {
+  color: var(--color-text-80);
 }
