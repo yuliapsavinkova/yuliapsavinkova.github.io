@@ -77,8 +77,8 @@
   justify-content: center;
   border-radius: 50%;
   background: hsla(var(--bg-h), var(--bg-s), 8%, 0.5);
-  backdrop-filter: blur(var(--glass-blur-dock));
-  -webkit-backdrop-filter: blur(var(--glass-blur-dock));
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--color-text-08);
   transition: background var(--duration-mid) var(--ease-silk);
 }

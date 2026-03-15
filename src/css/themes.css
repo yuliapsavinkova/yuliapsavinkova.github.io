@@ -76,8 +76,7 @@
   /* ─── GLASS ──────────────────────────────────────────── */
   --glass-bg: hsla(var(--bg-h), var(--bg-s), 10%, 0.8);
   --glass-border: var(--color-text-08);
-  --glass-blur: 1.25rem;
-  --glass-blur-dock: 0.75rem;
+  --glass-blur: 1rem;
   --glass-saturate: 180%;
   --glass-shadow:
     0 0.5rem 2rem hsla(var(--bg-h), var(--bg-s), 0%, 0.6), inset 0 1px 0 var(--color-text-06);
@@ -86,6 +85,7 @@
 
   /* ─── OVERLAY (process section) ──────────────────────── */
   --color-overlay: hsla(var(--bg-h), var(--bg-s), 3%, 0.75);
+  --overlay-image: linear-gradient(var(--color-overlay), var(--color-overlay));
 
   /* ─── SHADOWS ────────────────────────────────────────── */
   --shadow-md: 0 0.25rem 1.25rem hsla(var(--bg-h), var(--bg-s), 0%, 0.6);

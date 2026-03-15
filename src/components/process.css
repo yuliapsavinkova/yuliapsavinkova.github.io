@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
 
-  background-image: url('../../images/working-girl-480.webp');
+  background-image: var(--overlay-image), url('../../images/working-girl-480.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -33,25 +33,19 @@
 
 @media (min-width: 768px) {
   .working-process {
-    background-image:
-      linear-gradient(hsla(185, 40%, 8%, 0.82), hsla(185, 40%, 8%, 0.82)),
-      url('../../images/working-girl-768.webp');
+    background-image: var(--overlay-image), url('../../images/working-girl-768.webp');
   }
 }
 
 @media (min-width: 1280px) {
   .working-process {
-    background-image:
-      linear-gradient(hsla(185, 40%, 8%, 0.82), hsla(185, 40%, 8%, 0.82)),
-      url('../../images/working-girl-1280.webp');
+    background-image: var(--overlay-image), url('../../images/working-girl-1280.webp');
   }
 }
 
 @media (min-width: 1920px) {
   .working-process {
-    background-image:
-      linear-gradient(hsla(185, 40%, 8%, 0.82), hsla(185, 40%, 8%, 0.82)),
-      url('../../images/working-girl-1920.webp');
+    background-image: var(--overlay-image), url('../../images/working-girl-1920.webp');
   }
 }
 

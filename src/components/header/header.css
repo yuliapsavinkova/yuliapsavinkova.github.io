@@ -48,8 +48,10 @@
 }
 
 .header.header--scrolled {
-  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.5);
-  border-bottom-color: transparent;
+  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.6);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom-color: var(--color-text-08);
   box-shadow: none;
 }
 
