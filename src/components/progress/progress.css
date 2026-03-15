@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   PROGRESS — minimal SVG arc ring
+   PROGRESS — sun orbiting scroll indicator
 ═══════════════════════════════════════════════════════════ */
 
 .progress-container {
@@ -8,7 +8,6 @@
   bottom: 1.5rem;
   right: 1.5rem;
   cursor: pointer;
-  border-radius: 50%;
   opacity: 0;
   transform: scale(0.8) translateY(0.5rem);
   pointer-events: none;
@@ -27,38 +26,70 @@
   position: relative;
   width: 2.75rem;
   height: 2.75rem;
+  overflow: visible;
+}
+
+.progress-ring svg.orbit-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: var(--color-text-30);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+}
+
+.fill {
+  fill: none;
+  stroke: var(--color-text-55);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.progress-sun {
+  position: absolute;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: conic-gradient(
-    hsl(10, 75%, 50%) 0%,
-    hsl(10, 75%, 50%) var(--scroll-progress, 0%),
-    var(--color-text-08) var(--scroll-progress, 0%),
-    var(--color-text-08) 100%
+  background: radial-gradient(
+    circle,
+    hsl(55, 100%, 85%) 0%,
+    hsl(42, 100%, 60%) 60%,
+    transparent 100%
   );
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  box-shadow:
+    0 0 6px 2px hsla(45, 100%, 65%, 0.8),
+    0 0 14px 4px hsla(42, 100%, 55%, 0.4);
+  z-index: 2;
 }
 
 .progress-arrow {
-  width: 2.25rem;
-  height: 2.25rem;
+  position: absolute;
+  inset: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.6);
+  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.5);
   backdrop-filter: blur(var(--glass-blur-dock));
   -webkit-backdrop-filter: blur(var(--glass-blur-dock));
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid var(--color-text-08);
   transition: background var(--duration-mid) var(--ease-silk);
 }
 
 .progress-container:hover .progress-arrow {
-  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.8);
+  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.75);
 }
 
 .progress-arrow svg {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.65rem;
+  height: 0.65rem;
   color: var(--color-text-55);
   transition:
     color var(--duration-mid) var(--ease-silk),
@@ -66,6 +97,6 @@
 }
 
 .progress-container:hover .progress-arrow svg {
-  color: var(--color-accent);
+  color: hsl(42, 100%, 60%);
   transform: translateY(-1px);
 }
