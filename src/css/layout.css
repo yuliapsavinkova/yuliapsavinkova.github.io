@@ -28,10 +28,17 @@ section {
   justify-content: center;
   align-items: center;
   gap: var(--gap);
-  border-top: 1px solid var(--color-text-15);
+  border-top: 1px solid var(--color-text-08);
 }
 
 section.hero {
   margin-top: 0;
   border-top: none;
+}
+
+/* iOS Safari fix — background-attachment: fixed broken on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    background-attachment: scroll;
+  }
 }
