@@ -13,7 +13,7 @@ class ExpertiseComponent extends HTMLElement {
           <div class="card">
             <div class="card-image">
               <div class="card-image-inner">
-                <img src="./images/011.png" loading="lazy" alt="Custom Solutions" />
+                <img src="./images/01.png" loading="lazy" alt="Custom Solutions" />
               </div>
             </div>
             <div class="card-content">
@@ -30,7 +30,7 @@ class ExpertiseComponent extends HTMLElement {
           <div class="card">
             <div class="card-image">
               <div class="card-image-inner">
-                <img src="./images/022.png" loading="lazy" alt="Web Applications" />
+                <img src="./images/02.png" loading="lazy" alt="Web Applications" />
               </div>
             </div>
             <div class="card-content">
