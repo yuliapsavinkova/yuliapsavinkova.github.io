@@ -13,7 +13,20 @@ class ExpertiseComponent extends HTMLElement {
           <div class="card">
             <div class="card-image">
               <div class="card-image-inner">
-                <img src="./images/01.png" loading="lazy" alt="Custom Solutions" />
+                <img
+                src="./images/011-600.webp"
+                srcset="
+                  ./images/011-400.webp  400w,
+                  ./images/011-600.webp  600w,
+                  ./images/011-900.webp  900w
+                "
+                sizes="(max-width: 768px) 100vw, 26rem"
+                width="600"
+                height="600"
+                alt="Custom Solutions"
+                loading="lazy"
+                decoding="async"
+              />
               </div>
             </div>
             <div class="card-content">
@@ -30,7 +43,20 @@ class ExpertiseComponent extends HTMLElement {
           <div class="card">
             <div class="card-image">
               <div class="card-image-inner">
-                <img src="./images/02.png" loading="lazy" alt="Web Applications" />
+                <img
+                src="./images/022-600.webp"
+                srcset="
+                  ./images/022-400.webp  400w,
+                  ./images/022-600.webp  600w,
+                  ./images/022-900.webp  900w
+                "
+                sizes="(max-width: 768px) 100vw, 26rem"
+                width="600"
+                height="600"
+                alt="Web Applications"
+                loading="lazy"
+                decoding="async"
+              />
               </div>
             </div>
             <div class="card-content">
@@ -47,7 +73,20 @@ class ExpertiseComponent extends HTMLElement {
           <div class="card">
             <div class="card-image">
               <div class="card-image-inner">
-                <img src="./images/03.png" loading="lazy" alt="Financial Tools" />
+                <img
+                src="./images/033-600.webp"
+                srcset="
+                  ./images/033-400.webp  400w,
+                  ./images/033-600.webp  600w,
+                  ./images/033-900.webp  900w
+                "
+                sizes="(max-width: 768px) 100vw, 26rem"
+                width="600"
+                height="600"
+                alt="Financial Tools"
+                loading="lazy"
+                decoding="async"
+              />
               </div>
             </div>
             <div class="card-content">

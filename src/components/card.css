@@ -55,7 +55,7 @@
 /* Image fills flush at top — fixed height, cover crop */
 .card .card-image {
   width: calc(100% - var(--gap-med) * 2);
-  height: 12rem;
+  height: 14rem;
   overflow: hidden;
   flex-shrink: 0;
   margin: var(--gap-small) var(--gap-med) 0;
