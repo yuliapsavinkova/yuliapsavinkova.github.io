@@ -58,5 +58,6 @@
 
 /* Subtitle readable over photo */
 .working-process .section-header .subtitle {
-  color: var(--color-text-80);
+  color: var(--color-text);
+  font-weight: 600;
 }

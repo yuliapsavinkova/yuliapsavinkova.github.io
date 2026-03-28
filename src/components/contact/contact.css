@@ -56,14 +56,6 @@
   transition: border-color var(--duration-slow) var(--ease-silk);
 }
 
-.contact-form input:-webkit-autofill,
-.contact-form input:-webkit-autofill:hover,
-.contact-form input:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--color-text-90);
-  -webkit-box-shadow: 0 0 0 1000px hsl(var(--bg-h), var(--bg-s), 10%) inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: var(--color-text-30);
@@ -75,13 +67,129 @@
   border-color: var(--color-text-30);
 }
 
-/* ─── Neutralise the accent glow on the submit button ─────── */
-.contact-form .button-primary:hover {
-  border-color: var(--color-text-55);
-  box-shadow: none;
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-text-90);
+  -webkit-box-shadow: 0 0 0 1000px hsl(var(--bg-h), var(--bg-s), 10%) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .contact-form button {
   align-self: center;
   margin-top: var(--gap-tiny);
+}
+
+/* Neutralise the accent glow on the submit button */
+.contact-form .button-primary:hover {
+  border-color: var(--color-text-55);
+  box-shadow: none;
+}
+
+/* ─── SUBMIT BUTTON STATES ───────────────────────────────── */
+.contact-form .button-primary {
+  position: relative;
+}
+
+.contact-form .contact-submit.sending {
+  color: transparent;
+}
+
+.contact-form .btn-spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid var(--color-text-30);
+  border-top-color: var(--color-text-90);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.contact-form .button-primary.sending .btn-spinner {
+  display: block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── FORM HIDE ──────────────────────────────────────────── */
+.form-hide {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition:
+    opacity var(--duration-slow) var(--ease-silk),
+    transform var(--duration-slow) var(--ease-silk);
+}
+
+/* ─── SUCCESS STATE ──────────────────────────────────────── */
+.contact-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-small);
+  text-align: center;
+  padding: var(--gap-large) var(--gap);
+  opacity: 0;
+  transform: translateY(1rem);
+}
+
+.contact-success.success-show {
+  display: flex;
+  animation: successReveal var(--duration-slow) var(--ease-silk) forwards;
+}
+
+@keyframes successReveal {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent-30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  animation: successPulse 2s var(--ease-silk) infinite;
+}
+
+.success-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+@keyframes successPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--color-accent-15);
+  }
+  50% {
+    box-shadow: 0 0 0 0.5rem var(--color-accent-15);
+  }
+}
+
+.contact-success h2 {
+  color: var(--color-text);
+  margin: 0;
+}
+
+.contact-success p {
+  color: var(--color-text-55);
+  margin: 0;
 }
