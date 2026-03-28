@@ -170,7 +170,7 @@
   cursor: pointer;
   background: none;
   border: none;
-  padding: var(--gap-small);
+  padding: var(--gap-tiny);
   color: var(--color-text-30);
   transition: color var(--duration-slow) var(--ease-silk);
 }
