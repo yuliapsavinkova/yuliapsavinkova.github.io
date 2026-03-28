@@ -10,15 +10,15 @@ class ExpertiseComponent extends HTMLElement {
         </section-header>
 
         <div class="card-grid">
-          <div class="card">
+
+          <a href="#/work?section=work-row-web" class="card" aria-label="Go to Custom Solutions section">
             <div class="card-image">
-              <div class="card-image-inner">
-                <img
+              <img
                 src="./images/011-600.webp"
                 srcset="
-                  ./images/011-400.webp  400w,
-                  ./images/011-600.webp  600w,
-                  ./images/011-900.webp  900w
+                  ./images/011-400.webp 400w,
+                  ./images/011-600.webp 600w,
+                  ./images/011-900.webp 900w
                 "
                 sizes="(max-width: 768px) 100vw, 26rem"
                 width="600"
@@ -27,28 +27,29 @@ class ExpertiseComponent extends HTMLElement {
                 loading="lazy"
                 decoding="async"
               />
-              </div>
             </div>
             <div class="card-content">
               <h2>Custom Solutions</h2>
-              <p>High-performance sites built with <strong>Next.js</strong>. I deliver SEO-optimized, production-ready experiences that are reliable and easy to update.</p>
-              <a href="#/work?section=work-row-web" aria-label="Go to Custom Solutions section">
-                <svg class="icon enable-icon-scale" aria-hidden="true">
-                  <use href="#icon-arrow-right"></use>
-                </svg>
-              </a>
+              <div class="card-tag">
+                High-performance sites built with <strong>Next.js</strong>.
+              </div>
+              <p>
+                SEO-optimized, production-ready experiences that work across all screen sizes.
+              </p>
+              <svg class="icon enable-icon-scale" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg>
             </div>
-          </div>
+          </a>
 
-          <div class="card">
+          <a href="#/work?section=work-row-app" class="card" aria-label="Go to Web Applications section">
             <div class="card-image">
-              <div class="card-image-inner">
-                <img
+              <img
                 src="./images/022-600.webp"
                 srcset="
-                  ./images/022-400.webp  400w,
-                  ./images/022-600.webp  600w,
-                  ./images/022-900.webp  900w
+                  ./images/022-400.webp 400w,
+                  ./images/022-600.webp 600w,
+                  ./images/022-900.webp 900w
                 "
                 sizes="(max-width: 768px) 100vw, 26rem"
                 width="600"
@@ -57,28 +58,29 @@ class ExpertiseComponent extends HTMLElement {
                 loading="lazy"
                 decoding="async"
               />
-              </div>
             </div>
             <div class="card-content">
               <h2>Web Applications</h2>
-              <p>Dynamic applications built with <strong>React and Angular</strong>. I focus on clean architecture, state management, and long-term maintainability.</p>
-              <a href="#/work?section=work-row-app" aria-label="Go to Web Applications section">
-                <svg class="icon enable-icon-scale" aria-hidden="true">
-                  <use href="#icon-arrow-right"></use>
-                </svg>
-              </a>
+              <div class="card-tag">
+                Dynamic applications built with <strong>React and Angular</strong>.
+              </div>
+              <p>
+                Clean architecture, scalable state management, and long-term maintainability.
+              </p>
+              <svg class="icon enable-icon-scale" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg>
             </div>
-          </div>
+          </a>
 
-          <div class="card">
+          <a href="#/work?section=work-row-fin" class="card" aria-label="Go to Financial Tools section">
             <div class="card-image">
-              <div class="card-image-inner">
-                <img
+              <img
                 src="./images/033-600.webp"
                 srcset="
-                  ./images/033-400.webp  400w,
-                  ./images/033-600.webp  600w,
-                  ./images/033-900.webp  900w
+                  ./images/033-400.webp 400w,
+                  ./images/033-600.webp 600w,
+                  ./images/033-900.webp 900w
                 "
                 sizes="(max-width: 768px) 100vw, 26rem"
                 width="600"
@@ -87,18 +89,21 @@ class ExpertiseComponent extends HTMLElement {
                 loading="lazy"
                 decoding="async"
               />
-              </div>
             </div>
             <div class="card-content">
               <h2>Financial Tools</h2>
-              <p>I integrate web applications with <strong>Excel and Google Sheets</strong> to automate market data syncing, portfolio tracking, and custom strategy analysis.</p>
-              <a href="#/work?section=work-row-fin" aria-label="Go to Financial Tools section">
-                <svg class="icon enable-icon-scale" aria-hidden="true">
-                  <use href="#icon-arrow-right"></use>
-                </svg>
-              </a>
+              <div class="card-tag">
+                Web apps integrated with <strong>Excel and Google Sheets</strong>.
+              </div>
+              <p>
+                Automated market data syncing, portfolio tracking, and custom strategy analysis.
+              </p>
+              <svg class="icon enable-icon-scale" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg>
             </div>
-          </div>
+          </a>
+
         </div>
 
         <a href="#/work" class="button button-secondary">Learn More</a>
