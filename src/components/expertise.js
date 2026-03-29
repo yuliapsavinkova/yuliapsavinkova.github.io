@@ -31,7 +31,7 @@ class ExpertiseComponent extends HTMLElement {
             <div class="card-content">
               <h2>Custom Solutions</h2>
               <div class="card-tag">
-                High-performance sites built with <strong>Next.js</strong>.
+                High-performance sites built with <strong>Next.js</strong>
               </div>
               <p>
                 SEO-optimized, production-ready experiences that work across all screen sizes.
@@ -62,7 +62,7 @@ class ExpertiseComponent extends HTMLElement {
             <div class="card-content">
               <h2>Web Applications</h2>
               <div class="card-tag">
-                Dynamic applications built with <strong>React and Angular</strong>.
+                Dynamic applications built with <strong>React and Angular</strong>
               </div>
               <p>
                 Clean architecture, scalable state management, and long-term maintainability.
@@ -93,7 +93,7 @@ class ExpertiseComponent extends HTMLElement {
             <div class="card-content">
               <h2>Financial Tools</h2>
               <div class="card-tag">
-                Web apps integrated with <strong>Excel and Google Sheets</strong>.
+                Web apps integrated with <strong>Excel and Google Sheets</strong>
               </div>
               <p>
                 Automated market data syncing, portfolio tracking, and custom strategy analysis.
