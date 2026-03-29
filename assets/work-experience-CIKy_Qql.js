@@ -9,7 +9,7 @@ class i extends HTMLElement{connectedCallback(){if(this.innerHTML=`
 
           <div class="work-experience-content">
             <div class="work-header">
-              <h2>Gravity — Founder & Senior Engineer</h2>
+              <h2>Gravity — Founder & Engineer</h2>
               <p class="work-meta">San Francisco, CA · 2021 – Present</p>
             </div>
             <ul class="work-bullets">
