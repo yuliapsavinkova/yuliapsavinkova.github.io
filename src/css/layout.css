@@ -15,13 +15,11 @@ body {
     radial-gradient(ellipse 55% 35% at 50% 55%, var(--glow-primary), transparent),
     radial-gradient(ellipse 50% 35% at 90% 10%, var(--glow-rim), transparent),
     radial-gradient(ellipse 55% 40% at 10% 70%, var(--glow-deep), transparent);
-  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 section {
-  margin-top: var(--header-size);
   padding: var(--padding-block) var(--padding-inline);
   display: flex;
   flex-direction: column;
@@ -29,11 +27,6 @@ section {
   align-items: center;
   gap: var(--gap);
   border-top: 1px solid var(--color-text-08);
-}
-
-section.hero {
-  margin-top: 0;
-  border-top: none;
 }
 
 /* iOS Safari fix — background-attachment: fixed broken on touch devices */

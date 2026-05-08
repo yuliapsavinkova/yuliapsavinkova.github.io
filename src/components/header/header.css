@@ -8,7 +8,7 @@
 .header {
   z-index: 1000;
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   height: var(--header-size);
@@ -32,19 +32,6 @@
   to {
     opacity: 1;
   }
-}
-
-/* ─── GRADIENT BLEED ─────────────────────────────────────── */
-.header::after {
-  content: '';
-  position: absolute;
-  bottom: -3rem;
-  left: 0;
-  right: 0;
-  height: 3rem;
-  background: linear-gradient(to bottom, hsla(var(--bg-h), var(--bg-s), 8%, 0.4), transparent);
-  pointer-events: none;
-  transition: opacity var(--duration-slow) var(--ease-silk);
 }
 
 .header.header--scrolled {
