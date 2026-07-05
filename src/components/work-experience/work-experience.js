@@ -13,17 +13,26 @@ class WorkExperienceComponent extends HTMLElement {
 
           <div class="work-experience-content">
             <div class="work-header">
-              <h2>Gravity — Founder & Engineer</h2>
-              <p class="work-meta">San Francisco, CA · 2021 – Present</p>
+              <h2>Self-Employed — Senior Software Engineer</h2>
+              <p class="work-meta">2020 – Present</p>
             </div>
+
             <ul class="work-bullets">
-              <li>Built trading tools and dashboards for real-time market analysis and portfolio management.</li>
-              <li>Developed and launched custom web applications using React, TypeScript, and Next.js.</li>
-              <li>Created rapid prototypes and MVPs using AI to explore new product ideas and workflows.</li>
-              <li>Designed and prototyped user interfaces for custom machine control systems.</li>
+              <li>Designed and built full-stack web applications from concept to deployment using React, TypeScript, Next.js, Node.js, and SQL.</li>
+              <li>Developed real-time trading dashboards and visualization tools for market analysis and portfolio management.</li>
+              <li>Architected reusable UI components and responsive interfaces with a strong focus on performance and maintainability.</li>
+              <li>Built REST APIs and integrated third-party services, including authentication, payments, and AI services.</li>
+              <li>Rapidly prototyped and launched MVPs, translating ideas into production-ready applications.</li>
             </ul>
+
             <div class="work-experience-technologies">
-              <span>React</span><span>Next.js</span><span>TypeScript</span><span>Node</span><span>PostgreSQL</span><span>Vite</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+              <span>SQL</span>
+              <span>REST APIs</span>
+              <span>AI</span>
             </div>
           </div>
 
