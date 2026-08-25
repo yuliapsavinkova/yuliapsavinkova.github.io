@@ -1,4 +1,4 @@
-class o extends HTMLElement{connectedCallback(){this.innerHTML=`
+class i extends HTMLElement{connectedCallback(){this.innerHTML=`
       <section id="contact" class="contact">
         <section-header
           title="Stay In Touch"
@@ -21,7 +21,8 @@ class o extends HTMLElement{connectedCallback(){this.innerHTML=`
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="6" placeholder="Enter your Message" required></textarea>
             </div>
-            <button type="submit" class="button button-primary contact-submit">Send Message
+            <button type="submit" class="button button-primary contact-submit">
+              <span class="btn-text">Send Message</span>
               <span class="btn-spinner" aria-hidden="true"></span>
             </button>
           </form>
@@ -39,4 +40,4 @@ class o extends HTMLElement{connectedCallback(){this.innerHTML=`
           </div>
         </div>
       </section>
-    `;const t=this.querySelector("#contact-form-el"),s=this.querySelector("#contact-success"),e=this.querySelector('button[type="submit"]'),a=this.querySelector("#contact-reset");t.addEventListener("submit",async n=>{n.preventDefault(),e.classList.add("sending"),e.disabled=!0;try{(await fetch(t.action,{method:"POST",body:new FormData(t),headers:{Accept:"application/json"}})).ok?(t.classList.add("form-hide"),setTimeout(()=>{t.style.display="none",s.classList.add("success-show")},400)):(e.classList.remove("sending"),e.disabled=!1,e.childNodes[0].textContent="Try Again")}catch{e.classList.remove("sending"),e.disabled=!1,e.childNodes[0].textContent="Try Again"}}),a.addEventListener("click",()=>{s.classList.remove("success-show"),t.style.display="",t.reset(),setTimeout(()=>t.classList.remove("form-hide"),50),e.classList.remove("sending"),e.disabled=!1,e.childNodes[0].textContent="Send Message"})}}customElements.define("contact-component",o);
+    `;const t=this.querySelector("#contact-form-el"),n=this.querySelector("#contact-success"),e=this.querySelector('button[type="submit"]'),s=e.querySelector(".btn-text"),a=this.querySelector("#contact-reset");t.addEventListener("submit",async o=>{o.preventDefault(),e.classList.add("sending"),e.disabled=!0,s&&(s.textContent="Sending...");try{(await fetch(t.action,{method:"POST",body:new FormData(t),headers:{Accept:"application/json"}})).ok?(t.classList.add("form-hide"),setTimeout(()=>{t.style.display="none",n.classList.add("success-show")},400)):(e.classList.remove("sending"),e.disabled=!1,s&&(s.textContent="Try Again"))}catch{e.classList.remove("sending"),e.disabled=!1,s&&(s.textContent="Try Again")}}),a.addEventListener("click",()=>{n.classList.remove("success-show"),t.style.display="",t.reset(),setTimeout(()=>t.classList.remove("form-hide"),50),e.classList.remove("sending"),e.disabled=!1,s&&(s.textContent="Send Message")})}}customElements.define("contact-component",i);

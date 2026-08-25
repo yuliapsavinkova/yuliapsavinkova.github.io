@@ -1,4 +1,4 @@
-import{U as n}from"./index-Cklg_3f9.js";import"./theme-toggle-9PDmT22X.js";class o extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this),this._closePanel=this._closePanel.bind(this),this._updateWidth=this._updateWidth.bind(this),this._resizeHandler=n.throttle(this._updateWidth,200)}_updateWidth(){const e=this.querySelector("#debugPanel");if(!e)return;const t=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,i=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;e.querySelector(".debug-size").textContent=`${t} x ${i}`,e.querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}_closePanel(){this.remove()}connectedCallback(){this.innerHTML=`
+import{U as n}from"./index-X0I_5V8D.js";class o extends HTMLElement{constructor(){super(),this._toggleOutline=this._toggleOutline.bind(this),this._closePanel=this._closePanel.bind(this),this._updateWidth=this._updateWidth.bind(this),this._resizeHandler=n.throttle(this._updateWidth,200)}_updateWidth(){const e=this.querySelector("#debugPanel");if(!e)return;const t=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,i=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;e.querySelector(".debug-size").textContent=`${t} x ${i}`,e.querySelector(".orientation").textContent=window.matchMedia("(orientation: portrait)").matches?"Portrait":"Landscape"}_toggleOutline(e){document.body.classList.toggle("debug-outline",e.target.checked)}_closePanel(){this.remove()}connectedCallback(){this.innerHTML=`
       <style>
         .debug-panel {
           z-index: 1000;
@@ -34,6 +34,16 @@ import{U as n}from"./index-Cklg_3f9.js";import"./theme-toggle-9PDmT22X.js";class
           margin: 0;
           width: 2rem;
           height: 2rem;
+          border-radius: var(--radius-sm);
+          color: var(--text-secondary);
+          transition: color var(--duration-fast) var(--ease-smooth), background-color var(--duration-fast) var(--ease-smooth);
+        }
+        .close-btn:hover {
+          color: var(--accent-primary);
+          background-color: var(--bg-surface-hover);
+        }
+        .close-btn:focus-visible {
+          box-shadow: 0 0 0 2px var(--border-focus);
         }
         .close-btn svg {
           width: 1rem;
