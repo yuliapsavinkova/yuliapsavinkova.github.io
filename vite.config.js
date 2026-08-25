@@ -13,10 +13,10 @@ export default defineConfig({
     cssCodeSplit: true, // separate CSS for non-critical imports
   },
   server: {
-    port: 3001,
+    host: '0.0.0.0',
+    port: 3000,
     strictPort: true,
-    open: true,
-    historyApiFallback: true,
+    allowedHosts: true,
   },
   plugins: [
     createSvgIconsPlugin({

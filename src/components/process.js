@@ -14,3 +14,5 @@ class WorkingProcessComponent extends HTMLElement {
 }
 
 customElements.define('working-process-component', WorkingProcessComponent);
+
+

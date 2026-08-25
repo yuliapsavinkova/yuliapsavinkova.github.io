@@ -1,272 +1,313 @@
 /* ═══════════════════════════════════════════════════════════
-   CARD.CSS — Shared card patterns
-   Single source of truth for .card and .feature-card.
-   All components use these — change here, updates everywhere.
+   CARD.CSS — Clean, Minimal Card & Feature System
 ═══════════════════════════════════════════════════════════ */
 
 /* ─── WRAPPERS ───────────────────────────────────────────── */
 .card-grid,
 .feature-list {
+  width: 100%;
+  max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
-  width: min(100%, var(--breakpoint-xl));
-  display: flex;
 }
 
 .card-grid {
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--gap);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-grid > :nth-child(3):last-child,
+  .card-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc(50% - (var(--space-6) / 2));
+  }
+}
+
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-grid > :nth-child(3):last-child,
+  .card-grid > :last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: none;
+  }
 }
 
 .feature-list {
+  display: flex;
   flex-direction: column;
-  gap: var(--gap-large);
+  gap: var(--space-8);
 }
 
-/* ─── PATTERN 1: CARD (always vertical) ─────────────────── */
+/* ─── STANDARD CARD (Grid Item) ──────────────────────────── */
 .card,
 a.card {
   display: flex;
   flex-direction: column;
-  background: hsla(var(--bg-h), var(--bg-s), 8%, 0.15);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--color-text-08);
-  border-top-color: var(--color-text-15);
-  border-radius: var(--border-radius);
-  box-shadow: inset 0 1px 0 var(--color-text-06);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  padding: 0;
-  flex-basis: 20rem;
-  max-width: 20rem;
-  flex-grow: 1;
-  text-align: center;
+  text-align: left;
+  position: relative;
   transition:
-    border-color var(--duration-slow) var(--ease-silk),
-    box-shadow var(--duration-slow) var(--ease-silk),
-    transform var(--duration-slow) var(--ease-silk);
+    border-color var(--duration-mid) var(--ease-smooth),
+    box-shadow var(--duration-mid) var(--ease-smooth),
+    transform var(--duration-mid) var(--ease-smooth);
 }
 
-.card:hover {
-  border-color: var(--color-text-15);
-  border-top-color: var(--color-text-30);
-  box-shadow:
-    inset 0 1px 0 var(--color-text-08),
-    0 0.5rem 2rem hsla(var(--bg-h), var(--bg-s), 0%, 0.4);
-  transform: translateY(-3px);
+.card:hover,
+a.card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.card .card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--bg-canvas-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .card .card-image img {
-  transition: transform var(--duration-slow) var(--ease-silk);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s var(--ease-smooth);
 }
 
 .card:hover .card-image img {
   transform: scale(1.05);
 }
 
-/* Image fills flush at top — fixed height, cover crop */
-.card .card-image {
-  width: calc(100% - var(--gap-med) * 2);
-  height: 14rem;
-  overflow: hidden;
-  flex-shrink: 0;
-  margin: var(--gap-small) var(--gap-med) 0;
-  border-radius: var(--border-radius);
-}
-
-.card .card-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-
-/* Content gets all the padding */
 .card .card-content {
-  padding: var(--gap-small) var(--gap-med) var(--gap-med);
+  padding: var(--space-6);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: var(--gap-tiny);
-  align-items: center;
+  gap: var(--space-3);
 }
 
-/* Arrow icon — constrained so it can't grow huge */
-.card .card-content svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  flex-shrink: 0;
-  color: var(--color-text-55);
+.card .card-content h2 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+}
+
+.card .card-content p {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+.card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+}
+
+.card-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-tertiary);
+  background: var(--bg-canvas-subtle);
+  border: 1px solid var(--border-default);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--duration-fast) var(--ease-smooth), border-color var(--duration-fast) var(--ease-smooth);
+}
+
+.card:hover .card-chip,
+.feature-card:hover .card-chip {
+  color: var(--text-secondary);
+  border-color: var(--border-strong);
+}
+
+.card .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: auto;
+  align-self: center;
+  color: var(--text-tertiary);
   transition:
-    color var(--duration-slow) var(--ease-silk),
-    transform var(--duration-slow) var(--ease-silk);
+    transform var(--duration-fast) var(--ease-smooth),
+    color var(--duration-fast) var(--ease-smooth);
 }
 
-.card:hover .card-content svg {
-  color: var(--color-text-55);
+.card:hover .icon {
+  color: var(--accent-primary);
+  transform: translateX(4px);
 }
 
-/* ─── PATTERN 2: FEATURE CARD (responsive) ──────────────── */
+/* ─── FEATURE CARD (Horizontal Split Rows) ───────────────── */
 .feature-card {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
-  text-align: center;
+  gap: var(--space-6);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color var(--duration-mid) var(--ease-smooth),
+    box-shadow var(--duration-mid) var(--ease-smooth),
+    transform var(--duration-mid) var(--ease-smooth);
+  align-items: stretch;
 }
 
-/* Mobile: fixed height image, cover crop */
-.feature-card .card-image {
+.feature-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-feature-hover);
+  transform: translateY(-2px);
+}
+
+/* Feature Card Image Container */
+.feature-card .feature-media {
   width: 100%;
-  height: 22rem;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border-radius: var(--border-radius-lg);
+  background: var(--bg-canvas-subtle);
+  border: 1px solid var(--border-default);
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.feature-card .card-image img {
+.feature-card .feature-media img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
+  transition: transform var(--duration-mid) var(--ease-smooth);
+}
+
+.feature-card:hover .feature-media img {
+  transform: scale(1.02);
 }
 
 .feature-card .card-content {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-small);
-  align-items: center;
+  gap: var(--space-3);
+  align-items: flex-start;
   width: 100%;
-  max-width: 100%;
+  text-align: left;
+  justify-content: center;
 }
 
-.feature-card .card-content .button {
-  margin-top: var(--gap-tiny);
+.feature-card .card-content h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  margin: 0;
 }
 
-/* Desktop: horizontal, image stretches to row height */
-@media (min-width: 1024px) {
+.feature-card .card-content p {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* Desktop Horizontal Split */
+@media (min-width: 900px) {
   .feature-card {
-    max-width: var(--breakpoint-xl);
     flex-direction: row;
-    align-items: stretch;
-    text-align: left;
+    align-items: center;
+    gap: var(--space-8);
+    padding: var(--space-8);
   }
 
-  .feature-card .card-image {
-    flex: 2;
-    height: auto;
-    min-height: 20rem;
-    border-radius: var(--border-radius-lg);
+  .feature-card .feature-media {
+    width: 42%;
+    max-width: 24rem;
+    aspect-ratio: 1 / 1;
   }
 
   .feature-card .card-content {
-    flex: 3;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: var(--article-width);
+    flex: 1;
   }
 
-  /* Flip only inside a list */
-  .feature-list .feature-card:nth-child(odd) {
+  .feature-list .feature-card:nth-child(even) {
     flex-direction: row-reverse;
   }
 }
 
-/* ─── CIRCLE MODIFIER ────────────────────────────────────── 
-   Circular portrait treatment — used in about.js, expertise.js.
-   The inner div clips the image to a circle.
-─────────────────────────────────────────────────────────── */
-.card-image--circle {
-  flex-shrink: 0;
-  width: min(80vw, 22rem) !important;
-  height: min(80vw, 22rem) !important;
-  border-radius: 50% !important;
-  border: var(--portrait-border);
-  padding: var(--portrait-padding);
-  overflow: visible !important;
-  align-self: center;
+/* ─── ABOUT FEATURE CARD ─────────────────────────────────── */
+.about-me {
+  width: min(100%, var(--content-max-width));
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.card-image--circle .card-image-inner {
-  width: 100%;
-  height: 100%;
+.about-me .feature-media {
   aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
 }
 
-.card .card-image--circle {
-  width: var(--portrait-diameter-card) !important;
-  height: var(--portrait-diameter-card) !important;
-}
-
-.card-image--circle .card-image-inner {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: transparent;
-}
-
-/* Always cover — fills circle completely */
-.card-image--circle .card-image-inner img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  filter: grayscale(5%) contrast(1.05) brightness(0.95) saturate(0.88) hue-rotate(6deg);
-}
-
-@media (min-width: 1024px) {
-  .card-image--circle {
-    border-radius: 50% !important;
-    width: var(--portrait-diameter) !important;
-    height: var(--portrait-diameter) !important;
+@media (min-width: 900px) {
+  .about-me .feature-media {
+    width: 38%;
+    max-width: 22rem;
     aspect-ratio: 1 / 1;
-    flex-shrink: 0;
-    align-self: center;
-    border: var(--portrait-border);
-    padding: var(--portrait-padding);
-    overflow: visible !important;
-    filter: drop-shadow(0 0 3rem hsla(var(--bg-h), var(--bg-s), 4%, 0.9));
-  }
-
-  .card-image--circle .card-image-inner {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    overflow: hidden;
   }
 }
 
-/* ─── CARD TEXT HELPERS ──────────────────────────────────── */
+/* ─── CARD LABELS & METADATA ─────────────────────────────── */
 .card-tag {
-  font-family: var(--font-family);
-  font-size: var(--font-size-label);
-  font-weight: 600;
-  letter-spacing: var(--tracking-widest);
-  text-transform: uppercase;
-  color: var(--color-text-55);
-  margin-bottom: var(--gap-tiny);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--accent-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
 }
 
 .card-mono {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 400;
-  line-height: 1.7;
-  color: var(--color-text-55);
-  border-left: 1px solid var(--color-text-15);
-  padding-left: var(--gap-small);
-  margin-top: var(--gap-tiny);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  background: var(--bg-canvas-subtle);
+  border-left: 2px solid var(--border-strong);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-1);
 }
 
-a.card {
-  text-decoration: none;
-}

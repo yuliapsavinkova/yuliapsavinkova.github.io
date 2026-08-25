@@ -73,6 +73,16 @@ class DebugPanelComponent extends HTMLElement {
           margin: 0;
           width: 2rem;
           height: 2rem;
+          border-radius: var(--radius-sm);
+          color: var(--text-secondary);
+          transition: color var(--duration-fast) var(--ease-smooth), background-color var(--duration-fast) var(--ease-smooth);
+        }
+        .close-btn:hover {
+          color: var(--accent-primary);
+          background-color: var(--bg-surface-hover);
+        }
+        .close-btn:focus-visible {
+          box-shadow: 0 0 0 2px var(--border-focus);
         }
         .close-btn svg {
           width: 1rem;

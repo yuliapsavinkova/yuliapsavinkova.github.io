@@ -20,7 +20,7 @@ class ExpertiseComponent extends HTMLElement {
                   ./images/011-600.webp 600w,
                   ./images/011-900.webp 900w
                 "
-                sizes="(max-width: 768px) 100vw, 26rem"
+                sizes="(max-width: 768px) 100vw, 24rem"
                 width="600"
                 height="600"
                 alt="Custom Solutions"
@@ -30,12 +30,18 @@ class ExpertiseComponent extends HTMLElement {
             </div>
             <div class="card-content">
               <h2>Custom Solutions</h2>
-              <div class="card-tag">
+              <span class="card-tag">
                 High-performance sites built with <strong>Next.js</strong>
-              </div>
+              </span>
               <p>
-                SEO-optimized, production-ready experiences that work across all screen sizes.
+                SEO-optimized, production-ready experiences built for speed, responsiveness, and clear brand identity.
               </p>
+              <div class="card-chips">
+                <span class="card-chip">Next.js</span>
+                <span class="card-chip">TypeScript</span>
+                <span class="card-chip">SEO 100</span>
+                <span class="card-chip">Tailwind</span>
+              </div>
               <svg class="icon enable-icon-scale" aria-hidden="true">
                 <use href="#icon-arrow-right"></use>
               </svg>
@@ -51,7 +57,7 @@ class ExpertiseComponent extends HTMLElement {
                   ./images/022-600.webp 600w,
                   ./images/022-900.webp 900w
                 "
-                sizes="(max-width: 768px) 100vw, 26rem"
+                sizes="(max-width: 768px) 100vw, 24rem"
                 width="600"
                 height="600"
                 alt="Web Applications"
@@ -61,12 +67,18 @@ class ExpertiseComponent extends HTMLElement {
             </div>
             <div class="card-content">
               <h2>Web Applications</h2>
-              <div class="card-tag">
-                Dynamic applications built with <strong>React and Angular</strong>
-              </div>
+              <span class="card-tag">
+                Dynamic applications built with <strong>React & TypeScript</strong>
+              </span>
               <p>
-                Clean architecture, scalable state management, and long-term maintainability.
+                Modular frontend architecture, intuitive user experiences, and scalable state management.
               </p>
+              <div class="card-chips">
+                <span class="card-chip">React</span>
+                <span class="card-chip">TypeScript</span>
+                <span class="card-chip">State Architecture</span>
+                <span class="card-chip">REST APIs</span>
+              </div>
               <svg class="icon enable-icon-scale" aria-hidden="true">
                 <use href="#icon-arrow-right"></use>
               </svg>
@@ -82,7 +94,7 @@ class ExpertiseComponent extends HTMLElement {
                   ./images/033-600.webp 600w,
                   ./images/033-900.webp 900w
                 "
-                sizes="(max-width: 768px) 100vw, 26rem"
+                sizes="(max-width: 768px) 100vw, 24rem"
                 width="600"
                 height="600"
                 alt="Financial Tools"
@@ -92,12 +104,18 @@ class ExpertiseComponent extends HTMLElement {
             </div>
             <div class="card-content">
               <h2>Financial Tools</h2>
-              <div class="card-tag">
-                Web apps integrated with <strong>Excel and Google Sheets</strong>
-              </div>
+              <span class="card-tag">
+                Automation integrated with <strong>Excel & Google Sheets</strong>
+              </span>
               <p>
-                Automated market data syncing, portfolio tracking, and custom strategy analysis.
+                Automated market data syncing, real-time portfolio dashboards, and custom strategy analysis.
               </p>
+              <div class="card-chips">
+                <span class="card-chip">Excel & Sheets</span>
+                <span class="card-chip">Data Pipelines</span>
+                <span class="card-chip">Live Analytics</span>
+                <span class="card-chip">Automation</span>
+              </div>
               <svg class="icon enable-icon-scale" aria-hidden="true">
                 <use href="#icon-arrow-right"></use>
               </svg>
@@ -106,10 +124,13 @@ class ExpertiseComponent extends HTMLElement {
 
         </div>
 
-        <a href="#/work" class="button button-secondary">Learn More</a>
+        <div style="display: flex; justify-content: center; margin-top: var(--space-4);">
+          <a href="#/work" class="button button-secondary">Learn More</a>
+        </div>
       </section>
     `;
   }
 }
 
 customElements.define('expertise-component', ExpertiseComponent);
+

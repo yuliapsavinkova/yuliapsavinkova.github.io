@@ -1,79 +1,145 @@
 /* ═══════════════════════════════════════════════════════════
-   BUTTONS — pill-shaped, all tokens
-   Amber accent appears only on hover — never at rest.
+   BUTTONS.CSS — Standardized, High-Contrast Button Components
 ═══════════════════════════════════════════════════════════ */
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.7rem 1.875rem;
-  min-width: 7rem;
-  border-radius: var(--border-radius-pill);
+  gap: var(--space-2);
+  padding: 0.5rem 1.15rem;
+  height: 2.375rem;
+  box-sizing: border-box;
+  border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
   outline: none;
-  position: relative;
-  text-align: center;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-normal);
+  line-height: 1;
+  text-decoration: none;
   user-select: none;
-  font-family: var(--font-family);
-  font-size: var(--font-size-label);
-  font-weight: 600;
-  letter-spacing: var(--tracking-widest);
-  text-transform: uppercase;
-  transition: all var(--duration-slow) var(--ease-silk);
   white-space: nowrap;
-  background-clip: padding-box;
+  transition:
+    background-color var(--duration-fast) var(--ease-smooth),
+    border-color var(--duration-fast) var(--ease-smooth),
+    color var(--duration-fast) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth);
+}
+
+.button span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.button svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .button:active {
-  transform: scale(0.97);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 .button:focus-visible {
-  box-shadow:
-    0 0 0 2px var(--color-bg),
-    0 0 0 4px var(--color-accent-30);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg-canvas), 0 0 0 4px var(--border-focus);
 }
 
 .button:disabled {
+  opacity: 0.5;
   cursor: not-allowed;
-  opacity: 0.35;
   pointer-events: none;
+  transform: none;
+  box-shadow: none;
 }
 
-/* ─── PRIMARY — cream fill at rest, amber warmth on hover ── */
+.button.sending,
+.button.sending:disabled {
+  opacity: 0.95;
+  cursor: wait;
+  pointer-events: none;
+  transform: none;
+}
+
+/* ─── PRIMARY BUTTON (Modern Stark Contrast) ─────────────── */
 .button-primary {
-  color: var(--color-bg);
-  background-color: var(--color-text-80);
-  border-color: var(--color-text-80);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-bg);
+  font-weight: var(--weight-semibold);
+  box-shadow: var(--shadow-sm);
 }
+
 .button-primary:hover {
-  background-color: var(--color-text-90);
-  border-color: var(--color-accent-70);
-  box-shadow: 0 0 0.75rem var(--color-accent-15);
+  background-color: var(--btn-primary-hover-bg);
+  color: var(--btn-primary-hover-text);
+  border-color: var(--btn-primary-hover-bg);
 }
 
-/* ─── SECONDARY — outlined at rest, amber border on hover ── */
+/* ─── SECONDARY BUTTON ───────────────────────────────────── */
 .button-secondary {
-  color: var(--color-text-70);
-  background-color: transparent;
-  border-color: var(--color-text-30);
-}
-.button-secondary:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent-70);
-  background-color: var(--color-accent-15);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-sm);
 }
 
-/* ─── ACTION — raised navy surface ──────────────────────── */
-.button-action {
-  color: var(--color-text-90);
-  background-color: var(--color-bg-raised);
-  border-color: var(--color-text-30);
+.button-secondary:hover {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
+
+/* ─── ACTION (Header/Compact) BUTTON ─────────────────────── */
+.button-action {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-default);
+  padding: 0.35rem 0.85rem;
+  height: 2rem;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
 .button-action:hover {
-  color: var(--color-accent);
-  background-color: var(--color-bg-subtle);
-  border-color: var(--color-accent-70);
+  background-color: var(--bg-surface-hover);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* ─── SPINNER ────────────────────────────────────────────── */
+.btn-spinner {
+  display: none;
+  width: 0.95rem;
+  height: 0.95rem;
+  box-sizing: border-box;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+.button.sending .btn-spinner {
+  display: inline-block;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
 }

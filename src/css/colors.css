@@ -1,28 +1,30 @@
+/* ═══════════════════════════════════════════════════════════
+   COLORS.CSS — Global Element Color Mapping
+═══════════════════════════════════════════════════════════ */
+
 body {
-  background-color: var(--color-background);
-  color: var(--color-text-body);
+  background-color: var(--bg-canvas);
+  color: var(--text-secondary);
 }
 
-h1 {
-  color: var(--color-primary);
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-a,
-label {
-  color: var(--color-text-heading);
+h6 {
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--text-primary);
 }
 
 p,
-div,
 span {
-  color: var(--color-text-body);
+  color: var(--text-secondary);
 }
 
 li::marker {
-  color: var(--color-accent);
+  color: var(--accent-primary);
 }

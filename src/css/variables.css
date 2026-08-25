@@ -1,84 +1,88 @@
 /* ═══════════════════════════════════════════════════════════
-   VARIABLES.CSS — Layout, spacing, typography, component scales
+   VARIABLES.CSS — Minimalist Design Tokens
 ═══════════════════════════════════════════════════════════ */
 
 :root {
-  /* ─── TYPOGRAPHY ─────────────────────────────────────────  */
-  --font-family: 'Plus Jakarta Sans', sans-serif;
-  --font-serif: 'Fraunces', 'Georgia', serif;
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-family: var(--font-sans);
 
-  --font-size-micro: 0.5rem;
-  --font-size-label: 0.5625rem;
-  --font-size-body: 1rem;
-  --font-size-greeting: 1.1rem;
-  --font-size-typewriter: 1.375rem;
-  --font-size-logo: 0.875rem;
+  /* Font Sizes */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
 
-  /* ─── LETTER SPACING ─────────────────────────────────────  */
-  --tracking-tight: 0.02em;
-  --tracking-normal: 0.1em;
-  --tracking-wide: 0.25em;
-  --tracking-widest: 0.4em;
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
 
-  /* ─── BREAKPOINTS (reference only — can't use in @media) ─  */
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
 
-  --article-width: 37.5rem;
+  /* Letter Spacing */
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.03em;
+  --tracking-wider: 0.06em;
 
-  /* ─── LAYOUT ──────────────────────────────────────────────  */
-  --header-size: 4rem;
-  --header-top-offset: 1.75rem;
-  --footer-size: 8rem;
-  --logo-size: 2rem;
-  --content-min-height: calc(100svh - var(--header-size) - var(--footer-size));
-  --hero-min-height: 37.5rem;
+  /* Spacing Scale */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
 
-  /* ─── PORTRAIT ────────────────────────────────────────────  */
-  --portrait-diameter: 26rem;
-  --portrait-diameter-mob: min(72vw, 20rem);
-  --portrait-diameter-card: 10rem;
-  --portrait-padding: 0.75rem;
-  --portrait-border: 1px dotted hsla(45, 100%, 65%, 0.7);
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-pill: 9999px;
 
-  /* ─── DOCK ────────────────────────────────────────────────  */
-  --dock-icon-size: 1.25rem;
-  --dock-gap: 1.25rem;
-  --dock-padding-block: 0.625rem;
-  --dock-padding-inline: 1.5rem;
-  --dock-overlap: -1rem;
+  /* Layout */
+  --header-size: 3.75rem;
+  --footer-size: 4.5rem;
+  --content-max-width: 1100px;
+  --content-min-height: calc(100vh - var(--header-size) - var(--footer-size));
+  --padding-inline: 1.25rem;
+  --padding-block: 4.5rem;
 
-  /* ─── BORDER RADIUS ──────────────────────────────────────  */
-  --border-radius: 0.5rem;
-  --border-radius-lg: 1rem;
-  --border-radius-pill: 999px;
-
-  /* ─── SPACING SCALE ──────────────────────────────────────  */
-  --padding-inline: 1.5rem;
-  --padding-block: 4rem;
-
-  --gap-tiny: 0.5rem;
-  --gap-small: 1rem;
-  --gap-med: 1.5rem;
-  --gap: 2rem;
-  --gap-large: 4rem;
-
-  /* ─── ANIMATION ───────────────────────────────────────────  */
-  --ease-silk: cubic-bezier(0.23, 1, 0.32, 1);
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 0.15s;
-  --duration-mid: 0.3s;
-  --duration-slow: 0.5s;
+  --duration-mid: 0.25s;
 
-  --motion-fade-up: 0.875rem;
-  --motion-bounce: 0.375rem;
-  --motion-scale-in: 0.95;
+  /* Z-indices */
+  --z-sticky: 100;
+  --z-modal: 500;
+  /* ── Standard Breakpoints (4 Standard Tiers) ── */
+  /* sm: 640px  — Mobile / iPhones (Single-column compact) */
+  /* md: 768px  — Tablet Portrait */
+  /* lg: 900px  — Two-Column Desktop / Split Layouts */
+  /* xl: 1200px — Wide Desktop */
 }
 
 @media (min-width: 768px) {
   :root {
-    --padding-inline: 3rem;
+    --padding-inline: 2rem;
+    --padding-block: 5.5rem;
+    --header-size: 4rem;
   }
 }

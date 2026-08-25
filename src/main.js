@@ -14,11 +14,12 @@ import hero from './components/hero/hero.css?inline';
 // Fraunces — display, headings, hero
 import '@fontsource-variable/fraunces';
 
-// Plus Jakarta Sans — nav, buttons, labels, body UI
-import '@fontsource/plus-jakarta-sans/300.css';
+// Plus Jakarta Sans — modern geometric UI sans
 import '@fontsource/plus-jakarta-sans/400.css';
 import '@fontsource/plus-jakarta-sans/500.css';
 import '@fontsource/plus-jakarta-sans/600.css';
+import '@fontsource/plus-jakarta-sans/700.css';
+import '@fontsource/plus-jakarta-sans/800.css';
 
 // JetBrains Mono — code, technical details
 import '@fontsource/jetbrains-mono/400.css';
@@ -67,10 +68,3 @@ document.body.addEventListener('click', (event) => {
     window.location.hash = link.getAttribute('href').slice(1);
   }
 });
-
-// ─── Visual effects — remove any line to disable that effect ───
-import './effects/effects-stars.js';
-import './effects/effects-orbit.js';
-import './effects/effects-ember.js';
-import './effects/effects-burst.js';
-import './effects/effects-cursor.js';

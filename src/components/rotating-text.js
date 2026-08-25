@@ -6,8 +6,8 @@ class RotatingText extends HTMLElement {
     this.charIndex = 0;
     this.isDeleting = false;
     this.lastFrameTime = 0;
-    this.typeSpeed = 90;
-    this.deleteSpeed = 40;
+    this.typeSpeed = 75;
+    this.deleteSpeed = 35;
   }
 
   connectedCallback() {
@@ -18,39 +18,41 @@ class RotatingText extends HTMLElement {
   render() {
     this.innerHTML = `
       <style>
-        rotating-text { display: inline-block; }
+        rotating-text {
+          display: inline-block;
+          width: 100%;
+        }
 
         .typewriter-container {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: calc(var(--font-size-typewriter) * 1.4);
-          min-width: 20ch;
+          min-height: 2.5rem;
         }
 
         .typewriter-text {
-          font-family: var(--font-serif);
-          font-style: italic;
-          font-weight: 200;
-          font-size: var(--font-size-typewriter);
+          font-family: var(--font-sans);
+          font-weight: var(--weight-bold);
+          font-size: clamp(1.4rem, 3.2vw, 2.25rem);
           letter-spacing: var(--tracking-tight);
-          color: var(--color-text-90);
+          color: var(--text-primary);
           white-space: pre;
-          line-height: 1.3;
+          line-height: var(--leading-tight);
         }
 
-        /* Amber cursor — the one warm spark in the hero */
         .cursor {
-          font-family: var(--font-serif);
-          font-style: italic;
-          font-size: var(--font-size-typewriter);
-          font-weight: 200;
-          color: var(--color-accent);
-          line-height: 1.3;
-          animation: twBlink 1.1s step-end infinite;
+          font-family: var(--font-sans);
+          font-size: clamp(1.4rem, 3.2vw, 2.25rem);
+          font-weight: 300;
+          color: var(--accent-primary);
+          line-height: var(--leading-tight);
+          margin-left: 2px;
+          animation: twBlink 1s step-end infinite;
         }
 
-        @keyframes twBlink { 50% { opacity: 0; } }
+        @keyframes twBlink {
+          50% { opacity: 0; }
+        }
       </style>
 
       <div class="typewriter-container">
@@ -98,7 +100,7 @@ class RotatingText extends HTMLElement {
           this.deleteTimer = setTimeout(() => {
             this.isDeleting = true;
             this.deleteTimer = null;
-          }, 1400);
+          }, 1500);
         }
       }
     }

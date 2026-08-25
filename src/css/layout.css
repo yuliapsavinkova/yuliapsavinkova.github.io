@@ -1,37 +1,42 @@
 /* ═══════════════════════════════════════════════════════════
-   LAYOUT
+   LAYOUT.CSS — Layout Container & Grid Flow
 ═══════════════════════════════════════════════════════════ */
 
-/* ─── BODY BACKGROUND GLOW ────────────────────────────────
-   Three layered radial gradients over the solid base:
-   1. Primary bloom — large, top-centre, accent hue, most visible
-   2. Rim light    — top-right edge, slightly cooler
-   3. Deep fill    — mid-page warmth so the centre isn't flat
-   All fixed so the glow doesn't scroll with content.        */
 body {
-  background-color: var(--color-bg);
-  background-image:
-    radial-gradient(ellipse 70% 40% at 50% 15%, var(--glow-primary), transparent),
-    radial-gradient(ellipse 55% 35% at 50% 55%, var(--glow-primary), transparent),
-    radial-gradient(ellipse 50% 35% at 90% 10%, var(--glow-rim), transparent),
-    radial-gradient(ellipse 55% 40% at 10% 70%, var(--glow-deep), transparent);
-  background-repeat: no-repeat;
-  background-size: cover;
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 section {
+  position: relative;
+  width: 100%;
   padding: var(--padding-block) var(--padding-inline);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: var(--gap);
-  border-top: 1px solid var(--color-text-08);
+  justify-content: center;
+  gap: var(--space-8);
 }
 
-/* iOS Safari fix — background-attachment: fixed broken on touch devices */
-@media (hover: none) and (pointer: coarse) {
-  body {
-    background-attachment: scroll;
-  }
+section + section {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
 }

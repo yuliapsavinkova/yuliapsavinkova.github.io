@@ -25,7 +25,8 @@ class ContactComponent extends HTMLElement {
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="6" placeholder="Enter your Message" required></textarea>
             </div>
-            <button type="submit" class="button button-primary contact-submit">Send Message
+            <button type="submit" class="button button-primary contact-submit">
+              <span class="btn-text">Send Message</span>
               <span class="btn-spinner" aria-hidden="true"></span>
             </button>
           </form>
@@ -48,12 +49,14 @@ class ContactComponent extends HTMLElement {
     const form = this.querySelector('#contact-form-el');
     const success = this.querySelector('#contact-success');
     const btn = this.querySelector('button[type="submit"]');
+    const btnText = btn.querySelector('.btn-text');
     const reset = this.querySelector('#contact-reset');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       btn.classList.add('sending');
       btn.disabled = true;
+      if (btnText) btnText.textContent = 'Sending...';
 
       try {
         const res = await fetch(form.action, {
@@ -71,12 +74,12 @@ class ContactComponent extends HTMLElement {
         } else {
           btn.classList.remove('sending');
           btn.disabled = false;
-          btn.childNodes[0].textContent = 'Try Again';
+          if (btnText) btnText.textContent = 'Try Again';
         }
       } catch {
         btn.classList.remove('sending');
         btn.disabled = false;
-        btn.childNodes[0].textContent = 'Try Again';
+        if (btnText) btnText.textContent = 'Try Again';
       }
     });
 
@@ -87,7 +90,7 @@ class ContactComponent extends HTMLElement {
       setTimeout(() => form.classList.remove('form-hide'), 50);
       btn.classList.remove('sending');
       btn.disabled = false;
-      btn.childNodes[0].textContent = 'Send Message';
+      if (btnText) btnText.textContent = 'Send Message';
     });
   }
 }

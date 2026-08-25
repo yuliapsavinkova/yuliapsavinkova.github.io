@@ -1,3 +1,5 @@
+import { Utils } from './utils.js';
+
 // Simpler GA pageview function
 function trackPageview(path) {
   if (typeof gtag === 'function') {
@@ -27,7 +29,7 @@ export async function renderPage() {
   const app = document.querySelector('main');
 
   switch (path) {
-    case '':
+    case '': {
       // 1. Load and render only the hero component immediately.
       await import('./components/hero/hero.js');
       app.innerHTML = `<hero-component></hero-component>`;
@@ -52,6 +54,7 @@ export async function renderPage() {
           <footer-component copyright-name="Yulia Savinkova"></footer-component>
         `,
         );
+        setTimeout(() => Utils.initScrollReveals(app), 50);
       };
 
       // 3. Ask the browser to run this function when it's idle.
@@ -62,6 +65,7 @@ export async function renderPage() {
         setTimeout(loadRemainingContent, 200);
       }
       break;
+    }
 
     case 'about':
       await Promise.all([
@@ -147,6 +151,9 @@ export async function renderPage() {
     window.removeEventListener('scroll', onScroll);
   };
   window.addEventListener('scroll', onScroll, { once: true });
+
+  // Initialize scroll reveals for all rendered page sections
+  setTimeout(() => Utils.initScrollReveals(app), 60);
 
   // Send GA virtual pageview
   trackPageview(path);
