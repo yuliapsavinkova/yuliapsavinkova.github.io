@@ -1,63 +1,26 @@
-const { createCanvas, loadImage } = require('@napi-rs/canvas');
+const { createCanvas, loadImage, GlobalFonts } = require('@napi-rs/canvas');
 const fs = require('fs');
 const path = require('path');
 
-function drawRoundedRect(ctx, x, y, width, height, radius) {
-  ctx.beginPath();
-  ctx.moveTo(x + radius, y);
-  ctx.lineTo(x + width - radius, y);
-  ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-  ctx.lineTo(x + width, y + height - radius);
-  ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-  ctx.lineTo(x + radius, y + height);
-  ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-  ctx.lineTo(x, y + radius);
-  ctx.quadraticCurveTo(x, y, x + radius, y);
-  ctx.closePath();
-}
+// Register Fonts
+const fontRegular = path.resolve(__dirname, '../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff');
+const fontMedium = path.resolve(__dirname, '../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-500-normal.woff');
+const fontSemiBold = path.resolve(__dirname, '../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-600-normal.woff');
+const fontBold = path.resolve(__dirname, '../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff');
+
+if (fs.existsSync(fontRegular)) GlobalFonts.registerFromPath(fontRegular, 'PlusJakartaSansRegular');
+if (fs.existsSync(fontMedium)) GlobalFonts.registerFromPath(fontMedium, 'PlusJakartaSansMedium');
+if (fs.existsSync(fontSemiBold)) GlobalFonts.registerFromPath(fontSemiBold, 'PlusJakartaSansSemiBold');
+if (fs.existsSync(fontBold)) GlobalFonts.registerFromPath(fontBold, 'PlusJakartaSansBold');
 
 async function generateOgPreview() {
-  // Vertical format: 800 × 1200 (2:3 vertical aspect ratio)
-  const width = 800;
-  const height = 1200;
+  // 600 x 900 Vertical Card (Square 600x600 portrait on top, clean text section on bottom)
+  const width = 600;
+  const height = 900;
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
-  // 1. Deep midnight navy background (matching theme #0b1223)
-  const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
-  bgGrad.addColorStop(0, '#070d1a');
-  bgGrad.addColorStop(0.5, '#0b1223');
-  bgGrad.addColorStop(1, '#020617');
-  ctx.fillStyle = bgGrad;
-  ctx.fillRect(0, 0, width, height);
-
-  // Soft ambient radial glow
-  const aura = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, 420);
-  aura.addColorStop(0, 'rgba(80, 196, 217, 0.15)');
-  aura.addColorStop(0.7, 'rgba(80, 196, 217, 0.03)');
-  aura.addColorStop(1, 'rgba(80, 196, 217, 0)');
-  ctx.fillStyle = aura;
-  ctx.fillRect(0, 0, width, height);
-
-  // Subtle outer framing border
-  ctx.strokeStyle = 'rgba(148, 163, 184, 0.12)';
-  ctx.lineWidth = 2;
-  drawRoundedRect(ctx, 24, 24, width - 48, height - 48, 24);
-  ctx.stroke();
-
-  // 2. Centered Square Portrait
-  const pSize = 680;
-  const pX = (width - pSize) / 2;
-  const pY = (height - pSize) / 2;
-  const pRadius = 24;
-
-  // Outer glowing accent stroke for the square portrait
-  ctx.strokeStyle = 'rgba(80, 196, 217, 0.45)';
-  ctx.lineWidth = 3;
-  drawRoundedRect(ctx, pX - 3, pY - 3, pSize + 6, pSize + 6, pRadius + 3);
-  ctx.stroke();
-
-  // Load portrait (prefer portrait-orig.png if available, else portrait-1200.webp)
+  // 1. Top Section: 600x600 square image
   let portraitPath = path.resolve(__dirname, '../public/images/portrait-orig.png');
   if (!fs.existsSync(portraitPath) || fs.statSync(portraitPath).size === 0) {
     portraitPath = path.resolve(__dirname, '../public/images/portrait-1200.webp');
@@ -65,31 +28,44 @@ async function generateOgPreview() {
 
   if (fs.existsSync(portraitPath)) {
     const portraitImg = await loadImage(portraitPath);
-
-    ctx.save();
-    drawRoundedRect(ctx, pX, pY, pSize, pSize, pRadius);
-    ctx.clip();
-
-    // Fill background behind image
-    ctx.fillStyle = '#0b1223';
-    ctx.fillRect(pX, pY, pSize, pSize);
-
-    // Square crop calculation (centered horizontally, top-aligned to preserve head and sweater)
+    
+    // Crop 1:1 square from center/top of portrait
     const sSize = Math.min(portraitImg.width, portraitImg.height);
     const sX = (portraitImg.width - sSize) / 2;
-    const sY = 0;
+    const sY = 0; // top aligned to frame face & sweater perfectly
 
-    ctx.drawImage(portraitImg, sX, sY, sSize, sSize, pX, pY, pSize, pSize);
-    ctx.restore();
-
-    // Inner subtle highlight border on portrait
-    ctx.strokeStyle = 'rgba(248, 250, 252, 0.2)';
-    ctx.lineWidth = 1.5;
-    drawRoundedRect(ctx, pX, pY, pSize, pSize, pRadius);
-    ctx.stroke();
+    ctx.drawImage(portraitImg, sX, sY, sSize, sSize, 0, 0, 600, 600);
   }
 
-  // Save generated images to public/images
+  // 2. Bottom Section: 600x300 clean background
+  const bgGrad = ctx.createLinearGradient(0, 600, 0, 900);
+  bgGrad.addColorStop(0, '#0b1223'); // Seamless match with sweater & theme
+  bgGrad.addColorStop(1, '#030712');
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 600, 600, 300);
+
+  // Clean accent divider line between portrait and text
+  ctx.strokeStyle = '#50c4d9';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(0, 600);
+  ctx.lineTo(600, 600);
+  ctx.stroke();
+
+  // 3. Text directly under the square image
+  ctx.textAlign = 'center';
+
+  // Primary Title: "Yulia | Portfolio"
+  ctx.fillStyle = '#f8fafc';
+  ctx.font = '700 38px PlusJakartaSansBold, sans-serif';
+  ctx.fillText('Yulia | Portfolio', 300, 720);
+
+  // Subtitle / Link: "yuliapsavinkova.github.io"
+  ctx.fillStyle = '#50c4d9';
+  ctx.font = '600 22px PlusJakartaSansSemiBold, sans-serif';
+  ctx.fillText('yuliapsavinkova.github.io', 300, 780);
+
+  // Save generated images
   const outPngPath = path.resolve(__dirname, '../public/images/og-preview.png');
   const outJpgPath = path.resolve(__dirname, '../public/images/og-preview.jpg');
 
@@ -99,7 +75,7 @@ async function generateOgPreview() {
   const jpgBuffer = canvas.toBuffer('image/jpeg');
   fs.writeFileSync(outJpgPath, jpgBuffer);
 
-  console.log(`Generated vertical OG preview without text: ${outPngPath} (${width}x${height})`);
+  console.log(`Generated 600x900 thumbnail: ${outPngPath}`);
 }
 
 generateOgPreview().catch(console.error);
