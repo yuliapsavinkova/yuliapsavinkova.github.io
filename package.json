@@ -8,8 +8,7 @@
     "lint": "eslint . --fix",
     "format": "prettier --write .",
     "generate-sitemap": "node generate-sitemap.js",
-    "generate-og": "node scripts/generate-og-image.cjs",
-    "build": "node scripts/generate-og-image.cjs && vite build",
+    "build": "vite build",
     "deploy": "gh-pages -d dist --dotfiles"
   },
   "repository": {
