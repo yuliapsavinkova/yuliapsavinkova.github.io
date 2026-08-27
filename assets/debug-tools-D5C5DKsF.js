@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/debug-panel-BaVi8Vr4.js","assets/index-E3RN4NKw.js","assets/index-CPxq_7Aa.css"])))=>i.map(i=>d[i]);
+import{_ as n}from"./index-E3RN4NKw.js";async function t(){if(document.getElementById("debug-panel"))return;console.log("Debug mode active"),await n(()=>import("./debug-panel-BaVi8Vr4.js"),__vite__mapDeps([0,1,2]));const e=document.createElement("div");e.id="debug-panel",e.innerHTML="<debug-panel-component></debug-panel-component>",document.body.appendChild(e)}export{t as loadDebugTools};
